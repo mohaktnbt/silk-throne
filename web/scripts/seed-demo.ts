@@ -30,11 +30,11 @@ if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) {
 const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 
 const GAME_SLUG = "the-silk-throne";
-const SCENES_DIR = path.resolve(__dirname, "../../game-content/scenes/demo");
+const SCENES_DIR = path.resolve(__dirname, "../../game-content/final");
 const STORAGE_BUCKET = "game-scenes";
 
 async function main() {
-  console.log("=== Silk Throne Demo Seed ===\n");
+  console.log("=== Silk Throne Full Game Seed ===\n");
 
   // ---------------------------------------------------------------
   // 1. Read all .txt files from the demo scenes directory
@@ -90,11 +90,18 @@ async function main() {
     price_usd: 499,
     genre: "Historical Fantasy",
     word_count: 300000,
-    scene_list: ["startup", "chapter1", "chapter2", "chapter3", "chapter4"],
+    scene_list: [
+      "startup", "scene2", "scene3", "scene4", "scene5",
+      "scene6", "scene7", "scene8", "scene9", "scene10",
+      "scene11", "scene12", "scene13", "scene14", "scene15",
+      "scene16", "scene17", "scene18", "scene19", "scene20",
+      "scene21", "scene22", "scene23", "scene24", "scene25",
+      "scene26", "scene27", "scene28", "scene29", "scene30",
+      "epilogue", "choicescript_stats",
+    ],
     free_scene_list: [
-      "startup",
-      "chapter1",
-      "chapter2",
+      "startup", "scene2", "scene3", "scene4",
+      "scene5", "scene6", "scene7", "scene8",
       "choicescript_stats",
     ],
     is_published: true,
