@@ -1,0 +1,55 @@
+{
+  "skill_name": "game-script-builder",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I want to make a short interactive fiction game where you play as a dragon who just woke up after a thousand years of sleep. Your hoard has been stolen and a village has been built on top of your lair. You can either burn the village down to reclaim your treasure, try to negotiate with the villagers, or disguise yourself as a human and infiltrate the village to find where they hid your gold. I want it to be kinda funny but also have real consequences. Maybe 3-5 scenes, a few different endings. Nothing too long.",
+      "expected_output": "A complete set of ChoiceScript .txt files including startup.txt with *title, *author, *scene_list, *create variables, and *achievement definitions; choicescript_stats.txt with a *stat_chart; and 3-5 scene files with branching choices, at least 3 distinct endings with *ending commands, personality/stat tracking, and the 70/30 fake_choice to real choice ratio. All files should be syntactically valid ChoiceScript.",
+      "files": [],
+      "expectations": [
+        "startup.txt exists and contains *title, *scene_list, and *create variable declarations",
+        "startup.txt contains *achievement definitions that sum to 1000 points",
+        "choicescript_stats.txt exists and contains a *stat_chart with at least one opposed_pair",
+        "At least 3 scene .txt files are created beyond startup.txt and choicescript_stats.txt",
+        "The game has at least 3 distinct endings using *achieve and *ending",
+        "Every *choice block has options that end with *goto, *goto_scene, *finish, or *ending",
+        "The game includes both *fake_choice and *choice commands",
+        "Variables are modified using fairmath (%+ or %-) for personality/relationship stats",
+        "The three routes (burn, negotiate, infiltrate) are all present and playable"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Make me an interactive story set in a space station. The player is a maintenance worker who discovers the AI running the station has gone rogue. They need to decide whether to shut it down, try to reason with it, or help it escape into the wider network. I want a medium-length game with romance options, a skill system, and personality tracking. Include a hub scene where you can talk to different crew members during downtime.",
+      "expected_output": "A medium-scope ChoiceScript game with 6-10 scene files, a hub scene using *gosub_scene with *disable_reuse conversation options, romance tracking with boolean flags and relationship meters, a skill system with integer levels, personality axes as opposed_pairs, pronoun support for the player character, and multiple endings gated by route + relationship + skill checks.",
+      "files": [],
+      "expectations": [
+        "startup.txt exists with *title, *scene_list, *create for all variables including relationship meters and skill integers",
+        "A hub scene file exists using *gosub_scene pattern with *disable_reuse options for NPC conversations",
+        "At least 2 romance-trackable NPCs with boolean romance flags and relationship meters",
+        "Player pronoun variables are created (they/them/their/theirs/themself etc.) with a gender selection scene",
+        "At least one skill uses integer levels (not fairmath) with plain +1/-1 modifications",
+        "Personality axes use opposed_pair display in choicescript_stats.txt",
+        "The three main routes (shutdown, reason, help escape) lead to different endings",
+        "At least 6 scene files are created",
+        "Hub scene conversations change based on a conversation counter variable"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "i want a choose your own adventure about being a new kid at a magical boarding school, kind of like harry potter meets mean girls. you pick your clique, deal with drama, and theres a mystery about a missing student. keep it short, like 3-4 scenes. i want achievements and a stat screen.",
+      "expected_output": "A short ChoiceScript game with 3-4 scene files capturing a teen drama tone with magical elements. Should include clique selection that sets a route variable, interpersonal drama choices affecting relationship meters, a mystery subplot with plot flag tracking, achievements summing to 1000 points, and a stat screen with personality axes and relationship displays.",
+      "files": [],
+      "expectations": [
+        "startup.txt contains *title, *scene_list, and *create for personality axes, relationship meters, and plot flags",
+        "Achievements are defined and sum to exactly 1000 points",
+        "choicescript_stats.txt has a working *stat_chart",
+        "A clique selection choice exists that meaningfully affects the story route",
+        "At least 2 relationship meters track key NPCs",
+        "The mystery subplot uses boolean plot flags (like knows_secret or found_clue)",
+        "The tone is teen/YA appropriate with humor elements",
+        "All scene files end with *finish, *goto_scene, or *ending — no dead ends"
+      ]
+    }
+  ]
+}
