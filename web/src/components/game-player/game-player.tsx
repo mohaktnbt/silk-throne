@@ -93,27 +93,34 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
         );
 
         if (response.status === 403) {
-          const data: unknown = await response.json();
-          if (
-            typeof data === "object" &&
-            data !== null &&
-            "error" in data &&
-            (data as Record<string, unknown>).error === "paywall"
-          ) {
-            setPaywallActive(true);
-            return null;
+          try {
+            const data: unknown = await response.json();
+            if (
+              typeof data === "object" &&
+              data !== null &&
+              "error" in data &&
+              (data as Record<string, unknown>).error === "paywall"
+            ) {
+              setPaywallActive(true);
+              return null;
+            }
+          } catch {
+            // Not JSON — just a 403
           }
+          setPaywallActive(true);
+          return null;
         }
 
         if (!response.ok) {
           throw new Error(`Failed to load scene: ${sceneName} (${response.status})`);
         }
 
+        // The API returns plain text (text/plain), not JSON
         const text = await response.text();
-        if (typeof text === "string" && text.length > 0) {
-          return text;
+        if (!text || text.trim().length === 0) {
+          throw new Error(`Empty scene response for: ${sceneName}`);
         }
-        throw new Error(`Empty scene response for: ${sceneName}`);
+        return text;
       } catch (err) {
         const message = err instanceof Error ? err.message : "Unknown error";
         setError(message);

@@ -16,16 +16,33 @@ function isSupabaseConfigured(): boolean {
   );
 }
 
-async function fetchGame(): Promise<Game | null> {
+// Demo game object used when Supabase is not configured
+const DEMO_GAME: Game = {
+  id: "demo",
+  slug: "the-silk-throne",
+  title: "The Silk Throne",
+  tagline: "A 300,000-word epic of power, betrayal, and empire",
+  description: "You are the Grand Vizier of the Khazaran Empire...",
+  long_description: null,
+  cover_image_url: null,
+  price_inr: 29900,
+  price_usd: 499,
+  genre: "Historical Fantasy",
+  word_count: 300000,
+  scene_list: ["startup", "chapter1", "chapter2", "chapter3", "chapter4"],
+  free_scene_list: ["startup", "chapter1", "chapter2", "choicescript_stats"],
+  is_published: true,
+  created_at: new Date().toISOString(),
+  updated_at: new Date().toISOString(),
+};
+
+async function fetchGame(): Promise<Game> {
   if (!isSupabaseConfigured()) {
-    return null;
+    return DEMO_GAME;
   }
 
   try {
-    // Dynamic import so the server module is never bundled on the client
-    const { createServiceRoleClient } = await import(
-      "@/lib/supabase/server"
-    );
+    const { createServiceRoleClient } = await import("@/lib/supabase/server");
     const supabase = await createServiceRoleClient();
 
     const { data, error } = await supabase
@@ -36,13 +53,13 @@ async function fetchGame(): Promise<Game | null> {
 
     if (error) {
       console.error("[play] Failed to fetch game:", error.message);
-      return null;
+      return DEMO_GAME;
     }
 
-    return data;
+    return data as unknown as Game;
   } catch (err) {
     console.error("[play] Unexpected error fetching game:", err);
-    return null;
+    return DEMO_GAME;
   }
 }
 

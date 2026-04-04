@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { createServiceRoleClient, createServerSupabaseClient } from "@/lib/supabase/server";
 import type { Game } from "@/types/database";
+import { readFile } from "fs/promises";
+import { join } from "path";
 
 function isSupabaseConfigured(): boolean {
   return !!(
@@ -10,20 +12,24 @@ function isSupabaseConfigured(): boolean {
   );
 }
 
-const DEMO_SCENE_TEXT = `*comment Demo scene — Supabase is not configured.
-This is a placeholder scene for local development.
+// Demo scenes live in game-content/scenes/demo/ at the repo root
+const DEMO_SCENES_DIR = join(process.cwd(), "..", "game-content", "scenes", "demo");
 
-You stand at the gates of the Khazaran Empire.
-The sun beats down on sandstone walls as merchants bustle past.
+// The demo game's free scene list
+const DEMO_FREE_SCENES = ["startup", "chapter1", "chapter2", "choicescript_stats"];
 
-*choice
-  #Enter the palace courtyard
-    You step through the ornate archway.
-    *finish
-  #Explore the bazaar
-    The scent of spices fills the air.
-    *finish
-`;
+async function serveDemoScene(sceneName: string): Promise<NextResponse> {
+  try {
+    const filePath = join(DEMO_SCENES_DIR, `${sceneName}.txt`);
+    const text = await readFile(filePath, "utf-8");
+    return new NextResponse(text, {
+      status: 200,
+      headers: { "Content-Type": "text/plain; charset=utf-8" },
+    });
+  } catch {
+    return NextResponse.json({ error: "Scene not found" }, { status: 404 });
+  }
+}
 
 export async function GET(
   _request: Request,
@@ -32,15 +38,16 @@ export async function GET(
   const { slug, sceneName } = params;
 
   // ------------------------------------------------------------------
-  // If Supabase isn't configured, serve a demo scene so local dev works
+  // LOCAL DEMO MODE: serve scenes from filesystem, no paywall
   // ------------------------------------------------------------------
   if (!isSupabaseConfigured()) {
-    return new NextResponse(DEMO_SCENE_TEXT, {
-      status: 200,
-      headers: { "Content-Type": "text/plain; charset=utf-8" },
-    });
+    // In demo mode, all scenes are free — just serve them from disk
+    return serveDemoScene(sceneName);
   }
 
+  // ------------------------------------------------------------------
+  // PRODUCTION MODE: serve from Supabase Storage with paywall
+  // ------------------------------------------------------------------
   try {
     const serviceClient = await createServiceRoleClient();
 
@@ -52,10 +59,7 @@ export async function GET(
       .single();
 
     if (gameError || !gameData) {
-      return NextResponse.json(
-        { error: "Game not found" },
-        { status: 404 }
-      );
+      return NextResponse.json({ error: "Game not found" }, { status: 404 });
     }
 
     const game = gameData as unknown as Game;
@@ -113,10 +117,7 @@ export async function GET(
 
     if (storageError || !fileData) {
       console.error("[scene] Storage download error:", storageError?.message);
-      return NextResponse.json(
-        { error: "Scene file not found" },
-        { status: 404 }
-      );
+      return NextResponse.json({ error: "Scene file not found" }, { status: 404 });
     }
 
     const text = await fileData.text();
@@ -130,9 +131,6 @@ export async function GET(
     });
   } catch (err) {
     console.error("[scene] Unexpected error:", err);
-    return NextResponse.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 }
