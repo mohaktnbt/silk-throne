@@ -72,7 +72,11 @@ Farid stops at the door.
 
 "Magnificent," you finish for him. "You said so yesterday."
 
-He manages a strained smile. "I was going to say 'adequate.' But magnificent works too."
+He manages a strained smile. "I was going to say 'adequate.' But magnificent works too." He straightens his own robes, which are slightly rumpled from hours of pacing, and checks that his satchel is properly closed. "I'll have a full transcript ready by noon. And coffee. Strong coffee. Per regulation 44-C, the secretary to the Vizier is permitted to draw from the palace kitchen stores during council sessions, and I have been drawing extensively."
+
+He takes a breath, and something in his expression firms.
+
+"Go and be the Vizier, ${title_honorific} ${player_name}. I'll be right outside."
 
 The door opens.
 
@@ -402,7 +406,9 @@ What do you recommend?
 
     Kadir stares at you. "Quietly," he repeats. "The border is on fire, and you want to investigate quietly."
 
-    "I want to catch the person who set the fire," you say. "Before they set another."
+    "I want to catch the person who set the fire," you say. "Before they set another one. A military response without intelligence is a hammer in the dark -- you might hit the nail, but you are just as likely to hit your own thumb."
+
+    The metaphor lands. You see Priya's eyes widen slightly -- a merchant who appreciates a well-turned argument. Ashoka nods, the measured nod of a man who recognizes wisdom in unexpected places. Even Kadir pauses, his jaw working as he processes a perspective he does not want to accept but cannot immediately refute.
 
     Lord Reza's voice floats from the gallery, dry as old parchment: "And while we investigate, the Khanates raid freely. A bold strategy, Vizier. If by 'bold' one means 'negligent.'"
     *goto after_crisis

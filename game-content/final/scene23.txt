@@ -11,93 +11,110 @@
 *temp priya_desperation 0
 *temp treasury_status "critical"
 *temp merchant_mood "anxious"
+*temp moral_feeling "weight"
 
 *comment === OPENING: THE COUNTING HOUSE ===
 
 The imperial treasury smells of dust, cold stone, and fear.
 
-You descend into the vaulted chambers beneath the Citadel where the empire's wealth is stored -- or was stored. The Treasury Hall is a long, low room with iron-banded doors and walls three feet thick, lit by oil lamps in iron brackets that cast hard, unforgiving shadows. Every surface here is designed for security, not beauty. No marble. No gold leaf. Just stone and iron and the weight of the empire's lifeblood.
+You descend into the vaulted chambers beneath the Citadel where the empire's wealth is stored -- or was stored, before the conspiracy's economic weapons found their mark. The Treasury Hall is a long, low room with iron-banded doors and walls three feet thick, built by Emperor Roshan II specifically to resist siege, riot, and the particular variety of greed that afflicts governments in crisis. Oil lamps in iron brackets cast hard, unforgiving shadows. Every surface here is designed for security, not beauty. No marble. No gold leaf. No geometric tilework in blue and turquoise. Just stone and iron and counting tables and the weight of the empire's lifeblood -- measured in ashrafs and dirhams, recorded in ledgers, stored in chests that should be full and are not.
 
-Guildmaster Priya stands at the central counting table, surrounded by ledgers stacked in precarious towers. She has shed her court robes for a merchant's practical tunic, her sleeves rolled to the elbows, ink staining her fingers. She looks as though she has been here for days. She probably has.
+The silence is wrong. The treasury is never silent. On an ordinary day, this chamber hums with the sounds of commerce -- the scratch of pens, the clink of coins being counted, the murmur of clerks conducting the endless arithmetic that keeps the empire running. Today the silence has the quality of a room after a funeral. The counting tables are empty. The clerks have been dismissed. The only sound is the scratch of a single pen, rapid and relentless, coming from the far end of the hall.
+
+*page_break
+
+Guildmaster Priya stands at the central counting table, surrounded by ledgers stacked in precarious towers that lean against each other like exhausted soldiers. She has shed her court robes -- the flowing silk, the jeweled pins, the carefully cultivated elegance of a woman who understands that appearance is currency -- for a merchant's practical tunic of undyed cotton, her sleeves rolled to the elbows, ink staining her fingers to the second knuckle. Her hair is pulled back in a simple knot. She looks like what she was before she was Guildmaster: a merchant's daughter, working through the night by lamplight because the numbers will not wait for morning.
+
+She has been here for days. You can see it in the lines around her mouth, the hollows beneath her eyes, the slight tremor in her writing hand that she compensates for by pressing harder against the paper. The ledger beneath her pen is covered in figures, annotations, cross-references, each one a thread in the web of the empire's finances, and the web is unraveling.
 
 *if (crisis_priority = "economic")
-  She looks up when you enter, and in her eyes you see something you have never seen from Priya: undisguised relief.
+  She looks up when you enter, and in her eyes you see something you have never seen from Guildmaster Priya -- the woman who seals deals with a smile and ruined competitors with a toast, the woman whose confidence is armor more formidable than any Khazaran steel. You see undisguised relief.
 
-  "You came," she says. "Thank the Flame. I have been fighting this alone and I am losing."
+  "You came," she says. The pen stops. She sets it down with exaggerated care, as though it might break. "Thank the Flame. I have been fighting this alone for four days and I am losing, ${player_name}. I do not lose. I do not know how to lose. And I am losing."
 *else
-  She looks up when you enter, and her expression is a controlled storm.
+  She looks up when you enter, and her expression is a controlled storm -- the careful mask of professional composure overlaying something darker and more desperate.
 
-  "Vizier. How kind of you to visit. While you were occupied with --" She catches herself. The mask of professional charm reassembles, but not before you see the exhaustion and anger beneath it. "Never mind. You are here now. That is what matters."
-
-*page_break
-
-She walks you through the destruction with the precision of a surgeon cataloging wounds.
-
-"The forged withdrawal orders removed one hundred and forty-three thousand gold ashrafs from the treasury over a three-month period. The forgeries were expert -- they used genuine seals, genuine parchment, and genuine signatures. My own deputy signed six of the orders without realizing they were false."
-
-She opens a ledger and turns it to face you. The columns of numbers march down the page in her precise hand, each one annotated in red ink.
-
-"The remaining reserve is fifty-seven thousand ashrafs. The empire's monthly operating cost -- military pay, civil administration, road maintenance, temple subsidies, court expenses -- is forty-two thousand. We have six weeks of funding. Perhaps seven, if I suspend all nonessential expenditure."
-
-She closes the ledger. The sound is final.
-
-"Six weeks, Vizier. After that, the soldiers stop being paid. When soldiers stop being paid, they stop being soldiers. They become a mob."
+  "Vizier." The word is precise, measured, carrying exactly the weight she intends and no more. "How kind of you to visit. While you were occupied with the --" She catches herself. The mask of professional charm reassembles, but not before you see the exhaustion and the anger beneath it. Not anger at you, precisely. Anger at the situation, at the conspiracy, at the terrible arithmetic that is destroying the empire she has spent her life enriching. "Never mind. You are here now. That is what matters."
 
 *page_break
 
-The scale of the theft is staggering, but Priya is not a woman who dwells on what is lost. She is already focused on what can be saved.
+She walks you through the destruction with the precision of a surgeon cataloging a patient's wounds -- clinical, thorough, and without any pretense that the prognosis is good.
 
-"The treasury theft was the first blow. The second is the trade disruption. The Khanate invasion has closed the northern trade routes. The western embargo -- whatever its current status -- has damaged confidence in our markets. And someone has been systematically buying up grain futures, driving the price of bread to three times its normal level."
+"The forged withdrawal orders removed one hundred and forty-three thousand gold ashrafs from the treasury over a three-month period." She opens the first ledger, turns it to face you. The columns of numbers march down the page in her precise hand, each one annotated in red ink -- the color she reserves for problems she cannot solve with cleverness alone. "The forgeries were expert. They used genuine imperial seals -- not copies, genuine seals, which means someone with physical access to the Seal Master's office. They used genuine parchment, sourced from the imperial paper mill. And they used genuine signatures -- not forgeries, but actual signatures, coerced or obtained under false pretenses."
 
-She pulls out another ledger. This one is smaller, its pages covered in the dense shorthand of market analysis.
+She closes the first ledger and opens the second.
 
-"The grain speculation is not random. It is coordinated. Someone is weaponizing the market against us. If bread prices continue to rise, the common people will riot. If they riot, the city becomes ungovernable. If the city becomes ungovernable --"
+"My own deputy signed six of the withdrawal orders without realizing they were false. He is a good man, Vizier. A competent man. He has been with the treasury for twenty years. He signed because the orders looked real, because the authorization codes were correct, and because the requests were routed through channels that had never been compromised before. I do not blame him. I blame myself for building a system that could be infiltrated this thoroughly."
+
+*page_break
+
+She closes the second ledger with a finality that makes Farid flinch.
+
+"The remaining reserve is fifty-seven thousand ashrafs. The empire's monthly operating cost -- military pay, civil administration, road maintenance, temple subsidies, court expenses, the feeding of two million people in the capital alone -- is forty-two thousand. We have six weeks of funding. Seven, if I suspend all nonessential expenditure and renegotiate every supply contract we hold. Eight, if I personally visit every creditor we owe money to and convince them to extend terms through charm, threats, and the creative interpretation of contract law."
+
+She folds her arms.
+
+"Six to eight weeks, Vizier. After that, the soldiers stop being paid. When soldiers stop being paid, they stop being soldiers. They become a mob. Or they become mercenaries for the highest bidder. Or they go home. The result, in all three cases, is the same: the empire ceases to function."
+
+"And the second blow?" you prompt.
+
+*page_break
+
+"The second blow is the trade disruption." She pulls out a smaller ledger, its pages dense with the shorthand of market analysis. "The Khanate invasion has closed the northern trade routes -- every caravan that used to pass through the Wall of Roshan has been diverted or canceled. The western embargo has damaged confidence in our markets, even if the pass has been partially reopened. And someone -- someone with access to enormous capital and detailed knowledge of our commodity markets -- has been systematically buying up grain futures."
+
+She traces a line on the ledger page. The numbers climb like a mountain range.
+
+"The price of bread has tripled in two weeks. The price of rice has doubled. Cotton, silk, spices -- all up, because the merchants who trade in these goods are hoarding, waiting for the prices to rise further. The speculation is not random, Vizier. It is coordinated. There are five major players, and at least three of them have financial ties to accounts that I have traced back to the conspiracy's network."
+
+She looks up from the ledger.
+
+"Someone is weaponizing the market against us. They have studied our economy, identified its pressure points, and applied force with surgical precision. If bread prices continue to rise, the common people will riot. If they riot, the city becomes ungovernable. If the city becomes ungovernable --"
 
 "The empire falls from within," you finish.
 
-"Without anyone having to draw a sword." Priya's smile is grim. "Elegant, really. If I were not the one trying to stop it, I might admire the craftsmanship."
+"Without anyone having to draw a sword." Priya's smile is grim -- the smile of a woman who can appreciate craftsmanship even when it is being used to destroy everything she has built. "Elegant, really. If I were not the one trying to stop it, I might admire the strategy. Whoever designed this understood economics better than most of the people in my treasury."
 
 *page_break
 
 *if (route = 1)
-  The Loyalist in you sees this clearly: every ashraf stolen from the treasury is a weapon aimed at the Emperor's legitimacy. A ruler who cannot feed his people is a ruler in name only.
+  The Loyalist in you sees this with painful clarity: every ashraf stolen from the treasury is a weapon aimed at the Emperor's legitimacy. A ruler who cannot feed his people is a ruler in name only. The invasion can be fought with soldiers. The political crisis can be fought with words. But hunger? Hunger cannot be argued with, negotiated with, or defeated by courage. Hunger simply is.
 *elseif (route = 2)
-  The pragmatist in you calculates swiftly. Power requires resources. Without the treasury, every lever of authority you have assembled becomes useless. Gold is the blood of the empire, and someone has opened its veins.
+  The pragmatist in you calculates swiftly, coldly. Power requires resources. Without the treasury, every lever of authority you have assembled -- the networks, the alliances, the carefully calibrated arrangements that keep the empire running with your hand on the tiller -- becomes useless. Money is not merely currency. It is influence, loyalty, capability. Take away the money and you take away the power.
 *else
-  The reformer in you feels the bitter irony. The people you have fought to help -- the merchants, the commoners, the laborers -- are the ones who will suffer most from this crisis. The wealthy can hoard. The poor can only endure.
+  The reformer in you feels the bitter irony like a knife between the ribs. The people you have fought to help -- the merchants and commoners and laborers, the people whose lives your reforms were meant to improve -- are the ones who will suffer most from this crisis. The wealthy can hoard. The nobility can retreat to their estates. The poor can only endure, and endurance has limits.
 
 *if (rel_guild > 50)
-  Priya sets down the ledger and looks at you directly. Not the calculating glance of a dealmaker. The open gaze of a woman who has reached the limits of what she can do alone.
+  Priya sets down the ledger and looks at you directly. Not the calculating glance of a dealmaker assessing a counterparty's position. Not the charming warmth of a woman who uses likability as a business tool. The open, unguarded gaze of a woman who has reached the limits of what she can do alone.
 
-  "I need your help, ${player_name}." Your given name, not your title. From Priya, who measures every word like a merchant measures gold, that is significant. "I am very good at what I do. But this is beyond one person. I need authority, I need political cover, and I need someone I trust to make the decisions I cannot make alone."
+  "I need your help, ${player_name}." Your given name, not your title. From Priya, who measures every word like a merchant measures gold -- precisely, carefully, with full awareness of its value -- that is significant. It is, perhaps, the most honest thing she has ever said to you. "I am very good at what I do. I built a trading empire from a pepper stall. I became Guildmaster before I was thirty. I have never met a financial problem I could not solve with intelligence and leverage. But this is beyond one person. I need authority. I need political cover. And I need someone I trust to make the decisions I cannot make alone."
   *set rel_guild %+ 8
 *else
-  "Here is the situation," Priya says, snapping back to business. "I have three proposals. Each one will stabilize the economy. Each one has costs. You are the Vizier. The decision is yours."
+  "Here is the situation," Priya says, snapping back to the businesslike precision that is her default mode. The vulnerability, if it was ever there, is locked behind the mask. "I have three proposals. Each one will stabilize the economy. Each one has costs. You are the Vizier. You carry the seal. The decision is yours."
 
 *page_break
 
 *comment === FIRST REAL CHOICE: ECONOMIC STRATEGY ===
 
-Priya spreads three documents on the counting table, each one representing a different path through the crisis.
+Priya spreads three documents on the counting table, each one written in her precise hand, each one representing a different path through the economic crisis. She treats them like merchandise -- laying them out, stepping back, letting the customer examine the goods before the negotiation begins.
 
-"Option one: Emergency taxation. We impose a one-time crisis levy on every household in the empire. Rich and poor alike contribute. It raises approximately eighty thousand ashrafs within two weeks -- enough to refill the treasury and ride out the crisis. The cost: political fury from every direction. The nobility will call it confiscation. The merchants will call it extortion. The common people will call it theft."
+"Option one: Emergency taxation. We impose a one-time crisis levy on every household in the empire, scaled by assessed wealth. Rich households pay more. Poor households pay less. It raises approximately eighty thousand ashrafs within two weeks -- enough to refill the treasury to functional levels and ride out the crisis. The cost: political fury from every direction. The nobility will call it confiscation. The merchants will call it extortion. The common people, who pay the least in absolute terms but feel the pinch most keenly, will call it theft. No one likes a new tax, Vizier. Especially in a crisis."
 
 She moves to the second document.
 
-"Option two: Foreign loans. I have contacts with the Eastern Trading Houses across the Jade Sea. They will lend us one hundred thousand ashrafs at twelve percent interest, secured against future tariff revenues. It fills the treasury immediately with no domestic political cost. The cost: the empire's financial sovereignty. If we default on the loan, the Eastern Houses will own our tariff system. We become a debtor empire."
+"Option two: Foreign loans. I have contacts with the Eastern Trading Houses across the Jade Sea -- old relationships, built on years of commercial cooperation. They will lend us one hundred thousand ashrafs at twelve percent annual interest, secured against future tariff revenues from the eastern ports. It fills the treasury immediately with no domestic political cost. The cost: the empire's financial sovereignty. For the first time in three centuries, the Khazaran Empire will be in debt to foreign bankers. If we default, the Eastern Houses will have legal claim to our tariff system. We become a debtor empire, and debtor empires do not choose their own destinies."
 
 The third document.
 
-"Option three: Market intervention. Instead of raising money, we attack the grain speculation directly. I have identified the speculators -- there are five major players, and I suspect at least three are connected to the conspiracy. We seize their assets, break the speculation ring, and use the confiscated grain to stabilize bread prices. It does not refill the treasury, but it prevents the riots. The cost: we set a precedent for government seizure of private property. Every merchant in the empire will wonder if they are next."
+"Option three: Market intervention. Instead of raising money, we attack the grain speculation directly. I have identified the five major speculators. At least three are connected to the conspiracy. We seize their assets, break the speculation ring, and use the confiscated grain to stabilize bread prices. It does not refill the treasury, but it prevents the riots that could destroy the city. The cost: we set a precedent for government seizure of private property. Every merchant in the empire will see the government reaching into private warehouses and wonder: am I next?"
 
 *page_break
 
-She steps back from the table and folds her arms.
+She steps back from the table and folds her arms. The lamplight catches the dark circles under her eyes.
 
-"There is no good option, Vizier. There are only different flavors of damage. Choose the damage you can live with."
+"There is no good option, Vizier. There are only different flavors of damage. I have run the numbers on all three. I have modeled the consequences. I have stayed awake for four days trying to find a fourth option that does not exist." A pause. "Choose the damage you can live with."
 
 *choice
-  #The emergency taxation. Shared sacrifice in a time of crisis. Everyone pays.
+  #The emergency taxation. Shared sacrifice in a time of crisis. Everyone contributes.
     *set economic_strategy "taxation"
     *set rep_nobility %- 10
     *set rep_trade %- 8
@@ -105,14 +122,14 @@ She steps back from the table and folds her arms.
     *set idealist %+ 10
     *set ruthless %+ 5
     *goto taxation_path
-  #The foreign loans. Preserve domestic stability. Deal with the debt later.
+  #The foreign loans. Preserve domestic stability. Deal with the debt when the crisis is over.
     *set economic_strategy "loans"
     *set rep_trade %+ 5
     *set gold + 100
     *set honest %- 5
     *set boldness %- 5
     *goto loans_path
-  #The market intervention. Break the speculators. Fight the conspiracy's economic weapon directly.
+  #The market intervention. Break the speculators. Attack the conspiracy's economic weapon directly.
     *set economic_strategy "intervention"
     *set rep_trade %- 5
     *set rep_intelligence %+ 5
@@ -122,24 +139,24 @@ She steps back from the table and folds her arms.
 
 *label taxation_path
 
-The crisis levy is announced by imperial decree, carried by riders to every province and cried in every market square.
+The crisis levy is announced by imperial decree within the hour, carried by riders to every province and cried in every market square by the public heralds. The decree bears the Vizier's seal and the Emperor's signature, and its language is blunt: the empire faces extraordinary threats, and extraordinary sacrifices are required.
 
-The reaction is immediate and furious.
+The reaction is immediate, furious, and entirely predictable.
 
 *page_break
 
-In the Citadel, Lord Reza and a delegation of nobles demand an audience. The old lord's face is mottled with rage, his voice trembling with a fury that is part genuine and part performance.
+In the Citadel, Lord Reza arrives at the head of a delegation of nobles -- twelve lords and ladies, their faces set in expressions that range from outrage to calculated fury. The old lord's face is mottled with rage, his white beard trembling, his voice carrying the particular resonance of a man who has been cultivating his outrage for seventy years and has finally found an occasion worthy of its full deployment.
 
-"Confiscation!" he thunders. "This is confiscation by another name! My family has paid taxes faithfully for two hundred years, and now the throne demands more because its own treasury was too incompetent to prevent a theft? The nobility will not stand for this, Vizier. We will not be bled to cover the government's failures."
+"Confiscation!" he thunders. "This is confiscation by another name, dressed in the language of patriotic sacrifice! My family has paid taxes faithfully for two hundred years, Vizier. Two hundred years of loyalty, of service, of financial commitment to an empire we helped build. And now the throne demands more -- more -- because its own treasury was too incompetent to prevent a theft? The nobility will not stand for this. We will not be bled dry to cover the government's failures."
 
 *if (rel_reza > 30)
-  You hold his gaze until his bluster subsides. "Lord Reza. The crisis levy is two percent of assessed wealth. Your family's holdings will survive it. The empire's peasants, who will pay two percent of far less, do not have that certainty."
+  You hold his gaze until his bluster subsides, the way you would hold a position on a battlefield -- with patience, with steadiness, and with the quiet confidence that comes from knowing the ground. "Lord Reza. The crisis levy is two percent of assessed wealth. Your family's holdings will survive it. The empire's peasants, who will pay two percent of far less, do not have that certainty."
   *set rel_reza %- 8
 *else
   "Your objection is noted," you say. "The decree stands."
   *set rel_reza %- 10
 
-In the Grand Bazaar, Merchant Hamid organizes a protest that is half theater and half genuine anguish. The spice merchants close their stalls for a day. The silk weavers send a formal complaint. The gem cutters threaten to relocate to the Southern Kingdoms.
+In the Grand Bazaar, Merchant Hamid organizes a protest that is half theater and half genuine anguish -- stalls draped in black cloth, merchants standing in solemn rows with their account books held before them like prayer books at a funeral. The spice merchants close their shops for a day. The silk weavers send a formal petition. The gem cutters threaten to relocate to the Southern Kingdoms, though everyone knows the Southern Kingdoms' gem-cutting facilities could not accommodate a fraction of them.
 
 But the money comes in. Slowly, painfully, ashraf by ashraf, the treasury refills. The machinery of empire grinds on, lubricated by the reluctant contributions of two million people who have been asked to sacrifice for a government that many of them no longer trust.
 
@@ -147,24 +164,26 @@ But the money comes in. Slowly, painfully, ashraf by ashraf, the treasury refill
 
 *label loans_path
 
-The negotiations with the Eastern Trading Houses take three days of intense correspondence, conducted through Priya's network of commercial contacts across the Jade Sea.
+The negotiations with the Eastern Trading Houses take three days of intense correspondence, conducted through Priya's network of commercial contacts across the Jade Sea -- coded messages carried by fast ships, terms haggled over in the mercantile pidgin that traders from every nation understand.
 
 *page_break
 
-The terms are harsh. Twelve percent annual interest. The empire's eastern port tariffs pledged as collateral. A resident Eastern trade representative installed in the Grand Bazaar with audit authority over imperial customs receipts.
+The terms, when they arrive in final form, are harsh.
 
-"It's usury," Priya says, signing the agreement with a pen that seems heavier than it should be. "It's legal usury, dressed in diplomatic language and sealed with polite smiles. But it keeps the empire alive."
+Twelve percent annual interest -- more than double the rate charged between Khazaran banks. The empire's eastern port tariffs pledged as collateral for the full term of the loan. A resident Eastern trade representative to be installed in the Grand Bazaar with audit authority over imperial customs receipts. And a confidential clause -- one that Priya shows you with pursed lips and a glass of wine in her hand -- granting the Eastern Houses preferential access to the gem mines of the Ashghar Range if the empire fails to meet two consecutive interest payments.
 
-The gold arrives within a week -- physical coin, shipped in ironbound chests by armed merchantmen. The treasury fills. The soldiers get paid. The bread riots do not happen.
+"It's usury," Priya says, signing the agreement with a pen that seems heavier than an ordinary pen should be. "It's legal usury, dressed in diplomatic language and sealed with polite smiles, backed by the economic power of trading houses that have been waiting for exactly this moment to get their hooks into our commerce. But it keeps the empire alive."
 
-But the cost sits like a stone in your chest. The empire has never been a debtor. Three centuries of financial independence, sold to foreign bankers to cover a theft.
+The gold arrives within a week -- physical coin, shipped in ironbound chests by armed merchantmen, counted and verified by Priya's own people before being deposited in the vaults below. The treasury fills. The soldiers get paid. The bread riots do not happen.
+
+But the cost sits like a stone in your chest. The empire has never been a debtor. Three centuries of financial independence, of the proud assertion that the Khazaran Empire bows to no one and borrows from no one, sold to foreign bankers to cover a theft.
 
 *if (rel_guild > 60)
-  Priya meets your eyes over the signed agreement. "I know what this costs," she says quietly. "I know what it means. But a living debtor can repay its debts. A dead empire cannot."
+  Priya meets your eyes over the signed agreement. "I know what this costs," she says quietly. "Not in gold. In pride. In sovereignty. In the ability to look the Eastern Trading Houses in the eye and say we owe them nothing. But a living debtor can repay its debts, Vizier. A dead empire cannot."
   *set rel_guild %+ 5
   *set final_alliance_trade true
 *else
-  Priya files the agreement without comment. The mask of professional competence does not slip, but you notice she pours herself a very large glass of wine afterward.
+  Priya files the agreement without comment. The mask of professional competence does not slip, but you notice she pours herself a second glass of wine, which she drinks standing at the window, watching the Grand Bazaar below with an expression that is neither optimistic nor defeated. It is the expression of a woman doing arithmetic in her head and not liking the answer.
 
 *goto moral_choice
 
@@ -174,22 +193,22 @@ The market intervention is surgical and ruthless.
 
 *page_break
 
-Priya identifies the five major grain speculators. Three of them -- as she suspected -- have connections to the conspiracy: financial arrangements that trace back to the same network of forged seals and false names that emptied the treasury.
+Priya identifies the five major grain speculators within hours -- she has been tracking them for days, mapping their transactions, following the money through a maze of intermediary accounts and shell companies with the relentless precision of a hunting dog on a scent. Three of them, as she suspected, have direct connections to the conspiracy: financial arrangements that trace back to the same network of forged seals and false names that emptied the treasury.
 
-"Merchant Bahram of the Grain Guild," Priya says, pointing to a name on her list. "Purchased eighty thousand bushels of grain futures in the last month. Financed by funds that originated in Prince Kaveh's household accounts, laundered through three intermediary banks. He is not a speculator. He is a weapon."
+"Merchant Bahram of the Grain Guild," Priya says, pointing to a name on her list. The lamplight catches her expression, and you see something that is not anger and not satisfaction but something colder -- the look of a woman who understands betrayal at a professional level. "Purchased eighty thousand bushels of grain futures in the last month. Financed by funds that originated in Prince Kaveh's household accounts, laundered through three intermediary banks in the Foreign Quarter. He is not a speculator, Vizier. He is a weapon. Someone loaded him, aimed him, and pulled the trigger. The grain market is collateral damage."
 
-You authorize the seizures. Zara's agents, working with Captain Darius's city guard, move simultaneously on all five targets. By dawn, the speculators' warehouses are under imperial lock, their assets frozen, their grain inventories commandeered for public distribution.
+You authorize the seizures. Zara's agents, working with Captain Darius's city guard in a coordinated operation that moves with the efficiency of a closing trap, strike simultaneously on all five targets. By dawn, the speculators' warehouses are under imperial lock, their assets frozen, their grain inventories commandeered for public distribution.
 
-The bread prices drop by nightfall. The threat of riot recedes.
+The bread prices drop by nightfall. The threat of riot recedes like a tide.
 
-But in the Grand Bazaar, the merchants watch. Every shopkeeper, every guild master, every trader with a warehouse full of goods sees the government seizing private property and wonders: am I next?
+But in the Grand Bazaar, the merchants watch. Every shopkeeper, every guild master, every trader with a warehouse full of goods sees the government seizing private property and wonders: how long before they come for mine?
 
 *if (rel_guild > 50)
-  Priya manages the fallout with skill, personally visiting the major guild houses to explain that only conspiracy-linked assets were targeted. Her reassurances calm the worst fears, but the seed of doubt has been planted.
+  Priya manages the fallout with skill, personally visiting the major guild houses to explain that only conspiracy-linked assets were targeted. Her reassurances -- delivered with charm, with evidence, with the particular Priya-blend of warmth and steel -- calm the worst fears. But the seed of doubt has been planted, and seeds have a way of growing.
   *set final_alliance_trade true
   *set rel_guild %+ 5
 *else
-  The guild houses send a formal letter of protest. Priya receives it with pursed lips and files it without comment. The alliance between the Vizier's office and the merchant class has developed a crack that may widen.
+  The guild houses send a formal letter of protest, signed by eighteen guild masters and sealed with eighteen official stamps. Priya receives it with pursed lips and files it without comment. The alliance between the Vizier's office and the merchant class has developed a crack, and cracks in alliances, like cracks in walls, tend to widen under pressure.
   *set rel_guild %- 5
 
 *goto moral_choice
@@ -200,15 +219,15 @@ But in the Grand Bazaar, the merchants watch. Every shopkeeper, every guild mast
 
 *label moral_choice
 
-The economic strategy is in motion. But strategy addresses the macro crisis. The micro crisis -- the human cost -- demands its own reckoning.
+The economic strategy is in motion. The macro crisis is being addressed. But strategy, for all its necessity, is abstraction, and beneath the abstraction is something that cannot be measured in ashrafs or modeled in ledgers: human suffering.
 
-Priya takes you to the window of the treasury office. Below, in the courtyard, a line of petitioners stretches from the administrative gate to the outer wall. Hundreds of people, waiting in the autumn cold for an audience with someone who can help them.
+Priya takes you to the window of the treasury office -- a narrow slit in the stone wall, designed for defense rather than view, through which a slice of the Citadel's outer courtyard is visible. Below, a line of petitioners stretches from the administrative gate to the outer wall and beyond, curving around the corner into the street. Hundreds of people, standing in the autumn cold, waiting for an audience with someone -- anyone -- who has the authority to help them.
 
-"The war has disrupted supply lines. Food prices have doubled. Rents are rising because refugees from the northern provinces are flooding the city." Priya's voice is quiet -- the tone she uses when the numbers represent people rather than abstractions. "The wealthy are uncomfortable. The middle class is struggling. The poor are starving."
+"The war has disrupted supply lines. Food prices have tripled. Rents are rising because refugees from the northern provinces are flooding the city -- thirty thousand new arrivals in the last two weeks, sleeping in the streets, in the temples, in the empty market stalls." Priya's voice is quiet -- the tone she uses when the numbers represent people rather than abstractions, when the arithmetic has a face. "The wealthy are uncomfortable. The middle class is struggling. The poor are starving."
 
-She turns to you.
+She turns to you. The lamplight catches the exhaustion in her face, and for a moment you see past the Guildmaster, past the dealmaker, past the charming mask -- and you see the merchant's daughter from the provinces who watched her parents die and decided, at fourteen years old, that she would never be powerless again.
 
-"We have limited relief funds. Enough to help some, but not all. The question is: who do we protect?"
+"We have limited relief funds. Enough to help some, but not all. The question is who we protect."
 
 *page_break
 
@@ -216,111 +235,98 @@ She turns to you.
   #You look at the line of petitioners and feel the full weight of governance -- the terrible arithmetic of choosing who suffers.
     *set idealist %- 5
     *set ruthless %+ 5
-    *temp moral_feeling "weight"
-    Each face in that line is a calculation. The old merchant who cannot afford grain. The young mother with three children and no husband, lost to the Khanate invasion. The craftsman whose workshop was destroyed by the bread riots that were only barely prevented. You cannot save them all. The empire does not have the resources. And so you must choose, and the choice is a knife.
+    *set moral_feeling "weight"
+    Each face in that line is a calculation. The old merchant who cannot afford grain at triple prices. The young mother with three children and no husband -- he was a soldier at Fort Darband, and he is not coming home. The craftsman whose workshop was destroyed when the bread riots almost happened, when the mob broke into the buildings adjacent to the grain warehouses. You cannot save them all. The empire does not have the resources. And so you must choose, and the choice is a knife, and the hand that holds it is yours.
   #A cold clarity settles over you. Sentiment will not fill empty stomachs. Only policy will.
     *set ruthless %+ 10
-    *temp moral_feeling "clarity"
-    You push the faces from your mind and think in systems. Supply chains. Distribution networks. Caloric requirements per capita. The empire is a machine, and machines can be optimized. The human cost is real, but the human cost of collapse is worse. Better to make hard choices now than to let sentiment drive the empire into ruin.
+    *set moral_feeling "clarity"
+    You push the faces from your mind and think in systems. Supply chains. Distribution networks. Caloric requirements per capita per day. The empire is a machine. Machines can be optimized. The human cost is real -- of course it is real, you are not a monster -- but the human cost of total collapse is worse. Better to make hard choices now, choices that cause suffering in the short term, than to let sentiment drive the empire into a ruin that makes today's suffering look like a garden party.
   #Anger burns through you. The conspiracy has done this -- turned the empire's own wealth against its people.
     *set idealist %+ 10
     *set boldness %+ 5
-    *temp moral_feeling "anger"
-    These people are in line because someone decided they were acceptable losses. The conspirators who emptied the treasury and weaponized the grain market did not care about the grandmother who cannot afford bread, the child who goes to bed hungry, the craftsman who watches his life's work crumble. They cared about power. And the people in that line are the ones who pay for other people's ambitions.
-
-*page_break
-
-Priya presents the options with the same clinical precision she brings to all financial matters, but her voice has an edge that was not there before.
-
-"Option one: Direct the relief funds to the poorest districts. The Old City, the River District, the refugee camps. Maximum humanitarian impact, but the merchant class gets nothing, and they are the ones who keep the economy functioning. If they fail, the crisis deepens."
-
-"Option two: Support the merchant class. Emergency loans to businesses, tax relief for traders, subsidies for workshops. The economy stabilizes faster, but the poor are left to fend for themselves. Some will die. That is not a guess. That is arithmetic."
-
-She pauses. "Option three: Split the funds equally. Everyone gets something. No one gets enough. It is the fairest approach and also the least effective."
+    *set moral_feeling "anger"
+    These people are in line because someone decided they were acceptable losses. The conspirators who emptied the treasury and weaponized the grain market did not spare a thought for the grandmother who cannot afford bread, the child who goes to bed with an empty stomach, the craftsman who watches his life's work crumble because the economy that sustained it has been deliberately destroyed. They cared about power. And the people in that line -- those hundreds of silent, patient, suffering people -- are the ones who pay for other people's ambitions. Always. Always, it is the ones without power who pay.
 
 *page_break
 
 *choice
-  #Direct relief to the poorest. The merchants have resources to survive. The poor do not.
+  #Direct relief to the poorest. The merchants have resources to survive. The poor have nothing.
     *set moral_burden "poor_relief"
     *set idealist %+ 10
     *set rep_trade %- 8
     *set rep_nobility %- 5
     *set rel_guild %- 5
     *goto poor_relief
-  #Support the merchants. A functioning economy saves more people in the long run than relief payments.
+  #Support the merchants. A functioning economy saves more people in the long run than handouts.
     *set moral_burden "merchant_support"
     *set ruthless %+ 10
     *set rep_trade %+ 10
     *set rep_nobility %+ 5
     *set rel_guild %+ 8
     *goto merchant_support
-  #Split the funds. Fairness matters, even if it means no one is fully protected.
+  #Split the funds equally. Fairness matters, even when resources are scarce.
     *set moral_burden "split_funds"
     *set honest %+ 10
     *set idealist %+ 5
     *goto split_funds
 
 *label poor_relief
-The relief wagons roll into the Old City at dawn, loaded with grain, medicine, and blankets.
+The relief wagons roll into the Old City at dawn, loaded with grain, medicine, and blankets. You go with them.
 
 *page_break
 
-You go with them. Not because it is strategic or politically useful, but because a leader who sends food to the starving should have the courage to watch them eat.
+Not because it is strategic or politically useful. Not because it will improve your reputation or strengthen your alliances. You go because a leader who sends food to the starving should have the courage to watch them eat.
 
-The Old City is a different world from the Citadel. The streets are narrow, the buildings lean against each other like exhausted old men, and the smell is a mixture of cooking smoke, sewage, and the particular acrid scent of too many people in too little space. The refugees from the northern provinces have doubled the population of these districts. Families crowd into rooms built for two. Children play in gutters.
+The Old City is a different world from the Citadel. The streets are narrow, the buildings lean against each other like drunken friends, and the smell is a dense, layered thing -- cooking smoke and sewage and the sweat of too many bodies in too small a space and the particular sour sweetness of poverty, which is not one smell but the absence of the luxury of cleanliness. The refugees from the northern provinces have doubled the population of these districts. Families crowd into rooms built for two. Children play in gutters that flow with grey water. A man sits on a doorstep with a bandaged arm and the thousand-yard stare of someone who has seen things that will not leave.
 
-The food distribution is orderly -- Captain Darius has organized it with the practical efficiency of a man who understands that hungry crowds are dangerous crowds. Lines form. People wait. The grain is measured, the bread distributed, the medicine dispensed.
+The food distribution is orderly, because Captain Darius has organized it with the practical efficiency of a man who understands that hungry crowds become dangerous crowds unless the line is clear and the portions are fair. Lines form. People wait. The grain is measured. The bread is distributed. The medicine is dispensed by temple healers who work without rest and without complaint.
 
-A woman with a baby on her hip takes a loaf of bread and looks at you. She does not know you are the Vizier. She does not care. She tears the bread in half, gives the larger piece to the child beside her, and eats the smaller piece herself.
+A woman with a baby on her hip takes a loaf of bread and looks at you. She does not know you are the Vizier. She does not care. She tears the bread in half, gives the larger piece to the child beside her -- a boy of perhaps five, with dark eyes and dirty hands -- and eats the smaller piece herself. The child stuffs the bread into his mouth with both fists.
 
-*if (romance_active)
-  *if (romance_asha)
-    Asha has come with you. She moves through the refugee camp with the natural grace of a temple scholar, speaking quietly with families, laying her hand on the foreheads of sick children. She does not preach. She simply helps.
+*if (romance_asha)
+  Asha has come with you. She moves through the camp with the natural grace of a temple scholar, speaking quietly with families, laying her hand on the foreheads of sick children with a gentleness that transcends theology.
 
-    "The Fourth Wisdom," she says to you afterward, her voice rough. "Temperance. The mastery of desire. These people have mastered it. Not by choice, but by necessity. The Wisdom says nothing about that kind of mastery."
+  "The Fourth Wisdom," she says to you afterward, her voice rough. "Temperance. The mastery of desire. The temple teaches it as a virtue. These people practice it as a necessity. There is a difference the Masters never discuss."
 
-In the Grand Bazaar, the merchants watch the relief wagons go to the Old City and not to them. The guild houses are quiet. The silence is worse than protest.
+In the Grand Bazaar, the merchants watch the relief wagons go to the Old City and not to their warehouses. The guild houses are quiet with the particular silence of people who have been told that their needs are secondary. The merchants are not wrong to feel slighted. But the children in the Old City are not wrong to be hungry.
 
 *set rep_intelligence %+ 5
 
 *goto empire_check
 
 *label merchant_support
-The emergency loans go out through Priya's network within hours.
+The emergency loans go out through Priya's network within hours, carried by couriers who know every guild house and trading firm in the city.
 
 *page_break
 
-The merchant class responds with the speed and efficiency that has always been its greatest strength. Workshops reopen. Supply chains are patched together with improvised arrangements and emergency credit. The Grand Bazaar, which had begun to feel like a mausoleum, comes back to life -- not the roaring vitality of peacetime, but the grim hum of an economy forcing itself to function.
+The merchant class responds with the speed and efficiency that has always been its greatest strength -- the ability to adapt, to pivot, to find opportunity in crisis and profit in chaos. Workshops reopen. Supply chains are patched with improvised arrangements and emergency credit. The Grand Bazaar, which had begun to feel like a mausoleum -- stalls shuttered, corridors empty, the silence where haggling should be -- comes back to life. Not the roaring vitality of peacetime, but the grim, determined hum of an economy forcing itself to function because the alternative is worse.
 
-Priya oversees the distribution personally, visiting each guild house, each trading firm, each workshop. She is in her element -- the charming dealmaker, the reassuring presence, the woman who turned a merchant's daughter's education into an empire of commerce.
+Priya oversees the distribution personally, visiting each guild house, each trading firm, each workshop. She is in her element -- the charming dealmaker, the reassuring presence, the woman who understands money not as an abstraction but as the thing that keeps people alive.
 
-"This is what I do," she says, when you find her at midnight in the guild hall, still working. "I keep money moving. When money moves, people eat. When money stops, people die. It is very simple and it is very complicated."
+"This is what I do," she says, when you find her at midnight in the guild hall, still working, her desk covered in contracts and her wine untouched. "I keep money moving. When money moves, people eat. When money stops, people die. It is very simple, Vizier. And it is very, very complicated."
 
-In the Old City, the poor wait. The relief wagons do not come. Captain Darius reports two deaths from malnutrition in the refugee camps. They are not the last.
+In the Old City, the poor wait. The relief wagons do not come. Captain Darius reports three deaths from malnutrition in the refugee camps -- an old woman, a sick child, a man who had been wounded in the border fighting and whose body simply could not sustain itself without food. They are not the last.
 
 *if (route = 3)
-  The knowledge sits in your chest like a stone. The reforms you fought for -- the protections for the common people, the equitable distribution of resources -- have been set aside in the name of economic triage. The pragmatist says you had no choice. The reformer says otherwise.
+  The knowledge sits in your chest like a stone. The reforms you fought for -- the protections for the common people, the safety nets, the redistribution of resources -- have been set aside in the name of economic triage. The pragmatist in you says you had no choice. The reformer in you says otherwise. The argument between them will not be settled today.
   *set idealist %- 10
 
 *goto empire_check
 
 *label split_funds
-The split distribution is fair. It is also inadequate.
+The split is mathematical -- precise, equitable, and insufficient.
 
 *page_break
 
-The merchants receive enough to prevent the worst business failures but not enough to restore confidence. The poor receive enough to prevent the worst starvation but not enough to prevent suffering. No one is satisfied. No one is saved.
+The merchants receive enough to prevent the worst business failures but not enough to restore confidence. The poor receive enough to prevent the worst starvation but not enough to prevent suffering. The funds are distributed through two parallel systems: Priya's network for the merchants, Captain Darius's organization for the poor. Both systems work. Neither works well enough.
 
-Priya watches the distribution unfold with the expression of a woman who predicted exactly this outcome.
+Priya watches the distribution unfold with the expression of a woman who predicted exactly this outcome and wishes she had been wrong.
 
-"Fairness," she says. "A beautiful principle. I admire it the way I admire a sunset -- lovely to contemplate, difficult to eat."
+"Fairness," she says. "A beautiful principle. I admire it the way I admire a sunset -- lovely to contemplate, difficult to eat. You cannot feed a family on fairness, Vizier. You cannot heat a workshop with equity."
 
 "You disagree with the decision."
 
-"I think you made the decision that lets you sleep at night. That matters. It matters less than you think, but it matters." She pauses. "The economy will stabilize eventually. It will just take longer, and more people will suffer in the meantime. Fairness has a cost, Vizier. Today, the cost is time, and time is measured in empty stomachs."
-
-She returns to her ledgers. The numbers are not kind.
+"I think you made the decision that lets you sleep at night. That matters." A pause. She reaches for her wine, then puts it down again. "It matters less than you think, but it matters. The economy will stabilize eventually. It will just take longer, and more people will suffer in the meantime, and the suffering will be distributed with perfect fairness, which is a comfort to no one who is actually suffering."
 
 *goto empire_check
 
@@ -333,17 +339,17 @@ She returns to her ledgers. The numbers are not kind.
 *comment Determine if empire_intact is threatened
 *if ((economic_strategy = "taxation") and (moral_burden = "poor_relief"))
   *comment Best case: revenue raised AND poor protected
-  The economic crisis does not end. It subsides. Like a fever that breaks but leaves the patient weakened, the empire's finances stabilize at a level that is functional but fragile. The treasury is no longer hemorrhaging. The bread prices have fallen. The riots did not come.
+  The economic crisis does not end. It subsides. Like a fever that breaks but leaves the patient weakened, the empire's finances stabilize at a level that is functional but fragile. The treasury can meet its obligations. The bread prices are falling. The riots did not come.
 
-  But the empire is poorer than it was, and everyone knows it. The golden age of effortless wealth is over. What comes next will be built on harder ground.
+  But the empire is poorer than it was, and everyone knows it. The golden age of effortless wealth -- the centuries of trade monopoly and overflowing coffers -- is over. What comes next will be built on harder ground.
   *set treasury_status "stable"
 *elseif ((economic_strategy = "loans") and (moral_burden = "merchant_support"))
   *comment Mixed: treasury funded but at foreign cost AND poor neglected
-  The economy stabilizes, but the cost lurks in the fine print of the Eastern Trading Houses' loan agreement. The empire is functional. The empire is also in debt for the first time in three centuries, and the poor of Khazara have learned that the throne's protection has limits.
+  The economy stabilizes, but the cost lurks in the fine print of the Eastern Trading Houses' loan agreement, in the auditor's office being established in the Grand Bazaar, in the subtle shift of economic gravity from Khazara to the Jade Sea. The empire is functional. The empire is also, for the first time in its history, in someone else's debt.
   *set treasury_status "indebted"
 *elseif ((economic_strategy = "intervention") and (moral_burden = "split_funds"))
   *comment Moderate: speculators broken but insufficient relief
-  The grain speculators are destroyed, the bread prices have fallen, but the underlying economic damage remains. The empire functions, but barely. Every week brings another shortfall, another emergency measure, another patch on a hull that is taking on water.
+  The grain speculators are destroyed, the bread prices have fallen, but the underlying economic damage remains like a wound that has been bandaged but not sutured. The empire functions. Barely. Every week brings another shortfall, another emergency measure, another patch on a hull that is taking on water.
   *set treasury_status "fragile"
 *else
   *comment Other combinations
@@ -351,28 +357,28 @@ She returns to her ledgers. The numbers are not kind.
     The treasury holds. Barely, painfully, with every expenditure scrutinized and every surplus committed, the empire's financial machinery continues to turn.
     *set treasury_status "strained"
   *else
-    The economic crisis deepens. Despite your efforts, the combination of theft, speculation, and war disruption has pushed the empire's finances past the point of easy recovery. The treasury can fund basic operations, but nothing more. Any additional shock could break it.
+    The economic crisis deepens. Despite your efforts, the combination of theft, speculation, and war disruption has pushed the empire's finances past the point of easy recovery.
     *set treasury_status "critical"
 
 *page_break
 
 *if (treasury_status = "critical")
-  A dispatch from Captain Darius: riots in the River District. A grain warehouse was broken into by a mob. Three people killed in the crush. The city guard restored order, but the district remains volatile.
+  A dispatch from Captain Darius: riots in the River District. A grain warehouse was broken into by a mob -- five hundred people, desperate, organized with a discipline that suggests someone is channeling their rage. Three people killed in the crush. The city guard restored order with shields and the flat of their blades, but the district remains volatile.
 
-  The merchants of the Grand Bazaar have begun accepting foreign currency -- Confederation silver marks and Eastern jade tokens. The gold ashraf, the empire's currency for three centuries, is losing its hold. This is not a financial detail. It is a symbol. When people stop trusting the empire's money, they have stopped trusting the empire.
+  In the Grand Bazaar, merchants have begun accepting foreign currency -- Confederation silver marks and Eastern jade tokens alongside the gold ashraf. The empire's currency, the ashraf that has been the standard of commerce for three centuries, is losing its hold. This is not a financial detail. It is a symbol. When people stop trusting the empire's money, they have stopped trusting the empire.
 
   *set empire_intact false
   *set rep_trade %- 10
 
-  Priya sits in the treasury office, surrounded by her ledgers, and for the first time in the months you have known her, she cries. The tears are brief and silent and she wipes them away with the back of her ink-stained hand, but you see them.
+  Priya sits in the treasury office, surrounded by her ledgers and her calculations, and for the first time in the months you have known her, she cries. The tears are brief and silent -- she wipes them away with the back of her ink-stained hand before they can fall on the paper -- but you see them.
 
-  "I have failed," she says. "I have never failed before."
+  "I have failed," she says.
 
-  "You have not failed. The conspiracy --"
+  "The conspiracy --"
 
-  "The conspiracy is an excuse. The treasury was my responsibility. I should have seen the forgeries. I should have built in safeguards. I was so busy being clever that I forgot to be careful." She straightens. The tears are gone. The mask is back. But you have seen what is underneath, and you will not forget.
+  "The conspiracy is an explanation. It is not an excuse. The treasury was my responsibility. I should have seen the forgeries. I should have built in safeguards. I was so busy being clever -- so busy making deals and counting profits and admiring my own reflection in the numbers -- that I forgot to be careful." She straightens. The tears are gone. The mask is back, harder now. "It will not happen again."
 *else
-  The economy stabilizes. Not recovers -- stabilization is not recovery, and the difference matters. But the bleeding has stopped. The soldiers will be paid. The bread prices will hold. The currency will endure.
+  The economy stabilizes. Not recovers. Stabilization is not recovery, and the difference matters. But the bleeding has stopped. The soldiers will be paid. The bread prices will hold.
 
   Priya closes the last ledger with a finality that speaks of battles won at terrible cost.
 
@@ -380,39 +386,26 @@ She returns to her ledgers. The numbers are not kind.
 
   *if (rel_guild > 60)
     *set final_alliance_trade true
-    She meets your eyes. "You trusted me with this. I will not forget that."
+    She meets your eyes. "You trusted me with this. I will remember."
 
 *page_break
 
 *comment === CLOSING ===
 
-You climb the stairs from the treasury vaults back into the Citadel's upper corridors. The transition from the cold stone below to the warm marble above feels like surfacing from deep water.
+You climb the stairs from the treasury vaults back into the Citadel's upper corridors. The transition from the cold stone below to the warm marble above feels like surfacing from deep water -- the sudden return of light and warmth and the sounds of the living world.
 
-The Grand Bazaar is visible from the corridor window -- its vaulted roofs stretching across the city's commercial heart. Even now, even in crisis, the bazaar is alive. Merchants haggle. Goods change hands. The machinery of commerce turns, because commerce is what keeps two million people fed and housed and connected to each other.
-
-Priya understood that. She has always understood it. The treasury war was not about numbers in a ledger. It was about the web of transactions -- the buying and selling and lending and borrowing -- that holds a civilization together. When the web tears, the civilization falls. Not with a dramatic crash, but with the quiet, grinding misery of people who can no longer afford bread.
-
-*if (economic_strategy = "taxation")
-  The crisis levy has filled the coffers but emptied goodwill. The empire has money. It has fewer friends.
-*elseif (economic_strategy = "loans")
-  The foreign loans have bought stability but sold independence. The empire stands. It stands on borrowed ground.
-*else
-  The market intervention has broken the conspiracy's economic weapon but frightened the merchant class. The empire is safer. Its markets are more anxious.
-
-*page_break
+The Grand Bazaar is visible from the corridor window -- its vaulted roofs stretching across the city's commercial heart like the ribs of some vast creature. Even now, even in crisis, the bazaar is alive. Merchants haggle. Goods change hands. The machinery of commerce turns, because commerce is what keeps two million people fed and housed and connected to each other, and that machinery does not stop unless it is forced to.
 
 Farid meets you in the corridor with a fresh stack of dispatches and a cup of cardamom tea that is no longer hot but was clearly prepared with hopeful optimism some time ago.
 
 "The temple, my ${title_honorific} Vizier," he says. "High Priest Ashoka has sent three messages in the last hour. The Council of Discernment is convening. The conservative elders are -- the word he uses is 'ascendant.' And the Eternal Flame --"
 
-He hesitates.
+He hesitates. His fingers tighten on the dispatches.
 
 "What about the Flame?"
 
-"He says it is -- that it has begun to --" Farid swallows. "He says it is guttering, my ${title_honorific} Vizier. The Flame that has burned for three hundred years without wavering. He says it is guttering."
+"He says it is -- that it has begun to --" Farid swallows. "He says it is guttering, my ${title_honorific} Vizier. The Flame that has burned for three hundred years without wavering, without dimming, without so much as trembling in a hurricane. He says it is guttering."
 
-The tea grows cold in your hands.
-
-The treasury war is over. The temple war is about to begin.
+The tea grows cold in your hands. The marble corridor stretches before you, long and silent, leading toward the Citadel's eastern gate and the path to the Temple Quarter. The treasury war is over. The temple war is about to begin.
 
 *finish The Temple Divided
