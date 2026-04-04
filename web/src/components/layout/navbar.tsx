@@ -13,7 +13,7 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-md">
+    <nav className="sticky top-0 z-50 border-b border-border/50 bg-background/95 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
@@ -64,14 +64,13 @@ export function Navbar() {
               Sign Out
             </Button>
           ) : (
-            <Link href="/play">
-              <Button
-                size="sm"
-                className="bg-gold text-background hover:bg-gold/90 font-semibold"
-              >
-                Play Now
-              </Button>
-            </Link>
+            <Button
+              render={<Link href="/play" />}
+              size="sm"
+              className="bg-gold text-background hover:bg-gold/90 font-semibold"
+            >
+              Play Now
+            </Button>
           )}
         </div>
 
@@ -109,11 +108,12 @@ export function Navbar() {
                     Sign Out
                   </Button>
                 ) : (
-                  <Link href="/play" onClick={() => setMobileOpen(false)}>
-                    <Button className="w-full bg-gold text-background hover:bg-gold/90 font-semibold">
-                      Play Now
-                    </Button>
-                  </Link>
+                  <Button
+                    render={<Link href="/play" onClick={() => setMobileOpen(false)} />}
+                    className="w-full bg-gold text-background hover:bg-gold/90 font-semibold"
+                  >
+                    Play Now
+                  </Button>
                 )}
               </div>
             </SheetContent>

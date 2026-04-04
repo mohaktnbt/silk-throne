@@ -97,8 +97,8 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
           if (
             typeof data === "object" &&
             data !== null &&
-            "paywall" in data &&
-            (data as Record<string, unknown>).paywall
+            "error" in data &&
+            (data as Record<string, unknown>).error === "paywall"
           ) {
             setPaywallActive(true);
             return null;
@@ -109,16 +109,11 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
           throw new Error(`Failed to load scene: ${sceneName} (${response.status})`);
         }
 
-        const data: unknown = await response.json();
-        if (
-          typeof data === "object" &&
-          data !== null &&
-          "text" in data &&
-          typeof (data as Record<string, unknown>).text === "string"
-        ) {
-          return (data as Record<string, string>).text;
+        const text = await response.text();
+        if (typeof text === "string" && text.length > 0) {
+          return text;
         }
-        throw new Error(`Invalid scene response for: ${sceneName}`);
+        throw new Error(`Empty scene response for: ${sceneName}`);
       } catch (err) {
         const message = err instanceof Error ? err.message : "Unknown error";
         setError(message);

@@ -3,7 +3,7 @@ import type { Game } from "@/types/database";
 import { PlayClient } from "./play-client";
 
 export const metadata: Metadata = {
-  title: "Play - The Silk Throne",
+  title: "Play",
   description:
     "Play The Silk Throne, a 300,000-word interactive fiction epic. Shape the fate of the Khazaran Empire.",
 };

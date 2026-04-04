@@ -8,11 +8,12 @@ export default function NotFound() {
       <p className="mt-4 text-xl text-muted-foreground">
         This path leads nowhere. Even the Spymaster couldn&apos;t find it.
       </p>
-      <Link href="/" className="mt-8">
-        <Button className="bg-gold text-background hover:bg-gold/90">
-          Return to the Empire
-        </Button>
-      </Link>
+      <Button
+        render={<Link href="/" />}
+        className="mt-8 bg-gold text-background hover:bg-gold/90"
+      >
+        Return to the Empire
+      </Button>
     </div>
   );
 }
