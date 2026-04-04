@@ -16,13 +16,13 @@
 
 Five years later, the anniversary.
 
-The Jade Throne Room is full. Not the tense, watchful fullness of the court you remember from your first year -- this is something warmer, louder, more alive. Courtiers mingle with merchants. Generals share cups of spiced wine with temple scholars. Secretary Farid -- now Secretary-General Farid, head of the imperial civil service -- stands near the door with a stack of documents that he has been told, firmly, to put down for one evening.
+The Jade Throne Room is full. Not the tense, watchful fullness of the court you remember from your first year -- this is something warmer, louder, more alive. Courtiers mingle with merchants. Generals share cups of spiced wine with temple scholars. Children chase each other between the columns while their parents pretend not to notice. Secretary Farid -- now Secretary-General Farid, head of the imperial civil service -- stands near the door with a stack of documents that he has been told, firmly, to put down for one evening.
 
 He has not put them down. Some things never change.
 
 *page_break
 
-Emperor Roshan IV sits on the Jade Throne, and the throne fits him now. He is twenty-one, broad-shouldered, steady-eyed, with the quiet confidence of a man who has earned every ounce of respect he commands. The boy who trembled through his first audience is gone. In his place sits a ruler who quotes poetry with the ease of a scholar and reads military dispatches with the speed of a general.
+Emperor Roshan IV sits on the Jade Throne, and the throne fits him now. He is twenty-one, broad-shouldered, steady-eyed, with the quiet confidence of a man who has earned every ounce of respect he commands. The boy who trembled through his first audience is gone. In his place sits a ruler who quotes poetry with the ease of a scholar and reads military dispatches with the speed of a general. His wife -- a princess from the Southern Kingdoms, sealing a diplomatic marriage that ended three centuries of hostility -- sits beside him on a smaller chair of silver and ivory.
 
 He catches your eye across the crowded room and raises his cup. The gesture is subtle -- no one else notices. But you see the warmth in it, the gratitude, the unspoken acknowledgment that this room, this empire, this peace was built by two people who trusted each other when trust was the most dangerous thing in the world.
 
@@ -30,68 +30,70 @@ You raise your cup in return.
 
 *page_break
 
-The empire prospers. The Northern Khanates, defeated at the Battle of the Restored Wall, have signed a treaty that holds. Trade with the Western Confederation has doubled since the new tariff agreements. The printing press has transformed education -- literacy rates have tripled. The Grand Bazaar is expanding. New aqueducts carry water to the outer provinces.
+The empire prospers. The Northern Khanates, defeated at the Battle of the Restored Wall, have signed a treaty that holds. Trade with the Western Confederation has doubled since the new tariff agreements. The printing press has transformed education -- literacy rates have tripled in the provinces. The Grand Bazaar is expanding into new wings. Aqueducts carry fresh water to villages that once relied on rain. The road system, rebuilt with treasury funds that Priya somehow conjured from thin air, connects even the most distant provinces to the capital.
 
-General Kadir retired last year with full honors, his iron hand replaced by a prosthetic carved from rosewood. He spends his days in a garden outside the capital, growing pomegranates and writing a military memoir that, according to those who have read drafts, is approximately seventy percent battle strategy and thirty percent complaints about civilian interference.
+General Kadir retired last year with full honors, his iron hand replaced by a prosthetic carved from rosewood -- a gift from a Khanate chieftain who fought against him for twenty years and now calls him brother. He spends his days in a garden outside the capital, growing pomegranates and writing a military memoir that is approximately seventy percent battle strategy and thirty percent complaints about civilian interference.
 
 *if (rel_general > 60)
-  He sends you pomegranates every autumn. They arrive with a note that says the same thing each year: "Better than you deserve." Coming from Kadir, this is the highest form of affection.
+  He sends you pomegranates every autumn. They arrive with a note that says the same thing each year: "Better than you deserve. Kadir." Coming from the general, this is the highest form of affection.
 
-*page_break
-
-Guildmaster Priya has expanded the trading network to the Eastern Empires. She is richer than most noble houses and takes a visible, joyful pleasure in reminding them of this fact at every opportunity.
+Guildmaster Priya has expanded the trading network to the Eastern Empires across the Jade Sea. She is richer than most noble houses and takes a visible, joyful pleasure in reminding them of this fact at every opportunity. Last month she endowed a university -- the first institution in the empire where a merchant's child can study beside a noble's child without distinction.
 
 *if (rel_guild > 60)
-  "You know what the difference is between old money and new money?" she told you once, over cardamom tea. "New money remembers what it was like to have none." She has funded three schools for merchant children in the provinces.
-
-High Priest Ashoka tends the Eternal Flame, which burns brighter than anyone can remember. The temple's influence has shifted from political leverage to moral guidance, a change the old priest accepts with the serene patience of a man who always knew this was how it should be.
-
-*if (rel_priest > 60)
-  He still calls you "child." You have stopped minding.
-
-Spymaster Zara remains Spymaster Zara. If she has changed at all, no one can tell. But there are rumors -- unconfirmed, naturally -- that she has taken in a protege. A young woman from the Old City with quick hands and quicker eyes.
-
-*if (rel_spy > 60)
-  Lila. The girl who called you "Boss" in the alleys of the Old City is now Zara's shadow. The streets are safer for it. And Zara, for the first time in her life, has someone she trusts completely.
+  "You know what the difference is between old money and new money?" she told you once, over cardamom tea and figs. "New money remembers what it was like to have none. That memory is worth more than every noble pedigree in the empire."
 
 *page_break
 
-The Dowager Empress Nur lives in a villa outside the city, comfortable and watched and, by all accounts, content. She tends her garden and receives visitors and writes letters to her son in a hand that grows more elegant with age. She has never apologized for what she did. You do not expect her to.
+High Priest Ashoka tends the Eternal Flame, which burns brighter than anyone can remember. The temple's influence has shifted from political leverage to moral guidance -- a change the old priest accepts with the serene patience of a man who always knew this was how it should be. He has begun training a successor, a young scholar whose questions remind him of someone he once knew.
+
+*if (rel_priest > 60)
+  He still calls you "child." You have stopped minding. When a sixty-seven-year-old priest who has heard the confessions of empires calls you child, it is not condescension. It is love.
+
+Spymaster Zara remains Spymaster Zara. If she has changed at all, no one can tell. But there are rumors -- unconfirmed, naturally -- that she has taken a protege. A young woman from the Old City with quick hands, quicker eyes, and a vocabulary that would make a dock worker blush.
+
+*if (rel_spy > 60)
+  Lila. The girl who called you "Boss" in the alleys of the Old City is now Zara's shadow. The streets are safer for it. And Zara, for the first time in her life, has someone to trust completely. She will never admit this. But you know.
+
+*page_break
+
+The Dowager Empress Nur lives in a villa outside the city, comfortable and watched and, by all accounts, content. She tends her garden -- a magnificent garden, because the Dowager does nothing by halves -- and receives visitors and writes letters to her son in a hand that grows more elegant with age. She has never apologized for the conspiracy. She has never explained her reasons beyond the single sentence she offered at her trial: "I did what I believed was necessary."
 
 *if (rel_dowager > 40)
-  But she sends you a letter once a year, on the anniversary of your appointment. It contains no words -- only a single pressed flower from her garden. You keep them in a book on your desk.
+  But she sends you a letter once a year, on the anniversary of your appointment. It contains no words -- only a single pressed flower from her garden. Jasmine, usually. Sometimes rose. You keep them in a book on your desk. Farid has cataloged them.
 
 *if (romance_active)
   *page_break
   *if (romance_leila)
     Leila sits beside you in the Throne Room, wearing silk the color of midnight and a smile that could cut glass. She published her collected poems last year to acclaim that bordered on worship. The critics call her the finest poet of her generation. She tells them her finest poem is the one she has not written yet.
 
+    She is lying. Her finest poem is the one she whispered to you last night, in the darkness of your chambers, about a bird that learned to fly because someone gave it a reason to land. She will never write it down. Some poems are too important for paper.
+
     *if (love_fulfilled)
-      You know which poem she means. It is the one she whispers to you at night, in the language that has no words, about a bird that learned to fly because someone gave it a reason to land.
+      Her hand finds yours under the table. Her fingers are ink-stained, as always. You squeeze, and she squeezes back, and in that small pressure is everything -- the year of chaos, the night of the siege, the morning in the Throne Room when the world changed, and every morning since.
   *elseif (romance_navid)
-    Navid stands near the door, as he always does, watching the room with the careful attention of a man who has made protection his life's purpose. He is Captain-Commander of the Imperial Guard now, and his soldiers would follow him into the fire. He would never ask them to.
+    Navid stands near the door, as he always does, watching the room with the careful attention of a man who has made protection his life's purpose. He is Captain-Commander of the Imperial Guard now. His soldiers would follow him into a fire. He would never ask them to. The scar on his cheekbone has faded to a thin silver line.
+
+    Later tonight, when the court has emptied and the lamps burn low, he will find you in the Garden of Eternal Spring. He will take your hand. His rough fingers will close around yours with the gentleness that still surprises you, years later. And the silence between you will say everything.
 
     *if (love_fulfilled)
-      Later tonight, when the court has emptied and the lamps burn low, he will find you in the Garden of Eternal Spring. He will take your hand. And the silence between you will say everything that needs to be said.
+      On the mantelpiece in your shared chambers sits a wooden carving of a bird. He made it the night before the siege. "In case," he said. He did not finish the sentence. He did not need to. The bird watches over your room with its tiny wooden eyes, and every time you see it, you are grateful that the "in case" never came.
   *else
-    Asha sits in the temple gallery, observing the celebration with the fond, analytical eye of a scholar cataloging a new species of joy. She completed her treatise last year -- "The Eighth Wisdom: A New Inquiry" -- and the theological debates it sparked will continue for decades.
+    Asha sits in the temple gallery, observing the celebration with the fond, analytical eye of a scholar cataloging a new species of joy. She completed her treatise last year -- "The Eighth Wisdom: A New Inquiry" -- and the theological debates it sparked will continue for decades. The temple elders call it heretical. The students call it liberating. Ashoka calls it "interesting," which from him is the highest possible praise.
 
     *if (love_fulfilled)
-      She will find you later, when the noise fades, and ask you a question. She always asks questions. But the question she asks tonight -- whispered in the garden, under the stars -- is one she already knows the answer to.
+      She finds you later, in the garden, when the noise of the celebration fades to a murmur behind the jasmine-scented hedges. "I have a question," she says. She always has a question. But the question she asks tonight, under the stars, with the fountain singing its eternal song beside you, is one she already knows the answer to. You answer it anyway.
 
 *page_break
 
-The Golden Age.
+The Golden Age. That is what the historians will call this era, centuries hence. They will write about Emperor Roshan IV and Grand Vizier ${player_name} -- the young ruler and the provincial nobody who stood together against conspiracy and chaos and built an empire that endured for generations.
 
-That is what the historians will call this era, centuries hence. They will write about Emperor Roshan IV and Grand Vizier ${player_name} -- the young ruler and the provincial nobody who stood together against conspiracy and chaos and built an empire that endured.
-
-They will not write about the fear. They will not write about the nights you lay awake wondering if you had made the right choice, the mornings you looked in the mirror and saw a stranger, the moments when the weight of the seal ring felt like an anchor dragging you beneath the surface of a black sea.
+They will not write about the fear. They will not write about the nights you lay awake wondering if you had made the right choice, the mornings you looked in the mirror and saw a stranger wearing the Vizier's seal ring, the moments when the weight of responsibility felt like an anchor dragging you beneath the surface of a dark sea. They will not write about the quiet courage of showing up, day after day, to do the unglamorous work of governance.
 
 They will write about the golden age, and they will be right. It is golden. You built it. You earned it.
 
-But you know what the historians will never know: that the gold is not in the treasury or the trade routes or the military victories. The gold is in this moment -- this crowded room, this raised cup, this look across a throne room between two people who chose to trust each other.
+But you know what the historians will never know: that the gold is not in the treasury or the trade routes or the military victories. The gold is in this moment -- this crowded room, this raised cup, this look across a throne room between two people who chose to trust each other when the world gave them every reason not to.
 
-The Eternal Flame burns. The empire prospers. And you are home.
+The Eternal Flame burns. The empire prospers. The Jade Throne holds a ruler who earned his crown. And beside the throne, where you have always stood, you are home.
 
 *ending
 
@@ -108,44 +110,60 @@ You sit in the Council Chamber, reading the quarterly assessment by lamplight. T
 
 The numbers are good. The numbers are always good.
 
-*page_break
-
-Emperor Roshan IV rules with competence and discipline. He is twenty-one now, and the court respects him -- not with the awed devotion that legends inspire, but with the steady, professional regard that a functional bureaucracy extends to its head. He makes sound decisions. He listens to his council. He does not inspire great love, but he does not provoke great hatred either.
-
-You helped build this. The relationship between Vizier and Emperor is correct, professional, and meticulously maintained. You serve. He rules. The machine functions.
-
-But there is a gap between you -- a gap measured not in rank or protocol but in all the things that were never said, never trusted, never risked. The boy who asked you "What should I do?" with frightened eyes has become a man who no longer asks. You are not sure if this is success or failure.
+You pour yourself a cup of cardamom tea. It is cold. You did not notice it cooling.
 
 *page_break
 
-General Kadir guards the border with mechanical precision. Guildmaster Priya grows the economy with her usual brilliance. High Priest Ashoka tends the Flame. Spymaster Zara watches everything.
+Emperor Roshan IV rules with competence and discipline. He is twenty-one now, married to a noblewoman selected by the Council for political advantage, and governing with the quiet efficiency of a man who has learned that ruling is not about inspiration but about execution. He makes sound decisions. He listens to his advisors. He does not inspire great love, but he does not provoke great hatred either.
+
+You helped build this. The relationship between Vizier and Emperor is correct, professional, and meticulously maintained. He calls you "Vizier" in council and "Vizier" in private. You serve. He rules. The machine functions.
+
+But there is a gap between you -- measured not in rank or protocol but in all the things that were never said, never trusted, never risked. The boy who asked you "What should I do?" with frightened eyes has become a man who no longer asks. Whether this is success or failure, you have not decided. You suspect you never will.
+
+*page_break
+
+The empire functions. General Kadir guards the border with mechanical precision, his reports arriving with the regularity of clockwork. Guildmaster Priya grows the economy with her usual brilliance, though she attends fewer state dinners now and more private ones. The warmth she once extended to you has cooled to professional cordiality. She senses the chill at the center of the empire and has drawn her own warmth inward.
+
+High Priest Ashoka tends the Flame. He has grown thinner, older. His sermons speak more often of mercy now, and less of judgment. When he looks at you across the Council table, you see something in his eyes that might be concern, or pity, or the gentle sorrow of a man who has watched too many people mistake efficiency for purpose.
+
+Spymaster Zara functions as she always has. She is the one member of the Council who seems unchanged by the years, because Zara was always cold, always precise, always operating at the exact temperature required. For her, the Iron Throne is simply business as usual.
 
 *if (rel_farid > 60)
-  Farid is the one who keeps you human. His nervous chatter, his coffee-stained documents, his stubborn loyalty -- these are the threads that connect you to the person you were before the seal ring and the council chamber and the endless, grinding machinery of empire.
+  Farid is the one who keeps you human. His nervous chatter, his coffee-stained documents, his stubborn, baffling, dog-like loyalty -- these are the threads that connect you to the person you were before the seal ring and the council chamber and the endless, grinding machinery of empire.
 
-  "My lord Vizier," he says, setting down a cup of cardamom tea you did not ask for. "You should sleep. The reports will still be terrible in the morning."
+  "My lord Vizier," he says, setting down a cup of fresh cardamom tea you did not ask for. "You should sleep. The reports will still be terrible in the morning."
 
   You almost smile.
 
-The Dowager lives in comfortable exile. She writes no letters. She receives no visitors. The empire has moved past her, and she has the dignity not to pretend otherwise.
-
 *page_break
+
+The Dowager lives in comfortable exile. She writes no letters. She receives no visitors except a priest who comes on holy days. The empire has moved past her, and she has the dignity not to pretend otherwise. But sometimes, at night, you think of her words: "The throne is a cage made of gold." She was right about more things than you want to admit.
+
+The city prospers, after a fashion. The Grand Bazaar has expanded. New bridges span the Ashar. The aqueducts carry water to the outer districts. But the celebrations that once filled the streets during the Festival of Lights are quieter now, more orderly, less spontaneous. The city has taken on the character of its government: functional, efficient, and carefully regulated.
+
+Lady Soraya left the capital last year. She writes pamphlets about reform from a printing house in the provinces. The pamphlets are popular. You have not banned them. Banning them would require acknowledging they matter, and the Iron Throne does not acknowledge things that matter. It acknowledges things that function.
+
+Lord Reza died in his sleep at the age of seventy-seven. His eulogy praised two hundred years of noble service. You attended. You stood in the back. You felt nothing in particular, which was itself a kind of feeling.
 
 *if (romance_active)
   *if (romance_leila)
-    Leila published her poems and left the court. She writes to you sometimes. The letters are brilliant, wry, and careful -- the letters of someone who loved a person who could not love back without reservation. You keep them in a locked drawer.
+    Leila published her poems and left the court. She writes to you sometimes. The letters are brilliant, wry, and careful -- the letters of someone who loved a person who could not love back without reservation. She tours the provinces now, performing in market squares for commoners who have never heard court poetry. She says it is the happiest she has been. You keep her letters in a locked drawer and read them on the nights when the Council Chamber feels too empty.
   *elseif (romance_navid)
-    Navid serves as Captain-Commander. He is the best officer the guard has ever had. He is also the person you see most often and know least well now. The distance between you is the distance of things unsaid. He calls you "Vizier" again.
+    Navid serves as Captain-Commander. He is the best officer the guard has ever had. He is also the person you see most often and know least well now. The distance between you is the distance of things unsaid. He calls you "Vizier" again. The brief, luminous period when he used your name -- those months feel like a story about someone else.
   *else
-    Asha returned to the temple. Her treatise was published. You read it in one night and found in its pages the person you once knew -- passionate, questioning, alive. You sent her a note of congratulation. She sent back a single line: "The Fifth Wisdom is Knowledge. The cost of knowledge is sometimes ignorance of the heart."
+    Asha returned to the temple. Her treatise was published to wide acclaim. You read it in one night and found in its pages the person you once knew -- passionate, questioning, alive with the joy of ideas. You sent her a note of congratulation. She sent back a single line: "The Fifth Wisdom is Knowledge. The cost of knowledge is sometimes ignorance of the heart."
+
+    You have read that line a hundred times. You still do not know what to do with it.
 
 *page_break
 
 The Iron Throne. That is what they call it, in whispers, when they think you cannot hear. Not the jade. Not the silk. The iron.
 
-An empire that functions. A ruler who governs. A vizier who serves. No poetry. No golden age. No great love story. Just the machinery of state, turning and turning, day after day, year after year.
+An empire that functions. A ruler who governs. A vizier who serves. No poetry. No golden age. No great love story for the balladeers to sing about in the market squares. Just the machinery of state, turning and turning, day after day, year after year, grinding grain into bread and taxes into roads and silence into policy.
 
-The Eternal Flame burns. The empire endures. And you endure with it, steady and cold and necessary, like the iron bones beneath the jade.
+The Eternal Flame burns in the temple, as it always has, as it always will. And you endure beside it, steady and cold and necessary, like the iron bones beneath the jade.
+
+The empire does not celebrate. The empire does not mourn. The empire simply endures. And so do you.
 
 *ending
 
@@ -158,35 +176,52 @@ The Eternal Flame burns. The empire endures. And you endure with it, steady and 
 
 Three years later, the memorial.
 
-You stand before a stone marker in the Garden of Eternal Spring. The inscription is simple: a name, a date, and the words "He served the throne." It does not say that the throne fell. It does not say that the Vizier's loyalty, however genuine, was not enough.
+You stand before a stone marker in the Garden of Eternal Spring. The inscription is simple: a name, a date, and the words *${they} served the throne.* It does not say that the throne cracked under the weight of crisis. It does not say that the Vizier's loyalty, however genuine, was not enough to prevent the fall.
+
+The garden is quieter than it used to be. Three of the pomegranate trees have died, and no one has replaced them. The fountain still runs, but one of its jets is blocked, and the water pattern that once formed a perfect geometric star now sprays in a lopsided circle. Small things. The sort of things that go unrepaired when an empire is spending all its energy just staying upright.
 
 *page_break
 
 *if (heir_alive)
-  Emperor Roshan IV still sits on the Jade Throne, but the throne sits on broken ground. The conspiracy wounded the empire in ways that have not healed. Provinces murmur about independence. Trade revenue has declined. The northern border requires constant reinforcement.
+  Emperor Roshan IV still sits on the Jade Throne, but the throne sits on broken ground. The conspiracy wounded the empire in ways that have not healed. Three provinces murmur about independence. Trade revenue has declined by a quarter. The northern border requires constant reinforcement because the Khanates sense weakness the way wolves sense blood.
 
-  The Emperor governs with the grim determination of a man holding together a cracked vessel with his bare hands. He does not blame you. That makes it worse.
+  The Emperor governs with the grim determination of a man holding together a cracked vessel with his bare hands. He is harder than he was. The idealism has been ground out of him by the relentless arithmetic of governance: not enough gold, not enough soldiers, not enough time, not enough of anything except problems. He does not blame you. You wish he would. Blame, at least, would be a connection. Instead there is only the polite, exhausted distance of two people who tried and failed and cannot stop trying because the alternative is surrender.
 *else
-  The Jade Throne sits empty. Emperor Roshan IV is dead -- killed in the siege, or the aftermath, or the long slow collapse that followed. A regency council governs in the name of a cousin too distant to inspire loyalty. The empire is an empire in name only.
+  The Jade Throne sits empty. Emperor Roshan IV is dead -- killed in the siege, a blade that found its way past every guard and every precaution and every prayer. The Dowager aged twenty years in a single night. A regency council governs in the name of a distant cousin, a child of nine who does not understand why everyone around him is afraid.
 
-  You were loyal. You were loyal to the last. And it was not enough.
+  You were loyal to the last. You stood between the Emperor and every threat the empire could produce. And it was not enough. The blade found him anyway, because no loyalty, however fierce, can stop a blade that has already been thrown.
 
 *page_break
 
-The court is diminished. General Kadir holds the border through sheer stubbornness. Priya keeps the economy breathing, but the grand plans for expansion are shelved. The temple prays for restoration. Zara watches for threats that multiply faster than she can counter them.
+The court is diminished. General Kadir holds the border through sheer stubbornness, his dispatches growing shorter and grimmer with each passing season. He does not request reinforcements anymore. He knows there are none to send. Priya keeps the economy breathing through a combination of financial wizardry and pure will, but the grand plans for expansion are shelved indefinitely. The treasury is a shadow of what it was.
 
-Farid still brings you tea in the mornings. His eyes are sadder than they used to be, but his filing system remains impeccable. Some things survive.
+The temple prays for restoration. Ashoka's sermons have taken on the quality of elegies -- beautiful, moving, and heavy with the awareness that the age he is eulogizing is not the distant past but the recent one. The Flame still burns. The priest is not sure for how long.
+
+Zara watches. She watches for threats that multiply faster than she can counter them. Her network is stretched thin. Her agents are tired. She is tired, though she would never admit it. Last month she came to your chambers at midnight, unannounced, and sat without speaking for ten minutes. Then she said: "I need more resources." You gave her what you could. It was not enough. It is never enough.
+
+Farid still brings you tea every morning. His eyes are sadder than they used to be, but his filing system remains impeccable. The regulations are up to date. The forms are properly stamped. The empire may be crumbling, but the paperwork is in order. He has adapted his systems to track declining revenues with the same meticulous care he once used to track growing ones. Some things endure.
+
+The Dowager Empress is a ghost in her wing of the Citadel. She rarely appears at court. When she does, the courtiers part before her like water before a stone, and she moves through them with the terrible dignity of a woman who destroyed everything she loved to protect it and now must watch the ruins from a window.
+
+Lady Soraya has taken up the cause of reform with quiet determination, building coalitions among the younger nobles who see that the old ways are dying. It is too early to know if her work will bear fruit. But she works. And hope, in a diminished empire, is its own form of courage.
 
 *if (romance_active)
-  ${partner_name} is still here. Still beside you. That, in the wreckage of everything else, is the one thing that has not broken. Whether it is love or loyalty or simply the stubbornness of two people who refuse to let go -- it holds. It is enough.
+  ${partner_name} is still here. Still beside you. That, in the wreckage of everything else, is the one thing that has not broken. Whether it is love or loyalty or simply the stubbornness of two people who refuse to let go of each other when everything else is letting go -- it holds. It is battered and quiet and scarred, and it is enough.
+
+  *if (love_fulfilled)
+    At night, when the reports are finished and the lamp burns low, ${partner_name} finds you in the garden. You sit together on the bench by the broken fountain, and there are no questions. ${they} just sit. And the warmth of ${their} presence beside you is a small flame in a darkening world.
 
 *page_break
 
-The Fallen Crown. The historians will not be kind. They will write about the conspiracy and the siege and the reforms that came too late. They will write about the Vizier who tried and failed.
+The Fallen Crown. The historians will not be kind. They will write about the conspiracy and the siege and the reforms that came too late or not at all. They will write about the Vizier who tried and failed, and they will be wrong, because trying is not the same as failing, and the difference matters even if the outcome does not show it.
 
-But in the Garden of Eternal Spring, the pomegranate trees still bear fruit. The fountain still flows. And you still come here, every morning, to stand before the stone marker and remember what was lost.
+You tried. You stood between the Emperor and the darkness, and the darkness was stronger, or you were weaker, or the world was simply more broken than one person could mend. The historians will not understand this. They will see the outcome and judge the effort by its result. They have that luxury. You do not.
 
-The empire limps on. And so do you.
+But in the Garden of Eternal Spring, the surviving pomegranate trees still bear fruit. The fountain still flows, even if the pattern is broken. And you still come here, every morning, to stand before the stone marker and remember what was, and grieve for what might have been, and then go back inside and continue the work.
+
+The empire limps on. The Eternal Flame burns low. And you endure, because loyalty does not end when it stops being rewarded. It endures because it must. Because someone has to carry the weight. Because the alternative is to set it down, and you have never been able to set anything down.
+
+The pomegranate trees bear fruit. The fountain flows. The empire limps on. And so do you.
 
 *ending
 
@@ -201,43 +236,59 @@ Six months later, the trial.
 
 You stand in the Jade Throne Room in chains. The iron is cold on your wrists. The court that once bowed to the Voice of the Throne now watches you with the hungry, horrified fascination of people witnessing a disaster they always suspected was coming.
 
+The gallery is packed. They came early to get good seats. The fall of a Grand Vizier is the most exquisite entertainment the court has known in a generation, and the court of Khazara has always loved its entertainments.
+
 *page_break
 
-The evidence is laid out before the court. Every secret deal. Every broken promise. Every moment where you chose expedience over honor. The prosecutor reads your own letters aloud, and the words -- your words, written in your own hand -- fill the Throne Room like poison.
+The evidence is laid out on a marble table before the throne. Every secret deal. Every broken promise. Every moment where you chose expedience over honor and then lied about the choosing. The prosecutor -- a thin-voiced magistrate with spectacles and a meticulous memory -- reads your own letters aloud, and the words fill the Throne Room like smoke from a fire that has been smoldering for a very long time.
 
-Emperor Roshan sits on the Jade Throne. He does not look at you.
+Emperor Roshan IV sits on the Jade Throne. He does not look at you.
 
 *if (rel_emperor > 50)
-  That is the worst of it. Not the chains, not the trial, not the ruin. The worst is that you can see the scar your betrayal left on a young man who trusted you -- who *needed* to trust you -- and who learned, through you, that trust is a blade that cuts both ways.
+  That is the worst of it. Not the chains. Not the trial. Not the ruin. The worst is that you can see the scar your betrayal left on a young man who trusted you -- who *needed* to trust you, whose entire ability to govern rested on the foundation of that trust. You built the foundation. Then you cracked it with your own hands.
 
-  He will be harder now. Colder. Less willing to believe. You did that to him.
+  He will be harder now. Colder. Less willing to believe in anyone. The next Vizier will serve a ruler who has learned, through you, that loyalty is a word people use when they want something.
+
+  You did that to him.
 *else
-  His face is stone. Whatever he felt for you -- respect, wariness, the cautious hope of a young ruler reaching for an ally -- is gone. In its place is the expression of an emperor dispensing justice. Impersonal. Final.
+  His face is stone. Whatever he felt for you -- respect, wariness, the cautious hope of a young ruler reaching for a hand in the dark -- is gone. In its place is the expression of an emperor dispensing justice. Impersonal. Efficient. Final.
+
+  He has learned. Not the lesson you meant to teach, but a lesson all the same.
 
 *page_break
 
-The verdict is guilty. The sentence is exile.
+The verdict is guilty. The sentence is exile -- permanent, irrevocable, effective at dawn.
 
-You are escorted from the Jade Throne Room for the last time. The doors close behind you, and the sound echoes through the corridor like the last note of a song you will never hear again.
+The Dowager watches from her gallery. Her face is unreadable. You wonder, in the cold silence after the verdict, whether she feels vindicated or sorrowful or simply tired. She warned you, once, on your first day: "The last person to sit in your chair was clever, too." You should have listened. Cleverness without honor is just a more elaborate way to fail.
 
-Farid is waiting outside. He has been weeping. His loyalty survived your betrayal, which makes it the cruelest thing in the world.
+Farid is waiting outside the Throne Room. He has been weeping. His ledger is clutched to his chest like a shield. His loyalty survived your betrayal -- survived the exposure, the trial, the public naming of every lie you told. His loyalty is the cruelest thing in the world, because it shows you what faithfulness looks like when it is real, and in its light, the pale counterfeit you offered the Emperor is exposed for what it always was.
 
 "My lord Vizier--" he begins.
 
 "I am not the Vizier," you say. "Not anymore."
 
 *if (romance_active)
-  ${partner_name} is absent. You do not blame ${them}. The betrayal was yours. The consequences are yours. Whether ${they} ${are} somewhere in the Citadel, grieving for what you destroyed, or whether ${they} left the capital the moment the truth came out -- you will never know.
+  ${partner_name} is absent. You looked for ${them} in the gallery during the trial. ${they} ${were} not there. You do not blame ${them}. The person ${they} loved -- or thought ${they} loved -- was a fiction, a version of you that you constructed for public consumption while the real you was making deals in darkened rooms and breaking oaths behind closed doors.
+
+  You hope ${they} ${are} all right. You have lost the right to anything more than hope.
 
 *page_break
 
-The road out of Khazara is the same road you traveled on your first day, when the domes shone golden in the sunset and the world was full of possibility. Now the domes are behind you, growing smaller with every step.
+The road out of Khazara is the same road you traveled on your first day, when the domes shone golden in the sunset and the world was full of possibility. The caravans still pass. The spice merchants still call their prices. The children still stare at passing travelers. Nothing has changed except you.
 
-The Broken Oath. That is what they will call you. Not your name. Not your title. Just the oath you broke.
+The seal ring is gone. The power is gone. The empire carries on without you, as empires always do. And somewhere in the Jade Throne Room, a young emperor sits on a cold jade chair and signs the decree that erases your name from the official records.
 
-The seal ring is gone. The power is gone. The empire carries on without you. And somewhere, in the Jade Throne Room, a young emperor sits alone on a cold jade chair, learning that the price of trust betrayed is paid not by the betrayer but by everyone the betrayer touched.
+The Broken Oath. They will not remember your name. They will remember the oath. The empire keeps score, and the ledger of your service shows a single entry, written in letters too large to miss: *betrayer.*
 
-You walk. The road stretches ahead, empty and long and mercilessly honest.
+In the months that follow, the empire recovers without you. General Kadir secures the border. Priya stabilizes the economy. Ashoka prays for the soul of a Vizier who chose deception over truth, and if his prayers carry a note of genuine sorrow, that is between him and the Flame.
+
+Zara inherits your intelligence assets. She dismantles the parts that were corrupt and keeps the parts that were useful, because Zara has always understood that the line between corruption and utility is thinner than politicians pretend.
+
+A new Vizier is appointed. A careful, unambitious functionary who will never inspire loyalty and never betray it. The Emperor chose well. He has learned what betrayal costs, and he will spend the rest of his reign ensuring he never pays that price again.
+
+The road stretches ahead. Empty and long and mercilessly, terribly honest. You walk it because there is nothing else to do, and because walking is better than standing still, and because somewhere, in the vast machinery of your ruined conscience, a small voice whispers that penance requires motion.
+
+The Eternal Flame burns behind you. The desert stretches before you. And the seal ring that once weighed heavy on your finger has been replaced by a lighter, more permanent weight: the knowledge of what you did, and what it cost, and who paid the price.
 
 *ending
 
@@ -250,46 +301,54 @@ You walk. The road stretches ahead, empty and long and mercilessly honest.
 
 Five years later, the audience.
 
-The ambassador from the Western Confederation bows before Emperor Roshan IV and presents his credentials. The Emperor receives them with grace, asks the appropriate questions, makes the appropriate responses. He is poised, articulate, regal.
+The ambassador from the Western Confederation bows before Emperor Roshan IV and presents his credentials. The Emperor receives them with grace, asks the appropriate questions, makes the appropriate responses. He is poised, articulate, regal. The court watches with the quiet pride of an empire that has weathered a crisis and emerged stronger.
 
-He is also, in every way that matters, following the script you wrote for him this morning.
-
-*page_break
-
-The Shadow Emperor. The title exists in no official record, no court gazette, no historical chronicle. But the people who matter know. The Dowager knows. The Council knows. The foreign powers know. The Emperor himself knows, in the way that a river knows the banks that guide its course.
-
-You stand three paces behind the throne, in the Vizier's appointed place. To a casual observer, you are a servant. To anyone who understands the machinery of Khazaran power, you are the hand that turns the key.
+He is also, in every way that matters, following the script you wrote for him this morning. The questions were yours. The responses were yours. The subtle diplomatic concession hidden in the third response was yours. The Emperor delivered it perfectly, as he always does. He is a gifted performer. You have made sure of that.
 
 *page_break
 
-The Dowager Empress Nur watches from her gallery, and you feel her gaze like the warmth of a fire you are sitting too close to. She recognizes you, because you are her creation -- not the provincial administrator she summoned to the capital, but the shadow ruler she never quite managed to become herself.
+The Shadow Emperor. The title exists in no official record, no court gazette, no historical chronicle. But the people who matter know. The Dowager knows -- she taught you the game, after all, and she recognizes a master when she sees one. The Council knows, in the way that experienced politicians know things they can never prove. The foreign powers know, because their ambassadors have learned that the person to negotiate with is not the young man on the throne but the quiet figure standing three paces behind.
+
+Even the Emperor knows, in the way a river knows the banks that guide its course. He has accepted it -- not with joy, but with the pragmatic resignation of a ruler who understands that his strength is performance, not policy. You provide the policy. He provides the face. The arrangement works.
+
+*page_break
+
+The Dowager watches from her gallery, and you feel her gaze like the warmth of a fire you are sitting too close to.
 
 *if (rel_dowager > 70)
-  She sends you letters. Not instructions -- those days are past. Observations. Suggestions. The accumulated wisdom of a woman who played the game of thrones for thirty years and recognizes, in you, the player she always wanted to be.
+  She sends you letters. Not instructions -- those days are past. She sends observations. Reflections. The accumulated wisdom of a woman who played the game of thrones for thirty years and sees in you the player she always wanted to become. Her letters are the closest thing you have to a mentor, and they are written in a hand so elegant that Farid has started a collection.
+
+  "You are better at this than I was," she wrote last month. "I resent you for it. But only a little."
 *else
-  She watches. She judges. And in her silence is the acknowledgment that you have surpassed her -- not in wisdom, perhaps, but in will. She played the game for her son. You play it for yourself.
+  She watches. She judges. And in her silence is the acknowledgment that you have surpassed her -- not in wisdom, perhaps, but in will. She played the game for her son. You play it for yourself. Whether that makes you stronger or weaker is a question she leaves unanswered.
+
+The empire prospers -- after a fashion. The economy grows under Priya's guidance, though she does not know that the trade policies she executes were drafted in your private study. The borders hold under Kadir's watch, though the deployment orders he follows were shaped by your intelligence before they reached his desk. Ashoka tends the Flame, and the temple's continued independence is a concession you allow because it costs you nothing and buys you legitimacy.
+
+Zara knows. Zara always knows. But Zara understands the value of a useful fiction. She keeps your secret because keeping secrets is her nature, and because you have given her no reason to betray you. Yet.
 
 *page_break
 
-The empire prospers, after a fashion. The economy grows. The borders hold. The Council functions. From the outside, it is a model of stable governance.
-
-From the inside, it is a clockwork mechanism with a single spring. You. If you falter, if you fail, if you die -- the mechanism stops. There is no succession plan for a ruler who does not officially exist. This is the price of shadows.
-
-Farid knows. Of course Farid knows. He has organized your shadow government with the same meticulous care he brings to everything else. He does not approve. But he is loyal, and loyalty, in Farid's world, supersedes approval.
+Farid knows. He has organized your shadow government with the same meticulous care he brings to everything else, cross-referencing your private directives with the Emperor's public decrees to ensure consistency. He does not approve. But Farid is loyal, and loyalty, in his world, supersedes approval. He brings you tea every morning and looks at you with the expression of a man who loves someone he cannot entirely admire.
 
 *if (romance_active)
   *if (love_fulfilled)
-    ${partner_name} knows. And ${they} ${have} chosen to stay. That choice -- made with full knowledge of what you are and what you have done -- is the most terrifying act of trust you have ever witnessed.
+    ${partner_name} knows. And ${they} ${have} chosen to stay. That choice -- made with full knowledge of what you are and what you have done -- is the most terrifying act of trust you have ever witnessed. It is also the only thing that keeps you anchored to the person you were before the shadows swallowed you.
   *else
-    ${partner_name} suspects. The distance between suspicion and certainty is the distance between you and the person you love. You are not sure that distance can be crossed.
+    ${partner_name} suspects. The distance between suspicion and certainty is the distance between you and the person you love. You are not sure that distance can be crossed. You are not sure you want it to be.
 
 *page_break
 
-At night, in the privacy of your chambers, you remove the Vizier's seal ring and hold it in your palm. The jade is warm from your skin. It is the only title you will ever hold. The only recognition you will ever receive.
+Prince Kaveh is gone -- exiled to the Western Confederation, where he writes bitter letters to anyone who will read them. Ambassador Chen receives him with the condescending hospitality of a man entertaining a deposed pretender. Kaveh will spend the rest of his life in comfortable irrelevance, telling anyone who will listen that the throne was rightfully his. No one listens.
 
-The Shadow Emperor. You rule an empire, and no one will ever know.
+The city prospers under your invisible hand. The Grand Bazaar has doubled in size. A new university has opened. The printing press produces books at a pace that would have astonished the empire of twenty years ago. The people of Khazara are better fed, better housed, and better educated than they have been in a generation. They credit the Emperor. They should credit you.
 
-The Eternal Flame burns in the temple, casting shadows on the wall. And among those shadows, one shadow is yours -- the longest, the darkest, and the most powerful.
+They never will.
+
+At night, in the privacy of your chambers, you remove the Vizier's seal ring and hold it in your palm. The jade is warm from your skin. It is the only title you will ever hold, the only recognition you will ever receive. The Shadow Emperor has no crown, no throne, no portrait in the Hall of Rulers. Your name will appear in the histories as a footnote: "Grand Vizier ${player_name}, who served faithfully during the reign of Roshan IV."
+
+Faithfully. The historians will write it without irony. And no one will ever know the truth.
+
+The Eternal Flame burns in the temple, casting shadows on every wall in the Citadel. And among those shadows, one is yours -- the longest, the darkest, the most powerful, and the most alone.
 
 *ending
 
@@ -302,39 +361,46 @@ The Eternal Flame burns in the temple, casting shadows on the wall. And among th
 
 Five years later, the solitude.
 
-You stand at the window of your chambers in the Citadel, watching the sun set over Khazara. The city is beautiful at this hour -- the domes turn to amber, the river catches the last light, the call to evening prayer echoes from the Temple Quarter. Two million people going about their lives, unaware that the person who shapes those lives is standing at a window with a cup of cold tea, alone.
+You stand at the window of your chambers in the Citadel, watching the sun set over Khazara. The city is beautiful at this hour -- the domes turn to amber, the Ashar River catches the last light like liquid gold, the call to evening prayer echoes from the Temple Quarter. Two million people going about their lives, unaware that the person who shapes those lives is standing at a window with a cup of cold tea, alone.
+
+The room behind you is silent. No visitors. No petitioners. No one waiting for an audience. The Vizier's chambers, which once hummed with the constant traffic of governance, are quiet now. You have routed the traffic elsewhere -- to subordinates, to intermediaries, to the network of quiet functionaries who carry your instructions without knowing their source. Efficiency demands it. Efficiency demands many things.
 
 *page_break
 
-Emperor Roshan IV believes he rules. This is the kindest cruelty you have ever committed. The young man makes decisions, issues decrees, receives ambassadors, consults his council. He is diligent and well-meaning and, in the ways that matter, irrelevant. Every choice that reaches him has already been filtered through your network. Every option he considers was placed before him by your hand.
+Emperor Roshan IV believes he rules. This is the kindest cruelty you have ever committed. The young man makes decisions, issues decrees, receives ambassadors, consults his council. He is diligent and well-meaning and, in every way that matters, irrelevant. Every choice that reaches him has already been filtered through your network. Every option he considers was placed before him by your hand. He chooses from a menu you write, and the menu always leads to the meal you have prepared.
 
-He is not unhappy. That is the worst part. He believes the empire is functioning because of his leadership. He takes pride in his reign. He does not know that his reign is a stage set, and you are the architect behind the painted scenery.
+He is not unhappy. That is the worst part. He takes pride in his reign. He thinks the prosperity is his doing, the peace his achievement, the reforms his vision. He does not know that his reign is a stage set, beautiful and elaborate, and you are the architect behind the painted scenery.
 
 *if (rel_emperor > 50)
-  Sometimes, when he smiles at you across the council table, you feel something crack in your chest. It might be guilt. You are not sure. You have been playing this game so long that you have forgotten what guilt feels like.
+  Sometimes he smiles at you across the council table -- a genuine smile, warm with the trust of a young man who believes his Vizier is his most faithful servant. In those moments, something cracks in your chest. It might be guilt. You are not sure. You have been playing this game so long that the emotions have lost their labels, like jars in a dark pantry.
 *else
-  You feel nothing. You trained yourself not to feel. Feeling is a liability for a puppet master, the same way hesitation is a liability for a surgeon. The work requires precision, not sentiment.
+  He is a tool. You shaped him, honed him, and now you use him. The calculation is clean. The efficiency is total. If there is a cost, you have filed it under a category that you do not open.
 
 *page_break
 
-The court functions. The Council advises. General Kadir guards the border, unaware that his deployment orders are shaped by your intelligence before they reach his desk. Priya grows the treasury, unaware that the trade routes she expands were opened by your agents. Ashoka tends the Flame, unaware that the temple's continued independence is a concession you allow because it costs you nothing.
+The court functions. General Kadir guards the border, unaware that his deployment orders originate in your study. Priya grows the treasury, unaware that the trade routes she expands were opened by your agents months in advance. Ashoka tends the Flame, unaware that the temple's continuing independence is a privilege you grant because revoking it would be more costly than allowing it.
 
-Zara knows. Zara always knows. But Zara, of all people, understands the value of a useful fiction. She keeps your secret because keeping secrets is her nature, and because you have given her no reason to betray you.
+Zara knows. She has always known. But Zara, of all people, understands that the game requires players, and she would rather play with a partner who is honest about being dishonest than with one who pretends otherwise.
 
-Farid knows. He has organized your shadow bureaucracy with quiet horror and impeccable filing systems. He brings you tea every morning and looks at you with the expression of a man who loves someone he is not sure he can admire.
-
-*page_break
+Farid knows. He has organized your shadow bureaucracy with quiet, horrified efficiency. He brings you tea every morning and calls you "my lord Vizier" and sometimes, when no one else is present, he looks at you with an expression that is not fear but something worse. It is sorrow. The sorrow of a man who remembers who you were and can see what you have become.
 
 *if (romance_active)
-  ${partner_name} is gone. Not dramatically -- no confrontation, no scene, no slammed door. Just a gradual withdrawal, like a tide going out. ${they} tried to love you. You were too busy ruling an empire to notice.
+  *page_break
+  ${partner_name} is gone. Not dramatically -- no confrontation, no ultimatum, no slammed door. Just a gradual withdrawal, like a tide going out. The visits grew shorter. The conversations grew shallower. The silences grew longer. And then one morning you woke and ${they} ${were} simply not there, and the space ${they} left was the exact shape and size of everything you sacrificed to sit alone in this room.
 
-  You notice now. In the silence of your chambers, in the cold cup of tea, in the window that reflects your face back at you like a stranger's portrait.
+  You noticed too late. The puppet master, it turns out, was too busy pulling strings to hold a hand.
 
-The Puppet Master. You have everything -- power, wealth, influence, control -- and no one to share it with. The strings you pull connect you to an empire but to no person. The weight of a world rests on your shoulders, and no one knows, and no one ever will.
+*page_break
 
-The Eternal Flame burns in the temple. In your chambers, the lamp burns low. The solitude is absolute.
+The Puppet Master. You have everything -- power, wealth, influence, control -- and no one to share it with, because sharing requires vulnerability, and vulnerability is the one thing you cannot afford. The strings you pull connect you to an empire but to no person.
 
-You are the most powerful person in the Khazaran Empire, and you are completely, utterly alone.
+The Dowager Empress, confined to her wing of the Citadel, sees no visitors. She is the only person alive who understands what you have done, and the only person whose opinion you sometimes -- in moments of weakness, in the watches of the night -- wish you could hear. But you do not visit her. The Puppet Master does not seek counsel. The Puppet Master provides it.
+
+The city runs smoothly beneath your window. The aqueducts carry water. The bridges carry traffic. The printing presses print what you permit. The schools teach what you approve. The Grand Bazaar expands, and the merchants prosper, and the common people of Khazara go about their lives with no idea that the person responsible for their comfort and safety is standing at a window, watching the sunset, drinking cold tea, and wondering whether power without recognition is power at all.
+
+At night, the lamp burns low. The tea grows cold. The city glitters outside your window like a jewel in a locked case, beautiful and unreachable.
+
+You are the most powerful person in the Khazaran Empire, and you are completely, utterly, permanently alone. The strings stretch from your fingers to every corner of the empire. But strings connect you to puppets, not to people. And the difference, you are learning, is everything.
 
 *ending
 
@@ -349,44 +415,54 @@ Five years later, the silence.
 
 The Jade Throne Room is full, but no one speaks unless spoken to. The court stands in perfect rows, perfect stillness, perfect silence. The courtiers' faces are masks of attentive neutrality. No one whispers. No one fidgets. No one dares.
 
-You sit on the Jade Throne, and the jade is warm now. Your body heat has seeped into it over the years, warming the stone that three centuries of emperors could not warm. The throne is yours. You are the throne.
+You sit on the Jade Throne, and the jade is warm now. Your body heat has seeped into it over the years, warming the stone that three centuries of emperors could not warm. The throne is yours. You are the throne. The distinction between ruler and seat of power has dissolved, the way a river dissolves into the sea.
 
 *page_break
 
-The empire runs with the precision of a military operation. The border is secure -- the Northern Khanates learned their lesson after the Second Suppression, when you sent Kadir north with orders to make an example. He made one. The Khanates have not raided since.
+The empire runs with the precision of a military campaign. The border is secure -- the Northern Khanates learned their lesson after the Second Suppression, when you sent Kadir north with orders to make an example. He made one. The details do not bear repeating. The Khanates have not raided since.
 
-Trade flourishes, because you control the trade routes with an iron hand and merchants understand that obedience is profitable. The temple is silent, because Ashoka learned that spiritual authority is a privilege you can revoke. The nobility obeys, because the noble houses that opposed you are no longer noble houses. They are cautionary tales.
+Trade flourishes, because you control the trade routes with an iron hand and merchants understand that obedience is profitable and disobedience is expensive. The temple is silent, because Ashoka learned that spiritual authority is a privilege that can be revoked with a single decree. The nobility obeys, because the noble houses that opposed your ascension are no longer noble houses. They are warnings.
+
+The streets are clean. The canals run clear. The roads are maintained. The printing presses operate under license, printing what is approved and nothing else. Order. Efficiency. Control.
 
 *page_break
 
-Emperor Roshan is a memory. Whether he lives in comfortable exile or died in the transition of power -- the court does not discuss this. The court does not discuss anything you have not authorized for discussion. The Dowager was removed. The Council of Five advises at your pleasure.
+Emperor Roshan is gone. The details of his departure vary depending on who is telling the story, and no one tells the story unless they are certain of their audience. The Dowager was removed to a villa in the southern provinces. General Kadir serves because he respects strength and because the alternative is unthinkable. Priya serves because she is a practical woman and practicality, in your empire, is survival. Ashoka serves and prays and does not meet your eyes.
 
-General Kadir serves because he respects strength. Priya serves because she respects results. Zara serves because she understands power. Ashoka serves because the alternative is unthinkable.
+Zara serves because she understands power, and because your intelligence apparatus -- rebuilt, expanded, weaponized -- is her life's work taken to its logical conclusion. She does not approve of you. But she does not disapprove either. Zara operates beyond approval.
 
-Farid serves because he is loyal. He is the only person in the Citadel who is not afraid of you, and that is because he knew you before you became this. He brings you tea and calls you "my lord" and sometimes, when no one else is present, he looks at you with an expression that is not fear but something worse.
+Farid serves. He is the only person in the Citadel who is not afraid of you, because he knew you before you became this. He brings you tea every morning and calls you "my lord" and sometimes, when no one else is present, he looks at you with an expression that cuts deeper than any blade the empire's enemies have ever forged.
 
-It is sorrow.
+It is sorrow. It is the specific, irreparable sorrow of a person who watched someone they love become someone they do not recognize.
 
 *page_break
 
 *if (romance_active)
-  ${partner_name} is gone. You drove ${them} away, or ${they} fled, or ${they} simply could not recognize the person you became. The memory of ${them} is a splinter in your chest that you have learned to ignore.
+  ${partner_name} is gone. The memory of ${them} is a splinter in your chest that you have learned to work around. You do not think about ${them} during the day. At night, sometimes, in the moments before sleep, a face surfaces -- ink-stained fingers, or a scar on a cheekbone, or eyes bright with questions -- and you push it down, and the darkness takes it.
 
-No one loves you. No one trusts you. No one would mourn you if you died tomorrow -- they would merely calculate the implications and adjust their positions accordingly. This is the court you built. This is the empire you made.
+  Love requires vulnerability. You have no vulnerabilities. That is the point.
 
-The Tyrant. They whisper the word in rooms they think you cannot hear. You hear everything. You have built an intelligence apparatus that makes Zara's network look like children passing notes. Every whisper reaches you. Every dissent is cataloged. Every threat is neutralized before it forms.
+No one loves you. No one trusts you. No one would mourn you if you died tomorrow -- they would merely calculate the implications and adjust their positions. This is the court you built. This is the empire you made.
+
+The Dowager Empress is dead. She died in the tower where you confined her, of a fever that the court physicians say was natural. Perhaps it was. You did not investigate. The Dowager was the last person who understood the game well enough to be dangerous, and her death simplified your calculations by a meaningful margin. You felt nothing when Farid brought the news. Nothing at all.
+
+The printing presses operate under license. Books are published, but only the ones you approve. The scholars call it censorship. You call it order. The difference, you have learned, is a matter of perspective, and the only perspective that matters is the one from the Jade Throne.
+
+In the Grand Bazaar, the merchants sell their goods and keep their voices down. In the Temple Quarter, Ashoka prays and does not preach. In the garrison, the soldiers drill and do not question. The empire is a machine, and machines do not question their operators.
 
 *page_break
 
-At night, alone on the Jade Throne, you listen to the silence.
+The Tyrant. They whisper the word in rooms they believe you cannot hear. You hear everything. You have built an apparatus that makes Zara's network look like children passing notes. Every whisper is cataloged. Every dissent is noted. Every potential threat is neutralized before it can form a sentence, let alone a conspiracy.
+
+At night, alone on the Jade Throne, you listen to the silence. It is the loudest silence in the world. It contains the voices of everyone who has stopped speaking because they are afraid, and the voices of everyone who has stopped speaking because they are gone, and the voices of everyone who was never born because the world you built is too small and too cold for the kind of people who would have challenged it.
+
+Somewhere in the Old City, a child grows up in silence. Somewhere in the provinces, a farmer bows to a tax collector without meeting his eyes. Somewhere in the Temple of Seven Wisdoms, a novice learns the Seven Wisdoms and does not ask what they mean, because questions are dangerous and the Tyrant's empire has no patience for danger.
 
 The empire is strong. The empire is feared. The empire will endure.
 
-And you will sit here, on this warm jade chair, in this silent room, for as long as your body holds and your will does not break.
+And you will sit here, on this warm jade chair, in this silent room, for as long as your body holds and your will does not break. The empire will endure because you demand it. And when you are gone, it will endure because fear has its own momentum, and the machine you built does not require its builder to keep running.
 
-The Eternal Flame burns in the temple. But the flame in you -- the one that drove you to this chair, that justified every cruelty and silenced every doubt -- that flame is cold.
-
-You rule. The empire endures. That is all.
+The Eternal Flame burns in the temple. But the flame that drove you to this chair -- the ambition, the hunger, the conviction that you alone could save the empire from itself -- that flame is ash. You rule. The empire endures. And the silence presses in from every side, patient and absolute and permanent.
 
 *ending
 
@@ -399,41 +475,53 @@ You rule. The empire endures. That is all.
 
 One year later, the road.
 
-The wagon jolts over a stone, and your chains rattle. Through the wooden slats, you can see the countryside passing -- the Valley of the Ashar, the cotton fields, the mango orchards. Farmers look up from their work as the prison wagon passes. They do not know who is inside. If they did, they would not care. The fall of a Vizier is gossip for the court, not the fields.
+The prison wagon jolts over a stone, and your chains rattle against the wooden bench. Through the slats, the Valley of the Ashar stretches green and gold to the horizon. Cotton fields. Mango orchards. Farmers bending in the paddies, their backs curved like prayers. They do not look up as the wagon passes. The fall of a Vizier is gossip for the court, not the fields.
+
+You remember this valley from your first journey to Khazara, when you were a provincial administrator riding toward a destiny that seemed, at the time, too large to be real. The same road. The same valley. A different person in the wagon.
 
 *page_break
 
-The trial was brief. The evidence was comprehensive -- Zara saw to that, with the quiet efficiency of a person who always suspected and was simply waiting for proof. Your network of agents, your secret alliances, your manipulations of the Emperor's decisions -- all of it was laid bare in the Council Chamber before a court that watched with the satisfaction of people who had been proven right to distrust you.
+The trial was brief. Zara presented the evidence with the clinical precision of a surgeon removing a tumor -- no emotion, no grandstanding, just fact after fact laid out on the marble table in the Council Chamber until the picture was complete and undeniable. Your network of agents. Your secret alliances. Your manipulation of the Emperor's decisions. The bribes. The lies. The careful, methodical subversion of every institution you were sworn to serve.
 
-Emperor Roshan IV presided. He was calm. Controlled. He did not raise his voice. He did not need to. The sentence was exile -- permanent, irrevocable, effective immediately.
+Emperor Roshan IV presided. He was calm. Controlled. He did not raise his voice. The sentence was exile to the Oasis of Zahra -- a trading post at the edge of the southern desert, where exiles are deposited and forgotten. Permanent. Irrevocable. Effective immediately.
 
 *if (rel_emperor > 50)
-  He looked at you once, as the guards led you away. Just once. And in that look was everything: the trust you earned, the trust you broke, and the lesson he learned from both.
+  He looked at you once, as the guards led you away. Just once. And in that look was the entire arc of your relationship -- the hope, the trust, the gradual realization, the quiet devastation of a young man learning that the person he relied on was the person he should have feared.
 
-  "I wanted to believe you," he said. Five words. They will follow you to the end of your days.
+  "I wanted to believe you," he said. Five words. They will follow you to the end of your days, past the desert and the years and the slow, grinding silence of exile.
 *else
-  He did not look at you at all.
+  He did not look at you at all. You were already nothing.
 
 *page_break
 
-The wagon carries you south, toward the desert. Your destination is the Oasis of Zahra -- a trading post at the edge of the wasteland, where exiles are deposited and forgotten. You will live there, in comfort sufficient for survival and insufficient for dignity, for the rest of your life.
+The wagon carries you south. The landscape changes -- green giving way to yellow, cultivation giving way to scrub, the air growing hotter and dryer. You pass through towns that grow smaller and more desperate as the desert approaches. The last town before the crossing is a cluster of mud-brick houses around a well. A child stares at the prison wagon. You stare back. Neither of you waves.
 
-Farid tried to come with you. You told him not to. The empire needs good administrators more than you need company. He wept. You did not.
+Farid tried to come with you. You told him not to. He wept. You did not.
 
 *if (romance_active)
-  ${partner_name} did not come to the trial. You do not blame ${them}. The person ${they} loved -- if ${they} loved you at all -- was a fiction. The real you is the one in this wagon, in these chains, watching the empire recede through wooden slats.
+  ${partner_name} did not come to the trial. A letter arrived at your cell the night before the sentencing, written in a hand you know as well as your own. It said: "I do not know who you are. I am not sure you do either." That was all. No signature. No farewell.
+
+  You burned it. The ash smelled like nothing.
 
 *page_break
 
-The Usurper's Fall. The historians will write about it with the smug certainty of people who know how the story ends. They will analyze your mistakes, catalog your ambitions, and conclude that pride was your downfall.
+The Oasis of Zahra. A hundred people. A market. A well. A single palm tree that provides shade for approximately six hours a day if you angle your chair correctly. This is your kingdom now.
 
-They will be wrong. Your downfall was not pride. It was the belief that you could reshape the world through control alone -- that the strings of power could be pulled without anyone noticing the puppeteer.
+The Usurper's Fall. The historians will analyze your ambition, your mistakes, your arrogance. They will conclude that you were brought down by pride, by overreach, by the fatal miscalculation of believing yourself cleverer than the system you sought to control.
 
-The wagon jolts again. The chains rattle. The valley stretches behind you, green and gold in the afternoon light. Ahead, the desert shimmers in the heat.
+They will be mostly right. But they will miss the small truth buried under the large one: that the moment it went wrong was not a grand strategic error but a quiet moral one. A single choice, made in a darkened room, to betray someone who trusted you. Everything after that was consequences.
 
-You were so close to the throne. Close enough to feel its cold jade under your fingertips. Close enough to smell the incense and hear the rustle of silk.
+The desert wind blows. The palm tree sways. And you sit in the shade with sand in your hair and the taste of dust in your mouth, watching the trade caravans pass through the oasis on their way to places you will never see again.
 
-Now there is only the road, and the dust, and the long slow unspooling of a life with nothing left to hold it together.
+You were so close. Close enough to feel the jade under your fingertips. Close enough to smell the incense and hear the rustle of silk and imagine, for a moment, that the empire was yours to shape.
+
+The oasis receives you with the indifferent hospitality of a place that has seen exiles before. A room. A bed. A ration of water and food. The trader at the well recognizes your face from a broadsheet and charges you double for dates. You pay. You have no leverage here. No network. No allies. No strings to pull.
+
+The days are long and hot and empty. You learn to repair sandals. You learn to filter water through cloth. You learn the names of the stars visible above the desert, which are the same stars visible from the Tower of Stars in the Citadel, though they seem farther away from this vantage. You learn that a life without purpose is not a life without time, and that time without purpose is the heaviest burden a person can carry.
+
+Now there is only the road, the dust, and the long unspooling of a life that no longer belongs to you. The empire carries on. The Eternal Flame burns, indifferent to the exile sitting in the desert, watching the caravans pass through the oasis toward places that no longer want him.
+
+You have the rest of your life to consider what you did, and what it cost, and whether the jade throne was ever worth the price.
 
 *ending
 
@@ -446,7 +534,7 @@ Now there is only the road, and the dust, and the long slow unspooling of a life
 
 Five years later, the vote.
 
-The Grand Assembly of the Khazaran Empire -- a body that did not exist three years ago, that the empire has never known in three centuries of rule -- casts its first independent vote. Two hundred delegates, elected by the people of the twelve provinces, raise their hands in the newly built Assembly Hall.
+The Grand Assembly of the Khazaran Empire -- a body that did not exist three years ago, that no one in three centuries of imperial rule dared to imagine -- casts its first independent vote. Two hundred delegates, elected by the people of the twelve provinces, raise their hands in the newly built Assembly Hall. The hall was once the secondary throne room. You had the throne removed and replaced with tiered benches.
 
 The motion passes. The first national education act. Free schooling for every child in the empire, funded by a progressive tariff on luxury goods.
 
@@ -454,38 +542,49 @@ You stand in the visitors' gallery, watching, and you weep.
 
 *page_break
 
-You did not expect to weep. You are not, generally, a person who weeps. But standing here, watching two hundred ordinary people -- merchants and farmers and teachers and soldiers -- exercise power that was once reserved for a boy on a jade chair and the five people who whispered in his ear, you feel something crack open in your chest that has been sealed shut since the day you made your choice in the Throne Room.
+You did not expect to weep. You are not, generally, a person given to tears. But standing here, watching two hundred ordinary people -- merchants and farmers and teachers and soldiers and a former street urchin from the Old City who won her seat by a margin of twenty-three votes -- exercise power that was once reserved for a boy on a jade chair, you feel something crack open in your chest.
 
 It is joy. Pure, uncomplicated, terrifying joy. You had forgotten what it felt like.
 
+The debate was chaotic. Three delegates spoke simultaneously. One tabled a motion to rename the Assembly Hall after a fish. Another proposed an amendment about cheese tariffs that had nothing to do with the education act. A third stood up, realized she had forgotten what she was going to say, sat down, stood up again, and delivered the most eloquent two-minute speech about the importance of literacy that you have ever heard.
+
+It was messy. It was loud. It was democracy.
+
 *page_break
 
-Emperor Roshan -- *Former* Emperor Roshan, now styled First Citizen and Chair of the Constitutional Council -- sits in the front row of the gallery. He is twenty-one and, freed from the crushing weight of absolute rule, looks younger than he has since his father died. He applauds the vote with genuine enthusiasm.
+Former Emperor Roshan -- now styled First Citizen and Chair of the Constitutional Council -- sits in the front row of the gallery. He is twenty-one and, freed from the crushing weight of absolute power, looks younger than he has since his father died. He applauds the vote with genuine enthusiasm.
 
 *if (rel_emperor > 60)
-  He catches your eye and grins. It is the grin of a young man who has discovered that sharing power is not the same as losing it. "You were right," he mouths. Two words. They are enough.
-*else
-  He nods in your direction. Formal. Correct. The constitutional relationship between the First Citizen and the former Vizier is carefully defined, and he observes its boundaries with the precision of a ruler trained to respect the law. It is not warmth. But it is respect.
+  He catches your eye and grins. It is the grin of a young man who has discovered that sharing power is not the same as losing it -- that the respect of an elected assembly is different from the obedience of a court, and better. "You were right," he mouths. Two words. They are enough.
+
+The empire has changed. The Council of Five is dissolved. The provinces elect their own governors. The temple and the military retain their functions but under civilian oversight. Priya chairs the economic committee and operates with the visible delight of a woman who has been given the largest spreadsheet in the history of commerce. General Kadir serves under the Assembly's defense committee, grumbling about civilians with the comfortable irritation of a man who has grumbled about civilians his entire career and would not know what to do if they stopped making him grumble.
+
+Ashoka tends the Flame. He provides moral counsel to whoever asks, which is more people than anyone expected. The Seventh Wisdom -- Harmony -- is quoted in the Assembly more often than any other text. He is training a successor. When asked why, he smiles and says: "The Flame has burned for three hundred years because someone always passes it to the next pair of hands."
+
+Farid runs the civil service. He is incandescent with happiness. The man who lived for regulations now *writes* them. He has created seventeen new forms, four new filing categories, and a procedural handbook for the Assembly that delegates call "Farid's Bible." He takes the comparison as the highest compliment of his life.
+
+Zara dissolved the old intelligence apparatus and rebuilt it as a public security service. The Eyes of the Throne are now the Eyes of the People -- still watching, still vigilant, but answerable to the Assembly rather than to a single ruler. Zara herself serves as Director. She is the same as she ever was: precise, cold, indispensable.
+
+*if (rel_spy > 60)
+  She admitted to you once, over a private cup of tea, that the new system is better. "I can do my job without lying about who I work for," she said. "That is -- not unpleasant." Coming from Zara, this is the equivalent of a love letter.
+
+The Dowager Empress Nur was offered a seat on the Constitutional Council. She declined, with a note that read simply: "We have tended our garden long enough. Let others tend theirs." She lives in her villa outside the city. Her garden, by all accounts, is the most beautiful in the empire.
 
 *page_break
-
-The empire has changed. The Council of Five has been replaced by the Assembly. The provinces elect their own governors. The temple and the military and the guilds retain their influence, but that influence now flows through institutional channels rather than whispered corridors.
-
-Priya leads the Assembly's economic committee and is having the time of her life. General Kadir commands the military under civilian oversight and grumbles about it constantly, which everyone agrees is a sign that the system is working. Ashoka tends the Flame and provides moral counsel to whoever asks, which is more people than anyone expected.
-
-Farid runs the civil service. He is incandescent with happiness. The man who lived for regulations now writes them.
 
 *if (romance_active)
   *if (love_fulfilled)
-    ${partner_name} is beside you in the gallery. ${their} hand finds yours as the vote is read. The future you built together is imperfect, unfinished, and alive.
+    ${partner_name} is beside you in the gallery. ${their} hand finds yours as the vote is counted. The future you built together is imperfect, unfinished, messy, and alive. It is the most beautiful thing either of you has ever made. You squeeze ${their} hand. ${they} squeeze back. The Assembly erupts in applause.
 
-*page_break
+In the streets of Khazara, word of the education act spreads. By evening, the teahouses are full of people debating its merits and flaws, loudly, passionately, with the confident knowledge that their opinions matter. A broadsheet printer works through the night to produce a special edition. A teacher in the Scholars' Quarter weeps with relief, because the students she has been educating for free will now be funded by the state.
+
+It is not utopia. It is better than utopia. It is real.
 
 The New Dawn. That is what they call it, and for once the historians' poetry matches the reality. It is new. It is a dawn. And it is fragile -- so fragile that some nights you lie awake listening for the sound of it breaking.
 
-But dawns are always fragile. That is what makes them beautiful.
+But dawns are always fragile. That is what makes them worth staying awake for.
 
-The Eternal Flame burns in the temple. And in the Assembly Hall, two hundred voices argue about education funding, and the argument is the most beautiful sound you have ever heard.
+The Eternal Flame burns in the temple. And in the Assembly Hall, two hundred voices argue about education and cheese tariffs and fish, and the argument itself -- messy, chaotic, gloriously human -- is the answer to every question the empire has ever asked.
 
 *ending
 
@@ -498,43 +597,47 @@ The Eternal Flame burns in the temple. And in the Assembly Hall, two hundred voi
 
 Ten years later, the letter.
 
-A child writes you a letter. She is nine years old, from a village in the eastern provinces. The letter is written in careful, newly learned script on cheap paper. It says: "Dear Vizier. My mother says you built the school where I am learning to write. Thank you for building the school. I am learning to write. This is my first letter."
+A child writes you a letter. She is nine years old, from a village in the eastern provinces. The letter is written in careful, newly learned script on cheap paper, the kind that smells of straw. It says: "Dear Vizier. My mother says you built the school where I am learning to write. Thank you for building the school. I am learning to write. This is my first letter. My name is Maryam."
+
+You keep it on your desk, next to the seal ring and the daily reports and the endless correspondence of an empire learning to be better. Farid has filed it under "C" for "Correspondence, Gratifying." He has a category for everything.
 
 *page_break
 
-You keep it on your desk, next to the seal ring, next to the daily reports and the policy drafts and the endless correspondence of an empire that is slowly, painfully, learning to be better. Farid has filed it under "C" for "Correspondence, Gratifying." He has a category for everything.
-
-Ten years. A decade of patient, incremental reform. Not the revolution you once imagined -- not the grand overthrow of the old order, not the dramatic abolition of the throne. Just the steady, unglamorous work of changing a system from within: new schools, new trade regulations, new rights for farmers and artisans, new limits on noble privilege.
+Ten years. A decade of patient, incremental reform. Not the revolution you once imagined -- not the grand overthrow of the old order, not the dramatic abolition of the throne. Just the steady, unglamorous work of changing a system from within. New schools in every province. New trade regulations that protect small merchants from monopoly. New rights for farmers, for artisans, for the people who make the empire function and never receive credit for it. New limits on noble privilege, introduced so gradually that Lord Reza complained only five times instead of the expected fifty.
 
 It is not dramatic. It does not make good poetry. But it works.
 
-*page_break
-
-Emperor Roshan IV sits on the Jade Throne and governs with the quiet competence of a ruler who has learned that listening is more valuable than commanding. He is twenty-six now, married to a woman from the merchant class -- a scandal that delighted Priya and horrified Lord Reza in equal measure -- and expecting his first child.
+Emperor Roshan IV sits on the Jade Throne and governs with the quiet competence of a ruler who has learned that listening is more valuable than commanding. He is twenty-six now, married, expecting his first child, and governing with the patience of a man who has discovered that the empire is not a problem to be solved but a garden to be tended.
 
 *if (rel_emperor > 60)
-  "You changed me," he told you once, in the Garden of Eternal Spring. "When I was sixteen, I wanted to be Roshan the Conqueror. Now I want to be the emperor who built something that lasts longer than a statue."
-
-The empire is not perfect. Poverty persists. Injustice lingers. The northern border requires eternal vigilance. The noble houses resist every new reform with the stubborn tenacity of people protecting privilege they believe is their birthright.
-
-But the schools are open. The courts hear cases from commoners. The printing press produces books that children in the provinces can read. And somewhere in the eastern provinces, a nine-year-old girl is writing her first letter.
+  "You changed me," he told you once, in the Garden of Eternal Spring, where the pomegranate trees are heavy with fruit. "When I was sixteen, I wanted to be Roshan the Conqueror. Now I want to be the emperor who built something that lasts longer than a statue. Something that grows."
 
 *page_break
+
+The empire is not perfect. You know this better than anyone. Poverty persists in the outer provinces. Injustice lingers in the courts, where old habits die harder than old laws. The northern border requires eternal vigilance. The noble houses resist every new reform with the stubborn tenacity of people protecting privilege they believe is their birthright.
+
+But the schools are open. The courts hear cases from commoners. The printing press produces books that children in villages can afford. A girl named Maryam in the eastern provinces is writing her first letter, and her mother remembers a time when writing was something only rich men did.
+
+General Kadir is retired, living near the border he spent his life defending. Priya is the wealthiest woman in the empire and funds the reform program from her own profits because, she says, "Investment in the future is the only investment that compounds forever." Ashoka blesses the schools personally, traveling to each province, because he says the Third Wisdom -- Courage -- applies to learning as much as fighting. Zara runs the intelligence service with her usual efficiency and has quietly redirected its focus from internal suppression to external defense.
 
 *if (romance_active)
-  ${partner_name} is still at your side. The years have deepened what began in the chaos of conspiracy and siege into something quieter and more enduring.
+  ${partner_name} is at your side. The years have deepened what began in chaos into something quieter and more enduring.
   *if (romance_leila)
-    Leila writes her poems about the empire's transformation and reads them at the Assembly. They are her finest work. She says the revolution gave her something to write about besides heartbreak.
+    Leila writes about the reforms. Her poems are read in the Assembly and taught in the new schools. She says the revolution gave her something to write about besides heartbreak. "Though heartbreak," she adds, "remains the superior subject."
   *elseif (romance_navid)
-    Navid commands the guard with the same discipline he has always brought to his service, but there is an ease to him now that was not there before. He smiles more. He carves wooden animals for the children of the court.
+    Navid commands the guard with the same discipline he has always brought to service. But there is an ease to him now. He smiles more. He carves wooden animals for the children of the court, and there is a menagerie on the mantelpiece that grows each month.
   *else
-    Asha's treatise on the Eighth Wisdom -- the wisdom of change -- has become the philosophical foundation of the reform movement. She laughs about this. "I wrote a book about asking questions," she says. "And the empire used it as an answer."
+    Asha's treatise on the Eighth Wisdom -- the wisdom of change -- has become the philosophical foundation of the reform movement. "I wrote a book about asking questions," she says, laughing. "And the empire used it as an answer."
 
 *page_break
 
-The People's Vizier. That is what they call you in the markets and the schools and the provincial assemblies. Not a king. Not a conqueror. Not even a hero in the traditional sense. Just a person who believed the empire could be better and spent ${their} life proving it.
+The Dowager Empress Nur visits the capital once a year, for the Emperor's birthday. She is smaller than she used to be, and quieter, and she watches the court with the detached curiosity of a gardener visiting someone else's garden. She approves, you think. She would never say so. But when she sees the reforms working -- the merchants in the council, the commoners in the court, the children in the schools -- she nods, once, and the nod is enough.
 
-The Eternal Flame burns. The empire endures. And somewhere in a village school, a child is learning to write.
+The People's Vizier. That is what they call you in the markets and the schools and the provincial assemblies. Not a king. Not a conqueror. Not even a hero in the way the ballads describe. Just a person who believed the empire could be better and spent ${their} life proving it, one school at a time, one law at a time, one letter at a time.
+
+You are not finished. You will never be finished. The work of building a just empire does not end -- it stretches ahead, year after year, reform after reform, and the person who began it will not live to see it completed. But that is all right. The schools will outlast you. The laws will outlast you. And somewhere in a village in the eastern provinces, a girl named Maryam is writing her second letter, and her handwriting is already improving.
+
+The Eternal Flame burns. The empire endures. And the letter on your desk -- cheap paper, careful script, the smell of straw -- is worth more than any treaty or decree you have ever signed.
 
 *ending
 
@@ -547,37 +650,51 @@ The Eternal Flame burns. The empire endures. And somewhere in a village school, 
 
 Two years later, the ruins.
 
-You walk through what remains of the Grand Bazaar. The vaulted ceilings that once soared overhead have collapsed in three places. The Silk Quarter is a blackened shell. The Spice Market smells of ash instead of cardamom. Merchants are rebuilding -- they always rebuild -- but the reconstruction is slow, and the spaces between the new stalls echo with absence.
+You walk through what remains of the Grand Bazaar. The vaulted ceilings that once soared overhead have collapsed in three places. The Silk Quarter is a blackened shell. The Spice Market smells of ash instead of cardamom. Merchants are rebuilding -- they always rebuild, Priya says, because commerce is the most stubborn form of hope -- but the reconstruction is slow, and the spaces between the new stalls echo with absence.
+
+A child runs past you carrying a bolt of cloth. The cloth is rough, undyed, nothing like the silk that once cascaded through these corridors in rivers of crimson and gold. But it is cloth, and the child is running, and there is something in the speed of those small feet that makes you think the world has not ended. It has merely changed.
 
 *page_break
 
-The revolution succeeded. The monarchy is abolished. The Jade Throne sits in the center of a public square, a monument to what was and what ended. Children climb on it. Their parents tell them it was where the emperors sat, and the children nod and go back to climbing, because to them it is just a big green chair.
+The revolution succeeded. The monarchy is abolished. The Jade Throne sits in the center of a public square, a monument to what was and what ended. Children climb on it. Street vendors sell roasted chestnuts in its shadow. Pigeons nest in the carved armrest where three centuries of imperial hands once rested.
 
-The cost was higher than you imagined. Higher than anyone imagined. When you abolished the throne, you did not just remove a ruler -- you removed the keystone of a three-hundred-year arch, and the arch collapsed. Provinces broke away. Trade routes fractured. The military split between loyalists and reformers. For six months, the empire that was no longer an empire tore itself apart.
+The cost was higher than anyone imagined. When you abolished the throne, you did not merely remove a ruler -- you removed the keystone of a three-hundred-year arch. The arch collapsed. Provinces broke away. Trade routes fractured. The military split. For six months, the empire tore itself apart with the savage efficiency of a body rejecting its own organs.
+
+Order returned. Not the old order -- that is gone, burned beyond recognition. A new order, assembled from the wreckage by exhausted people who agreed on nothing except that the killing had to stop. A provisional council governs. The first elections are scheduled for next year. The future is uncertain.
 
 *page_break
-
-Order returned, eventually. Not the old order -- that is gone forever. A new order, built on the rubble, assembled from the pieces by people who agreed on nothing except that the killing had to stop. A provisional council governs. Elections are promised. The future is uncertain.
 
 *if (heir_alive)
-  Roshan lives in a small house in the Scholars' Quarter. He teaches history at the university. His students do not know he was once their emperor, and he does not tell them.
-*else
-  Roshan is buried in the garden where his ancestors planted pomegranate trees. The grave is simple. You visit it sometimes.
+  Roshan lives in a small house in the Scholars' Quarter. He teaches history at the university. His students call him "Professor" and argue with him about the causes of the revolution, which they study as history rather than lived experience. He does not tell them he was the last emperor. Some of them have figured it out. They treat him no differently.
 
-General Kadir held the northern border through the chaos, because Kadir would hold the border during the apocalypse. Priya is rebuilding the economy from scratch, cursing every day and refusing to give up. Ashoka tends the Flame, which guttered during the worst of it but never went out.
+  He is, by all reports, content. Freedom from the throne gave him something the throne never could: the right to be ordinary.
+*else
+  Roshan is buried in the Garden of Eternal Spring. The garden is public now -- anyone can walk through it, and they do. A grandmother feeds pigeons where the Emperor's private bench once stood. Roshan would have liked that, you think. He always wanted to be closer to his people. He just never imagined it would happen this way.
+
+General Kadir held the northern border through the chaos, because the man would hold the border during the apocalypse and then file a report about it. He lost soldiers. He lost forts. He held the line. When the provisional council asked him to swear a new oath of loyalty, he said: "I swore to defend the empire. I did not specify which form of government it required. The border does not care about constitutions."
+
+Priya is rebuilding the economy from scratch, working eighteen-hour days and cursing fluently in three languages. She has mobilized the merchant class with the argument that commerce does not require an emperor -- it requires stability, and stability can be built by anyone with a ledger and sufficient stubbornness. She is, by her own admission, the most stubborn person in the empire. No one disagrees.
+
+Ashoka tends the Flame, which guttered during the worst of the revolution but never went out. The temple stands neutral, as it has always claimed to stand, offering sanctuary to refugees from both sides and counsel to anyone who asks. "The Flame endures," Ashoka says. "Governments are temporary. The Flame is not."
+
+Zara vanished during the revolution and reappeared three months later with a complete dossier on every surviving conspirator, every foreign agent, and every profiteer who exploited the chaos. She presented it to the provisional council without comment. The council has not asked where she went. They have learned not to ask Zara questions they do not want answered.
+
+Farid -- somehow, impossibly, Farid -- has kept the civil service functioning. Through revolution and counter-revolution, through the burning of the administrative wing and the loss of three filing cabinets, through the complete dissolution of the government he was trained to serve, Farid has maintained the records. Tax rolls. Census data. Land deeds. The mundane architecture of civilization that no one thinks about until it is gone. He has saved the empire's memory, and he does not even know it.
+
+*if (romance_active)
+  ${partner_name} stayed. Through the fire and the chaos and the terrible cost of revolution, ${they} stayed. The strength it took to stand beside you while the world burned is a debt you will spend the rest of your life trying to repay. Some nights ${they} wake screaming. Some nights you do. You hold each other. That is the only answer either of you has found.
 
 *page_break
 
-*if (romance_active)
-  ${partner_name} stayed. Through the fire and the chaos and the terrible cost, ${they} stayed. That is worth more than an empire.
+The Burning Throne. The historians will argue about it forever -- whether the revolution was necessary, whether the cost was justified, whether a gentler path existed. You will argue with yourself, in the dark hours before dawn, for the rest of your life. There is no resolution. There never will be. You chose, and people died, and the world changed, and whether the change justifies the cost is a question that has no answer, only opinions held by people who were not there.
 
-The Burning Throne. The historians will argue about it forever -- whether the revolution was necessary, whether the cost was too high, whether a better path existed. You will argue with them in your own mind, every night, for the rest of your life.
+But when you see the children climbing the jade chair in the public square, you feel something that might be hope. They do not know what the throne means. They do not carry its weight. They are free of it in a way that no one who lived under its shadow can ever be.
 
-But when you see the children climbing the jade chair in the public square, you feel something that might be hope. They do not know what the throne means. They do not carry its weight. They are free.
+Freedom born in fire is still freedom. The scars are real, and deep, and they will ache when the weather changes. But beneath the scars, something new is growing. You can see it in the scaffolding rising over the Grand Bazaar. In the delegates meeting under canvas tents to plan the first elections. In the children -- always the children -- playing in the ruins without fear.
 
-Freedom born in fire is still freedom. The scars are real, and they will last. But beneath the scars, something new is growing.
+The Eternal Flame burns. It burns in the ruins, in the new construction, in the provisional council chambers where exhausted delegates argue about the future with the passionate intensity of people who have just discovered that the future belongs to them.
 
-The Eternal Flame burns. It burns in the ruins. It burns in the new construction. It burns in the faces of people who are learning, for the first time, what it means to choose their own fate.
+It burns in you, too. Dimmer than before. Scarred. But burning.
 
 *ending
 
@@ -588,62 +705,65 @@ The Eternal Flame burns. It burns in the ruins. It burns in the new construction
 
 *comment The player dies for their cause. Posthumous legacy.
 
-*comment Note: This ending is narrated in third person, from the empire's
-*comment perspective, because the player is dead.
+*comment This ending is narrated in third person because the player is dead.
 
 The funeral of Grand Vizier ${player_name}.
 
-The Jade Throne Room is full. Every seat, every standing place, every gallery and balcony is occupied. The people of Khazara have come to mourn -- not just the court, not just the powerful, but common people from every quarter of the city. They fill the corridors, the courtyards, the streets beyond the Citadel gates. They carry candles. The city looks like a second Festival of Lights, except that no one is celebrating.
+The Jade Throne Room is full. Every seat, every standing place, every gallery and balcony is occupied. The people of Khazara have come to mourn -- not just the court, not just the powerful, but ordinary people from every quarter of the city. They fill the corridors and the courtyards and the streets beyond the Citadel gates. They carry candles. Thousands of candles, held aloft in the darkness, until the city looks like a second Festival of Lights. Except that no one is celebrating.
 
 *page_break
 
-Emperor Roshan IV stands before the Jade Throne. He does not sit. He has not sat on the throne since the siege, since the moment when the Vizier stepped between ${them} and the blade, when the Vizier made a choice that the world does not have a word for -- or, rather, the world has a word for it, and the word is insufficient.
+Emperor Roshan IV stands before the Jade Throne. He does not sit. He has not sat on the throne since the siege, since the moment when the Vizier stepped into the path of a blade meant for the Emperor's heart.
 
-Sacrifice.
+Sacrifice. The word is used often in the days that follow. Priests say it. Generals say it. Common people in the markets say it. But the word is too small for what happened. What happened was not a sacrifice -- it was a choice. The choice of a person who looked at the scales of the world and decided, in the span of a heartbeat, that the empire's future weighed more than their own life.
 
-The Emperor speaks. His voice does not break. He has prepared this speech for three days, writing and rewriting, and Farid has helped him with the protocol, and the words are correct and formal and imperial.
+The Emperor speaks. His voice does not break. He has prepared this eulogy for three days, writing and rewriting with Farid's help, and the words are correct and formal and imperial. But then he sets aside the prepared remarks.
 
-But then he sets aside the prepared remarks.
+"${player_name} came to this city as a stranger," he says. "A provincial administrator with no allies, no power, and nothing but a seal ring and the impossible job of holding this empire together."
 
-"${player_name} came to this city as a stranger," he says. "A provincial administrator from nowhere, with no allies and no power and nothing but a seal ring and the impossible job of holding this empire together."
+He pauses. Steadies himself.
 
-His voice wavers. He steadies it.
+"${they} held it together. Not with armies. Not with gold. Not with threats or fear. ${they} held it with ${their} hands, and the empire was too heavy, and ${they} knew it, and ${they} held on anyway. And when the blade came -- when the moment came to choose between ${their} life and this empire -- ${they} chose the empire."
 
-"${they} held it together. Not with armies. Not with gold. Not with threats or manipulation or fear. ${they} held it together with ${their} hands, and the empire was too heavy, and ${they} knew it, and ${they} held on anyway."
+His voice cracks. He lets it.
+
+"I did not deserve that. None of us did. But ${they} gave it to us anyway."
 
 *page_break
 
 *if (romance_active)
-  ${partner_name} sits in the front row. ${their} face is still. ${their} hands are folded in ${their} lap. ${they} ${have} not spoken publicly since the funeral was announced.
+  ${partner_name} sits in the front row. ${their} face is still. ${their} hands are folded in ${their} lap with the rigid composure of someone who will shatter if they move.
 
   *if (romance_leila)
-    Leila will write a poem about this day. It will be the finest thing she has ever written. She will never read it aloud. It will be found among her papers, decades later, and the scholars who discover it will argue about whether it is a love poem or a eulogy.
+    Leila will write a poem about this day. She will write it in a single sitting, tears blurring the words, her pen leaving tracks on the paper like footprints in fresh snow. It will be the finest thing she has ever written. She will never read it aloud. She will never publish it. It will be found among her papers decades later, and the scholars who discover it will say it is the greatest love poem in the Khazari language.
 
-    It is both.
+    It is not a love poem. It is a conversation with someone who is no longer there, written by someone who will spend the rest of her life reaching for a hand in the dark.
   *elseif (romance_navid)
-    Navid stands at attention by the door. His face is a soldier's face -- controlled, disciplined, revealing nothing. But those who know him notice that the wooden animal he was carving -- a bird, half-finished -- has not been touched since the siege.
-
-    He will finish it. Eventually. And he will place it on a grave, and he will not explain why.
+    Navid stands at attention by the door. His face is a soldier's face -- controlled, disciplined, carved from the same stone as the walls. But those who know him notice that the wooden animal he was carving -- a bird, half-finished -- has not been touched since the siege. It sits on a shelf in his quarters, unfinished. It will remain unfinished. Some things cannot be completed alone.
   *else
-    Asha has not returned to the temple. She sits in the gallery with a book in her lap, unopened. She came to the funeral with questions, as she comes to everything. But the question she needs answered -- why the person she loved chose to die for a world that did not deserve the sacrifice -- has no answer that philosophy can provide.
+    Asha has not returned to the temple since the funeral was announced. She sits in the gallery with a book in her lap, unopened. She came here with questions, as she comes to everything. But the question she carries now -- why the person she loved chose to die for a world that did not always deserve that love -- has no answer that philosophy can provide. For the first time in her life, Asha has no questions. She has only absence.
 
 *page_break
 
-The reforms are enacted posthumously. The council that ${player_name} proposed is established. The constitution ${player_name} drafted is ratified. The schools, the courts, the new trade regulations -- all of it carries forward on the momentum of a sacrifice that no one can deny.
+The reforms are enacted posthumously. The constitution is ratified. The schools open. The courts accept commoners' petitions. Every law carries the invisible mark of the person who drafted it in long nights by lamplight, knowing they might not live to see it implemented.
 
-Farid sees to the implementation. He works with the ferocious dedication of a man honoring a debt he can never repay. The filing system is immaculate.
+Farid sees to the details. He works with the ferocious dedication of a man honoring a debt that can never be repaid. He does not sleep much. He does not complain. The filing system is immaculate.
+
+In the Temple of Seven Wisdoms, High Priest Ashoka lights a candle and places it before the Eternal Flame. "The Third Wisdom," he says. "Courage. The judgment that something matters more than fear." He pauses. "Grand Vizier ${player_name} judged. And the empire is changed forever."
+
+The Dowager Empress Nur, who spent three decades building walls between herself and grief, weeps. She weeps in her chambers, alone, and no one sees, and she will never speak of it. But the tears are real. They are the first honest thing she has done in thirty years.
+
+General Kadir salutes in the garrison yard, alone, at sunset. It is a soldier's farewell. He holds the salute for a full minute. No one is watching. He does not care.
+
+Priya closes her ledger for the day and pours two cups of wine. She drinks one. She leaves the other untouched, on the desk, until the wine grows warm and the lamp burns low. She does this every evening for a month. Then she stops. But the second cup remains on her desk, refilled each morning, a toast to the person who taught her that some things are worth more than profit.
 
 *page_break
-
-In the Temple of Seven Wisdoms, High Priest Ashoka lights a candle and places it before the Eternal Flame.
-
-"The Third Wisdom," he says. "Courage. The judgment that something matters more than fear." He pauses. "Grand Vizier ${player_name} judged. And the empire is changed."
 
 The candle burns beside the Flame. Two lights in the ancient temple -- one eternal, one small and mortal and impossibly brave.
 
-The empire remembers. The empire endures. And the name ${player_name} is spoken in the Jade Throne Room with a reverence that no living Vizier has ever received.
+In the years that follow, the reforms take root. The constitution is ratified. The schools open. A statue is erected in the Garden of Eternal Spring -- a figure in vizier's robes, one hand extended, the other holding the seal ring. Farid oversaw the commission. The sculptor got the eyes wrong, he says. The eyes should be kinder. But the hands are right. The hands are exactly right.
 
-Some flames, when extinguished, burn brighter in memory than they ever did in life.
+Some flames, when extinguished, burn brighter in memory than they ever did in life. The empire remembers. The empire endures. And the name ${player_name} is spoken in the Jade Throne Room with a reverence that no living Vizier has ever received, and a gratitude that no living Vizier can ever comprehend.
 
 *ending
 
@@ -656,24 +776,26 @@ Some flames, when extinguished, burn brighter in memory than they ever did in li
 
 Three years later, the village.
 
-You live in a village at the foot of the Ashghar Mountains, where the trade caravans pass on their way to the western passes. It is a small place -- three hundred people, a market square, a single temple with a single priest who tends a single flame. The air smells of pine resin and woodsmoke and the wildflowers that grow in the mountain meadows.
+You live in a village at the foot of the Ashghar Mountains, where the trade caravans pass on their way to the western passes. It is a small place -- three hundred people, a market square, a well that draws cold water from the mountain aquifer, and a single temple with a single priest who tends a single flame. The air smells of pine resin and woodsmoke and the wildflowers that grow in the mountain meadows above the tree line.
 
 You are a schoolteacher.
 
 *page_break
 
-The irony is not lost on you. The Grand Vizier of the Khazaran Empire -- the Voice of the Throne, the second most powerful person in a civilization of fifty million people -- teaches arithmetic and calligraphy to children who do not know your real name. You are "Teacher." Sometimes "Old Teacher," which is inaccurate but endearing. You are thirty-something. In the village, that counts as old.
+The irony is not lost on you. The Grand Vizier of the Khazaran Empire -- the Voice of the Throne, the second most powerful person in a civilization of fifty million -- teaches arithmetic and calligraphy to children who do not know your real name. You are "Teacher." Sometimes "Old Teacher," which stings because you are barely past thirty. In the village, that counts as old. You have stopped correcting them.
 
-The children are terrible at arithmetic and extraordinary at calligraphy. You suspect this says something about the human spirit's preference for beauty over utility, but you have given up making grand pronouncements about the human spirit. Grand pronouncements are for viziers. You are a schoolteacher.
+The children are terrible at arithmetic and extraordinary at calligraphy. Their letters loop and curl across the page with a confidence their sums lack entirely. You suspect this says something about the human spirit's preference for beauty over utility, but you have given up making grand pronouncements about the human spirit. Grand pronouncements are for viziers. You are a schoolteacher.
+
+The days have a rhythm. You wake with the sun. You teach in the morning. You walk in the mountains in the afternoon. You eat dinner at the inn, where the owner's wife makes a lamb stew that would put the Citadel kitchens to shame. You read by candlelight until your eyes grow heavy. You sleep without dreaming.
 
 *page_break
 
-News from the capital reaches the village in fragments, carried by caravan drivers and traveling merchants. Emperor Roshan IV rules. The empire endures. The reforms -- or the lack of reforms, depending on which caravan driver you ask -- continue. The Northern Khanates are quiet. The Western Confederation is trading.
+News from the capital reaches the village in fragments, carried by caravan drivers and traveling merchants. Emperor Roshan IV rules. The empire endures. The reforms proceed, or stall, or proceed again, depending on which driver you ask. The Northern Khanates are quiet. The Western Confederation is trading. A new Vizier has been appointed -- a former general, by most accounts. Competent. Dull. Not a provincial administrator from nowhere.
 
-None of it is your concern.
+None of it is your concern. The realization was painful at first, like removing a bandage from a wound that has not fully healed. Now it is simply true, the way the mountains are true, the way the cold water from the well is true. The empire does not need you. It never did. It needed someone, and you were someone, and now you are someone else.
 
 *if (rel_farid > 50)
-  Farid writes you letters. They arrive monthly, meticulously dated, organized by topic, and annotated with references to regulations you no longer need to know. They are the most beautiful letters you have ever received. He tells you about the court, about the Council, about the new filing system he has implemented. He never asks you to come back. He just writes.
+  Farid writes you letters. They arrive monthly, meticulously dated, organized by topic, and annotated with references to regulations you will never need to know again. He tells you about the court, the Council, the new filing system. He never asks you to come back. He just writes. You write back. Your letters are shorter than his, but they are the most honest things you have ever written.
 
 *page_break
 
@@ -682,27 +804,27 @@ None of it is your concern.
     ${partner_name} is here.
 
     *if (romance_leila)
-      Leila teaches poetry at the village school. The children adore her. She writes poems about the mountains, about the trade caravans, about the wildflowers, about the particular quality of light at sunset when the peaks turn gold. She says they are her best work. She says she never could have written them in the capital, where everything was metaphor and nothing was itself.
+      Leila teaches poetry at the village school. The children adore her. She writes about the mountains, the caravans, the wildflowers, the particular quality of light at sunset when the peaks turn gold and the valley fills with blue shadow. She says these are her best poems. She says she could never have written them in the capital, where everything was metaphor and nothing was itself.
 
-      At night, by the fire, she reads to you. The poems are simple and devastating. The bird in her father's last poem has finally landed.
+      At night, by the fire, she reads to you. The bird in her father's last poem has finally landed.
     *elseif (romance_navid)
-      Navid runs the village's small militia -- six farmers with hunting bows who train on market days. He takes it as seriously as he took command of the Imperial Guard, which means the village is the best-defended settlement in the Ashghar range. He carves wooden animals for the children. The mantelpiece above your fireplace holds a menagerie.
+      Navid runs the village's small militia -- six farmers with hunting bows who train on market days. He takes it as seriously as he took command of the Imperial Guard. He carves wooden animals for the children. The mantelpiece above your fireplace holds an entire menagerie: horses, birds, foxes, a crocodile.
 
-      In the evenings, he sits beside you on the porch and watches the sun set behind the mountains. He does not speak much. He never did. But the silence between you is the warmest thing in the world.
+      In the evenings, he sits beside you on the porch and watches the sun set behind the mountains. The silence between you is the warmest thing in the world. He never did talk much. You have learned that the most important conversations do not require words.
     *else
-      Asha has built a small library in the village -- twenty-seven books and growing. She corresponds with scholars across the empire and beyond, debating philosophy by mail with a passion that has not diminished. She is writing a new treatise on the nature of contentment. She says the research is going well.
+      Asha has built a small library in the village -- forty-three books and growing. She corresponds with scholars across the empire and debates philosophy by mail with a passion that has not diminished. She is writing a new treatise on the nature of contentment.
 
-      "Is contentment the absence of ambition," she asks you over breakfast, "or the fulfillment of it?" She does not wait for your answer. She never does. But her eyes, when they find yours, hold a warmth that answers the question for both of you.
+      "Is contentment the absence of ambition," she asks you over breakfast, "or the fulfillment of it?" She does not wait for your answer. She never does. But her eyes, when they find yours over the teacups, hold a warmth that answers the question for both of you.
   *else
-    You are alone. The solitude is not unpleasant. It is simply the shape of a life unburdened. You eat alone, sleep alone, walk the mountain paths alone. The silence is immense.
-
-    Sometimes you dream of the Jade Throne Room. The dreams are not nightmares, exactly. They are more like letters from a life that happened to someone else.
+    You are alone. The solitude is not unpleasant. It is simply the shape of a life unburdened. Sometimes you dream of the Jade Throne Room. The dreams are not nightmares. They are letters from a life that happened to someone else.
 
 *page_break
 
-The Exile. That is what the court calls you, if they remember you at all. In the village, you are Teacher. In the mountains, you are no one. And that -- the freedom of being no one, of carrying no seal ring and no title and no weight except the weight of chalk dust and wildflowers -- is a peace you did not know existed.
+The Exile. That is what the court calls you, if they remember you at all. In the village, you are Teacher. In the mountains, you are no one. And that -- the freedom of being no one, of carrying no seal ring and no title and no weight -- is a peace you did not know existed.
 
-The Eternal Flame burns in the capital, far away. But in the village temple, the small flame burns too. And in the mountain meadows, the wildflowers bloom without anyone's permission, and the caravan drivers pass through with news of a world that is no longer yours, and the children learn their letters, and the sun sets, and you are free.
+The Eternal Flame burns far away. But in the village temple, the small flame burns too. And in the mountain meadows, the wildflowers bloom, and the caravans pass through with news of a world that is no longer yours, and the children learn their letters, and the sun sets behind the mountains.
+
+You are free.
 
 *ending
 
@@ -715,55 +837,61 @@ The Eternal Flame burns in the capital, far away. But in the village temple, the
 
 The Eternal Flame burns.
 
-It has burned for three hundred years. It burned when Roshan the Conqueror knelt before it and asked for the blessing of the gods. It burned through golden ages and civil wars, through plague and prosperity, through the rise and fall of empires within the Empire. It burned when you first entered the Temple of Seven Wisdoms as a new Vizier with a seal ring too heavy for your finger. It burns now.
+It has burned for three hundred years. It burned when Roshan the Conqueror knelt before it and asked for the blessing of the gods. It burned through golden ages and civil wars, through plague and prosperity, through the rise and fall of emperors and the slow turning of the centuries. It burned when you first entered the Temple of Seven Wisdoms as a new Vizier with ink-stained fingers and a seal ring too heavy for your hand.
 
-But now you see it differently.
+It burns now. But now you see it differently.
 
 *page_break
 
-High Priest Ashoka stands beside you in the innermost sanctum of the Temple of Seven Wisdoms -- a room that most of the faithful do not know exists, behind a door that has no handle, accessible only through a passage that the temple has guarded for three centuries.
+High Priest Ashoka stands beside you in the innermost sanctum of the Temple -- a room that most of the faithful do not know exists, behind a door that has no handle, accessible through a passage the temple has guarded since the founding. The public Flame -- the great bronze brazier in the courtyard, where pilgrims pray and tourists gawk -- is a symbol. Magnificent, but a symbol.
 
-The Eternal Flame burns here in its true form. Not the great bronze brazier in the public courtyard -- that is a symbol, a magnificent one, but a symbol. The true Flame burns in a small clay lamp on a stone pedestal in a room carved from the living rock beneath the temple. The lamp is ancient. The oil that feeds it comes from a source that Ashoka will not name.
+The true Flame burns here. In a small clay lamp on a stone pedestal in a room carved from the living rock beneath the temple. The lamp is ancient -- older than the empire, older than the temple built above it, old enough that its origin has passed from history into legend. The oil that feeds it comes from a source that Ashoka will not name.
 
 The flame is small. No larger than a candle. And it is the most beautiful thing you have ever seen.
 
 *page_break
 
-"The Seven Wisdoms," Ashoka says, his voice barely a whisper in the sacred space, "are the path. Justice, Mercy, Courage, Temperance, Knowledge, Beauty, Harmony. Walk the path, and you arrive at the truth."
+"The Seven Wisdoms," Ashoka says, his voice barely a whisper, "are the path. Justice, Mercy, Courage, Temperance, Knowledge, Beauty, Harmony. Walk the path, and you arrive at the truth."
 
-"What is the truth?" you ask.
+"What is the truth?"
 
-"That the Flame is not outside you. It never was." He turns to you, and his ancient face is luminous. "The Vizier's seal ring grants authority over the empire. This--" he gestures to the small, perfect flame "--grants authority over the self."
+"That the Flame is not outside you. It never was." He turns to you, and his ancient face is luminous with a light that does not come from the lamp. "The Vizier's seal ring grants authority over the empire. This grants authority over the self."
 
 "Is that enough?"
 
-"It is everything."
+"Child." The word, this time, is not condescension. It is tenderness. "It is everything."
 
 *page_break
 
-You resigned the vizieriat three months ago. The Emperor accepted with grace. The court whispered. The factions adjusted. The empire, as always, carried on.
+You resigned the vizieriat three months ago. The Emperor accepted with grace and bewilderment -- he could not understand why anyone would surrender the second most powerful position in the known world for a life of prayer and meditation. You could not explain it to him. The explanation requires a vocabulary that politics does not possess.
 
-But you are no longer part of the empire's machinery. You are a novice of the Temple of Seven Wisdoms, the oldest novice in its history, surrendering the greatest secular power in the known world for a small clay lamp and the silence of a stone room.
+The court whispered. The factions recalculated. The empire, as always, carried on.
+
+But you are no longer part of the machinery. You are a novice of the Temple of Seven Wisdoms, the oldest novice in its history, surrendering everything you built for a clay lamp and silence and the slow, patient work of becoming who you were always meant to be.
+
+The empire adapts. A new Vizier was appointed -- competent, steady, unremarkable. The kind of person who keeps the machinery running without trying to rebuild it. Farid serves the new Vizier with the same loyalty he served you, and if the loyalty is tinged with a sadness that the new Vizier cannot understand, Farid keeps it folded neatly in a drawer, labeled and filed.
+
+General Kadir sent you a single letter when you resigned. It said: "I don't understand. But I respect the choice." Coming from Kadir, that was extraordinary. Priya sent a case of wine, which the temple accepted with gracious bewilderment. Zara sent nothing, because Zara does not send things, but a rumor reached you through the temple network that she said, once, to no one in particular: "The smartest person I ever met just did the stupidest thing I have ever seen. Or the wisest. I cannot tell." High praise, from Zara.
 
 *if (romance_active)
   *if (romance_asha)
-    Asha walks this path beside you. Of all the endings you imagined, this is the one that surprises you least and fills you most completely. Her questions -- the questions that first drew you to her, that challenged and delighted and occasionally infuriated you -- have led both of you here, to the heart of the Flame.
+    Asha walks this path beside you. The scholar whose questions first drew you to the temple has found, in you, the answer she did not know she was seeking. Not a theological answer -- Asha would be disgusted by anything so tidy. Something messier. Something that cannot be debated or deconstructed. Something that simply is.
 
-    "I asked the Flame what mattered," she told you once. "It answered."
+    "I asked the Flame what mattered," she told you. "It answered."
 
     "What did it say?"
 
-    "It didn't say anything. It burned. And I understood."
+    She smiled. "It burned. And I understood."
   *else
-    ${partner_name} visits. ${they} ${are} not part of this world -- the world of silence and flame and the slow, patient work of the spirit. But ${they} ${are} part of yours. The temple allows visitors, and ${partner_name} comes, and the time you spend together is quiet and full and enough.
+    ${partner_name} visits. ${they} ${are} not part of this world of silence and flame. But ${they} ${are} part of yours. The temple allows visitors, and ${partner_name} comes, and the time you spend together is quiet and full. ${they} ${have} learned that love does not require proximity. It requires only truth.
 
 *page_break
 
-The years pass. You meditate. You study. You tend the Flame. The Seven Wisdoms, which once seemed like philosophical abstractions, become as real as the stone beneath your knees and the light before your eyes.
+The years pass. You meditate. You study. You tend the Flame. The Seven Wisdoms, which once seemed like philosophical abstractions, become as real as the stone beneath your knees. Justice is not a law. It is the weight of the world, perfectly balanced. Mercy is not weakness. It is strength held in an open hand. Courage is not the absence of fear. It is the small clay lamp, burning in the dark, because someone chose to light it.
 
-The empire rises and falls and rises again. Emperors come and go. Viziers serve and are forgotten. The Silk Road carries its goods from mountain to sea. And beneath the Temple of Seven Wisdoms, in a room carved from living rock, the Eternal Flame burns.
+The empire rises and falls. Emperors come and go. Viziers serve and are forgotten. But beneath the Temple of Seven Wisdoms, in a room carved from living rock, the Eternal Flame burns. You are its guardian now. The last in a line that stretches to the founding.
 
-You are its guardian now. The last in a line that stretches back to the founding. The fire is small and ancient and inextinguishable, and when you sit before it in the silence, you feel the warmth of every soul that has ever knelt in this place and understood, at last, that the light they were seeking was already inside them.
+The fire is small and ancient and inextinguishable. When you sit before it in the silence, you feel the warmth of every soul that has ever knelt in this place and understood, at last, that the light they were seeking was already inside them.
 
 The Eternal Flame burns.
 
@@ -780,29 +908,37 @@ You burn with it.
 
 The last poem.
 
-Leila's father wrote it the night before he died. A poem about a bird that forgot how to land. Twelve lines, written in a hand that trembled with fever, on a scrap of paper that Leila has carried in the pocket closest to her heart for nine years.
+Leila's father wrote it the night before he died. A poem about a bird that forgot how to land. Twelve lines in a hand that trembled with fever, written on a scrap of paper that Leila has carried in the pocket closest to her heart for nine years. She showed it to you on a night when the moon was full and the Garden of Eternal Spring smelled of jasmine and the world felt, for one hour, like it was made of something other than politics and fear.
 
-You found it. Not the paper -- Leila always had that. You found the meaning.
+You found the meaning. Not in the words -- Leila knows the words by heart, has analyzed every syllable, has spent years turning the poem over in her mind like a puzzle box she cannot open. The meaning was in the spaces between the words. In the line breaks. In the way the rhythm faltered in the seventh line and recovered in the eighth, as if the poet stumbled, reached for something, and found it.
 
 *page_break
-
-It was hidden in the line breaks. In the spaces between words. In the way the rhythm faltered in the seventh line and recovered in the eighth, as if the poet stumbled, reached for something, and found it.
 
 The bird forgot how to land because it was afraid of the ground. Not because the ground was dangerous -- because landing meant choosing a place, and choosing a place meant giving up every other place, and the bird loved the sky too much to surrender it for a single patch of earth.
 
-But then the bird found a person who was not the ground. A person who was the wind.
+But then the bird found a person who was not the ground.
 
-"That's me," Leila said, when you told her. "The bird." She was crying. She never cries. "And you're the wind."
+A person who was the wind.
+
+"That's me," Leila said, when you told her. She was crying. She never cries. The court poet who can reduce an audience to tears with a single verse does not weep herself. But she was weeping now, in the Garden of Eternal Spring, with the moonlight on her face and the jasmine in the air and the small, crumpled paper trembling in her hands. "I'm the bird."
+
+"Yes."
+
+"And you're the wind."
+
+"I think so."
+
+She laughed. The laugh was wet and broken and the most beautiful sound you had ever heard.
 
 *page_break
 
-You left the capital together on a morning when the mist rose from the Ashar River like silk unfurling. No ceremony. No announcement. You simply walked out of the Citadel gates, two people with traveling packs and a book of poems and the clothes on your backs, into a world that was, for the first time in either of your lives, open.
+You left the capital together on a morning when mist rose from the Ashar River like silk unfurling. No ceremony. No announcement. No farewell tour. You simply walked out of the Citadel gates -- two people with traveling packs, a book of poems, and nothing else. The guards at the gate watched you pass with expressions that ranged from confusion to envy.
 
-Farid tried to stop you. Not because he disapproved -- Farid would follow you into the sea -- but because he could not conceive of a world in which the Vizier simply leaves. "But the regulations--" he began, and you hugged him, and he fell silent, and when you released him his face was wet.
+Farid tried to stop you. Not because he disapproved -- Farid would follow you into the sea if you asked -- but because he could not conceive of a world in which the Vizier simply leaves. "But the regulations--" he began. You hugged him. He fell silent. When you released him, his face was wet and his arms were still reaching for a person who was already gone.
 
 "The filing system is yours now," you told him. "Take care of it."
 
-"I will, my lord Vizier. I will."
+"I will, my lord Vizier. I -- I always will."
 
 You did not correct the title. It was the last time anyone would use it, and Farid deserved to say it one final time.
 
@@ -810,23 +946,21 @@ You did not correct the title. It was the last time anyone would use it, and Far
 
 Three years later, the road.
 
-You and Leila have traveled the Silk Road from the Ashghar Mountains to the Jade Sea. You have slept in caravansaries and farmers' barns and once, memorably, in a tree during a thunderstorm. You have eaten food from twelve provinces, learned songs in six languages, and argued about poetry in all of them.
+You and Leila have traveled the Silk Road from the Ashghar Mountains to the Jade Sea and back again. You have slept in caravansaries and farmers' barns and, once, in a tree during a thunderstorm that Leila later described in a poem as "the sky weeping with joy because we were too happy and someone had to compensate." You have eaten food from twelve provinces. You have learned songs in six languages. You have argued about poetry in all of them.
 
-Leila writes constantly. Not court poetry -- not the elaborate, politically charged verse that made her famous. She writes about the road. About the way light hits a mountain pass at dawn. About the taste of a stranger's bread. About the sound of your breathing when you sleep, which she describes in one poem as "the only metronome I need."
+Leila writes constantly. Not court poetry -- not the elaborate, politically charged verse that made her famous. She writes about the road. About the way light hits a mountain pass at dawn. About the taste of a stranger's bread shared freely. About the sound of your breathing when you sleep, which she describes in one poem as "the only metronome I need, the rhythm under every rhythm, the beat my heart has been looking for."
 
-You have no title, no seal ring, no authority, no wealth beyond what you carry.
+You have no title. No seal ring. No authority. No wealth beyond what you carry.
 
 You have never been happier.
 
 *page_break
 
-The empire carries on. News reaches you in fragments: Roshan is governing well. Farid has reorganized the civil service. The reforms continue. The border is secure. The Eternal Flame burns.
+The empire carries on. News reaches you in fragments: Roshan is governing well. Farid has reorganized the civil service. The Eternal Flame burns. The Khanates are quiet. The Grand Bazaar is expanding. Life goes on, as life does, in all the places you have left behind.
 
-None of it requires you. That is the gift you gave the empire -- a system strong enough to survive the loss of any single person, including you. And the gift the empire gave you, in return, was the freedom to walk away.
+None of it requires you. That is the gift you gave the empire -- a system strong enough to survive the loss of any single person. And the gift the empire gave you, in return, was the freedom to discover that a life is more than a title.
 
-*page_break
-
-One evening, in a village at the edge of the Jade Sea, Leila reads you her latest poem. The sun is setting. The sea is gold and rose. A fishing boat rides the swell offshore, its sail catching the last light.
+One evening, in a village at the edge of the Jade Sea, Leila reads you her latest poem. The sun is setting. The sea is gold and rose. A fishing boat rides the swell offshore, its sail catching the last light like a white wing.
 
 The poem is about a bird. A different bird from her father's poem -- a bird that learned to land, not because it found the right ground, but because it found the right person to land beside.
 
@@ -844,6 +978,6 @@ The last poem has no ending.
 
 Neither do you.
 
-The sun sets. The sea darkens. The fishing boat comes home. And somewhere on the Silk Road, in a village at the edge of the world, two people sit together in the golden light and the poem goes on and on and on.
+The sun sets. The sea darkens. The fishing boat comes home. And somewhere on the Silk Road, in a village at the edge of the world, two people sit together in the golden light, and the poem goes on.
 
 *ending

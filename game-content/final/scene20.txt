@@ -22,11 +22,13 @@
 
 The sky over Khazara is the color of a bruise.
 
-Purple and gold, streaked with the last violent light of a sun that descends behind the Ashghar Mountains as if it knows what tomorrow brings and does not wish to watch. The city is quiet tonight -- quieter than you have ever heard it. The bazaar closed early. The garrison gates are shut. Even the fountains in the Garden of Eternal Spring sound different, their music carrying a minor key, a note of farewell.
+Purple and gold, streaked with the last violent light of a sun that descends behind the Ashghar Mountains as if it knows what tomorrow brings and does not wish to watch. The western peaks are silhouetted black against the bleeding sky, their snow-capped ridges catching the final rays and throwing them back as tiny fires -- the mountain passes where the empire's trade flows, where the caravans carry silk and spice and the wealth of nations, where the conspiracy fed secrets to the Khanates and watched the empire bleed.
+
+The city is quiet tonight -- quieter than you have ever heard it. The Grand Bazaar closed early, its vaulted corridors dark and hollow, the merchants gone home to their families and their ledgers and the ordinary evening rituals that make a life. The garrison gates are shut, the soldiers drilling in the fading light with an urgency that speaks of rumors filtering down through the ranks. Even the fountains in the Garden of Eternal Spring sound different tonight, their music carrying a minor key, a note of farewell, as if the water knows something the stone does not.
 
 You stand on the balcony of your chambers and breathe.
 
-The air smells of jasmine and woodsmoke and the clean mineral scent of the Tavan River. Somewhere in the Temple Quarter, a single voice chants the evening prayer, and the sound threads through the purple dusk like a silver needle through dark silk.
+The air smells of jasmine and woodsmoke and the clean mineral scent of the Tavan River, the great artery that has fed this city for three centuries. Somewhere in the Temple Quarter, a single voice chants the evening prayer, the melody rising and falling with the practiced grace of a devotion performed ten thousand times. The sound threads through the purple dusk like a silver needle through dark silk, stitching together the disparate pieces of the city -- the rich and the poor, the powerful and the forgotten, the faithful and the doubting -- into a single fabric that might, with care, hold.
 
 Tomorrow, you move against the conspiracy.
 
@@ -94,9 +96,13 @@ What do you do?
 
 *label alliance_hub
 
-The Council Chamber is cold at this hour. The fire has not been lit. The round table sits in shadow, the maps on the walls barely visible in the lamplight Farid carries. But you are not here for comfort. You are here to secure the support you will need tomorrow.
+The Council Chamber is cold at this hour. The fire has not been lit -- the servants were not expecting the room to be used tonight, and the grate holds only the grey ghost of yesterday's ashes. The round table sits in shadow, its polished surface reflecting the single lamp Farid carries like a dark mirror holding a captured star. The maps on the walls -- the empire's borders, the trade routes, the northern defenses -- are barely visible, their colors muted to shades of grey and brown.
 
-The question is: which ally?
+You run your hand across the table's surface. This table was built round, the histories say, to symbolize equality among the Council members. In practice, the seating is as political as everything else in the Citadel -- proximity to the Vizier's chair is power, distance from it is exile. You have sat at this table through crises and compromises, arguments and alliances. Tomorrow, this table may become the stage for the empire's most consequential confrontation in a generation.
+
+But first, you need allies at it.
+
+The question is: which ally will matter most?
 
 *page_break
 
@@ -413,11 +419,17 @@ When you finally rise to leave, Roshan speaks once more.
 
   You stand beside him on the wall. The city spreads below, a constellation of lamplight beneath the stars. The wind carries the scent of the river and the faint tang of the garrison fires.
 
-  "I was thinking about the frontier," he says. "Fort Darband. The wall that needs rebuilding. The soldiers who hold it." A pause. "I was thinking about how strange it is that I am here, in the capital, on the eve of a battle that has nothing to do with swords."
+  "I was thinking about the frontier," he says. "Fort Darband. The wall that needs rebuilding. The soldiers who hold it." A pause. The wind stirs his hair. "I was thinking about how strange it is that I am here, in the capital, on the eve of a battle that has nothing to do with swords."
 
   "This battle has everything to do with swords," you say. "We have simply chosen a different field."
 
-  He turns to look at you. The scar on his cheek is silver in the moonlight. His eyes, usually so guarded, are open.
+  "Perhaps." His hand leaves the sword hilt and rests on the stone parapet instead. His fingers are calloused, scarred, the hands of a man who has spent more of his life gripping weapons than anything else. "On the frontier, battle is simple. Terrifying, but simple. You see the enemy. You fight. You live or you die. Here --" He gestures at the sleeping city below. "Here the enemy wears silk and smiles and offers you tea before he stabs you."
+
+  "You have learned the capital's ways faster than most."
+
+  "I had a good teacher."
+
+  He turns to look at you. The scar on his cheek is silver in the moonlight, a crescent of pale tissue that follows the line of his cheekbone. His eyes, usually so guarded, so carefully controlled behind the discipline of military training, are open tonight. Open in a way you have rarely seen.
 
   *set rel_navid %+ 15
 

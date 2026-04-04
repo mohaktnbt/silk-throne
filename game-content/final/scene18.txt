@@ -16,9 +16,11 @@
 
 You wake to the taste of ash.
 
-Not the ash of the Eternal Flame, rich with sandalwood and prayer. This is the ash of your own burning -- the acrid residue of everything you built, reduced to cinders in a single night. Your mouth is dry. Your body aches as though you have been thrown down stairs, though the only thing that struck you was the truth.
+Not the ash of the Eternal Flame, rich with sandalwood and prayer. This is the ash of your own burning -- the acrid residue of everything you built, reduced to cinders in a single night. Your mouth is dry. Your tongue feels thick and foreign. Your body aches as though you have been thrown down stairs, though the only thing that struck you was the truth.
 
-The seal ring is still on your finger. You stare at it in the grey predawn light. Someone should have taken it from you by now.
+For a long moment you lie still, watching the grey predawn light filter through the silk curtains of your chamber window. The light is the color of old silver, tarnished and uncertain, as if the day itself is reluctant to begin. You can hear the pre-dawn sounds of the Citadel -- the distant tread of the night watch changing to the morning shift, the first tentative birdsong from the garden, the creak and settling of ancient stone.
+
+The seal ring is still on your finger. You raise your hand and stare at it in the half-light. The jade is dull without the sun to fire it, a dead green, the color of moss on a neglected tomb. Someone should have taken it from you by now. The fact that they have not means one of two things: either the situation is not as bad as you think, or it is worse, and they are simply waiting for morning to deliver the final blow.
 
 *page_break
 
@@ -256,11 +258,21 @@ Your unexpected ally spreads documents across your table. Farid hovers, his quil
 
 *page_break
 
-You sit back. The tea has gone cold. The figs remain untouched. Outside, the Garden of Eternal Spring is coming to life -- birds singing in the pomegranate trees, the fountains catching the first true sunlight of the day. The beauty of it seems obscene against the darkness spreading across your table.
+You sit back. The tea has gone cold in its cup, a skin of cardamom forming on the surface like the membrane over an unblinking eye. The figs remain untouched on the plate, their purple skins beaded with moisture in the morning warmth. Outside, the Garden of Eternal Spring is coming to life -- birds singing in the pomegranate trees, their songs braiding together into a music that is indifferent to conspiracy, indifferent to betrayal, indifferent to the darkness spreading across your table like ink on white paper.
 
-But the darkness has a shape now. Two more pieces of evidence, pulled from the wreckage of your position. The conspiracy did not just strike you down. In striking, it revealed itself.
+The beauty of it seems obscene. And yet -- and yet. The birds sing anyway. The fountains catch the first true sunlight of the day and scatter it in arcs of gold. The garden does not care about your crisis. The garden has survived three centuries of human folly by refusing to participate in it.
 
-Farid has been writing furiously. He looks up, ink on his fingers, his expression a mixture of horror and scholarly excitement. "My ${title_honorific} Vizier, if I may -- cross-referencing these new documents with the evidence we already possess, the pattern is becoming clearer. The conspiracy is not a single individual. It is a network."
+There is a lesson in that, though you are too exhausted to articulate it.
+
+*page_break
+
+But the darkness has a shape now. Two more pieces of evidence, pulled from the wreckage of your position. The conspiracy did not just strike you down. In striking, it revealed itself -- the way a snake reveals itself by striking, showing its fangs, exposing the soft underbelly that is hidden when it lies coiled and still.
+
+Farid has been writing furiously, his quill scratching across the paper with the speed and intensity of a man transcribing a revelation. He looks up, ink on his fingers, ink on his cuffs, a smear of ink across his forehead where he has unconsciously wiped his brow. His expression is a mixture of horror and scholarly excitement -- the face of a person who has found something terrible and fascinating in equal measure.
+
+"My ${title_honorific} Vizier, if I may -- cross-referencing these new documents with the evidence we already possess, the pattern is becoming clearer. Significantly clearer." He spreads his notes across the table. "The conspiracy is not a single individual acting alone. It is a network. A coordinated network with branches in multiple institutions, funded through multiple channels, communicating through at least two separate coded systems."
+
+He taps a page. "And it has been operating for at least three years. Three years, my ${title_honorific} Vizier. The roots go deeper than any of us imagined."
 
 *set survived_midpoint_betrayal true
 

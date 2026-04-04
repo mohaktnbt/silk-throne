@@ -37,7 +37,9 @@
 
 Dawn comes to Khazara the color of blood.
 
-The eastern sky splits along the horizon, red and gold and violent orange, as though the sun itself is wounded. The light spills across the city's rooftops, catching the domes and minarets, painting the river in fire. From the Citadel walls, you can see the entire breadth of the capital -- two million souls waking to the day that will determine whether their empire endures.
+The eastern sky splits along the horizon, red and gold and violent orange, as though the sun itself is wounded. The light spills across the city's rooftops in a slow, inexorable tide, catching the domes and minarets, painting the Ashar River in shades of fire and copper. The mist that hangs over the water burns off in ragged wisps, revealing the bridges one by one -- seventeen bridges, the oldest lined with shuttered shops, all of them silent this morning.
+
+From the Citadel walls, you can see the entire breadth of the capital -- two million souls waking to the day that will determine whether their empire endures. The Grand Bazaar is closed for the first time in living memory. The Temple Quarter is quiet except for the priests who tend the Eternal Flame. The streets, usually bustling with merchants and laborers and children running errands, are empty. The city holds its breath.
 
 In the distance, beyond the city's southern gates, you can see them.
 
@@ -45,15 +47,19 @@ Kaveh's army.
 
 *page_break
 
-Three thousand strong, arrayed in loose formation on the plain between the city and the river's southern bend. Their banners are crimson and gold -- the colors of Prince Kaveh's branch of the royal family, colors that should be displayed only in the Citadel. The presumption of it burns like acid.
+Three thousand strong, arrayed in loose formation on the plain between the city and the river's southern bend. From this distance they look almost abstract -- a smear of color against the brown earth, a geometry of formations that could be mistaken for a festival gathering if not for the glint of steel.
 
-Through the Tower of Stars' finest telescope, brought to the walls at your order, you can make out the details: cavalry on the flanks, infantry in the center, siege equipment at the rear -- scaling ladders, a battering ram, two small cannons that must have been smuggled from a provincial armory. Kaveh's mercenaries are a patchwork of uniforms and armor, but they are armed, they are organized, and they are moving toward the city.
+Their banners are crimson and gold -- the colors of Prince Kaveh's branch of the royal family, colors that by law should be displayed only in the Citadel, only with the Emperor's permission. The presumption of it burns like acid in your throat. Kaveh has not merely challenged the throne. He has dressed his rebellion in the throne's own colors.
 
-And to the north, too far to see but never far from your thoughts, the Khanate horde presses against the Wall of Roshan. General Kadir's dispatches arrived an hour ago: *The Wall holds. But not forever. Make your fight fast.*
+Through the Tower of Stars' finest telescope, brought to the walls at your order and mounted on a wooden tripod by Scholar Miriam's trembling hands, you can make out the details. Cavalry on the flanks -- noble house guards on trained warhorses, their lances catching the dawn light like needles. Infantry in the center -- a mix of disaffected garrison soldiers and hired mercenaries, armored in everything from military-issue steel to boiled leather and chainmail. Siege equipment at the rear: scaling ladders, a battering ram tipped with iron, and two small cannons that must have been smuggled from a provincial armory, their bronze barrels gleaming with fresh oil.
+
+Kaveh's army is a patchwork. But it is armed, it is organized, and it is moving toward the city with the deliberate pace of an approaching storm.
+
+And to the north, too far to see but never far from your thoughts, the Khanate horde presses against the Wall of Roshan. Twelve thousand horse warriors, their compound bows strung, their scimitars sharpened, waiting for the signal that the empire's capital has fallen so they can pour through the gaps. General Kadir's dispatches arrived an hour ago, written in the terse, clipped hand of a man who has no time for penmanship: *The Wall holds. Garrison committed. Cannot reinforce capital. Make your fight fast.*
 
 *page_break
 
-Fast. As though the fate of three centuries can be decided on a schedule.
+Fast. As though the fate of three centuries can be decided on a schedule. As though an empire's survival can be measured in hours and minutes, like a merchant counting the moments until a deal closes.
 
 You descend from the wall to the Citadel courtyard, where your forces are assembled. The imperial guard -- Navid's command -- stands in precise formation, armor gleaming, spears vertical. The temple guards, if they are with you, occupy the eastern courtyard, their white robes a stark contrast to the soldiers' steel.
 
@@ -527,27 +533,35 @@ You have seconds to decide.
   *goto aftermath
 *comment Non-negotiation paths continue here.
 
-The sun is setting. The fighting has raged for ten hours. The Citadel is scarred but standing. The streets of Khazara are littered with the debris of battle -- broken weapons, fallen banners, the terrible, still shapes of the dead.
+The sun is setting. Khazara's skyline is a silhouette of wounded domes and shattered minarets, the smoke from a dozen fires rising into the orange sky like dark prayers. The fighting has raged for ten hours -- ten hours of steel and blood and the screaming of men and horses, ten hours of charges and retreats and desperate stands at intersections and bridges and courtyard gates.
+
+The Citadel is scarred but standing. Its white marble walls are blackened where the cannons struck, and the geometric tilework above the Western Gate is shattered, the blue and turquoise fragments scattered across the courtyard like pieces of a broken sky. But the walls hold. The gates hold. The empire holds.
+
+The streets of Khazara beyond the walls are littered with the debris of battle -- broken weapons catching the fading light, fallen banners trampled into the dust, abandoned supply carts with their wheels shattered. And among the debris, the terrible, still shapes of the dead. They lie where they fell, in the attitudes of their final moments -- reaching, defending, crawling, falling.
 
 And Kaveh is coming.
 
 *page_break
 
-His army is broken. The bridge, the streets, the Citadel walls -- each phase of the battle has bled his forces until what remains is a hard core of perhaps five hundred soldiers, the most fanatical, the most committed, the most dangerous.
+His army is broken. The bridge, the streets, the Citadel walls -- each phase of the battle has bled his forces until what remains is a hard core of perhaps five hundred soldiers, the most fanatical, the most committed, the most dangerous. These are not mercenaries. These are the true believers -- the noble house guards who fight for bloodline and tradition, the zealots who believe the Eternal Flame's guttering was a divine rebuke to the boy on the throne.
 
-Kaveh himself leads them. The golden armor is dented and bloodied. The white horse is gone -- killed or abandoned. He approaches the Citadel on foot, sword in hand, the crimson banner carried behind him by a wounded standard-bearer.
+Kaveh himself leads them. The golden armor that gleamed so magnificently at dawn is dented and bloodied now, one pauldron torn away entirely to reveal the chainmail beneath. The white horse is gone -- killed at the bridge, or abandoned in the streets. He approaches the Citadel on foot, his sword in his right hand, the crimson banner carried behind him by a wounded standard-bearer who limps but will not set the flag down.
 
-He stops in the square before the main gate. The setting sun turns his armor to fire.
+He stops in the square before the main gate. Alone, for a moment, in the open space where the battle has swept away the market stalls and the fountain has been shattered by a cannonball. Water pools among the broken stone. The setting sun turns his armor to fire, and for one brief, terrible instant, he looks exactly like the conqueror he imagined himself to be.
 
-"ROSHAN!" His voice carries across the square, amplified by the stone walls, carrying the raw desperation of a man who has wagered everything and is watching it crumble. "Roshan, cousin! Face me! Face me and let the Flame decide!"
+"ROSHAN!" His voice carries across the square, amplified by the stone walls, echoing from the Citadel's high ramparts. It carries the raw desperation of a man who has wagered everything -- his name, his honor, his life -- and is watching it crumble around him. "Roshan, cousin! Face me! Face me and let the Flame decide!"
 
 *page_break
 
-A trial by combat. The ancient rite. It is barbaric, it is archaic, it is exactly the kind of dramatic gesture that Kaveh would make -- because if Roshan refuses, he looks weak, and if he accepts, Kaveh is the better fighter.
+A trial by combat. The ancient rite, invoked by every desperate pretender since the empire's founding. It is barbaric. It is archaic. It belongs to an age when disputes were settled by individual strength rather than institutional legitimacy.
 
-You look at the Emperor. Roshan stands on the Citadel wall, looking down at his cousin. His face is pale. His hands grip the stone parapet.
+It is exactly the kind of dramatic gesture that Kaveh would make -- because the prince understands theater, understands spectacle, understands that the narrative of a rebellion matters as much as its military force. If Roshan refuses, he looks weak -- a boy hiding behind walls. If he accepts, Kaveh is the better fighter, six years older and trained for combat since childhood.
 
-"I should go," Roshan says. "If I don't, they'll say I was afraid."
+It is a trap disguised as a tradition. And every person on these walls knows it.
+
+You look at the Emperor. Roshan stands on the Citadel wall, looking down at his cousin. His face is pale. His hands grip the stone parapet so tightly that the knuckles have gone white. The wind catches his hair, and for a moment he looks unbearably young.
+
+"I should go," Roshan says. His voice is steady. His eyes are not. "If I don't, they'll say I was afraid."
 
 "You are the Emperor. You do not answer challenges from traitors."
 

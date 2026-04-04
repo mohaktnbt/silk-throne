@@ -24,7 +24,7 @@ You know it is three days because Farid has been counting. You know it is mornin
 
 Three days. In the empire's three-hundred-year history, three days is nothing -- less than nothing, a heartbeat between one era and the next. But in the span of a life, three days can be an epoch. Three days ago you were Grand Vizier of the Khazaran Empire, second in authority only to the Emperor himself, a person whose word moved armies and whose seal authorized the expenditure of millions. Now you are Grand Vizier in name only -- the title still yours, the power drained from it like wine from a cracked vessel.
 
-You know it is three days because Farid has been counting. He marks each morning on a piece of parchment tucked into his ledger -- not with numbers but with small, precise tallies, the kind a prisoner scratches into a cell wall. You have not asked him to stop.
+You know it is three days because Farid has been counting. He marks each morning on a piece of parchment tucked into his ledger -- not with numbers but with small, precise tallies, the kind a prisoner scratches into a cell wall. You have not asked him to stop. The tallies are a kind of honesty in a world that has suddenly become dishonest -- a simple acknowledgment that time is passing, that the situation is not a dream from which you will wake, that each day you survive is a day earned and a day that must be endured.
 
 Your chambers in the Citadel have not changed. The same marble floors, the same silk curtains, the same desk carved from Ashghar cedar. The Vizier's seal ring still sits on your finger. No one has come to take it. That is either a sign of hope or a sign that no one considers you worth the trouble.
 
@@ -43,7 +43,7 @@ The investigators come daily. They are polite, professional, and relentless. The
 *if (midpoint_betrayer = 2)
   Guildmaster Priya's fabricated documents have been examined by a panel of Treasury clerks -- Priya's clerks, you note, selected by Priya, loyal to Priya. Their preliminary finding is that "irregularities exist." The word "irregularities" is doing an enormous amount of work in that sentence.
 *if (midpoint_betrayer = 3)
-  High Priest Ashoka's condemnation reverberates through the city like a temple bell that refuses to stop ringing. The faithful have taken to leaving oil lamps outside the Citadel gates -- not in celebration but in mourning, as if the empire itself is dying. The symbolism is Ashoka's genius: gentle, sorrowful, devastating.
+  High Priest Ashoka's condemnation reverberates through the city like a temple bell that refuses to stop ringing. The faithful have adopted a new evening prayer -- a prayer for "clarity and restoration," which sounds innocuous until you realize that "restoration" means restoring what was before you arrived. The faithful have taken to leaving oil lamps outside the Citadel gates -- not in celebration but in mourning, as if the empire itself is dying. The symbolism is Ashoka's genius: gentle, sorrowful, devastating.
 
 *page_break
 
@@ -173,7 +173,7 @@ The afternoon brings visitors. Not many -- the stream has thinned from what was,
 
 *label romance_test
 
-Evening. The lamps in your chamber are lit -- Farid's doing, his small daily rebellion against the darkness gathering around you. You sit at the desk, reading Zara's encrypted briefing for the third time, when you hear the knock.
+Evening. The autumn dark comes earlier each day, as if the world is rehearsing for winter. The lamps in your chamber are lit -- Farid's doing, his small daily rebellion against the darkness gathering around you. You sit at the desk, reading Zara's encrypted briefing for the third time, when you hear the knock.
 
 It is different from Farid's knock, which is tentative and apologetic. Different from the formal raps of messengers and officials. This knock is quiet, deliberate, and carries the particular quality of a person who is not sure they should be here but who has come anyway.
 
@@ -271,16 +271,24 @@ She is carrying a book. Because she is always carrying a book. This one is bound
 *page_break
 
 *if (romance_held)
-  You are not alone. The knowledge settles into you like warmth returning to a frozen limb -- painful, necessary, profoundly welcome.
+  You are not alone. The knowledge settles into you like warmth returning to a frozen limb -- painful, necessary, profoundly welcome. Someone has looked at the wreckage of your position, the ruins of your authority, the political desolation that surrounds you like scorched earth, and said: I am staying.
+
+  Not because they must. Not because duty demands it. Not because calculation recommends it. Because they choose to. Because whatever exists between you -- this fragile, impossible thing built from stolen moments and whispered words -- matters more to them than safety.
+
+  You carry that knowledge like a second heartbeat.
 *else
-  You understand. You do. The betrayal has made you radioactive, and those who come too close risk contamination. It does not make the loneliness less sharp. But you understand.
+  You understand. You do. The betrayal has made you radioactive, and those who come too close risk contamination. Love is a luxury that political disaster does not accommodate. It does not make the loneliness less sharp. But you understand.
+
+  You think of the Festival. The lamplight. The moment you almost had. And you close the door and return to the desk and the reports and the cold comfort of work, because work, at least, does not require trust, and trust is a currency you can no longer afford.
 
 *goto emperor_conversation
 
 *label no_romance_aftermath
 *page_break
 
-The evening passes in silence. Farid works at his small desk in the corner. You work at yours. The only sound is the scratch of pens and the distant murmur of the Citadel's never-sleeping machinery.
+The evening passes in silence. Farid works at his small desk in the corner, his pen scratching steadily across parchment -- regulation citations, precedent searches, the quiet ammunition of bureaucratic warfare. You work at yours, reviewing the day's dispatches, composing responses to messages that may or may not be read, maintaining the fiction of an office that still functions.
+
+The only sound is the scratch of pens and the distant murmur of the Citadel's never-sleeping machinery -- water in the pipes, guards changing shift, the wind testing the shutters. The clock in the Tower of Stars chimes each hour, and each chime is a small reminder that time moves forward, that the investigation has an end, that nothing -- not even this -- lasts forever.
 
 *goto emperor_conversation
 
@@ -294,7 +302,7 @@ The fourth day dawns colder than the ones before. Autumn is arriving in earnest 
 
 On the fourth day, the Emperor comes to you.
 
-This is unprecedented. The Emperor does not visit. The Emperor summons. The Emperor receives. The Emperor sits on the Silk Throne and the world comes to him. An emperor who walks to a disgraced Vizier's chambers is making a statement that the entire Citadel will read and interpret and whisper about for weeks.
+This is unprecedented. In three hundred years of imperial history, the protocol has been absolute: the Emperor does not visit. The Emperor summons. The Emperor receives. The Emperor sits on the Silk Throne and the world comes to him. An emperor who walks to a disgraced Vizier's chambers is making a statement that the entire Citadel will read and interpret and whisper about for weeks.
 
 Roshan enters without guards. He wears a simple tunic, dark blue, no crown. He looks like what he is: a sixteen-year-old boy who has not been sleeping well.
 
@@ -326,7 +334,13 @@ He leans forward. His elbows on his knees. His hands clasped. The posture of a b
 
 *page_break
 
-The Emperor leaves. The room is quiet. You sit at your desk and feel the shape of what remains -- the allies who stayed, the allies who wavered, the boy-emperor who came to your door and was, for a moment, simply human.
+The Emperor leaves. His footsteps echo in the corridor -- the footsteps of a boy wearing a man's shoes, walking the line between the throne he inherited and the person he is choosing to become. You listen until the sound fades.
+
+The room is quiet. The tea is cold. The autumn light has shifted while you were talking, the sun moving across the window's rectangle and illuminating a different section of the desk -- the section where Farid's tallies sit, four marks in a row, each one a day survived.
+
+You sit at your desk and feel the shape of what remains -- the allies who stayed, the allies who wavered, the romance that held or broke or was never tested, and the boy-emperor who came to your door and was, for a moment, simply human.
+
+It is not much. It is not the empire-spanning network of power and influence you had a week ago. But it is real, and it is yours, and the things that are real and yours cannot be taken by investigation or accusation or the carefully orchestrated betrayal of a person you trusted.
 
 *page_break
 
@@ -468,7 +482,9 @@ At least, that is what you tell yourself. Whether you believe it is a question f
 
 *page_break
 
-The second week of the investigation draws to a close. The initial shock has faded. The court has settled into its new configuration -- accusers and defenders, watchers and waited-upon. And you, at the center of it all, must decide who to turn to for the push that will determine whether you sink or swim.
+*page_break
+
+The second week of the investigation draws to a close. Autumn has settled over Khazara like a guest who intends to stay -- the mornings sharp, the afternoons brief, the gardens surrendering their green to gold and copper and the deep, valedictory red of leaves that know their time is ending. The initial shock has faded. The court has settled into its new configuration -- accusers and defenders, watchers and waited-upon. And you, at the center of it all, must decide who to turn to for the push that will determine whether you sink or swim.
 
 One conversation. One alliance. One act of trust in a world where trust has become the most expensive currency.
 
@@ -505,7 +521,14 @@ She opens the folder. Inside: intercepted messages, financial transfers, a list 
 
 "The betrayal is a move," Zara says. "A chess piece advanced. It's designed to remove you -- the one person who has been investigating the conspiracy -- so that the conspiracy can proceed to its endgame." She meets your eyes. "Whoever is behind this, they're afraid of you. That's why they struck. Take comfort in that, if you can."
 
+She pauses. In the silence, the astronomical instruments on Miriam's shelves gleam dully -- astrolabes and armillary spheres, the tools of a discipline that maps the heavens with mathematical precision. You wish politics could be mapped the same way.
+
+"I should tell you something," Zara says. "I don't do this. Trust. Vulnerability. I don't share intelligence with people who might use it against me, and I don't visit people whose association might compromise my network." She looks at the folder on the table. "I'm here because the evidence is clear, and because --" She stops. Starts again, as if the words cost her something. "Because in my experience, the person who is trying hardest to find the truth is not the person who deserves to be destroyed for it."
+
+It is the most she has ever said about you. It is, quite possibly, the most she has said about anyone.
+
 *set evidence_count + 2
+*set rel_spy %+ 5
 
 *goto glimmer_of_hope
 
@@ -525,7 +548,15 @@ For a moment, you see it -- the emperor he could be. The ruler who stands in the
 
 *set rel_emperor %+ 5
 
-He is quiet for a moment. Then: "You helped me find my voice, Vizier. I am trying to use it now. I don't know if it will be enough."
+He is quiet for a moment. The fountain beside you sends up a thin spray that the wind catches and scatters. The garden is empty except for the old man with the rake, who moves with the slow deliberation of someone who has been tending this ground for decades and will continue tending it regardless of what happens in the rooms above.
+
+"You helped me find my voice, Vizier. I am trying to use it now. I don't know if it will be enough." He looks at the old gardener. "My father used to say that an emperor is a gardener. He tends the empire the way this man tends the roses -- carefully, patiently, season after season. I used to think that was a boring metaphor." He pauses. "I don't think it's boring anymore."
+
+He stands. He offers you his hand -- not the formal gesture of an emperor to a subject, but the simple handclasp of one person to another.
+
+"Survive this, Vizier. The empire needs you. And so do I."
+
+*set rel_emperor %+ 5
 
 *goto glimmer_of_hope
 
@@ -611,19 +642,29 @@ You look at yourself in the mirror -- the face that arrived in this city months 
   *if (romance_asha)
     Asha's treatise sits on your desk, open to the passage about courage. A scholar's faith, tested and unbroken.
 
-Farid knocks. "My lord Vizier. Tea. Dispatches. And --" He pauses. There is something in his voice you have not heard in days. Brightness. "And a message from the Emperor's private secretary. Judge Talib arrives this afternoon."
+Farid knocks. "My lord Vizier. Tea. Dispatches. And --" He pauses. There is something in his voice you have not heard in days. Brightness. An unfamiliar, cautious, stubborn brightness, like the first crack of dawn after a night that seemed determined never to end. "And a message from the Emperor's private secretary. Judge Talib arrives this afternoon."
 
 *if (turned_to != "emperor")
-  You did not ask for the judge. But someone did. Someone on the Silk Throne has been paying attention.
+  You did not ask for the judge. But someone did. Someone on the Silk Throne has been paying attention. Roshan -- the boy who came to your chambers in a plain tunic and asked you not to bow -- has moved a piece on the board. Quietly. Imperfectly. But he has moved.
 
 *page_break
 
 You drink the tea. You read the dispatches. You begin to plan.
 
+The room that felt like a cage three days ago feels different this morning. Not because anything physical has changed -- the same marble, the same silk, the same desk, the same window overlooking the Garden of Eternal Spring where the first leaves of autumn are beginning to fall. The room has not changed. You have.
+
+Farid hovers, waiting for instructions. You give them -- calmly, specifically, with the quiet authority of a person who has survived the worst and discovered, in the surviving, a capacity they did not know they possessed. Letters to be written. Evidence to be organized. Meetings to be arranged. The machinery of recovery, engaged at last.
+
+*page_break
+
+The morning light strengthens. The autumn sun, thin but persistent, finds the window and lays a stripe of gold across the desk where your papers are spread. You pause to look at it -- the light on the cedar wood, the way the dust motes swim in the beam like tiny, aimless stars.
+
+It is beautiful. The world is still beautiful. The Empire is still beautiful, for all its cruelty and corruption and the bone-deep exhaustion of navigating its politics. The gardens still bloom. The fountains still run. The Eternal Flame still burns in its ancient brazier, indifferent to the affairs of viziers and generals and priests.
+
 The betrayal took everything. The reckoning has begun. The road ahead is dark, and steep, and littered with the debris of broken trust and broken plans.
 
-But you are still standing. The seal ring is on your finger. The Eternal Flame still burns.
+But you are still standing. The seal ring is on your finger. Farid is at his desk. The tea is hot. And somewhere in this city, the truth waits -- patient, quiet, inevitable.
 
-And so do you.
+The lamps of the Festival are cold. But you carry your own flame now, and it burns with a light that no one gave you, and no one can take away.
 
 *finish Rising from the Ashes

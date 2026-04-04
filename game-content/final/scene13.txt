@@ -31,7 +31,9 @@ Three days after the pamphlet crisis, Spymaster Zara sends you a message. It arr
 
 The message is two words: "Tower. Midnight."
 
-You go. Of course you go. You have learned that when Zara speaks in whispers, the world is about to tilt.
+No signature. No seal. No context. Two words, written in Zara's precise hand on a scrap of paper so small it could be swallowed in an emergency, which is probably the point.
+
+You go. Of course you go. You have learned that when Zara speaks in whispers, the world is about to tilt. And when she speaks in two words, the tilt is already happening.
 
 *page_break
 
@@ -314,9 +316,11 @@ The description is tantalizing but incomplete. An older man. Foreign Quarter. A 
 
 *label kingmaker_chen
 
-Ambassador Chen receives you in his residence, a graceful building in the Foreign Quarter decorated in a style that blends Western Confederation aesthetics with Khazaran flourishes. Tea is served -- a Western variety, lighter than the cardamom tea of the court. Chen is, as always, impeccably polite and gently probing.
+Ambassador Chen receives you in his residence, a graceful building in the Foreign Quarter decorated in a style that blends Western Confederation aesthetics with Khazaran flourishes. The walls are hung with maps and tapestries -- maps of trade routes that show the Confederation's ambitions, tapestries that depict the pastoral scenes of a homeland Chen has not visited in six years. A mechanical clock ticks on the mantelpiece, its workmanship finer than anything the empire can produce, a silent advertisement for the Confederation's technical prowess.
 
-"Dastan," he says, tasting the name. "An interesting inquiry, Vizier. The name is not unknown in certain circles. A facilitator. A patron. A person who makes things happen for people who require discretion." He sips his tea. "I have never met Dastan personally, but I understand that Dastan's network has... shall we say, an international dimension."
+Tea is served by a silent servant -- a Western variety, lighter and less fragrant than the cardamom tea of the court, served in porcelain cups so thin they are almost transparent. Chen is, as always, impeccably polite and gently probing. His Khazari is flawless, spoken with the deliberate accent he maintains as a diplomatic tool.
+
+"Dastan," he says, tasting the name like a wine he has encountered before but cannot quite place. "An interesting inquiry, Vizier. The name is not unknown in certain circles. A facilitator. A patron. A person who makes things happen for people who require discretion." He sips his tea. "I have never met Dastan personally, but I understand that Dastan's network has... shall we say, an international dimension."
 
 *page_break
 
@@ -366,7 +370,9 @@ The full picture emerges over the following days, assembled from Chen's hints, Z
 
 Dastan is not one person. Dastan is a title -- a code name for whoever currently leads a shadow organization that has existed, in various forms, for at least two decades. The organization predates the current conspiracy. It predates the current Emperor. It is, in essence, a permanent shadow government designed to ensure that whoever sits on the Silk Throne serves the interests of a specific coalition of Khazaran nobles and foreign trading partners.
 
-The previous Vizier discovered Dastan. That is why he was murdered.
+The previous Vizier discovered Dastan. He found the ghost merchants in the trade ledgers, just as you did. He traced the hawala network. He began to map the connections. And someone -- someone inside Dastan's network, someone with access to blue lotus venom and the patience to administer it slowly over three days -- murdered him for it.
+
+The realization hits you like a physical blow. Your predecessor did not die because he was investigating the conspiracy against the Emperor. He died because he was investigating Dastan. The conspiracy is merely one of Dastan's operations -- perhaps the largest, perhaps the most ambitious, but only one thread in a web that spans decades.
 
 And now you are building exactly the kind of power network that Dastan was designed to prevent any individual from building without Dastan's approval.
 
@@ -431,9 +437,11 @@ It is a good sermon. It is also, you realize as it unfolds, a political statemen
 
 You sit very still. The words land like precisely aimed arrows, each one finding the gap between your convictions and your doubts. Ashoka has always been political, but this is different. This is a declaration.
 
-After the service, Asha finds you in the colonnade. She is pale. Her usual animation is gone, replaced by a tension you have never seen in her.
+After the service, the faithful disperse into the Temple Quarter's narrow streets, carrying the scent of incense in their robes and the High Priest's words in their ears. You remain in the colonnade, watching the Eternal Flame through the marble arches, thinking about the distance between what Ashoka said and what he meant.
 
-"Vizier. We need to talk. Not here. The garden."
+Asha finds you there. She is pale, her usual animation replaced by a stillness that sits on her like borrowed robes. The woman who laughs easily and argues joyfully is gone. In her place is someone who has heard a warning that she cannot ignore.
+
+"Vizier." Her voice is low, stripped of its usual playfulness. "We need to talk. Not here. The walls of the temple have ears, and most of them report to the High Priest. The garden."
 
 *page_break
 
@@ -486,7 +494,9 @@ You read it. The language is dense, theological, layered with scriptural citatio
 
 Asha shakes her head. "I do not know. The money comes through temple donation channels, which are confidential by law. Even Spymaster Zara cannot easily penetrate the temple's financial records -- the Unburdening system gives Ashoka leverage that keeps the intelligence service at arm's length."
 
-You sit with this information. The garden is beautiful around you -- roses, jasmine, the geometric precision of water channels reflecting the sky. You hold in your hands a document that could destroy everything you are building, funded by an enemy you cannot see, wielded by an institution you cannot easily oppose.
+You sit with this information. The garden is beautiful around you -- roses opening in the morning warmth, jasmine climbing the marble columns of the colonnade, the geometric precision of water channels reflecting the sky in parallel lines of blue and white. A butterfly lands on the edge of the fountain, its wings the color of saffron, and for a moment the contrast between its fragile beauty and the brutal reality of what you have just learned is so sharp it makes your chest ache.
+
+You hold in your hands a document that could destroy everything you are building, funded by an enemy you cannot see, wielded by an institution you cannot easily oppose.
 
 *choice
   #Bring this to Spymaster Zara. Her network can trace the money even through temple channels.
@@ -512,7 +522,7 @@ Zara receives the information with her customary economy of expression. She read
 
 Zara's week yields results that are both valuable and disturbing.
 
-The money flowing to the conservative elders comes from a network of "charitable donations" that trace, through several layers of intermediaries, to two sources. The first is a consortium of noble families led by -- unsurprisingly -- Lord Reza's house. The second is more unexpected: a trading company registered in the Foreign Quarter with connections to the Western Confederation.
+The money flowing to the conservative elders comes from a network of "charitable donations" -- each one individually modest, each one properly documented, each one from a donor whose name appears in temple records but whose address, when Zara's agents visit, turns out to be an empty building or a closed shop or a residence whose occupant has never heard of the temple and has certainly never made a donation. The donations trace, through several layers of intermediaries, to two sources. The first is a consortium of noble families led by -- unsurprisingly -- Lord Reza's house. The second is more unexpected: a trading company registered in the Foreign Quarter with connections to the Western Confederation.
 
 "The conspiracy," you say, staring at the financial charts Zara has assembled.
 

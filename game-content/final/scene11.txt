@@ -50,7 +50,7 @@ Then Chen asks a question.
 
 The room does not go silent. The music continues. The conversations around the edges persist. But in the immediate circle -- the Emperor, the Ambassador, the Dowager, the Council members -- the air changes. A tightening. A held breath.
 
-The question is a trap. It is phrased with Chen's characteristic courtesy, but the blade is real. The "intelligence suggesting coordinated Khanate operations across the entire frontier" is classified information. The Emperor does not have it. No one briefed him on it. The intelligence comes from Zara's most recent assessment, distributed only to the Council of Five in a sealed report three days ago.
+The question is a trap. It is phrased with Chen's characteristic courtesy -- the measured cadence, the respectful honorific, the scholarly precision of the phrasing -- but the blade is real, and it is aimed at the Emperor's throat. The "intelligence suggesting coordinated Khanate operations across the entire frontier" is classified information. The Emperor does not have it. No one briefed him on it. The intelligence comes from Zara's most recent assessment, distributed only to the Council of Five in a sealed report three days ago.
 
 Someone gave Chen that report.
 
@@ -81,7 +81,11 @@ Roshan's mouth opens. Closes. He looks, for one terrible moment, like the fright
 
 *page_break
 
-The silence stretches. Chen waits, his pleasant smile unchanged. The Dowager watches her son with an expression that you cannot read -- concern, or calculation, or both.
+The silence stretches. It cannot last more than a few seconds, but in the echoing space of the Jade Throne Room, with the string quartet playing on obliviously and the courtiers beginning to sense that something has shifted, those seconds feel like hours.
+
+Chen waits, his pleasant smile unchanged. His hands are clasped behind his back -- the posture of a man who has thrown a stone and is watching it fall. The Dowager watches her son with an expression that you cannot read -- concern, or calculation, or both. Her fingers rest on the arm of her chair, perfectly still, but the tendons stand out beneath the skin.
+
+You can feel the room beginning to turn. The murmurs are starting. The courtiers nearest the Emperor's circle are exchanging glances. Everyone senses the blood in the water, even if they do not yet understand where it is coming from.
 
 *choice
   #Step forward and answer the question yourself, giving the Emperor time to recover. Frame it as protocol: "Military intelligence matters are the Vizier's purview."
@@ -226,9 +230,15 @@ He turns. In the lamplight, his face is half shadow and half gold. "I was prepar
 
 *comment === LOYALIST CLOSING: ESCALATE OR RETREAT ===
 
-You return to your own chambers. The evidence is mounting: the leaked intelligence report, the northern sabotage, the assassination attempt, the predecessor's murder. The threads converge, but the hand that holds them remains invisible.
+You return to your own chambers through corridors that feel longer than usual, the marble floors echoing your footsteps back to you like a second set of feet. The reception's music has stopped. The guests have departed. The Jade Throne Room is being swept and straightened by servants who move with the careful silence of people who know that something significant happened tonight but are too prudent to ask what.
 
-Farid is waiting with a list of everyone who had access to Zara's sealed intelligence report. The list is short: the five Council members, their immediate secretaries, and the Dowager's private office.
+In your study, you light the lamp yourself. The flame catches, and the room fills with the warm amber glow of tallow and wick. You sit at your desk and spread a fresh sheet of parchment before you, dipping the pen with the deliberate care of a surgeon selecting a blade.
+
+The evidence is mounting. You begin to write, laying out each piece: the leaked intelligence report. The northern border sabotage. The forged requisitions. The assassination attempt. The predecessor's murder by blue lotus venom. The rogue spy who triggered the Western embargo. Each one is a thread, and the threads converge toward a center you cannot yet see, pulled taut by a hand that remains invisible.
+
+You write until your hand aches. The parchment fills with connections, questions, dead ends, and possibilities. It is not enough. It is never enough. The conspiracy is always one step ahead, always adapting, always striking from angles you did not anticipate.
+
+Farid is waiting with a list of everyone who had access to Zara's sealed intelligence report. The list is short, written in Farid's meticulous hand on a fresh sheet of vellum: the five Council members, their immediate secretaries, and the Dowager's private office.
 
 "My ${title_honorific} Vizier," Farid says, his voice barely above a whisper. "The Dowager's office is on this list."
 
@@ -260,6 +270,10 @@ The answer will define the weeks to come.
     You will wait. You will watch. And when you move, it will be with the precision of Zara's agents and the patience of the Dowager herself.
 
 *page_break
+
+You set the list down. Farid leaves, closing the door softly behind him.
+
+Alone, you pour a cup of wine from the carafe on your desk. It is the same vintage that was served at the reception -- a Confederation red, smooth and rich. It tastes like irony now.
 
 The night deepens. You sit at your desk, the intelligence report's distribution list spread before you, the seal ring heavy on your finger. Through the window, the Eternal Flame's glow paints the Temple Quarter in amber, and the city's sounds -- distant music, the murmur of the night watch, the splash of fountains -- settle into the quiet rhythms of a capital that does not know it is under siege.
 
@@ -398,7 +412,11 @@ She pauses.
 
 You leave the Dowager's Wing with the distinct sensation of having survived a sword fight while blindfolded. The corridor outside is quiet, the marble cool under your boots, the air carrying the faint scent of the Dowager's sandalwood incense like a ghost of the confrontation that lingers in your clothes and your hair and the tight knot at the base of your skull. The confrontation is over, but the damage remains. The rumors are loose in the city. Your shadow network is partially exposed. And the conspiracy -- because this was the conspiracy, you are certain of it -- has demonstrated that it can reach you, watch you, and strike at the moment of maximum vulnerability.
 
-The next hours are spent in damage control. You meet with Farid, who has prepared a summary of the rumor's spread and its likely points of origin.
+The next hours are spent in damage control -- a phrase that fails to convey the desperate, meticulous work of trying to unring a bell.
+
+You meet with Farid in the small study adjacent to your office. He has been working since dawn, and the results of his labor are spread across the desk in his characteristically precise organization: color-coded notes, a timeline, a map of the city with pins marking the rumor's spread like a disease outbreak. It would be impressive if it were not also evidence of a disaster.
+
+Farid has prepared a summary of the rumor's spread and its likely points of origin.
 
 "The earliest version appeared in the Coppersmith Quarter bazaar at approximately the third hour," Farid says, reading from his notes. "It spread to the Spice Market by the fourth hour, the garrison by the fifth, and the Citadel by the sixth. The pattern suggests a single point of origin, deliberately placed to maximize spread through the bazaar's gossip networks."
 
@@ -453,7 +471,9 @@ The next hours are spent in damage control. You meet with Farid, who has prepare
 
 *comment === KINGMAKER CLOSING ===
 
-That night, you stand at your window and look out at the city. The Citadel's walls glow in the moonlight. The bazaar's covered rooftops stretch toward the river like a second, darker city. Somewhere in that darkness, the conspiracy is watching you. They know about your shadow network. They may know about your alliance with Priya, or Zara, or both. They have demonstrated the ability to strike with precision and withdraw without trace.
+*page_break
+
+That night, you stand at your window and look out at the city. The Citadel's walls glow in the moonlight, their white marble taking on a spectral quality that makes the palace look less like a fortress and more like a ship sailing through an ocean of darkness. The bazaar's covered rooftops stretch toward the river like a second, darker city. Somewhere in that darkness, the conspiracy is watching you. They know about your shadow network. They may know about your alliance with Priya, or Zara, or both. They have demonstrated the ability to strike with precision and withdraw without trace.
 
 And you are still here. Bruised, exposed, diminished -- but standing.
 
@@ -461,7 +481,11 @@ The game has changed. The shadow network is no longer a secret weapon. It is a k
 
 You sit at your desk and write a single line on a fresh sheet of parchment: "They are watching. Let them see what we want them to see."
 
-The first shadow has been cast. The game continues. And somewhere in the Citadel's labyrinth of corridors and secrets, the next move is already in motion.
+The ink dries in the lamplight. You fold the parchment and seal it -- not with the Vizier's seal, but with a plain wax drop, unmarked. A lesson from the Old City: the most powerful messages are the ones that cannot be traced.
+
+Outside, the city settles into its nightly rhythms. The garrison drums sound the last watch. The temple bells mark the hour with their deep, bronze voices. A night bird sings from the Garden of Eternal Spring, its melody thin and sweet in the cold air. Somewhere in the bazaar, a merchant counts the day's profits. Somewhere on the northern border, a soldier watches the steppe for movement. Somewhere in the Citadel's corridors, the conspiracy moves in the dark.
+
+The first shadow has been cast. The game continues. And somewhere in this labyrinth of marble and silk and secrets, the next move is already in motion.
 
 *finish The Price of Power
 
@@ -481,9 +505,11 @@ Captain Darius delivers the report personally. He stands in your office doorway,
 
 The world tilts.
 
-Hamid. Jovial, generous, overwhelming Hamid. The man who pressed dates into your hands and called you "Vizier" with the warmth of an uncle greeting a favorite nephew. The man who stood in Priya's chambers a week ago and pledged the merchant class's support for your reforms. The man who believed in you.
+Hamid. Jovial, generous, overwhelming Hamid. The man who pressed dates into your hands and poured coffee you had not asked for and laughed too loudly at his own jokes and called you "Vizier" with the warmth of an uncle greeting a favorite nephew. The man who opened his ledger and showed you the numbers that revealed the merchant class's burden. The man who stood in Priya's chambers a week ago, surrounded by cautious guild representatives, and said with simple conviction: "Tell us what you need."
 
-Dead. Throat cut. No witnesses.
+The man who believed in you when belief was dangerous.
+
+Dead. Throat cut. No witnesses. No struggle. The precision of it is its own kind of cruelty -- as if Hamid's life was not even worth a fight, as if extinguishing him required no more effort than blowing out a lamp.
 
 *page_break
 
@@ -517,11 +543,15 @@ He produces the note. The parchment is fine -- too fine for a common criminal. T
 
 Below the text, a symbol. The conspiracy's mark. The same mark you found under the council table, on the note that warned you about your predecessor's death, on the Ghost's calling card after the assassination attempt.
 
-"The conspiracy," you say.
+"The conspiracy," you say. The word no longer sounds abstract. It sounds like a blade being drawn from a sheath.
 
-"Yes, Vizier." Darius's voice carries the weight of a man who has connected the same dots. "This was not a robbery. This was an execution."
+"Yes, Vizier." Darius's voice carries the weight of a man who has spent twenty years on the city's streets and has learned to read violence the way scholars read texts. "This was not a robbery. Nothing was taken -- no money, no goods, no documents. This was an execution. Professional, deliberate, and intended to be found."
 
-*page_break
+He pauses, then adds, quietly: "In twenty years of the city guard, I have seen hundreds of deaths. Most of them are stupid -- arguments over money, jealousy, drunken quarrels. This was not stupid. This was calculated. And that is what frightens me."
+
+You take the note from Darius's hand. The parchment is smooth between your fingers, the handwriting precise and unhurried. Whoever wrote these words did so without trembling, without hesitation. The killer -- or the person who commanded the killing -- believes completely in the righteousness of their cause.
+
+That belief makes them more dangerous than any common assassin.
 
 *page_break
 
@@ -533,7 +563,9 @@ Priya arrives within the hour. She enters your office without knocking, without 
 
 "He was my friend, Vizier. Not my subordinate. Not my political ally. My friend. He taught me the spice trade when I was fourteen. He lent me my first hundred dirhams. He --" Her voice breaks. She turns away, and for a moment she is not the Guildmaster of the Treasury, not the Master of the Guilds, not the most powerful merchant in the empire. She is a woman who has lost someone who mattered.
 
-"They killed him because of me," she says. "Because of the reforms. Because he stood up in that meeting and said he would support you."
+"They killed him because of me," she says. "Because of the reforms. Because he stood up in that meeting and said he would support you." Her voice cracks on the last word, and she presses her hand to her mouth as if physically holding the grief inside.
+
+You are quiet for a moment. The weight of what she has said settles over both of you -- the terrible arithmetic of reform, where the cost of change is measured in human lives.
 
 "They killed him because they are afraid," you say. "Afraid of what we are building. Afraid of change. This is not about Hamid. This is about the fact that for the first time in three hundred years, someone is challenging the system that keeps them powerful."
 
@@ -608,7 +640,9 @@ By evening, two pieces of evidence emerge from the investigation like stones ris
 
 The first: the dagger used to pin the note to Hamid's bed is distinctive. It is Khanate-made, with a curved blade and a hilt wrapped in horse leather. Such daggers are uncommon in Khazara. They can be purchased in the Foreign Quarter, or obtained through military channels.
 
-The second: a neighbor heard a door close at approximately the second hour of night. She looked out her window and saw a figure in dark clothing moving away from Hamid's building. The figure was limping -- favoring the left leg.
+The second: a neighbor -- an elderly woman who suffers from sleeplessness and spends her nights at her window watching the street below -- heard a door close at approximately the second hour of night. She looked out and saw a figure in dark clothing moving away from Hamid's building. The figure moved quickly but unevenly. It was limping -- favoring the left leg.
+
+A limping figure. A distinctive gait. If the conspiracy's agents are professional enough to commit murder without leaving physical evidence, a limp is an anomaly. Either the killer was injured during the act, or the limp is a permanent condition -- and permanent conditions are identifiable.
 
 *page_break
 
@@ -663,11 +697,17 @@ The words settle in the room like ash from a fire.
 
 *comment === REVOLUTIONARY CLOSING ===
 
-Hamid's funeral is held three days later. The rites of the Eternal Flame require cremation, and the pyre is built in the Temple Quarter, near the great brazier where the Flame has burned for three hundred years.
+*page_break
+
+Hamid's funeral is held three days later, on a morning when the sky is the color of pewter and the wind carries the scent of rain from the western mountains. The rites of the Eternal Flame require cremation, and the pyre is built in the Temple Quarter, near the great brazier where the Flame has burned for three hundred years.
 
 The crowd is enormous. Not just merchants -- though the merchant class turns out in force, Priya at their head, her formal robes black with mourning. Commoners come. Laborers and washerwomen and fishermen from the Old City, people who knew Hamid from the bazaar, who bought his spices and received his generosity. And nobles come too -- Soraya's eleven progressive allies, standing in a quiet cluster, their presence a political statement that requires no words.
 
-The High Priest Ashoka presides. His voice carries across the crowd, speaking of the Fourth Wisdom -- Temperance -- and the Sixth Wisdom -- Beauty -- and the way a life well-lived embodies both.
+The High Priest Ashoka presides. His formal robes are white with gold trim, and the Eternal Flame's light catches them as he moves, making him appear to glow from within. His voice carries across the crowd with the resonance of a man who has spoken in temples for forty years, a voice designed to reach the back of a vast chamber and settle into the hearts of everyone present.
+
+He speaks of the Fourth Wisdom -- Temperance -- and the Sixth Wisdom -- Beauty -- and the way a life well-lived embodies both. He does not mention the murder. He does not mention the reforms. He speaks of Hamid as a man who gave freely, who laughed readily, who treated every person who entered his stall as a guest in his home. The description is accurate. It is also devastating, because it reminds everyone present of exactly what has been lost.
+
+Priya's face is carved from stone. She does not weep. She stands with the rigid composure of a woman who has decided that her grief will become fuel rather than weakness. Beside her, the guild representatives stand shoulder to shoulder, a wall of merchant solidarity that speaks louder than any eulogy.
 
 You stand beside the pyre. The heat is immense. The smoke rises in a column that catches the afternoon light and turns it amber.
 
@@ -677,7 +717,17 @@ In the crowd, you catch a glimpse of a face you recognize. Lord Reza, standing a
 
 Neither do you.
 
-The smoke carries Hamid's ashes toward the sky. The Eternal Flame accepts them. And in the silence after the prayers, you make a promise that is not spoken aloud but is written in the set of your jaw and the weight of the seal ring on your finger:
+The pyre collapses in a shower of sparks. The smoke thickens, rises, disperses in the wind. According to the faith, Hamid's soul rides that smoke upward, carried to the Celestial Court where the Seven Wisdoms will weigh his life and find it good. You have never been certain about the theology. But standing here, watching the fire consume the mortal remains of a good man killed for the crime of believing in justice, you find yourself hoping -- fiercely, unreasonably -- that the Flame is more than a fire. That the smoke carries something real. That Hamid is somewhere beyond the reach of daggers and darkness.
+
+The crowd begins to disperse. Priya takes your arm -- the gesture of a friend, not a political ally. Together, you walk away from the pyre, through the Temple Quarter, past the great brazier where the Eternal Flame burns in its perpetual vigil. The Flame's light is warm on your face. The city is quiet, in the way cities are quiet after a funeral: a held breath, a pause in the ceaseless noise of living.
+
+"What now?" Priya asks.
+
+You look at the Flame. You look at the smoke still rising from Hamid's pyre. You look at the city spread out below the Temple Quarter's elevation -- two million lives, most of them untouched by today's grief, all of them affected by the structures you are trying to change.
+
+"Now," you say, "we continue."
+
+And in the silence after the prayers, you make a promise that is not spoken aloud but is written in the set of your jaw and the weight of the seal ring on your finger and the pressure of Priya's hand on your arm:
 
 This will not be for nothing.
 

@@ -316,7 +316,15 @@ Despite everything -- the dust, the heat, the low hum of apprehension that has b
 
 You suspect that world is about to end.
 
-"Before we proceed," Farid says, coloring slightly, "I should -- that is, the formal protocols require -- may I ask how you prefer to be addressed? The appointment letter used only the family name, and I was not informed of the proper -- the appropriate --"
+Farid, catching his breath, takes a moment to actually look at you for the first time. His eyes move from your travel-worn boots to the dust in your hair to the saddlebag slung across your shoulder -- and then to your face. Something in your expression gives him pause. He has been so focused on his briefing, his documents, his anxious rehearsal of protocols, that he has not yet considered the person standing before him. He does so now, and you watch the calculation happen: the provincial administrator who was appointed Vizier of the entire Khazaran Empire. The outsider. The unknown quantity.
+
+"You're not what I expected," he says, and then immediately looks horrified at his own candor. "That was -- I did not mean -- expectations are merely hypotheses, and hypotheses are by definition unconfirmed, and --"
+
+"What did you expect?" you ask.
+
+He considers. "Someone taller," he says at last. "And with a larger entourage. And possibly a horse that hadn't just thrown a shoe." He pauses. "But you have kind eyes. The last Vizier had clever eyes. Kind might be better."
+
+"Before we proceed," Farid adds, coloring slightly, "I should -- that is, the formal protocols require -- may I ask how you prefer to be addressed? The appointment letter used only the family name, and I was not informed of the proper -- the appropriate --"
 
 He trails off, gesturing helplessly.
 
@@ -391,7 +399,9 @@ Farid walks with the gait of a man who has spent his life indoors and is unhappy
 
 He is, you decide, the most honest thing you have encountered since the imperial letter arrived. Everyone else in this story -- the Dowager Empress who summoned you, the courtiers who will greet you, the faction leaders who will test you -- has an agenda. Farid's agenda is to get you to the Citadel without losing more than three documents. You appreciate the simplicity.
 
-The road descends through terraced fields of rice and cotton that catch the sunlight in long, golden shelves. The air changes as you approach the city -- the clean dust of the road giving way to something richer. Cinnamon. Cardamom. The warm, yeasty scent of bread baking in a hundred ovens. Underneath it, the living smell of two million people pressed together between ancient walls: cook-fire smoke and horse dung, jasmine and sewage, incense and sweat.
+The road descends through terraced fields of rice and cotton that catch the sunlight in long, golden shelves. Farmers work the paddies, knee-deep in water, their backs bent in the ancient posture of cultivation that has not changed in a thousand years. The irrigation channels that feed the fields are engineering marvels -- stone-lined, precisely graded, carrying water from the Tavan River through a network of aqueducts and gates that speaks of a civilization that takes infrastructure seriously. Even here, at the empire's doorstep, the wealth is visible in the fatness of the cattle, the quality of the roads, the sheer abundance of grain waiting to be harvested.
+
+The air changes as you approach the city -- the clean dust of the road giving way to something richer. Cinnamon. Cardamom. The warm, yeasty scent of bread baking in a hundred ovens. Underneath it, the living smell of two million people pressed together between ancient walls: cook-fire smoke and horse dung, jasmine and sewage, incense and sweat.
 
 Farid talks as you walk, and you begin to understand the shape of the world you are entering.
 
@@ -478,15 +488,31 @@ You have spent your career reading faces, and you can read this one. Secretary F
 
 *comment === THE CITADEL ===
 
-The Citadel of Khazara -- the Arg-e-Shahi -- rises before you like a mountain made by human hands. White marble walls forty feet high, smooth and luminous in the slanting light. Guard towers capped with domes of hammered copper gone green with age. The main gate is flanked by stone lions the size of carriages, their eyes inlaid with chips of lapis lazuli that catch the sun and seem to track your approach.
+The Citadel of Khazara -- the Arg-e-Shahi -- rises before you like a mountain made by human hands. White marble walls forty feet high, smooth and luminous in the slanting light, their surfaces carved with a running frieze of the empire's history: the founding, the conquests, the Golden Age, all rendered in low relief that catches the afternoon light and seems to move as the shadows shift. Guard towers capped with domes of hammered copper gone green with age punctuate the walls at regular intervals. The main gate is flanked by stone lions the size of carriages, their eyes inlaid with chips of lapis lazuli that catch the sun and seem to track your approach.
 
-Inside the walls, the noise of the city falls away as if a door has been shut. The Citadel is a world apart. Courtyards unfold in careful sequence, each one paved with geometric tilework in turquoise and gold. Fountains murmur in every direction -- the sound of water is constant here, a soft, perpetual music that fills the silence the way incense fills a room. Gardens bloom behind latticed walls, heavy with jasmine and rose and the deep, drowsy scent of orange blossom. Servants in white livery move along covered walkways with the quiet efficiency of people trained to be invisible.
+As you pass between the stone lions, you feel the transition like a physical thing -- a change in pressure, in temperature, in the quality of light. The air cools. The stone underfoot changes from dusty road to polished marble. The sounds of the city -- the haggling, the hammering, the shouting, the life -- fall away as if a door has been shut. The Citadel is a world apart. Courtyards unfold in careful sequence, each one paved with geometric tilework in turquoise and gold. Fountains murmur in every direction -- the sound of water is constant here, a soft, perpetual music that fills the silence the way incense fills a room. Gardens bloom behind latticed walls, heavy with jasmine and rose and the deep, drowsy scent of orange blossom. Servants in white livery move along covered walkways with the quiet efficiency of people trained to be invisible.
 
 It is beautiful. You feel the beauty settle on your skin like the mist from the fountains. And beneath it, you feel something else: the attention. The walls have eyes here. Every servant is a potential informant. Every corridor has a line of sight. The Citadel is a palace, yes. But it is also a trap -- gorgeously appointed, exquisitely maintained, and designed so that nothing within its walls can move unseen.
 
 Farid leads you through a colonnade where the columns are carved with climbing vines so realistic you almost expect them to sway in the breeze. Courtiers pass you -- men and women in silks of crimson and saffron and midnight blue, their glances quick, appraising, as sharply focused as a jeweler's loupe. They know who you are. They knew before you arrived. In a court this small and this powerful, the appointment of a new Vizier is the most significant event since the Emperor's coronation. You are being watched, catalogued, and slotted into a hundred different calculations before you have spoken a single word.
 
 A woman in deep violet catches your eye and nods -- a tiny gesture, precise and weighted with meaning you cannot yet decode. A man in military crimson looks away too quickly. A servant carrying a tray of tea cups glances up, and in his eyes you see not deference but curiosity. Even the servants are reading you. In this palace, everyone reads everyone. It is the national pastime. It may also be the national sport.
+
+*page_break
+
+*comment === THE GARDEN GLIMPSE ===
+
+Farid leads you past a latticed archway, and through the carved screen you catch your first glimpse of the Garden of Eternal Spring. It takes your breath.
+
+Water channels in geometric patterns cut through beds of rose and jasmine, their surfaces mirror-bright, reflecting the sky in long ribbons of blue. Pomegranate trees stand in precise rows, their branches heavy with fruit the color of garnets. A fountain at the center sends a plume of water twenty feet into the air, and the mist drifts across the garden in a fine, cool veil that catches the sunlight and fractures it into tiny rainbows.
+
+Peacocks move among the flower beds, their folded tails sweeping the gravel paths. A nightingale sings from a cypress tree. The air is thick with scent -- jasmine and rose and the clean, mineral smell of running water. After the dust and heat of the road, after the sensory chaos of the city, the garden feels like entering a different world. A world where everything is ordered, everything is beautiful, and everything grows exactly where it was intended to grow.
+
+"The Garden of Eternal Spring," Farid says softly. "It is said to be the most beautiful garden in the world. The water comes from the Tavan River via an aqueduct built two centuries ago. The channels are lined with glazed tile so the water stays cool even in the hottest summer."
+
+He pauses, then adds: "Many of the Citadel's most important private conversations happen in the garden. The sound of the fountains masks whispered words. It is both the most public and the most private place in the palace."
+
+You file this away. A place where conversations cannot be overheard. That will be useful.
 
 *page_break
 
@@ -501,6 +527,10 @@ On the desk, resting on a cushion of crimson velvet, there is a ring.
 He pauses. His eyes are on the ring.
 
 "The last person to wear it died in the room next to this one."
+
+The words fall into the quiet room like stones into a well. Farid does not look at you as he says them. He looks at the ring, and in his eyes you see a grief so private and so tightly held that it barely registers on the surface -- just a tightening of the jaw, a stiffness in the throat, the involuntary swallow of a person who has had practice swallowing tears.
+
+You understand, now, why Farid was assigned to you. A new Vizier needs a secretary who knows the systems, the protocols, the labyrinthine filing codes of the imperial bureaucracy. But a new Vizier also needs a reminder. And Farid, with his grief and his guilt and his shaking hands, is a living reminder that this office kills people.
 
 The ring is cool in your fingers. The jade is pale green, almost translucent, with a single darker vein running through it like a buried river. The imperial cipher is cut into the face -- intricate, ancient, beautiful. You slide it onto your finger. The gold band grips your skin with a faint, persistent pressure, like a hand that will not let go.
 
@@ -666,6 +696,10 @@ He bows and withdraws, pulling the door shut behind him with a soft, careful cli
 You extinguish the oil lamp. The room fills with moonlight and the distant, watery sound of fountains. You lie in the dark, on sheets finer than anything you have ever touched, and listen to the Citadel settle into sleep. A nightbird calls from the garden. Footsteps pass in the corridor outside -- measured, deliberate, then gone. The monks in the Temple Quarter are chanting, their voices carrying across the rooftops like smoke, like prayer, like a warning.
 
 The seal ring presses against your finger. The jade has warmed to the temperature of your skin, and in the dark, it feels less like jewelry and more like a part of you -- an extra joint, a new bone, something that has always been there and is only now making itself known.
+
+You think about the journey that brought you here. Six weeks on the road. The mountain passes where the air was so thin and cold your breath crystallized in your lungs. The river crossing at Dar-e-Mehr, where the ferryman looked at your letter of appointment and refused payment -- "The Voice of the Throne rides free," he said, and his voice held something you could not identify until later. It was hope. A ferryman at a river crossing, hoping that the new Vizier would be different from the last. Hoping that someone, somewhere in the machinery of empire, would care about the things that matter to a man who poled a raft across a river for a living.
+
+You carry that hope now, alongside the ring and the robes and the fear. You carry the ferryman's hope, and the gate captain's bow, and Farid's earnest, terrified loyalty. They are all counting on you, and they have never met you, and that is the most frightening thing of all: that faith can be placed in a stranger, and that the stranger has no choice but to try to be worthy of it.
 
 Tomorrow you will meet an emperor who is little more than a boy, struggling beneath a crown that was thrust upon him too soon. You will meet a dowager empress who has survived thirty years of court politics and three assassination attempts, and who chose you for reasons she has not shared. You will enter a palace where someone may have murdered the last person who held your title.
 

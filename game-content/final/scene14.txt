@@ -20,9 +20,11 @@
 
 The Grand Festival of Lights is three days away.
 
-You can feel the city gathering itself, the way a river gathers speed before a waterfall. Merchants drape their stalls in crimson and gold. Temple acolytes polish the great bronze brazier of the Eternal Flame until it gleams like a second sun. Children run through the streets trailing paper lanterns, their laughter bright in the cooling autumn air.
+You know this not because Farid has told you -- though Farid has told you, approximately forty-seven times, with increasing urgency and a growing stack of preparation documents -- but because you can feel it. The city is gathering itself, the way a river gathers speed before a waterfall, the way a singer draws breath before the highest note. Merchants drape their stalls in crimson and gold. Temple acolytes polish the great bronze brazier of the Eternal Flame until it gleams like a second sun. Children run through the streets trailing paper lanterns, their laughter bright in the cooling autumn air.
 
-In the Citadel, the preparations are grander and quieter. Servants hang silk banners in every corridor. The kitchens have been working since before dawn, and the smell of saffron and roasting almonds drifts through the marble halls like a benevolent ghost. The Garden of Eternal Spring is being transformed into a stage for the Emperor's address, with terraced seating, a speaker's platform, and a thousand oil lamps that will be lit at sunset on the festival night.
+In the Citadel, the preparations are grander and quieter. Servants hang silk banners in every corridor -- crimson for the empire, gold for the throne, white for the Eternal Flame. The kitchens have been working since before dawn, and the smell of saffron and roasting almonds and the warm sweetness of honey pastry drifts through the marble halls like a benevolent ghost. In the Garden of Eternal Spring, an army of gardeners is transforming the space into a stage for the Emperor's address -- terraced seating carved from temporary wooden platforms draped in silk, a speaker's podium inlaid with the imperial crest, and a thousand oil lamps in brass holders that will be lit at sunset on the festival night, turning the garden into a constellation of earthbound stars.
+
+The festival is a celebration. It is also, as Farid has reminded you with the earnest anxiety of a man who has read the security protocols, a vulnerability. Two million people in the streets. Crowds pressing against every gate. The Emperor exposed on a public stage. The conspiracy, whatever its final shape, will have cover and opportunity and the chaos of celebration to mask its movements.
 
 *page_break
 
@@ -87,9 +89,9 @@ The autumn sun is warm on the Citadel's marble walls. A breeze from the mountain
 
 You find Leila in the Scholars' Quarter, in a courtyard where a pomegranate tree drops its fruit into a stone basin. She is sitting on a bench with a writing board on her knees, her pen moving in swift, certain strokes across the paper. The afternoon light falls across her face, catching the darkness of her hair and the intensity of her expression.
 
-She does not look up when you approach. A poet in the act of writing is as unreachable as a hawk in flight.
+She does not look up when you approach. A poet in the act of writing is as unreachable as a hawk in flight -- suspended in a space between the world and the word, where the only reality that matters is the distance between the thought in her mind and the ink on the paper.
 
-You wait. The pomegranate tree rustles. A fruit drops into the basin with a soft splash.
+You wait. The pomegranate tree rustles in the afternoon breeze, its leaves whispering secrets in a language older than Khazari. A fruit drops into the stone basin with a soft splash, sending ripples across the still water.
 
 "There," she says, and looks up. Her eyes find yours, and something in them shifts -- the focus of creation giving way to a different kind of attention. "Vizier. You have the look of someone who needs a poem."
 
@@ -591,7 +593,9 @@ You study the map. The Dastan network is vast -- trading companies, noble houses
 
 "How do we prepare?"
 
-She looks at you with an expression that might, in another person, be called respect. "We watch. We wait. And when they move, we are ready. You and I are the only people who see the full picture. That makes us dangerous. It also makes us targets."
+She looks at you with an expression that might, in another person, be called respect. In Zara it manifests as a fractional widening of the eyes, a barely perceptible nod, the subtle relaxation of a posture that is usually wound tighter than a crossbow string. "We watch. We wait. And when they move, we are ready." She folds the map with the deliberate care of a woman who understands that intelligence, once committed to paper, becomes simultaneously more useful and more dangerous. "You and I are the only people who see the full picture. That makes us dangerous. It also makes us targets."
+
+She meets your eyes, and in her gaze you see something you have rarely seen from the Spymaster: the acknowledgment that she needs you. Not as an asset. Not as an ally of convenience. As a partner in a game that has become too large for one player.
 
 *set rel_spy %+ 10
 *set rep_intelligence %+ 5
@@ -659,7 +663,11 @@ She nods. "Then we must be ready. If they declare reform a heresy, we need the p
 
 *label route_npc_end
 
-You leave the conversation with a clearer sense of the battle ahead. The festival is approaching. The conspiracy is moving. And the people you have chosen to stand beside are ready.
+You leave the conversation with a clearer sense of the battle ahead. The festival is approaching like a wave that will break against the walls of the Citadel and either wash them clean or sweep them away. The conspiracy is moving, its pieces advancing across a board that you are only now learning to read. And the people you have chosen to stand beside -- the emperor or the spymaster or the reformer -- are ready, or as ready as anyone can be when the ground beneath their feet is shifting.
+
+The Citadel corridors are busy with preparations as you walk back. Servants carry garlands of marigold and jasmine. A musician practices a festival hymn on a ney, the flute's clear notes rising through the marble halls like a prayer. The empire, for all its plots and counterplots, is still a place where people make music and hang flowers and prepare to celebrate the light.
+
+You hold that thought. You will need it in the days to come.
 
 *return
 
@@ -840,7 +848,13 @@ He holds it out. A small folded paper, sealed with his personal stamp -- a tiny 
 
 *set rel_farid %+ 8
 
-He bows, crisply and correctly, and leaves.
+He bows, crisply and correctly, and leaves. His footsteps recede down the corridor -- careful, precise, the footsteps of a man who has mapped every flagstone in the Citadel and knows exactly which one creaks.
+
+You open the note. The handwriting is meticulous -- the penmanship of a man who learned his letters from a master calligrapher and treats every document, even a personal note, as an exercise in precision. The message is brief:
+
+"My lord Vizier -- I have served two Viziers in this Citadel. The first was wise. The second is brave. I hope, when this is done, you will be both. Your servant always, Farid."
+
+You fold the note and tuck it into your robe, beside the seal ring, beside the weight of the empire. Some things are worth carrying.
 
 *page_break
 

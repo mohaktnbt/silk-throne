@@ -50,6 +50,10 @@ The walk from your apartments to the Council Chamber takes you through the heart
 
 The history of the empire, painted on its walls. Three hundred years of power, ambition, wisdom, and violence. And at the end of the corridor, through a door of carved walnut, the room where that history is still being written.
 
+You pause before the last painting. It depicts a scene you do not recognize: a figure in Vizier's robes, standing before a council table, one hand raised in a gesture of speech. The Vizier's face is turned away from the viewer, hidden, anonymous -- it could be anyone. It could be you. The painting is old, its colors faded, but the composition is striking: the council members lean forward, attentive, engaged, and behind them, through a window, the city burns.
+
+A cautionary tale? A historical record? Or simply a painter's flight of fancy? You cannot tell. But the image settles into your mind alongside the anonymous note and the dead man's glasses and the symbol you have not yet found but will soon discover: layers of the same story, the same warning, repeated in different media across the centuries. Power is beautiful. Power is dangerous. And the people who stand closest to it burn first.
+
 Farid stops at the door.
 
 "I cannot enter the Council Chamber," he says. "Only council members and the Vizier. I will be in the antechamber if you need me." He straightens your collar -- a gesture so paternal it startles you both. "You will be --"
@@ -88,7 +92,9 @@ He does not rise when you enter. He is studying a map spread across his section 
 
 He is fifty-five years old, built like the fortresses he has spent his life defending: broad, solid, and showing the wear of decades of hard use. His face is weathered brown, seamed with scars, and his eyes are the gray of unsheathed steel. His left hand is missing below the wrist, replaced by a prosthetic of black iron that he uses with unconscious ease -- turning pages, pointing at maps, drumming on the table with a metallic rhythm that you suspect drives the other council members to distraction.
 
-"Vizier," he says. Not "welcome." Not "good morning." Just the title, spoken like a rank he has not yet decided to respect.
+"Vizier," he says. Not "welcome." Not "good morning." Just the title, spoken like a rank he has not yet decided to respect. His voice is the voice of a man who has given orders in sandstorms and been heard through the crash of cavalry charges. It fills the room without rising, commanding attention by gravity rather than volume.
+
+He turns back to his map, and the dismissal is so complete that you almost feel the air close behind it. You have been acknowledged. You have not been accepted. The difference, in General Kadir's world, is measured in blood and years and fortresses held against impossible odds, and you have supplied none of these credentials.
 
 *set met_general true
 
@@ -180,6 +186,10 @@ He looks around the table, and his expression is the expression of a man who has
 
 "I need troops. I need gold. I need this council to stop debating tariffs and theology and start debating survival."
 
+His iron hand lies flat on the map, over the northern frontier, and the gesture is both protective and possessive -- a commander shielding his territory, his soldiers, his dead. The prosthetic catches the morning light and throws a cold gleam across the table, a flash of martial steel in a room of silk and incense.
+
+The silence that follows is not the silence of the Jade Throne Room -- performative, choreographed, filled with the weight of ceremony. This is the silence of a council that has just been told its borders are failing, and each person at the table is calculating what that failure means for their own position, their own faction, their own survival.
+
 *page_break
 
 *comment === FACTION RESPONSES ===
@@ -190,9 +200,11 @@ Guildmaster Priya speaks first, her voice cutting through the tension like a sil
 
 "I grieve for the dead, General. Truly." Her tone is sincere, and you believe her. "But sending the army north is not as simple as loading soldiers onto wagons. Mobilizing the northern garrison costs forty thousand gold dirhams per week. That money comes from trade revenue. Trade revenue that is already under pressure from the Western embargo threats and the southern drought." She taps the table with one finger -- a merchant's rhythm, not a general's. "Money is not abstract. Every gold piece we spend on soldiers is a road that does not get built, a granary that does not get filled, a school that does not open."
 
-"Roads are no use to dead farmers," Kadir says.
+"Roads are no use to dead farmers," Kadir says, and the flatness of his voice is more devastating than any shout.
 
-"Farmers with no roads to bring their grain to market starve just as surely," Priya replies.
+"Farmers with no roads to bring their grain to market starve just as surely," Priya replies, without missing a beat. "The empire has lost more people to famine in the last century than to border raids. The numbers are in the Treasury reports, General. I can send you a copy, though I suspect you would prefer a summary in words of one syllable."
+
+The tension between them is almost visible -- a taut wire stretched across the table, vibrating with decades of institutional rivalry. The military wants gold for swords. The treasury wants gold for roads. The gold is finite. The argument is eternal. And you sit between them, a new Vizier in an old chair, and you begin to understand why this job has a mortality rate.
 
 *page_break
 
@@ -204,7 +216,17 @@ High Priest Ashoka raises one hand, and the room stills. It is a remarkable thin
 
 "I want to send wisdom where you would send swords," Ashoka says, unperturbed. "The Fifth Wisdom teaches that harmony is strength. The Flame does not burn to destroy, General. It burns to illuminate."
 
-"Tell that to the families of the dead."
+"Tell that to the families of the dead," Kadir says. His voice has dropped to the quiet register that Farid warned you about -- the voice that means the General is not performing anger but experiencing it. Real anger, banked and controlled and all the more dangerous for its restraint.
+
+The exchange is a preview of a larger pattern you will encounter again and again in this room: faith versus force, the spiritual versus the physical, the long view versus the urgent need. Neither man is wrong. Both are incomplete. And the gap between their positions is where the empire's fate will be decided.
+
+Lord Reza's voice descends from the gallery, thin and dry as autumn leaves: "In my grandfather's time, the noble houses maintained their own cavalry precisely for situations like this. The traditional response --"
+
+"The traditional response is a century out of date, my lord," Priya says, without turning around.
+
+"Tradition does not expire, Guildmaster. Unlike, I notice, your patience for anything that does not produce a profit."
+
+The barb lands, and Priya's smile tightens at the edges. Lord Reza leans back in his gallery chair with the satisfaction of a man who has been scoring points in council meetings since before most of the room was born.
 
 *page_break
 
@@ -276,9 +298,13 @@ The morning light moves across the map like a slow, indifferent hand.
 
 And then the door opens.
 
-Emperor Roshan IV stands in the doorway. He is wearing robes of state, and his crown catches the light with a flash that silences the room more effectively than any shout.
+Emperor Roshan IV stands in the doorway. He is wearing robes of state -- the same white silk from yesterday's audience, taken in at the sleeves, the crown sitting on his dark hair with the precarious authority of a thing that might, at any moment, be too heavy to bear. His jaw is set. His eyes are dark and fierce.
 
-"We have been listening," he says. His voice is steady. His hands are not. "And we wish to hear our Vizier's recommendation."
+Behind him, barely visible in the corridor's shadow, you catch a glimpse of another figure: the Dowager Empress, watching but not entering, present but not presiding. She has sent her son ahead. Or he has gone ahead of his own will. You cannot tell which, and the distinction may define everything that follows.
+
+"We have been listening," the Emperor says. His voice is steady. His hands, at his sides, are not. "And we wish to hear our Vizier's recommendation."
+
+The royal plural. The formal register. But beneath the performance, a genuine question: what do I do? The question of a sixteen-year-old boy who has inherited the largest empire in the world and is watching its borders burn.
 
 Every eye turns to you.
 
@@ -288,6 +314,8 @@ Every eye turns to you.
 
 *comment This is the first major political decision of the game.
 *comment It sets scene3_crisis_response and shifts faction reputations.
+
+The room is so quiet you can hear the fountain in the garden below, its water falling with the steady, indifferent rhythm of a world that does not pause for political decisions. You can hear the creak of leather as Kadir shifts in his chair. The faint clink of Priya's rings as she folds her hands. The slow, measured breath of Ashoka, who has cultivated the ability to be perfectly still as a form of prayer, or possibly a form of warfare.
 
 The Emperor is watching you. The Council is watching you. In the gallery, Lord Reza adjusts his grip on his cane. Farid, you imagine, is pressing his ear to the antechamber door.
 
@@ -412,7 +440,9 @@ The Emperor listens to the argument that follows your recommendation. His face i
   *line_break
   Priya nods. "With pleasure, Your Majesty." And there it is -- the smile of a woman who has just been given official permission to do what she does best: apply pressure until something breaks.
 
-The Emperor withdraws. The council members gather their papers, their arguments, their grudges. The room smells of incense and tension.
+The Emperor withdraws. The council members gather their papers, their arguments, their grudges. Kadir rolls his map with military precision, the edges aligned to the millimeter. Priya caps her wine decanter and tucks it into a velvet-lined case -- she brought her own wine to a dawn meeting, you note, which tells you something about both her habits and her expectations. Ashoka rises with the unhurried grace of a man who considers haste a moral failing. Zara is simply gone -- one moment present, the next absent, as if she has dissolved into the morning light.
+
+The room smells of incense and tension and the lingering astringency of Priya's wine.
 
 *page_break
 
@@ -622,9 +652,13 @@ Four people. Four powers. Four agendas. And somewhere among them, or behind them
 
 The Council Chamber is empty now. The others have gone -- to their offices, their factions, their private calculations. The morning light has moved across the floor, and the dust motes have settled. The room smells of cold incense and the lingering ghost of Priya's wine.
 
-You should leave. There are documents to review, decisions to implement, a dozen obligations competing for the remainder of your day. But something holds you -- a restlessness, an instinct, a feeling that you have not yet seen everything this room has to show you.
+You should leave. There are documents to review, decisions to implement, a dozen obligations competing for the remainder of your day. Farid is waiting in the antechamber with fresh tea and a schedule that probably looks like a military campaign. The day is young, and the empire does not govern itself.
 
-You walk the perimeter. You study the maps on the walls. You run your fingers along the spines of the books on the shelf -- histories, legal codes, treatises on governance. Everything is in order. Everything is as it should be.
+But something holds you. A restlessness. An instinct. The same instinct that kept you alive in the provinces, when the numbers in a tax report did not add up, when a provincial governor's smile was too wide, when a midnight sound was too quiet. The instinct that says: you have not yet seen everything this room has to show you.
+
+You walk the perimeter. You study the maps on the walls -- the empire in its entirety, color-coded by province, the borders marked in red where they are contested and black where they are secure. The northern frontier is almost entirely red. You study the books on the shelf -- histories, legal codes, treatises on governance, a volume of poetry that seems out of place among the political texts. You run your fingers along the spines and read the titles. [i]On the Governance of Empire.[/i] [i]A History of the Council of Five.[/i] [i]The Art of War in the Modern Age.[/i] And there, at the end of the row, a slim volume with no title on the spine. You pull it out. It is a journal -- empty, its pages blank, waiting for someone to fill them. Perhaps the last Vizier's. Perhaps from before.
+
+You replace it. Everything is in order. Everything is as it should be.
 
 And then you drop a paper. It is an accident -- one of Farid's briefing sheets, slipping from the stack you have been carrying. It flutters to the floor and slides under the round table, and when you crouch to retrieve it, you see it.
 
@@ -638,7 +672,7 @@ You stare at the symbol. Your blood cools. The room seems to contract around you
 
 You have seen this symbol before. Last night, on the anonymous note slipped under your door. In the margin, below the text, someone had drawn the same mark -- a circle with seven asymmetric rays and one line doubled. You had taken it for a smudge. A nervous flourish. Now, crouching beneath the Council table in the empty chamber, you know better.
 
-It is a sign. A signature. A declaration.
+It is a sign. A signature. A mark of ownership -- like the brand on a merchant's goods or the seal on a nobleman's letter. Someone has claimed this table, this room, this council, as their territory. They have marked it not to frighten but to assert -- to say, in the silent language of conspiracy: I am here. I have always been here. And you cannot stop what I have set in motion.
 
 Someone in this room -- someone who sits at this table, who participates in the most sensitive discussions of imperial policy, who has access to the empire's secrets -- is part of whatever killed your predecessor. And they have left their mark here, in the heart of the empire's power, like a wolf marking territory.
 
@@ -670,13 +704,17 @@ You leave the Council Chamber and find Farid in the antechamber, where he has be
 
 He nods, reading something in your face that stops the torrent of words.
 
-"You found something," he says. Not a question. He may be anxious, he may be flustered, but Secretary Farid is not a fool.
+"You found something," he says. Not a question. He may be anxious, he may be flustered, but Secretary Farid is not a fool. He served the last Vizier for three years. He watched a clever man find something and die for it. He knows the shape of discovery, and he can see it in your face.
 
 "I found something," you say. And you walk past him, toward your chambers, toward the desk where the anonymous note lies hidden in a book of tax law, toward the questions that are multiplying faster than you can answer them.
 
 Behind you, the Council Chamber door swings shut. The symbol waits in the dark beneath the table, patient as a buried seed.
 
-The conspiracy is real. Your predecessor found it and died. Now you have found its mark, and the question is no longer whether the threat exists.
+The conspiracy is real. Your predecessor found it and died. Now you have found its mark, scratched into the wood of the table where the empire's most powerful people sit and argue and scheme and -- perhaps -- betray.
+
+The Eternal Flame burns in the Temple Quarter, visible through the window as a distant amber glow. The fountains murmur in the garden. The city hums with its two million lives, each one a thread in the vast, intricate tapestry of the Khazaran Empire. And somewhere in the pattern, a thread has been pulled loose. You can feel the fabric beginning to tear.
+
+The question is no longer whether the threat exists.
 
 The question is what you are going to do about it.
 

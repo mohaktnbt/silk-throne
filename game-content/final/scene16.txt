@@ -94,6 +94,10 @@ Farid enters. He is carrying a tray of tea and a stack of morning dispatches, an
 
 He cannot meet your eyes. "It is -- it is ${betrayer_title} ${betrayer_name}, my lord Vizier. ${betrayer_title} ${betrayer_name} has -- has moved against you."
 
+The words land. They do not shatter -- that comes later. They land with the dull, heavy impact of something that has been falling for a long time and has finally reached the ground. You knew, on some level, that this was coming. You felt it in the currents of the court, in the shifted glances, in the small realignments of power that preceded the Festival like tremors before an earthquake.
+
+But knowing does not prepare you. Knowing is the map. This is the territory. And the territory is a wasteland.
+
 *page_break
 
 *comment === THE BETRAYAL: MILITARY ===
@@ -327,6 +331,8 @@ The sympathy is exquisite. The subtext is devastating. "Family must support one 
 
 *label emperor_reaction
 
+*page_break
+
 The summons arrives at noon.
 
 The Emperor requests -- not commands, requests, and the distinction is significant -- your presence in the Jade Throne Room. Not the private chambers, where you have sat together and spoken honestly. The Throne Room. The official, public, formal space where rank and protocol replace trust and friendship.
@@ -356,11 +362,17 @@ He stops. His jaw works. For a moment, the coached words and the real boy wrestl
 
 *page_break
 
+The audience ends. You bow -- the formal bow, the correct bow, the bow you learned in your first week at court. But the bow feels different now. When you straighten, the Throne Room looks different too -- the same gold, the same marble, the same shafts of sunlight through the high windows, but the geometry has shifted. The room that welcomed you months ago now observes you with the impersonal attention of a stadium watching a gladiator who may not survive the afternoon.
+
+*page_break
+
 *comment === IMMEDIATE REACTION (REAL CHOICE 1) ===
 
 *label reaction_choice
 
-You stand in the Jade Throne Room, the seal ring cold on your finger, the empire's weight on your shoulders, and the ground crumbling beneath your feet.
+You stand in the Jade Throne Room. The same room where you first met the Emperor, months ago -- the same marble, the same gold, the same shafts of sunlight falling through the high windows and painting geometric patterns on the floor. The same incense, the same murmured conversations of courtiers who line the walls like spectators at a trial. Which, you realize, is exactly what this is.
+
+The seal ring is cold on your finger. The empire's weight is on your shoulders. The ground is crumbling beneath your feet.
 
 The court is watching. The Dowager is watching. The Emperor is watching. And somewhere in this city, ${betrayer_title} ${betrayer_name} is watching too.
 
@@ -422,7 +434,11 @@ Farid falls into step beside you. He has the morning's damage report -- a list o
 
 "My lord Vizier. We have -- we have limited time. The investigation will take days, perhaps weeks, but the damage is happening now. Every hour that passes without a response, the narrative solidifies. ${betrayer_title} ${betrayer_name}'s version becomes the accepted truth."
 
-He is right. In politics, the first story wins. You must act quickly.
+He is right. In politics, the first story wins. The version of events that reaches the most ears first becomes the default truth, and every subsequent version -- no matter how accurate -- must fight upstream against the current of established narrative. Your predecessor understood this. Your predecessor is dead.
+
+Farid straightens in his chair. His pen is poised. His face is pale but his jaw is set, and you see in him something you have not seen before -- not courage exactly, but its quieter cousin: determination. The determination of a man who has decided that this is the moment that defines him, and he will not be found wanting.
+
+"Tell me what to do, my lord Vizier. Tell me and I will do it."
 
 *page_break
 
@@ -510,9 +526,17 @@ He is right. Five is more than none. But five is not enough.
 
   "And this is your response? A public accusation? A coup in all but name?"
 
-  Something shifts in his eyes. For a moment -- just a moment -- you see doubt. A soldier who has spent his life in clean battles, confronted with the murky reality of what he has done.
+  Something shifts in his eyes. For a moment -- just a moment -- you see doubt. A soldier who has spent his life in clean battles where the enemy wears a different uniform and stands on the other side of a line, confronted now with the murky reality of what he has done -- a flanking maneuver aimed not at Khanate raiders but at a person who sat across from him at the Council table.
 
-  "I did what was necessary," he says. But his iron hand clenches, and he does not meet your eyes.
+  "I did what was necessary," he says. But his iron hand clenches -- the prosthetic fingers closing around nothing, the mechanical echo of a gesture the flesh hand once made when Kadir was unsure and unwilling to admit it. He does not meet your eyes. "The border needs defending. You were in the way. I am a soldier, Vizier. When an obstacle stands between me and my objective, I remove it."
+
+  "And is that what I am? An obstacle?"
+
+  The question hangs between you. Kadir's jaw works. The lamplight catches the silver threading through his close-cropped hair, the deep lines carved by thirty years of frontier weather and frontier war.
+
+  "You were a good administrator," he says finally. "Better than most. But administration is not leadership, and leadership is not -- it's not sitting in an office pushing paper while soldiers bleed." He turns away. "Go back to your chambers, Vizier. The investigation will sort it out."
+
+  He walks away. His stride is military-perfect. His shoulders, for the first time since you have known him, are not entirely straight.
 *if (betrayal_type = "economic")
   You find Guildmaster Priya in the Treasury offices, surrounded by clerks and ledgers. She is dressed for work, not for court, and when she sees you, she does not pretend surprise. She sets down her pen.
 
@@ -526,7 +550,15 @@ He is right. Five is more than none. But five is not enough.
 
   "And fabricating transfer documents? That is your idea of fiscal responsibility?"
 
-  Something flickers in her expression. Not guilt -- Priya does not do guilt -- but awareness. The awareness that she has crossed a line that cannot be un-crossed. "The empire's money is not your personal fund, Vizier. Someone had to remind you of that."
+  Something flickers in her expression. Not guilt -- Priya does not do guilt, not in public, not where the numbers can see -- but awareness. The awareness of a woman who built her career on calculated risk and has just made a calculation whose results she will not know for days, or weeks, or the rest of her life.
+
+  "I did not fabricate those documents," she says. The denial is smooth, immediate, practiced. "I discovered them. The interpretation is open to investigation, but the documents are real."
+
+  You stare at her. She stares back. For a moment the masks are down, and you see each other plainly -- two people who came from nothing, who climbed through the empire's machinery on talent and stubborness, who sat together over wine and understood each other in the wordless way that self-made people understand each other.
+
+  The understanding is still there. It makes everything worse.
+
+  "The empire's money is not your personal fund, Vizier. Someone had to remind you of that." She picks up her pen. "Please close the door on your way out."
 *if (betrayal_type = "religious")
   You find High Priest Ashoka in the Temple of Seven Wisdoms, standing before the Eternal Flame. The sacred fire casts his shadow long and shifting across the stone floor. Temple guards flank the entrance. Their eyes follow you.
 
@@ -538,7 +570,11 @@ He is right. Five is more than none. But five is not enough.
 
   "I spoke the truth. The Flame illuminates what is. The stain on the Emperor's robes was a sign, and I would be failing my calling if I ignored it." He steps closer. "You have brought change to this empire, Vizier. Some of it good. But the Wisdoms are not subject to the fashions of governance. The Flame has burned for three hundred years. Your reforms are a season. Which do you think will endure?"
 
-*page_break
+  He regards you with those ancient, serene eyes, and you search them for doubt, for guilt, for any crack in the edifice of his certainty. You find nothing. Ashoka believes. That is his power and his cruelty -- he believes in his own righteousness with a conviction that admits no appeal, no exception, no possibility that the voice of the Flame and the voice of Ashoka might not be the same voice.
+
+  "I will pray for you, child," he says. "I will pray that the investigation reveals the truth. And if the truth condemns you, I will pray that the Flame grants you wisdom enough to accept it."
+
+  He turns back to the Eternal Flame. The sacred fire burns on, its light casting his shadow long and dark across the temple floor. The audience is over. The priest has spoken. The gods, apparently, concur.
 
 *page_break
 
@@ -564,7 +600,15 @@ Not directly. Perhaps not at all. But the timing is impossible to ignore. The Fe
 
 You write a formal report connecting the betrayal to the pattern of conspiracy evidence. It is not proof -- not yet -- but it is enough to plant doubt. Enough to suggest that ${betrayer_title} ${betrayer_name} is not a patriot exposing corruption but a piece on someone else's board.
 
-You send the report to Spymaster Zara, to the Emperor's private secretary, and to three provincial governors whose loyalty you trust. The truth is a slow weapon. But it is the only one you have.
+The report is twelve pages long when you finish. Your hand aches from writing. The ink has dried on your fingers in dark lines, like the tributaries of a river mapped onto skin.
+
+You seal it with the Vizier's seal -- the seal that is still yours, still on your finger, still carrying the authority of the Silk Throne whether the court acknowledges it or not. You press the jade ring into warm wax and watch the sigil emerge: the seven-pointed star of the empire, the flame at its center.
+
+You send copies to Spymaster Zara through her private channel, to the Emperor's private secretary through a messenger you trust, and to three provincial governors whose loyalty you assessed during your first weeks in office and found genuine. The report does not ask for help. It does not plead. It simply presents the pattern and invites the reader to draw conclusions.
+
+The truth is a slow weapon. But it is the only one you have. And unlike the weapons arrayed against you -- the forged documents, the rehearsed speeches, the coordinated campaign of destruction -- the truth has the advantage of being true. It may be late. It may be insufficient. It may arrive too late to save you. But it will not change its story under examination. It will not falter under questioning. It will not need to remember which lies it told and to whom.
+
+The truth is slow. But the truth is patient. And tonight, you must be patient too.
 
 *goto day_ends
 
@@ -576,6 +620,8 @@ You send the report to Spymaster Zara, to the Emperor's private secretary, and t
 
 *page_break
 
+*comment === THE DAY WINDS DOWN ===
+
 The afternoon light shifts from gold to gray. The sky over Khazara, which was clear this morning, has clouded over, as if the weather is aligning itself with the political atmosphere. A cool wind blows from the north, carrying the promise of autumn rain and the scent of turning leaves.
 
 The day passes like a fever dream. Messengers come and go. Reports pile on your desk. The seal ring feels heavier with each hour, as if the jade is absorbing the weight of every defection, every whisper, every turned back.
@@ -585,7 +631,7 @@ By evening, the shape of the damage is clear.
 Your authority as Grand Vizier is effectively suspended. The investigation will proceed. The court has split into those who believe the accusations, those who doubt them, and those -- the majority -- who are simply waiting to see which way the wind blows before committing.
 
 *if (betrayal_type = "military")
-  The Garrison is Kadir's. The soldiers follow the General, not the Vizier's seal. The northern frontier force continues to mobilize, but under Kadir's authority, not yours.
+  The Garrison stands like a fortress within a fortress. Its walls are visible from your window -- gray stone, watch fires, the disciplined geometry of military architecture. The Garrison is Kadir's. The soldiers follow the General, not the Vizier's seal. The northern frontier force continues to mobilize, but under Kadir's authority, not yours.
 *if (betrayal_type = "economic")
   The Treasury remains frozen. Priya controls the purse strings, and without the Treasury, the Vizier's office cannot function. The economic machinery of the empire grinds to a halt around you.
 *if (betrayal_type = "religious")
@@ -593,7 +639,11 @@ Your authority as Grand Vizier is effectively suspended. The investigation will 
 
 *page_break
 
-Night falls. You sit in your chambers, the lamps unlit. The Festival's lanterns have been taken down. The Garden of Eternal Spring, which blazed with ten thousand lights last night, is dark.
+*page_break
+
+Night falls. The autumn dark arrives without ceremony, without the drama of a storm or the slow beauty of a sunset. It simply comes -- gray dimming to charcoal dimming to black, the city's outline dissolving into shadow until only the lights remain, and tonight there are fewer lights than usual.
+
+You sit in your chambers, the lamps unlit. The Festival's lanterns have been taken down. The Garden of Eternal Spring, which blazed with ten thousand lights last night, is dark.
 
 You think of last night. The music. The lamps. The speech.
 

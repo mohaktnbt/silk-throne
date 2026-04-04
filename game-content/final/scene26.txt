@@ -613,35 +613,59 @@ Now comes the harder part.
 
 *page_break
 
-The afternoon light slants through the Council Chamber windows, painting gold bars across the table where the evidence still lies. The day has been long. The revelations have left you hollowed out, a vessel from which the storm has been poured.
+The afternoon light slants through the Council Chamber windows, painting gold bars across the table where the evidence still lies. The dust motes caught in the light drift lazily, indifferent to the wreckage below them -- the decoded letters, the damning testimony, the proof that someone you trusted tried to destroy everything you have built.
+
+The day has been long. The revelations have left you hollowed out, a vessel from which the storm has been poured. Your throat is raw from speaking truths that should never have needed saying. Your hands ache from gripping the evidence, as though the physical act of holding the papers could contain the damage they represent.
 
 But the storm is not over. It has barely begun.
 
-The conspiracy's head has been identified. Its network in the capital has been shattered. But its final gambit -- the Khanate invasion, the economic crisis, Kaveh's claim to the throne -- these wheels are already in motion. They cannot be stopped by unmasking the person who set them turning.
+The conspiracy's head has been identified. Its network in the capital has been shattered. But its final gambit -- the Khanate invasion pressing against the Wall of Roshan, the economic crisis bleeding the treasury dry, Kaveh's claim to the throne echoing through the noble houses -- these wheels are already in motion. They were set turning months ago, and unmasking the person who started them does not stop the machinery.
 
-Zara appears at the door. "The Council has been summoned for tomorrow morning. General Kadir requests a war briefing. Guildmaster Priya says the treasury has seventy-two hours before the reserve accounts are empty."
-
-She pauses.
-
-"And Prince Kaveh has issued a formal challenge to the Emperor's right to rule. He cites divine authority, noble precedent, and the Eternal Flame's omen."
-
-The Eternal Flame. You remember the guttering -- the sacred fire that has burned for three hundred years flickering like a candle in a draft. Half the city believes it was a sign from the divine that the emperor has lost heaven's favor.
+A conspiracy uncovered is not a conspiracy defeated. Not yet. Not until every arm of its plan has been answered.
 
 *page_break
 
-You are tired. You are heartsick. You have spent the day confronting the face of betrayal and it has left marks on your soul that will never fully heal.
+Zara appears at the door. She has changed her clothes -- the dark field garments replaced by something closer to her usual austere court attire, though you notice a knife at her belt that she does not normally carry publicly. She is preparing for what comes next, and what comes next requires the Spymaster's authority, not the agent's anonymity.
 
-But you are the Grand Vizier of the Khazaran Empire. And tomorrow, you go to war.
+"The Council has been summoned for tomorrow morning. General Kadir requests a war briefing -- his exact words were 'a real briefing, not one of your political lectures.'" She pauses. "Guildmaster Priya says the treasury has seventy-two hours before the reserve accounts are empty. After that, we cannot pay the army."
 
-Farid appears with a fresh pot of tea. His hands are steady. His voice, when he speaks, carries none of its usual flutter.
+She lets that settle.
 
-"My lord Vizier. I have prepared a summary of our military, economic, and political assets for the morning briefing. I have also taken the liberty of drafting three contingency plans based on General Kadir's latest border reports."
+"And Prince Kaveh has issued a formal challenge to the Emperor's right to rule. He cites divine authority, noble precedent, and the Eternal Flame's omen. He has published the challenge as a broadsheet -- copies are being distributed in the Grand Bazaar as we speak."
 
-He sets the tea down. Meets your eyes.
+The Eternal Flame. You remember the guttering -- the sacred fire that has burned without interruption for three hundred years flickering like a candle in a draft, dimming in its great bronze brazier while the priests scrambled to feed it. Half the city believes it was a sign from the divine that the Emperor has lost heaven's favor. The other half is not sure what to believe, which is almost worse.
 
-"We will get through this. Per regulation 301 -- well, there is no regulation for this. But we will get through it anyway."
+Kaveh's timing is immaculate. The conspiracy's intelligence network may be broken, but its political strategy is still unfolding with clockwork precision.
 
-You take the tea. The cardamom is warm on your tongue, and the seal ring glows in the fading light.
+*page_break
+
+You are tired. Bone-deep, soul-weary tired, the kind of exhaustion that no amount of sleep can cure because it lives not in the muscles but in the spirit. You have spent the day confronting the face of betrayal, and it has left marks on your soul that will never fully heal -- not the sharp scars of sudden violence but the slow, aching bruises of trust destroyed.
+
+But you are the Grand Vizier of the Khazaran Empire. The seal ring is on your finger. The evidence is assembled. The enemy is identified. And tomorrow, you go to war.
+
+You look out the Council Chamber window. The Garden of Eternal Spring stretches below, its geometric channels catching the afternoon light. The jasmine is blooming -- you can smell it even from here, sweet and heavy, almost too rich. The peacocks that strut among the flowerbeds have been undisturbed by the crisis. They spread their tails to the fading sun, oblivious and magnificent, exactly as they have done for centuries.
+
+The empire is beautiful. That is the thing no one tells you about power -- that the thing you are fighting to save is, at its heart, simply beautiful. Not the politics. Not the factions. Not the treasury reports or the garrison rotations. The gardens. The fountains. The call to prayer at dawn. The children playing in the Grand Bazaar. The old scholar in the Library, turning pages with reverent hands. The smell of saffron rice at dusk.
+
+This is what you are fighting for.
+
+*page_break
+
+Farid appears with a fresh pot of tea. His hands are steady -- steadier than yours, you notice, and the observation brings a faint, surprised smile to your lips. When did Farid become the steady one?
+
+His voice, when he speaks, carries none of its usual flutter. The stammering, the apologetic rambling, the anxious citations of regulations -- all of it has been burned away by the day's revelations, leaving behind something harder. Something cleaner.
+
+"My lord Vizier. I have prepared a summary of our military, economic, and political assets for the morning briefing. I have also taken the liberty of drafting three contingency plans based on General Kadir's latest border reports, cross-referenced with Guildmaster Priya's treasury projections and Spymaster Zara's intelligence assessments."
+
+He sets the tea down with the precise, practiced gesture of a man who has served tea ten thousand times and takes pride in every single one.
+
+"Per regulation 47-A, the Grand Vizier's office is responsible for coordinating the empire's response to threats classified as existential. I have -- I have never processed a regulation 47-A filing before, my lord Vizier. I hope I have done it correctly."
+
+He meets your eyes. Holds them. Something passes between you -- not the relationship of master and servant, not even the relationship of leader and aide, but something simpler and more fundamental. Two people who have walked through fire together and emerged, singed but standing, on the other side.
+
+"We will get through this," Farid says. "Per regulation 301 -- well, there is no regulation for this. There has never been a regulation for this." A pause. The faintest ghost of a smile. "But we will get through it anyway."
+
+You take the tea. The cardamom is warm on your tongue, spreading its sweet heat through your chest, and the seal ring glows in the fading light like a small, determined star.
 
 Tomorrow, the final battle begins.
 

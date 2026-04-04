@@ -11,6 +11,10 @@
 
 *set act2_chapter 4
 
+*comment The Price of Power: Each route forces a moral dilemma that tests
+*comment the player's commitment to their chosen path. The question is not
+*comment whether you CAN pay the price, but whether you WILL.
+
 *comment === ROUTE BRANCH ===
 *if (route = 1)
   *goto loyalist_price
@@ -28,11 +32,11 @@
 
 *label loyalist_price
 
-The morning is cold. An unusual wind has come down from the Ashghar Mountains, carrying with it the scent of snow and pine, and you can feel it through the marble walls of your chambers as you dress. The silk of your vizier's robes does nothing against the chill. You fasten the seal ring on your finger and notice that your hands are steady.
+The morning is cold. An unusual wind has come down from the Ashghar Mountains, sweeping across the Valley of the Ashar and into the city like an uninvited guest, carrying with it the scent of snow and pine and the distant memory of places where the air is clean and the politics are simpler. You can feel it through the marble walls of your chambers as you dress. The silk of your vizier's robes does nothing against the chill. You fasten the seal ring on your finger and notice that your hands are steady.
 
 They should not be. Not after what Farid told you an hour ago.
 
-A pamphlet is circulating through the bazaar -- cheaply printed, anonymously authored, devastating in its claims. It alleges that Emperor Roshan ordered the execution of a merchant family in the northern provinces to seize their trade routes. The pamphlet names the family. It names the village. It names the children.
+A pamphlet is circulating through the bazaar. The printing press, that miracle of the age, that engine of enlightenment that Lady Soraya calls the empire's greatest invention -- the printing press has been used to print a lie. Cheaply produced, anonymously authored, devastating in its claims. It alleges that Emperor Roshan ordered the execution of a merchant family in the northern provinces to seize their trade routes. The pamphlet names the family. It names the village. It names the children.
 
 The story is a lie. You know this because you have seen the intelligence reports: the family was killed by Khanate raiders, not imperial soldiers. But the lie is crafted with surgical precision, and it has arrived at the worst possible moment -- three days before the Emperor is to address the guilds about trade reform.
 

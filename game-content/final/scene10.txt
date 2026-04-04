@@ -30,7 +30,11 @@
 
 Three days after the Emperor's first independent decree, General Kadir summons you to the Garrison.
 
-It is not a polite request. The message is written in the General's own hand -- blunt, economical, each letter pressed into the parchment like a boot print in mud: "Vizier. Map room. Dawn. Bring boots, not slippers."
+The Emperor's order has been enacted. Two thousand soldiers from the central reserves are mustering for deployment to the northern garrisons. The machinery of military logistics -- quartermaster requisitions, armorer inventories, cavalry readiness assessments, supply chain activations -- has ground into motion with the ponderous inevitability of a great wheel beginning to turn. Farid has been coordinating the paperwork with his customary precision, though the sheer volume has left him muttering about regulation numbers in his sleep, according to the servants.
+
+In the Citadel's corridors, the change in atmosphere is palpable. The Emperor walks with a straighter spine. Courtiers who once looked through him now attend to his words. And the Dowager has retreated into a watchful silence that reminds you of a cat studying a bird from behind glass -- patient, calculating, waiting for the right moment to strike.
+
+But the summons from Kadir is not a polite request. The message is written in the General's own hand -- blunt, economical, each letter pressed into the parchment like a boot print in mud: "Vizier. Map room. Dawn. Bring boots, not slippers."
 
 You arrive as the garrison drums are sounding morning drill. The map room is cold, lit by a single lamp that throws long shadows across charts of the northern frontier. Kadir is already there, standing before the largest map, his iron hand tracing a line along the Wall of Roshan I.
 
@@ -86,9 +90,13 @@ Kadir leads you through the fort with the efficiency of a man giving a tour he h
 
 "We lose a man every week," Kadir says. "Raids, skirmishes, the occasional full assault. The reinforcements you helped the Emperor send will arrive in days, and they are welcome. But two thousand men do not fix a wall that needs twenty thousand men and five years of engineering."
 
+He stops at the end of the infirmary and turns to face you. Behind him, the northern steppe stretches to the horizon, vast and golden and deceptively peaceful. A hawk circles overhead, riding the thermals.
+
+"You wanted to see the border, Vizier. This is it. This is what the empire looks like from the edge."
+
 *page_break
 
-That evening, you dine with the garrison officers in the fort's mess hall. The food is plain -- flatbread, dried meat, a thin stew of lentils and whatever vegetables survived the last supply run. The officers eat in silence, with the focused economy of people who have learned not to waste food or time.
+That evening, you dine with the garrison officers in the fort's mess hall. The room is low-ceilinged and warm, heated by a large brazier that fills the air with the scent of burning charcoal and the greasy warmth of cooking fat. The officers sit on benches worn smooth by a generation of soldiers, and the conversation is the conversation of people who share danger: quiet, practical, punctuated by silences that carry the weight of things unsaid. The food is plain -- flatbread, dried meat, a thin stew of lentils and whatever vegetables survived the last supply run. The officers eat in silence, with the focused economy of people who have learned not to waste food or time.
 
 After the meal, Navid approaches you. He has been quiet during the inspection, but you have noticed him watching the wall, the garrison, the soldiers. His jaw has been tight since you arrived.
 
@@ -139,15 +147,23 @@ After the meal, Navid approaches you. He has been quiet during the inspection, b
 *set sabotage_discovered true
 *set evidence_count + 1
 
-The next morning, Kadir takes you to the section of the Wall that failed during the last Khanate raid. The breach is fifty feet wide, the stone scattered across the steppe like broken teeth. Engineers are working to fill the gap, but their efforts are hampered by a shortage of materials.
+The next morning, Kadir takes you to the section of the Wall that failed during the last Khanate raid.
 
-"The stone was requisitioned three months ago," Kadir says. "It never arrived. The supply convoy was 'redirected' to a provincial construction project. On whose authority?" He holds up a crumpled dispatch. "The authorization carries the seal of the Treasury office. But Priya's people swear they never issued it."
+You ride out at dawn, the garrison providing an escort of eight cavalry who fan out across the steppe with the practiced alertness of soldiers who know that Khanate scouts are never far away. The Wall stretches east and west to the horizon, its ancient stone weathered to the color of old bone. In the early light, you can see the places where repairs have been made over the centuries -- newer stone patching older, mortar of varying ages and qualities, like a document that has been amended and amended until the original text is barely visible.
 
-A forged requisition. Using Treasury seals. Redirecting military supplies away from the border.
+And then you reach the breach.
+
+Fifty feet wide. The stone is scattered across the steppe like broken teeth. On either side of the gap, the Wall stands -- scarred, blackened by fire in places, but standing. In the gap itself, engineers are working to fill the void with timber palisades and loose rubble. It is temporary. It would not stop a determined assault.
+
+Kadir dismounts and walks to the edge of the breach. He stands there, silhouetted against the steppe, and when he speaks his voice is quiet -- the quiet that is worse than shouting.
+
+"The stone was requisitioned three months ago," he says. "Good quarried granite, enough to fill this gap and reinforce both flanking sections. It never arrived. The supply convoy was 'redirected' to a provincial construction project. On whose authority?" He holds up a crumpled dispatch, its seal intact. "The authorization carries the seal of the Treasury office. But Priya's people swear they never issued it."
+
+You examine the dispatch. The seal is convincing -- but Farid has taught you to look for the telltale signs of forgery. The wax is the right color, the impression is the right depth, but the cipher code at the bottom is one digit off from the current Treasury sequence. It is a forgery. A good one, but a forgery.
 
 "This is the sabotage," you say.
 
-"This is one instance. There are dozens." Kadir's voice drops. "Vizier, I am a soldier. I fight enemies I can see. This enemy is inside our own walls, wearing our own uniforms, using our own seals. I need help."
+"This is one instance. There are dozens." Kadir turns to face you, and the frustration in his eyes is the frustration of a man who has been fighting with one arm bound behind his back. "Forged requisitions. Leaked patrol schedules. Supply convoys that disappear. Equipment that arrives damaged or incomplete. Vizier, I am a soldier. I fight enemies I can see. This enemy is inside our own walls, wearing our own uniforms, using our own seals. I need help."
 
 *page_break
 
@@ -235,17 +251,51 @@ A forged requisition. Using Treasury seals. Redirecting military supplies away f
 
 The ride back to Khazara takes two days. The steppe gives way to foothills, the foothills to the fertile valley, and with each mile southward the landscape grows softer, greener, more cultivated -- and the memory of the crumbling Wall grows heavier. You carry Navid's journal, the forged requisitions, and a weight in your chest that was not there when you left. The northern border is not an abstraction anymore. It is real -- the smell of horse and dust, the sound of wind over the steppe, the faces of soldiers who serve and suffer while the capital debates tariffs and precedence.
 
-Kadir rides beside you in silence for the first hour. Then he speaks.
+Kadir rides beside you in silence for the first hour. The steppe wind is at your back, pushing you south. A hawk circles overhead, its shadow skimming the grass like a dark thought.
 
-"The boy emperor. Roshan." He says the name like a soldier says the name of a commander he has not yet decided to follow. "Is he worth it?"
+Then Kadir speaks.
+
+"The boy emperor. Roshan." He says the name like a soldier says the name of a commander he has not yet decided to follow. Testing the weight of it. Measuring its quality. "Is he worth it?"
 
 "Yes."
 
 "That was fast."
 
-"Some questions do not need deliberation."
+"Some questions do not need deliberation, General."
 
-Kadir grunts. It might be approval. With him, it is difficult to tell.
+Kadir grunts. It might be approval. With him, it is difficult to tell. He rides a few more lengths in silence, then speaks again, his voice lower.
+
+"His father was a good emperor. Darius knew the border. He rode north every spring, inspected the garrisons, spoke to the soldiers by name. When he made a decision about troop deployment, it was because he had stood on the ground and tasted the dust and looked into the eyes of the men who would carry out his orders." Kadir pauses. "The boy has never been north. Until today, neither had his Vizier."
+
+"And now?"
+
+"And now you have stood on the ground. You have tasted the dust. You have seen the Wall. The question is what you do with that knowledge."
+
+"I use it."
+
+Kadir turns in his saddle to look at you. The wind catches his cloak, and for a moment he looks like one of the old bronze statues in the Citadel's Hall of Generals -- a warrior frozen in the act of assessment, his iron hand resting on his saddle horn like a weapon at rest.
+
+"Good," he says. And rides on.
+
+*page_break
+
+On the second day, you stop at a village to water the horses. It is a small place -- thirty houses, a well, a granary, a shrine to the Eternal Flame consisting of a brass lamp on a stone pedestal. The villagers come out to watch the cavalry pass with the wary curiosity of people who live on the edge of danger. Children peer from behind their mothers' skirts. An old farmer approaches and offers water with trembling hands.
+
+"The soldiers," he says, looking at Kadir's escort. "Are they going north?"
+
+"Yes."
+
+"Good. The raiders came last month. They took three goats and a cow. We have nothing else for them to take." He pauses. "We also lost a boy. Fourteen. He tried to stop them." The old farmer's voice does not break. It simply empties, as if the grief has been wrung from it by repetition.
+
+Kadir listens. His face is stone. When the farmer finishes, the General dismounts, crouches before the man, and takes both his hands in his own -- the flesh and the iron.
+
+"His name," Kadir says.
+
+"Arash. His name was Arash."
+
+"I will remember it."
+
+The moment passes. You remount and ride on. But the name stays with you, carried south alongside Navid's journal and the forged requisitions. Arash. Fourteen years old. Dead because a wall was crumbling and a supply convoy was redirected by a forged document.
 
 The capital appears on the horizon on the second day -- the domes and minarets rising from the valley like a crown of gold and white. It is beautiful. It is also, you now understand, a city built on a border that is being deliberately eroded. If the Wall falls, if the Khanates pour through in force, this beauty will burn.
 
@@ -263,11 +313,15 @@ But it is a beginning. And beginnings are enough.
 
 A week passes. The shadow network grows like a vine in fertile soil, but slowly -- too slowly for the urgency that presses at your ribs like a held breath.
 
-Priya's merchant contacts provide a trickle of information from the provinces -- trade patterns, caravan movements, the quiet pulse of commerce that reveals, to those who know how to read it, the health of the empire. It is not enough.
+The days blur into a rhythm of official duties and unofficial operations. In the mornings, you are the Grand Vizier -- attending Council briefings, reviewing provincial dispatches, managing the bureaucracy with Farid's tireless assistance. You sit at the round table in the Council Chamber and contribute measured opinions on trade tariffs and garrison funding and the scheduling of religious festivals, and no one suspects that the notes you take in the margins of your documents are coded messages to a growing network of informants.
+
+In the afternoons and evenings, you are something else. Something without a title or a formal role. You study Priya's trade maps and Zara's intelligence assessments. You send coded messages through newly established channels. You recruit contacts -- a customs official at the Ashghar Pass, a dock worker at Port Tavandar, a bookkeeper in the Treasury who owes Priya a favor and is willing to monitor specific accounts.
+
+Priya's merchant contacts provide a trickle of information from the provinces -- trade patterns, caravan movements, the quiet pulse of commerce that reveals, to those who know how to read it, the health of the empire. It is not enough. The information is broad but shallow, the kind of data any competent merchant would have. What you need is depth -- specific intelligence about the conspiracy's operations, its funding, its personnel, its plans.
 
 You need a true alliance. Not the official kind, sealed with ink and witnessed by the Council. The kind sealed in shadows, with mutual leverage substituting for trust.
 
-Two candidates present themselves.
+You sit at your desk in the early morning, before Farid arrives, and spread a sheet of parchment before you. On it you write two names, side by side, separated by a line. Two candidates for a deeper alliance. Two paths to power.
 
 The first is Guildmaster Priya herself. She has been your entry into the unofficial economy, but the current arrangement is transactional. A deeper alliance would give you access to her full network -- merchants, factors, warehouse managers, dock workers, couriers. An economic intelligence apparatus that rivals Zara's.
 
@@ -318,7 +372,9 @@ The second is Spymaster Zara. She confronted you about your activities and eithe
 
 The alliance -- whichever form it takes -- requires a meeting. Not in the Citadel, where every wall has ears and every corridor has eyes. Not in the Bazaar, where Priya's face is known to every merchant. Not in the Foreign Quarter, where Ambassador Chen's people watch the comings and goings of Khazaran officials with professional interest.
 
-In the Old City.
+In the Old City. The place where the empire's polished surface gives way to the rough stone beneath.
+
+*page_break
 
 The Old City at night is a different world. The narrow streets swallow lamplight. Buildings lean toward each other overhead, nearly touching, creating tunnels of shadow where the moonlight cannot reach. The smell is different from the Citadel's sandalwood and jasmine -- here it is cooking oil, sewage, unwashed bodies, and beneath it all the mineral tang of the river that flows through the Old City's ancient channels.
 
@@ -396,9 +452,11 @@ The architecture of a shadow network, built brick by careful brick.
 
 *comment === THE PRINCE KAVEH ENCOUNTER ===
 
-The Old City has one more surprise.
+The Old City has one more surprise. The night is not finished with you yet.
 
-You are navigating the final stretch of narrow streets before the bridge that leads back to the New City when a voice speaks from a doorway.
+You are navigating the final stretch of narrow streets before the bridge that leads back to the New City. The air has cooled, and your breath steams faintly in the lamplight. The Old City's sounds have shifted from evening bustle to night quiet -- a cat's yowl, the distant barking of dogs, the creak of a shutter closing against the cold.
+
+Then a voice speaks from a doorway, quiet and amused and entirely unexpected.
 
 "Out rather late for a Grand Vizier."
 
@@ -475,17 +533,25 @@ In your chambers, you spread your notes across the desk. The shadow network is t
 *else
   Two alliances running in parallel, each reinforcing the other. The economic infrastructure of Priya's merchants and the intelligence architecture of Zara's apparatus, woven together by a Vizier who sits at the center like a spider at the heart of its web.
 
-And then there is Kaveh. The prince with the claim, the charm, and the unsettling habit of appearing where he should not be. He is either a potential asset or an active threat, and the line between those categories is thin as a silk thread.
+And then there is Kaveh. The prince with the claim, the charm, and the unsettling habit of appearing where he should not be. He is either a potential asset or an active threat, and the line between those categories is thin as a silk thread. His words echo in your memory: "Arrangements change." The casual confidence of a man who believes that time is on his side. Is it? Does Kaveh know something about the conspiracy, or is he merely an opportunist positioning himself to benefit from whatever chaos the conspirators create?
 
-Farid knocks. You let him in. He has waited up, of course.
+The answer matters. A great deal.
 
-"My ${title_honorific} Vizier, you were out late. I was -- not worried, exactly. Concerned. Professionally concerned."
+Farid knocks. You let him in. He has waited up, of course -- this is a man who once stayed awake for thirty-six hours to ensure a filing deadline was met, and whose personal definition of loyalty includes the willingness to serve cold tea at midnight to a superior who may or may not appreciate it.
 
-"I appreciate your professional concern, Farid."
+"My ${title_honorific} Vizier, you were out late. I was -- not worried, exactly. Concerned. Professionally concerned. Per regulation 23-C, the Vizier's personal safety is the responsibility of the imperial guard, but as no imperial guard was present, I took the liberty of --"
 
-"Also I made tea. In case you wanted tea. It has gone slightly cold. I could make more."
+"Farid."
+
+"Yes?"
+
+"I appreciate your professional concern."
+
+"Also I made tea. In case you wanted tea. It has gone slightly cold. I could make more. I could also make warm tea. Which is a different thing from cold tea that was previously warm. Fresh warm tea, I mean."
 
 "The cold tea is fine."
+
+He pours. His hands are steady -- steadier than your own, you notice. The man who cannot look a courtier in the eye without stammering serves tea with the calm precision of a temple priest performing a sacred ritual.
 
 You drink the tepid tea and look at your notes. The web grows. The game continues. And somewhere in the city's shadows, other players are making their own moves.
 
@@ -501,13 +567,17 @@ The silk regulation has been in effect for one week. The results are already vis
 
 Certification costs at the bazaar have dropped by a third. Merchants who previously paid a fifth of their income to noble weighing stations now have options -- independent weighers have appeared with the speed that only free commerce can produce. The spice merchants are jubilant. The silk traders are cautious but hopeful. And the noble houses that owned the monopoly are bleeding revenue.
 
-Lord Reza has been conspicuously silent since your confrontation. That silence worries you more than his anger did.
+Lord Reza has been conspicuously silent since your confrontation. That silence worries you more than his anger did. A man who shouts is a man who is reacting. A man who goes quiet is a man who is planning. And Lord Reza has had seventy-two years to perfect the art of planning.
+
+The old nobleman has not visited the Citadel since your meeting. His seat in the visitor's gallery of the Council Chamber has been empty. His faction's usual complaints about trade policy and provincial appointments have ceased. It is as if the entire traditionalist wing of the aristocracy has drawn a collective breath and is holding it.
+
+They are waiting. The question is: for what?
 
 You need allies. Not the cautious, conditional support of individual officials, but a genuine coalition -- progressive nobles, forward-thinking merchants, and the commoners whose lives the reforms are meant to improve. A coalition broad enough to survive the inevitable counterattack.
 
 Lady Soraya is your bridge to the first group. She arrives at your office on a morning that smells of rain, carrying a stack of books and a list of names.
 
-"Eleven nobles," she says. "I have spoken to each personally. They are willing to support further reform, provided the reforms are gradual and do not directly threaten their own estates." She pauses. "That last condition is a problem, because eventually, meaningful reform will threaten everyone's estate."
+"Eleven nobles," she says, setting the books on your desk with the careful precision of someone presenting evidence at a trial. The books are her research -- treatises on political reform from the empire's own history, borrowed from the Great Library and bristling with paper markers at relevant passages. "I have spoken to each personally. They are willing to support further reform, provided the reforms are gradual and do not directly threaten their own estates." She pauses. "That last condition is a problem, because eventually, meaningful reform will threaten everyone's estate."
 
 *page_break
 
@@ -546,9 +616,17 @@ Priya arranges a meeting in her private chambers above the Grand Bazaar. The roo
 
 *page_break
 
-The coffee is strong and bitter, a taste you are still learning to appreciate. The merchants drink it like water, and you suspect it is the fuel that powers the empire's commercial engine. You sip, and the caffeine sharpens your focus as you present the reform agenda.
+The coffee is strong and bitter, a taste you are still learning to appreciate. The merchants drink it like water, and you suspect it is the fuel that powers the empire's commercial engine. You sip, and the caffeine sharpens your focus as the conversation turns to business.
+
+Hamid produces a ledger -- his own, separate from the guild's official records. "The numbers, Vizier. Always the numbers. Let me show you what the noble monopolies cost the merchant class in real terms." He opens the ledger, and the columns of figures march down the page with the relentless precision of an army on the move. Certification fees. Weighing fees. Court fees for dispute resolution. Transportation tariffs. Storage levies. Market access charges. Each one is a small cut, and together they bleed the merchant class of nearly a quarter of its gross revenue.
+
+"A quarter," Hamid says, his jovial face uncharacteristically grim. "Twenty-five fils out of every dirham, paid to noble families for the privilege of conducting commerce in an empire our commerce built."
+
+*page_break
 
 You present your reform agenda to the gathered merchants. The silk regulation was the first step. The next steps are more ambitious: standardized weights and measures across all bazaars (currently each noble house uses its own, creating chaos and opportunities for fraud), a merchant tribunal to resolve trade disputes without going through the noble-dominated courts, and a reduction in the tariffs that provincial merchants pay to transport goods to the capital.
+
+Priya watches the room as you speak. She knows these people -- their ambitions, their fears, their calculations. She nods at the right moments, adding her authority to your proposals without speaking. It is a partnership made visible: the Vizier provides the political will, the Guildmaster provides the institutional credibility.
 
 The merchants listen with the focused attention of people calculating profit.
 
@@ -618,7 +696,13 @@ Three days after the merchant meeting, Soraya brings you a scroll. It is rough p
 
 "They heard about the silk regulation," Soraya says. "News travels fast among people who have been waiting for change their entire lives."
 
-The petition asks for three things: repair of the Old City's water channels (which have been crumbling for years while the Citadel's fountains flow endlessly), a reduction in the grain tax that falls disproportionately on the poorest farmers, and the right to bring grievances directly to the Vizier's office without going through noble intermediaries.
+The petition asks for three things. Three modest things that, in any just society, would not need to be petitioned for at all.
+
+First: repair of the Old City's water channels. The channels were built two centuries ago and have been crumbling for years. In the dry season, the Old City's two hundred thousand residents have access to water for approximately four hours per day. Meanwhile, the Citadel's fountains flow endlessly, their streams of crystal clear water decorating gardens that no commoner has ever entered.
+
+Second: a reduction in the grain tax. The tax falls disproportionately on the poorest farmers, who pay a larger percentage of their harvest than the wealthy landowners. A farmer with ten acres pays twenty percent. A nobleman with ten thousand acres pays five percent. The mathematics of this injustice are simple enough for a child to understand, and no one in three hundred years has changed them.
+
+Third: the right to bring grievances directly to the Vizier's office without going through noble intermediaries. Currently, a commoner who wishes to petition the government must go through their local lord, who has every incentive to bury the petition before it reaches the capital. The system is designed to ensure that the voices of the powerless never reach the ears of the powerful.
 
 *page_break
 
@@ -710,7 +794,9 @@ The petition asks for three things: repair of the Old City's water channels (whi
 
 *comment === REVOLUTIONARY CLOSING ===
 
-That evening, you sit in the Garden of Eternal Spring as the lamps are lit. The fountain's murmur covers your thoughts, and the jasmine is heavy in the warm air. Soraya sits beside you, reviewing the day's accomplishments.
+That evening, you sit in the Garden of Eternal Spring as the lamps are lit one by one, tiny flames catching in the brass lanterns that line the garden's pathways, their reflections multiplying in the channels of water until the garden glows like a constellation brought to earth. The fountain's murmur covers your thoughts, and the jasmine is heavy in the warm air, sweet and insistent. A peacock struts along the far wall, its tail folded, its blue-green feathers catching the lamplight like gems.
+
+Soraya sits beside you on the marble bench, reviewing the day's accomplishments. She has a notebook -- leather-bound, practical, filled with her precise handwriting -- and she reads from it with the focused attention of a woman who treats politics as a discipline, not a pastime.
 
 "Eleven noble supporters," she says, counting on her fingers. "The merchant guilds are committed. And the commoners --" She pauses. "The commoners believe in you, Vizier. That is the most valuable thing you have gained today, and the most dangerous."
 

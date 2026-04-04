@@ -28,25 +28,39 @@ Names. Connections. Red threads linking informant to handler, handler to paymast
 
 *page_break
 
-She pushes off the wall and approaches the map, tapping a cluster of pins near the river.
+She pushes off the wall and approaches the map, her shadow stretching across the floor like a blade. She taps a cluster of pins near the river -- three red dots, each one representing a nest of conspiracy agents that have been eluding her for weeks.
 
-"Tonight they move. My sources say they're consolidating -- burning documents, shifting safe houses, preparing to disappear before the final strike. If we lose them tonight, we lose them permanently."
+"Tonight they move. My sources -- what is left of them -- say the cells are consolidating. Burning documents. Shifting safe houses. Liquidating assets." Her finger traces the line of the Ashar River on the map. "They know the noose is tightening. They are preparing to disappear before the final strike. Scatter into the provinces, cross the border, vanish into the Khanate steppe. If we lose them tonight, we lose them permanently."
 
-Secretary Farid hovers near the door, clutching a stack of reports to his chest like armor. "My -- my lord Vizier, the hour is very late. Perhaps we could coordinate from the Citadel? It's -- the Old City at night is not precisely safe."
+She says it flatly. A statement of fact. But you hear what she does not say: *they are my responsibility, and they are slipping through my fingers, and I do not have enough hands.*
+
+Secretary Farid hovers near the door, clutching a stack of reports to his chest like armor. The leather portfolio is his shield. The regulations within it are his sword. Against the darkness of espionage and the violence of the Old City, they are hopelessly inadequate weapons. But Farid has never let inadequacy stop him from being present.
+
+"My -- my lord Vizier, the hour is very late. Past the third bell, if I am not mistaken. Perhaps we could coordinate from the Citadel? It's -- the Old City at night is not precisely safe. The crime statistics alone are -- well, they are quite comprehensive. I have a report, actually. Filed under 'C' for--"
 
 Zara does not look at him. "Nothing is safe, Farid. That's rather the point."
 
-She turns to you, and in the lamplight her eyes are dark and steady as river stones. "I need a decision. My network is stretched thin. Lila's street children have located two of the three cells. The third -- the one in the Foreign Quarter -- is the most dangerous. That's where their handler operates. A woman called the Weaver."
+She turns to you, and in the lamplight her eyes are dark and steady as river stones, the kind of stones that have been worn smooth by years of fast water running over them. Patient stones. Dangerous stones. "I need a decision. My network is stretched thin -- thinner than it has ever been. The conspiracy's purge saw to that. But Lila's street children have located two of the three cells. The third -- the one in the Foreign Quarter -- is the most dangerous. That's where their handler operates."
+
+She pauses. The name she is about to say clearly costs her something.
+
+"A woman called the Weaver."
 
 *page_break
 
-"The Weaver has been feeding intelligence to the Northern Khanates for months. She's the reason General Kadir's garrison rotations keep ending up in enemy hands. She's the reason fifty soldiers died at Fort Darband."
+"The Weaver." You have heard the name before, in Zara's briefings. A ghost in the intelligence world -- a handler who runs agents the way a spider runs a web, from the center, with infinite patience and no mercy.
 
-Zara pauses. Chooses her next words with the precision of a woman selecting a blade.
+"She has been feeding intelligence to the Northern Khanates for months," Zara says. "Garrison rotations. Supply schedules. Patrol patterns. She is the reason General Kadir's troop movements keep ending up in enemy hands. She is the reason fifty soldiers died at Fort Darband."
 
-"I can take two cells tonight. Not three. Not with the people I have left. The conspiracy's purge of my network saw to that." A muscle tightens in her jaw -- the only sign of the rage that must burn beneath that controlled exterior. "So I need you to decide. Do you come with me into the Old City and help take the third cell? Or do you coordinate from here, directing my agents by messenger, and accept that the Weaver may escape?"
+A pause. Something flickers across Zara's face -- there and gone, like a fish breaking the surface of dark water. Guilt, perhaps. Or rage. They are not so different, in Zara.
 
-The question hangs in the incense-thick air. Beyond the chamber walls, you can hear the distant drum of the garrison's night watch, steady as a heartbeat.
+"I know her methods. I have studied her for weeks. She is not ideological -- she is professional. She does not believe in the conspiracy's cause. She believes in gold and skill and the pleasure of a game well played." Another pause. "I respect her competence. I intend to destroy her network regardless."
+
+Zara pauses again. Chooses her next words with the precision of a woman selecting a blade from a rack of many blades, each one sharp, each one suited to a different cut.
+
+"I can take two cells tonight. Not three. Not with the people I have left. The conspiracy's purge of my network saw to that." A muscle tightens in her jaw -- the only sign of the rage that must burn beneath that controlled exterior. Thirty agents, she had. Now she has twelve. The rest are dead, compromised, or in hiding. "So I need you to decide. Do you come with me into the Old City and help take the third cell? Or do you coordinate from here, directing my agents by messenger, and accept that the Weaver may escape?"
+
+The question hangs in the incense-thick air. Beyond the chamber walls, you can hear the distant drum of the garrison's night watch, steady as a heartbeat. Somewhere in the Citadel above you, a door closes. The sound echoes through the foundations like a whisper in a tomb.
 
 *page_break
 
@@ -483,9 +497,48 @@ Farid arrives with breakfast -- flatbread, honey, and strong tea that smells of 
 
 *page_break
 
-Lila appears one more time -- a knock on the chamber door, and then her soot-smudged face peering around the frame.
+Zara crosses to the table where the captured documents are stacked. She selects a sheaf of decoded correspondence and places it before you.
 
-"Boss. The ones we caught are talking. Some of them." She pauses, and for a moment the street urchin's bravado slips, and you see the child beneath -- wide-eyed, uncertain. "One of them said a name. The person at the top. The one giving all the orders."
+"The prisoners. Some are talking. Most are not. I need a decision about interrogation methods."
+
+Her voice is carefully neutral. This is a question she has asked before, of other Viziers. The answer matters to her more than she would admit.
+
+*comment === REAL CHOICE 2: Handling Captured Agents ===
+
+*choice
+  #"Standard interrogation. Evidence and logic. No coercion. We are better than they are."
+    *set honest %+ 10
+    *set idealist %+ 5
+    *set rel_spy %+ 5
+    Zara nods. Something eases in her posture -- a tension you did not realize she was holding.
+    "Standard methods. It will take longer. Some of them may not break." She meets your eyes. "But the intelligence we get will be reliable. Coerced confessions are as likely to be fantasy as truth. Good intelligence requires good practice."
+    It is the closest she has come to approving of you.
+    *goto lila_arrives
+  #"Use whatever methods are necessary. The empire's survival is at stake."
+    *set ruthless %+ 10
+    *set honest %- 5
+    *set rel_spy %- 5
+    Zara's face does not change. But her eyes go flat -- the eyes of a woman who has been down this road before and knows where it leads.
+    "Whatever methods are necessary," she repeats. "Understood."
+    She turns to leave. At the door, she pauses.
+    "The information will come faster. Whether it will be accurate is another matter. Tortured people say what they think you want to hear. I'll filter what I can."
+    *goto lila_arrives
+  *selectable_if (cunning > 45) #"Separate them. Play them against each other. Let each one think the others are talking." [Requires Cunning 45+]
+    *set cunning + 3
+    *set rel_spy %+ 8
+    Zara's eyes narrow. Then, slowly, the closest thing to a smile you have ever seen from her crosses her face.
+    "Prisoner's dilemma. Classic. Effective." She takes the correspondence back. "I'll arrange them in adjacent cells. Thin walls. And I'll make sure each one overhears just enough to believe the others are cooperating."
+    "No actual coercion."
+    "None needed. Their own fear and mistrust will do the work for us. The conspiracy recruited paranoid people. Paranoia is a gift to an interrogator."
+    *goto lila_arrives
+
+*label lila_arrives
+
+*page_break
+
+Lila appears one more time -- a knock on the chamber door, sharp and quick, and then her soot-smudged face peering around the frame. Her eyes are wide. Her bravado, the protective shell of a child who has survived the Old City's cruelty through wit and fearlessness, has cracked.
+
+"Boss. The ones we caught are talking. Some of them." She pauses, and for a moment the street urchin's bravado slips entirely, and you see the child beneath -- wide-eyed, uncertain, carrying a burden far too heavy for twelve years of living. "One of them said a name. The person at the top. The one giving all the orders."
 
 The room goes still.
 

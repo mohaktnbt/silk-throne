@@ -390,9 +390,15 @@ He blinks. "Her schedule? I -- yes, she has a meeting with the Spice Merchants' 
 
 *page_break
 
-A shadow network requires two things: information and money. Spymaster Zara controls the first. Guildmaster Priya controls the second. You cannot build your power base through official channels -- those channels lead straight to the Dowager, who monitors every decree, every appointment, every expenditure that passes through the Vizier's office.
+A shadow network requires two things: information and money. Spymaster Zara controls the first. Guildmaster Priya controls the second. You cannot build your power base through official channels -- those channels lead straight to the Dowager, who monitors every decree, every appointment, every expenditure that passes through the Vizier's office. You have studied the bureaucratic records. Every requisition, every personnel appointment, every allocation of gold above fifty dirhams requires the Vizier's seal -- which means it crosses Farid's desk, which means it enters the official filing system, which means anyone with access to the archives can trace it.
 
-You need channels of your own. And you need them quickly, before the conspiracy that killed your predecessor decides to tidy up its loose ends.
+The Dowager has access to the archives. So does Zara. So does whoever killed your predecessor.
+
+You need channels of your own. You need them quickly, before the conspiracy that killed your predecessor decides to tidy up its loose ends. And you need them to be invisible -- not just hidden from the formal system but built in a language the formal system does not speak.
+
+Commerce. The language of gold. The one tongue every person in Khazara understands and no bureaucrat thinks to monitor, because trade is as constant and unremarkable as the river's flow.
+
+*page_break
 
 The lunch with Priya takes place in a private dining room above the Grand Bazaar. The room is small, intimate, fragrant with cardamom and roasting lamb. Silk tapestries dampen the noise of the market below to a pleasant murmur. Priya has arranged the setting herself -- she is a woman who understands that the environment of a negotiation is half the negotiation.
 
@@ -651,6 +657,8 @@ The first move is made. The game is far from over.
 *comment ============================================================
 
 *label revolutionary_opening
+
+*comment === REVOLUTIONARY ROUTE: THE REFORM DECREE ===
 
 The morning after your decision, the world tastes different. The cardamom tea Farid brings you is the same blend as yesterday, but you drink it standing at the window, looking down at the city you have sworn to change, and the sweetness has a new edge to it. Purpose, perhaps. Or the sharp taste of fear.
 

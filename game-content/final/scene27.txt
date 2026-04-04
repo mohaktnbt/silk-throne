@@ -38,13 +38,19 @@
 
 The Council Chamber has been transformed.
 
-The round table is gone, replaced by a broad map table that General Kadir's aides carried in before dawn. The map of the empire sprawls across it -- hand-painted on lambskin, every river and mountain and road marked in ink and gold leaf. Wooden blocks represent armies: the empire's forces in white, the Khanate horde in black, Kaveh's supporters in red.
+The round table -- that elegant symbol of equality among the Council of Five, where you first witnessed the faction leaders argue and scheme and betray -- is gone. In its place stands a broad map table that General Kadir's aides carried in before dawn, its heavy oak legs scarring the marble floor. No one complained. The time for protecting marble floors is past.
 
-There are far too many black and red blocks.
+The map of the empire sprawls across the table's surface -- hand-painted on lambskin by the imperial cartographers, every river and mountain and road marked in ink and gold leaf. Cities are tiny squares of red paint. Forests are strokes of green. The Ashghar Mountains rise in miniature ridges of brown, and the Jade Sea is a wash of pale blue at the eastern edge.
+
+Wooden blocks represent armies: the empire's forces in white, the Khanate horde in black, Kaveh's supporters in red. The blocks are arranged according to the latest intelligence, and the picture they paint is stark.
+
+There are far too many black and red blocks. Far, far too many.
 
 *page_break
 
-The windows are shuttered. Oil lamps burn at each corner of the table, casting the faces of your allies in warm, unsteady light. These are the people who will determine the empire's fate.
+The windows are shuttered against the pre-dawn darkness. Oil lamps burn at each corner of the table, their flames steady in the still air, casting the faces of your allies in warm, unsteady light that makes every expression a study in shadow and gold. The room smells of lamp oil, leather, and the bitter tang of the strong coffee that someone -- probably Farid -- has brewed in a large copper pot set on the side table.
+
+These are the people who will determine the empire's fate. Not all the people you would have chosen. Not all the people you hoped for. But the people who are here.
 
 *if (military_available)
   General Kadir stands at the table's northern edge, his iron prosthetic hand resting on the map's representation of the Ashghar Mountains. He has not slept -- you can see it in the set of his jaw -- but his eyes are sharp and focused. The soldier's soldier, stripped of politics, reduced to the thing he does best.
@@ -79,11 +85,17 @@ The windows are shuttered. Oil lamps burn at each corner of the table, casting t
 
 Emperor Roshan enters last.
 
-He has changed. You see it in the set of his shoulders, in the way he crosses the room without hesitation and takes his place at the head of the table without waiting for invitation. He is still sixteen. He is still the boy who asked you, on a terrifying night, "What should I do?"
+The door opens. Every head turns. Every conversation dies. The silence is not deference -- it is recognition. Everyone in this room has known the Emperor as a boy. They are about to see something else.
 
-But something has hardened in him. Something tempered by revelation and betrayal and the knowledge that the people closest to him tried to take his throne.
+He has changed. You see it in the set of his shoulders -- squared, steady, no longer braced against the expectation of failure. In the way he crosses the room without hesitation and takes his place at the head of the table without waiting for invitation. In the clarity of his eyes, which are the same dark brown they have always been but which now carry something new behind them. Steel. Purpose. The resolve of a person who has been told the worst truth of his life and decided to stand anyway.
 
-"Report," he says. One word. The room responds.
+He is still sixteen. He is still the boy who asked you, on a terrifying night months ago, "What should I do?" But the boy has been forged, the way iron is forged -- in heat, under pressure, through pain. What remains is harder. Cleaner. Not yet a great emperor, perhaps. But something that could become one.
+
+He wears plain military clothing -- dark fabric, leather belt, practical boots. No crown. No ceremonial robes. The only ornament is the imperial signet ring, and he wears it like a weapon rather than a decoration.
+
+"Report," he says. One word. No elaboration. No formal preamble. No youthful uncertainty. One word, delivered with the authority of a person who expects to be obeyed.
+
+The room responds.
 
 *if (military_available)
   Kadir steps forward. "The Northern Khanates have massed at the Wall of Roshan. Twelve thousand horse warriors, perhaps more. Fort Darband holds, but its garrison is reduced. The Khanate Khan has been promised the northern provinces in exchange for his support of Prince Kaveh's claim."
@@ -119,9 +131,17 @@ But something has hardened in him. Something tempered by revelation and betrayal
 *else
   Intelligence on Kaveh's movements is patchy. Without Zara's full network, you are working from rumor and guesswork. His forces are assembling -- that much is certain. Where and when they will strike is not.
 
-The room falls silent. The map tells its story: enemies from without, enemies from within, an empire balanced on a blade's edge.
+The room falls silent. The reports are in. The picture is complete, and it is grim.
 
-The Emperor looks at you.
+To the north: twelve thousand Khanate riders pressing against a crumbling wall, held by soldiers who cannot be spared. To the south: three thousand rebels marching on the capital under the banner of a prince who claims divine right. In between: a treasury bleeding dry, a temple divided, a people frightened, and an empire that has endured for three centuries teetering on an edge so fine you could cut yourself on it.
+
+The map tells the story in ink and wooden blocks. You stare at it and see not just the military situation but the human one -- the farmers in the northern provinces who will starve if the army strips their garrisons. The merchants in the capital whose livelihoods depend on trade routes that the war has severed. The priests who must choose between their temple's unity and their conscience. The soldiers who will fight and die today not because they understand the politics but because someone they trust told them which direction to point their swords.
+
+This is what power comes to. Not the gilded halls and the silk robes and the elaborate titles. Not the seal ring or the Council Chamber or the Jade Throne Room. This. A room full of frightened, determined people staring at a map that shows more enemies than allies, more problems than solutions, more ways to fail than to succeed.
+
+And you at the center. The voice they are waiting for.
+
+The Emperor looks at you. His dark eyes are steady. His jaw is set. He is sixteen years old and he is the bravest person in this room, because he is the one with the most to lose and the least experience with loss.
 
 "Vizier. What is our strategy?"
 
@@ -129,7 +149,13 @@ The Emperor looks at you.
 
 *comment === REAL CHOICE 1: PRIMARY STRATEGY ===
 
-Every person in the room turns to face you. The lamplight flickers. The map waits. The empire waits.
+Every person in the room turns to face you. The lamplight flickers, casting your shadow long and stark across the map. The wooden blocks wait to be moved. The empire waits to be saved. Or to fall.
+
+The silence is absolute. You can hear the oil lamps hissing. You can hear Farid's pen, suspended above his paper, dripping a single drop of ink onto the page. You can hear your own heart, steady and strong, beating in the chest of a provincial administrator who walked into this city months ago with no idea what awaited ${them}.
+
+You know now. You have always known, perhaps, since the day the Vizier's seal ring was placed on your finger and you felt the weight of three hundred years settle onto your hand.
+
+This is what you are for.
 
 *choice
   *selectable_if (military_available) #"Military force. We meet Kaveh's army before it reaches the capital and crush the rebellion in the field." [Requires Military Alliance]
@@ -320,17 +346,37 @@ The room goes quiet. The lamplight seems to dim. Farid clutches his notes tighte
 
 *page_break
 
-The war council disperses. Each ally leaves with their orders, their maps, their lists of assets and contingencies. The room empties until only you, the Emperor, and Farid remain.
+The war council disperses. Each ally leaves with their orders, their maps, their lists of assets and contingencies. You watch them go -- these people who have cast their lots with yours, who have wagered their lives and their legacies on a plan drawn up in lamplight by a provincial administrator who arrived in Khazara less than a year ago with nothing but a seal ring and a nervous secretary.
 
-Roshan stands at the map table, staring at the wooden blocks as though they might rearrange themselves into a better future.
+*if (military_available)
+  Kadir is the first to leave. He pauses at the door and turns back.
+  "Vizier. Whatever else happens, the army will fight. That is what we do." He nods once -- a soldier's farewell, economy of gesture, no wasted motion. "Good luck."
+  He has never wished you luck before.
+*if (trade_available)
+  Priya closes her ledger and tucks it under her arm. She pauses beside you.
+  "The money will hold," she says quietly. "I have made certain of it. And if the money holds, the empire holds. That is the first lesson of commerce and the last lesson of war." She squeezes your arm. "Be safe. Dead Viziers are bad for the markets."
+*if (temple_available)
+  Ashoka rises slowly, his old joints protesting the hours of sitting. He places a hand on your shoulder -- a benediction, a gesture he has made to emperors and beggars alike.
+  "The Third Wisdom, child. Courage. Not the absence of fear. The decision that something matters more than fear." His eyes, ancient and bright, hold yours. "You have found that something. May the Flame light your way."
+*if (intelligence_available)
+  Zara says nothing as she leaves. But she pauses in the doorway and looks back at you, and in that look -- brief, unguarded, stripped of all her careful defenses -- you see something you have never seen from the Spymaster before.
+  Trust.
+
+*page_break
+
+The room empties until only you, the Emperor, and Farid remain. The map table stretches between you and Roshan like a battlefield in miniature, the wooden blocks casting tiny shadows in the lamplight.
+
+Roshan stands at the table's edge, staring at the blocks as though the force of his will alone might rearrange them into a better future. His hand rests on the map, his fingers tracing the line of the Ashar River from the capital to the sea. The river his ancestor conquered. The river that feeds the empire. The river that runs through the heart of everything.
 
 "Vizier."
 
 "Your Majesty."
 
+He lifts his eyes. They are dark and steady and older than sixteen.
+
 "Are we going to win?"
 
-The question is not the Emperor's. It is the boy's. Sixteen years old, the weight of three centuries of dynasty on his shoulders, asking the one question that cannot be answered with strategy or statecraft.
+The question is not the Emperor's. It is the boy's. Sixteen years old, the weight of three centuries of dynasty on his thin shoulders, standing in a room that smells of lamp oil and cold coffee, asking the one question that cannot be answered with strategy or statecraft or the precise deployment of wooden blocks on a painted map.
 
 *page_break
 
@@ -369,9 +415,19 @@ The Emperor leaves. You are alone with Farid and the map and the dying lamplight
 
 "Thank you."
 
-He blinks. Then, very carefully, as though handling something fragile, he smiles.
+He blinks. The word clearly does not compute immediately -- it is outside the normal parameters of their professional relationship, which typically involves Farid apologizing and you reassuring him. A thank you, sincere and unqualified, is new territory.
 
-"It has been the honor of my life, my lord Vizier. Every terrifying, bewildering, occasionally coffee-stained moment of it."
+Then, very carefully, as though handling something fragile -- as though the moment itself is made of the thinnest glass and the wrong movement will shatter it -- he smiles. It is not a large smile. It does not transform his face into something unrecognizable. It is a small, precise, entirely genuine smile that reaches his eyes and stays there.
+
+"It has been the honor of my life, my lord Vizier. Every terrifying, bewildering, occasionally coffee-stained moment of it." He pauses. Adjusts his spectacles. "I should tell you, in the interest of full disclosure per regulation 14-C governing honest communication between officers of the court, that I have been more frightened in the past year than in my entire previous life combined."
+
+"And?"
+
+"And I would not have traded a single day of it. Not one. Even the day with the assassination attempt. Even the day Spymaster Zara explained what she does with people who betray the Eyes. Especially not the day you told me to stop apologizing and start contributing." He draws himself up to his full, unimpressive height. "I am the Secretary to the Grand Vizier. I am very good at filing things. And tomorrow, I will file the enemy's defeat under 'V' for 'Victory.' Or under 'D' for 'Done.' I haven't decided which yet."
+
+You laugh. It surprises you -- a genuine laugh, rising from somewhere beneath the fear and the exhaustion and the weight of command. Farid's smile widens.
+
+"That's better, my lord Vizier. You have not laughed in days. It was beginning to concern me."
 
 *page_break
 
@@ -423,19 +479,33 @@ He blinks. Then, very carefully, as though handling something fragile, he smiles
 
 *page_break
 
-The night deepens. The stars wheel overhead. Somewhere in the distance, a drum beats -- the garrison's night watch, steady and relentless, counting the hours until dawn.
+The night deepens. The stars wheel overhead -- the same stars that guided Roshan the Conqueror three centuries ago, the same patterns that Scholar Miriam maps from the Tower of Stars, the same cold, indifferent lights that have watched every triumph and every tragedy in the empire's long history.
+
+Somewhere in the distance, a drum beats -- the garrison's night watch, steady and relentless, counting the hours until dawn. The rhythm is ancient, unchanged since the empire's founding. Soldiers have marched to this beat. Cities have risen to it. The heartbeat of the Khazaran Empire, measured in leather and bronze.
 
 You stand alone on the Citadel walls and look out over the empire you have served, the city you have come to love, the impossible tangle of alliances and enmities and loyalties that you have spent months weaving into something strong enough to hold.
 
-Tomorrow it will be tested. Every choice you have made since the day Farid met you at the gates of Khazara. Every friendship forged and every enemy created. Every alliance sealed and every bridge burned.
+The city stretches below you, vast and intricate. The Grand Bazaar's vaulted roofs. The Temple Quarter's ring of domes. The Old City's labyrinth of alleys, where Zara's urchins sleep in doorways and the empire's poorest citizens endure with a resilience that puts aristocrats to shame. The River District's warehouses and docks. The Foreign Quarter's embassies and tea houses. The Scholars' Quarter, with its Library and its observatories and its quiet devotion to knowledge.
+
+Two million people. Merchants and soldiers, priests and poets, scholars and servants, nobles and beggars. All of them sleeping tonight -- or trying to -- with the knowledge that tomorrow will determine whether their world endures or shatters.
+
+*page_break
+
+Tomorrow it will be tested. Every choice you have made since the day Farid met you at the gates of Khazara, stammering and earnest and clutching a stack of briefing documents. Every friendship forged and every enemy created. Every alliance sealed and every bridge burned. Every moment of courage and every failure of nerve.
+
+The Vizier who arrived in this city was a provincial administrator. The Vizier who stands on these walls tonight is something else entirely -- something shaped by the fire of court politics, tempered by the weight of impossible decisions, marked by betrayal and grief and unexpected love and the slow, painful discovery of what power truly costs.
 
 Tomorrow, the empire will hold.
 
 Or it will break.
 
-You touch the Vizier's seal ring. The jade is cool against your skin. The weight of it is familiar now -- not a burden but a bond, connecting you to everyone who has carried this responsibility before.
+There is no third option. No clever maneuver, no diplomatic compromise, no secret passage that leads to safety. Tomorrow is a door, and on the other side is either a future or an abyss.
 
-The last lamp is extinguished in the city below. The Eternal Flame burns alone in the dark.
+You touch the Vizier's seal ring. The jade is cool against your skin in the night air. The weight of it is familiar now -- not a burden but a bond, connecting you to everyone who has carried this responsibility before. The Viziers who built the empire. The Viziers who defended it. The Vizier who died in this office, poisoned by the conspiracy you have spent months unraveling.
+
+You will carry his ring into battle. You will carry all of them.
+
+The last lamp is extinguished in the city below. One by one, the windows go dark, until only the Eternal Flame burns against the vast, star-scattered night.
 
 Dawn is coming.
 

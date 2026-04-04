@@ -20,9 +20,11 @@
 
 You have cleared the writing desk.
 
-It was not enough. You have cleared the reading table, the side table, the low cedar chest beneath the window. Every flat surface in your chambers is now covered in paper. Letters, dispatches, financial records, decoded messages, witness accounts, military reports, trade manifests, temple correspondence. Months of evidence, gathered piece by piece, spread across the room like the fragments of a shattered mosaic.
+It was not enough. You have cleared the reading table, the side table, the low cedar chest beneath the window where you keep your personal correspondence. You have moved the divan against the wall to free the floor. You have commandeered a wooden board from the servants' store and propped it against the bookshelves. Every flat surface in your chambers is now covered in paper. Letters, dispatches, financial records, decoded messages, witness accounts, military reports, trade manifests, temple correspondence, coded communications, banking records, guard rotation schedules, and the personal journals of three separate informants who are now either dead or missing.
 
-Farid stands in the doorway, holding a cup of cardamom tea he has nowhere to set down.
+Months of evidence, gathered piece by piece, at the cost of favors and gold and sleepless nights and one very dangerous visit to the Old City. Spread across the room like the fragments of a shattered mosaic, each piece meaningless in isolation, each piece essential to the whole.
+
+Farid stands in the doorway, holding a cup of cardamom tea he has nowhere to set down. His eyes move across the paper-covered landscape with the expression of a man who has walked into a room expecting furniture and found the ocean.
 
 "It looks like a library exploded," he says.
 
@@ -101,9 +103,9 @@ You move to the next layer of documents. The financial records. Columns of numbe
 
 *page_break
 
-*page_break
+The afternoon call to prayer echoes from the Temple Quarter, its melody drifting through your open window like incense on a breeze. You barely hear it. The investigation has consumed you -- the way a river consumes a stone, surrounding it, eroding it, wearing away everything that is not essential. You are aware of hunger, distantly, the way a swimmer is aware of the shore. Farid has placed food beside you -- flatbread and cheese and a dish of olives -- and you have eaten mechanically, without tasting, your hands moving between documents and bread and back again.
 
-The afternoon call to prayer echoes from the Temple Quarter. You barely hear it. The investigation has consumed you -- the way a river consumes a stone, surrounding it, eroding it, wearing away everything that is not essential. You are aware of hunger, distantly, the way a swimmer is aware of the shore. Farid has placed food beside you. You have not touched it.
+The light shifts. The shadows of the window frame crawl across the floor. The day is advancing, and with it, the urgency.
 
 You move to the final category of evidence: the people.
 
@@ -112,47 +114,55 @@ You move to the final category of evidence: the people.
   *set diplomacy_success true
   *set diplomacy + 3
   *set evidence_count + 1
-  You turn to the human evidence. The witnesses, the allies, the people who spoke to you in confidence over the past months. You review every conversation, every sideways glance, every moment when someone said one thing but meant another.
+  You turn to the human evidence. The witnesses, the allies, the people who spoke to you in confidence over the past months. You review every conversation, every sideways glance, every moment when someone said one thing but meant another. You think about the way Priya's laughter sometimes died a beat too early when certain names were mentioned. The way Kadir's jaw tightened when the northern intelligence failures were discussed, not with anger but with recognition -- as if he already knew what you were only now discovering.
 
   And you find it. The pattern in the relationships.
 
-  "The conspiracy recruited by exploiting grievances," you say. "Each person they turned had a specific, personal reason to be angry. The military officer whose promotion was blocked. The noble whose estate was taxed. The priest whose reform proposals were rejected." You tap the table. "Someone studied the court's fault lines and drove wedges into every crack."
+  "The conspiracy recruited by exploiting grievances," you say. "Each person they turned had a specific, personal reason to be angry. The military officer whose promotion was blocked by a civilian bureaucrat's order. The noble whose estate was taxed to fund a road he would never use. The priest whose reform proposals were rejected by the temple hierarchy and left to molder in a filing cabinet." You tap the table. "Someone studied the court's fault lines and drove wedges into every crack."
 
-  That level of social intelligence, that ability to read and exploit human weakness, is not a talent that belongs to military men or merchants. It belongs to someone who has spent a lifetime navigating the most dangerous social terrain in the empire.
+  That level of social intelligence -- that ability to map the empire's human terrain, to read and exploit the private griefs and thwarted ambitions of dozens of individuals -- is not a talent that belongs to military men or merchants. It belongs to someone who has spent a lifetime navigating the most dangerous social terrain in the empire.
 
-  Someone who has sat at the heart of court politics for decades.
+  Someone who has sat at the heart of court politics for decades. Someone who has heard confessions, or collected intelligence, or presided over the intricate machinery of patronage and obligation that holds the court together.
+
+  Someone who knows where every body is buried because they attended every funeral.
 *else
-  The web of personal relationships is too complex to untangle by analysis alone. You can see that the conspiracy recruited from across every faction, but the logic of the recruitment -- why these people, why now -- remains opaque.
+  The web of personal relationships is too complex to untangle by analysis alone. You can see that the conspiracy recruited from across every faction, but the logic of the recruitment -- why these people, why now, why this combination of grievances and ambitions -- remains opaque. The human dimension of the conspiracy resists your understanding in a way that documents and numbers do not.
 
-  "We need someone who understands how this court breathes," you say.
+  "We need someone who understands how this court breathes," you say. "Someone who has watched these people for years and knows which pressure points to touch."
 
 *page_break
 
 *comment === REAL CHOICE 1: INVESTIGATION METHOD ===
 
-The morning is gone. Farid has filled three notebooks. Your chambers look like a war room, which, you suppose, they are. The picture is forming, but gaps remain. How you fill them matters.
+The morning is gone. The mechanical clock in the Tower of Stars has chimed more times than you have counted. Farid has filled three notebooks and is starting a fourth, his quill scratching across the paper with the relentless industry of a silkworm spinning its cocoon. Your chambers look like a war room, which, you suppose, they are. The maps on the walls, the documents on every surface, the timeline stretched across the floor -- this is the command center of a battle that has been fought in shadows for three years and is about to step into the light.
+
+The picture is forming, but gaps remain. How you fill them matters.
 
 *choice
   #Summon Spymaster Zara. Her intelligence assets can fill the gaps in the evidence.
     *set investigation_method "intelligence"
     *set rel_spy %+ 8
     *set rep_intelligence %+ 5
-    Zara arrives within the hour. She surveys the evidence wall with an expression that, on anyone else, might be called impressed.
+    You send the message through Zara's preferred channel -- a chalk mark on the third pillar of the eastern colonnade, placed at shoulder height, invisible to anyone who does not know to look for it. Within the hour, there is a knock at your door that is not Farid's.
+
+    Zara enters the room the way she enters every room: by being there before you notice the door has opened. She is wearing dark grey, practical, unadorned. Her hair is pulled back in a severe knot. She surveys the evidence wall -- the documents, the timeline, the colored annotations in Farid's hand -- with an expression that, on anyone else, might be called impressed. On Zara, it manifests as a slight narrowing of the eyes, a fractional tilt of the head.
 
     "You have been busy," she says.
 
     "Not busy enough. I need your network."
 
-    She moves through the room, reading documents, rearranging them with quick, precise hands. She works in silence for twenty minutes. Then she stops.
+    She moves through the room with the quiet efficiency of a cat in familiar territory, reading documents, rearranging them with quick, precise hands that touch each paper just long enough to absorb its contents. She works in silence for twenty minutes. Farid watches her, quill poised, unsure whether to take notes or hide. You drink cold tea and wait. One does not rush Spymaster Zara.
 
-    "You are missing two pieces," she says. "The connection between the financial trail and the coded messages. And the identity of the person who recruited the betrayer."
+    Then she stops. Her finger rests on a financial record, and she turns to look at you.
+
+    "You are missing two pieces," she says. "The connection between the financial trail and the coded messages -- the proof that the same hand directed both the money and the communications. And the identity of the person who recruited the betrayer. Without those two links, the chain has gaps a clever advocate could exploit."
 
     "Can you find them?"
 
-    "I already have." She pulls two thin scrolls from her sleeve -- she came prepared, you realize. She always comes prepared. "My agents intercepted these last night. I was waiting to see how much you had assembled on your own before sharing them."
+    "I already have." She pulls two thin scrolls from her sleeve -- she came prepared, you realize. She always comes prepared. She probably had these scrolls before you sent the message. "My agents intercepted these last night. I was waiting to see how much you had assembled on your own before sharing them."
 
     *if (rel_spy > 50)
-      She meets your eyes. "I wanted to be sure you were worthy of the information. You are."
+      She meets your eyes. Something shifts in her expression, something almost warm, though the word feels wrong applied to Zara, like calling a blade "friendly." "I wanted to be sure you were worthy of the information. You are."
     *else
       "Efficiency," she says, before you can take offense. "If you already had the full picture, sharing these would be redundant. You did not. So here we are."
     *goto assemble_picture
@@ -160,18 +170,20 @@ The morning is gone. Farid has filled three notebooks. Your chambers look like a
     *set investigation_method "financial"
     *set rel_guild %+ 8
     *set rep_trade %+ 5
-    Priya arrives with her own stack of documents and a look on her face that reminds you of a hunting cat that has cornered its prey.
+    Priya arrives before the ink on your summons is dry. She carries her own stack of documents in a leather satchel that costs more than most families earn in a year, and on her face is a look you have seen before on the faces of merchants who have found a competitor's vulnerability -- the controlled hunger of a predator that has cornered its prey.
 
-    "I have been working on this independently," she says, spreading her papers alongside yours. "The financial trail. The conspiracy's weakness is its need for money. Spies need paying. Bribes need funding. Operations need logistics. And all of it leaves a paper trail if you know where to look."
+    She brings wine, too. A small bottle, tucked into the satchel alongside the ledgers. "For afterward," she says. "We will need it."
 
-    She works beside you for an hour, her quick fingers sorting through trade records and treasury disbursements. She finds connections you missed, links between accounts that span the empire.
+    "I have been working on this independently," she says, spreading her papers alongside yours on the desk. The desk groans under the weight. "The financial trail. I have been following it for weeks, ever since the betrayal showed me that someone was using the empire's own commercial infrastructure as a weapon." She taps a column of figures. "The conspiracy's weakness is its need for money. Spies need paying. Bribes need funding. Operations need logistics. And all of it -- every single copper fils -- leaves a paper trail if you know where to look."
 
-    "There," she says at last, pointing to a pattern that makes your blood run cold. "The money flows from a single source. It is laundered through seventeen intermediaries, but it all begins in the same place."
+    She works beside you for an hour. Her quick fingers sort through trade records and treasury disbursements with a speed that makes your head swim. She finds connections you missed, links between accounts that span the empire -- a payment in the capital that corresponds to a withdrawal in Tavandar, a deposit in the mountain provinces that matches a purchase order in the Foreign Quarter. She reads numbers the way poets read verse, hearing the rhythm and the rhyme, the meter and the meaning.
+
+    "There," she says at last, pointing to a pattern on the page. Her finger is steady, but her eyes are bright and fierce. "The money flows from a single source. It is laundered through seventeen intermediaries -- shell companies, trust accounts, foreign trading houses, even a charitable foundation for orphaned children, if you can believe the gall. But strip away the layers, follow each thread to its origin, and it all begins in the same place."
 
     *if (rel_guild > 50)
-      She looks at you. "I considered keeping this to myself. Leverage, you understand. Information is currency." She pauses. "But some things are more important than profit. The empire is one of them."
+      She looks at you. Her expression softens, fractionally, like gold being heated until it becomes malleable. "I considered keeping this to myself. Leverage, you understand. Information is currency, and this information is worth a king's ransom." She pauses. "But some things are more important than profit. The empire is one of them. And so, Vizier, are you."
     *else
-      "This information is worth more than I can calculate," she says. "Remember that I gave it to you freely. I do not forget debts, Vizier. And I do not let others forget them either."
+      "This information is worth more than I can calculate," she says. "Remember that I gave it to you freely. In my line of work, free gifts are the most expensive things in the world. I do not forget debts, Vizier. And I do not let others forget them either."
     *goto assemble_picture
   *selectable_if (scholarship > 55) #Decode the remaining messages yourself. The cipher key is in the Meditations of Roshan I. [Requires Scholarship 55+]
     *set investigation_method "scholarly"

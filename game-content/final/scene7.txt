@@ -16,47 +16,69 @@
 
 The Citadel is a wound torn open in the dark.
 
-You run through corridors you have walked a hundred times, but tonight they are a place you do not recognize. Torches gutter in iron sconces, throwing shadows that leap and twist against the marble walls. Guards sprint past you in pairs, swords drawn, their faces white with the particular terror of soldiers who have failed their single duty.
+You run through corridors you have walked a hundred times in daylight, but tonight they are a place you do not recognize. The marble floors that gleam like milk under the afternoon sun are slick with shadow. Torches gutter in iron sconces, throwing shapes against the walls that leap and twist and reach -- shapes that look, in the animal part of your brain, like grasping hands.
 
-The smell of smoke is stronger here. Not the warm smoke of hearth and incense but something sharper, chemical -- a fire that was set, not kindled.
+Guards sprint past you in pairs, swords drawn, their boots hammering the stone in urgent percussion. Their faces are white. These are soldiers trained to fight, trained to hold the line against Khanate raiders and frontier bandits, and they are afraid. You can smell it on them -- the sharp tang of sweat that comes from fear, not exertion. They have failed their single, sacred duty. The Emperor was attacked in his own chambers, behind his own walls, under their watch.
 
-Farid keeps pace beside you, his robes bunched in one fist to keep from tripping. He has not stopped talking since you left your chambers, a breathless litany of fragments: "The royal apartments -- a guard was killed -- Captain Navid sounded the alarm -- the Dowager is -- the Emperor is alive, they say he's alive--"
+The smell of smoke is stronger as you approach the imperial wing. Not the warm smoke of hearth and incense that threads through every room of the Citadel like a fifth element. This is sharper, chemical -- a fire that was set, not kindled. Something is burning that was never meant to burn.
+
+Farid keeps pace beside you, his robes bunched in one fist to keep from tripping, his sandals slapping the marble in a frantic rhythm that counterpoints the heavier beat of your own footsteps. He has not stopped talking since you left your chambers, his voice a breathless litany of fragments assembled from rumor and terror:
+
+"The royal apartments -- a guard was killed -- Captain Navid sounded the alarm -- the Dowager is -- the Emperor is alive, they say he's alive--"
 
 "They say?" The words come out harder than you intend.
 
-"He's alive, my ${title_honorific} Vizier. He's alive. Captain Navid is with him."
+Farid flinches. "He's alive, my ${title_honorific} Vizier. He's alive. Captain Navid is with him. Navid confirmed it himself, by runner. The Emperor is alive."
+
+Something in your chest loosens -- a tension you did not know you were carrying, wound as tight as the mechanism of a Citadel clock.
 
 *page_break
 
 You round the corner into the imperial wing and the world narrows to a single point.
 
-Blood on white marble. A dark sprawl of it, still wet, still catching the torchlight in a way that makes your stomach clench. A shape on the floor -- a body, covered now with a guard's cloak, but the hand that protrudes from beneath the fabric is still curled around a sword hilt. The dead guard. Corporal Behzad, Farid whispers. Twenty-three years old. He was supposed to be married next month.
+Blood on white marble.
 
-Beyond the body, the doors to the Emperor's private chambers stand open. One has been wrenched half off its hinges. The wood is splintered at shoulder height, as if something -- someone -- was thrown through it.
+A dark sprawl of it, already thickening at the edges, still wet at the center where it catches the torchlight and reflects it back in deep, terrible crimson. The blood has pooled in the shallow channel between two tiles, filling the geometric pattern with a color the architects never intended. It is the most obscene thing you have ever seen -- not because of the blood itself, but because of the beauty it violates. This is a floor designed for the footsteps of emperors. No one planned for it to hold this.
 
-Captain Navid stands in the doorway. His sword is drawn and there is blood on the blade, though you cannot tell whose. His face is a mask of controlled fury -- the expression of a soldier who arrived thirty seconds too late and will never forgive himself for it.
+A shape lies on the floor. A body, covered now with a guard's cloak, the fabric already darkening with what soaks through from beneath. But the hand that protrudes from under the edge of the cloak is still curled around a sword hilt. Still holding the weapon, even in death. The fingers are young -- unlined, un-calloused except where the sword grip sits.
 
-"Vizier," he says. His voice is iron wrapped in ice. "The Emperor is inside. He is unharmed. The assassin has fled."
+Corporal Behzad, Farid whispers. Twenty-three years old. He was stationed at the Emperor's outer door. He was supposed to be married next month. His fiance is a weaver's daughter from the River District. Her name is Shahla. Farid knows these things because Farid knows everything about everyone in the Citadel. It is his gift and his burden.
+
+You make yourself look at the hand. Make yourself see it. This is what the conspiracy looks like, stripped of symbols and secrets and shadow games. This is a young man dead on a beautiful floor, and a young woman in the River District who does not yet know she is a widow before she was ever a wife.
+
+*page_break
+
+Beyond the body, the doors to the Emperor's private chambers stand open. One has been wrenched half off its hinges, the wood splintered at shoulder height as if something -- someone -- was thrown through it with tremendous force. The other hangs at an angle, its iron latch twisted. The violence that produced this damage was not elegant. It was desperate, explosive, the violence of a moment when life and death were separated by inches and seconds.
+
+Captain Navid stands in the doorway.
+
+His sword is drawn and there is blood on the blade, though you cannot tell whose. His face is a mask of controlled fury -- the expression of a soldier who arrived thirty seconds too late and will never forgive himself for it. There is a cut across his left forearm that he has not tended, and it bleeds sluggishly through the torn fabric of his sleeve. He does not seem to notice.
+
+In the torchlight, the scar across his right cheekbone -- the old one, from the Khanate raider -- stands out like a white thread against his skin. He has other scars, you know, hidden beneath his armor. Tonight he will add new ones. Not all of them visible.
+
+"Vizier," he says. His voice is iron wrapped in ice. Steady. Controlled. Barely. "The Emperor is inside. He is unharmed. The assassin has fled."
 
 "Fled where?"
 
-"If I knew that, the assassin would be dead and I would not be standing here." He steps aside to let you pass. "Be careful. We have not cleared all the rooms."
+"If I knew that, the assassin would be dead and I would not be standing here." A muscle jumps in his jaw. He steps aside to let you pass. "Be careful. We have not cleared all the rooms."
 
 *page_break
 
 The Emperor's chambers have been violated.
 
-The receiving room is in disarray -- a table overturned, a shattered vase leaking water across the floor, cushions slashed open so that feathers drift through the air like strange snow. The smell of smoke comes from a small fire that burns in the corner where an oil lamp was knocked over and caught a curtain. Two guards are beating it out with cloaks.
+The receiving room is a wreckage of beauty turned to chaos. A table of inlaid walnut lies overturned, its delicate geometric pattern cracked down the center. A vase -- Jade Sea porcelain, two centuries old, irreplaceable -- lies in a hundred pieces, leaking water across the floor in a spreading pool that mirrors the blood in the corridor outside. Cushions have been slashed open with a blade, and goose feathers drift through the air in slow, lazy spirals, catching the lamplight as they descend. They look like snow. They look like ash.
+
+The smell of smoke comes from the far corner, where an oil lamp was knocked over and its burning contents caught a curtain. The silk -- imperial crimson, heavy, embroidered with gold thread -- is charred halfway up its length. Two guards are beating out the last of the flames with their cloaks, grim-faced, mechanical, performing the one task available to them now that the larger battle has been lost.
 
 And in the center of the room, sitting on the edge of his sleeping platform with a blanket wrapped around his shoulders, is Emperor Roshan IV, Light of the World, Shadow of God upon the Earth.
 
-He is sixteen years old. In this moment, he looks twelve.
+He is sixteen years old. In this moment, sitting in the ruins of his private chambers with feathers in his hair and smoke in the air and a dead man on the other side of his door, he looks twelve.
 
-His eyes are wide, dark, and dry. He has not cried. You suspect he is beyond crying -- in that hollow place past fear where the body simply waits for the next thing to happen. There is a cut on his left hand, shallow but bleeding, where he must have caught himself on broken glass. No one has tended to it.
+His eyes are wide, dark, and dry. He has not cried. You suspect he is beyond crying -- in that hollow, airless place past fear where the body simply waits for the next thing to happen, having exhausted all other responses. There is a cut on his left hand, shallow but bleeding, where he must have caught himself on broken porcelain. No one has tended to it. No one has thought to.
 
-He sees you. Something in his face shifts -- a tiny loosening, as if a string drawn too tight has slackened by a single degree.
+He sees you. Something in his face shifts -- a tiny loosening, as if a string drawn too tight has slackened by a single degree. Not relief, exactly. Something more fragile than relief. Recognition, perhaps. The knowledge that someone he trusts has arrived.
 
-"Vizier," he says. His voice is steady. He is trying so hard for it to be steady. "Someone tried to kill me."
+"Vizier," he says. His voice is steady. He is trying very hard for it to be steady. He is trying the way his ancestor Roshan the First must have tried, three hundred years ago, to sound like a ruler when the world was on fire. "Someone tried to kill me."
 
 *page_break
 
@@ -67,62 +89,90 @@ He sees you. Something in his face shifts -- a tiny loosening, as if a string dr
     *set idealist %+ 5
     *set boldness %+ 5
     *set rel_emperor %+ 5
-    He is a boy. Whatever else he is -- emperor, figurehead, symbol -- in this moment he is a boy who woke to find death in his room, and he is trying not to shake. The fury that rises in you is not political. It is not strategic. It is the simple, burning anger of seeing a child in danger.
+    He is a boy. Whatever else he is -- emperor, figurehead, symbol of three centuries of dynastic power -- in this moment he is a boy who woke to find death standing at the foot of his bed, and he is trying not to shake. The fury that rises in you is not political. It is not strategic. It is not the calculated response of a Grand Vizier assessing a crisis. It is the simple, burning anger of seeing a child in danger and wanting, with every fiber of your being, to stand between that child and the darkness.
 
-    You cross the room and kneel before him. Not a bow of protocol. A gesture of something deeper.
+    You cross the room and kneel before him. Not the formal bow of court protocol -- the precise thirty-degree inclination prescribed by regulation. A deeper gesture. Something older. A person placing their body between another person and harm.
 
     "I am here, Your Majesty. You are safe."
   #You push the emotion down. Emotion is a luxury. Right now the Emperor needs competence, not comfort.
     *set ruthless %+ 5
     *set boldness %+ 5
-    Your training takes over -- provincial administrator's instincts sharpened by months of court survival. Emotion later. Assessment now. You catalogue the room: entry points, the broken door, the fire, the body in the corridor. You note who is present, who is not. You calculate.
+    Your training takes over -- the instincts of a provincial administrator who has managed floods and grain shortages and the particular chaos that occurs when large numbers of frightened people need direction. Emotion later. Assessment now.
+
+    You catalogue the room: two entry points, the main door and the window. The broken door suggests forced entry. The fire is contained. The body in the corridor has been covered. You note who is present: Navid, two guards, Farid in the doorway, the Emperor. You note who is not: the Dowager, the Council, the court. Good. The fewer people, the clearer the picture.
 
     You cross the room and stand before him. Not kneeling -- he does not need deference right now. He needs someone who is not afraid.
 
-    "Your Majesty. I need you to tell me exactly what happened."
+    "Your Majesty. I need you to tell me exactly what happened. Every detail. Start from when you went to sleep."
   #You feel the weight of it -- the terrible fragility of empire, balanced on the life of one frightened teenager.
     *set idealist %+ 10
     *set honest %+ 5
     *set rel_emperor %+ 5
-    Three hundred years. A dynasty stretching back to the Conqueror himself. An empire of two million souls in this city alone, and millions more across mountains and rivers and deserts -- all of it balanced on the shoulders of a sixteen-year-old boy who is bleeding from a cut on his hand that no one has bandaged.
+    Three hundred years. A dynasty stretching back to the Conqueror himself. An empire of two million souls in this city alone, and millions more across mountains and rivers and deserts. Merchants on the Silk Road, soldiers on the northern wall, fishermen on the Jade Sea coast, farmers in the Valley of the Ashar who have never seen the capital and never will -- all of them connected by trade and law and the shared belief that the person on the Silk Throne will keep the world from falling apart.
 
-    The fragility of it takes your breath away.
+    All of it balanced on the shoulders of a sixteen-year-old boy who is bleeding from a cut on his hand that no one has bandaged.
 
-    You cross the room. You sit beside him on the edge of the sleeping platform -- a breach of protocol that would scandalize the court, but the court is not here. It is just the two of you, and the feathers drifting through the air like ash.
+    The fragility of it takes your breath away. The fragility of everything. Empires. Lives. The thin line between a world where the Emperor sleeps safely and a world where he does not wake at all.
+
+    You cross the room. You sit beside him on the edge of the sleeping platform -- a breach of protocol that would scandalize the court, but the court is not here. It is just the two of you, and the feathers drifting through the air like ash from a fire that has not yet finished burning.
 
     "Tell me," you say quietly.
 
+*page_break
+
 The Emperor speaks. His voice does not waver, though his hands do.
 
-"I was asleep. A noise woke me -- the guard outside shouting, then the shout cutting short. I heard the door. I reached for the lamp by my bed and knocked it over. The oil caught the curtain."
+"I was asleep. I had been reading -- the histories of Roshan II, the chapter about the Treaty of the Ashghar. I fell asleep with the book on my chest. A noise woke me -- the guard outside shouting, then the shout cutting short. Cut short. Like a word with the end bitten off."
 
-He pauses. Swallows.
+He pauses. His fingers work the edge of the blanket.
 
-"There was a figure. In the dark. I could not see a face -- it wore black, a hood, something over the mouth. It moved like--" He searches for the word. "Like water. Like something that had no weight. It came toward me and I--"
+"I heard the door. Not a knock -- the sound of it being forced. I reached for the lamp by my bed and knocked it over. The oil spilled. The curtain caught. The fire gave me light, and in the light I saw--"
+
+He searches for the word. His brow furrows. He is a boy who reads histories and memorizes dates, and he is trying to describe something that no history prepared him for.
+
+"There was a figure. In the dark. I could not see a face -- it wore black, a hood, something over the mouth. It moved like--" He shakes his head. "Like water. Like something that had no weight, no bones. It was in the doorway and then it was halfway across the room and I did not see it cross the distance. It just... was there."
 
 His hands clench in the blanket.
 
-"I threw the water vase. I threw everything I could reach. I screamed." A flash of something crosses his face -- shame, perhaps, or anger at himself. "Corporal Behzad came through the door. He fought it. The figure-- it killed him. It killed him and I watched."
+"It came toward me and I threw the water vase. I threw the book. I threw the night table. I threw everything I could reach." A flash of something crosses his face -- shame, perhaps, or anger at himself for the indignity of it. An emperor, throwing furniture. "I screamed."
 
 *page_break
 
-"Then Captain Navid arrived," the Emperor continues. "With four guards. The figure went out through the window. Navid pursued. He said he wounded it -- there is blood on the window frame that is not Behzad's. But it escaped. Over the wall, into the gardens, then..." He shakes his head. "Gone."
+"Corporal Behzad came through the door," the Emperor continues. "He had his sword drawn. He was -- he was brave. He did not hesitate. He put himself between me and the figure and he--"
 
-You absorb this. A lone assassin, skilled enough to kill a guard and nearly reach the Emperor. Skilled enough to escape Captain Navid and four armed soldiers.
+Roshan's voice breaks. Just for a moment. A fissure opening and closing in the bedrock.
 
-This was no common killer. This was a professional. The best money can buy -- or the best the conspiracy can produce.
+"The figure killed him. One stroke. Behzad's sword was up but it didn't matter. The figure was faster than anything I have ever seen. It killed him and I watched." He meets your eyes. "I watched a man die for me, and I could do nothing."
+
+Silence. The kind of silence that has texture and weight, that fills the lungs like smoke.
+
+"Then Captain Navid arrived," the Emperor says. His voice steadies -- the telling is easier now, the worst part past. "With four guards. The figure went out through the window. Navid pursued. He said he wounded it -- there is blood on the window frame that is not Behzad's. But it escaped. Over the wall, into the gardens, then..." He lifts one hand, palm up, and lets it fall. "Gone. Like smoke."
+
+You absorb this. A lone assassin. Skilled enough to force the Emperor's door, kill a trained guard in a single stroke, and nearly reach the Emperor himself. Skilled enough to escape Captain Navid -- a frontier veteran who has killed Khanate raiders in hand-to-hand combat -- and four armed soldiers. Skilled enough to vanish into the night of a sealed Citadel like water into sand.
+
+This was no common killer. No hired thug, no desperate opportunist. This was a professional of the highest order. The kind of weapon that is not bought but forged, over years of training, for a single purpose.
 
 "Your Majesty," you say. "Was there anything else? Anything the figure dropped or left behind?"
 
-Roshan hesitates. Then he reaches beneath the blanket and produces something small, dark, and flat. A card, you realize. Black lacquered wood, about the size of a playing card.
+Roshan hesitates. Then he reaches beneath the blanket and produces something small, dark, and flat. A card, you realize. Black lacquered wood, about the size of a playing card, light as a leaf.
 
 On one side, burned into the lacquer with precise, deliberate strokes, is a symbol.
 
+*page_break
+
 Your blood goes cold.
 
-You know that symbol. You found it scratched beneath the council table. It was on the anonymous note slipped under your door. And now it is here, left deliberately at the scene of a failed assassination.
+You know that symbol. You found it scratched beneath the council table -- crude, hurried, scratched with a blade. It was on the anonymous note slipped under your door the night you arrived: *Your predecessor died screaming.* The same interlocking curves. The same sharp angles. The same pattern that looks, when you stare at it long enough, like a wheel within a wheel -- or a serpent eating its own tail.
 
-The conspiracy has a face. And tonight, it smiled at the Emperor and reached for his throat.
+And now it is here, in the Emperor's chambers, left deliberately by an assassin at the scene of a failed regicide. Not dropped by accident. Left. Placed. A calling card as deliberate as a signature on a letter.
+
+The conspiracy has a face. Not a human face -- not yet. But an identity. A mark that says: *We are real. We are organized. We are here, inside your walls, and we can reach anyone we choose.*
+
+The card is warm in your hand. Warm from the Emperor's grip. He has been holding it since the attack, clutching it beneath his blanket the way a drowning man clutches a spar.
+
+He held onto the proof. Even in his terror, he held onto the evidence.
+
+Smart boy. Brave boy. Frightened, bloodied, half-choked with smoke, and he kept the calling card because some part of him -- the part that reads histories and memorizes the names of great rulers -- understood that it mattered.
 
 *set found_calling_card true
 *set evidence_count + 1
@@ -131,9 +181,13 @@ The conspiracy has a face. And tonight, it smiled at the Emperor and reached for
 
 *comment === REAL CHOICE 1: Immediate response ===
 
-The next hour will determine everything. The assassin is still out there. The Citadel is not secure. The court will wake to chaos, and every faction will use that chaos for their own ends. You need to act, and you need to act now.
+The next hour will determine everything.
 
-Captain Navid appears in the doorway. Behind him, you can hear running footsteps, shouted orders, the clang of the Citadel gates being sealed.
+The assassin is still somewhere in the Citadel -- or beyond it, if the wall was breached. The Emperor is alive but shaken. The court will wake to chaos, and when it does, every faction will use that chaos as a weapon. General Kadir will demand a military lockdown. The Dowager will demand control. Ashoka will call for divine intercession. Priya will calculate the economic impact. Zara will vanish into the shadows.
+
+And someone in this palace -- someone who walks these corridors, sits at the council table, bows before the throne -- made tonight possible. Someone opened a door. Someone provided a schedule. Someone pointed the assassin like an arrow and let them fly.
+
+Captain Navid appears in the doorway. Behind him, you can hear running footsteps, shouted orders, the clang of the Citadel gates being sealed shut. The sound of iron on iron echoes through the corridors like the tolling of a bell.
 
 "Vizier. What are your orders?"
 
@@ -146,21 +200,23 @@ Captain Navid appears in the doorway. Behind him, you can hear running footsteps
     *set rep_military %+ 5
     *set boldness %- 5
     *set idealist %+ 5
-    Navid's jaw tightens. He wants to hunt. Every instinct in him screams to pursue, to find, to kill the thing that violated his charge. But he is a soldier, and a soldier obeys.
+    Navid's jaw tightens. You can see the war in him -- every instinct screams to hunt, to pursue, to find the thing that violated his charge and destroy it with the efficient violence that is his gift and his purpose. But he is a soldier. And a soldier obeys.
 
-    "Understood, Vizier. The imperial wing is sealed. No one enters." He pauses. "I have sent runners to General Kadir and Spymaster Zara. They will be here within the hour."
+    "Understood, Vizier. The imperial wing is sealed. No one enters." He pauses, and in that pause you see the discipline cost him. "I have sent runners to General Kadir and Spymaster Zara. They will be here within the hour."
 
     "Good. And Navid--" You catch his eye. "The Dowager Empress. Where is she?"
 
-    "In her wing. Her own guards have secured her apartments. She is... awake."
+    "In her wing. Her own guards have secured her apartments. She is... awake." A fraction of a second's hesitation before the word. *Awake* is doing significant work. The Dowager is not merely awake. The Dowager is doing what the Dowager does: controlling, calculating, preparing to descend upon the crisis like a hawk upon a field mouse.
 
-    Of course she is.
+    You turn back to the Emperor. The boy is watching you with eyes that are too old for his face -- eyes that have aged a decade in the space of an hour.
 
-    You turn back to the Emperor. The boy is watching you with eyes that are too old for his face. You pull a chair to his bedside and sit.
+    You pull a chair to his bedside and sit. Not at a respectful distance. Close enough to reach.
 
     "I am not leaving," you say. "Not until dawn."
 
-    Something in Roshan's expression cracks. Not breaks -- cracks. A fissure in the mask of composure he has been wearing since you arrived. His hand reaches out -- an instinctive gesture, a child seeking an anchor -- and his fingers close around your wrist. His grip is very tight.
+    Something in Roshan's expression cracks. Not breaks -- cracks. A fissure in the mask of composure he has been wearing since you arrived, the emperor's mask, the one his father wore and his grandfather before him. His hand reaches out -- an instinctive gesture, a child's gesture, the hand of a sixteen-year-old boy who woke to find death in his room and has been alone with that knowledge until this moment.
+
+    His fingers close around your wrist. His grip is very tight. Tight enough to hurt.
 
     "Thank you," he whispers.
 
@@ -174,41 +230,55 @@ Captain Navid appears in the doorway. Behind him, you can hear running footsteps
     *set boldness %+ 15
     *set ruthless %+ 5
     *set rel_emperor %- 5
-    The Emperor's hand twitches toward you -- an instinctive reach, quickly withdrawn. He nods, his jaw set. He is trying to be brave. He is trying to be the kind of emperor who sends warriors to fight.
+    The Emperor's hand twitches toward you -- an instinctive reach, quickly withdrawn. He catches himself. He pulls the gesture back and turns it into something else, a clenching of the blanket, a straightening of the spine. He is trying to be the kind of emperor who sends warriors to fight. He is trying to be his father.
 
     "Go," Roshan says. "Find them."
 
-    You are already moving. Navid falls into step beside you with the fluid grace of a man born for exactly this kind of violence. His sword is still drawn. The blood on the blade is drying.
+    You are already moving. Navid falls into step beside you with the fluid grace of a man born for exactly this kind of violence. His sword is still drawn. The blood on the blade is drying to a dark crust, and in the torchlight it looks like rust.
 
     "The window," you say. "Show me."
 
-    The assassin's exit point is a shattered casement overlooking the inner garden. Navid points to the wall below -- dark smears on pale stone. Blood. The assassin was wounded.
+    He leads you through the wreckage of the Emperor's chambers to the shattered casement overlooking the inner garden. The night air rushes in, cold and sweet with jasmine. Below, on the pale stone of the wall, you see dark smears. Blood. The assassin was wounded by Navid's blade.
 
-    "They went over the garden wall," Navid says. "Into the Scholars' Quarter access corridor. I lost them at the junction where it branches."
+    "They went over the garden wall," Navid says, pointing into the darkness. "Into the Scholars' Quarter access corridor. I lost them at the junction where it branches three ways. Took the wrong branch. Lost thirty seconds."
+
+    The thirty seconds in which the assassin vanished.
 
     "Then we follow the blood."
 
     *if (cunning > 40)
-      The trail is faint but visible in the torchlight -- dark drops on pale marble, growing fainter as the assassin bound whatever wound Navid inflicted. You track it through the corridor, down a servants' staircase, into the lower passages of the Citadel that connect the main complex to the outer buildings.
+      The trail is faint but visible in the torchlight -- dark drops on pale marble, growing smaller and fainter as the assassin bound whatever wound Navid inflicted. You follow them through the corridor, reading the story they tell: a running stride that grows steadier as the bleeding slows. Professional. Even wounded and fleeing, the assassin maintained discipline.
 
-      The trail ends at a grate in the floor. A drainage tunnel, leading under the walls and into the city.
+      The trail leads down a servants' staircase, through a supply corridor that smells of old flour and lamp oil, into the lower passages of the Citadel that connect the main complex to the outer buildings. Here the walls are rough stone, undecorated, and the air is close and cold.
 
-      But before the trail ends, you find something. A scrap of cloth, caught on a rough stone. Black silk, finely woven -- expensive. And wrapped inside it, fallen from the assassin's clothing: a small bronze medallion stamped with a mark you recognize.
+      The blood trail ends at a grate in the floor. A drainage tunnel, barely wide enough for a person, leading under the walls and out into the city's sewer system.
 
-      The symbol of the Temple of Seven Wisdoms. Specifically, the mark of the temple guards.
+      But before the trail ends, you find something. A scrap of cloth, caught on a rough stone where the tunnel narrows. Black silk, finely woven -- expensive, too expensive for a common thief. And wrapped inside it, fallen from the assassin's clothing like a feather from a wing: a small bronze medallion.
+
+      You hold it to the torchlight. The stamp is clear: a flame surrounded by seven rays.
+
+      The symbol of the Temple of Seven Wisdoms. Specifically, the mark of the temple guard.
+
+      The assassin was temple guard. Trained in the temple's combat arts, equipped with temple materials, carrying a temple medallion they did not have time to remove before they fled.
 
       *set knows_ghost_identity true
       *set evidence_count + 1
+
+      Navid stares at the medallion. "Temple guard," he says. The words are heavy with implication.
+
+      "Former temple guard," you correct. "Expelled or defected. But trained in their methods."
+
+      "That explains the skill." Navid's voice is quiet. "Temple guards train differently from soldiers. Speed over strength. Precision over power. I've sparred with them. They fight like the wind."
     *else
-      The trail is faint and the light is poor. You follow it as far as a servants' staircase before it vanishes entirely. The assassin was skilled enough to stop the bleeding or bind the wound while running -- a feat of discipline that tells you everything about who you are dealing with.
+      The trail is faint and the light is poor. You follow it as far as a servants' staircase before it vanishes entirely -- the assassin was skilled enough to stop the bleeding or bind the wound while running through unfamiliar corridors in near-darkness. A feat of discipline and training that tells you everything about the caliber of threat you face.
 
-      A professional. A ghost.
+      A professional. A ghost. Someone who has spent years learning to move through the world without leaving traces, and who nearly succeeded in killing the most protected person in the empire.
 
-    Navid slams a fist against the wall. The stone does not give. His knuckles split.
+    Navid slams a fist against the wall. The stone does not give. His knuckles split, adding his blood to the trail that has gone cold.
 
     "Gone," he says. The word is a wound.
     *goto investigation_phase
-  #"Summon Spymaster Zara. Seal the Citadel and start interrogating every guard, every servant, every person who had access tonight. Someone opened a door for the assassin."
+  #"Summon Spymaster Zara immediately. Then seal the Citadel and start interrogating every guard, every servant, every person who had access tonight."
     *set immediate_response "interrogate"
     *set scene7_assassination_result 3
     *set rep_intelligence %+ 10
@@ -216,17 +286,19 @@ Captain Navid appears in the doorway. Behind him, you can hear running footsteps
     *set boldness %+ 5
     *set ruthless %+ 10
     *set rel_emperor %+ 5
-    "The assassin had help," you say. "A door was opened. A guard rotation was known. Someone inside these walls made tonight possible, and I want to know who."
+    "The assassin had help," you say. The words are precise, deliberate, each one placed like a stone in a wall you are building between the Emperor and the chaos beyond his door. "A door was opened for them. A guard rotation was known. Someone inside these walls made tonight possible, and I want to know who before they have time to cover their tracks."
 
     Navid nods. "I will send a runner to the Spymaster."
 
-    "No runners. Go yourself. Trust no one in between." You turn to the guards flanking the door. "You two -- the Emperor does not leave this room. No one enters except myself, Captain Navid, or Spymaster Zara. If the Dowager Empress herself appears, you ask her to wait. Do you understand?"
+    "No runners. Go yourself. Trust no one in between. A runner can be intercepted, delayed, turned. Go to Zara directly and bring her here."
 
-    The guards exchange a glance -- asking the Dowager to wait is approximately equivalent to asking the sun not to rise -- but they nod.
+    You turn to the guards flanking the shattered door. "You two -- the Emperor does not leave this room. No one enters except myself, Captain Navid, or Spymaster Zara. If the Dowager Empress herself appears, you ask her to wait. You will be polite. You will be firm. Do you understand?"
 
-    You kneel before the Emperor. "Your Majesty. I must investigate. I will return before dawn."
+    The guards exchange a glance -- asking the Dowager Empress to wait is approximately equivalent to asking the sun not to rise -- but they nod. The authority in your voice leaves no room for negotiation.
 
-    Roshan looks at you. For a moment, the mask slips and you see the frightened boy beneath the emperor. Then he straightens.
+    You kneel before the Emperor. "Your Majesty. I must investigate. I will return before dawn. You have my word."
+
+    Roshan looks at you. For a moment the mask slips and you see the frightened boy beneath the emperor -- the boy who threw a water vase at death itself and screamed for help in the dark. Then he straightens. The mask reassembles. The emperor returns.
 
     "Find them, Vizier. Find them and bring them to me."
 
@@ -239,49 +311,59 @@ Captain Navid appears in the doorway. Behind him, you can hear running footsteps
 
 *page_break
 
-The Citadel does not sleep. The hours between midnight and dawn are measured in torchlight and tense whispers, in the stamp of boots on marble and the quiet scratch of your pen as you piece together what happened.
+The Citadel does not sleep. Not tonight. The hours between midnight and dawn are measured in torchlight and tense whispers, in the stamp of boots on marble and the quiet scratch of your pen as you piece together what happened.
 
-The facts assemble themselves in your mind like tiles in a mosaic.
+The facts assemble themselves in your mind like tiles in a mosaic -- each one meaningless alone, but when placed beside its neighbors, forming a pattern that grows clearer with each piece laid.
 
 *if (immediate_response = "protect")
-  While you kept vigil at the Emperor's side, Zara's agents and Navid's guards scoured the Citadel. They bring their reports to you in fragments throughout the night.
+  While you kept vigil at the Emperor's side -- your wrist still bearing the faint red mark of his grip -- Zara's agents and Navid's guards scoured the Citadel. They bring their reports to you in fragments throughout the night, whispered at the doorway while the Emperor dozes fitfully behind you.
 *elseif (immediate_response = "hunt")
-  The chase yielded evidence but not the assassin. You return to the Emperor's wing as the first reports from Zara's agents begin to arrive.
+  The chase yielded evidence but not the assassin. You return to the Emperor's wing as the first reports from Zara's agents begin to arrive, your boots still dusty from the lower passages.
 *else
-  Zara arrived within twenty minutes of Navid's summons, moving through the Citadel like a shadow herself. By the time you return from delivering orders, she has already begun.
+  Zara arrived within twenty minutes of Navid's summons, moving through the Citadel like a shadow herself -- silent, swift, already thinking. By the time you returned from issuing orders, she had begun.
 
-The dead guard, Corporal Behzad, was stationed at the Emperor's outer door. He was killed with a single blade stroke to the throat -- precise, unhesitating, the work of someone trained to kill efficiently. His weapon was drawn but unused. He saw the attacker. He called out. He did not have time for anything more.
+The dead guard. Corporal Behzad. Twenty-three years old. Stationed at the Emperor's outer door since the beginning of his rotation at the fourth hour. He was killed with a single blade stroke to the throat -- precise, unhesitating, placed exactly at the junction of the carotid artery with the confidence of someone who has studied anatomy the way a scholar studies texts. His weapon was drawn but never used. He saw the attacker. He called out. He did not have time for anything more.
 
-The window through which the assassin entered was latched from the inside. It should have been impossible to open from the garden below. But Zara's examination reveals that the latch mechanism had been tampered with -- the pin removed and replaced with a thin piece of wax that would hold until pressure was applied from outside. Someone prepared this entry point hours, perhaps days, before the attack.
+One stroke. One life. The mathematics of murder, reduced to its simplest terms.
 
-"The wax is still soft," Zara says, holding the fragment in her palm. Her voice is quiet, controlled, but her eyes are bright with a fury you have never seen in her before. "Applied today. Perhaps this afternoon, during the window cleaning rotation."
+The window through which the assassin entered was latched from the inside. It should have been impossible to open from the garden below. But Zara's examination reveals that the latch mechanism had been tampered with -- the pin removed and replaced with a thin piece of wax that would hold the window closed until pressure was applied from outside. A gentle push, and the latch would give.
+
+"The wax is still soft," Zara says, holding the fragment in her palm like a tiny, damning jewel. Her voice is quiet, controlled, but her eyes burn with a fury you have never seen in her before. Zara, who shows nothing, who guards her expressions the way a miser guards gold -- Zara is furious. "Applied today. This afternoon, probably, during the window cleaning rotation."
 
 *page_break
 
 "The window cleaners?" you ask.
 
-"Three servants. All long-serving. All accounted for." Zara pauses -- the deliberate pause. "But the rotation schedule was changed yesterday. A new servant was added to the afternoon shift. Name: Behrouz. Hired three weeks ago. Paper credentials, proper references. All forged."
+"Three servants on the afternoon rotation. All long-serving, ten years or more. All accounted for this evening, all in their quarters." Zara pauses -- the deliberate pause, but shorter than usual. She is in no mood for theater tonight. "But the rotation schedule was changed yesterday. A new servant was added to the afternoon shift for the imperial wing. Name: Behrouz. Hired three weeks ago. Paper credentials, proper references from a noble household in the eastern provinces. All forged."
 
 "Where is he?"
 
-"Gone. His quarters in the servants' hall are empty. He left nothing behind except a receipt for a room in the Old City, which I guarantee is also empty by now."
+"Gone. His quarters in the servants' hall are empty. He left nothing behind except a receipt for a rented room in the Old City, which I guarantee is also empty by now. The name on the receipt is different from the one on his employment papers. The handwriting is the same."
 
-The conspiracy planned this. Weeks in advance. A false servant, a tampered window, knowledge of the guard rotation. This was not opportunity. This was architecture.
+The conspiracy planned this. Not hours in advance. Not days. Weeks. A false servant inserted into the palace staff. A tampered window latch. Detailed knowledge of the guard rotation -- which guard would be on the Emperor's door, what time the shift changed, how long the gap was between one patrol and the next. This was not opportunity or improvisation. This was architecture. Blueprint and execution, as careful and deliberate as the construction of the Citadel itself.
+
+Someone built this attack the way an engineer builds a bridge -- with precision, with patience, and with absolute confidence in the design.
 
 *if (found_calling_card)
-  And then there is the calling card. You turn the black lacquered piece of wood over in your hands. The symbol stares up at you -- the same mark from under the council table, the same mark from the threatening note.
+  And then there is the calling card.
 
-  They wanted you to know. The assassin could have come and gone in silence. Instead, they left a signature. A message.
+  You turn the black lacquered piece of wood over in your hands. It is lighter than it looks, warm from your grip, and the symbol burned into its surface stares up at you like an eye. The same mark from under the council table. The same mark from the threatening note. The same interlocking curves, the same sharp angles, the same wheel within a wheel.
 
-  *We are here. We are close. And we can reach anyone.*
+  The assassin could have come and gone in silence. A professional of this caliber could have slipped into the Emperor's chambers, completed the task, and vanished without leaving a trace. Instead, they left a signature. A message.
+
+  They wanted you to know. They wanted the Emperor to know.
+
+  *We are here. We are close. We can reach anyone. And we are not afraid of you.*
 
 *page_break
 
 *comment === REAL CHOICE 2: Investigation approach ===
 
-Dawn is three hours away. The Citadel is sealed, the Emperor guarded, the court still sleeping behind locked doors. You have a window -- narrow, closing -- to pursue the investigation before politics consumes the morning.
+Dawn is three hours away. The Citadel is sealed, the Emperor guarded, the court still sleeping behind locked doors -- though that will not last. News travels through the palace the way water travels through stone: slowly, invisibly, and into every crack.
 
-Zara stands before you in the corridor outside the Emperor's chambers. Her face is carved from stone.
+You have a window. Narrow, closing. Before politics consumes the morning, before every faction descends on the crisis with their demands and their agendas, you can pursue the investigation. But resources are limited, the night is not young, and three threads lead in three different directions.
+
+Zara stands before you in the corridor outside the Emperor's chambers. Her face is carved from stone, but behind the stone her mind is working -- you can see it in the faint movement of her eyes, the slight tilt of her head.
 
 "Three directions," she says. "Choose one. We don't have the resources to pursue them all before dawn."
 
@@ -292,19 +374,19 @@ Zara stands before you in the corridor outside the Emperor's chambers. Her face 
     *set rel_spy %+ 10
     *set cunning + 3
     *set evidence_count + 1
-    Zara nods. "I have agents in the Old City. The receipt gives us a starting point. If Behrouz used the same coin to pay his rent that he used to establish his cover identity, we can trace the money to its source."
+    Zara nods. A single dip of the chin, sharp as a blade's edge. "I have agents in the Old City. The receipt gives us a starting point. If Behrouz used the same coin to pay his rent that he used to establish his cover identity, we can trace the money to its source. Money always leaves a trail. People lie. Gold does not."
 
-    She is gone before you finish speaking, moving through the torchlit corridors with the swift silence of someone who learned to walk quietly in the streets of the Old City before she learned to read.
+    She is gone before you finish speaking, moving through the torchlit corridors with the swift silence of someone who learned to walk quietly in the streets of the Old City long before she learned to read. Her agents materialize from the shadows -- two of them, three, appearing at her side as if summoned by thought alone.
 
-    You wait. You review evidence. You drink coffee so bitter it makes your eyes water, brought by a trembling servant who is terrified of being the next person accused of conspiracy.
+    You wait. You pace the corridor. You review what you know. You drink coffee so bitter it makes your eyes water, brought by a trembling kitchen servant who is terrified of being the next person accused of conspiracy. You sip it and try to look reassuring and fail completely.
 
-    Zara returns ninety minutes before dawn.
+    Zara returns ninety minutes before dawn, her boots dusty, her eyes sharp.
 
-    "The money trail leads to a merchant account," she says. "Registered under a false name, funded by transfers from three different provincial treasuries. The account was opened six months ago -- the same month the Khanate raids intensified. The same month the Western Confederation began exploring alternative sea routes."
+    "The money trail leads to a merchant account," she says, laying a creased document on the windowsill between you. "Registered under a false name -- 'Merchant Dara' -- funded by transfers from three different provincial treasuries. The account was opened six months ago. The same month the Khanate raids intensified on the northern border. The same month the Western Confederation began funding exploration of alternative sea routes."
 
-    She places a document on the table. A banking record, stamped with the seal of the Imperial Treasury.
+    She taps the document. A banking record, stamped with the seal of the Imperial Treasury.
 
-    "Someone is using imperial funds to finance the conspiracy. The trail goes upward, not down. I need more time to follow it to the top."
+    "Someone is using imperial funds to finance the conspiracy. The trail does not lead down to the streets. It leads up. Into the palace, into the treasury, into the highest levels of imperial administration. I need more time to follow it to the top."
     *goto emperor_conversation
   #"Examine the calling card. The symbol, the material, the craftsmanship. If the assassin left a message, there may be more to read than the obvious."
     *set investigation_approach "card"
@@ -312,58 +394,81 @@ Zara stands before you in the corridor outside the Emperor's chambers. Her face 
     *set scholarship + 3
     *set evidence_count + 1
     *if (scholarship > 40)
-      You take the calling card to the lamplight and examine it with the careful eye of a scholar. The lacquer is specific -- black resin mixed with powdered bone, a technique used in exactly one place in the empire: the workshops of the Temple of Seven Wisdoms, where lacquerwork is used to preserve sacred texts.
+      You take the calling card to the lamplight and examine it with the careful eye of a scholar.
 
-      The burn marks that form the symbol are not crude. They are precise, deliberate, made with a heated stylus of the kind used by temple calligraphers. And the wood itself -- you scrape the edge with a fingernail -- is mountain cedar, harvested from the Ashghar range.
+      The lacquer first. Black resin, mixed with something that gives it a particular depth of color -- a darkness that seems to absorb light rather than reflect it. You scrape the edge with a fingernail and sniff. Powdered bone. This is not common lacquer, not the kind used by furniture makers or decorators. This is temple lacquer -- the specific formulation used in the workshops of the Temple of Seven Wisdoms to preserve sacred texts and seal reliquaries. The recipe is guarded.
 
-      Temple lacquer. Temple tools. Mountain wood.
+      The burn marks next. They form the symbol with mechanical precision -- not carved or painted but burned, stroke by stroke, with a heated stylus. You have seen this technique before: in the temple scriptorium, where calligraphers use heated bronze tools to inscribe sacred texts into lacquered wood. The strokes are confident, practiced. Whoever made this has used a calligrapher's stylus thousands of times.
 
-      The assassin has connections to the temple. The calling card is not just a threat. It is a clue they could not resist leaving -- or one they left deliberately to implicate someone.
+      And the wood itself. You turn the card to catch the grain. Mountain cedar, you realize -- the fragrant, close-grained wood harvested from the Ashghar range, prized for its resistance to decay. The same wood used for temple furniture, temple doors, temple reliquaries.
+
+      Temple lacquer. Temple tools. Temple wood.
+
+      The assassin has connections to the temple. Or wants you to think they do.
 
       *set evidence_count + 1
     *else
-      You examine the card under lamplight. The lacquer is high quality, the burn marks precise. This was crafted with skill and intention, not assembled in haste. Whoever made this wanted it to be found.
+      You examine the card under lamplight. The lacquer is high quality, the burn marks precise. This was crafted with skill and intention, not assembled in haste. Whoever made this took their time, took care. They wanted the card to be perfect.
 
-      But the specific details elude you. You need someone with deeper knowledge of materials and craftsmanship to analyze it properly. Scholar Miriam, perhaps, or the temple archivists.
+      But the specific details of materials and technique elude you. You need someone with deeper knowledge -- Scholar Miriam, perhaps, or the temple archivists -- to analyze the card properly.
 
-    Zara leans over your shoulder. "The symbol matches the marks we found previously. Council table. The threatening note. This is the same network."
+    Zara leans over your shoulder. Her breath smells of the coffee she has been drinking all night.
 
-    "The same network," you agree. "But now they have escalated from threats and espionage to attempted regicide. Something changed. Something made them desperate enough to move on the Emperor himself."
+    "The symbol matches the marks we found previously," she says. "Council table. The threatening note. This is the same network."
 
-    "Or bold enough," Zara says quietly. "Desperation and confidence can look the same from the outside."
+    "The same network," you agree. "But now they have escalated from threats and espionage to attempted regicide. Something has changed. Something made them desperate enough -- or bold enough -- to move on the Emperor himself."
+
+    "Or the timeline moved up," Zara says quietly. "Perhaps our investigation was getting too close. Perhaps the embargo was supposed to provide cover, and when you resolved it too quickly, they had to accelerate." She pauses. "Perhaps we forced their hand."
+
+    The thought settles over you like cold water. The embargo. Your resolution of it. And now, the same night, an assassination attempt. Cause and effect, action and reaction, the conspiracy adapting in real time to your moves.
+
+    You are not just investigating them. They are reacting to you.
     *goto emperor_conversation
-  #"Question the guards. Every soldier on duty tonight, every servant in the imperial wing. Someone saw something. Someone knows something. We apply pressure."
+  #"Question the guards. Every soldier on duty tonight, every servant in the imperial wing. Someone saw something. Someone knows something."
     *set investigation_approach "guards"
     *set rep_military %+ 8
     *set rel_general %+ 5
     *set boldness %+ 5
     *set ruthless %+ 5
     *set strength + 3
-    The interrogations take place in the guardhouse at the base of the imperial tower. You sit across from each guard and servant in turn, studying faces by lamplight, asking the same questions in different orders, watching for the flicker of a lie.
+    The interrogations take place in the guardhouse at the base of the imperial tower. A small room, stone-walled, lit by a single lamp. Functional. Uncomfortable. The kind of room that encourages honesty by offering nothing else.
 
-    Most of them are frightened. Some are angry. One -- a senior guard named Rostam -- is defensive in a way that catches your attention.
+    You sit across from each guard and servant in turn, studying faces by lamplight, asking the same questions in different orders, watching for the flicker of a lie -- the averted gaze, the swallowed pause, the hand that reaches for a collar or an earlobe.
 
-    "I was at my post," Rostam says for the third time, his eyes sliding away from yours. "I saw nothing unusual."
+    Most of them are frightened. Some are angry -- at themselves, at the breach, at the failure. A young woman, a maid who brings the Emperor's evening tea, weeps silently and cannot stop. An older guard -- a veteran of fifteen years -- sits with his jaw clenched so tight you can hear his teeth grind.
 
-    "Your post covers the corridor to the servants' entrance," you say. "The false servant, Behrouz, would have passed you twice today. Once to enter, once to leave after tampering with the window."
+    And then there is Rostam. A senior guard. Fifteen years of service. Station: the corridor to the servants' entrance, the route by which cleaning staff access the imperial wing.
 
-    "I don't remember every servant who walks past me."
+    He is defensive in a way that catches your attention.
+
+    "I was at my post," Rostam says for the third time. His eyes slide away from yours and find the far wall very interesting. "I saw nothing unusual."
+
+    "Your post covers the corridor to the servants' entrance," you say. "The false servant, Behrouz, would have passed you twice today. Once to enter with the cleaning rotation, once to leave after tampering with the window."
+
+    "I don't remember every servant who walks past me, Vizier."
 
     *if (cunning > 35)
-      "You're lying," you say calmly. "Your left hand has been tapping the table in a rhythm since you sat down. The same rhythm it tapped when you said 'nothing unusual.' You remember Behrouz. Tell me what you remember, or I will hand you to Spymaster Zara, who is considerably less patient than I am."
+      "You're lying," you say calmly.
 
-      Rostam's face crumbles.
+      Rostam's face goes rigid.
 
-      "He paid me," the guard whispers. "Twenty gold ashrafs to look the other way while he cleaned the windows. I thought it was a bribe from some noble's mistress trying to sneak into the Emperor's wing for a look. I didn't know. I swear on the Flame, I didn't know."
+      "Your left hand has been tapping the table since you sat down -- the same rhythm, the same tempo, every time you answer a question you don't want to answer. You did it when you said 'nothing unusual.' You're doing it now."
 
-      Twenty gold ashrafs. That is what a guard earns in four months.
+      The tapping stops.
 
-      You have your first thread to pull. The money came from somewhere. Someone recruited Rostam's silence as casually as one might buy a sack of rice.
+      "You remember Behrouz. You let him through. Tell me what happened, or I will hand you to Spymaster Zara, who is considerably less patient than I am and has access to rooms that are considerably less comfortable than this one."
+
+      Rostam's face crumbles like old plaster. The veteran, the fifteen-year man, the soldier who has held the line against real enemies on real battlefields -- he crumbles.
+
+      "He paid me," the guard whispers. "Twenty gold ashrafs. To look the other way while he cleaned the windows. I thought it was a bribe from some noble's mistress trying to sneak a peek into the Emperor's wing. It happens, you know? People are curious. I didn't think -- I didn't know--"
+
+      Twenty gold ashrafs. Four months' wages for a palace guard. The price of a man's honor. The price, it turns out, of a corporal's life.
 
       *set evidence_count + 1
     *else
-      You press him, but Rostam holds firm. He is frightened enough to be stubborn and not frightened enough to break. You file his name for Zara's attention later. A loose thread, waiting to be pulled.
+      You press him, but Rostam holds firm. He is frightened enough to be stubborn but not frightened enough to break. Whatever he is hiding, he has decided the risk of confession is greater than the risk of silence.
 
+      You file his name for Zara's attention later. A loose thread. The kind that, when pulled, tends to unravel entire garments.
     *goto emperor_conversation
 
 *comment === THE EMPEROR'S QUESTION ===
@@ -372,23 +477,27 @@ Zara stands before you in the corridor outside the Emperor's chambers. Her face 
 
 *page_break
 
-The sky through the shattered window is lightening from black to deep blue when you return to the Emperor's chambers. The first birds are singing in the Garden of Eternal Spring -- tentative, uncertain, as if they too sense that this morning is different from all the mornings before it.
+The sky through the shattered window is lightening from black to the deep, bruised blue that precedes dawn. The first birds are singing in the Garden of Eternal Spring -- tentative, uncertain, testing the air the way a person tests thin ice. Their song rises and falls through the broken glass, threading through the stillness of the Emperor's chambers like a fragile melody played on an instrument that might shatter at any moment.
 
-Roshan has not slept. He sits where you left him, on the edge of his sleeping platform, the blanket still around his shoulders. But something has changed. The blank, hollow look has given way to something harder. Something older.
+Roshan has not slept. He sits where you left him, on the edge of his sleeping platform, the blanket still wrapped around his shoulders. But something has changed in the hours since you last saw him. The blank, hollow look -- the look of a boy in shock -- has given way to something harder. Something colder. Something that lives behind his eyes like a flame behind glass.
 
-The cut on his hand has been bandaged. Farid's work, you suspect -- your secretary is hovering near the door with the particular expression of a man who has done the one small thing he knows how to do and is desperate to do more.
+He is angry. Good. Anger is better than fear. Anger moves forward.
+
+The cut on his hand has been bandaged. Farid's work, you suspect -- neat, careful, the gauze wound with the precision of a man who treats every task, no matter how small, as if the empire depends on it. Your secretary is hovering near the door with the particular expression of a man who has done the one small thing he knows how to do and is desperate, aching, to do more.
 
 "Vizier," the Emperor says. "What have you found?"
 
-You tell him. The tampered window. The false servant. The calling card and its familiar symbol.
+You tell him. All of it. The tampered window and its wax pin. The false servant and his forged credentials. The calling card with its terrible, familiar symbol. The investigation's findings, whatever thread you followed into the dark.
 
 *if (spy_connection_found)
-  You tell him about the connection to the trade embargo -- the rogue spy, the manufactured crisis, the way the conspiracy is attacking the empire on multiple fronts simultaneously.
+  You tell him about the connection to the trade embargo -- the rogue spy, the manufactured crisis, the way the conspiracy is attacking the empire on multiple fronts simultaneously, like an army conducting raids on every border at once.
 
 *if (knows_ghost_identity)
-  You tell him about the assassin's likely connection to the temple guard -- trained fighters, disciplined, capable of exactly the kind of precise, efficient violence displayed tonight.
+  You tell him about the assassin's likely connection to the temple guard -- trained fighters, disciplined, capable of exactly the kind of precise, efficient violence displayed tonight. The medallion. The temple lacquer. The implications.
 
-He listens without interruption. When you finish, the silence in the room is absolute. Even the fountain in the garden below seems to have stopped.
+He listens without interruption. The young emperor, the boy who throws water vases and reads histories and tries so desperately to fill a throne that was never meant for someone his size -- he listens the way a general listens to a battlefield report. With complete attention. With gathering fury. With the beginnings of a plan forming behind his eyes.
+
+When you finish, the silence in the room is absolute. Even the birds in the garden have stopped singing, as if the world itself is holding its breath.
 
 Then Emperor Roshan IV, Light of the World, Shadow of God upon the Earth, asks you the question that will define everything that follows.
 
@@ -396,11 +505,17 @@ Then Emperor Roshan IV, Light of the World, Shadow of God upon the Earth, asks y
 
 *page_break
 
-The question is not what it seems. It is not a request for tactical advice. It is not a boy asking for help with a problem. It is a young ruler, shaken to his foundations, asking the one person who has been honest with him: *Who do I trust? What kind of emperor should I be? How do I survive this?*
+The question is not what it seems.
 
-The weight of the question settles on your shoulders like a mantle of iron.
+It is not a request for tactical advice -- the kind of question a general might ask a scout. It is not a boy asking for help with a problem he cannot solve. It is something far larger and far more dangerous.
 
-Outside, the sky is turning the color of old gold. The call to morning prayer has not yet sounded, but it will, soon. When it does, the Citadel will wake, and the court will descend upon the Emperor like vultures on a carcass, each faction demanding action, each faction blaming another, each faction using the assassination attempt to advance their own agenda.
+It is a young ruler, shaken to his foundations, asking the one person who has been honest with ${them}: *Who do I trust? What kind of emperor should I be? How do I survive this, and if I survive, what do I become?*
+
+The weight of the question settles on your shoulders like a mantle of iron. Not because you fear the answer, but because you understand what giving it means. Whatever you tell him now, he will hear. Whatever direction you point him, he will follow -- not blindly, not forever, but tonight, in this room, with the smoke still hanging in the air and a dead man's blood still drying on the floor outside, Emperor Roshan IV will listen to you more than he has ever listened to anyone.
+
+That is power. Terrible, intoxicating, fragile power.
+
+Outside, the sky is turning the color of old gold. The call to morning prayer has not yet sounded, but it will, soon. When it does, the Citadel will wake, and the court will descend upon the Emperor like vultures on a carcass -- each faction demanding action, each faction blaming another, each faction using the assassination attempt to advance their own position.
 
 You have minutes. Perhaps less.
 
@@ -410,33 +525,33 @@ You have minutes. Perhaps less.
   #The weight of his trust is almost unbearable. You feel the seal ring on your finger and understand, for the first time, what it truly means.
     *set idealist %+ 5
     *set rel_emperor %+ 5
-    You look at the Emperor -- this boy, this frightened, brave, impossibly burdened boy -- and you feel the full weight of the office you hold. Not the title. Not the authority. The responsibility. A young man is asking you to help him survive, and the answer you give will shape the fate of millions.
+    You look at the Emperor -- this boy, this frightened, brave, impossibly burdened boy -- and you feel the full weight of the office you hold. Not the title. Not the authority. Not the seal ring or the robes or the chair at the council table. The *responsibility*. A young man is asking you to help him survive, and the answer you give will shape the fate of millions.
 
-    The seal ring is warm on your finger. For the first time since you arrived in Khazara, it does not feel like a burden. It feels like an anchor.
-  #You see the political reality clearly: whoever controls the Emperor's response to this crisis controls the empire's direction. The temptation is intoxicating.
+    The seal ring is warm on your finger. For the first time since you arrived in Khazara, it does not feel like a burden. It feels like an anchor -- the point of stillness around which everything else turns.
+  #You see the political reality clearly: whoever controls the Emperor's response controls the empire. The temptation is intoxicating and terrifying.
     *set ruthless %+ 5
     *set boldness %+ 5
-    The calculation is instant and involuntary. In this moment, Emperor Roshan IV will do whatever you tell him to do. He is frightened, he trusts you, and no one else is in the room. The words you speak in the next sixty seconds will determine whether the army marches, whether the temple burns, whether the nobility falls.
+    The calculation is instant and involuntary, rising from a part of your mind that you are not entirely proud of. In this moment, Emperor Roshan IV will do whatever you tell him to do. He is frightened, he trusts you, and no one else is in the room. The words you speak in the next sixty seconds will determine whether the army marches, whether the temple burns, whether the nobility falls or rises.
 
-    Power. Real power. The kind the Dowager has wielded for decades and the kind every faction leader dreams of.
+    Power. Real power. The kind the Dowager has wielded for decades. The kind every faction leader dreams of.
 
-    It is right here, in the trembling hands of a sixteen-year-old boy, offered to you freely.
-  #You think of Corporal Behzad, dead at twenty-three. A man who was supposed to be married next month. There must be a better way to run an empire.
+    It is right here, in the trembling hands of a sixteen-year-old boy, offered freely, because he has no one else to offer it to.
+  #You think of Corporal Behzad, dead at twenty-three. Something fundamental about this empire needs to change.
     *set idealist %+ 10
     *set honest %+ 5
-    A man is dead. A boy nearly died. A conspiracy operates within the walls of the most heavily guarded building in the known world, and the people who are supposed to protect this empire are too busy fighting each other to see the knife coming.
+    A man is dead. A boy nearly died. A conspiracy operates within the walls of the most heavily guarded building in the known world, and the people who are supposed to protect the empire are too busy fighting each other for power to see the knife until it is already buried to the hilt.
 
-    Something has to change. Not just the guards. Not just the security protocols. Something fundamental about the way this empire works -- the factions, the intrigues, the endless jockeying for position while the real threats gather strength.
+    Something has to change. Not just the guards. Not just the security protocols. Not just the investigation. Something fundamental about the way this empire works -- the factions, the secrecy, the concentration of power in a handful of hands that are too busy grasping to hold.
 
-    Corporal Behzad died for this system. The Emperor nearly died for it. How many more?
+    Corporal Behzad died for this system. The Emperor nearly died for it. Your predecessor died for it. How many more?
 
 *page_break
 
 *comment === REAL CHOICE 3: What to tell the Emperor ===
 
-The Emperor is waiting. His dark eyes are steady on yours. The lamplight catches the fading bruise of exhaustion beneath them.
+The Emperor is waiting. His dark eyes are steady on yours. The lamplight catches the bruised circles beneath them, dark as old wine.
 
-"What should I do?" he asked, and the question hangs between you like the last note of a prayer.
+"What should I do?" he asked, and the question hangs between you like the last note of a prayer that has not yet found its amen.
 
 *choice
   #"Trust your own instincts, Your Majesty. You survived tonight because you fought back. That courage is yours. Build on it."
@@ -445,29 +560,29 @@ The Emperor is waiting. His dark eyes are steady on yours. The lamplight catches
     *set idealist %+ 10
     *set honest %+ 5
     *set boldness %+ 5
-    "You threw a water vase at an assassin," you say. "You screamed for help. You survived."
+    "You threw a water vase at an assassin," you say.
 
-    "I threw a vase," Roshan says, and there is disgust in his voice. "A great warrior, throwing pottery."
+    "I threw a vase," Roshan says, and there is disgust in his voice -- the self-contempt of a boy who measures himself against his ancestors and finds himself wanting. "A great warrior, throwing pottery."
 
-    "A great survivor," you correct him. "Your Majesty, the assassin expected you to freeze. They expected to find a sleeping boy and a quick kill. Instead, they found a fighter. Corporal Behzad heard you shout because you shouted. He came because you called. You saved your own life tonight."
+    "A great survivor," you correct him. "Your Majesty, the assassin expected you to freeze. Every assassin does -- they rely on the target's shock, the paralysis that comes when the mind cannot accept what is happening. Instead, they found a fighter. Corporal Behzad heard you shout because you shouted. He came because you called. You saved your own life tonight."
 
-    Something shifts in Roshan's expression. Not confidence -- not yet. But the seed of something that could become confidence, given sunlight and steady ground.
+    Something shifts in Roshan's expression. Not confidence -- not yet. Confidence is a house that takes months to build. But the first stone. The foundation of a foundation. The flicker of a possibility that perhaps he is not as helpless as he fears.
 
-    "When the court descends this morning," you continue, "they will try to tell you what this means and what you should do. Every faction will have a plan. Listen to them all. Then decide for yourself. You have that right. You have earned it."
+    "When the court descends this morning," you continue, "they will try to tell you what tonight means and what you must do. Every faction will have a plan. Every plan will serve their interests first and yours second. Listen to them all. Then decide for yourself. You have earned that right."
 
     "And you?" the Emperor asks. "What will you do?"
 
-    "I will stand beside the throne and do my job. Which is to ensure that when you make your decision, you have the best information and the clearest counsel I can provide."
+    "I will stand beside the throne and do my job. Which is to ensure that when you make your decision, you have the best information and the clearest counsel I can provide. Not as your master. As your servant."
 
-    The Emperor looks at you for a long moment. Then he nods -- not the formal incline of a ruler acknowledging a servant, but the firm nod of a person who has found something solid to stand on.
+    The Emperor looks at you for a long moment. Then he nods -- not the formal incline of a ruler acknowledging a petitioner, but the firm, quiet nod of a person who has found something solid to stand on in a room full of broken glass.
     *goto three_paths
-  #"Let me handle the investigation and the political fallout. Your Majesty, the court is a battlefield. Let me fight this battle for you."
+  #"Let me handle the investigation and the political fallout. The court is a battlefield, Your Majesty. Let me fight this battle for you."
     *set emperor_advice "delegate"
     *set rel_emperor %+ 10
     *set boldness %+ 10
     *set ruthless %+ 5
     *set honest %- 5
-    "The court will demand action," you say. "General Kadir will want a military response. The Dowager will want to tighten her grip on the Citadel. High Priest Ashoka will call for prayer and reflection. Zara will want to disappear into the shadows and hunt."
+    "The court will demand action," you say. "Every faction will have a response. General Kadir will want a military lockdown. The Dowager will want to tighten her grip on the Citadel. High Priest Ashoka will call for prayer and reflection. Zara will want to disappear into the shadows and hunt."
 
     "And you?" Roshan asks.
 
@@ -475,15 +590,15 @@ The Emperor is waiting. His dark eyes are steady on yours. The lamplight catches
 
     You lean forward.
 
-    "Give me authority over the investigation. All of it. Let the court know that the Voice of the Throne speaks for the Emperor in this matter. I will find the assassin, I will find the conspiracy behind them, and I will present you with evidence, not speculation."
+    "Give me authority over the investigation. All of it. Let the court know that the Voice of the Throne speaks for the Emperor in this matter. I will find the assassin, I will find the conspiracy behind them, and I will present you with evidence and solutions, not speculation and power plays."
 
-    Roshan studies you. There is something new in his eyes -- a wariness that was not there before. Tonight has taught him that trust is expensive.
+    Roshan studies you. There is something new in his eyes -- a wariness that was not there twenty minutes ago. Tonight has taught him that trust is expensive. That the people closest to you are the most dangerous. That even the hand that offers help may be reaching for something else.
 
     But he nods.
 
     "You have my authority, Vizier. Use it wisely."
     *goto three_paths
-  #"The truth, Your Majesty. This is part of a larger conspiracy, and before we respond, we need to understand the full picture."
+  #"The truth, Your Majesty. All of it. This is part of a conspiracy that has been growing for months, and before we respond, we need to understand the full picture."
     *set emperor_advice "truth"
     *set rel_emperor %+ 12
     *set honest %+ 15
@@ -491,17 +606,19 @@ The Emperor is waiting. His dark eyes are steady on yours. The lamplight catches
     *set evidence_count + 1
     You tell him everything.
 
-    Not the careful, edited version you might present to the Council. Everything. The predecessor's murder. The poison. The symbol under the council table. The rogue spy that triggered the trade embargo. The coordinated Khanate raids.
+    Not the edited version you might present to the Council -- the careful selection of facts, arranged for maximum political effect. Not the simplified version, scrubbed of uncertainty and qualified with diplomatic language. Everything.
+
+    Your predecessor's murder. The poison -- blue lotus venom, slow, painful, designed to look like fever. The symbol under the council table. The rogue spy that triggered the trade embargo. The coordinated Khanate raids and Zara's suspicion that someone is feeding the enemy intelligence from within. The conspiracy's calling card, found tonight in the Emperor's own chambers.
 
     *if (knows_ghost_identity)
-      The assassin's connection to the temple guard.
+      The assassin's connection to the temple guard. The medallion. The implication that someone within the religious establishment -- or someone who once belonged to it -- is part of the network.
 
     *if (spy_connection_found)
-      The intelligence pointing to imperial funds being used to finance the conspiracy.
+      The intelligence pointing to imperial funds being used to finance the conspiracy. The money trail that leads upward, not down. The suggestion that someone at the highest levels of government is paying for the empire's destruction with the empire's own gold.
 
-    Roshan's face changes as you speak. The fear drains out of it, replaced by something colder and more focused. He is, you realize, genuinely intelligent. He grasps the pattern quickly.
+    Roshan's face changes as you speak. The fear drains out of it, replaced by something colder and more focused. You watch the transformation with a mixture of hope and concern. He is, you realize, genuinely intelligent -- not just educated, not just well-read, but possessed of the kind of mind that sees patterns and connections, that assembles fragments into pictures.
 
-    "They're not just trying to kill me," he says slowly. "They're trying to destroy the empire. Or at least... reshape it."
+    "They're not just trying to kill me," he says slowly, when you finish. "They're trying to destroy the empire. Or at least... reshape it. Replace me with someone they can control."
 
     "Yes."
 
@@ -509,9 +626,9 @@ The Emperor is waiting. His dark eyes are steady on yours. The lamplight catches
 
     "Yes."
 
-    "Then a quick response plays into their hands. They want chaos. They want the factions at each other's throats." He looks at you with those dark, steady eyes. "We give them the opposite. We respond with unity and patience. We show them that one night of violence will not shake the throne."
+    "Then a quick response is exactly what they want. They want chaos. They want the factions at each other's throats." He looks at you with those dark, steady eyes. "We give them the opposite. We respond with patience and unity. We show them that one night of violence will not shake the Silk Throne."
 
-    You feel a flicker of something unexpected: respect.
+    You feel a flicker of something unexpected, something that warms you the way the morning sun will warm the Citadel when it finally rises: respect.
 
     "Your Majesty," you say, "that is wise counsel."
 
@@ -524,42 +641,38 @@ The Emperor is waiting. His dark eyes are steady on yours. The lamplight catches
 
 *page_break
 
-The call to morning prayer sounds across Khazara. The deep voice of the muezzin rises from the Temple of Seven Wisdoms, carrying over rooftops and minarets, across the two rivers, into every quarter of the city. It is the same call that has sounded every dawn for three hundred years.
+The call to morning prayer sounds across Khazara.
 
-But this morning it sounds different. This morning it sounds fragile.
+The deep voice of the muezzin rises from the Temple of Seven Wisdoms, carrying over rooftops and minarets, across the two rivers, into every quarter of the city. It is the same call that has sounded every dawn for three hundred years, the same melody, the same words -- a reminder that the Flame endures, that morning follows night, that the world continues to turn.
 
-You leave the Emperor's chambers as the court begins to stir. The corridors fill with hurrying figures -- courtiers in hastily donned robes, guards at double strength, servants whispering in clusters. The news is spreading like fire through dry grass.
+But this morning it sounds different. This morning it sounds fragile. Like something that could break.
 
-The Dowager Empress Nur intercepts you in the corridor outside the imperial wing. She is fully dressed, immaculate, her face composed with a control that must be costing her dearly. Behind her, two of her personal guards stand at rigid attention.
+You leave the Emperor's chambers as the court begins to stir. The corridors fill with hurrying figures -- courtiers in hastily donned robes, their hair uncombed, their faces carrying the wild look of people woken by rumor. Guards at double strength march in tight formations. Servants whisper in clusters, falling silent when you pass. The news is spreading through the palace the way a crack spreads through ice: slowly at first, then all at once.
+
+The Dowager Empress Nur intercepts you in the corridor outside the imperial wing. She is fully dressed -- immaculate, composed, her hair arranged, her robes perfect. She has not been sleeping. She has been preparing.
 
 "Vizier." Her voice is the temperature of the marble beneath your feet. "My son. How is my son."
 
 "Alive and unharmed, Your Grace. Shaken but composed."
 
-Something flickers in her eyes -- relief, perhaps, or the shadow of a terror she will never admit to anyone. Then it is gone, sealed behind the mask.
+Something flickers in her eyes -- relief, perhaps, or the shadow of a terror she will never, in this life, admit to anyone. The Dowager loves her son. This you believe. But it is a love wrapped in iron and ambition, a love that protects by controlling, that nurtures by directing.
 
-"We will speak later," she says. "At length." It is not a request. It is barely a promise. It is a statement of absolute inevitability, the way one might announce the coming of winter.
+"We will speak later," she says. "At length." It is not a request. It is barely a promise. It is a statement of absolute inevitability.
 
 She sweeps past you toward her son's chambers, and the temperature in the corridor drops by several degrees.
 
-*page_break
-
 *set rel_dowager %+ 5
 
-General Kadir arrives at the Citadel at a dead run, still buckling his sword belt. He stops when he sees you. His face is a landscape of fury.
+*page_break
 
-"Report," he says. One word. It contains an entire army's worth of demand.
+General Kadir arrives at the Citadel at a dead run, still buckling his sword belt. His iron hand clenches and unclenches as you brief him.
 
-You brief him in the corridor. His iron hand clenches and unclenches as you speak. When you finish, he is quiet for exactly three seconds.
+"This happened on my watch," he says when you finish. "My soldiers. My protocols. My failure." He meets your eyes. "It will not happen again."
 
-"This happened on my watch," he says. "My soldiers. My protocols. My failure." He meets your eyes. "It will not happen again."
-
-He turns and begins issuing orders. Within minutes, the Citadel guard is doubled. Within an hour, it will be tripled. The garrison will be on full alert by noon.
+Within the hour, the Citadel guard is tripled. By noon, the garrison will be on full alert. The old soldier moves through the corridors like a storm, barking orders, inspecting posts, his fury finding its only acceptable outlet: action.
 
 *set rel_general %+ 5
 *set rep_military %- 5
-
-*page_break
 
 You return to your chambers as the sun clears the eastern minarets. Farid is there, because Farid is always there. He has laid out fresh clothes, a pot of strong coffee, and -- in a gesture so touching it nearly breaks something in your chest -- a plate of the sweet almond pastries you once mentioned you liked.
 
@@ -571,33 +684,33 @@ You sit. You eat a pastry. It tastes of rosewater and exhaustion.
 
 "My ${title_honorific} Vizier?"
 
-"Thank you. For tonight. For everything."
+"Thank you. For tonight. For all of it."
 
-He blinks rapidly several times. Then he straightens and adjusts his spectacles with the careful precision of a man who is absolutely not about to cry.
+He blinks rapidly behind his spectacles. Then he straightens and adjusts them with the careful precision of a man who is absolutely, categorically, in no way about to cry.
 
-"It's my job, my ${title_honorific} Vizier. Per regulation 14-C, subsection 2: the Secretary to the Grand Vizier shall provide logistical and emotional support during crisis events." He pauses. "I may have added the 'emotional support' part myself. But I believe the spirit of the regulation allows it."
+"It's my job, my ${title_honorific} Vizier. Per regulation 14-C, subsection 2: the Secretary to the Grand Vizier shall provide logistical and emotional support during crisis events." He pauses. "I may have added the 'emotional support' clause myself. But I believe the spirit of the regulation allows it."
 
 *set rel_farid %+ 10
 
 *page_break
 
-Alone at last, you sit at your desk and spread your evidence before you. The conspiracy symbol. The calling card. The notes you have assembled across weeks of investigation. The threads that connect border raids to trade embargoes to rogue spies to a dead Vizier to a shattered window in the Emperor's chambers.
+Alone at last, you sit at your desk and spread your evidence before you. The conspiracy symbol. The calling card. The notes you have assembled across weeks of investigation -- parchment covered in your own handwriting, growing denser with each new discovery, the connections multiplying like roots beneath a tree.
 
-You stare at it all, and three paths crystallize in your mind like frost forming on glass.
+The threads that connect border raids to trade embargoes to rogue spies to a murdered Vizier to a shattered window in the Emperor's chambers.
 
-The empire is broken. Not shattered -- not yet. But cracked, deeply, in places that cannot be repaired with the tools at hand. The young Emperor sits on a throne that someone is actively trying to topple, surrounded by factions that serve their own interests first and the empire's second.
+You stare at it all, and the way forward begins to take shape. Not one path but three, crystallizing in your mind like frost forming on glass -- beautiful, intricate, and as cold as the dawn.
 
 *if (emperor_advice = "strength")
-  You think of Roshan's face when you told him he was a survivor. The spark that kindled. The boy is not ready to rule alone -- but with the right support, the right counsel, the right protection, he could become the ruler this empire needs. The throne is not the problem. The boy on it is not the problem. The problem is that no one has bothered to help him become what he needs to be.
+  You think of Roshan's face when you told him he was a survivor. The spark that kindled. The boy is not ready to rule alone -- but with the right support, the right counsel, the right protection, he could become the ruler this empire desperately needs. The throne is not the problem. The boy on it is not the problem. The problem is that no one has bothered to help him become what he can be.
 *elseif (emperor_advice = "delegate")
-  You think of the authority Roshan placed in your hands -- freely, trustingly, because he had no one else to turn to. That authority is power. Real power, the kind that shapes events and bends the arc of history. You could use it to serve the Emperor. You could use it to serve the empire. But what if those two things are not the same?
+  You think of the authority Roshan placed in your hands. Freely, trustingly, because he had no one else. That authority is power -- real power, the kind that shapes events and bends the arc of history. The kind the Dowager has wielded for decades. You could use it to serve the Emperor. You could use it to serve the empire. You could use it to build something stronger and more enduring than any single ruler.
 *else
-  You think of Roshan's face when the pattern clicked -- the intelligence, the clarity, the cold recognition that the system itself is broken. He understood. A boy of sixteen understood what the Council of Five, with centuries of combined experience, cannot see or will not admit: that the empire's greatest enemy is not outside its borders. It is within them.
+  You think of Roshan's face when the pattern clicked -- the intelligence, the clarity, the cold recognition that the system itself is broken. He understood what the Council of Five, with centuries of combined experience, cannot see or will not admit: that the empire's greatest enemy is not outside its borders but within them, woven into the very fabric of its power.
 
-The coffee grows cold. The pastries sit half-eaten. The sun rises higher, painting the Garden of Eternal Spring in gold and green. And you sit with your evidence and your seal ring and the weight of an empire's future pressing down on your shoulders.
+The coffee grows cold. The pastries sit half-eaten. The sun climbs higher, painting the Garden of Eternal Spring in gold and green. And you sit with your evidence and your seal ring and the weight of an empire's future pressing down on your shoulders.
 
-Three paths. Each one leads somewhere you cannot see. Each one costs something you are not sure you can pay.
+Three paths. Each one leads somewhere you cannot see. Each one will cost something you are not sure you can pay. But the time for indecision is over.
 
-But the time for indecision is over. The longest night is done, and the morning demands an answer.
+The longest night is done, and the morning demands an answer.
 
 *finish The Crossroads
