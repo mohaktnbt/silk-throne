@@ -46,7 +46,13 @@ He pauses.
 
 "He was very good at that. Seeing past performances. I think that might be why --" He stops himself. "I think that is a useful skill to have."
 
-The unfinished sentence hangs in the air between you. You both know what it contains: the name of a dead man, and the reason for his death.
+The unfinished sentence hangs in the air between you. You both know what it contains: the name of a dead man, and the reason for his death. Farid's eyes are bright with something that could be grief or could be fear or could be both, braided together so tightly that even he cannot separate them. You reach out and touch his arm -- briefly, a gesture of reassurance that crosses the boundary between superior and subordinate.
+
+"I will be careful, Farid," you say.
+
+He nods. Swallows. Adjusts his satchel strap with the fidgeting energy of a man who converts emotion into motion.
+
+"The coffee is good in the antechamber," he says. "I've been there since five o'clock. I may have had too much. My hands are shaking, but I believe it's the caffeine rather than the terror." He manages a weak smile. "Mostly the caffeine."
 
 *page_break
 
@@ -660,11 +666,17 @@ Four people. Four powers. Four agendas. And somewhere among them, or behind them
 
 *comment === THE SYMBOL UNDER THE TABLE ===
 
-The Council Chamber is empty now. The others have gone -- to their offices, their factions, their private calculations. The morning light has moved across the floor, and the dust motes have settled. The room smells of cold incense and the lingering ghost of Priya's wine.
+*achieve first_council
+
+The Council Chamber is empty now. The others have gone -- to their offices, their factions, their private calculations. The morning light has moved across the floor, and the dust motes have settled. The room smells of cold incense and the lingering ghost of Priya's wine. You have survived your first Council of Five meeting. You have spoken, and the empire has listened, and for better or worse, the course you recommended is now being implemented.
+
+The enormity of it settles on you slowly, like the incense settling into the fabric of your robes. You -- a provincial administrator, an outsider, a person who three months ago was filing tax reports in an office a thousand miles from here -- have just shaped the Khazaran Empire's response to its most urgent military crisis. The decisions you made in this room will ripple outward: soldiers will march or stand down, gold will flow or be withheld, temples will send delegations or remain silent, spies will investigate or wait. Real consequences, flowing from your words.
 
 You should leave. There are documents to review, decisions to implement, a dozen obligations competing for the remainder of your day. Farid is waiting in the antechamber with fresh tea and a schedule that probably looks like a military campaign. The day is young, and the empire does not govern itself.
 
 But something holds you. A restlessness. An instinct. The same instinct that kept you alive in the provinces, when the numbers in a tax report did not add up, when a provincial governor's smile was too wide, when a midnight sound was too quiet. The instinct that says: you have not yet seen everything this room has to show you.
+
+The morning light has shifted while you were talking. The sun has moved past the window, and the room is dimmer now, the maps on the walls falling into shadow. The incense has burned down to ash in the brazier. The wine in Priya's abandoned glass has settled to a dark, still ring. The room feels different empty -- smaller, somehow, and older, as if without the personalities to fill it, the chamber reveals its true age. The scratches in the table, the wear on the chair arms, the faded places on the carpet where generations of boots have scuffed -- all of it becomes visible when the living theater of the council is removed.
 
 You walk the perimeter. You study the maps on the walls -- the empire in its entirety, color-coded by province, the borders marked in red where they are contested and black where they are secure. The northern frontier is almost entirely red. You study the books on the shelf -- histories, legal codes, treatises on governance, a volume of poetry that seems out of place among the political texts. You run your fingers along the spines and read the titles. [i]On the Governance of Empire.[/i] [i]A History of the Council of Five.[/i] [i]The Art of War in the Modern Age.[/i] And there, at the end of the row, a slim volume with no title on the spine. You pull it out. It is a journal -- empty, its pages blank, waiting for someone to fill them. Perhaps the last Vizier's. Perhaps from before.
 
@@ -718,7 +730,9 @@ He nods, reading something in your face that stops the torrent of words.
 
 "I found something," you say. And you walk past him, toward your chambers, toward the desk where the anonymous note lies hidden in a book of tax law, toward the questions that are multiplying faster than you can answer them.
 
-Behind you, the Council Chamber door swings shut. The symbol waits in the dark beneath the table, patient as a buried seed.
+Behind you, the Council Chamber door swings shut with a sound like a book closing -- the soft, final thud of a chapter ending and another beginning. The symbol waits in the dark beneath the table, patient as a buried seed, carved into the wood by a hand you have not yet identified. It will be there tomorrow, and the day after, and the day after that. It will be there when the council meets to discuss the next crisis, and the one after that. It will be there when you sit in the Vizier's chair and make the next impossible decision, and the one after that.
+
+The game has begun. The pieces are on the board. And somewhere in the palace, the spider waits at the center of its web, watching you learn the shape of the cage you have entered.
 
 The conspiracy is real. Your predecessor found it and died. Now you have found its mark, scratched into the wood of the table where the empire's most powerful people sit and argue and scheme and -- perhaps -- betray.
 
