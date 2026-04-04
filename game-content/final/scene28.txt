@@ -1,0 +1,716 @@
+*comment === SCENE 28: "THE SIEGE" ===
+*comment Act 3 | ~12,000 words | PAID
+*comment Variables modified: siege_outcome (1-5), heir_alive (possible false),
+*comment   empire_intact (possible false), major relationship shifts,
+*comment   skills tested extensively, boldness, ruthless, idealist, honest
+*comment Choices: 3 *choice (tactical decisions), 2 *fake_choice
+*comment Previous: Scene 27 | Next: Scene 29
+
+*comment === SCENE-LOCAL VARIABLES ===
+*temp primary_strategy "unknown"
+*temp ally_deployment "unknown"
+*temp backup_plan "unknown"
+*temp battle_phase 0
+*temp morale "steady"
+*temp kaveh_status "active"
+*temp critical_success false
+*temp critical_failure false
+*temp someone_dies false
+*temp who_dies "none"
+*temp bridge_holds true
+*temp citadel_breached false
+*temp final_confrontation "unknown"
+
+*comment Inherit strategy from Scene 27 via global-readable temps
+*comment (In production, these would carry from scene27's *set to global vars.
+*comment  For now, we derive from alliance flags as proxy.)
+*if (final_alliance_military)
+  *set primary_strategy "military"
+*elseif (final_alliance_intelligence)
+  *set primary_strategy "covert"
+*elseif (final_alliance_trade)
+  *set primary_strategy "economic"
+*else
+  *set primary_strategy "combined"
+
+*comment === OPENING: DAWN ===
+
+Dawn comes to Khazara the color of blood.
+
+The eastern sky splits along the horizon, red and gold and violent orange, as though the sun itself is wounded. The light spills across the city's rooftops, catching the domes and minarets, painting the river in fire. From the Citadel walls, you can see the entire breadth of the capital -- two million souls waking to the day that will determine whether their empire endures.
+
+In the distance, beyond the city's southern gates, you can see them.
+
+Kaveh's army.
+
+*page_break
+
+Three thousand strong, arrayed in loose formation on the plain between the city and the river's southern bend. Their banners are crimson and gold -- the colors of Prince Kaveh's branch of the royal family, colors that should be displayed only in the Citadel. The presumption of it burns like acid.
+
+Through the Tower of Stars' finest telescope, brought to the walls at your order, you can make out the details: cavalry on the flanks, infantry in the center, siege equipment at the rear -- scaling ladders, a battering ram, two small cannons that must have been smuggled from a provincial armory. Kaveh's mercenaries are a patchwork of uniforms and armor, but they are armed, they are organized, and they are moving toward the city.
+
+And to the north, too far to see but never far from your thoughts, the Khanate horde presses against the Wall of Roshan. General Kadir's dispatches arrived an hour ago: *The Wall holds. But not forever. Make your fight fast.*
+
+*page_break
+
+Fast. As though the fate of three centuries can be decided on a schedule.
+
+You descend from the wall to the Citadel courtyard, where your forces are assembled. The imperial guard -- Navid's command -- stands in precise formation, armor gleaming, spears vertical. The temple guards, if they are with you, occupy the eastern courtyard, their white robes a stark contrast to the soldiers' steel.
+
+*if (romance_navid)
+  Navid catches your eye from the head of his column. He does not speak. He does not need to. His hand rests on his sword hilt, and his nod is the quietest promise you have ever received.
+
+Farid appears at your elbow. He is wearing, for the first time in his life, a leather breastplate over his secretary's robes. It does not fit well. He looks like a tortoise that has grown a second shell.
+
+"My lord Vizier. All units are in position. The city gates are sealed per regulation-- per common sense. The evacuation routes are prepared. The Council has been notified." He swallows. "I have also taken the liberty of writing my will. Just -- just in case. It is filed under 'F' for 'Farid' in the Vizier's office archive."
+
+"You're not going to die, Farid."
+
+"Statistically, my lord Vizier, the mortality rate in imperial sieges is--"
+
+"Farid."
+
+"Yes, my lord Vizier. Not dying. Understood."
+
+*page_break
+
+*comment === THE APPROACH ===
+
+The morning unfolds in stages, each one tightening the coil of tension in your chest.
+
+*if (primary_strategy = "military")
+  *goto military_opening
+*elseif (primary_strategy = "covert")
+  *goto covert_opening
+*elseif (primary_strategy = "economic")
+  *goto economic_opening
+*else
+  *goto combined_opening
+
+*comment === MILITARY STRATEGY OPENING ===
+*label military_opening
+
+Your plan is direct: meet Kaveh's army at the Ashar Bridge, the narrow stone crossing that controls the only approach to the capital from the south. The bridge is wide enough for ten soldiers abreast -- a chokepoint that negates Kaveh's numerical advantage.
+
+*if (final_alliance_military)
+  Kadir's best captain -- a woman named Tahmineh, battle-scarred and iron-voiced -- commands the bridge defense with two thousand of the empire's finest soldiers. They have had the night to prepare: barricades at the bridge's midpoint, archers on the flanks, oil reserves for the fire traps Kadir designed.
+*else
+  Navid's imperial guard holds the bridge -- a thousand soldiers, superbly trained but outnumbered three to one. The barricades are hastily constructed. The flanking positions are thin. It will have to be enough.
+
+You stand behind the front line, close enough to see the enemy's faces when they come. The Ashar River churns beneath the ancient stone, brown and fast with the season's rains. The bridge trembles faintly under the weight of armed soldiers.
+
+Kaveh's forces approach in the rising light. You see the prince himself -- mounted on a white horse at the center of his line, golden armor catching the sun. Even at this distance, you can see the smile. He expects to win.
+
+*page_break
+
+The first assault hits the bridge like a wave striking a seawall.
+
+Kaveh's mercenaries charge with a roar, swords and spears raised, shields locked. The bridge narrows them, funnels them into the barricade, and the defenders hold. Steel rings on steel. Men scream. The air fills with the stink of blood and sweat and river water.
+
+The bridge holds.
+
+The second assault comes twenty minutes later -- harder, more organized, with ladders lowered to the river banks to try flanking positions. Archers on the south bank trade volleys with your own. A bolt whistles past your ear, close enough to stir your hair.
+
+The bridge holds. But the defenders are bleeding. You see gaps in the line where soldiers have fallen, filled by others stepping forward with grim determination.
+
+*goto first_tactical_choice
+
+*comment === COVERT STRATEGY OPENING ===
+*label covert_opening
+
+The plan is a shadow's plan. No direct confrontation. Instead, Zara's agents -- embedded in Kaveh's camp since the night before -- execute a precise, coordinated disruption.
+
+*if (final_alliance_intelligence)
+  The first reports arrive before the sun clears the rooftops: Kaveh's water supply, poisoned with a purgative that will have half his army doubled over within hours. His couriers, intercepted. His signal flags, replaced with duplicates that carry false orders. The camp is dissolving into confusion.
+*else
+  The disruption is partial. Zara's agents, too few and spread too thin, manage to intercept some of Kaveh's communications and sow limited confusion. But the army still advances. The covert approach is slowing them, not stopping them.
+
+You watch from the Tower of Stars, reading the reports as they arrive by messenger bird and breathless runner. Zara coordinates from a hidden post in the Foreign Quarter, her network humming with coded signals.
+
+"Kaveh's left flank captain has received orders -- our orders -- to march east instead of north," Zara's message reads. "Estimated delay: two hours. His mercenary cavalry has not been paid this morning. Three companies are refusing to move until gold arrives. The gold will not arrive."
+
+*page_break
+
+But Kaveh is not a fool. When the confusion clears -- and it will clear -- he will still have two thousand soldiers marching on the capital. The covert approach buys time and weakens the enemy. It does not destroy them.
+
+The prince's army begins its advance despite the chaos. Slower, disorganized, riddled with mistrust and miscommunication -- but advancing. The crimson banners still fly. The cannons still roll forward on their carriages.
+
+And then the unexpected: Kaveh himself rides to the front of his disordered column and begins shouting orders personally. He is organizing his troops through sheer force of personality, cutting through the confusion your agents sowed.
+
+He is better than you hoped.
+
+*goto first_tactical_choice
+
+*comment === ECONOMIC STRATEGY OPENING ===
+*label economic_opening
+
+Priya's economic assault is surgical and devastating. Through the night, her agents have delivered counter-offers to every mercenary captain in Kaveh's army: double their current rate, paid immediately in gold, to lay down arms and return to their garrisons. The gold comes from emergency reserves Priya has been quietly accumulating -- debts called in, assets liquidated, favors collected from every merchant house in the empire.
+
+*if (final_alliance_trade)
+  The results are immediate. Before dawn, two full companies of mercenaries -- nearly six hundred soldiers -- abandon Kaveh's camp. They leave their weapons stacked neatly, take Priya's gold, and disappear into the countryside. A third company is negotiating.
+*else
+  The results are mixed. Some mercenaries take the gold and leave. Others, loyal to their captains or to Kaveh's promise of noble titles, refuse. The army shrinks but does not dissolve.
+
+"Two thousand soldiers," Priya's report reads. "Down from three thousand. His cavalry is intact -- they're noble house guards, fighting for ideology, not money. The cannon crews stayed as well. The core of his army holds."
+
+You read the numbers in the Citadel's treasury room, where Priya has established her war headquarters. Ledgers cover every surface. Assistants scurry between tables. The air smells of ink and desperation.
+
+*page_break
+
+"We've spent eighty percent of the emergency reserve," Priya says, her voice flat. The warmth is gone. This is the Guildmaster at war, and war has a price. "We cannot buy off the rest. The remaining soldiers fight for belief, not coin."
+
+The army advances. Smaller, but harder -- the mercenaries who stayed are the true believers, the noble house guards who see this as a holy war for the old order, the Kaveh loyalists who would follow the prince into fire.
+
+They are more dangerous than the army that set out this morning. A leaner force, purified by the departure of the uncommitted. And Kaveh rides at their head with renewed fury, his gold-armored figure a rallying point that no amount of economic warfare can tarnish.
+
+*goto first_tactical_choice
+
+*comment === COMBINED STRATEGY OPENING ===
+*label combined_opening
+
+You have thrown everything at once. Economic pressure bleeds Kaveh's ranks. Intelligence operations sow confusion in his camp. Military forces hold the Ashar Bridge. Political declarations from the temple and the loyal nobility strip the rebellion of legitimacy.
+
+*if (total_alliances >= 3)
+  The combined assault is devastating. Kaveh's army hemorrhages soldiers -- mercenaries bought off by Priya, units misdirected by Zara's false orders, noble houses peeled away by Soraya's political pressure. By midmorning, the prince commands perhaps fifteen hundred soldiers, fewer than half his dawn strength.
+
+  But the core holds. And the core is hard.
+*else
+  The combined approach, spread thin without enough allies, achieves partial success. Kaveh's army is weakened but not broken. Gaps in your coordination allow the prince to adapt, shifting his remaining forces to exploit the weaknesses in your overstretched plan.
+
+The battle develops across multiple fronts -- the bridge, the river, the city gates, the political arena. Reports flood in faster than you can process them. Farid's neat organizational system collapses under the weight of urgent dispatches.
+
+*page_break
+
+The midday sun climbs over Khazara, baking the bridge stones and the armored soldiers alike. Dust rises from the southern plain. The sound of distant combat -- steel and shouting and the occasional crack of a cannon -- drifts through the city streets, where civilians huddle in their homes and pray.
+
+This is the hinge point. The moment where the battle tips.
+
+*goto first_tactical_choice
+
+*comment === FIRST TACTICAL CHOICE ===
+*label first_tactical_choice
+
+*page_break
+
+*fake_choice
+  #You feel the terrible clarity of command -- every life in this city depends on your next decision.
+    *set ruthless %+ 5
+    *temp battle_mood "clarity"
+    The weight is immense and it is clarifying. Strip away the politics, the personality, the ambition and the ideology. What remains is simple: people will live or die based on what you do in the next hour.
+  #You feel fear, hot and raw, and you use it -- let it sharpen you, let it burn away everything that does not matter.
+    *set boldness %+ 5
+    *temp battle_mood "fear_as_fuel"
+    Your hands shake. Your mouth is dry. But the fear is not weakness. It is fuel. It is the body's oldest wisdom: *this matters, pay attention, survive.*
+  #You feel a strange, floating calm -- as though you are watching yourself from outside, seeing the battle as a pattern to be read.
+    *set scholarship + 3
+    *temp battle_mood "detachment"
+    The distance is deliberate. You have learned, in months of court politics, to separate yourself from the moment and see the larger shape. The battle is a pattern. Patterns can be read. Patterns can be broken.
+  #You feel rage. At Kaveh. At the conspiracy. At every person who chose ambition over the empire's survival.
+    *set boldness %+ 10
+    *set ruthless %+ 5
+    *temp battle_mood "rage"
+    The anger is a forge. It burns away doubt, burns away mercy, burns away everything except the single, searing determination to end this. Now. Today. With whatever it costs.
+
+*page_break
+
+A messenger arrives at a dead run. His face is white. His armor is splashed with blood that is not his own.
+
+"Vizier! Kaveh's forces have broken through the outer barricade at the Ashar Bridge. Captain Tahmineh is wounded. The defenders are falling back to the bridge's midpoint."
+
+*if (primary_strategy = "covert")
+  Another message, from Zara: "Our agents in Kaveh's camp have been identified. Three are captured. The prince is executing them publicly to restore morale. I'm pulling the rest out."
+*if (primary_strategy = "economic")
+  A third report: Priya's final counter-offers have been rejected. The remaining mercenaries are fully committed. "There's no more gold to throw," Priya writes. "Now it's steel."
+
+The battle map in your mind shifts. The enemy is at the bridge. The city beyond the bridge. The Citadel beyond the city.
+
+*comment === REAL CHOICE 1: FIRST TACTICAL DECISION ===
+
+*choice
+  #"Reinforce the bridge. Send the reserves. We hold that crossing or we lose everything."
+    *set boldness %+ 5
+    *set bridge_holds true
+    *set battle_phase + 1
+    You send the order. The reserve companies -- held back in the Citadel courtyard -- march at double-time through the city streets toward the bridge. Citizens press themselves against walls as armored soldiers pour past, the drumbeat of their boots a thunder that shakes the shuttered windows.
+    *if (strength > 50)
+      *set strength + 3
+      *set critical_success true
+      You lead from the front. Not because you must, but because you have learned that in the darkest hour, the sight of the Vizier walking toward the fight, not away from it, is worth a thousand reinforcements.
+      The soldiers see you. They straighten. The retreat steadies. The line reforms.
+    *else
+      The reinforcements arrive in time -- barely. The bridge defenders, bloodied and exhausted, hold the midpoint barricade with fingernails and fury while fresh soldiers fill the gaps.
+    The bridge holds. The enemy assault breaks against the reinforced line like a wave against stone, and for a precious hour, the crossing is secure.
+    *goto second_phase
+  #"Let them have the bridge. Fall back to the city gates. Draw them into the streets where their cavalry is useless."
+    *set boldness %- 5
+    *set cunning + 3
+    *set bridge_holds false
+    *set battle_phase + 1
+    The order to retreat is the hardest thing you have ever done. Soldiers die on bridges so that others do not die behind walls. Every defender at the crossing fought to buy time, and now you are telling them to give up the ground they bled for.
+    But the streets of Khazara are a labyrinth. Kaveh's cavalry -- his greatest asset -- is worthless in narrow alleys. His cannons cannot fire down winding roads. Inside the city, the fight becomes close, brutal, personal -- and your soldiers know these streets.
+    The retreat is orderly. The bridge defenders pull back through the southern gate, and the gates close behind them with a boom that echoes across the river.
+    *goto second_phase
+  *selectable_if (cunning > 55) #"Send a false retreat at the bridge. Let Kaveh think he's winning, then close the trap." [Requires Cunning 55+]
+    *set cunning + 5
+    *set bridge_holds true
+    *set battle_phase + 1
+    *set critical_success true
+    The false retreat is a classic maneuver -- so classic that Kaveh should see through it. But in the heat of battle, with his troops tasting victory, with the bridge seemingly falling...
+    Your defenders pull back. Not in panic, but in controlled, deliberate withdrawal. They leave the barricade. They retreat to the bridge's northern end. Kaveh's forces surge forward, shouting in triumph.
+    And the trap closes.
+    Archers, concealed on the rooftops overlooking the bridge approaches, loose their first volley. Oil, poured from hidden channels in the bridge's stonework, ignites. The center of the bridge becomes an inferno, cutting Kaveh's advance force off from reinforcement.
+    The screams are terrible. The efficiency is worse.
+    Kaveh's vanguard -- perhaps three hundred soldiers, trapped between fire and archers -- surrenders within minutes. The rest of his army recoils from the bridge in shock.
+    *goto second_phase
+
+*label second_phase
+
+*page_break
+
+*comment === SECOND PHASE: THE CITY FIGHT ===
+
+The afternoon brings a new kind of warfare.
+
+*if (bridge_holds)
+  Kaveh, denied the bridge, sends forces to the river. Boats. Rafts. Logs lashed together. His soldiers cross the Ashar at three points downstream, wading through chest-deep water under arrow fire, clambering up the muddy banks into the city's River District.
+
+  The fighting spills into the streets. Smoke rises from the docks where a fire arrow caught a warehouse. The sound of combat -- irregular, sharp, echoing between stone walls -- fills the southern quarters.
+*else
+  Kaveh's army pours through the southern gate. The cavalry, useless in the narrow streets, is left behind. But the infantry advances in tight columns, pushing through the market district toward the Temple Quarter and the Citadel beyond.
+
+  The street fighting is savage. Every intersection becomes a fortress. Every rooftop becomes an archer's nest. The defenders know the streets. The attackers have numbers.
+
+*page_break
+
+*if (final_alliance_temple)
+  The temple guards hold the Temple Quarter with fanatical determination. Ashoka has stationed them at every entrance, and they fight with the discipline of soldiers and the conviction of believers. The Eternal Flame burns behind them -- they will not let it fall.
+
+  A message from Ashoka: "The Flame burns. We hold. Have faith."
+*if (final_alliance_trade)
+  Priya's guild network transforms into a logistics operation. Merchants' warehouses become field hospitals. Guild runners carry messages through alleys the soldiers do not know. Water, food, and bandages appear where they are needed most, distributed by the same efficient system that normally moves silk and spices.
+
+  "Supply chain management," Priya's message reads. "The principle is the same whether you're moving cinnamon or crossbow bolts."
+*if (final_alliance_intelligence)
+  Zara's agents are the city's nervous system. Every movement of Kaveh's forces is tracked, reported, analyzed. Every flanking attempt is anticipated. Every breakthrough is contained before it can become a rout.
+
+  "He's heading for the Temple Quarter," Zara reports. "He wants the Flame. If he takes the temple, he can claim divine mandate."
+*if (final_alliance_nobility)
+  Lady Soraya has rallied the loyal nobles, and their household guards -- seven hundred armed soldiers from a dozen great houses -- hold the eastern approaches to the Citadel. The blue and silver banners of the progressive nobility fly beside the Emperor's white.
+
+  "We stand with the throne," Soraya's message reads. "All of us. To the end."
+
+*page_break
+
+The battle's center of gravity shifts. Kaveh's forces, bloodied by the bridge fight and scattered by the street combat, begin to consolidate around a single objective: the Citadel itself.
+
+You stand on the Citadel's outer wall and watch them come -- a river of crimson banners flowing through the city's veins toward its heart. Behind you, the Jade Throne Room. Before you, the enemy.
+
+*if (romance_navid)
+  Navid is at your side, sword drawn, his face streaked with dust and someone else's blood. He has been fighting since dawn. He has not wavered once.
+  "They'll try the Western Gate," he says, his voice hoarse but steady. "It's the weakest point. I've reinforced it, but--"
+  "But."
+  "But nothing holds forever."
+
+Farid appears on the wall, somehow still carrying his leather briefcase. A bandage is wound around his left hand -- a cut from a falling stone, he explains, not from combat. "I am a secretary, my lord Vizier. Combat is not in my job description. Per regulation--"
+
+He stops. Stares out at the advancing army.
+
+"Oh," he says softly. "Oh, there are so many of them."
+
+*page_break
+
+*comment === REAL CHOICE 2: SECOND TACTICAL DECISION ===
+
+The Citadel's walls are strong. But Kaveh has cannons. The two small field pieces are being dragged through the streets, and when they reach the Citadel square, they will fire.
+
+*choice
+  #"Sortie. We hit them before the cannons arrive. A mounted charge into their ranks while they're still disordered."
+    *set boldness %+ 15
+    *set battle_phase + 1
+    The Citadel gates open. Two hundred cavalry -- the last mounted force you have -- pour into the square in a thunder of hooves and steel. You are among them, if only at the rear, the Vizier's standard flying above you like a challenge written in silk.
+    *if (strength > 45)
+      *set strength + 5
+      The charge is devastating. Kaveh's soldiers, strung out from street fighting and unprepared for a mounted assault, scatter before the impact. The cannon crews abandon their pieces and run. For a glorious, terrible minute, the enemy breaks.
+      *set morale "surging"
+    *else
+      The charge hits hard but does not break through. Kaveh's officers rally their men, and the cavalry becomes trapped in a melee that negates their momentum. You lose horses, soldiers, time. The cannons are delayed but not captured.
+      *set morale "strained"
+    *goto third_phase
+  #"Let them bring the cannons. The Citadel walls are designed to withstand artillery. When they waste their powder, we counterattack."
+    *set boldness %- 5
+    *set battle_phase + 1
+    The cannons fire. The impact shakes the wall beneath your feet -- a deep, percussive boom followed by the shriek of stone cracking. Dust erupts from the point of impact. A section of decorative facing crumbles.
+    But the wall holds. The Citadel's architects, centuries ago, built these walls to absorb cannon fire -- sloped, reinforced, designed to deflect rather than resist.
+    The second volley cracks a merlon. The third goes wide, smashing into a fountain in the square below.
+    *if (scholarship > 45)
+      *set scholarship + 5
+      You count the volleys. Calculate the reload time. Estimate the powder supply based on what you read about cannon logistics in the Great Library.
+      "They have perhaps eight more shots," you tell Navid. "After that, the cannons are empty. When the firing stops -- that is our moment."
+      *set morale "steady"
+    *else
+      You endure the bombardment. Each impact is a hammer blow to the nerves. Soldiers flinch. Stone dust fills the air. But the wall stands.
+      *set morale "steady"
+    *goto third_phase
+  *selectable_if (diplomacy > 55) #"Send an emissary under flag of truce. If I can speak to Kaveh directly, I may end this without more bloodshed." [Requires Diplomacy 55+]
+    *set diplomacy + 5
+    *set boldness %+ 5
+    *set battle_phase + 1
+    The white flag goes out. The fighting pauses -- not stops, but pauses, the way a heartbeat pauses between beats.
+    Kaveh agrees to a parley. He rides to the Citadel gate, golden armor dented now, the smile gone from his face. Up close, you see the strain -- the dark circles, the clenched jaw, the desperation of a man whose gamble is failing.
+    "Vizier." His voice carries across the square. "Have you come to surrender?"
+    "I've come to save lives. Yours among them."
+    The negotiation is conducted across thirty feet of blood-stained cobblestone, with soldiers watching from both sides.
+    *if (diplomacy > 70)
+      *set diplomacy + 5
+      *set critical_success true
+      You offer terms: amnesty for the rank and file, exile for Kaveh and his closest officers, a public acknowledgment that the imperial succession is settled. No executions. No purges.
+      Kaveh wavers. You see it -- the calculation in his eyes, the recognition that his army is breaking, that the bridge gambit failed, that the city will not fall today.
+      "If I refuse?"
+      "Then more soldiers die. Yours and mine. And the empire is weaker for it. Whatever you believe about the throne, Kaveh, you do not want to rule an empire of ashes."
+      The silence stretches. Then Kaveh removes his golden gauntlet and throws it to the ground.
+      "Terms," he says. "But not surrender. Terms."
+      *set kaveh_status "negotiating"
+      *set morale "surging"
+    *else
+      Kaveh listens. He does not accept. "Your terms are generous, Vizier. But I did not come this far to walk away. History does not remember the prince who negotiated."
+      The parley breaks. The fighting resumes. But you have bought your forces an hour's rest. It is not nothing.
+      *set morale "steady"
+    *goto third_phase
+
+*label third_phase
+
+*page_break
+
+*comment === THIRD PHASE: THE CRITICAL MOMENT ===
+
+*if (kaveh_status = "negotiating")
+  *goto negotiation_resolution
+
+Late afternoon. The sun is a copper disc in the western sky, sinking toward the Ashghar Mountains. The shadows lengthen. The fighting has been continuous for eight hours, and both sides are exhausted.
+
+The Citadel holds. But the cost is visible on every face, in every gap in the defensive line, in the blood that stains the white marble walls. The beautiful courtyard gardens are trampled. The Garden of Eternal Spring is a triage center, the geometric flower beds filled with wounded soldiers.
+
+*fake_choice
+  #You look at the wounded and feel the cost of every decision you have made.
+    *set idealist %+ 5
+    *set ruthless %- 5
+    *temp moment_response "grief"
+    These are people. Not blocks on a map. Not numbers in a report. People with families, with names, with lives that will never be the same. Some of them are dying in a garden designed for beauty, and the juxtaposition is obscene.
+  #You look at the wounded and harden your resolve. This must end. Now.
+    *set ruthless %+ 10
+    *set boldness %+ 5
+    *temp moment_response "hardened"
+    Every wounded soldier is an argument for ending this quickly. No more attrition. No more careful strategy. The time for patience is over.
+  #You look at the wounded and feel gratitude for every soldier who held the line.
+    *set idealist %+ 5
+    *set honest %+ 5
+    *temp moment_response "gratitude"
+    You walk among the wounded. You learn names. You clasp hands. You tell them the truth: they held the line. They saved the empire. Whatever comes next, this matters.
+  #You look at the wounded and see the battle's shape -- where the enemy is strongest, where they are weakest.
+    *set cunning + 3
+    *temp moment_response "tactical"
+    The pattern of wounds tells a story. Most injuries from the east -- that is where Kaveh is pressing hardest. Fewer from the north -- his forces there are thin, perhaps overextended. A weakness. An opportunity.
+
+*page_break
+
+And then the moment comes. The critical juncture that will determine everything.
+
+A messenger, running, bleeding from a cut on his scalp, crashes through the Council Chamber door where you have established your command post.
+
+"Vizier! The Western Gate! They've breached the Western Gate!"
+
+*set citadel_breached true
+
+The words hit you like a physical blow. The Western Gate -- the Citadel's weakest point, reinforced but never fully rebuilt after the earthquake six years ago. Kaveh found it. Or someone told him.
+
+*if (final_alliance_intelligence)
+  Zara's voice, from the doorway, is ice. "Traitor in the guard. One of Kaveh's plants. He opened the gate from inside. My agents identified him too late."
+*else
+  The gate was opened from inside. A traitor. Someone in the guard who was bought or blackmailed or simply believed that Kaveh was the rightful emperor.
+
+The enemy is inside the Citadel.
+
+*page_break
+
+*comment === REAL CHOICE 3: THE DECISIVE MOMENT ===
+
+Kaveh's soldiers pour through the Western Gate. Fifty, a hundred, more -- a stream of crimson-bannered fighters flooding into the Citadel's western courtyard. The defenders scramble to contain the breach, but the gate is wide and the courtyard is open and the momentum is with the attackers.
+
+You have seconds to decide.
+
+*choice
+  #Lead the counterattack personally. Rally the defenders and drive the enemy back through the gate.
+    *set boldness %+ 20
+    *set battle_phase + 1
+    You draw a sword. When did you start carrying a sword? Navid pressed it into your hands days ago, and it has hung at your side since, unused, ornamental.
+
+    It is not ornamental now.
+
+    You run toward the Western Gate. Behind you, soldiers see the Vizier charging and follow -- some from duty, some from shame, some from the impossible courage that ordinary people find in extraordinary moments.
+
+    *if (strength > 50)
+      *set strength + 5
+      *set critical_success true
+      The counterattack is a thing of desperate glory. You hit the breach at the head of a wedge of soldiers, and the shock of it -- the *Vizier*, the administrator, the politician, fighting at the front -- sends a ripple through friend and foe alike.
+
+      You fight. Not with a general's skill or a captain's training, but with the fierce, clumsy, overwhelming determination of a person who has decided that this line will not break. Your sword arm burns. Your lungs burn. Blood -- yours or someone else's -- smears your vision.
+
+      And the line holds.
+
+      The breach is sealed. The gate is barricaded. Kaveh's soldiers, fifty of them trapped inside the Citadel, are surrounded and forced to surrender.
+    *else
+      *set someone_dies true
+      The counterattack is brutal and close. You reach the breach, and a mercenary swings at you -- a heavy, overhand cut that you barely deflect. The impact jars your arm to the shoulder. You stumble.
+
+      *if (romance_navid)
+        *set who_dies "navid_wounded"
+        Navid is there. Between you and the blade. He takes the second swing on his shield, drives the mercenary back with a thrust, and shoves you behind him.
+        "Stay behind me," he snarls. "I told you -- wherever you go."
+        He fights like a man possessed. The breach fills with his fury. But a crossbow bolt catches him in the shoulder, spinning him sideways, and he goes down hard on the cobblestones.
+        "NAVID!"
+        He is alive. Bleeding, cursing, but alive. A soldier drags him behind the barricade while others fill the gap.
+        *set rel_navid %+ 15
+      *else
+        *set who_dies "guard_captain"
+        A nameless guard captain -- young, brave, terrified -- leaps into the gap you left. He holds for twenty seconds. Long enough for reinforcements to arrive. Long enough for the breach to be contained.
+        He does not survive. The last you see of him is a raised shield and a voice shouting "For the Emperor!" before the enemy surge overwhelms him.
+
+      The gate is sealed. But the cost. The cost.
+    *goto climax
+  #"Seal the Citadel. Collapse the Western Gate passage. We lose that wing but save the rest."
+    *set ruthless %+ 10
+    *set battle_phase + 1
+    The decision is cold and it is correct and it will haunt you forever.
+    The Western Gate passage is old -- built over a natural fault in the bedrock. The engineers warned years ago that a controlled demolition could seal it. You give the order.
+    The charges -- placed weeks ago, at your command, because you plan for the worst -- detonate with a roar that shakes the entire Citadel. Stone and dust cascade into the passage. The breach is sealed under tons of rubble.
+    *set someone_dies true
+    *set who_dies "soldiers_sealed"
+    The soldiers fighting in the passage -- yours and theirs -- are buried. You hear their screams, distant and muffled, through the settling dust.
+    Farid stares at you. The color has drained from his face. "My lord Vizier... those were our soldiers."
+    "I know."
+    "They were alive."
+    "I know."
+    The gate is sealed. The Citadel holds. Fourteen of your own soldiers died in the rubble, entombed with the enemy they were fighting.
+    *set ruthless %+ 5
+    *goto climax
+  *selectable_if (cunning > 60) #"The breach is a trap -- let them in. Channel them into the kill zone we prepared in the western courtyard." [Requires Cunning 60+]
+    *set cunning + 5
+    *set battle_phase + 1
+    *set critical_success true
+    You prepared for this. Not this specific breach, but for the possibility that the walls would be compromised. The western courtyard has been redesigned -- its decorative fountains drained, its marble benches repositioned, its archways fitted with hidden gates.
+    A kill zone. Beautiful, geometric, and lethal.
+    "Let them through," you order. The defenders at the gate pull back -- not in retreat, but in invitation.
+    Kaveh's soldiers pour into the courtyard. Fifty. A hundred. They see the open space, the retreating defenders, and they surge forward.
+    The gates close behind them. Archers appear on every rooftop and balcony. The trapped soldiers look up, and you see the realization spread across their faces like shadows at sunset.
+    "Surrender," you call down from the balcony above. "You are surrounded. Your weapons. Now."
+    They surrender. One hundred and twelve of Kaveh's best soldiers, taken without a fight. The courtyard, designed for beauty, serves as a prison. The empire's aesthetics turned to tactical advantage.
+    *goto climax
+
+*label climax
+
+*page_break
+
+*comment === THE CLIMAX: CONFRONTATION WITH KAVEH ===
+
+*label negotiation_resolution
+*if (kaveh_status = "negotiating")
+  The negotiation continues through the long afternoon, while both armies hold their positions. Kaveh's terms shift and tighten. Your terms hold firm. And finally, as the sun touches the western mountains, the prince accepts.
+
+  The rebellion ends not with a sword stroke but with a signature. Kaveh signs the document of abdication with a pen that trembles only slightly. His soldiers stack their weapons in the square.
+
+  "History will remember this day," Kaveh says as the guards lead him away.
+
+  "History will remember that the empire survived," you reply.
+
+  *set siege_outcome 2
+  *set kaveh_status "surrendered"
+  *goto aftermath
+*comment Non-negotiation paths continue here.
+
+The sun is setting. The fighting has raged for ten hours. The Citadel is scarred but standing. The streets of Khazara are littered with the debris of battle -- broken weapons, fallen banners, the terrible, still shapes of the dead.
+
+And Kaveh is coming.
+
+*page_break
+
+His army is broken. The bridge, the streets, the Citadel walls -- each phase of the battle has bled his forces until what remains is a hard core of perhaps five hundred soldiers, the most fanatical, the most committed, the most dangerous.
+
+Kaveh himself leads them. The golden armor is dented and bloodied. The white horse is gone -- killed or abandoned. He approaches the Citadel on foot, sword in hand, the crimson banner carried behind him by a wounded standard-bearer.
+
+He stops in the square before the main gate. The setting sun turns his armor to fire.
+
+"ROSHAN!" His voice carries across the square, amplified by the stone walls, carrying the raw desperation of a man who has wagered everything and is watching it crumble. "Roshan, cousin! Face me! Face me and let the Flame decide!"
+
+*page_break
+
+A trial by combat. The ancient rite. It is barbaric, it is archaic, it is exactly the kind of dramatic gesture that Kaveh would make -- because if Roshan refuses, he looks weak, and if he accepts, Kaveh is the better fighter.
+
+You look at the Emperor. Roshan stands on the Citadel wall, looking down at his cousin. His face is pale. His hands grip the stone parapet.
+
+"I should go," Roshan says. "If I don't, they'll say I was afraid."
+
+"You are the Emperor. You do not answer challenges from traitors."
+
+"My ancestor Roshan the First answered a challenge from the last king of the valley. He was seventeen."
+
+*page_break
+
+*if (critical_success)
+  But the challenge never comes to that. Your forces, strengthened by the battle's momentum, move on Kaveh's remaining soldiers. The five hundred, exhausted and outmaneuvered, begin to lay down arms. One by one, then in groups, then in a cascade.
+
+  Kaveh stands alone in the square. The standard-bearer has set down the crimson banner. The sunset paints everything in shades of blood and gold.
+
+  *if (rel_emperor > 60)
+    Emperor Roshan descends from the wall. He walks into the square, unarmed, unguarded except for you at his shoulder. He stops ten paces from his cousin.
+    "Kaveh. It is over."
+    The prince stares at the boy he tried to replace. The boy who did not run. The boy who held.
+    "You were supposed to be weak," Kaveh whispers.
+    "I was supposed to be many things." Roshan extends his hand. "Give me your sword. Not as a challenge. As a surrender. And I will show you what kind of emperor I am."
+    Kaveh looks at the hand. At the boy. At the empire crumbling around him.
+    He gives up his sword.
+    *set siege_outcome 1
+    *set rel_emperor %+ 15
+  *else
+    The guards close in. Kaveh is taken. Not with ceremony -- with the efficient, impersonal grip of soldiers doing a job. The prince does not struggle. The fire has gone out of him.
+    *set siege_outcome 1
+*else
+  *if (someone_dies)
+    The cost is written in the silence that follows.
+
+    *if (who_dies = "navid_wounded")
+      Navid is carried from the field on a stretcher. His shoulder is a ruin of torn flesh and splintered bone. The physician who examines him speaks in the careful tones of a man managing expectations.
+      "He will live. But the arm..." A pause. "I cannot promise the arm."
+      You stand over Navid's stretcher. His eyes are open. Focused. On you.
+      "Did we hold?" he asks.
+      "We held."
+      "Good." His eyes close. "That's good."
+      *set rel_navid %+ 10
+    *elseif (who_dies = "guard_captain")
+      A young man died at the Western Gate. You did not know his name. Farid, who knows everything filed under every letter, tells you later: Corporal Arash, age twenty-three, from the eastern provinces. He had a sister.
+      You make a note to write to the sister. You make a note to remember his name. Both things feel inadequate.
+    *elseif (who_dies = "soldiers_sealed")
+      Fourteen soldiers. Their names are read aloud in the Citadel courtyard as the fighting dies down. You stand and listen to each one. You owe them that. You owe them more than that, but this is what you have.
+
+  Kaveh's army surrenders in pieces -- units laying down arms, officers requesting terms, mercenaries simply walking away. The rebellion does not end with a single dramatic moment. It ends in exhaustion, in arithmetic, in the slow recognition that the battle is lost.
+
+  Kaveh himself is found in the River District, attempting to reach the docks. He is captured by city guards -- not elite soldiers, not the imperial guard, but the ordinary men who patrol the streets and know every alley.
+
+  Captain Darius brings him in. "Found him trying to hire a boat. Offered us gold. I told him we don't take bribes from men who tried to destroy our city."
+
+  *set siege_outcome 4
+
+*page_break
+
+*comment === AFTERMATH ===
+*label aftermath
+
+Night falls on Khazara. The stars appear one by one, indifferent to the ruin below. The city is scarred -- fires still burning in the River District, the southern gate damaged, the Citadel's western wall cracked where Kaveh's cannons struck.
+
+But the city stands. The empire stands.
+
+The Jade Throne Room is intact. The Silk Throne -- carved from a single block of white jade so pale it seems to glow -- sits on its marble dais, untouched, unbroken.
+
+*if (siege_outcome = 1)
+  *set empire_intact true
+  Victory. Clear, decisive, undeniable. Kaveh's rebellion is crushed. The pretender is in custody. The army that marched on the capital this morning is dispersed, disarmed, and defeated.
+
+  The cost is visible in the Citadel's scarred walls, in the field hospitals overflowing with wounded, in the lists of the dead that Farid is already compiling with meticulous, grief-stricken precision.
+
+  But the empire is intact. The heir is alive. The Silk Throne endures.
+*elseif (siege_outcome = 2)
+  *set empire_intact true
+  Victory through negotiation. No climactic sword fight. No heroic last stand. A document, signed in ink, that ends a war that could have consumed the empire.
+
+  Some will call it weak. Some will say the Vizier should have destroyed Kaveh when they had the chance. But the soldiers who did not die today -- on both sides -- will not call it weak. Their families will not call it weak.
+*elseif (siege_outcome = 3)
+  *set empire_intact true
+  Victory through guile. Kaveh's army, undermined and outmaneuvered, never reached its full potential. The battle was won before it was fought, in the shadow wars and economic strikes that stripped the rebellion of its strength.
+
+  The Citadel stands unbreached. The streets are scarred but not destroyed. The cost, measured in lives, is lower than anyone dared hope.
+*elseif (siege_outcome = 4)
+  *set empire_intact true
+  Victory, but at a price that will be remembered. The Citadel walls are cracked. The western courtyard is rubble. Soldiers' blood stains the marble. The Garden of Eternal Spring will take years to restore.
+
+  *if (someone_dies)
+    And the dead. The dead who held the line and did not live to see what they held it for.
+
+    You carry their names. You will carry them always.
+*else
+  *set siege_outcome 5
+  *set empire_intact false
+  The battle is lost. Kaveh's forces hold the southern city. The Citadel is besieged. The treasury is empty. The northern army is pinned at the Wall.
+
+  The empire is not destroyed -- not yet. But it is broken. The cracks run too deep, the alliances too thin, the enemies too many. What comes next will not be a golden age or a new dawn. It will be survival. Bare, desperate survival.
+
+  *set heir_alive true
+  The Emperor lives. That, at least, is something. A dynasty endures. A thread of legitimacy holds.
+
+*page_break
+
+In the Temple of Seven Wisdoms, the Eternal Flame burns. It flickered, they say, during the height of the battle -- wavered when the Western Gate was breached, when the cannons fired, when the blood ran in the streets.
+
+But it did not go out.
+
+It burns now, steady and bright, as it has burned for three hundred years. The priests tend it with the same careful devotion they have always shown. The faithful gather before it, seeking comfort, seeking meaning, seeking the warmth that only sacred fire can give.
+
+*page_break
+
+You stand on the Citadel walls as the night deepens. The city spreads below you -- wounded, exhausted, alive. Lamps are appearing in windows. The smell of cooking fires rises through the darkness. Somewhere, impossibly, someone is singing.
+
+The seal ring weighs on your finger. The empire weighs on your shoulders. And tomorrow -- tomorrow there will be a throne room, and a decision, and a future that you must shape with your bare hands.
+
+But that is tomorrow.
+
+Tonight, the empire holds.
+
+*if (romance_active)
+  *if (romance_leila)
+    You find Leila on the walls. She has been writing -- a poem, a record, a testament. Her fingers are ink-stained and trembling.
+    "I wrote it all down," she says. "Every moment. So that people will know what happened here. What it cost."
+    She leans against you, and for a long time neither of you speaks. The city burns and heals beneath you, and the stars are very bright.
+  *elseif (romance_navid)
+    *if (who_dies = "navid_wounded")
+      You sit beside Navid's bed in the field hospital. His shoulder is bandaged, his face grey with pain and blood loss. But his eyes find yours in the lamplight.
+      "Still here," he says.
+      "Still here."
+      You take his uninjured hand. Hold it. Do not let go.
+    *else
+      Navid finds you on the walls. He is battered, exhausted, and alive. He stands beside you, and his hand finds yours -- rough, calloused, steady.
+      "We held," he says.
+      "We held."
+      That is enough. For now, that is everything.
+  *else
+    Asha finds you in what remains of the Garden of Eternal Spring. She carries a single lamp, its light catching the water that still runs through the geometric channels.
+    "The Fourth Wisdom," she says quietly. "Temperance. The mastery of desire." She pauses. "I have never desired anything as fiercely as I desired today to be over."
+    "It is over."
+    "Yes." She takes your hand. "It is over. And we are still here. And the Flame still burns. And tomorrow we begin again."
+
+*page_break
+
+Farid appears, one final time. His leather breastplate is scuffed. His briefcase is missing -- lost somewhere in the battle, and the loss clearly distresses him more than any wound.
+
+"My lord Vizier. The casualty reports will be compiled by morning. The structural assessment of the Citadel is underway. The -- the Emperor requests your presence in the Throne Room at dawn."
+
+He pauses. Swallows.
+
+"My lord Vizier. We survived."
+
+"We survived, Farid."
+
+"I was very frightened, my lord Vizier."
+
+"So was I."
+
+"Truly?"
+
+"Truly."
+
+He considers this. Nods. And then, with the careful precision of a man filing a document in exactly the right place: "It has been noted, my lord Vizier. Filed under 'C' for 'Courage.'"
+
+Dawn will bring the Throne Room. Dawn will bring the final choice -- the decision that will determine what kind of empire rises from the ashes of this day.
+
+But for now, in the quiet after the storm, you stand on the walls of the Citadel and watch the Eternal Flame burn against the darkness.
+
+It is enough.
+
+*finish Chapter 29: The Throne Room

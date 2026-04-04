@@ -1,0 +1,831 @@
+*comment === SCENE 29: "THE THRONE ROOM" -- THE FINAL DECISION ===
+*comment Word target: ~10,000
+*comment Variables modified: throne_room_choice (1-5), personality axes,
+*comment   rel_emperor, rel_dowager, player_alive, boldness, ruthless,
+*comment   honest, idealist
+*comment This is the emotional climax. Make it devastating and beautiful.
+
+*temp romance_partner "no one"
+*temp partner_name "no one"
+*if (romance_leila)
+  *set romance_partner "leila"
+  *set partner_name "Leila"
+*elseif (romance_navid)
+  *set romance_partner "navid"
+  *set partner_name "Navid"
+*elseif (romance_asha)
+  *set romance_partner "asha"
+  *set partner_name "Asha"
+
+*temp dowager_fate "unknown"
+*temp emperor_words "unknown"
+
+*comment === THE JADE THRONE ROOM, AFTER THE BATTLE ===
+
+The Jade Throne Room is quiet.
+
+You have never heard it quiet before. Every other time you entered this chamber, it hummed with the murmur of courtiers, the rustle of silk, the careful measured breathing of people who understood that a single word spoken out of turn could end a career or begin a war. Now the only sound is your own footsteps on the marble floor.
+
+The battle is over. The siege -- or the trial, or the shadow war, or whatever shape the confrontation took -- has ended. The conspirators are dead, or captured, or fled into the night. The empire still stands, though it stands on shaken foundations.
+
+*page_break
+
+You walk slowly down the center of the Jade Throne Room. The great hall stretches before you, impossibly long, the polished marble floor reflecting the light from the high windows in pale golden ribbons. Dust motes drift through the shafts of sunlight. Somewhere, incense is still burning -- sandalwood and frankincense, the scent of authority. It smells like the first day you arrived.
+
+The geometric tilework beneath your feet -- blue and turquoise and gold -- is cracked in three places. A column near the western wall bears a sword-mark. One of the high windows is shattered, and through the broken pane you can hear the distant sound of the city: voices calling, hammers striking, the first tentative sounds of a capital putting itself back together.
+
+The Jade Throne sits on its dais at the far end of the hall. Carved from a single block of white jade so pale it seems to glow, it waits in silence. Empty. The silk cushion on its seat is askew. A smear of blood mars the lowest step of the dais -- someone fought here, or fell here, in the final hours.
+
+*page_break
+
+The Vizier's seal ring is heavy on your finger. Heavier than it was the day Secretary Farid placed it in your palm at the gates of Khazara, a lifetime ago. You remember his nervous smile, his stammering briefing about protocol and precedence, the way the setting sun turned the city's domes to copper and gold.
+
+You were a provincial administrator then. An outsider. An empty vessel, as the Dowager said, to be filled with whatever was needed.
+
+You are not empty now.
+
+*if (route = 1)
+  You chose loyalty. You chose to stand beside a frightened boy and help him become a ruler. Every alliance you forged, every secret you uncovered, every compromise you swallowed -- all of it was in service of the throne and the ${child} who sat upon it.
+*elseif (route = 2)
+  You chose power. You chose to take the reins of an empire that would not give them willingly. Every shadow alliance, every whispered bargain, every night spent calculating who could be trusted and who could be used -- all of it was in service of a vision only you could see.
+*else
+  You chose change. You chose to challenge three hundred years of tradition because you believed the empire could be more than a machine for enriching the powerful. Every reform you championed, every enemy you made, every friend you risked -- all of it was in service of a future that did not yet exist.
+
+*page_break
+
+*if (siege_outcome = 4)
+  The victory was pyrrhic. You can still smell the smoke, still hear the echo of screams in the corridors. The empire won, but the cost was written in blood on every wall of the Citadel.
+*elseif (siege_outcome = 5)
+  The confrontation did not go as planned. The conspirators were stopped, but barely, and the empire's wounds run deep. What remains is fragile.
+*else
+  The conspirators are broken. Their network is shattered, their leader unmasked, their plans laid bare. The empire endured. But the cracks remain, and cracks, left untended, become chasms.
+
+You reach the foot of the dais and stop.
+
+The throne waits.
+
+*page_break
+
+*comment === THE EMPEROR ENTERS ===
+
+A door opens behind you. Footsteps -- and then a voice you know as well as your own.
+
+"Vizier."
+
+You turn. Emperor Roshan IV stands in the doorway of the Jade Throne Room. He is not wearing his ceremonial robes. He is dressed simply -- a plain white tunic, dusty at the hem, with a bandage wrapped around his left forearm where a blade caught him during the fighting. His crown is absent. His hair is disheveled. He looks, for the first time since you have known him, exactly like what he is: a young man of seventeen who has been through hell and survived it.
+
+He does not use the royal "we." Not now. Not in this empty room with no one to hear.
+
+*if (rel_emperor > 70)
+  "I'm glad you're alive," he says. And the way he says it -- the quiet relief, the unguarded warmth -- tells you that he means it with every fiber of his being. He crosses the room and stands beside you, looking up at the throne. "I don't think I could have done any of this without you."
+*elseif (rel_emperor > 40)
+  "You survived," he says. There is relief in his voice, but caution too. The trust between you is real but guarded, tested by too many crises and too many hard choices. He walks toward you, his gaze moving from you to the throne and back. "We have much to discuss."
+*else
+  "So." His voice is flat. He walks toward you slowly, and his eyes are not the eyes of a teenager anymore. They are the eyes of a ruler who has learned that trust is a currency that can be counterfeited. "The throne is empty. You are here. And I need to know where we stand."
+
+*page_break
+
+He stands beside you at the foot of the dais. Two people, looking up at a jade chair that has held three hundred years of power, ambition, and blood.
+
+"The Dowager is--" He stops. Swallows.
+
+*if (route = 1)
+  *if (rel_dowager > 40)
+    "My mother is in her chambers. Under guard. She says she did what she did for the empire. For me." His jaw tightens. "I don't know if I can forgive her. But she is my mother."
+    *set dowager_fate "guarded"
+  *else
+    "My mother has been taken to the tower. She will answer for what she has done." The words come out clipped, mechanical, as if he has rehearsed them. The boy beneath the words is breaking. "She is my mother. And she tried to destroy everything I am."
+    *set dowager_fate "imprisoned"
+*elseif (route = 2)
+  *if (dowager_confronted)
+    "My mother. The Dowager." He says it like a title, not a relationship. "She always said power was a garden that needed tending. I suppose she tended it in her own way." He looks at you. "What would you have me do with her?"
+    *set dowager_fate "uncertain"
+  *else
+    "My mother is asking to see me. I have not decided whether to allow it." His voice is steady, but his hands are not. "The empire comes first. You taught me that."
+    *set dowager_fate "waiting"
+*else
+  *if (rel_dowager > 30)
+    "The Dowager Empress has requested an audience. She says she wishes to discuss terms." He almost smiles. "She never stops negotiating, does she?"
+    *set dowager_fate "negotiating"
+  *else
+    "My mother is confined. The coalition that opposed your reforms included her allies, if not her direct hand." He pauses. "She looks old, Vizier. I did not notice before."
+    *set dowager_fate "confined"
+
+*page_break
+
+*comment === THE ROMANCE PARTNER'S ARRIVAL ===
+
+*if (romance_active)
+  The door opens again. ${partner_name} enters the Throne Room.
+
+  *if (romance_partner = "leila")
+    Leila's poet's robes are torn at the shoulder, and there is a smudge of ash on her cheek. She carries no book, no pen -- only herself. She walks toward you across the cracked marble floor, and for once, the court poet of the Khazaran Empire has no words.
+
+    She stops beside you. Her hand finds yours.
+
+    *if (rel_leila > 80)
+      "I wrote you a poem," she says quietly. "In my head. While the fighting was happening. It's terrible. I'll never write it down." She squeezes your hand. "It's about the only thing that matters."
+    *elseif (rel_leila > 60)
+      "You're alive," she says. "Good. I have things to say to you that require you to be alive." A faint smile. "They can wait. This moment is not about us."
+    *else
+      She does not speak. She stands beside you, her shoulder almost touching yours, and looks up at the throne. Her silence says what her words cannot.
+  *elseif (romance_partner = "navid")
+    Navid enters in his battered armor. The imperial guard captain's face is cut above the eyebrow, and he favors his right leg, but he walks with the straight-backed discipline that is as much a part of him as his heartbeat. He crosses the throne room in measured strides and takes his position at your side.
+
+    Not behind you. Beside you.
+
+    *if (rel_navid > 80)
+      He does not speak at first. Then, very quietly, so that only you can hear: "I have followed orders my entire life. Standing here, beside you -- this is the first thing I have ever chosen." His hand brushes yours, rough fingers against your palm. "Whatever you decide. I am here."
+    *elseif (rel_navid > 60)
+      "The perimeter is secure," he says. Then, softer: "Are you?" He looks at you, and behind the soldier's mask, you see the person who carved wooden animals for a sister he has not seen in years. "The empire can wait thirty seconds. Are you all right?"
+    *else
+      He stands at your side, his hand resting on his sword hilt. Watchful. Present. Whatever uncertainty exists between you, his loyalty in this moment is absolute.
+  *else
+    Asha enters without ceremony, without the temple scholar's measured pace. She crosses the throne room at something close to a run and stops in front of you, breathing hard, her eyes bright with tears she has not shed.
+
+    *if (rel_asha > 80)
+      "I asked the Flame a question," she says. "While the world was falling apart. I asked it what mattered." She reaches up and touches your face. "The Flame didn't answer. It didn't need to. I already knew."
+    *elseif (rel_asha > 60)
+      "The temple is safe. The Flame still burns." She takes a breath. "And you are standing. Those are the only two facts I need right now." She takes your hand, her scholar's fingers lacing through yours. "The rest is philosophy."
+    *else
+      She stands beside you, her gaze moving between the throne and the Emperor and you. The questions that define her -- always questioning, always searching -- are quiet for once. She is simply here.
+
+*page_break
+
+*comment === THE WEIGHT OF THE MOMENT ===
+
+The Jade Throne Room. The empire's heart.
+
+Three hundred years of history press down on this marble floor. Roshan the Conqueror sat on that jade chair and declared himself emperor. His descendants held it through golden ages and civil wars, through plague and prosperity, through the rise of the printing press and the building of the Grand Bazaar. Every great decision that shaped this empire was made in this room.
+
+Now it waits for you.
+
+The Emperor stands to your left -- a young man whose entire life has been shaped by this chair, this room, this weight. He looks at you, and the question in his eyes is the question that has defined your journey from the moment you passed through the gates of Khazara:
+
+*What happens now?*
+
+*page_break
+
+*comment === ROUTE-SPECIFIC REFLECTIONS ===
+
+*if (route = 1)
+  You came here to serve. To protect a boy who had been thrust onto a throne he was not ready for, surrounded by enemies who saw his youth as weakness. You stood between him and the conspiracy, between him and his own mother's machinations, between him and every force that sought to use him or destroy him.
+
+  *if (rel_emperor > 70)
+    And somewhere in that service, something remarkable happened. The boy became a ruler. Not because you made him one -- because he chose to be one, with your hand steady on his shoulder. He is not Roshan the Conqueror. He is something the empire has never had: a ruler who earned the crown not through conquest or inheritance, but through the simple, terrible act of refusing to break.
+  *else
+    The boy survived. Whether he has become the ruler the empire needs -- that question remains unanswered. You did your duty. You kept your oath. But duty and oath are not the same as trust, and the distance between you and the Emperor is measurable in silences.
+*elseif (route = 2)
+  You came here to rule. Oh, not openly -- the Khazaran Empire has no place for a commoner on the Jade Throne. But the hand that guides the Emperor is the hand that guides the empire, and you have spent every waking hour ensuring that hand is yours.
+
+  *if (rel_emperor > 50)
+    Roshan trusts you. That trust is your greatest weapon and your heaviest chain. You built it deliberately, cultivated it with care -- and somewhere along the way, the calculation became complicated by something that feels uncomfortably like genuine affection for the young man you set out to control.
+  *else
+    The Emperor looks at you with eyes that are harder than they were a year ago. He has learned. Whether he has learned enough to see what you truly are -- that is the question that keeps you awake at night.
+*else
+  You came here to change everything. The Silk Throne, the Council of Five, the feudal hierarchy that grinds the common people beneath the weight of noble privilege and imperial tradition -- you looked at all of it and said: *no more.*
+
+  *if (idealist > 60)
+    And you meant it. Every reform you championed, every coalition you built, every risk you took -- it was all in service of a world where the accident of birth does not determine the limits of a life. The empire can be more. You have proven that. The question is: what form will that proof take?
+  *else
+    The road of reform is longer and harder than you imagined. Ideals bend under the weight of reality. Compromises compound. But the kernel of the vision remains: an empire that serves its people, not the other way around. Whether that vision survives the next hour depends on what you do now.
+
+*page_break
+
+*comment === THE FINAL CHOICE ===
+
+You look at the Jade Throne.
+
+You look at the Emperor beside you.
+
+*if (romance_active)
+  You feel the warmth of ${partner_name}'s presence at your side.
+
+You think of Farid, your loyal secretary, who believed in you when belief was all he had to offer. You think of the factions -- military, trade, temple, intelligence, nobility -- and the fragile web of alliances that holds this empire together. You think of the common people of Khazara, who want nothing more than bread and safety and the chance to see their children grow.
+
+You think of the Dowager's words on your first day: *An empty vessel can be filled with whatever is needed.*
+
+You are not empty. You know exactly what you are. And you know what the empire needs.
+
+*page_break
+
+Secretary Farid appears in the doorway. He is clutching a sheaf of documents, his robes askew, his eyes wide. He opens his mouth, closes it, and then simply bows.
+
+He is waiting. They are all waiting.
+
+The Jade Throne Room is silent.
+
+*if (boldness > 65)
+  You do not hesitate. You have never been one for hesitation, and you will not start now, not at the end of everything.
+*elseif (boldness < 35)
+  You take a breath. Then another. You have learned that the most important decisions deserve a moment of stillness before the world changes.
+*else
+  You close your eyes for three heartbeats. When you open them, you are ready.
+
+The moment has come.
+
+*page_break
+
+What do you do?
+
+*choice
+  *if (route = 2) #Ascend the dais and claim the Jade Throne for yourself.
+    *set throne_room_choice 1
+    *goto claim_throne
+  #Kneel before the Emperor and reaffirm your loyalty to the crown.
+    *set throne_room_choice 2
+    *goto defend_emperor
+  *if ((route = 3) or (idealist > 50)) #Declare the age of emperors over. The people will choose their own leaders.
+    *set throne_room_choice 3
+    *goto abolish_throne
+  #Propose a compromise -- a reformed monarchy, with a council to share power.
+    *set throne_room_choice 4
+    *goto reform_compromise
+  #Turn your back on the throne and walk away.
+    *set throne_room_choice 5
+    *goto walk_away
+
+*comment === CLAIM THE THRONE ===
+*label claim_throne
+
+You climb the steps of the dais.
+
+Your footsteps echo in the empty hall. One step. Two. Three. The jade is cool beneath your fingers as you rest your hand on the armrest of the Silk Throne. The Emperor's eyes widen. Farid makes a small, strangled sound.
+
+You turn and sit.
+
+The jade is cold. It presses against your spine like a blade of ice. The room shifts -- or you shift -- and suddenly you see the Jade Throne Room from its center, from its heart, and every person in it is looking up at you.
+
+*set boldness %+ 15
+*set ruthless %+ 10
+
+*if (rel_emperor > 50)
+  Roshan stares at you. For a long moment, his face is unreadable. Then something breaks behind his eyes -- not anger, not surprise, but a quiet, terrible understanding.
+
+  "I see," he says. His voice does not shake. "You were always heading here, weren't you, Vizier? Every word, every kindness. It was all a road to that chair."
+
+  *if (honest > 50)
+    "Not every word," you say. "Not every kindness. But yes. I was always heading here."
+  *else
+    "The empire needed a ruler," you say. "I am that ruler."
+
+  He nods. Once. And then he turns and walks from the Throne Room without looking back. His footsteps echo and fade. The door closes behind him.
+*else
+  Roshan watches you claim the throne with the expression of someone who has been waiting for this moment and dreading it in equal measure.
+
+  "So," he says. "The puppet cuts its own strings."
+
+  "I was never your puppet," you say from the throne.
+
+  "No." His voice is brittle. "I was yours."
+
+  He leaves. The door closes. The sound rings through the hall like a funeral bell.
+
+*page_break
+
+*if (romance_active)
+  ${partner_name} looks up at you on the throne.
+
+  *if (romance_partner = "leila")
+    *if (rel_leila > 70)
+      Leila's expression is complex -- pride and sorrow and something fierce that might be love or might be defiance. "Well," she says. "I have written poems about kings and queens and conquerors. I never thought I would be standing in one of those poems."
+    *else
+      Leila's face is a mask. You have seen her perform for the court a hundred times, and this is the face she wears when she is composing herself into something that will not break. "The Vizier becomes the Emperor," she says quietly. "The poem writes itself."
+  *elseif (romance_partner = "navid")
+    *if (rel_navid > 70)
+      Navid drops to one knee. The soldier in him bends before the throne, as he has been trained to do his entire life. But his eyes -- his eyes hold yours, and in them you see not a subject kneeling to a sovereign but a man choosing, for the second time today, to stand with the person he loves.
+    *else
+      Navid kneels. His face reveals nothing. He is a soldier, and soldiers follow orders. Whether what lies behind his discipline is loyalty or resignation, you cannot tell.
+  *else
+    *if (rel_asha > 70)
+      Asha does not kneel. She stands at the foot of the dais and looks up at you, and then she does something no one in the room expects. She laughs. "You know what the Second Wisdom says about ambition?" she asks. "It says absolutely nothing useful. But I am beginning to think that is the point."
+    *else
+      Asha watches you with the scholar's gaze that has always seen too much. She does not kneel. She does not speak. She simply observes, and in her silence is a question you may spend the rest of your life answering.
+
+*page_break
+
+Are you certain? The throne is not a chair. It is a cage made of gold.
+
+*choice
+  #Yes. This is what the empire needs.
+    *set idealist %- 10
+    *goto choice_confirmed
+  #Yes. This is what I was born to do.
+    *set boldness %+ 5
+    *goto choice_confirmed
+  *selectable_if (honest > 60) #I am not certain. But certainty is a luxury I cannot afford.
+    *goto choice_confirmed
+  #No. I cannot do this.
+    *set throne_room_choice 4
+    You stand from the throne. Your legs tremble. The jade releases you like a held breath.
+    "Forgive me," you say to the empty room. "A different path."
+    *goto reform_compromise
+
+*label choice_confirmed
+*if (throne_room_choice = 1)
+  *goto throne_confirmed
+*elseif (throne_room_choice = 2)
+  *goto loyalty_confirmed
+*elseif (throne_room_choice = 3)
+  *goto abolish_confirmed
+*elseif (throne_room_choice = 4)
+  *goto reform_confirmed
+*else
+  *goto exile_confirmed
+
+*comment === DEFEND THE EMPEROR ===
+*label defend_emperor
+
+You kneel.
+
+The marble is cold through the fabric of your robes. You lower your head, and the seal ring on your finger catches the light from the high windows, throwing a small golden reflection on the floor in front of you.
+
+"Your Majesty," you say. "The empire is yours. The throne is yours. I am yours."
+
+*set honest %+ 10
+*set idealist %+ 5
+
+*if (rel_emperor > 70)
+  The silence stretches for five heartbeats. Then you hear his footsteps, and his hand rests on your shoulder -- hesitant at first, then firm.
+
+  "Rise," he says. His voice cracks, and he clears his throat, and when he speaks again it is steadier. "Rise, Vizier. The empire does not need you on your knees. It needs you at my side."
+
+  You stand. His eyes are bright with unshed tears. He is seventeen years old and he has survived a conspiracy, a siege, and the betrayal of people he loved. He is not the boy who stammered through his first audience.
+
+  "We will do this together," he says. And the "we" is not the royal plural. It is two people, standing side by side. "We will build something that lasts."
+*elseif (rel_emperor > 40)
+  Roshan looks down at you. The formality of the moment catches him, and for a breath you see him deciding what kind of ruler he wants to be.
+
+  "Rise," he says. "You have served the throne well, Vizier. The empire will remember." A pause. "I will remember."
+
+  You stand. The distance between you is the width of the dais. It feels wider than the empire.
+*else
+  "Rise." His voice is cool. "You kneel well, Vizier. But kneeling is the easiest part of loyalty. The harder part is what comes after."
+
+  You stand. The Emperor studies you with eyes that have grown older than his years. The trust between you is a bridge that has been repaired too many times. It holds. But neither of you tests it with too much weight.
+
+*page_break
+
+*if (romance_active)
+  *if (romance_partner = "leila")
+    Leila watches from the side of the hall. When you catch her eye, she mouths three words. You cannot hear them, but you know what they are. A poet never says the important things out loud.
+  *elseif (romance_partner = "navid")
+    Navid stands at attention by the door. He gives you a single nod -- the kind of nod that between soldiers means *well done* and *I am proud of you* and *I am here.*
+  *else
+    Asha presses her palms together in the temple greeting. Her eyes are shining. "The Third Wisdom," she says softly. "Courage."
+
+*page_break
+
+Are you certain? Loyalty has a cost. It means serving, not ruling.
+
+*choice
+  #Yes. The empire needs its Emperor, and the Emperor needs me.
+    *set idealist %+ 5
+    *goto choice_confirmed
+  #Yes. This is the right thing to do. Not the easy thing, but the right thing.
+    *set honest %+ 5
+    *goto choice_confirmed
+  #No. I have given enough. The Emperor can find another Vizier.
+    *set throne_room_choice 5
+    *goto walk_away
+
+*comment === ABOLISH THE THRONE ===
+*label abolish_throne
+
+You walk to the dais. You climb the steps. But you do not sit.
+
+You place your hand on the jade armrest of the Silk Throne and feel the cold weight of three hundred years beneath your palm. Then you turn to face the room -- the Emperor, Farid, the broken windows and cracked tiles and the ghosts of every ruler who sat here before.
+
+"The age of emperors is over," you say.
+
+*set idealist %+ 15
+*set boldness %+ 10
+
+The words ring in the empty hall. Farid drops his documents. The papers scatter across the marble floor like startled birds.
+
+Roshan's face goes white.
+
+*if (rel_emperor > 60)
+  "You--" He takes a step forward. "You cannot mean that. After everything we have been through -- everything we built together -- you want to destroy it?"
+
+  "I want to transform it," you say. "The throne is not the empire. The empire is its people. And the people deserve a voice."
+
+  He stares at you. For a terrible moment, you see the boy you have spent a year protecting look at you as though you have driven a blade into his chest. Then something shifts. The boy recedes. The young man who survived a conspiracy, who stood in battle, who learned that the crown is not the same as the country -- that young man takes a breath.
+
+  "If I agree," he says slowly, "what becomes of me?"
+
+  "A leader among leaders," you say. "Not above the people. Among them."
+*elseif (rel_emperor > 30)
+  "No." The word is flat. Final. "I am the Emperor. You are my Vizier. You do not have the authority--"
+
+  "Authority is not given," you say. "It is taken. Or it is earned. And sometimes it is returned to the people it was taken from."
+
+  His hands are shaking. "My father. My grandfather. Three hundred years of Roshan's line. You would erase all of it?"
+
+  "I would build something better."
+
+  The silence between you is the silence of a world cracking open.
+*else
+  "You dare?" His voice is ice. "You are a provincial administrator. A nobody. And you presume to end three centuries of imperial rule?"
+
+  "The three centuries ended themselves," you say. "The conspiracy proved that. The empire is rotting from the inside. The only question is whether we build something new on the ruins or let them fall on our heads."
+
+  He does not answer. He turns on his heel and leaves the Throne Room. The door slams. The sound echoes for a long, long time.
+
+*page_break
+
+*if (romance_active)
+  *if (romance_partner = "leila")
+    *if (rel_leila > 70)
+      Leila looks at you standing before the empty throne, and her face is luminous. "You know what you've just done?" she says. "You've just written the first line of the greatest poem this empire has ever heard."
+    *else
+      "Bold," Leila says. The word hangs in the air. Whether it is admiration or something else, you cannot tell.
+  *elseif (romance_partner = "navid")
+    *if (rel_navid > 70)
+      Navid's face is unreadable. Then: "I swore an oath to the Emperor. Not to the throne." He looks at you. "If the Emperor agrees, then my oath is fulfilled. If he does not..." He does not finish the sentence. He does not need to.
+    *else
+      Navid's hand rests on his sword. Not a threat. A habit. But the habit speaks volumes about the world you are proposing to unmake.
+  *else
+    *if (rel_asha > 70)
+      "The Seventh Wisdom," Asha whispers. "Harmony. The hardest one. The one I have spent my whole life studying." She looks at you with wonder. "You are about to find out what it costs."
+    *else
+      Asha is quiet. She is thinking. You know that look -- the look of a mind weighing a new idea against everything it has ever believed. It is the look that made you fall in love with her.
+
+*page_break
+
+Are you certain? There is no going back from this. The empire will never be the same.
+
+*choice
+  #Yes. The old world dies today. A new one is born.
+    *set boldness %+ 5
+    *goto choice_confirmed
+  #Yes. It is what the people deserve.
+    *set idealist %+ 5
+    *goto choice_confirmed
+  #No. Reform, not revolution. I have gone too far.
+    *set throne_room_choice 4
+    Your hand slides from the throne. "Perhaps there is a middle path," you say.
+    *goto reform_compromise
+
+*comment === REFORM COMPROMISE ===
+*label reform_compromise
+
+You stand at the foot of the dais and look up at the Jade Throne. Then you look at the Emperor.
+
+"I will not take the throne," you say. "And I will not destroy it. But the throne alone is not enough. The empire needs a council -- not a Council of Five chosen by power and privilege, but a council chosen by the people. A constitution. Laws that bind the ruler as much as the ruled."
+
+*set idealist %+ 10
+*set honest %+ 10
+
+Roshan listens. His expression shifts from wariness to curiosity to something that might be hope.
+
+*if (rel_emperor > 60)
+  "A constitution," he repeats. "My tutors taught me about the Western Confederation's assemblies. I thought they were chaotic." A pause. "But chaos might be better than what we have now."
+
+  He looks at the throne. "If I agree -- if I share power -- will you help me? Not as my puppet master or my servant. As my partner?"
+
+  "Yes," you say.
+
+  Something eases in his shoulders. He is not happy, exactly. But he is not afraid. And for a young man who has spent a year being afraid, that is no small thing.
+*elseif (rel_emperor > 30)
+  "Compromise." He tastes the word like bitter medicine. "My mother would say that compromise is the first step to losing everything."
+
+  "Your mother tried to control everything," you say gently. "That is not the same as holding it."
+
+  He is silent for a long time. Then: "Draft your proposal. I will read it. I promise nothing more."
+*else
+  "You expect me to give up power voluntarily." His voice is brittle. "Why would I do that?"
+
+  "Because the alternative is watching someone take it from you. And because--" you look him in the eye "--because you are not your ancestors. You are Roshan the Fourth. You can be the ruler who chose to share the burden."
+
+  He does not answer. But he does not leave.
+
+*page_break
+
+*if (romance_active)
+  ${partner_name} moves to your side.
+
+  *if (romance_partner = "leila")
+    "The middle path," Leila says. "Not the grand gesture. Not the dramatic ending. Just the hard, thankless work of building something that might last." She smiles. "It won't make a good poem. But it might make a good empire."
+  *elseif (romance_partner = "navid")
+    "Reform," Navid says. "Orderly change. I can work with that." His hand finds yours, briefly. "Soldiers prefer a clear chain of command. But I have learned that the best commanders listen to their soldiers."
+  *else
+    "The Fourth Wisdom," Asha says. "Temperance. The mastery of desire." She looks at you with an expression that is half scholar, half something warmer. "You desire everything and are choosing to settle for something achievable. That is either wisdom or tragedy. I suspect it is both."
+
+*page_break
+
+Are you certain? Reform is slow. It may not survive your lifetime.
+
+*choice
+  #Yes. The work of a lifetime is work worth doing.
+    *set honest %+ 5
+    *goto choice_confirmed
+  #Yes. It is the only path that does not destroy what I love about this empire.
+    *set idealist %+ 5
+    *goto choice_confirmed
+  #No. Compromise is cowardice. The empire needs a clean break.
+    *set throne_room_choice 3
+    *set boldness %+ 10
+    You straighten. "I was wrong to hesitate. The throne must end."
+    *goto abolish_throne
+
+*comment === WALK AWAY ===
+*label walk_away
+
+You look at the throne. You look at the Emperor. You look at the broken windows and the cracked marble and the blood on the steps of the dais.
+
+Then you pull the Vizier's seal ring from your finger.
+
+The jade band slides off smoothly. It should be harder, you think. Letting go of this much power should require more effort than the simple unclenching of a fist.
+
+*set ruthless %- 10
+*set boldness %- 5
+
+You place the ring on the lowest step of the dais, where the blood has dried to a dark stain. The jade gleams in the sunlight.
+
+"I'm done," you say.
+
+*if (rel_emperor > 60)
+  Roshan stares at the ring. Then at you. "You can't." His voice breaks. "After everything -- you can't just leave. I need--" He stops. Swallows. When he speaks again, it is the voice of a ruler, not a boy. "The empire needs you."
+
+  "The empire will endure," you say. "It endured before me. It will endure after."
+
+  "But I--" He catches himself. Straightens. "If this is your choice, Vizier, I will not stop you. But know that you leave behind more than a seal ring."
+
+  His eyes are bright. He does not blink.
+*elseif (rel_emperor > 30)
+  "Abandoning your post?" Roshan says it quietly, without accusation. Almost with understanding. "I have wanted to do the same, some days."
+
+  "It is not abandonment," you say. "It is release. For both of us."
+
+  He looks at the ring on the step. Then he nods. "Go, then. Go before I change my mind and order you to stay."
+*else
+  "Good," Roshan says. The word is a stone dropped into still water. "I think we have both had enough of each other."
+
+  You incline your head. There is nothing left to say. The ring on the step catches the light one final time as you turn away.
+
+*page_break
+
+*if (romance_active)
+  ${partner_name} is at your side before you reach the door.
+
+  *if (romance_partner = "leila")
+    *if (rel_leila > 70)
+      Leila falls into step beside you. She does not ask where you are going. She does not ask if there is a plan. She simply walks beside you, and when you reach the door of the Jade Throne Room, she says: "My father always said the best poems end in the middle of a line. No period. No conclusion. Just a voice, still speaking, walking into the white space."
+
+      She takes your hand. "Shall we?"
+    *else
+      "You're leaving." Leila stands in the center of the hall. Her voice carries the particular tone of someone deciding whether to follow. "Where will you go?"
+
+      "I don't know."
+
+      "Poets know about not knowing," she says. A long pause. Then she walks toward you. "I will need a traveling companion. The road is long, and I have poems to write."
+  *elseif (romance_partner = "navid")
+    *if (rel_navid > 70)
+      Navid removes his captain's badge. He holds it for a moment, then sets it on the step beside your ring. Two pieces of metal that once defined two lives, lying together on bloodstained marble.
+
+      "My commission is meaningless without you to protect," he says. "Where you go, I go."
+    *else
+      "Vizier." Navid's voice stops you at the door. "If you are leaving the capital, you will need an escort. The roads are not safe."
+
+      You look at him. He looks at you. The excuse is paper-thin. But it is enough.
+
+      "An escort," you say. "I would appreciate that, Captain."
+  *else
+    *if (rel_asha > 70)
+      Asha untucks the temple pendant from her robes and lifts it over her head. She holds it in her palm, a small gold disc bearing the symbol of the Eternal Flame, and then she sets it beside your ring on the dais step.
+
+      "The Flame burns everywhere," she says. "Not just in the temple. I would like to go find it." She looks at you. "Will you come?"
+    *else
+      "The Sixth Wisdom is Beauty," Asha says. She stands in the hall, half in shadow, half in light. "There is beauty in letting go. I have written about it. I have never done it." She pauses. "May I?"
+
+*page_break
+
+Are you certain? Once you walk through that door, the empire carries on without you.
+
+*choice
+  #Yes. The empire does not need me. And I do not need the empire.
+    *goto choice_confirmed
+  #Yes. For the first time in a year, I am choosing something for myself.
+    *set idealist %- 5
+    *goto choice_confirmed
+  #No. I cannot abandon them. Not now.
+    *set throne_room_choice 2
+    You stop. Your hand is on the door. Through the carved wood, you can hear the city -- hammers, voices, the sound of a world rebuilding.
+    You turn back. You walk to the dais, pick up the ring, and slide it onto your finger.
+    "Forgive me," you say to the Emperor. "I am not done."
+    *goto defend_emperor
+
+*comment === FINAL RESOLUTION BLOCKS ===
+
+*label throne_confirmed
+*comment Player claimed the throne (choice 1)
+
+The Jade Throne Room holds its breath.
+
+You sit on the Silk Throne, and the empire reshapes itself around you. Farid kneels. The guards at the door -- those who remain -- kneel. The word will spread through the Citadel within the hour, through the city by nightfall, through the provinces in days.
+
+The provincial administrator from nowhere sits on the Jade Throne.
+
+*if (romance_active)
+  ${partner_name} stands at the foot of the dais. You lock eyes, and in that gaze is everything -- the weight of what you have taken, and the promise of what you will build.
+
+The Dowager Empress
+*if (dowager_fate = "guarded")
+  will hear the news in her guarded chambers. You imagine her face -- the flicker of something that might be approval, or horror, or both. She always said the empire needed a strong hand. She simply never imagined it would be yours.
+*elseif (dowager_fate = "imprisoned")
+  will hear the news in her prison. Her game is over. Yours has just begun.
+*else
+  will learn of this in time. Whether she rages or weeps or smiles that enigmatic smile -- you will deal with her as you deal with all things now. From the throne.
+
+*page_break
+
+The incense drifts. The sunlight falls through the broken window. The Jade Throne is cold beneath you, and you suspect it will never grow warm.
+
+But the empire is yours.
+
+*goto scene_end
+
+*label loyalty_confirmed
+*comment Player defended the Emperor (choice 2)
+
+You stand beside the throne as Roshan IV ascends the dais. He sits -- carefully, as if the jade might break beneath him -- and for the first time, the Silk Throne does not seem to swallow him. He fits it. Not comfortably, perhaps. Not easily. But he fits.
+
+He looks down at you. You look up at him.
+
+*if (rel_emperor > 70)
+  "Grand Vizier ${player_name}," he says. And then he smiles -- the first genuine smile you have seen from him since the siege began. "Stay close. We have an empire to rebuild."
+
+  "Always, Your Majesty."
+
+  It is a vow. Both of you know it.
+*else
+  "Grand Vizier ${player_name}. You have served the throne with distinction." The formal words. The formal tone. But beneath them, something real. Something that might, given time, become trust again.
+
+  "The throne commands," you say. "I serve."
+
+*if (romance_active)
+  From across the room, ${partner_name} watches. And in ${their} eyes, you see the future -- not the future of empires and thrones, but the quieter future of two people who chose each other in the middle of chaos.
+
+*page_break
+
+The incense drifts. The sunlight falls through the broken window. Somewhere, Farid is already reorganizing the filing system.
+
+The empire endures. And so do you.
+
+*goto scene_end
+
+*label abolish_confirmed
+*comment Player abolished the monarchy (choice 3)
+
+Your hand rests on the Jade Throne. The cold jade beneath your palm holds three centuries of power. You press down -- not hard, just firmly -- as though you could push the entire weight of history into the marble floor.
+
+"It is done," you say.
+
+The words are simple. The consequences will be anything but.
+
+*if (rel_emperor > 40)
+  Roshan stands in the center of the Throne Room, no longer beside the throne, no longer beneath it. Just a young man in a dusty tunic, facing a future he never imagined. He does not weep. He does not rage. He breathes, and straightens, and nods.
+
+  "Then we had better get to work," he says. "Building a new country is harder than ruling an old one."
+*else
+  Roshan is gone. The Throne Room holds only you, and Farid, and the silence of a world that has not yet understood what has changed.
+
+*if (romance_active)
+  ${partner_name} stands beside you. Together, you look out through the broken window at the city of Khazara -- two million souls who will wake tomorrow to a world without an emperor for the first time in three hundred years.
+
+  *if (romance_partner = "leila")
+    "Write this down," Leila says. "Every word. Every moment. Someone will need to remember how it started."
+  *elseif (romance_partner = "navid")
+    "The soldiers will need new orders," Navid says. "New oaths. A new purpose." He looks at you. "I know something about new purposes."
+  *else
+    "What now?" Asha asks. And for once, she is not being rhetorical. She genuinely does not know. And the fact that she can admit that -- the fact that a temple scholar who has spent her life seeking answers can stand in the presence of the unknown and not flinch -- is the most courageous thing you have ever seen.
+
+*page_break
+
+The Jade Throne sits empty. It will never hold a ruler again.
+
+But the Eternal Flame still burns in the Temple of Seven Wisdoms. The Ashar River still flows to the sea. And somewhere in the Grand Bazaar, a merchant is already opening a stall.
+
+The empire is dead. Long live whatever comes next.
+
+*goto scene_end
+
+*label reform_confirmed
+*comment Player chose reform/compromise (choice 4)
+
+The Jade Throne Room holds two people who have decided to share a burden that was designed for one.
+
+Roshan sits on the throne. You stand beside it. But between you, invisible and binding, is an agreement that will change the nature of both positions. The Emperor will rule, but not alone. The Vizier will serve, but not silently.
+
+*if (rel_emperor > 50)
+  "A constitution," Roshan says. He is trying the word out, tasting it. "My ancestors would be horrified."
+
+  "Your ancestors conquered a continent with swords," you say. "You are conquering the future with a pen. I know which is braver."
+
+  He laughs. It is a surprised sound, startled out of him by the absurdity of the moment. A boy king and a provincial administrator, sitting in a war-scarred throne room, planning to reinvent an empire.
+
+  "All right," he says. "Let's write a constitution."
+*else
+  "I do not fully trust you," Roshan says. "You know that."
+
+  "I know," you say. "The constitution is not built on trust. It is built on law. Law holds even when trust breaks."
+
+  He considers this for a long time. Then he reaches into the folds of his tunic and produces a pen -- a simple reed pen, the kind scholars use. He holds it out to you.
+
+  "Then write," he says.
+
+*if (romance_active)
+  ${partner_name} watches from the side of the hall. The future you are building is uncertain, imperfect, fragile. But it is yours -- yours and the Emperor's and the people's. And at the edge of that uncertain future, someone you love is smiling.
+
+*page_break
+
+Farid is already pulling blank parchment from his document case. "I have templates," he says, his voice trembling with a mixture of terror and excitement. "Per regulation 47-B -- well, there is no regulation for this. But I can create one. Give me an hour. Perhaps two."
+
+You and the Emperor exchange a look. For the first time in a year, you both laugh.
+
+The work begins.
+
+*goto scene_end
+
+*label exile_confirmed
+*comment Player walked away (choice 5)
+
+You walk out of the Jade Throne Room.
+
+The corridor is empty. Your footsteps echo on the marble, and with each step the weight on your shoulders grows lighter. The Citadel passes around you like a dream you are waking from: the Hall of Mirrors, the Garden of Eternal Spring, the corridor where you once hid from assassins, the balcony where you watched the Festival of Lights.
+
+You do not look back.
+
+*if (romance_active)
+  ${partner_name} walks beside you. Neither of you speaks. There is nothing to say that the silence does not say better.
+
+At the Citadel gates, a guard looks at your ringless finger and opens his mouth to speak. Then he looks at your face, and thinks better of it, and opens the gate.
+
+The city of Khazara spreads before you. Two million souls, a hundred markets, a thousand fountains. The sun is setting, and the domes and minarets are turning to copper and gold, exactly as they did on the day you arrived.
+
+You step through the gate.
+
+*page_break
+
+Behind you, the Citadel rises white and gold against the darkening sky. The Eternal Flame flickers in the Temple Quarter, visible from any point in the city. Somewhere in the Jade Throne Room, an Emperor is sitting on a cold jade chair and learning, for the first time, what it means to rule alone.
+
+That is no longer your concern.
+
+The road stretches before you -- the same road you traveled to reach Khazara, a lifetime ago. It leads to the provinces, to the mountains, to the sea, to everywhere and nowhere.
+
+*if (romance_active)
+  ${partner_name} takes your hand.
+
+  *if (romance_partner = "leila")
+    "I know a road," Leila says. "It follows the Silk Road east, through the mountains, past the Jade Sea. There are stories there that no one has written down. Poems that no one has heard."
+
+    She looks at you with those sharp, luminous eyes. "Shall we go find them?"
+  *elseif (romance_partner = "navid")
+    "Where to?" Navid asks. The soldier's face is open, unguarded. He has laid down his armor, his commission, his old life. What remains is just a man, walking beside the person he chose.
+
+    "Anywhere," you say.
+
+    "Good enough," he says.
+  *else
+    "The world is very large," Asha says. "And there are wisdoms the temple never taught me. Wisdoms that live in foreign lands, in other languages, in the spaces between the things we know."
+
+    She smiles. "I have so many questions."
+
+The first stars appear above the rooftops. The evening air smells of jasmine and bread and woodsmoke. Somewhere in the Old City, a child is laughing.
+
+You walk toward the sunset, and you do not look back.
+
+*goto scene_end
+
+*comment === SCENE END ===
+*label scene_end
+
+*page_break
+
+*comment Final personality consolidation based on choice
+*if (throne_room_choice = 1)
+  *set ruthless %+ 5
+  *set boldness %+ 5
+*elseif (throne_room_choice = 2)
+  *set honest %+ 5
+  *set idealist %+ 5
+*elseif (throne_room_choice = 3)
+  *set idealist %+ 5
+  *set boldness %+ 5
+*elseif (throne_room_choice = 4)
+  *set honest %+ 5
+  *set idealist %+ 5
+*else
+  *set idealist %- 5
+
+The Jade Throne Room. The Silk Throne. The empire.
+
+You have made your choice. The empire will carry the shape of it for a hundred years.
+
+*if (throne_room_choice != 5)
+  The night falls over Khazara. Oil lamps are lit in the windows. The Eternal Flame burns in the temple. And in the Jade Throne Room, the future of the Khazaran Empire takes its first breath.
+*else
+  The night falls over Khazara. You are already gone.
+
+*finish

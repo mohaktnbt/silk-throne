@@ -1,0 +1,658 @@
+*comment === SCENE 18: RISING FROM THE ASHES ===
+*comment Word target: ~10,000
+*comment Variables modified: survived_midpoint_betrayal, evidence_count (+2),
+*comment   rel_farid, rel_emperor, rel_general, rel_guild, rel_priest, rel_spy,
+*comment   rel_leila, rel_navid, rel_asha, boldness, ruthless, honest, idealist,
+*comment   rep_military, rep_trade, rep_temple, rep_intelligence, rep_nobility
+*comment Choices: 2 *choice (recovery strategy, alliance rebuilding),
+*comment   2 *fake_choice (determination, personality reaffirmation)
+
+*temp recovery_approach "undecided"
+*temp unexpected_ally "unknown"
+*temp betrayal_evidence "none"
+*temp romantic_moment false
+
+*comment === OPENING: THE MORNING AFTER ===
+
+You wake to the taste of ash.
+
+Not the ash of the Eternal Flame, rich with sandalwood and prayer. This is the ash of your own burning -- the acrid residue of everything you built, reduced to cinders in a single night. Your mouth is dry. Your body aches as though you have been thrown down stairs, though the only thing that struck you was the truth.
+
+The seal ring is still on your finger. You stare at it in the grey predawn light. Someone should have taken it from you by now.
+
+*page_break
+
+Your chambers in the Citadel are unchanged. The same silk hangings, the same geometric tilework in blue and turquoise, the same window overlooking the Garden of Eternal Spring. But the room feels different. Smaller. The air smells of cold wax and extinguished lamps, and beneath it, the faintest trace of jasmine from the garden below.
+
+A knock. Tentative. Familiar.
+
+"My ${title_honorific} Vizier?" Farid's voice comes through the cedar door, pitched low, as if he is not certain the title still applies. "Are you -- that is -- may I enter?"
+
+You sit up. Your robes from yesterday are crumpled on the divan where you collapsed hours ago. You cannot remember lying down.
+
+"Come in, Farid."
+
+*page_break
+
+He enters carrying a tray. Tea, bread, a dish of figs and white cheese. The tray shakes slightly in his hands, the porcelain cup rattling against the saucer. His eyes are red-rimmed. He has not slept either.
+
+"I brought breakfast," he says. "I know that seems -- I know it seems trivial, given everything. But my mother always said that no crisis survives a full stomach, and -- well, she never faced a political catastrophe of this magnitude, but the principle seems sound, and I thought you might --"
+
+He stops. Sets the tray down. Straightens.
+
+"I am loyal to you," he says. The stammering is gone. His voice is clear and steady, a voice you have not heard from Farid before. "I was loyal to the last Vizier and I failed him by being absent the day he needed me. I will not fail you. Whatever has happened, whatever they are saying, I am here."
+
+*if (rel_farid > 50)
+  The words cut through the ash in your chest like the first breath of clean air after a fire. You reach out and grip his shoulder.
+
+  "I know, Farid."
+
+  His eyes glisten. He nods once, sharply, and begins pouring the tea as if this is the most important task in the empire. Perhaps it is.
+  *set rel_farid %+ 10
+*else
+  You nod. It is all you can manage. But the weight of the words settles into you, an anchor in the wreckage.
+
+  "Thank you," you say. Your voice sounds like it belongs to someone else.
+
+  Farid nods and pours the tea with the careful precision of a man performing a sacred duty.
+  *set rel_farid %+ 8
+
+*page_break
+
+The tea is cardamom, hot and sweet. You wrap your hands around the cup and let the warmth soak into your fingers. Outside, the fountain in the garden splashes its endless, indifferent song. The city is waking. You hear the distant call to prayer from the Temple Quarter, the sound floating over the rooftops like a thread of gold in grey cloth.
+
+"Tell me," you say. "Tell me everything."
+
+Farid sits across from you, his ledger open on his knee. This, at least, he can do. Numbers. Facts. The architecture of disaster, laid out in his meticulous hand.
+
+"The Council met without you last night, my ${title_honorific} Vizier. The Dowager presided." He swallows. "The official record states that you are under review for -- the phrasing was 'conduct unbecoming the dignity of the office.' You have not been removed. Not yet. But your authority has been suspended pending investigation."
+
+*page_break
+
+*if (route = 1)
+  "The Emperor?" you ask. The name comes out rough, scraped raw by the dryness in your throat.
+
+  "Emperor Roshan did not attend the emergency session." Farid's voice is careful, the way it gets when he is trying to deliver bad news without adding to the weight already on your shoulders. "The Dowager said he was indisposed. I believe --" He hesitates. "I believe she prevented him from coming. She does not want him to speak for you. Not yet. Perhaps not ever."
+
+  Your grip tightens on the cup until the ceramic bites into your palm. The tea trembles. Everything you built for the young Emperor -- every lesson in governance, every quiet conversation in the garden about what it means to rule, every painstaking step toward his independence from the Dowager's smothering control -- all of it hangs by a thread.
+
+  "The Dowager also issued an order restricting access to the Emperor's wing," Farid continues, his voice dropping. "Only her approved visitors may enter. Your name is not on the list."
+
+  The cup trembles again. You set it down before it can betray anything more.
+
+  "And the Council?"
+
+  "General Kadir abstained from the vote to suspend your authority. He was the only one." Farid consults his ledger. "Guildmaster Priya voted with the majority but -- and this is notable -- she sent a private message to my office afterward requesting copies of the trade agreements you negotiated last month. I believe she is preserving her options."
+*elseif (route = 2)
+  "My network?" you ask. The shadow apparatus you have spent weeks building -- the carefully placed allies, the channels of information that run beneath the official currents of power like underground rivers, invisible but essential.
+
+  "Disrupted," Farid says. "Not destroyed. Several of your contacts have gone silent. The merchant in the Foreign Quarter closed his shop and has not been seen. The minor official in the Dowager's secretariat who was passing you information -- she has been reassigned to the provinces. Effective immediately."
+
+  He checks his ledger. "But the core structure holds, my ${title_honorific} Vizier. Whoever moved against you knew enough to wound, but not enough to kill. Your deepest contacts -- the ones known only to you and to me -- remain intact. The enemy struck at the branches, not the roots."
+
+  Cold comfort. But comfort nonetheless. A web can be rewoven. Roots can grow new branches. The question is whether you have time.
+
+  "The Dowager has asked pointed questions about your activities," Farid adds. "She suspects more than she can prove. But suspicion, in this court, is often sufficient. She does not need evidence to act. She needs only enough doubt to justify what she has already decided to do."
+*elseif (route = 3)
+  "The reforms?" you ask. The word tastes like ashes in your mouth.
+
+  Farid winces. It is the wince of a man who has spent the night compiling a list of disasters and must now read it aloud.
+
+  "Lord Reza moved immediately, my ${title_honorific} Vizier. Within hours of your suspension, he convened a session of the Noble Council -- not the Council of Five, the Noble Council, which he controls completely. They passed three resolutions. The merchant licensing act has been suspended. The commons petition has been tabled indefinitely. And the education initiative -- the new schools -- has been defunded."
+
+  He pauses. Swallows.
+
+  "Lady Soraya tried to speak against the resolutions. She was shouted down. Lord Reza called her -- the exact words were 'a girl playing at governance who has been led astray by a provincial opportunist.' She left the chamber in tears. She has not been seen since."
+
+  You close your eyes. The faces of the people who came to you with hope -- the merchants who lined up to register under the new licensing act, the craftsmen who celebrated in the bazaar, the mother who wept when you told her that her children could attend the new school. All of it, frozen. All of it suspended, like a river dammed by the weight of tradition and the fear of change.
+*else
+  *bug Route not set in scene 18
+
+*page_break
+
+*comment === FAKE CHOICE 1: DETERMINATION ===
+
+You set the cup down. The porcelain clicks against the stone table. In the garden below, a peacock screams -- that ancient, terrible sound, like a question with no answer.
+
+The ash is still in your mouth. But beneath it, something harder. Something that was always there, buried under the silk and the protocol and the careful political maneuvering.
+
+*fake_choice
+  #You did not come this far to be broken by one night. You have survived worse.
+    *set boldness %+ 10
+    *set idealist %+ 5
+    *temp determination "defiant"
+    You think of the road to Khazara. The dust. The heat. The way the city appeared on the horizon like a mirage made real. You arrived here with nothing but a seal ring and a secretary, and you built something. You can build again.
+
+    "Farid," you say, "who is still with us?"
+
+    He blinks. Then he almost smiles. "I was hoping you would ask that, my ${title_honorific} Vizier."
+  #The betrayal burns, but it also clarifies. You can see the board now, every piece, every motive.
+    *set ruthless %+ 10
+    *set boldness %+ 5
+    *temp determination "calculating"
+    Pain is an excellent teacher. It strips away everything nonessential -- the courtesy, the assumptions, the comfortable belief that the people who smile at you wish you well. What remains is the truth, hard and bright as a diamond pressed from coal.
+
+    "Farid," you say, "bring me my maps. My correspondence. Everything."
+
+    His eyebrows rise. Then he nods. "At once, my ${title_honorific} Vizier."
+  #The people who depend on you did not choose this. You owe them more than surrender.
+    *set idealist %+ 10
+    *set honest %+ 5
+    *temp determination "principled"
+    The grandmother who does not eat because the treasury is thin. The soldier on the northern wall who needs his pay. The scholar in the library who needs her books. The empire is not a game board. It is people, millions of them, and they did not ask for conspiracy and betrayal. They asked for governance. They asked for someone to care.
+
+    "Farid," you say, "we are not finished."
+
+    His chin lifts. "No, my ${title_honorific} Vizier. We are not."
+
+*page_break
+
+*comment === THE UNEXPECTED ALLY ===
+
+You are still sorting through the wreckage of your position when the second knock comes. This one is not tentative. It is firm, purposeful, the knock of someone who has decided to be here and will not be turned away.
+
+Farid opens the door, and the person on the other side is the last one you expected.
+
+*if (route = 1)
+  General Kadir stands in your doorway.
+
+  He is in full uniform, his iron hand gleaming at his side, his face set in the expression of a man marching into territory he finds distasteful. He glances at Farid. He glances at the breakfast tray. He does not sit.
+
+  "Vizier," he says. The word comes out clipped, military-brief. "We need to talk."
+
+  *if (rel_general > 40)
+    "I did not come to bury you," he says, before you can speak. "I came because what happened last night was not politics. It was an operation. Coordinated. Timed. Executed with military precision." He taps the table with his iron fingers. "I know an ambush when I see one. Someone planned this. And in my experience, when someone ambushes an ally, they are not your real enemy. They are the enemy's weapon."
+    *set unexpected_ally "kadir"
+    *set rel_general %+ 12
+    *set rep_military %+ 8
+  *else
+    "I did not come because I like you," he says flatly. "I came because what happened last night stinks of the same operation that has been feeding intelligence to the Khanates. Someone coordinated this betrayal. The timing, the method, the way it was designed to destroy your credibility with maximum efficiency." He meets your eyes. "That is a military operation. And I want to know who is running it."
+    *set unexpected_ally "kadir"
+    *set rel_general %+ 8
+    *set rep_military %+ 5
+*elseif (route = 2)
+  Spymaster Zara slips through the door like smoke.
+
+  She does not knock a second time, does not announce herself. One moment Farid is opening the door; the next, Zara is standing in the room as if she has always been there. She wears dark grey, unadorned, and her hair is pulled back in a severe knot. Her eyes sweep the room -- checking corners, exits, shadows -- before settling on you.
+
+  "You look terrible," she says.
+
+  *if (rel_spy > 35)
+    "I am not here out of sentiment," she continues, settling into the chair Farid vacated. "I am here because whoever orchestrated your downfall also compromised three of my informant networks in the process. That is personal." She produces a thin scroll from her sleeve. "I have been awake all night. I have something to show you."
+    *set unexpected_ally "zara"
+    *set rel_spy %+ 12
+    *set rep_intelligence %+ 8
+  *else
+    "I am not your friend," she says. "But the person who did this to you also burned two of my informant lines to make it happen. They used my own assets against me to destroy your position." Something cold and precise moves behind her eyes. "Nobody uses my network and walks away."
+    *set unexpected_ally "zara"
+    *set rel_spy %+ 8
+    *set rep_intelligence %+ 5
+*elseif (route = 3)
+  Guildmaster Priya sweeps in like a trade wind, her silk robes the color of turmeric, her dark eyes sharp and assessing. She carries a leather satchel stuffed with documents and what appears to be a bottle of wine.
+
+  "Don't look at me like that," she says, setting the bottle on the table. "It's barely past dawn, I know. But the kind of conversation we need to have deserves better than tea."
+
+  *if (rel_guild > 40)
+    She sits down across from you as if this is a business meeting, which, you realize, it is. "Listen to me, ${player_name}. The nobility thinks they have won. Lord Reza is in the council chamber right now, gloating like a rooster on a dung heap. But he has made a mistake." She taps the satchel. "In moving against you, they showed their hand. They revealed their financial connections, and financial connections are my territory."
+    *set unexpected_ally "priya"
+    *set rel_guild %+ 12
+    *set rep_trade %+ 8
+  *else
+    She sits without invitation. "I will be direct, Vizier. I am not here because I believe in your reforms. I am here because the people who destroyed your position last night also disrupted three major trade agreements I spent months negotiating. They used me, or tried to." She opens the satchel. "Nobody uses Guildmaster Priya and profits from it."
+    *set unexpected_ally "priya"
+    *set rel_guild %+ 8
+    *set rep_trade %+ 5
+
+*page_break
+
+*comment === NEW EVIDENCE FROM THE BETRAYAL ===
+
+Your unexpected ally spreads documents across your table. Farid hovers, his quill ready, his ledger open. The morning light has shifted from grey to gold, and it falls across the papers like an omen.
+
+*if (route = 1)
+  "Look at this," Kadir says, pointing to a military dispatch with his iron finger. "The order to reassign your personal guard detail was signed three days before the betrayal. Three days. Someone knew what was coming and moved your protection aside." He pulls out a second document. "And this -- a requisition for riders to the northern border, timed exactly to coincide with the crisis. Someone wanted the northern garrison's attention elsewhere."
+
+  You examine the documents. The handwriting on the guard reassignment is disguised, but the authorization seal is genuine. Only a handful of people in the Citadel have access to that seal.
+*elseif (route = 2)
+  "Three things," Zara says, holding up fingers. "First: the intelligence used against you came from a source inside the Citadel's administrative records. Someone accessed your private correspondence from the archive." She lays a thin sheet of paper on the table -- a record of archive access. "Second: the timing of the betrayal coincided exactly with a coded message intercepted by my network two weeks ago. A message I could not decipher then. I can now."
+
+  She produces the coded message. In the margin, in her precise hand, she has written the decoded text. You read it. Your blood runs cold.
+*elseif (route = 3)
+  "Follow the money," Priya says. "It always comes back to the money." She opens a ledger -- not hers, you realize, but a copy of treasury disbursement records she should not have access to. "Look. Three weeks before the betrayal, a large payment -- six thousand gold ashrafs -- moved from the imperial treasury to a private account held by a merchant house in the Foreign Quarter. A merchant house that, on closer inspection, does not actually trade in anything."
+
+  She traces the path of the money with a manicured finger. "That payment funded the operation against you. And the account?" She looks up. "It traces back to Prince Kaveh's household."
+
+*set evidence_count + 1
+
+*page_break
+
+"There is more," your ally continues.
+
+*if (route = 1)
+  Kadir produces a worn leather journal. "This belonged to the officer who was removed from your guard detail. He kept a personal record. He was told the reassignment was routine -- but he noted that the order came through an unusual channel. Not through the garrison command. Through the Dowager's personal secretary."
+
+  *if (suspect_dowager)
+    The connection crystallizes. The Dowager's secretary. The guard reassignment. The northern distraction. Each piece slides into place like tiles in a mosaic.
+  *else
+    A new thread in the web. The Dowager's wing, the Dowager's secretary, the Dowager's reach -- extending further than you realized.
+    *set suspect_dowager true
+*elseif (route = 2)
+  Zara's third item is a scrap of silk -- torn from a sleeve, perhaps, or a sash. "This was found in the corridor outside the archive room the night your correspondence was stolen. The silk is from a weaver who supplies exactly four households in the capital. One of them is Lord Reza's."
+
+  *if (suspect_reza)
+    Another thread tightening around the old lord.
+  *else
+    Lord Reza. The traditionalist, the keeper of old grievances and older ambitions.
+    *set suspect_reza true
+*elseif (route = 3)
+  Priya unfolds a letter. "I acquired this through channels you do not want to know about. It is a draft -- never sent, but preserved -- outlining a plan to discredit the reform movement by engineering a crisis that would be blamed on your 'reckless changes.' The handwriting has been disguised, but the paper is temple stationery. The kind used only by senior members of the clergy."
+
+  *if (suspect_reza)
+    Temple elders and noble houses. The coalition against reform has deeper roots than you imagined.
+  *else
+    The conspiracy extends into the temple itself. Conservative elders, allied with the nobility, working to strangle reform in its cradle.
+
+*set evidence_count + 1
+
+*page_break
+
+You sit back. The tea has gone cold. The figs remain untouched. Outside, the Garden of Eternal Spring is coming to life -- birds singing in the pomegranate trees, the fountains catching the first true sunlight of the day. The beauty of it seems obscene against the darkness spreading across your table.
+
+But the darkness has a shape now. Two more pieces of evidence, pulled from the wreckage of your position. The conspiracy did not just strike you down. In striking, it revealed itself.
+
+Farid has been writing furiously. He looks up, ink on his fingers, his expression a mixture of horror and scholarly excitement. "My ${title_honorific} Vizier, if I may -- cross-referencing these new documents with the evidence we already possess, the pattern is becoming clearer. The conspiracy is not a single individual. It is a network."
+
+*set survived_midpoint_betrayal true
+
+*page_break
+
+*comment === REAL CHOICE 1: RECOVERY STRATEGY ===
+
+Your unexpected ally watches you across the table. Farid's quill hovers over a fresh page. The morning is advancing; you can hear the Citadel coming to life around you -- servants' footsteps, the distant clatter of the kitchens, the changing of the guard.
+
+You have been struck down. You have new evidence. You have an ally you did not expect. The question now is: how do you rise?
+
+*choice
+  #"We move quietly. Rebuild in the shadows while they think we are beaten."
+    *set recovery_approach "covert"
+    *set boldness %- 10
+    *set ruthless %+ 5
+    *set cunning + 3
+    *if (route = 1)
+      Kadir's jaw tightens. Subtlety is not his language. But he nods, slowly. "A tactical retreat. Let them overextend. When they think the battle is won and lower their guard --"
+
+      "We strike where they are weakest," you finish.
+
+      "I can keep the military channels open to you. Quietly. The garrison will follow my orders, not the Dowager's, whatever the Council says."
+    *elseif (route = 2)
+      Zara's lips curve -- not quite a smile, but the nearest thing she permits herself. "Good. Shadows are where I work best. Let them celebrate their victory. Every celebration creates noise, and noise drowns out the sound of footsteps."
+
+      She produces a small key from her sleeve and places it on the table. "This opens a room in the Old City. A safe house. Unknown to anyone in the Citadel. Use it for meetings you cannot have in these walls."
+    *elseif (route = 3)
+      Priya nods slowly. "Smart. The old guard expects you to charge back in, banner flying, making speeches about justice and reform. Surprise them. Go quiet. Meanwhile --" she taps the financial documents -- "I follow the money. Money always talks, and it never lies."
+
+      "And the reforms?" you ask.
+
+      "Paused. Not dead. There is a difference, Vizier."
+    *goto recovery_alliance
+  #"We fight back openly. Show them that I will not be silenced or sidelined."
+    *set recovery_approach "open"
+    *set boldness %+ 10
+    *set honest %+ 5
+    *set diplomacy + 3
+    *if (route = 1)
+      Kadir looks at you for a long moment. Then something shifts in his expression -- the hard lines of his face rearranging themselves around what might, in another man, be called respect.
+
+      "Bold," he says. "Possibly foolish. But I have won more battles by attacking than retreating." He straightens. "If you go before the Council and demand your authority back, you will need military support visible behind you. I can provide that."
+    *elseif (route = 2)
+      Zara tilts her head. "Open confrontation is not my preferred method. But there is a logic to it. They expect you to slink away. If you instead walk into the Council Chamber and demand answers, the shock alone buys you time."
+
+      She pauses. "You will need more than shock, though. You will need proof. And I am not finished gathering it."
+    *elseif (route = 3)
+      Priya sets down her wine cup with a decisive click. "Now you are talking my language. The bazaar already knows what happened to you. The merchants are watching. The craftsmen are watching. If you stand up publicly and refuse to be broken, the common people will rally." She leans forward. "The nobility has power. But power without the people is a castle built on sand."
+    *goto recovery_alliance
+  #"We use the new evidence. Turn the betrayal against those who orchestrated it."
+    *set recovery_approach "evidence"
+    *set boldness %+ 5
+    *set ruthless %+ 10
+    *set scholarship + 3
+    *if (route = 1)
+      Kadir studies the documents spread across your table. "Weaponize the intelligence. Use the conspiracy's own tactics against them." His iron hand drums the tabletop. "I like it. A flanking maneuver. They struck at your reputation. You strike at their exposure."
+
+      "The evidence is incomplete," you say. "But it is enough to create doubt. Enough to make them nervous."
+
+      "Nervous enemies make mistakes," Kadir agrees. "And I will be watching when they do."
+    *elseif (route = 2)
+      Zara's eyes sharpen. "You want to deploy what we have. Selectively. To the right people, at the right moment." She considers this. "It is risky. If the conspiracy realizes how much we know before we know everything, they will destroy whatever evidence remains."
+
+      "Then we are precise," you say. "A scalpel, not a hammer."
+
+      "I can work with a scalpel," Zara says.
+    *elseif (route = 3)
+      Priya's smile turns sharp. "Follow the money and let the money do the talking. Yes. If we can prove that the betrayal was funded by those who oppose reform -- that it was not justice but a purchased attack -- the narrative changes entirely."
+
+      She gathers the financial documents. "Give me two days. I will build a case that even Lord Reza's ancient privilege cannot withstand."
+    *goto recovery_alliance
+
+*page_break
+
+*label recovery_alliance
+
+*comment === REAL CHOICE 2: ALLIANCE REBUILDING ===
+
+Your recovery strategy is set. But strategy without allies is a blade without a hand to wield it. The betrayal has shaken your coalition. Some who stood with you have retreated to safer ground, waiting to see whether the wind shifts back in your favor. Others have been frightened into silence.
+
+But not all.
+
+"Who else can we count on?" you ask.
+
+Farid consults his ledger. "I have received three messages this morning, my ${title_honorific} Vizier. Quietly delivered. Not through official channels."
+
+He reads them, and with each name, you feel a stone being laid back into a wall that was demolished in the night.
+
+*page_break
+
+*if (route = 1)
+  "Captain Navid sent word through a garrison runner. He says --" Farid squints at the note -- "'The guard stands with the Vizier. The oath is to the throne, and the Vizier speaks for the throne.' He also says he has doubled the guard on the Emperor's chambers on his own authority."
+
+  "High Priest Ashoka has sent a messenger requesting a private audience at the Temple. He says he has information about the spiritual dimension of the conspiracy, whatever that means."
+
+  "And Lady Soraya has written to say that several younger nobles are disturbed by what happened and are willing to speak on your behalf at the next Council session, if you give the word."
+*elseif (route = 2)
+  "Captain Darius of the City Guard sent a coded note through one of Zara's contacts. He says the streets are quiet for now, but he has heard rumors of unusual movements in the Foreign Quarter. Ambassador Chen has been receiving visitors at strange hours."
+
+  "Scholar Miriam at the Tower of Stars has sent an urgent request for a meeting. She says she has decoded something in the conspiracy's correspondence -- an astronomical reference she did not understand before."
+
+  "And Merchant Hamid has sent a basket of dried fruit, which I believe is his way of saying he remains loyal. There was a note inside a fig: 'The spice market remembers its friends.'"
+*elseif (route = 3)
+  "Lady Soraya has sent a sealed letter. She says the younger nobles are furious at Lord Reza's power grab and are meeting secretly tonight. She invites you to attend."
+
+  "The Temple Scholar Asha has sent word through a temple novice. She says she has uncovered documents in the Temple archives that suggest the conservative elders' alliance with the nobility predates your reforms by years. This was planned long before you arrived."
+
+  "And Captain Navid has sent a single line: 'The Garrison knows who defends the people. We stand ready.' My ${title_honorific} Vizier, that is practically a declaration of support."
+
+*page_break
+
+Three lifelines, thrown across the wreckage. Not enough to rebuild everything, not yet. But enough to begin.
+
+You must choose where to focus your limited energy.
+
+*choice
+  *if (route = 1)
+    #Seek out High Priest Ashoka at the Temple. Spiritual authority can counter political attacks.
+      *set rel_priest %+ 10
+      *set rep_temple %+ 8
+      *set rel_general %- 3
+      The Temple of Seven Wisdoms rises above the Temple Quarter like a prayer made stone. You go hooded, on foot, through the side streets. Farid wanted to accompany you; you ordered him to remain and coordinate the other allies.
+
+      Ashoka receives you in the Chamber of the Third Wisdom -- Courage. The irony is not lost on either of you.
+
+      "Child," he says, his voice resonant in the tiled chamber, "you are wounded but not broken. The Flame sees this." He pauses. "I have heard confessions this week that trouble me deeply. Confessions that suggest the conspiracy against you is not merely political. It has a spiritual dimension -- a perversion of the faith used to justify worldly ambition."
+
+      He will not reveal the confessions themselves. But he tells you enough: the conspiracy has corrupted members of the temple guard, turning the faith's own defenders into tools of the plot.
+
+      "The Flame does not take sides," he says. "But the Flame condemns those who use its name for darkness. I will speak this truth publicly, when the time is right."
+      *goto quiet_moment
+  *if (route = 2)
+    #Meet Scholar Miriam at the Tower of Stars. Knowledge is power.
+      *set scholarship + 5
+      *set rep_intelligence %+ 5
+      *set rel_spy %+ 5
+      The Tower of Stars is deserted at this hour -- most scholars are at morning prayers or breakfast. Miriam is already there, surrounded by charts and brass instruments, her hair escaping its pins, her eyes bright with the particular fever of someone who has not slept because the work is too important.
+
+      "The conspiracy uses astronomical references in their coded messages," she says without preamble. "I thought they were metaphors. They are not. They are dates." She spreads a star chart across the table. "The conjunction of the Warrior's Star and the Merchant's Star -- it occurs in three weeks. The messages reference it repeatedly. Whatever they are planning, it is timed to that conjunction."
+
+      Three weeks. You have three weeks before the conspiracy makes its final move.
+
+      "There is more," Miriam says. "The astronomical code is specific to a tradition practiced by exactly one institution in the empire." She meets your eyes. "The old noble observatory at the Reza estate."
+      *goto quiet_moment
+  *if (route = 3)
+    #Attend Lady Soraya's secret meeting with the young nobles.
+      *set rel_soraya %+ 12
+      *set rep_nobility %+ 10
+      *set rel_reza %- 5
+      The meeting takes place in a wine cellar beneath a merchant house in the Foreign Quarter. A strange location for nobility, but these are strange times. Twelve young nobles sit on crates and barrels, their fine robes incongruous against the rough stone. Lady Soraya presides, her jaw set with determination.
+
+      "Lord Reza believes he has won," she says when you arrive. "He believes the old order is restored. But he has forgotten something essential." She looks at the assembled faces. "We are the old order's future, and we do not agree with its past."
+
+      The young nobles pledge their support. Quietly, carefully, but genuinely. They have seen what you tried to build, and the destruction of it has made them angry in a way that reform alone never did.
+
+      "Anger is a tool," Soraya tells you afterward, when the others have left. "But it must be forged into something sharper. Give us a plan, Vizier, and we will be your blade."
+      *goto quiet_moment
+  *if (route = 1)
+    #Rally the loyal nobles with Lady Soraya. Political allies rebuild political power.
+      *set rel_soraya %+ 10
+      *set rep_nobility %+ 10
+      *set rel_priest %- 3
+      Soraya meets you in a private salon in the palace's eastern wing, a room so rarely used that the servants have forgotten to change the flowers. Dead roses watch from their vases as the young noblewoman lays out her plan.
+
+      "Seven houses," she says. "Seven noble houses that owe their current positions to decisions you made as Vizier. Trade concessions. Tax adjustments. Favorable rulings. They benefited from your governance, and they know it." She meets your eyes. "Loyalty bought with gold is fickle, but loyalty bought with competence endures. These houses will speak for you."
+
+      It is not the army. It is not the spy network. But it is a foundation.
+
+      "Lord Reza has the Council's ear today," Soraya says. "But the Council changes when the nobles change. And the nobles are changing, Vizier. They just need someone to show them the way."
+      *goto quiet_moment
+  *if (route = 2)
+    #Coordinate with Captain Darius about the Foreign Quarter activity.
+      *set rel_darius %+ 10
+      *set rep_intelligence %+ 8
+      *set cunning + 3
+      Darius meets you in a tavern near the docks -- a place where the City Guard conducts business that does not appear in official reports. He is out of uniform, wearing the nondescript clothing of a merchant's clerk. His world-weary eyes scan the room before settling on you.
+
+      "Ambassador Chen has had fourteen visitors in the past three days," he says. "All after dark. All through the embassy's rear entrance. I have names for eight of them." He slides a folded paper across the table. "Three are Khazaran nobles. Two are temple functionaries. One is a military officer. Two I cannot identify."
+
+      You unfold the paper. The names send a chill through you that has nothing to do with the tavern's cold stone walls.
+
+      "The embassy is a meeting point," Darius says. "The conspiracy uses foreign diplomatic immunity as cover. Chen may or may not know what his building is being used for. Either way, we now know where they gather."
+      *goto quiet_moment
+  *if (route = 3)
+    #Send word to Captain Navid. Military support protects the reform movement.
+      *set rel_navid %+ 10
+      *set rep_military %+ 8
+      *set strength + 3
+      Navid meets you at the garrison's eastern gate, where the training ground gives way to the open fields beyond the city wall. He is in full armor, his scar catching the morning light, his hand resting on his sword hilt with the easy readiness of a man who expects trouble.
+
+      "Vizier," he says. The formal address, still. But his eyes say more than the word.
+
+      "The reforms are suspended," you say. "The people who supported them are afraid."
+
+      "Then they need to stop being afraid," Navid says. "Fear breaks armies and it breaks movements. The antidote is the same in both cases: show them you are still standing. Show them you are still fighting."
+
+      He turns and gestures toward the garrison. "Two hundred soldiers in that building swore an oath to defend the empire. Not the nobility. Not the Council. The empire. If the reforms serve the empire, the garrison stands with the reforms."
+      *goto quiet_moment
+
+*page_break
+
+*label quiet_moment
+
+*comment === A QUIET MOMENT: ROMANCE RECOVERY ===
+
+The day passes in a blur of quiet meetings, whispered conversations, and the slow, painstaking work of rebuilding. You meet with your new allies in back rooms and private gardens, speaking in voices kept low not out of secrecy but out of the instinctive caution of people who know the walls have ears. You draft messages. You review evidence. You make plans that feel like constructing a house during an earthquake -- necessary and absurd and the only thing to do.
+
+Farid is everywhere, a small whirlwind of organizational competence, carrying messages and filing documents and keeping the administrative machinery of your office running through sheer force of bureaucratic will. He has invoked three separate regulations to prevent your files from being seized, contested a search order through the Court of Records, and somehow found time to ensure your laundry was collected. You are grateful for all of it, but especially the laundry. Clean robes feel like armor today.
+
+*page_break
+
+By late afternoon, you are exhausted in a way that sleep will not cure. The exhaustion goes deeper than muscle and bone. It lives in the part of you that trusted, that believed the worst was behind you, that dared to think the conspiracy could be outmaneuvered by competence and goodwill alone.
+
+You were wrong about that. Competence is necessary but not sufficient. Goodwill is a luxury the conspiracy does not share. What is needed now is something harder: the willingness to use every tool you have, including the ones that leave marks.
+
+You stand on the balcony of your chambers as the sun descends toward the Ashghar Mountains, painting the sky in shades of copper and blood. The light is extravagant, wasteful, as if the day is spending its last gold with the abandon of a merchant who knows he will not need it tomorrow. The city spreads below you, its domes and minarets catching the dying light, each one a small fire. The muezzin begins the evening call to prayer from the Temple Quarter, and the sound carries across the rooftops like a thread of silver woven through dark cloth -- a lament and a promise in the same breath.
+
+*page_break
+
+*if (romance_active)
+  *if (romance_leila)
+    *if (rel_leila > 50)
+      *set romantic_moment true
+      A sound behind you. Not a knock -- a rustle of silk, the soft pad of slippered feet on marble. You do not turn. You already know.
+
+      "I heard a rumor," Leila says, stepping onto the balcony beside you, "that the Vizier of the Khazaran Empire was destroyed last night. Brought to ruin. Finished." She leans against the railing, close enough that her shoulder nearly touches yours. "And yet here you are. Inconveniently alive."
+
+      "Inconveniently," you agree.
+
+      She is quiet for a moment. The sunset gilds her face, catches the dark sweep of her hair. When she speaks again, the sharp wit is gone, and what remains is something raw and true.
+
+      "I wrote a poem last night," she says. "After I heard. I sat in my room and I wrote a poem, and it was terrible. The worst thing I have ever written." She turns to face you. "It was about a flame that someone tried to extinguish. And it would not go out."
+
+      *set rel_leila %+ 12
+
+      Her hand finds yours on the railing. Her fingers are ink-stained, warm, and they grip yours with a fierceness that her words do not betray.
+
+      "I am not a politician, ${player_name}. I am a poet. I do not understand half of what happens in that Council Chamber. But I understand this." She squeezes your hand. "You are not finished. And I am not going anywhere."
+    *else
+      A note arrives as the sun sets. Leila's handwriting, sharp and elegant: "They say the pen is mightier than the sword. They never mention that it is also good for writing letters of support. You have mine. -- L."
+  *elseif (romance_navid)
+    *if (rel_navid > 50)
+      *set romantic_moment true
+      The footsteps on the balcony are measured, deliberate. Military boots on marble. You know who it is before he speaks.
+
+      "Vizier." Navid stands at attention for a moment, then seems to catch himself. His shoulders soften. He moves to the railing beside you.
+
+      "You do not need to be formal," you say. "Not here."
+
+      A silence. The sunset burns across the sky. Then, quietly, as if the words are being extracted against his will: "I was on duty when the news came. I almost --" He stops. Starts again. "My first thought was not about the empire. It was not about the conspiracy. My first thought was whether you were safe."
+
+      *set rel_navid %+ 12
+
+      He does not look at you as he says this. He looks at the sunset, at the mountains, at anything else. His hand rests on the railing, centimeters from yours.
+
+      "I am a soldier," he says. "I follow orders. I do my duty. I do not --" Another pause. "I am not good at this."
+
+      You close the distance. Your hand covers his. His fingers tense, then slowly, carefully, turn to interlace with yours.
+
+      "You are better at this than you think," you say.
+
+      The sunset gilds the scar on his cheek. He does not smile. But something in his face -- in the set of his jaw, the steadiness of his gaze -- is a smile's foundation.
+    *else
+      A sealed note arrives at sunset, written in Navid's spare, precise hand: "The guard stands with the Vizier. This is not merely professional. -- N." Brief as always. But you read it three times.
+  *elseif (romance_asha)
+    *if (rel_asha > 50)
+      *set romantic_moment true
+      She appears like a question the evening has been building toward. Asha, in her scholar's robes, her sandals making no sound on the marble, a scroll tucked under her arm as if she has merely come to discuss philosophy.
+
+      She has not come to discuss philosophy.
+
+      "I debated with myself for an hour about whether to come," she says, settling onto the balcony bench with her legs tucked beneath her. "On one hand, you probably want to be alone. On the other hand, the people who want to be alone are usually the ones who should not be."
+
+      *set rel_asha %+ 12
+
+      "Which hand won?" you ask.
+
+      "Both. I came, but I brought a scroll to read so I can pretend I am here for academic reasons if the conversation becomes too intimate." She holds up the scroll. Then she sets it down. "I should be honest. I am not here for academic reasons."
+
+      The evening call to prayer fades. The garden below fills with the sound of water and nightbirds. Asha looks at you, and for once, the endless questions are absent from her eyes. What remains is something simpler and more frightening.
+
+      "The Third Wisdom says courage is acting despite fear," she says. "I am afraid for you. I am afraid with you." She reaches across and takes your hand. "And I am still here."
+    *else
+      A folded note arrives tucked inside a borrowed book, in Asha's quick, slanted hand: "The Third Wisdom says courage is not the absence of fear. I think of you when I read that passage now. -- A." A small thing. But in the wreckage, small things hold the weight of the world.
+*else
+  You stand alone on the balcony. The sunset paints the city in fire. For a moment, in the space between one breath and the next, the beauty of it pierces the armor you have been building all day, and you feel the full weight of what has happened.
+
+  Then the moment passes. The call to prayer ends. The stars begin to appear, cold and distant, and you are still standing. That is enough.
+
+*page_break
+
+*comment === FAKE CHOICE 2: PERSONALITY REAFFIRMATION ===
+
+Night falls. The oil lamps are lit in your chambers. Farid has laid out fresh robes, a stack of correspondence, and a summary of tomorrow's schedule -- as if normalcy is something that can be constructed from fabric and paper.
+
+Perhaps it can.
+
+You look at yourself in the mirror. The face that looks back is the same one that arrived in Khazara months ago, and it is not the same at all. The eyes are harder. The jawline is set. There are lines around the mouth that were not there before.
+
+Who are you, now that the worst has happened?
+
+*fake_choice
+  #You are the person they tried to destroy and failed. And you will make them regret it.
+    *set boldness %+ 5
+    *set ruthless %+ 5
+    *temp reaffirmation "fierce"
+    The face in the mirror smiles. It is not a kind smile. It is the smile of a person who has been burned and now understands the nature of fire. You will not be burned again. And the next time you reach into the flames, you will not be reaching for warmth.
+
+    You will be reaching for a weapon.
+  #You are the same person you were before. The betrayal does not define you.
+    *set honest %+ 5
+    *set idealist %+ 5
+    *temp reaffirmation "steady"
+    The face in the mirror is tired but clear-eyed. The betrayal was a wound, not a transformation. You are still the person who walked through the gates of Khazara and took the seal ring and swore to serve. The oath has not changed. The empire has not changed. Only the game has changed, and games have more than one move.
+
+    You straighten your robes and turn from the mirror. There is work to do.
+  #You are something new. The old you could not survive what is coming. This one can.
+    *set boldness %+ 5
+    *set cunning + 3
+    *temp reaffirmation "transformed"
+    The face in the mirror is a stranger's. No -- that is not quite right. It is the face of someone you might have become, in another life, if the world had been less kind. The softness is gone. The uncertainty is gone. What remains is something leaner, harder, more dangerous.
+
+    The empire will not be saved by the person you were. It will be saved by the person you are becoming.
+
+    You straighten the seal ring on your finger and feel its weight settle into your bones.
+
+*page_break
+
+*comment === CLOSING: RECOMMITMENT ===
+
+Farid appears at the door. He has changed into fresh clothes -- the same style he always wears, the sober grey of a senior secretary, but pressed and clean, as if normality is a position that can be held through attention to personal grooming. His eyes, while still red-rimmed from the sleepless night, have regained their earnest brightness. In his hands is a sheaf of papers thick enough to serve as a weapon, organized with the meticulous precision that is his particular genius.
+
+"My ${title_honorific} Vizier. I have compiled the day's intelligence into a briefing document." He holds up the papers. "I have also taken the liberty of drafting a schedule for tomorrow's meetings. And I have sent word to our allies confirming the strategy we discussed."
+
+He pauses. Something shifts in his expression -- a flicker of pride, quickly suppressed, like a candle flame in a draft.
+
+"Also, I should mention -- I intercepted a messenger from the Dowager's wing this evening. He was carrying an order to search your chambers. I redirected him using regulation 224-C, subsection 7, which states that the Vizier's quarters may not be searched without the explicit consent of both the Emperor and the Council. Since the Emperor has not given consent -- and the Dowager's emergency powers, per regulation 112-B, do not extend to the personal domicile of a sitting Vizier whose removal has not been formally ratified -- the order is technically invalid."
+
+He allows himself a small, satisfied smile. The smile of a man who has found a sword in a library.
+
+"Regulation 224-C?"
+
+"I may have spent the afternoon reading the entire administrative code from the reign of Emperor Darius II. All four volumes. Including the appendices, which are frankly more interesting than the main text." He straightens his stack of papers. "There are several regulations that protect the Vizier's authority even during an investigation. The framers of the code anticipated exactly this situation -- a Vizier under political attack from within the Citadel. They built legal defenses into the administrative structure. It is, my ${title_honorific} Vizier, the most elegant piece of bureaucratic engineering I have ever encountered."
+
+"How many protective regulations did you find?"
+
+"Seventeen. I have compiled a list. It is quite long, but each entry is annotated with the relevant precedent and a note on enforceability."
+
+*set rel_farid %+ 5
+
+You look at this young man -- this stammering, tea-spilling, protocol-citing bureaucrat who has, without hesitation or fanfare, thrown his weight against the most powerful people in the empire to protect you. Seventeen regulations. Four volumes of administrative code. An intercepted search order, turned away at the door by the sheer force of legal knowledge.
+
+*page_break
+
+"Farid."
+
+"Yes, my ${title_honorific} Vizier?"
+
+"When this is over, remind me to promote you."
+
+His ears redden. "That is -- that is very kind, my ${title_honorific} Vizier, but I should point out that per regulation 305-A, promotions during an active investigation of the promoting authority are technically --"
+
+"Farid."
+
+"Yes?"
+
+"Go to bed."
+
+He gathers his papers, bows, and retreats to the door. He pauses with his hand on the frame.
+
+"My ${title_honorific} Vizier? We are going to be all right. I believe that. Per -- per no regulation at all. I just believe it."
+
+The door closes. You are alone with the lamplight and the sound of the fountain and the knowledge that tomorrow, the long work of rising begins in earnest.
+
+*page_break
+
+*if (route = 1)
+  You think of the Emperor -- young, frightened, kept from you by the Dowager's hand. You think of the throne, white jade in the lamplight, and the boy who sits on it trying so hard to be a man. You did not come here to abandon him. The betrayal was a storm. Storms pass. The throne endures.
+
+  You will protect it. Whatever it costs.
+*elseif (route = 2)
+  You think of the web you have been weaving -- threads of influence, information, favors owed and debts unpaid. The betrayal tore holes in the web. But a web can be repaired. A spider can always spin more silk.
+
+  The power you seek is not gone. It has merely gone underground. And underground is where you have always done your best work.
+*elseif (route = 3)
+  You think of the merchant woman who wept with gratitude when you told her children could attend the new school. You think of the craftsmen who gathered in the bazaar to celebrate the licensing reform. You think of the faces that looked at you and saw, for the first time, someone who cared whether they lived or died.
+
+  Those faces have not changed. The need has not changed. And you will not stop. Not for Lord Reza. Not for the conspiracy. Not for anyone.
+
+The lamp flickers. The seal ring gleams on your finger. You extinguish the flame, lie down in the darkness, and wait for the morning that will bring the next battle.
+
+Sleep, when it comes, is dreamless. That is a mercy.
+
+*finish Rising from the ashes -- the investigation deepens.

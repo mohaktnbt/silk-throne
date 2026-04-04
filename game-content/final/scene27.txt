@@ -1,0 +1,442 @@
+*comment === SCENE 27: "CHOOSE YOUR WEAPONS" ===
+*comment Act 3 | ~8,000 words | PAID
+*comment Variables modified: final_alliance flags confirmed, strategy temp vars,
+*comment   relationship consolidation, boldness, ruthless, idealist
+*comment Choices: 3 *choice (strategy, ally deployment, backup plan), 1 *fake_choice
+*comment Previous: Scene 26 | Next: Scene 28
+
+*comment === SCENE-LOCAL VARIABLES ===
+*temp primary_strategy "unknown"
+*temp ally_deployment "unknown"
+*temp backup_plan "unknown"
+*temp military_available false
+*temp trade_available false
+*temp temple_available false
+*temp intelligence_available false
+*temp nobility_available false
+*temp total_alliances 0
+*temp war_council_mood "unknown"
+
+*comment === CHECK ALLIANCE FLAGS ===
+*if (final_alliance_military)
+  *set military_available true
+  *set total_alliances + 1
+*if (final_alliance_trade)
+  *set trade_available true
+  *set total_alliances + 1
+*if (final_alliance_temple)
+  *set temple_available true
+  *set total_alliances + 1
+*if (final_alliance_intelligence)
+  *set intelligence_available true
+  *set total_alliances + 1
+*if (final_alliance_nobility)
+  *set nobility_available true
+  *set total_alliances + 1
+
+*comment === OPENING: THE WAR COUNCIL ===
+
+The Council Chamber has been transformed.
+
+The round table is gone, replaced by a broad map table that General Kadir's aides carried in before dawn. The map of the empire sprawls across it -- hand-painted on lambskin, every river and mountain and road marked in ink and gold leaf. Wooden blocks represent armies: the empire's forces in white, the Khanate horde in black, Kaveh's supporters in red.
+
+There are far too many black and red blocks.
+
+*page_break
+
+The windows are shuttered. Oil lamps burn at each corner of the table, casting the faces of your allies in warm, unsteady light. These are the people who will determine the empire's fate.
+
+*if (military_available)
+  General Kadir stands at the table's northern edge, his iron prosthetic hand resting on the map's representation of the Ashghar Mountains. He has not slept -- you can see it in the set of his jaw -- but his eyes are sharp and focused. The soldier's soldier, stripped of politics, reduced to the thing he does best.
+*if (trade_available)
+  Guildmaster Priya sits at the eastern edge, a ledger open beside her. She has traded her usual warmth for a steely efficiency that reminds you she built a trading empire before she was thirty. Her pen taps a steady rhythm on the tabletop -- calculating, always calculating.
+*if (temple_available)
+  High Priest Ashoka occupies the southern position, his temple robes exchanged for simpler garments. He looks older than his sixty-two years -- the temple schism has cost him. But his voice, when he speaks, still fills a room like the Eternal Flame fills its brazier.
+*if (intelligence_available)
+  Spymaster Zara leans against the western wall, arms crossed, watching everything and saying nothing. Her network has been rebuilt -- thinner, faster, harder. She has spent the night decoding the conspiracy's final communications.
+*if (nobility_available)
+  Lady Soraya stands near the door, representing the progressive nobles who chose reform over tradition. She is the youngest person in the room after the Emperor, but she carries herself with a quiet authority that belies her twenty-four years.
+
+*page_break
+
+*if (total_alliances >= 4)
+  *set war_council_mood "confident"
+  The room is full. Your allies are many. You have built something remarkable over these months -- a coalition that spans the military, the merchants, the temple, the intelligence network, and the nobility. Every pillar of the empire stands with you.
+
+  Farid hovers near the door, and you catch the faintest smile on his face -- the smile of a man who has watched something impossible become real.
+*elseif (total_alliances >= 2)
+  *set war_council_mood "determined"
+  The room has gaps. Empty spaces where allies might have stood, if different choices had been made, if different words had been spoken, if you had invested time in relationships that now remain cold.
+
+  But those who are here are committed. Their presence is not obligation. It is choice.
+*else
+  *set war_council_mood "desperate"
+  The room is sparse. Too few allies. Too many empty chairs. The choices you made -- the relationships you neglected, the factions you alienated -- echo now in the silence of this chamber.
+
+  Farid stands at your shoulder, his loyalty unshaken if somewhat terrified. "We work with what we have, my lord Vizier," he murmurs. "We always have."
+
+*page_break
+
+Emperor Roshan enters last.
+
+He has changed. You see it in the set of his shoulders, in the way he crosses the room without hesitation and takes his place at the head of the table without waiting for invitation. He is still sixteen. He is still the boy who asked you, on a terrifying night, "What should I do?"
+
+But something has hardened in him. Something tempered by revelation and betrayal and the knowledge that the people closest to him tried to take his throne.
+
+"Report," he says. One word. The room responds.
+
+*if (military_available)
+  Kadir steps forward. "The Northern Khanates have massed at the Wall of Roshan. Twelve thousand horse warriors, perhaps more. Fort Darband holds, but its garrison is reduced. The Khanate Khan has been promised the northern provinces in exchange for his support of Prince Kaveh's claim."
+
+  He moves a block on the map. "Our main army -- eighty thousand, if I strip the provincial garrisons -- can meet them at the Wall. But that leaves the capital defended by the imperial guard alone."
+*else
+  Farid, reading from a military dispatch, delivers the northern report. His voice wobbles but holds. "The Khanates have massed at the Wall. Twelve thousand riders. Fort Darband holds, but General Kadir's forces are committed to the border and cannot support the capital."
+
+*page_break
+
+*if (trade_available)
+  Priya flips a page in her ledger. "The treasury has forty-eight hours of operating funds. After that, we cannot pay the army, the city guard, or the grain merchants who feed the capital. I have called in every debt, leveraged every asset, and liquidated non-essential holdings. It buys us time. Not much."
+
+  She looks up. "The good news: the Confederation embargo is broken. Ambassador Chen has, under significant pressure, reopened the western trade routes. Gold will flow again -- but not fast enough for the fight ahead."
+*else
+  The economic situation is grim. Without Priya's full support, the treasury reports come filtered through lesser functionaries. The numbers are ugly. Three days of funds. Maybe four, if the grain merchants accept promises instead of gold.
+
+*if (temple_available)
+  Ashoka speaks slowly, each word chosen with care. "The temple is divided. The conservative elders have declared for Kaveh. But the majority of the priesthood -- and all of the temple guards -- remain loyal to the Eternal Flame's true teaching. The Flame does not choose emperors. The Flame illuminates truth."
+
+  He pauses. "I have issued a formal proclamation: the temple guards will defend the Emperor against any usurper. Two thousand trained soldiers at your disposal."
+*else
+  The temple's position is uncertain. Without Ashoka's full commitment, the religious establishment has fractured. No temple guards will march for you. No proclamation of divine support will bolster the people's faith.
+
+*page_break
+
+*if (intelligence_available)
+  Zara pushes off the wall. "Kaveh's forces are assembling outside the city. Three thousand soldiers -- disaffected garrison troops, noble house guards, mercenaries hired with conspiracy gold. They plan to enter Khazara through the River Gate at dawn, three days from now."
+
+  She lets that sink in.
+
+  "I know their route. I know their passwords. I know which gate guards have been bribed and which bridges they plan to seize. My agents are embedded in Kaveh's camp."
+*else
+  Intelligence on Kaveh's movements is patchy. Without Zara's full network, you are working from rumor and guesswork. His forces are assembling -- that much is certain. Where and when they will strike is not.
+
+The room falls silent. The map tells its story: enemies from without, enemies from within, an empire balanced on a blade's edge.
+
+The Emperor looks at you.
+
+"Vizier. What is our strategy?"
+
+*page_break
+
+*comment === REAL CHOICE 1: PRIMARY STRATEGY ===
+
+Every person in the room turns to face you. The lamplight flickers. The map waits. The empire waits.
+
+*choice
+  *selectable_if (military_available) #"Military force. We meet Kaveh's army before it reaches the capital and crush the rebellion in the field." [Requires Military Alliance]
+    *set primary_strategy "military"
+    *set boldness %+ 10
+    *set rep_military %+ 8
+    *set rel_general %+ 10
+    Kadir's expression does not change, but his iron hand closes on the map table's edge with an audible creak. The soldier has heard the words he has waited for.
+    "A direct engagement," he says. "Good. I am tired of politics. Kaveh's rabble has numbers but not discipline. If we meet them at the Ashar Bridge, we control the crossing. They cannot flank us. Their cavalry advantage is negated."
+    He begins moving blocks on the map, and for a moment the room sees the general in his element -- precise, confident, utterly in command. "The bridge is narrow. A thousand disciplined soldiers can hold it against five thousand. We bleed them, break their momentum, then counterattack."
+    *goto deployment_choice
+  *selectable_if (trade_available) #"Economic leverage. We cut Kaveh's funding and turn his allies with gold. An army that isn't paid doesn't fight." [Requires Trade Alliance]
+    *set primary_strategy "economic"
+    *set boldness %- 5
+    *set rep_trade %+ 8
+    *set rel_guild %+ 10
+    Priya's pen stops tapping. A slow smile spreads across her face -- the smile of a woman who has ruined competitors with ledgers instead of swords.
+    "Kaveh's soldiers are mercenaries. Mercenaries fight for whoever pays them last. I have identified his paymasters -- three noble houses and a Confederation banker. If we seize their accounts, freeze their assets, and offer Kaveh's captains a better rate..."
+    She flips to a prepared page. "I can have counter-offers delivered to every mercenary captain in Kaveh's camp by midnight. They won't fight for a man who can't pay them."
+    *goto deployment_choice
+  *selectable_if (intelligence_available) #"Intelligence and subterfuge. We infiltrate Kaveh's camp, sow chaos from within, and take the leaders before the army moves." [Requires Intelligence Alliance]
+    *set primary_strategy "covert"
+    *set cunning + 5
+    *set rep_intelligence %+ 8
+    *set rel_spy %+ 10
+    Zara straightens from the wall. The faintest trace of satisfaction crosses her face.
+    "My agents are already embedded. On my signal, they can disable Kaveh's communications, poison his water supply -- non-lethal, before you ask -- and isolate his commanders from the rank and file. An army without leadership is a mob."
+    She produces a folded map from her sleeve -- a detailed layout of Kaveh's camp. "I'll need twelve hours. By dawn, his camp will be in chaos and his officers in our custody."
+    *goto deployment_choice
+  #"A combined approach. We hit them from every angle -- military pressure, economic warfare, and political isolation. They cannot defend against all three." [No special requirement]
+    *set primary_strategy "combined"
+    *set boldness %+ 5
+    *set diplomacy + 3
+    The room stirs. A combined approach is ambitious -- perhaps recklessly so. But if you have the alliances to support it...
+    "We don't choose one weapon," you say. "We use every weapon we have. Military force to pin them. Economic pressure to weaken them. Intelligence to blind them. And political authority to delegitimize them."
+    *if (total_alliances >= 3)
+      The allies in the room exchange glances. Kadir nods grudgingly. Priya's pen resumes its rhythm. Zara says nothing, which is her way of agreeing.
+      "It's complicated," Kadir says. "Complicated gets people killed."
+      "Simple gets empires destroyed," Priya replies.
+    *else
+      The ambition meets the room's sparse attendance. Without enough allies, a combined approach spreads your forces thin.
+      "We'll do what we can with what we have," you say. "It will have to be enough."
+    *goto deployment_choice
+
+*label deployment_choice
+
+*page_break
+
+The strategy is set. Now: who goes where.
+
+*fake_choice
+  #You study the map with quiet confidence. This will work.
+    *set boldness %+ 5
+    *temp war_confidence "high"
+    The pieces are in place. Not all of them -- you would give years of your life for more soldiers, more gold, more time. But the pieces you have are strong, and the strategy is sound.
+  #You study the map with grim determination. This must work. There is no second chance.
+    *set ruthless %+ 5
+    *temp war_confidence "determined"
+    There is no retreat from this. No fallback position. No contingency that does not end with the empire's collapse. This is the moment. All of it -- every choice, every alliance, every betrayal -- has led here.
+  #You study the map with fear churning in your stomach. So much can go wrong.
+    *set boldness %- 5
+    *temp war_confidence "afraid"
+    The map shows a dozen points of failure. The Khanate horde at the Wall. Kaveh's army at the gates. The treasury bleeding dry. The temple divided. Any one of these could break the empire. Together, they could end it.
+  #You study the map with the calm of acceptance. Whatever happens, you have done your best.
+    *set idealist %+ 5
+    *temp war_confidence "calm"
+    You have walked this road since the day you arrived in Khazara, a provincial administrator with a seal ring too heavy for your finger. Whatever comes tomorrow, you have served as faithfully as you know how.
+
+*page_break
+
+*comment === REAL CHOICE 2: ALLY DEPLOYMENT ===
+
+"Deployment," you say. "I need each of you where you are most effective."
+
+The room attends. This is the moment where alliances forged over months become actions that will unfold in hours.
+
+*choice
+  #"Concentrate our strongest allies at the capital. Kaveh is the immediate threat -- the Khanates can be dealt with after."
+    *set ally_deployment "capital_focus"
+    *set boldness %+ 5
+    *if (military_available)
+      Kadir's jaw tightens. "You're asking me to leave the northern border to hold. Those are my soldiers up there."
+      "And these are your people in here. The Khanates can be repelled. If Kaveh takes the capital, there won't be an empire to defend."
+      A long silence. Then Kadir nods. "My best officers will command the capital defense. I'll leave a holding force at the Wall."
+      *set rel_general %- 5
+    *if (trade_available)
+      Priya nods. "I'll concentrate all economic resources here. Every merchant contact, every banking favor, every trade guild muscle."
+    *if (intelligence_available)
+      Zara is already adjusting. "I'll pull my field agents from the border and refocus on Kaveh's camp and the city itself."
+    *goto backup_choice
+  #"Split our forces. Hold the north against the Khanates AND defend the capital. We fight on two fronts."
+    *set ally_deployment "split_forces"
+    *set boldness %+ 10
+    *if (total_alliances >= 3)
+      The room calculates. Two fronts. It is the textbook definition of overextension, and yet -- with enough allies, with enough coordination -- it might work.
+      *if (military_available)
+        "I'll hold the Wall," Kadir says. "Give me the northern garrison and the reserves from the eastern provinces. I'll keep the Khanates busy."
+      *if (intelligence_available)
+        "My agents can coordinate between the two fronts," Zara says. "Communication lines. Early warning. I'll be the thread that connects both needles."
+    *else
+      The silence in the room tells you what words do not: you do not have the resources for two fronts. But sometimes the only option is the impossible one.
+    *goto backup_choice
+  #"Focus everything on a single decisive strike. If we break Kaveh quickly, the rest collapses."
+    *set ally_deployment "decisive_strike"
+    *set ruthless %+ 5
+    *set boldness %+ 10
+    A surgical approach. Everything concentrated on one target: Kaveh himself. His army is held together by his claim to the throne and the gold that pays his mercenaries. Remove Kaveh, and the army dissolves. Remove the army, and the Khanates lose their ally. Remove the alliance, and the empire is saved.
+    *if (intelligence_available)
+      Zara's eyes gleam. "A decapitation strike. I can get a team into Kaveh's camp. If we take him--"
+      "Not assassination," you say.
+      "Capture, then. Public capture. The claimant in chains. Hard to rally behind a man in a cell."
+    *else
+      "We hit them fast, hit them hard, and end this before the northern front becomes untenable," you say.
+    *goto backup_choice
+  *selectable_if (total_alliances >= 4) #"Each ally takes their sphere. Military holds the north, trade fights the economic war, intelligence handles infiltration, and the temple provides moral authority. Full coordination." [Requires 4+ Alliances]
+    *set ally_deployment "full_coordination"
+    *set diplomacy + 3
+    This is the plan that requires everything you have built. Every alliance. Every relationship. Every favor called in, every debt collected.
+    *if (military_available)
+      "General Kadir holds the northern border."
+      "Done," Kadir says.
+    *if (trade_available)
+      "Guildmaster Priya wages economic warfare against Kaveh's funding."
+      "Already in motion," Priya says, closing her ledger.
+    *if (intelligence_available)
+      "Spymaster Zara coordinates all intelligence and infiltrates Kaveh's camp."
+      Zara nods. Once.
+    *if (temple_available)
+      "High Priest Ashoka mobilizes the temple guards and issues a public declaration supporting the Emperor."
+      "The Flame has already spoken," Ashoka says. "I merely give voice to its light."
+    *if (nobility_available)
+      "Lady Soraya rallies the loyal nobles to publicly reject Kaveh's claim."
+      "They are ready," Soraya says. "More ready than you might think."
+    *goto backup_choice
+
+*label backup_choice
+
+*page_break
+
+*comment === REAL CHOICE 3: BACKUP PLAN ===
+
+One last question. The one no one wants to ask, but you must.
+
+"If the primary strategy fails," you say, "what is our contingency?"
+
+The room goes quiet. The lamplight seems to dim. Farid clutches his notes tighter.
+
+*choice
+  #"If we fail, the Emperor evacuates the capital. The dynasty survives, even if the city falls."
+    *set backup_plan "evacuation"
+    *set idealist %- 5
+    *set rel_emperor %+ 5
+    Emperor Roshan's face is a mask. You see the struggle beneath it -- the boy who wants to run and the ruler who knows he cannot be seen to run.
+    "The dynasty is more important than the capital," you say. "We can recapture a city. We cannot resurrect a bloodline."
+    "I will not flee," the Emperor says quietly.
+    "You will survive. That is not fleeing. That is strategy."
+    A long silence. Then, barely audible: "If it comes to that. Only if it comes to that."
+    *goto council_end
+  #"If we fail, we negotiate. Kaveh wants the throne, not destruction. There may be terms."
+    *set backup_plan "negotiation"
+    *set boldness %- 5
+    *set idealist %- 5
+    "Negotiate with a usurper?" Kadir's voice is dangerous. Low. The voice he uses when he is deciding whether to dismiss an idea or the person who suggested it.
+    "Negotiate with a reality. If Kaveh wins the battle, killing him solves nothing -- his backers will find another claimant. But if we can negotiate a settlement -- shared power, constitutional limits, a reformed council--"
+    "You would give away the throne to save the empire."
+    "I would save both, if I can. But if I must choose, I choose the empire."
+    *goto council_end
+  #"If we fail, we fall back to the Citadel and hold. The fortress has never been taken. We outlast them."
+    *set backup_plan "siege_defense"
+    *set boldness %+ 5
+    *set ruthless %+ 5
+    The Citadel. Forty-foot walls of white marble. A private water supply from the Tavan aqueducts. Food stores for three months. The Jade Throne Room has withstood siege twice in the empire's history, and both times the attackers broke before the walls did.
+    "A siege could last months," Kadir says, but there is a gleam in his eye. Sieges are military problems, and military problems are what he understands.
+    "Months we can afford, if the northern army breaks the Khanates and marches south to relieve us."
+    *goto council_end
+  *selectable_if (boldness > 60) #"There is no backup plan. We win or we lose. Commit everything." [Requires Boldness 60+]
+    *set backup_plan "total_commitment"
+    *set boldness %+ 15
+    *set ruthless %+ 5
+    The words land like stones in still water. Kadir stares at you. Priya's pen freezes. Ashoka closes his eyes.
+    "No retreat," you say. "No negotiation. No evacuation. We fight with everything we have, and we win."
+    The silence stretches.
+    Then Kadir laughs. A short, sharp bark -- the laugh of a man who has heard something either brilliant or insane and cannot quite tell which.
+    "You have iron in you, Vizier. I was not sure, but I see it now."
+    *goto council_end
+
+*label council_end
+
+*page_break
+
+The war council disperses. Each ally leaves with their orders, their maps, their lists of assets and contingencies. The room empties until only you, the Emperor, and Farid remain.
+
+Roshan stands at the map table, staring at the wooden blocks as though they might rearrange themselves into a better future.
+
+"Vizier."
+
+"Your Majesty."
+
+"Are we going to win?"
+
+The question is not the Emperor's. It is the boy's. Sixteen years old, the weight of three centuries of dynasty on his shoulders, asking the one question that cannot be answered with strategy or statecraft.
+
+*page_break
+
+*if (war_council_mood = "confident")
+  "Yes," you say. And you believe it. Not with certainty -- certainty is a luxury the honest cannot afford -- but with the kind of faith that comes from looking at the map, counting the allies, measuring the will of the people in this room, and knowing that it is enough.
+
+  "Yes, we are going to win."
+
+  Something in his face softens. Not relief -- Roshan is beyond simple relief. But something like hope, green and tentative, pushing through the stone of his fear.
+*elseif (war_council_mood = "determined")
+  You look at the map. At the blocks. At the gaps where more allies should stand.
+
+  "We will fight as hard as we can, with everything we have. I cannot promise victory. But I can promise that if this empire falls, it will not be because we gave up."
+
+  The Emperor nods. He is not comforted, but he is steadied. Sometimes that is enough.
+*else
+  You consider lying. It would be a kindness. A word of confidence, a steady voice, a reassuring hand on a boy's shoulder.
+
+  But Roshan is the Emperor. He deserves the truth.
+
+  "I do not know. We are outnumbered and outspent. Our alliances are thinner than I wish they were. But we have one advantage: we are fighting for the right side. That does not always win. But it always matters."
+
+  "History will remember," Roshan says quietly.
+
+  "History will remember."
+
+*page_break
+
+The Emperor leaves. You are alone with Farid and the map and the dying lamplight.
+
+"My lord Vizier." Farid's voice is small. "I have organized all the contingency documents. The evacuation routes are marked. The treasury keys are in the vault, and I have prepared three copies of the succession protocol, per regulation--"
+
+"Farid."
+
+"Yes, my lord Vizier?"
+
+"Thank you."
+
+He blinks. Then, very carefully, as though handling something fragile, he smiles.
+
+"It has been the honor of my life, my lord Vizier. Every terrifying, bewildering, occasionally coffee-stained moment of it."
+
+*page_break
+
+*if (romance_active)
+  *if (romance_leila)
+    You find her on the Citadel walls. The night wind stirs her hair, and she is looking out over the city -- the thousand lamps, the river gleaming under starlight, the dark mass of the Old City, the Temple Quarter with its eternal glow.
+
+    "I wrote something," she says. "For tomorrow. In case--" She stops. Starts again. "For tomorrow."
+
+    She reads you the poem. It is about fire and stone, about the empire and the people who sustain it, about the difference between a throne that is inherited and one that is earned. Her voice is steady. Her hands are not.
+
+    When she finishes, the silence between you is not empty. It is full -- full of everything you have been to each other, and everything you might yet be.
+
+    "Come back," she says. "Tomorrow. Come back to me."
+
+    *set rel_leila %+ 8
+  *elseif (romance_navid)
+    You find him at the garrison, checking weapons. He sees you and sets down the sword he was oiling.
+
+    "Everything's ready," he says. "The guard knows their positions. The armory is stocked. The walls are manned."
+
+    A pause. He looks at you, and the soldier's mask -- the one he wears like armor -- falls away.
+
+    "I should tell you something. In case tomorrow goes badly." He takes a breath. "You are the bravest person I have ever served. Braver than Kadir. Braver than any frontier soldier. Because you fight without a sword, and you face enemies who cannot be killed with steel, and you keep standing."
+
+    His hand finds yours. Rough, calloused, warm.
+
+    "I will be at your side tomorrow. Wherever you go. Whatever happens."
+
+    *set rel_navid %+ 8
+  *else
+    You find her in the Temple gardens, sitting beneath the ancient cedar. The Eternal Flame flickers through the open temple doors, casting shifting patterns of light and shadow.
+
+    "I have been praying," Asha says. "Or thinking. Or both. I am not always sure of the difference."
+
+    She turns to you, and her usual playfulness is gone. In its place is something quiet and fierce.
+
+    "The Third Wisdom says courage is acting despite fear. I have taught that lesson a hundred times. Tomorrow I learn whether I believe it."
+
+    She takes your hand. Her fingers are cool from the night air.
+
+    "Ask me a question. Any question. The way you always do."
+
+    "Will we win?"
+
+    She smiles. "That is the wrong question. The right question is: will we be worthy of winning? And the answer is yes. Whatever happens. Yes."
+
+    *set rel_asha %+ 8
+
+*page_break
+
+The night deepens. The stars wheel overhead. Somewhere in the distance, a drum beats -- the garrison's night watch, steady and relentless, counting the hours until dawn.
+
+You stand alone on the Citadel walls and look out over the empire you have served, the city you have come to love, the impossible tangle of alliances and enmities and loyalties that you have spent months weaving into something strong enough to hold.
+
+Tomorrow it will be tested. Every choice you have made since the day Farid met you at the gates of Khazara. Every friendship forged and every enemy created. Every alliance sealed and every bridge burned.
+
+Tomorrow, the empire will hold.
+
+Or it will break.
+
+You touch the Vizier's seal ring. The jade is cool against your skin. The weight of it is familiar now -- not a burden but a bond, connecting you to everyone who has carried this responsibility before.
+
+The last lamp is extinguished in the city below. The Eternal Flame burns alone in the dark.
+
+Dawn is coming.
+
+*finish Chapter 28: The Siege

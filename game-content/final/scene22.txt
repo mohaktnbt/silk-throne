@@ -1,0 +1,621 @@
+*comment === SCENE 22: THE NORTHERN FRONT ===
+*comment Word target: ~10,000
+*comment Battle scene. Khanate invasion. General Kadir spotlight.
+*comment Variables modified: rep_military, rel_general, rel_navid,
+*comment   final_alliance_military, strength, boldness, ruthless,
+*comment   idealist, honest, heir_alive (at risk), rel_emperor,
+*comment   diplomacy, cunning
+
+*temp battle_strategy "undecided"
+*temp resource_decision "undecided"
+*temp kadir_status "active"
+*temp wall_section "undecided"
+*temp cavalry_feint false
+*temp soldiers_saved 0
+*temp personal_combat false
+
+*comment === OPENING: THE MARCH NORTH ===
+
+The road north from Khazara runs straight as a spear shaft through the Valley of the Ashar, cutting between rice paddies and cotton fields that shimmer in the late-autumn sun. For two days you ride at the head of the relief column -- twelve thousand soldiers, the best the capital garrison could spare without leaving the city defenseless.
+
+*if (crisis_priority = "military")
+  You chose this. The northern front, the most immediate and visceral of the three crises. Thirty thousand Khanate horsemen against a shattered wall and whatever force you can assemble in time.
+*else
+  You did not choose this -- the military crisis was delegated while you addressed more pressing concerns. But the dispatches from the northern front have grown increasingly desperate, and General Kadir's last message was three words long: *Come. Bring everyone.*
+
+The countryside tells its own story. Refugees stream south along the road's shoulders -- families with their possessions piled on oxcarts, their faces grey with dust and fear. Children stare at the soldiers with wide eyes. An old man stands at a crossroads, blessing each passing rider with a gesture toward the Eternal Flame.
+
+*page_break
+
+You have not seen a battlefield before. You know this with the particular clarity that comes from knowing you are about to remedy an ignorance you would have been content to keep.
+
+*if (player_background = 2)
+  That is not quite true. Your years as a soldier, before the provincial administration claimed you, gave you the taste and smell of combat. But that was border skirmishing -- a dozen riders, a quick exchange of arrows, then withdrawal. This is something else entirely.
+*else
+  Everything you know about war comes from books and briefings and General Kadir's clipped assessments across the Council table. Theory. Abstraction. The distance between abstraction and the smell of smoke on the northern wind is the distance between the map and the territory.
+
+Farid rides beside you. He is not a horseman -- his posture suggests a man perched on a particularly hostile piece of furniture -- but he refused to be left behind.
+
+"I can be useful," he had said, with a determination that surprised you both. "Someone needs to manage the dispatches. And the supply requisitions. And the -- the filing."
+
+*if (rel_farid > 60)
+  You had not argued. The truth is, you are glad he is here. In a world that has come unmoored, Farid's anxious competence is a fixed point.
+*else
+  You had not argued. A secretary is a small thing to bring to a war, but small things have their uses.
+
+*page_break
+
+On the third morning, you see the smoke.
+
+It rises from the northern horizon in a black column, thick and greasy, fed by something more substantial than wood. Buildings. Villages. The Khanates have reached the inner provinces, and they are burning what they find.
+
+The relief column picks up its pace. You feel the change in the soldiers around you -- a tightening, a quickening, the collective intake of breath that precedes the plunge. Conversations die. Hands find sword hilts and bowstrings. The column moves in near-silence, the only sounds the creak of leather, the clink of armor, and the rhythm of twenty-four thousand hooves on packed earth.
+
+By noon, you reach the command camp.
+
+*page_break
+
+*comment === THE COMMAND CAMP ===
+
+General Kadir has established his headquarters in a ruined caravanserai three miles south of the Wall of Roshan. The building's courtyard has been converted into a command post -- maps spread across tables made of doors laid on barrels, runners coming and going with dispatches, the controlled chaos of an army preparing for battle.
+
+Kadir himself stands at the central table, his iron hand pinning a corner of the largest map. He has not slept, you suspect, in days. The lines in his face have deepened into crevasses, and his good hand trembles slightly -- fatigue, not fear. You have never seen General Kadir afraid, and you doubt you ever will.
+
+He looks up as you enter.
+
+*if (rel_general > 60)
+  "Vizier." Something in his expression eases -- not quite relief, but the acknowledgment that reinforcements have arrived, in numbers and in counsel. "Twelve thousand. Good. Not enough, but good."
+  *set rel_general %+ 5
+*elseif (rel_general > 40)
+  "Vizier." A curt nod. "How many did you bring?"
+  "Twelve thousand."
+  "Not enough. But it's something."
+*else
+  "Vizier." The word is flat, professional. "You brought soldiers. That's the first useful thing a civilian has done this week."
+
+*page_break
+
+He walks you through the situation with the precision of a surgeon describing an operation that has gone wrong.
+
+"The Khanates breached the Wall of Roshan at three points simultaneously. Eastern section, where the repair crews never arrived. Central gate, which was undermined -- someone weakened the foundations from inside. And the western pass, where the garrison was at half strength because of a personnel order I never authorized but which bears my seal."
+
+His iron fist strikes the table. The maps jump.
+
+"Forgeries. The same hand that robbed the treasury forged my deployment orders. Half my northern garrisons were out of position when the attack came. It was not a battle. It was a slaughter."
+
+*page_break
+
+He points to the map with his iron hand, the metal finger tracing the line of the broken wall.
+
+"The Khanates are commanded by Borte Khan -- their first unified leader in fifty years. She is not a raider. She is a general. She has divided her forces into three columns: one pressing south through the breach, one swinging west to cut the mountain supply routes, and one holding position at Fort Darband as a reserve."
+
+"Thirty thousand against our combined twenty-five," you say.
+
+"Twenty-three. We took casualties in the initial breach." Kadir's voice is level. The numbers are facts, like weather. "But numbers are not everything. They fight from horseback with bows and sabers. We have infantry, fortified positions, and what's left of the wall. The terrain favors defense."
+
+He straightens.
+
+"I have a plan. I need your authority to execute it, because it requires committing the capital's forces, and that decision is above my rank." A pause. Something shifts in his expression -- something that, on any other face, you would call vulnerability. "It also requires accepting a risk that no general wants to take."
+
+*page_break
+
+*comment === FIRST REAL CHOICE: MILITARY STRATEGY ===
+
+Kadir's plan is simple in concept and terrifying in execution.
+
+"We cannot defend the entire wall. It is too long and too damaged. Instead, we concentrate our forces at the central section -- the strongest remaining fortification -- and let the eastern and western breaches stand open."
+
+"Open?" Farid's voice cracks.
+
+"Open. Inviting. The Khanates will pour through the breaches, expecting minimal resistance. When their forces are committed, we close the trap." His iron finger traces two curving arrows on the map. "Cavalry from the west and infantry from the east, striking the enemy column from both flanks while the wall holds the center."
+
+"And if the trap fails?" you ask.
+
+"Then the Khanates ride south with nothing between them and Khazara."
+
+Silence.
+
+*fake_choice
+  #The audacity of the plan takes your breath away. It is either brilliant or suicidal.
+    *set boldness %+ 5
+    *temp strategy_reaction "audacity"
+    You stare at the map, tracing the curving arrows with your eyes. The plan is elegant -- the kind of elegance that only a career soldier could conceive, where beauty and brutality are the same thing. If it works, the Khanate army is shattered. If it fails, the empire is finished. There is no middle ground.
+  #Your mind immediately identifies the weaknesses. Too many variables. Too much depends on timing.
+    *set boldness %- 5
+    *temp strategy_reaction "doubt"
+    Your eyes find the gaps in the plan. The timing of the flanking movements must be exact -- minutes, not hours. The cavalry in the west must navigate terrain they have not scouted. The infantry in the east must hold position without being detected. And if Borte Khan suspects the trap, she can pivot her reserve from Fort Darband and turn the ambush inside out.
+  #You feel a grim determination. This is the kind of gamble that wins empires or loses them.
+    *set ruthless %+ 5
+    *temp strategy_reaction "grim"
+    War is gambling with lives. You have always known this in theory. Now you feel it -- the cold arithmetic of sacrifice, the calculation that says a thousand may die so that a million might live. Kadir's plan is a gamble. But the alternative is a slow, grinding defense that the Khanates will eventually overwhelm through sheer numbers.
+
+*page_break
+
+Kadir watches you. He has laid his plan before you like a blade laid on a table -- take it or leave it.
+
+"There is another option," he says. "Defensive withdrawal. We pull back to the second fortification line, twenty miles south. Shorter line, easier to defend. We lose the northern provinces but we protect the heartland."
+
+He says this without inflection, but you can see what it costs him. The northern provinces are his life's work. Every fortress, every wall section, every garrison post represents years of his career. He is offering to sacrifice them because the alternative might sacrifice the empire.
+
+*choice
+  #Approve Kadir's ambush plan. The risk is enormous, but victory would shatter the Khanate invasion entirely.
+    *set battle_strategy "ambush"
+    *set boldness %+ 10
+    *set rep_military %+ 10
+    *set rel_general %+ 10
+    *set strength + 3
+    *goto ambush_plan
+  #Order the defensive withdrawal. Protect the heartland. Concede the northern provinces to buy time.
+    *set battle_strategy "withdrawal"
+    *set boldness %- 5
+    *set idealist %+ 5
+    *set rep_military %- 5
+    *set rel_general %- 8
+    *goto withdrawal_plan
+  *selectable_if (diplomacy > 50) #Propose a third option: split the difference. Hold the central wall, withdraw from the flanks, and send a delegation to Borte Khan to negotiate. [Requires Diplomacy 50+]
+    *set battle_strategy "negotiate"
+    *set diplomacy + 5
+    *set rep_military %- 5
+    *set honest %+ 5
+    *goto negotiation_plan
+
+*comment === STRATEGY BRANCHES ===
+
+*label ambush_plan
+Kadir's iron hand unclenches. For a moment -- just a moment -- you see the soldier beneath the general: the boy from the frontier who learned to fight because fighting was the only skill that kept you alive on the steppe.
+
+"Good," he says. "Then we move tonight. I want the cavalry in position by dawn. The infantry moves at first light, hidden in the ravine system east of the breach. We spring the trap when the sun is at its peak -- the glare will be in the Khanate riders' eyes as they come through the breach."
+
+He turns to his officers and begins issuing orders with the rapid precision of a man who has been planning this in his head for days. The command camp erupts into motion.
+
+*if (romance_navid)
+  Navid appears at your side. He has been assigned to the eastern infantry column -- the anvil of the trap, the force that must hold position without flinching while the Khanate army pours past them like a river around a stone.
+
+  "The eastern column," he says. His voice is steady, but his hand finds yours briefly, fingers interlacing for one heartbeat before professionalism reclaims him. "If the timing is right, we hit them from the flank. If the timing is wrong --"
+
+  "The timing will be right," you say.
+
+  He nods. "I know." A pause. "Be careful."
+  *set rel_navid %+ 8
+
+*goto resource_choice
+
+*label withdrawal_plan
+Kadir's jaw works. He does not argue. A soldier follows orders, even orders that feel like amputation.
+
+"Understood," he says. The word is a stone. "I'll begin the withdrawal at nightfall. We can have the second line fortified within two days."
+
+He turns to his officers, and you see the cost in the way the other soldiers look at him -- the question in their eyes, the doubt. Is the general retreating? Is the empire giving up the north?
+
+*if (rel_general > 50)
+  Kadir pauses at the tent flap and looks back at you. "The northern provinces will burn, Vizier. The people who live there -- they're my people. I grew up in those villages. But you are not wrong. The heartland must survive."
+  *set rel_general %+ 5
+*else
+  Kadir does not look back.
+
+*goto resource_choice
+
+*label negotiation_plan
+Kadir stares at you as if you have suggested negotiating with a forest fire.
+
+"Negotiate," he repeats. "With the Khanates."
+
+"With Borte Khan. She is not a raider -- you said so yourself. She is a general. Generals understand strategy. And a negotiated withdrawal serves her interests better than a battle she might lose."
+
+"She won't lose. She has thirty thousand --"
+
+"She might lose. And she knows it. Winter is coming. A prolonged siege of the wall, even a broken wall, will cost her thousands. Offer her something -- trade concessions, recognition, territorial acknowledgment for the steppe lands. Something that lets her go home with a victory that does not require bleeding for it."
+
+Kadir is silent for a long moment. Then, grudgingly: "You are either very clever or very naive. I cannot tell which."
+
+"Let us find out," you say.
+
+*if (rel_general > 50)
+  A pause. Then, impossibly, the corner of Kadir's mouth twitches. It might be a smile. On his face, it is hard to tell. "Fine. I'll hold the wall while you talk. But if your diplomacy fails, we fight. Agreed?"
+  "Agreed."
+  *set rel_general %+ 5
+*else
+  "If your talking fails, people die." Kadir's voice is flat. "Remember that."
+
+*goto resource_choice
+
+*page_break
+
+*comment === SECOND REAL CHOICE: RESOURCE ALLOCATION ===
+
+*label resource_choice
+
+The strategy is set. But strategy requires resources, and resources are what the empire lacks.
+
+Kadir's quartermaster -- a weathered woman named Captain Farzan -- lays the supply situation before you with the same clinical detachment that Kadir uses for tactical briefings.
+
+"We have food for eight days at current strength. Arrows for three major engagements. Medical supplies for five hundred casualties." She pauses. "The Khanate breach destroyed the northern granaries. There is no foraging to be had."
+
+"Eight days," you repeat.
+
+"Seven, if we account for the refugees we're feeding. Six, if the western supply route is cut." She folds her arms. "Guildmaster Priya's emergency funds have not arrived. The treasury situation is--"
+
+"I know what the treasury situation is."
+
+*page_break
+
+The choice before you is not between abundance and scarcity. It is between different kinds of scarcity.
+
+*choice
+  #Commit all available resources to the military effort. The battle must be won decisively, whatever the cost to the capital's reserves.
+    *set resource_decision "full_military"
+    *set rep_military %+ 8
+    *set rep_trade %- 8
+    *set ruthless %+ 5
+    *set gold - 40
+    *goto full_commit
+  #Split resources between the front and the capital. The army gets enough to fight. The capital gets enough to survive.
+    *set resource_decision "split"
+    *set idealist %+ 5
+    *set rep_military %- 5
+    *set rep_trade %+ 5
+    *goto split_resources
+  *selectable_if (cunning > 45) #Seize resources from the noble estates along the march route. The aristocracy has hoarded grain while soldiers starve. [Requires Cunning 45+]
+    *set resource_decision "seize_noble"
+    *set ruthless %+ 10
+    *set rep_nobility %- 15
+    *set rep_military %+ 5
+    *set cunning + 3
+    *goto seize_resources
+
+*label full_commit
+Captain Farzan nods with the grim satisfaction of a professional who has been given the tools to do her job.
+
+"Full commitment. I'll have the supply trains rerouted within the hour. The capital will feel the pinch, but the army will fight at full strength."
+
+*if (rel_guild > 50)
+  A dispatch arrives from Priya: *Understood. I will find other sources. Win this, and the merchants will forgive the sacrifice. Lose, and nothing else matters. --P.*
+*else
+  A dispatch arrives from Priya: *Noted. I hope you know what you are doing, Vizier. The capital's grain reserves are already dangerously low. --P.*
+
+*goto battle_begins
+
+*label split_resources
+Farzan's expression tightens. "Half rations for a fighting army, Vizier. Soldiers fight poorly on empty stomachs."
+
+"They fight worse with a burning city at their backs. The capital must remain stable."
+
+She does not argue further. She is a soldier. She adapts.
+
+*goto battle_begins
+
+*label seize_resources
+The order goes out by the fastest riders. Within hours, military requisition parties are knocking on the doors of the great estates that dot the northern highway.
+
+The results are immediate and substantial. The noble houses of the north have been hoarding grain for exactly this kind of crisis -- not to help, but to profit from scarcity. Their storehouses yield enough food to feed the army for three additional weeks.
+
+The political cost is equally immediate. Lord Reza's allies will remember this. The nobility will add it to their list of grievances, and that list is already long.
+
+*set rel_reza %- 10
+
+But tonight, the soldiers eat. And tomorrow, they will fight with full bellies.
+
+*goto battle_begins
+
+*page_break
+
+*comment === THE BATTLE ===
+
+*label battle_begins
+
+*if (battle_strategy = "ambush")
+  *goto battle_ambush
+*elseif (battle_strategy = "withdrawal")
+  *goto battle_withdrawal
+*else
+  *goto battle_negotiate
+
+*label battle_ambush
+
+Dawn comes cold and grey, the sky the color of hammered iron. Mist clings to the lowlands, curling around the broken segments of the Wall of Roshan like smoke around the bones of a cremation pyre.
+
+You are positioned on a rise behind the central wall section, surrounded by Kadir's command staff. The map has become a landscape. The curving arrows of the battle plan are now real formations of flesh and steel, hidden in ravines and behind hillocks, waiting.
+
+The Khanate army appears with the sunrise.
+
+*page_break
+
+They come like a flood.
+
+Thirty thousand riders, spread across the steppe in a formation that seems chaotic but is not -- each unit moving with the fluid coordination of birds in murmuration. Their armor is lighter than Khazaran steel -- leather and iron rings -- and their horses are smaller, shaggy-maned steppe ponies bred for endurance rather than size. But they move with a speed that turns your stomach cold.
+
+Borte Khan rides at the center of the formation, visible by the standard that flies above her -- a white horse tail on a pole of black wood. Even at this distance, you can see the discipline in her army's movements. This is not a raiding horde. This is a military force led by someone who knows exactly what she is doing.
+
+The Khanate riders stream toward the eastern breach, exactly as Kadir predicted. The trap is set. The jaws are open.
+
+*page_break
+
+The waiting is the worst part.
+
+Kadir stands beside you, his good hand resting on his sword hilt, his eyes fixed on the breach. He has positioned the central wall's defenders -- eight thousand infantry behind the repaired fortifications -- as the bait. Their job is to hold, to look like the main defense, to draw the Khanate column into the breach where the flanking forces can close behind them.
+
+The first Khanate riders enter the breach. Then dozens. Then hundreds. The sound reaches you a moment later -- the thunder of hooves on broken stone, the war cries that rise like the howling of wolves, the sharper crack of arrows finding shields.
+
+"Now?" you ask.
+
+"Not yet," Kadir says. His voice is a line drawn in stone. "Let them commit."
+
+More riders pour through. A thousand. Two thousand. The central wall's defenders begin to give ground -- as planned, but the retreat looks real. It must look real, or Borte Khan will smell the trap.
+
+*page_break
+
+"Now?" Farid whispers. His face is the color of old parchment.
+
+"Not yet," Kadir repeats.
+
+Five thousand Khanate riders are through the breach. Six. Seven. The central defenders are falling back in earnest now, and you cannot tell how much is strategy and how much is genuine retreat under overwhelming pressure.
+
+Then Kadir raises his iron hand.
+
+A signal horn sounds -- one long, shattering note that splits the morning mist. And the world erupts.
+
+*page_break
+
+From the west, the cavalry charge. Three thousand Khazaran heavy horse, armored in steel, their lances leveled. They hit the Khanate column like a hammer striking an anvil. The sound is -- you have no reference for it. Metal and flesh and bone and the screams of horses and the cries of men, all compressed into a single devastating impact.
+
+From the east, the infantry emerges from the ravine system -- six thousand soldiers rising from the earth like the dead from their graves. They form a wall of shields and spears across the breach's exit, trapping the Khanate column between the cavalry on one side and the wall on the other.
+
+*if (romance_navid)
+  Navid is with the eastern infantry. You cannot see him in the mass of shields and steel, but you know he is there -- solid, disciplined, the human anchor of the line.
+  *set rel_navid %+ 5
+
+The trap closes.
+
+*page_break
+
+For twenty minutes, the battle is a contained slaughter. The Khanate riders, trapped between walls of steel, cannot use their greatest advantage -- mobility. Their horses rear and plunge in the confined space. Their archery, devastating on the open steppe, is useless at close quarters. The Khazaran infantry grinds forward, shield wall against desperate resistance.
+
+But Borte Khan is not stupid.
+
+"She's pulling her reserve," Kadir says suddenly, his voice sharp. He points toward Fort Darband, where a fresh column of riders is streaming south -- the ten thousand troops that Borte Khan kept in reserve, now committed to break the trap from outside.
+
+"That was not in the plan," Farid says, unnecessarily.
+
+"Plans meet the enemy and die," Kadir replies. He turns to you. His face is carved from granite, but his eyes are alive -- burning with the terrible energy of a man fighting the battle of his life.
+
+"I need to take the command cavalry and meet that reserve column before it reaches our flank. It means leaving the command post. It means leaving you." He holds your gaze. "Do I have your permission?"
+
+*page_break
+
+*fake_choice
+  #"Go. Win this."
+    *set boldness %+ 10
+    *set rel_general %+ 8
+    *temp kadir_response "go"
+    Kadir nods. One sharp downward motion. Then he is moving -- vaulting onto his horse with an agility that defies his age, drawing his sword with his good hand, the iron prosthetic gripping the reins. He is fifty-five years old and he rides like a man of twenty, because the northern frontier does not permit old soldiers who have forgotten how to ride.
+
+    "Hold the line!" he shouts to the command staff. Then he is gone, plunging down the hillside toward the cavalry reserve with a thousand riders at his back.
+  #"Be careful, General. The empire needs you alive."
+    *set honest %+ 5
+    *set rel_general %+ 10
+    *temp kadir_response "careful"
+    Kadir pauses. For one breath -- just one -- the granite face cracks, and you see something beneath it that might be gratitude, or might be the recognition of a peer.
+
+    "The empire needs a lot of things," he says. "I'll do my best to be one of them."
+
+    Then he rides.
+  #"Take my personal guard as well. Every sword matters."
+    *set ruthless %+ 5
+    *set strength + 3
+    *set personal_combat true
+    *temp kadir_response "guard"
+    Kadir hesitates. "That leaves you unprotected."
+
+    "I'm standing behind a wall with eight thousand soldiers. I'll manage."
+
+    A pause. Then: "You have iron in you, Vizier. I did not always think so." He takes the guard and rides, and you are left on the hillside with Farid and a handful of runners and the battle raging below.
+
+*page_break
+
+*comment === THE CRISIS MOMENT ===
+
+The battle turns on the next hour.
+
+Kadir's cavalry intercepts Borte Khan's reserve -- you can see the collision from the hillside, a distant smear of dust and glinting steel. The trapped Khanate column in the breach fights with the ferocity of cornered wolves. The eastern infantry holds, but barely. The casualties mount.
+
+And then a runner reaches you, gasping, bleeding from a shallow cut across his forehead.
+
+"The western cavalry is falling back! They're outnumbered -- the Khan sent flankers through the mountain passes. They're being hit from behind!"
+
+The western cavalry was the hammer of the trap. Without them, the Khanate column in the breach will break free. The ambush will become a rout -- but a rout of the Khazaran army, not the Khanate.
+
+*if (personal_combat)
+  You draw the sword at your hip. It is not ceremonial. Not today.
+
+  *if (strength > 50)
+    You have trained for this. The hours with Navid in the garrison yard, the discipline of a body honed for more than court appearances. The sword feels natural in your hand.
+    *set strength + 5
+  *else
+    The sword is heavy. You are not Navid, not Kadir, not a warrior born. But the steel is in your hand and the choice is made.
+
+*page_break
+
+*if (battle_strategy = "ambush")
+  *if (strength > 40)
+    You seize a signal horn from the command post and blow three sharp blasts -- the rally signal. Then you ride down the hillside toward the wavering western flank, because someone must, and the commander is you.
+
+    It is not heroism. It is necessity. The western cavalry sees the Vizier riding toward the fight, the seal ring flashing in the smoke-stained sunlight, and something in them steadies. A cheer goes up -- ragged, desperate, but real.
+
+    The line holds. Barely. You take a cut across your forearm that you do not feel until afterward. But the line holds.
+
+    *set strength + 3
+    *set soldiers_saved + 500
+    *set boldness %+ 10
+  *else
+    You send every available runner to the western flank with orders to fall back to the secondary position -- the ridge line a quarter mile behind the breach. It concedes ground but saves the formation.
+
+    The runners go. The western cavalry retreats in good order, fighting as it goes. The Khanate flankers pursue but overextend, and the ridge gives the defenders the high ground.
+
+    It is not victory. But it is survival.
+    *set soldiers_saved + 200
+
+*page_break
+
+*comment === KADIR'S CHARGE AND HEIR_ALIVE CHECK ===
+
+The battle's climax comes in the early afternoon, when the mist has burned away and the Wall of Roshan stands in sharp relief against a sky stained with smoke.
+
+Kadir returns.
+
+He comes from the east at the head of what remains of his cavalry -- fewer than he left with, their armor dented and bloodied, but formed up and moving with purpose. Borte Khan's reserve has been blunted, turned back, scattered into the steppe.
+
+And Kadir himself is wounded. You can see it from the command post -- the way he favors his left side, the dark stain spreading across his armor beneath the iron arm. But he rides upright, because Kadir will ride upright until he is dead, and perhaps for some time afterward.
+
+*if (rel_general > 60)
+  He meets your eyes across the battlefield and raises the iron hand. A salute. The first he has ever given you.
+  *set final_alliance_military true
+  *set rel_general %+ 10
+
+*page_break
+
+The Khanate army begins to withdraw.
+
+Not a rout -- Borte Khan is too disciplined for that. A controlled retreat, pulling her forces back through the breach in good order, covering the withdrawal with archer screens. She has lost perhaps eight thousand warriors. You have lost perhaps three thousand soldiers. The Wall of Roshan still stands, broken and battered, but standing.
+
+It is not a decisive victory. The Khanates are not destroyed. Borte Khan will regroup, resupply, and likely try again when winter breaks. But for now -- for today -- the northern front holds.
+
+*goto battle_aftermath
+
+*label battle_withdrawal
+
+The withdrawal south is orderly but bitter.
+
+*page_break
+
+Kadir executes the retreat with the same precision he brings to attack. Units fall back in sequence, each covering the next, trading space for time. The Khanate riders harass the rear guard but do not commit to a full pursuit -- Borte Khan is cautious, wary of traps even when there are none.
+
+The northern provinces are abandoned. As you ride south, you pass through villages already emptying -- families loading carts, driving livestock before them, the ancient rhythms of flight from invasion playing out as they have for centuries.
+
+An old woman stands in the doorway of a stone farmhouse and watches the army pass. She does not flee. She does not pack. She stands in her doorway with her arms folded and an expression of such profound contempt that even Kadir looks away.
+
+"My husband built this house," she calls out as you pass. "My sons are buried in the field behind it. You can run if you like, soldiers. I'll be here when you come back."
+
+*page_break
+
+The new defensive line is twenty miles south -- a ridge overlooking the Valley of the Ashar, where the terrain narrows and the Khanate cavalry's numerical advantage is reduced. Kadir has the fortifications built within two days, his engineers working through the night by torchlight.
+
+The Khanate army follows but does not attack. Borte Khan is content, for now, to occupy the northern provinces. She has what she came for -- territory, resources, and the humiliation of the empire. The question is whether she will be satisfied with that, or whether she will press south toward the capital.
+
+*if (rel_general > 50)
+  "She'll press south," Kadir says quietly, standing beside you on the ridge. "Not now. In the spring, when the grass is green and her horses are fresh. We've bought time, Vizier. That's all. Time."
+  *set final_alliance_military true
+  *set rel_general %+ 5
+*else
+  "We've lost the north," Kadir says. His voice is a blade, and it cuts at you. "Remember that. Whatever happens next, remember that the northern provinces burned because we chose to retreat."
+
+*goto battle_aftermath
+
+*label battle_negotiate
+
+The negotiation takes place in the shadow of the wall, in a tent pitched on the no-man's-land between the two armies.
+
+*page_break
+
+Borte Khan comes with ten guards and the bearing of a woman who has never needed to prove anything to anyone. She is younger than you expected -- perhaps forty, with weather-beaten features and eyes the color of winter sky. She wears no crown, no jewels, no ornamentation of any kind. Her authority is in her posture and the way her guards watch her, not for orders, but with a devotion that borders on worship.
+
+She speaks Khazari with a heavy accent but perfect grammar.
+
+"The Vizier of the Khazaran Empire. I expected the General." She looks you over with frank assessment. "You are not a soldier."
+
+"No," you say. "I am a diplomat."
+
+"A diplomat." She turns the word over. "Among my people, we have a saying: a diplomat is a warrior who has run out of arrows. Is that why you are here, Vizier? Have you run out of arrows?"
+
+*page_break
+
+"I am here because thirty thousand of your warriors and twenty-five thousand of my soldiers do not need to die for territory that benefits neither of us."
+
+She raises an eyebrow. "The northern provinces benefit us considerably. Grain, horses, grazing land, and the satisfaction of watching the empire that has raided our herds for a century finally bleed in return."
+
+"For one season. Then winter comes, and your army must feed itself from conquered farmland that your own cavalry is burning. By spring, the granaries will be empty, your supply lines will stretch five hundred miles, and the empire will have had time to mobilize its full strength. Three hundred thousand soldiers, General Borte. Not twenty-five thousand. The full imperial levy."
+
+A pause. You are bluffing. The full levy would take months to assemble and the treasury cannot fund it. But Borte Khan does not know that.
+
+*if (diplomacy > 55)
+  You see the calculation in her eyes. She is a general, and generals understand logistics.
+  *set diplomacy + 5
+  *set rel_general %+ 8
+  *set final_alliance_military true
+
+  "What are you offering?" she asks.
+  *goto negotiation_terms
+*else
+  She studies you for a long moment. "You are a diplomat," she says. "And diplomats lie. I do not know if you are lying now, but I will think about it."
+
+  She rises and leaves the tent. The negotiation is not over, but it is not resolved either. The northern front settles into an uneasy standoff.
+  *goto battle_aftermath
+
+*label negotiation_terms
+The terms take three days to hammer out. Kadir watches from the sidelines with an expression that oscillates between grudging respect and professional horror.
+
+The agreement: the Khanate withdraws to the Wall of Roshan. In exchange, the empire recognizes Khanate sovereignty over the steppe lands north of the wall (lands the empire never effectively controlled), grants trading rights at three border posts, and pays a one-time tribute of ten thousand gold ashrafs.
+
+"Tribute," Kadir says, when you present the terms. "We are paying tribute to nomads."
+
+"We are buying peace. And time."
+
+*set gold - 30
+*set rep_military %- 10
+*set rep_trade %+ 5
+
+*goto battle_aftermath
+
+*page_break
+
+*comment === AFTERMATH AND HEIR_ALIVE CHECK ===
+
+*label battle_aftermath
+
+*comment Check heir_alive risk based on capital defense
+*if ((crisis_priority != "military") and (resource_decision = "full_military"))
+  *comment Capital was left weakly defended AND stripped of resources
+  A dispatch arrives from the capital. Farid reads it and his face goes white.
+
+  "Prince Kaveh's supporters attempted to storm the Citadel last night. The reduced garrison held, but --" He swallows. "The Emperor was moved to the inner keep for safety. During the move, there was an incident. An arrow from the walls."
+
+  "The Emperor?"
+
+  "Alive. Wounded. An arrow grazed his shoulder." Farid's voice shakes. "Captain Navid shielded him from a second arrow. He -- the Captain is hurt, but he will live."
+
+  *set heir_alive true
+  *set rel_emperor %+ 5
+  *comment Near miss -- heir_alive stays true but the danger was real
+*elseif ((crisis_priority != "military") and (resource_decision != "full_military"))
+  A dispatch from the capital. The reduced garrison held against Kaveh's supporters. The Emperor is safe. The Citadel endured.
+
+  Relief washes through you like cold water.
+
+The battle -- or the withdrawal, or the negotiation -- is over. The northern front is stabilized, for now. But stabilized is not secure. The Khanates remain a threat, the wall remains broken, and the cost of this day is written in the blood of soldiers who will not go home.
+
+*page_break
+
+You stand on the ridge overlooking the northern plain as the sun sets. The sky is the color of a bruise -- purple and red and the sickly yellow of smoke still rising from the burning villages.
+
+*if (battle_strategy = "ambush")
+  You won. The word feels inadequate. Three thousand soldiers died to hold this ground. Three thousand families in Khazara will receive the terrible knock on the door, the folded letter, the seal ring returned.
+  *set soldiers_saved + 1000
+*elseif (battle_strategy = "withdrawal")
+  You retreated. The northern provinces burn behind you. The old woman in her farmhouse door haunts you -- her contempt, her refusal to leave. Is she still standing there? Is her house still standing?
+*else
+  You negotiated. The Khanates are withdrawing, but the taste of tribute is bitter in your mouth. Kadir is right -- it is a humiliation. But humiliation is better than annihilation. You hope.
+
+*if (rel_general > 60)
+  Kadir joins you on the ridge. His wound has been bandaged, his arm strapped to his side. He should be resting. He is not.
+
+  "You did well today, Vizier," he says. Coming from Kadir, this is a standing ovation. "I was wrong about you. You are not just a civilian with a seal ring. You are someone I can fight beside."
+
+  *set rel_general %+ 8
+  *set rep_military %+ 10
+
+Farid appears with dispatches -- the crisis in the south, the economic situation, Kaveh's movements. The other crises have not paused while you fought the Khanates. The empire is still bleeding.
+
+But the north, for today, holds.
+
+You turn south. The capital awaits, and with it, the treasury war.
+
+*finish The Treasury War

@@ -1,0 +1,505 @@
+*comment ============================================================
+*comment SCENE 2: "THE AUDIENCE"
+*comment Word target: ~10,000
+*comment Variables modified: has_met_emperor, has_met_dowager,
+*comment   rel_emperor (+5 to +15), rel_dowager (+5 to +15),
+*comment   boldness, honest, rep_nobility, rel_farid
+*comment ============================================================
+
+*temp preparation_style "standard"
+*temp court_impression "neutral"
+*temp emperor_response "neutral"
+*temp dowager_response "neutral"
+*temp address_choice "formal"
+
+*comment === OPENING: MORNING PREPARATION ===
+
+Dawn arrives the way power arrives: slowly at first, then all at once.
+
+You are already awake when the first light creeps through the latticed shutters, painting patterns of gold and shadow on the silk carpets. You have been awake for an hour, lying in the unfamiliar bed, listening to the fountains and rehearsing. The audience. The Emperor. The Dowager. Every word, every gesture, every angle of a bow -- all of it scripted by three centuries of court protocol, and all of it, Farid has assured you, capable of ending a career if performed incorrectly.
+
+A knock. Farid enters carrying your formal robes over one arm and a stack of documents under the other. He looks as though he has not slept at all. There are ink smudges on his left cheek and a wild light in his eyes that you are learning to recognize as focused panic.
+
+"Good morning, ${title_honorific} ${player_name}. The audience is in ninety minutes. I have prepared annotated notes on court protocol -- " he lays papers on the desk " -- a summary of the Emperor's known preferences and habits -- " more papers " -- a brief history of previous Vizier investitures for context -- " yet more papers " -- and a list of seventeen things you absolutely must not do in the Jade Throne Room."
+
+He pauses, slightly out of breath.
+
+"The list was originally twenty-three items, but I consolidated the six involving unauthorized touching of the throne into a single entry."
+
+*page_break
+
+The formal robes of the Grand Vizier are magnificent and impractical in equal measure. Layers of silk in deep indigo, embroidered with silver thread in geometric patterns that catch the light. A sash of crimson at the waist. A collar of stiffened brocade that frames the face. The seal ring on your finger. The weight of it all is considerable -- not crushing, but present. A constant, gentle reminder that you are no longer a private person.
+
+Farid helps you dress, fussing over the drape of the sash and the angle of the collar with the intense concentration of a man defusing a bomb.
+
+"The key points," he says, as he works. "First: you will enter the Jade Throne Room from the Hall of Mirrors. You will walk the full length of the chamber alone. The court will be assembled on either side. They will be watching you. Do not hurry. Do not hesitate. Walk as though you belong there."
+
+He straightens your sash.
+
+"Second: the bow. Three steps from the dais, you stop. You bow -- not a full prostration, that is for foreign ambassadors and supplicants. The Vizier's bow is to the waist, hands at the sides, held for three heartbeats. No more, no less. Two heartbeats suggests insufficient respect. Four suggests groveling."
+
+He steps back and examines his work.
+
+"Third: the Emperor will address you. You will respond. And then --" He swallows. "The Dowager Empress will wish to speak with you privately. That is the part I cannot prepare you for."
+
+He picks up his stack of papers, then sets them down, then picks them up again. His hands are not steady.
+
+"${title_honorific} ${player_name}, I should tell you -- the Dowager's private audiences are not conversations. They are examinations. She asks questions that seem like questions but are actually tests, and the answers you give determine -- well, everything. Your access. Your authority. Whether she supports you or undermines you."
+
+He pauses.
+
+"The last Vizier -- Vizier Cyrus -- told me that after his first private audience with the Dowager, he went back to his chambers and drank an entire bottle of wine. He was not a man who drank. But he said it was the most frightening half-hour of his life, and he had served on the northern frontier." Farid's eyes go distant. "He survived the Dowager. He did not survive whatever came after."
+
+The shadow of the dead Vizier falls across the morning like a stain.
+
+*page_break
+
+*comment === FAKE CHOICE: PREPARATION APPROACH ===
+
+You study your reflection in the polished bronze mirror that serves as a looking glass. The robes transform you. The provincial administrator is gone. In ${their} place stands someone who looks, at least on the surface, like a person of consequence.
+
+The question is what lies beneath the surface.
+
+How do you prepare for what is coming?
+
+*fake_choice
+  #You study Farid's notes meticulously. Every protocol, every precedent, every historical example. Knowledge is armor.
+    *set preparation_style "scholarly"
+    *set scholarship + 3
+    You spend the remaining hour reading. Farid's notes are, despite the tea stains, remarkably thorough. You learn that the last Vizier to stumble during the approach was demoted within a week. You learn that Emperor Roshan's father preferred direct eye contact as a sign of honesty. You learn that the Dowager Empress once reduced a seasoned diplomat to tears with a single question about his mother.
+    *line_break
+    Armed with knowledge, you feel steadier. The court is a game. Every game has rules. And you have always been a fast learner.
+  #You practice the bow and the walk until they are flawless. Presence matters more than words.
+    *set preparation_style "physical"
+    *set diplomacy + 3
+    You stand before the mirror and practice. The approach. The bow. The straightening. The meeting of eyes. You do it once, twice, ten times, until the movements feel natural -- not rehearsed, but inevitable, as though you have been walking into throne rooms your entire life. The silk robes settle into the rhythm of your stride.
+    *line_break
+    Farid watches with growing approval. "That is -- yes. That is exactly right. You look like you were born to this."
+    *line_break
+    You were not. But they do not need to know that.
+  #You sit in the garden with cardamom tea and clear your mind. Calm is its own preparation.
+    *set preparation_style "calm"
+    *set boldness %+ 5
+    You take your tea to the small courtyard outside your chambers and sit beside the fountain. The water catches the early light and throws shards of gold onto the tiled walls. A nightingale is singing in the pomegranate tree. You breathe. You listen. You let the anxiety settle like sediment in a cup, until the water above it runs clear.
+    *line_break
+    When you return inside, Farid is pacing. He stops when he sees your face. "You look -- calm. How are you calm? The audience is in forty minutes."
+    *line_break
+    "I know," you say.
+
+*page_break
+
+*comment === THE WALK TO THE THRONE ROOM ===
+
+You leave your chambers and step into the Citadel's morning rhythms. Servants pad along the corridors with trays of tea and platters of fruit. A gardener tends the jasmine vine that climbs the colonnade outside your door, his clippers making small, precise sounds in the stillness. The air smells of fresh bread and incense -- the morning prayer has just ended, and the sandalwood lingers like a memory.
+
+The Hall of Mirrors lives up to its name. Tall panels of glass -- imported, at ruinous expense, from the Western Confederation -- line both walls, multiplying the morning light into a blinding corridor of reflections. You see yourself approaching from a hundred angles. A hundred versions of the new Vizier, all of them walking with a steadiness that is either genuine composure or an excellent performance. The mirrors also show what is behind you, and you notice two courtiers who have stopped to watch your passage. They lean together and murmur, and you cannot hear the words, but the tone carries: anticipation. Judgment. The new Vizier, walking to meet the Emperor. A show worth watching.
+
+Farid stops at the entrance to the Jade Throne Room. This is as far as he goes.
+
+"You walk alone from here," he says quietly. "I'll be in the antechamber. When it's over -- " He stops. Adjusts your sash one final time, though it does not need adjusting. "You will be magnificent, ${title_honorific} ${player_name}. I believe that."
+
+His eyes are bright, and you realize, with a small shock, that he means it. Not the performative loyalty of a courtier, not the transactional support of an ally, but something simpler and more dangerous: genuine faith. He believes in you. You have done nothing to earn it. The weight of that unearned belief settles on your shoulders alongside the weight of the seal ring and the silk robes and the thousand expectations that come with a title you have held for less than a day.
+
+You touch the ring on your finger. The jade is warm.
+
+"Thank you, Farid," you say.
+
+He nods, steps back, and gestures toward the doors of the Jade Throne Room with the gravity of a man opening the gates to eternity.
+
+*page_break
+
+*comment === THE JADE THRONE ROOM ===
+
+The doors open, and the Jade Throne Room takes your breath.
+
+You have seen it before -- briefly, yesterday, in the amber light of late afternoon, with only Farid and an attendant for company. But that was the room at rest. This is the room at full ceremony, and the difference is the difference between a sword on a wall and a sword in a hand.
+
+The chamber is vast. The domed ceiling rises a hundred feet above you, painted with a field of stars on midnight blue, each star picked out in gold leaf that catches the light from the high arched windows. The floor is polished marble inlaid with geometric patterns in gold and lapis lazuli. Columns of white marble line the hall in two rows, and between them, the court is assembled.
+
+They stand in ranked rows, perhaps two hundred of them: nobles in silk and brocade, military officers in crimson and gold, temple officials in white, merchants in the rich, practical fabrics of the trading class. Every face is turned toward you. Every eye is measuring.
+
+The silence is extraordinary. Two hundred people, and the only sound is the distant splash of a fountain, the faint crackle of incense burners, and the soft tread of your own footsteps on the marble floor.
+
+At the far end, on the dais of white marble, sits the Silk Throne.
+
+And on the Silk Throne sits a boy.
+
+*page_break
+
+Emperor Roshan IV is trying very hard not to look afraid.
+
+He sits upright, shoulders squared, chin lifted at the precise angle that portraits of his ancestors depict. His robes are white -- pure, unblemished white, the color reserved exclusively for the Emperor -- and they are too large for him. The sleeves have been taken in, but the collar still swallows his neck. His hands rest on the jade arms of the throne, and if you did not know better, you might think the posture was relaxed. But his knuckles are pale, and his fingers grip the jade as if he fears the throne might buck like a horse and throw him.
+
+He is sixteen years old. He has a sharp, intelligent face, dark eyes that are watching you with ferocious attention, and the barest shadow of a beard that he is probably very proud of. The crown sits on his dark hair -- a circlet of gold set with a single emerald the size of a quail's egg.
+
+He is, you realize with a pang, the same age as your youngest cousin. The same age as the gate guards you trained in the provinces. A child, wearing the heaviest crown in the world.
+
+You notice other details. A cup of water on a small table beside the throne -- untouched, but placed within reach, the way a mother places a glass beside a child's bed. A folded cloth on the throne's arm -- white silk, for wiping the sweat that the heat and the heavy robes must produce. These are small kindnesses, invisible to anyone not looking for them, and they tell you that someone in this palace cares about the boy on the throne, even if that care is expressed in the language of protocol rather than affection.
+
+Beside the throne, seated in a chair of carved ebony that is exactly two inches lower than the throne itself -- a difference that someone, at some point, measured with obsessive precision -- is the Dowager Empress Nur.
+
+*page_break
+
+The Dowager does not look like a woman who measures things in inches. She looks like a woman who measures things in years.
+
+She is forty-five, though she could be any age between thirty and sixty. Her face is smooth, composed, framed by a headscarf of midnight blue embroidered with silver stars. Her robes are dark -- deep blue, almost black -- and unadorned except for a single brooch of diamonds and sapphires at her throat. She wears no other jewelry. She does not need to.
+
+Her eyes are the most remarkable thing about her. Dark, steady, and utterly without warmth. They rest on you as you approach, and you have the sudden, unsettling sense that she has already finished reading you -- that she knew everything she needed to know the moment the doors opened, and the rest of this ceremony is merely a formality she endures out of respect for tradition.
+
+She does not smile. She does not frown. She simply watches, with the patient attention of someone who has been watching for a very long time.
+
+You walk the length of the Jade Throne Room. It takes an eternity. You keep your pace even, your eyes forward, your shoulders level. The court watches. The Dowager watches. The boy on the throne watches, and in his eyes, behind the studied formality, you see something raw and desperate: hope.
+
+He hopes you are the answer to a question he has not yet learned to ask.
+
+Three steps from the dais, you stop. You bow.
+
+One heartbeat. The marble floor, polished to a mirror finish, reflects your face back at you -- upside down, compressed, a stranger.
+
+Two heartbeats. You hear the court breathing. Two hundred people, holding their breath, waiting for the new Vizier to rise.
+
+Three heartbeats. Not two. Not four. Three, as protocol demands, and not a fraction of a second longer. You straighten.
+
+The Emperor is looking at you. The Dowager is looking at you. The entire court is looking at you. And in the space between the bow and the first word, in that hanging silence where the future has not yet been spoken, you feel the full weight of the moment: the history of this room, the power of the throne, the fragility of the boy who sits on it, and the ring on your finger that says you belong here, whether you believe it or not.
+
+*page_break
+
+*comment === MEETING THE EMPEROR: REAL CHOICE ===
+
+"Rise," says the Emperor.
+
+His voice is deeper than you expected. He has been practicing it -- you can hear the careful placement of the tone, the deliberate resonance. It is the voice of a boy imitating the men he has watched rule, and it is almost convincing.
+
+"We welcome our new Grand Vizier to the court of the Khazaran Empire." The royal plural. The formal register. Every word placed with the precision of a mason laying stones. "The throne has need of a steady hand and a clear voice. We trust that you will provide both."
+
+He pauses. Something flickers behind the formal mask -- a moment of uncertainty, quickly buried.
+
+"You may address us."
+
+*set has_met_emperor true
+
+This is the moment. The entire court is listening. The Dowager is watching. The Emperor -- the boy -- is waiting. Your first words in this hall will be remembered, repeated, analyzed, and judged.
+
+How do you address the Emperor?
+
+*choice
+  #With formal reverence, honoring his authority and the weight of his crown.
+    *set address_choice "formal"
+    *set rel_emperor %+ 10
+    *set rep_nobility %+ 5
+    *set honest %+ 5
+    "Light of the World," you say, and your voice carries in the vast chamber with a clarity that surprises even you. "Shadow of God upon the Earth. I am honored beyond measure to stand before the Silk Throne. I pledge my service, my counsel, and my loyalty to Your Imperial Majesty and to the empire you embody. I am the voice of the throne. Command me, and I will speak. Direct me, and I will act."
+
+    The words are traditional -- drawn from the investiture ceremony that Farid's notes described in meticulous detail. But you mean them. That, perhaps, is what the Emperor hears, because something in his expression shifts. The grip on the throne's arms loosens, just slightly.
+
+    "Well spoken," he says, and for a moment, the practiced depth drops from his voice, and you hear the boy underneath -- pleased, relieved, grateful.
+
+    A murmur runs through the court. Approval, perhaps. Or simply interest.
+    *goto after_address
+  #With directness, speaking to the young man behind the title.
+    *set address_choice "direct"
+    *set rel_emperor %+ 15
+    *set boldness %+ 5
+    *set rep_nobility %- 5
+    "Your Majesty," you say. Not the full formal title. Not the elaborate pledge. Just two words, spoken clearly, meeting his eyes. "I am here to serve. Not the throne. Not the title. You. Whatever you need, whatever the empire requires, I am your Vizier."
+
+    A ripple passes through the court -- not quite a gasp, but a collective intake of breath. The etiquette masters will be horrified. The full formal address spans three paragraphs and includes a genealogical recitation. You have given the Emperor six sentences and a promise.
+
+    But the Emperor's eyes widen, and you see something in them that no amount of protocol could produce: surprise. And behind the surprise, relief so raw it is almost painful to witness.
+
+    "Thank you," he says softly, and the royal plural slips -- just for a moment, just long enough for you to hear the boy and not the emperor. Then the mask slides back. "We are pleased to receive our Vizier."
+    *goto after_address
+  #With careful diplomacy, balancing respect for tradition and a hint of your own strength.
+    *set address_choice "diplomatic"
+    *set rel_emperor %+ 8
+    *set rel_dowager %+ 5
+    *set diplomacy + 3
+    "Light of the World," you say, with a measured bow of the head, "the empire's strength is in its traditions, and its future is in its people. I come from the provinces, where those traditions are lived daily and those people are the empire's true foundation. I pledge my service to Your Majesty, and through you, to the empire entire."
+
+    It is a careful speech -- formal enough to satisfy the court, personal enough to show that you are not merely reciting. You have acknowledged the Emperor's authority while subtly reminding the room that you bring a perspective none of them possess. An outsider's eyes. A provincial's pragmatism.
+
+    The Emperor nods. "The provinces are the empire's roots," he says, and you hear the echo of a tutor's lesson in the phrasing. "We are glad to have someone who knows them."
+
+    A polished response. You wonder how much of it is his own.
+    *goto after_address
+
+*label after_address
+
+*page_break
+
+*comment === FAKE CHOICE: COURT OBSERVATIONS ===
+
+The formal audience continues. The Emperor makes a brief speech about the empire's challenges and his confidence in the new administration. It is well-written -- someone has coached him -- and delivered with a steadiness that belies his age. You stand before the dais and listen, and as you listen, you watch the court.
+
+*fake_choice
+  #You watch the nobles -- their expressions, their positions, the subtle language of who stands near whom.
+    *set court_impression "political"
+    *set cunning + 3
+    *temp observation_detail "nobles"
+    The court is a map drawn in silk and proximity. The oldest families cluster near the front, their robes heavy with embroidery and the weight of lineage. A white-haired lord -- Lord Reza, you think, from Farid's descriptions -- stands apart from the rest, leaning on an ivory cane, his expression one of studied boredom that does not quite conceal the sharpness underneath. Near him, a young woman in violet -- Lady Soraya, perhaps -- watches the Emperor with an intensity that suggests genuine interest, or genuine ambition, or both.
+  #You watch the Dowager, trying to read the woman behind the mask.
+    *set court_impression "strategic"
+    *set cunning + 3
+    *temp observation_detail "dowager"
+    The Dowager Empress has not moved since you entered the room. Not a shift in posture, not a turn of the head, not a flicker of expression. She sits in her chair of carved ebony like a portrait of herself -- beautiful, composed, and utterly still. But her eyes move. They track the Emperor's words, gauge the court's reactions, note which nobles lean forward and which lean back. She is reading the room the way a general reads a battlefield, and you suspect she has already determined the outcome of every engagement that will follow.
+  #You watch the Emperor himself -- the performance and the person beneath it.
+    *set court_impression "empathetic"
+    *set honest %+ 5
+    *temp observation_detail "emperor"
+    Roshan reads his speech from memory, and does it well. But you are watching his hands, not his mouth. His right hand grips the arm of the throne. His left rests on his knee, and the fingers are tapping -- a quick, irregular rhythm that he probably does not know he is doing. It is the rhythm of a boy who wants this to be over. Who wants to be somewhere else -- anywhere else -- where he does not have to perform.
+    *line_break
+    You feel an unexpected surge of sympathy. The crown is heavy. The boy is young. And the empire does not care about either of those facts.
+  #You watch for threats -- guards, exits, the placement of armed men.
+    *set court_impression "tactical"
+    *set strength + 3
+    *temp observation_detail "security"
+    Old habits. You count the guards: six at the doors, four on the dais, two concealed behind the columns. Their sight lines overlap, covering the room in an interlocking web of attention. The windows are too high for entry. The doors are the only exits. If something were to happen -- an attack, a disturbance -- the Emperor would be surrounded by steel in seconds. The security is competent. You file it away and keep watching.
+
+*page_break
+
+*comment === THE DOWAGER'S PRIVATE AUDIENCE ===
+
+The formal ceremony concludes with a final bow from you and a final pronouncement from the Emperor. The court disperses in a rustle of silk and a murmur of conversation that rises like steam the moment the Emperor steps down from the dais.
+
+But you do not leave. Because a servant appears at your elbow, silent as a shadow, and murmurs three words:
+
+"The Dowager requests."
+
+It is not a question. The servant leads you through a side door, down a corridor lined with miniature paintings -- battle scenes, garden parties, a hunt in which the quarry looks very much like a man -- and into a small, exquisitely appointed room.
+
+The room smells of sandalwood incense, rich and heavy. The walls are paneled in dark wood carved with interlocking geometric patterns. The furniture is sparse: two chairs, a low table, a ewer of water and two cups. The window overlooks the Garden of Eternal Spring, where fountains send up plumes of silver that catch the morning light and scatter it like coins.
+
+The Dowager Empress Nur is already seated. She has removed the brooch from her throat and placed it on the table between the two chairs, and you have the curious feeling that this, too, is deliberate -- that the removal of the diamonds is meant to signal informality, the way a soldier removing a gauntlet signals a wish to negotiate rather than fight.
+
+"Sit," she says. One word. No title.
+
+You sit. The chair is upholstered in silk so dark it is nearly black, and it is comfortable in the precise, deliberate way that everything in the Dowager's orbit is comfortable -- designed to put you at ease, and by putting you at ease, to lower your guard.
+
+The table between you holds the ewer and the cups and nothing else. No papers. No documents. No agenda. This is not a meeting. It is an encounter, unmediated by the bureaucratic armor that protects people in positions of power from having to look each other in the eye.
+
+Through the window, the Garden of Eternal Spring spreads below. The water channels catch the morning light and throw it back in long, liquid ribbons. A peacock fans its tail, the iridescent eyes shimmering green and blue and gold. From this height, the garden looks like a map -- every path, every channel, every flower bed precisely placed, nothing left to chance, nothing growing where it was not intended to grow.
+
+You suspect the Dowager sees it the same way. Not as a garden. As a diagram. A model of the kind of order she has spent her life imposing on a world that would prefer to be wild.
+
+*page_break
+
+*set has_met_dowager true
+
+The Dowager regards you for a long moment. The silence stretches. The fountains murmur in the garden below. A line of incense smoke climbs from a brazier in the corner, perfectly straight, as though even the air in this room does not dare to waver.
+
+"We chose you," the Dowager says at last. Her voice is low, melodious, and carries the precise diction of a woman who has never spoken a careless word in her life. "From forty candidates. Generals' children. Governors' nephews. Scions of the oldest families in the empire. We passed over all of them and selected a provincial administrator with no connections, no patrons, and no debts."
+
+She pauses. Her eyes are steady on yours.
+
+"Do you know why?"
+
+It is not a rhetorical question. She expects an answer. And you sense, with the instinct of someone who has spent a lifetime in rooms where the wrong word can end you, that the answer matters more than anything you said in the Throne Room.
+
+"Because I owe nothing to anyone in this court," you say. "Because every faction will think they can control me, and that uncertainty serves your purposes."
+
+The Dowager's expression does not change. But something shifts behind her eyes -- a flicker of what might be approval, or might be the recognition that you are smarter than she had hoped.
+
+*page_break
+
+"A gardener," the Dowager says, "does not blame the vine for growing toward the sun. She simply ensures the trellis guides it where it ought to go." She turns her water cup slowly on the table. "You are new to this garden, Vizier. Let us see which direction you grow."
+
+She lets the silence settle. Then:
+
+"My son is young. He is intelligent -- more intelligent than his court realizes, which is a weapon he does not yet know he possesses. But intelligence without experience is a blade without a handle. It cuts the wielder as readily as the enemy."
+
+Her voice softens, though you are not certain the softening is genuine.
+
+"I have spent sixteen years preparing him for a throne he was not meant to inherit so soon. His father's death -- " A pause. The only pause you have seen her make. " -- was unexpected. Roshan is not ready. This is not a criticism. It is a fact. He requires guidance. He requires protection. He requires a Vizier who understands that the empire's stability is more important than any single person's ambition."
+
+She looks at you.
+
+"Including my own."
+
+*page_break
+
+*comment === THE DOWAGER'S TEST: REAL CHOICE ===
+
+The Dowager leans forward. The sandalwood incense drifts between you, and for a moment, the smoke draws a veil across her face.
+
+"Tell me, Vizier. My son has asked for your counsel on a matter. He wishes to address the Council of Five directly tomorrow -- to speak, not merely to preside. His advisors have urged patience. We have urged patience. He insists."
+
+Her eyes are very still.
+
+"What would you tell him?"
+
+This is the test. Not a question about policy or protocol -- a question about loyalty. Whose side are you on? The Emperor's desire for agency? The Dowager's counsel of patience? And how much are you willing to reveal about your own instincts in a room with a woman who collects information the way others collect jewels?
+
+*choice
+  #"I would support his wish. An emperor must learn to lead, and he cannot learn by watching others lead for him."
+    *set dowager_response "bold"
+    *set rel_emperor %+ 5
+    *set rel_dowager %- 5
+    *set boldness %+ 10
+    *set honest %+ 5
+    The Dowager's fingers tighten on the cup -- a movement so slight you would have missed it if you had not been watching. Her expression remains perfectly composed.
+
+    "Bold," she says. "A gardener who tells the vine it may grow wherever it pleases." A beat. "We wonder if you will feel the same when the vine grows thorns."
+
+    She studies you for a long moment. You hold her gaze. The silence is a contest, and neither of you flinches.
+
+    "Very well," she says at last. "We shall see what kind of Vizier answers to the Emperor rather than to his mother. We shall see if the empire survives your boldness."
+
+    The words are a warning. But underneath the warning, you detect something else -- not approval, exactly, but interest. You have surprised her. You suspect that does not happen often.
+    *goto after_dowager
+  #"I would advise preparation. Not patience -- preparation. Let him speak, but let him speak well."
+    *set dowager_response "diplomatic"
+    *set rel_emperor %+ 5
+    *set rel_dowager %+ 10
+    *set diplomacy + 3
+    The Dowager's expression shifts. Not a smile -- something subtler. The slight relaxation of muscles around the eyes that indicates a person receiving the answer they hoped for.
+
+    "A compromise," she says. "The vine grows, but within the trellis. You are a diplomat, ${player_name}."
+
+    It is the first time she has used your name. Not your title. Your name. The intimacy of it is startling, and you suspect it is intentional.
+
+    "Help him prepare," she continues. "Review his remarks. Guide his words without appearing to guide them. A good Vizier is like a good mirror -- the Emperor should see himself reflected, not the person holding the glass."
+
+    She nods, once. "We believe you understand. We shall be watching."
+    *goto after_dowager
+  #"I would tell him the truth: that the Council will test him, and he must decide for himself whether he is ready."
+    *set dowager_response "honest"
+    *set rel_emperor %+ 8
+    *set rel_dowager %+ 5
+    *set honest %+ 10
+    The Dowager goes very still. For a moment, the mask drops -- not entirely, not enough for the world to see, but enough for you. In her eyes, you see something complicated: surprise, assessment, and a grudging recognition that you have given the only answer she did not prepare a response for.
+
+    "Honesty," she says slowly. "How unusual. The last Vizier told us what we wanted to hear. The one before that told us what he thought we needed to hear." A pause. "You have told us what you believe. That is either very wise or very foolish."
+
+    She refills her water cup. The gesture is precise and unhurried.
+
+    "We chose well, perhaps. Or perhaps we chose badly. Time will tell. We are patient, Vizier. The river always tells the truth eventually."
+    *goto after_dowager
+
+*label after_dowager
+
+*page_break
+
+*comment === THE DOWAGER'S ASSIGNMENT ===
+
+The Dowager rises. The audience is over, though no signal was given. She simply stands, and the air in the room rearranges itself around her authority.
+
+"Tomorrow, the Council of Five meets to discuss the northern border crisis. The Khanates have raided a frontier garrison. Soldiers are dead. The border is open." She says this flatly, as though reciting a weather report. "Each member of the Council will argue for their preferred response. General Kadir will want war. Guildmaster Priya will want economic leverage. The priest will want negotiation. The spymaster will want investigation."
+
+She moves toward the door. Her steps are unhurried, precise, each footfall placed with the deliberation of someone who never moves without intention. The silk of her robes barely whispers against the floor. The incense smoke eddies in the current of her passage, parting and reforming, as though even the air defers.
+
+"You will chair the meeting. You will listen. You will observe who says what, and more importantly, who says nothing. And afterward, you will tell me what you saw."
+
+She pauses. The morning light falls across her face, and for a moment you see the fatigue beneath the composure -- the faint lines around her eyes, the pallor beneath the cosmetics, the infinitesimal sag of shoulders that have been carrying the weight of an empire while the world assumes the sixteen-year-old boy on the throne is doing it.
+
+She is tired. Bone-tired. The kind of tired that sleep does not fix, because it comes not from the body but from the soul. And in that moment of vulnerability, you understand something about the Dowager Empress that all her metaphors and parables are designed to conceal: she is afraid. Not for herself. For her son. For the empire she has spent thirty years holding together with silk and steel and sheer, relentless will.
+
+The moment passes. The mask reforms. She looks back.
+
+"The last person who sat in your chair was clever, too. Cleverness is a fine quality in a living person. We attended his funeral last month."
+
+The door closes behind her. The incense smoke eddies in her wake, then settles.
+
+You sit for a moment in the silence. The fountains murmur. The morning light plays on the geometric patterns of the wall. The Dowager's words hang in the air like the sandalwood smoke -- beautiful, heavy, and impossible to ignore.
+
+*page_break
+
+*comment === RETURN TO CHAMBERS: THE NOTE ===
+
+You find Farid in the antechamber, pacing. He has worn a visible track in the carpet. When you emerge, his face floods with relief so intense it is almost comical.
+
+"${title_honorific} ${player_name}! You survived. I mean -- of course you survived, it was an audience, not a -- but the Dowager's private audiences have been known to -- some people emerge looking quite -- " He catches himself. "How did it go?"
+
+*if (dowager_response = "bold")
+  "I told the Dowager I would support the Emperor's independence."
+  *line_break
+  Farid's face goes through several expressions in rapid succession, settling on something between admiration and terror. "You -- you challenged the Dowager Empress. On your first day. That is either very brave or very -- " He stops. "Brave. Let's go with brave."
+*elseif (dowager_response = "diplomatic")
+  "I found a middle ground. The Dowager seemed... satisfied."
+  *line_break
+  Farid nods, and the tension in his shoulders eases slightly. "Satisfied is good. With the Dowager, satisfied is excellent. 'Satisfied' from the Dowager Empress is like 'ecstatic' from anyone else."
+*else
+  "I told her the truth."
+  *line_break
+  Farid stares at you. "The truth," he repeats, as if tasting the word for unfamiliar properties. "In the Dowager's private chambers. The truth." He blinks several times. "That is -- unprecedented, ${title_honorific}. Not unwelcome. Just unprecedented."
+
+*set rel_farid %+ 5
+
+*page_break
+
+You return to your chambers. The day stretches before you -- there are documents to review, protocols to memorize, a palace to learn. But when you open your door, you stop.
+
+There is a piece of paper on the floor. It has been slipped under the door while you were away -- a single sheet, folded once, unsealed. No marking. No scent. No seal.
+
+You pick it up.
+
+The handwriting is careful, anonymous, rendered in the common script that any literate person in the empire could produce. There are no flourishes, no identifying characteristics, no clues to the author's identity.
+
+The message is brief:
+
+[i]Your predecessor died screaming. Three days of agony, and no one came. The physicians lied. The court lied. Everyone lies in this palace.[/i]
+
+[i]Be careful, Vizier. You are not safe. No one who sits in that chair is safe.[/i]
+
+[i]Watch the Council. One of them is the spider at the center of the web.[/i]
+
+Below the message, in the margin, there is a small mark -- a symbol drawn in the same careful, anonymous hand. A circle, with seven lines radiating from its center. Six of the lines are of equal length. The seventh is drawn thicker, heavier, doubled over itself.
+
+You do not recognize the symbol. But something about it -- the deliberateness of it, the way it sits on the page like a signature or a seal -- tells you it is not a random flourish. It means something. To someone, it means everything.
+
+The paper trembles in your fingers. Not from fear -- from something more complex than fear. From the sudden, crystalline understanding that the world you have entered is not the world you were told about. The fever was not a fever. The death was not natural. And someone in this palace -- someone who knows the truth -- has decided, for reasons you cannot yet fathom, to warn you.
+
+*page_break
+
+You read the note again. And again. The words do not change. [i]Died screaming.[/i] Three days. The physicians lied.
+
+You think of Farid's shaking hands when he spoke of Vizier Cyrus. You think of the dead man's office, still thick with the ghost of his presence. You think of the seal ring on your finger -- cool jade, warm gold, and the weight of a question that has just become a great deal more urgent.
+
+Someone murdered the Grand Vizier. Someone in this palace, with access to his food or his drink, with knowledge of poisons, with a reason to silence him.
+
+And now you sit in his chair. You wear his ring. You serve the same Emperor, attend the same Council, walk the same corridors.
+
+The note says to watch the Council.
+
+Tomorrow, you will.
+
+*page_break
+
+*comment === CLOSING: EVE OF THE COUNCIL ===
+
+You read the note a third time, holding it close to the lamplight, examining the paper for any distinguishing mark -- a watermark, a fiber, a scent. The paper is common stock, the kind sold in any stationer's shop in the bazaar. The ink is standard black. There is nothing to distinguish this note from a thousand others.
+
+Except the words. And the symbol.
+
+You fold the note carefully and place it inside the cover of the heaviest book on your shelf -- a volume of imperial tax law that no one will ever open voluntarily. A dead man's hiding place for a dead man's secret, and now yours. Then you sit at the desk and think.
+
+Through the window, the afternoon light falls in long shafts across the Garden of Eternal Spring. You can see the geometric patterns of the water channels, the neat rows of pomegranate trees, the peacocks strutting among the flower beds with the arrogant assurance of creatures that know they are beautiful. The fountains throw diamonds of water into the air. It is peaceful. It is gorgeous.
+
+It is a lie. Or, more precisely, it is a truth with something terrible growing underneath it -- the way a beautiful garden can conceal rotting roots, the way a polished marble floor can cover a mass grave. The predecessor knew it. Vizier Cyrus, with his silver reading glasses and his careful notes and his secretary who loved him, found something in the heart of this paradise that someone needed to keep hidden. And they killed him for it.
+
+Not quickly. Not mercifully. [i]He died screaming.[/i] Three days.
+
+You think of the water cup beside the Emperor's throne. The folded cloth. The small kindnesses. And you think of a man dying in agony in the room next door while the Citadel's fountains murmured and the peacocks strutted in the garden and the Eternal Flame burned on, indifferent, in the Temple Quarter.
+
+You look at the seal ring on your finger. You think of the Emperor -- a frightened boy trying to be a king. You think of the Dowager -- a woman who chose you because she believes she can control you. You think of the Council you will meet tomorrow -- five of the most powerful people in the empire, one of whom, if the note is to be believed, is a murderer.
+
+*page_break
+
+A knock. Farid.
+
+"${title_honorific} ${player_name}, the evening meal is prepared. And I should inform you -- the Council of Five meets tomorrow at dawn. In the Council Chamber." He hesitates. "All five members will be present. General Kadir, Guildmaster Priya, High Priest Ashoka, Spymaster Zara, and -- well, the fifth seat is vacant, but Lord Reza will be there representing the nobility from the gallery." He pauses again. "Per regulation 22-B, the Vizier chairs the Council in the Emperor's name. You will be -- you will be in charge."
+
+In charge. Of a council of faction leaders, one of whom may have killed your predecessor. In a room where a conspiracy symbol may be scratched under the table. On a morning when the empire's northern border is under attack and every decision you make will align you with one faction and alienate another.
+
+"Thank you, Farid," you say. "I look forward to it."
+
+Farid gives you a look that suggests you are either the bravest or most deluded person he has ever met.
+
+"Dawn," he says. "I'll have tea ready."
+
+He closes the door. You sit in the gathering dark, the anonymous note burning in your mind like a coal, and you wait for morning.
+
+Outside, the Eternal Flame burns. Inside, the shadows lengthen.
+
+Tomorrow, you meet the Council.
+
+*finish Chapter 3: The Council of Five

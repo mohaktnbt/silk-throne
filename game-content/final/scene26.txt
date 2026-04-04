@@ -1,0 +1,648 @@
+*comment === SCENE 26: "THE TRUE ENEMY" ===
+*comment Act 3 | ~10,000 words | PAID
+*comment Variables modified: conspiracy_revealed, dowager_confronted, rel_dowager,
+*comment   rel_reza, rel_emperor, boldness, ruthless, honest, idealist,
+*comment   personality axes (significant final shifts)
+*comment Choices: 2 *choice, 2 *fake_choice
+*comment Previous: Scene 25 | Next: Scene 27
+
+*comment === SCENE-LOCAL VARIABLES ===
+*temp confrontation_tone "unknown"
+*temp mercy_shown false
+*temp truth_public false
+*temp mastermind_response "defiant"
+*temp emotional_reaction "unknown"
+
+*comment === OPENING: THE EVIDENCE ASSEMBLED ===
+
+The evidence is laid out on the Council Chamber table like a surgeon's instruments before an operation. Coded letters, decoded and annotated in three colors of ink. Forged seals, identified and matched to their official counterparts. Testimony from captured agents, transcribed in Zara's meticulous hand -- each page signed and witnessed, each confession taken separately, each detail cross-referenced against the others.
+
+Financial records showing diverted treasury funds -- thousands of gold ashrafs, siphoned through a labyrinth of false accounts and phantom merchants, funneled to agents in the Old City and handlers in the Foreign Quarter. Troop rotation schedules that match, date for date, hour for hour, the intelligence leaked to the Northern Khanates. A letter, unsigned but unmistakable in its phrasing, that authorized the murder of your predecessor.
+
+You stand at the head of the table and look at the proof of betrayal, and you feel nothing.
+
+No -- that is not true. You feel everything. But the feelings are so vast, so tangled -- rage and grief and disbelief and a terrible, aching disappointment -- that they cancel each other out into a humming numbness, like the silence after a great bell has been struck. Like the emptiness at the center of a whirlpool.
+
+The Council Chamber is empty except for you and Zara. The round table, where factions have argued and alliances have been forged and broken, is covered in paper instead of politics. The morning light falls through the high windows and illuminates the evidence with an almost sacred glow, as though the documents are holy texts.
+
+They are, in a way. They are the sacred texts of betrayal.
+
+*page_break
+
+Zara stands at the window, her back to you. Dawn light traces the sharp lines of her profile -- the strong jaw, the cropped hair, the stillness that most people mistake for calm but which you now recognize as a form of compression. She holds herself tight because the alternative is to explode.
+
+"The evidence is conclusive," she says. Her voice is the voice she uses for intelligence briefings: flat, precise, stripped of everything except information. "Three independent sources confirm the identity. The agents we captured have corroborated under separate interrogation, in different cells, questioned by different people, with no opportunity to coordinate their stories."
+
+She turns. Her eyes are steady, but you know her well enough now -- after months of shared danger and cautious trust and the slow, careful building of something that is not quite friendship but is close enough to hurt -- to see what lies beneath that professional mask. The weight of what she is about to ask you to do. The recognition that this will break something that cannot be repaired.
+
+"You need to confront them. Today. Before they learn their network has been taken apart. Before they can run, or destroy evidence, or -- " She pauses. Chooses the word. "-- prepare."
+
+The word *prepare* carries a specific meaning in Zara's vocabulary. It means: *before they can marshal forces to fight back.*
+
+*if (route = 1)
+  *comment === LOYALIST: DOWAGER EMPRESS NUR ===
+  The name sits in your chest like a swallowed blade. The Dowager Empress Nur. Mother of the Empire. The woman who chose you for this position, who tested you in your first audience, who has guided and manipulated and -- in her own terrible way -- protected you since the day you arrived in Khazara.
+
+  The woman who murdered your predecessor. Who fed intelligence to the Northern Khanates. Who positioned Prince Kaveh as a replacement for her own son on the Silk Throne.
+
+  "Why?" The word escapes you before you can stop it. Not a political question. A personal one.
+
+  Zara's answer is precise, as always. "Because she decided Roshan was too weak. Because she believed the empire needed a ruler she could control absolutely. Kaveh is pliable. Roshan was beginning to listen to you instead of her."
+
+  *page_break
+
+  "She killed fifty soldiers at Fort Darband. Indirectly, perhaps, but the intelligence she leaked--"
+
+  "She would say those were acceptable losses for the stability of the empire. She has been telling herself a version of that story for months."
+
+  You close your eyes. Behind them, you see the Dowager's face -- the sharp intelligence, the elaborate metaphors, the rare moments when she spoke your name instead of your title and you glimpsed the fierce, frightened woman beneath the empress.
+
+  *She chose you.* That thought cuts deepest. She chose you because she believed she could control you, and when you proved otherwise -- when you strengthened her son instead of weakening him -- she turned to darker methods.
+
+  "The Emperor," you say. "Does Roshan know?"
+
+  Zara shakes her head. "Not yet. That is your decision. How he learns this -- and from whom -- will determine everything that follows."
+
+  *page_break
+
+  *fake_choice
+    #You feel a deep, aching sadness for the Dowager -- and for what this will do to the Emperor.
+      *set idealist %+ 5
+      *set ruthless %- 5
+      *temp emotional_reaction "grief"
+      The sadness settles into your bones like winter cold. Not for yourself -- for Roshan, who will learn that his mother tried to replace him. For the Dowager herself, who loved the empire so fiercely that she became its greatest threat.
+    #You feel a cold, clarifying anger. She betrayed the empire. She betrayed you.
+      *set ruthless %+ 5
+      *set boldness %+ 5
+      *temp emotional_reaction "anger"
+      The anger is clean. Bright. Like a blade drawn from its sheath. She used you. She manipulated a boy who trusted her. She sent soldiers to their deaths to serve her vision of control.
+    #You feel nothing. You have known this was coming. You prepared for it.
+      *set boldness %+ 5
+      *set ruthless %+ 5
+      *temp emotional_reaction "cold"
+      The numbness holds. It is armor, and you wear it deliberately. The time for feeling will come later. Now is the time for action.
+    #You feel a grudging respect for the scope of her ambition, even as you condemn it.
+      *set honest %- 5
+      *set boldness %+ 5
+      *temp emotional_reaction "complex"
+      She is a monster and she is magnificent. You can hold both truths at once. She built a conspiracy that nearly consumed an empire, and she did it while hosting dinners and quoting parables about rivers and stones.
+
+  You straighten your robes. Place the seal ring on your finger. Draw a breath that tastes of incense and old stone and the bitter dregs of trust.
+
+  "Bring me to the Dowager's Wing."
+
+  *goto confrontation_dowager
+
+*elseif (route = 2)
+  *comment === KINGMAKER: LORD REZA ===
+  Lord Reza. The Old Lion. Seventy-two years of noble blood, imperial service, and unshakeable conviction that birthright is the only true source of authority. You have sparred with him across council tables, endured his barbed comments about commoners in positions of power, and -- in your quieter moments -- admired the steel in his spine.
+
+  He is the enemy.
+
+  "A counter-conspiracy," Zara says, reading the question in your face. "Reza did not create the original plot against the Emperor. He discovered it and decided to use it. He has been feeding information to both sides -- to the original conspirators and against them -- positioning himself to emerge as the empire's savior."
+
+  *page_break
+
+  "He played everyone," you say.
+
+  "He played everyone. The Khanate intelligence leaks, the economic disruption, Kaveh's claim to the throne -- Reza did not start any of it, but he steered all of it. He wanted chaos. Chaos that only a strong, experienced, *noble* hand could resolve."
+
+  "His hand."
+
+  "His hand. Or a puppet's hand, guided by his. He despises what you represent -- a commoner wielding power that should belong to the old families. Your success is his nightmare. A Vizier who proves that merit matters more than birth undermines two hundred years of noble privilege."
+
+  You stare at the evidence on the table. Reza's handwriting is elegant, archaic, the letters formed with the precision of a man who believes penmanship reflects breeding.
+
+  *page_break
+
+  *fake_choice
+    #You feel a grudging admiration for the old man's cunning.
+      *set honest %- 5
+      *temp emotional_reaction "respect"
+      He is seventy-two years old, and he played the game better than any of you. Played the conspiracy, played the council, played the Vizier. In another life, in another game, you might have been allies.
+    #You feel contempt. He risked the empire for noble vanity.
+      *set ruthless %+ 5
+      *set idealist %+ 5
+      *temp emotional_reaction "contempt"
+      Soldiers died. The treasury was bled. The Khanates were emboldened. And for what? So that an old man could prove that bloodlines still mattered more than competence.
+    #You feel a cold satisfaction. You found him. He did not find you.
+      *set boldness %+ 5
+      *set ruthless %+ 5
+      *temp emotional_reaction "cold"
+      The game is the game. He played it. You played it better. That is all there is.
+    #You feel genuine fear. Reza has two hundred noble houses behind him.
+      *set boldness %- 5
+      *temp emotional_reaction "fear"
+      Reza is not a lone actor. He is the voice of an entire class -- the old aristocracy, the families who have ruled since the empire's founding. Destroying him may unite the nobility against you in ways that destroying a single conspirator would not.
+
+  You roll the old man's letters into a tight cylinder and slide them into your sleeve. Evidence. Leverage. Proof.
+
+  "Where is he now?"
+
+  "His estate. The old quarters near the Temple. He holds audience there every morning, surrounded by noble petitioners." Zara pauses. "He'll be expecting company eventually. I doubt he'll be expecting it today."
+
+  "Good. Let's not give him time to prepare a speech."
+
+  *goto confrontation_reza
+
+*else
+  *comment === REVOLUTIONARY: THE COALITION ===
+  It is not one name. It is dozens.
+
+  The evidence spreads across the table like a disease, touching every corner of the empire's power structure. Noble houses -- not all, but enough. Conservative temple elders who see your reforms as heresy. Military officers who profited from the old system's corruption. Merchants who have built their wealth on noble patronage and fear losing it.
+
+  A coalition. Not organized under a single mastermind, but connected through shared fear, shared interest, and a shared conviction that the empire's old ways must be preserved at any cost.
+
+  *page_break
+
+  "There is a center," Zara says, tracing the web of connections. "Not a single person, but a council. They meet in Lord Reza's estate, under the guise of a noble literary society. Reza provides the meeting place and the aristocratic legitimacy. Elder Vahid from the temple provides the moral authority. Colonel Rostam from the garrison provides military force. Merchant Tahir provides the money."
+
+  "And together they decided that reform must be stopped."
+
+  "Together they decided that *you* must be stopped. The reforms are secondary. You are the symbol. If the Vizier can change the empire, then anyone can. That thought terrifies them more than the Northern Khanates."
+
+  The weight of it settles on your shoulders -- not a single adversary with a face and a name, but a system fighting to survive. Every silk-robed noble who sneered at your provincial origins. Every temple elder who called your reforms heresy. Every officer who profited from selling conscription exemptions to the wealthy.
+
+  *page_break
+
+  *fake_choice
+    #You feel the fire of righteous conviction. The old order proves, by its resistance, that it must change.
+      *set idealist %+ 10
+      *set boldness %+ 5
+      *temp emotional_reaction "conviction"
+      They are afraid. Good. Fear is the tribute that the old world pays to the new. Every threat they have made, every murder they have commissioned, every soldier they have sacrificed -- it all confirms that you are right.
+    #You feel weariness. How many enemies can one person fight?
+      *set boldness %- 5
+      *set idealist %- 5
+      *temp emotional_reaction "weary"
+      The conspiracy is not a snake to be beheaded. It is a hydra. Cut one lord, and another steps forward. Silence one elder, and three more preach against you. This is not a battle. It is a siege against an idea -- the idea that some people are born to rule and others to serve.
+    #You feel a cold, tactical clarity. A coalition can be broken.
+      *set ruthless %+ 5
+      *set cunning + 3
+      *temp emotional_reaction "tactical"
+      A coalition is only as strong as its weakest member. Reza wants noble supremacy. Vahid wants temple authority. Rostam wants military privilege. Tahir wants profit. They are united by fear, but divided by ambition. Exploit the division.
+    #You feel grief for the empire. Even in trying to save it, you have divided it.
+      *set idealist %+ 5
+      *set honest %+ 5
+      *temp emotional_reaction "grief"
+      You came to Khazara to serve. Instead, the empire is splitting along the fault lines your reforms exposed. Is this change? Or is this destruction dressed in noble purpose?
+
+  You look at Zara. "Can we confront them all at once?"
+
+  "The coalition meets tomorrow evening. Reza's estate. If we move now, we can take the leaders before they scatter."
+
+  "Then we move now."
+
+  *goto confrontation_coalition
+*comment === LOYALIST: CONFRONTATION WITH DOWAGER ===
+*label confrontation_dowager
+
+*page_break
+
+The Dowager's Wing smells of oud and dark roses. It always does. The heavy silk curtains filter the morning light into shades of amber and red, so that every room feels like the interior of a jewel -- or a heart.
+
+She is waiting for you. Of course she is. The Dowager Empress Nur has survived thirty years of court politics by never being surprised.
+
+She sits in her high-backed chair, dressed in imperial violet, her silver hair arranged with the precision of a woman who treats her appearance as statecraft. A tray of untouched tea sits beside her. The incense in the corner brazier sends a thin thread of smoke toward the ceiling.
+
+"Vizier." Her voice is calm. Measured. The voice that has counseled and controlled and commanded for three decades. "You have that look. The one people wear when they carry bad news and worse decisions."
+
+*page_break
+
+You set the evidence on the table between you. The coded letters. The decoded transcripts. The testimony. The forged seals. The financial records tracing diverted treasury funds to agents in the Old City and beyond.
+
+She does not look at them. She looks at you.
+
+"Tell me," she says. "In your own words."
+
+"You are the architect of the conspiracy against the throne. You leaked military intelligence to the Northern Khanates. You funded Prince Kaveh's claim. You arranged the murder of my predecessor when he discovered your network."
+
+Silence. The incense smoke curls upward, unhurried.
+
+"And the fifty soldiers at Fort Darband?" she asks, as though inquiring about a dinner menu.
+
+"Their deaths are on your hands."
+
+*page_break
+
+The Dowager Empress Nur closes her eyes. When she opens them, the mask is gone. Not stripped away -- set aside. Deliberately. She lets you see, for the first time, the face beneath the empress.
+
+She is tired. Bone-deep tired, in the way of a woman who has carried an empire's weight for thirty years and cannot remember what it felt like to set it down.
+
+"I did this for the empire."
+
+The words hang in the air like smoke.
+
+"My son is a good boy. A kind boy. An intelligent boy." Her voice does not waver. "He is not a strong emperor. He will not become one. I have watched him for sixteen years, and I know -- the way a mother knows, the way the river knows the shape of its banks -- that Roshan will be consumed by this throne."
+
+*page_break
+
+She rises. Moves to the window. Looks out over the city she has helped rule for three decades.
+
+"The empire needs strength. Unshakable, unyielding strength. Not the kind that comes from a boy who reads about great rulers and tries to imitate them. The kind that comes from certainty. From knowing what must be done and doing it, regardless of cost."
+
+"Kaveh would be your puppet."
+
+"Kaveh would be *guided.* As Roshan should have been guided. As I tried to guide him, before you--" She stops. Composes herself. "Before you taught him to stand on his own."
+
+The accusation is breathtaking. She blames you -- not for opposing her, but for *succeeding.* For doing the very thing she could not: helping Roshan become a ruler.
+
+*page_break
+
+"You made him strong enough to refuse me," she says quietly. "That is either your greatest achievement or your greatest crime. I have not yet decided which."
+
+*comment === REAL CHOICE 1: CONFRONTATION APPROACH (LOYALIST) ===
+*choice
+  #"You had no right. He is the Emperor. You are his mother, not his master."
+    *set honest %+ 10
+    *set rel_dowager %- 15
+    *set confrontation_tone "accusation"
+    "No right." The Dowager's lips thin. "I have every right. I carried him. I bore him. I held this empire together while his father drank and hunted and left the governing to me. I have *earned* the right to decide what is best."
+    "You earned the right to advise. Not to conspire. Not to kill."
+    Her hand trembles on the windowsill. It is the first time you have ever seen her shake.
+    *goto loyalist_judgment
+  #"I understand why you did it. I do not forgive it, but I understand."
+    *set honest %+ 5
+    *set idealist %+ 5
+    *set rel_dowager %- 5
+    *set confrontation_tone "compassion"
+    Something cracks in her face -- not much, just a fracture in the marble, but you see it. The faintest glimmer of the woman who married a stranger at fifteen and spent thirty years building power because power was the only thing that kept her son alive.
+    "Understanding." She tastes the word. "That is more than I expected. More, perhaps, than I deserve."
+    *goto loyalist_judgment
+  #"The evidence will be presented to the Emperor and the Council. You will answer for what you have done."
+    *set boldness %+ 10
+    *set honest %+ 10
+    *set rel_dowager %- 20
+    *set confrontation_tone "formal"
+    The Vizier speaks now. Not the person who admired her, who learned from her, who occasionally glimpsed the human being behind the title. The Voice of the Throne, delivering a judgment that cannot be appealed.
+    "The conspiracy is over, Dowager. Your agents are in custody. Your network is broken. The only question remaining is how this ends -- with dignity, or without it."
+    Her chin lifts. Even now, even facing ruin, her pride is armored and gleaming.
+    *goto loyalist_judgment
+  *selectable_if (diplomacy > 55) #"There is still a way forward. For you and for the empire. But you must tell me everything." [Requires Diplomacy 55+]
+    *set diplomacy + 5
+    *set honest %- 5
+    *set rel_dowager %+ 5
+    *set confrontation_tone "pragmatic"
+    You see the calculation in her eyes -- the Dowager, even cornered, cannot help but evaluate an offer. It is her nature, as swimming is a fish's nature.
+    "Everything," she repeats.
+    "Everything. The full network. Every agent, every sympathizer, every coin you diverted. In exchange, we find a resolution that does not destroy the imperial family."
+    "You would bargain with me. After what I have done."
+    "I would be pragmatic. As you have always taught me to be."
+    *goto loyalist_judgment
+
+*label loyalist_judgment
+*set conspiracy_revealed true
+*set dowager_confronted true
+*goto scene_transition
+
+*comment === KINGMAKER: CONFRONTATION WITH REZA ===
+*label confrontation_reza
+
+*page_break
+
+Lord Reza's estate is the oldest private residence in Khazara -- a sprawling compound of dark stone and ancient cedar, its gardens overgrown with two centuries of aristocratic cultivation. The servants bow as you enter, but their eyes are wary. They know their master receives visitors like a king holds court: with ceremony, hierarchy, and the implicit understanding that you are in *his* domain.
+
+He receives you in his study -- a room lined with books older than the empire's current dynasty, the air thick with the smell of leather and lamp oil. A portrait of Reza's grandfather, who served Roshan II, dominates one wall. The family resemblance is striking: the same hawk nose, the same imperious gaze, the same absolute certainty of one's own importance.
+
+Lord Reza sits behind a desk that could double as a fortification. He does not rise.
+
+*page_break
+
+"Vizier." He says the title the way one might say *insect* -- with precise, controlled distaste. "An unexpected visit. I was not aware we had an appointment."
+
+"We don't. I find that appointments give people time to prepare. I prefer honest conversations."
+
+"Honest." The old man's lip curls. A slight gesture, almost elegant in its contempt. "An interesting word, from a person in your position."
+
+You lay the evidence before him. Letters. Decoded ciphers. Financial records. Testimony from his own agents, captured in the night.
+
+He reads them. Slowly. With the calm of a man examining a contract rather than his own destruction.
+
+*page_break
+
+When he finishes, he sets the papers down and folds his hands. His signet ring -- the Reza family crest, older than the Silk Throne itself -- catches the light.
+
+"I did this for the empire."
+
+The words are measured, deliberate, and utterly without apology.
+
+"For three hundred years, the noble houses have been the empire's spine. We built it. We bled for it. We held it together through civil wars, invasions, plagues. And now -- now a boy sits on the throne, advised by a provincial nobody, and the foundations crack."
+
+He stands. Despite his seventy-two years, his back is straight as a spear shaft.
+
+*page_break
+
+"You think you have uncovered a conspiracy. You have uncovered a *correction.* The empire's natural order has been disrupted -- by the Emperor's weakness, by the Dowager's meddling, by *your* presumption -- and I have merely attempted to restore it."
+
+"By leaking intelligence to the Khanates? By letting soldiers die?"
+
+"By demonstrating that the empire cannot defend itself without the nobility's full commitment. Every raid, every breach, every embarrassment -- all of it proof that the old system works and your innovations do not."
+
+The arrogance is breathtaking. And yet you see, beneath it, the genuine conviction of a man who has believed his entire life that birth determines worth, that the ancient families are the empire's truest guardians.
+
+*comment === REAL CHOICE 1: CONFRONTATION APPROACH (KINGMAKER) ===
+*choice
+  #"You are not the empire's guardian. You are its parasite, feeding on the body you claim to protect."
+    *set boldness %+ 10
+    *set honest %+ 10
+    *set rel_reza %- 20
+    *set confrontation_tone "accusation"
+    Reza's face goes white. Not with fear -- with rage. The old lion baring his teeth.
+    "You dare. You -- a provincial clerk, a jumped-up tax collector -- you dare lecture me about service to the empire? My family--"
+    "Your family sold garrison rotations to the enemy. Your honor is a fiction, Lord Reza. And fictions end."
+    *goto kingmaker_judgment
+  #"I understand the fear. The world is changing. But this was not the way."
+    *set idealist %+ 5
+    *set honest %+ 5
+    *set rel_reza %- 10
+    *set confrontation_tone "compassion"
+    Something shifts in the old man's face. Not softening -- Lord Reza does not soften. But a flicker of recognition, perhaps, that you are not the simple enemy he imagined.
+    "Fear." He weighs the word. "You think I am afraid."
+    "I think you see the empire changing and cannot bear the thought that it might change without you."
+    A long silence. Then: "Perhaps you are less foolish than I believed."
+    *goto kingmaker_judgment
+  #"You will be arrested, tried, and sentenced. The evidence is irrefutable."
+    *set boldness %+ 10
+    *set ruthless %+ 5
+    *set rel_reza %- 25
+    *set confrontation_tone "formal"
+    "Arrest." Reza's voice is ice. "You would arrest the Lord Speaker of the Nobility. The head of House Reza. A man whose family has served the throne since the founding."
+    "I would arrest a traitor. Whatever name he carries."
+    His hand moves toward a bell on his desk -- a summoning bell, to call his household guard. You hold his gaze. The silence crackles.
+    *goto kingmaker_judgment
+  *selectable_if (cunning > 50) #"You've played a masterful game, Lord Reza. I'm offering you the chance to play one more move -- on my side." [Requires Cunning 50+]
+    *set cunning + 5
+    *set honest %- 10
+    *set rel_reza %+ 5
+    *set confrontation_tone "pragmatic"
+    The offer hangs in the air between you. Reza's eyes narrow -- not with suspicion, but with the acute interest of a player who recognizes a fellow player's gambit.
+    "You are offering me an alliance. After everything I've done."
+    "I am offering you relevance. The conspiracy is over. Your network is broken. You can fall with it, or you can help me build what comes next. The nobility will need a voice in the new order. It might as well be yours."
+    The old man stares at you for a very long time.
+    *goto kingmaker_judgment
+
+*label kingmaker_judgment
+*set conspiracy_revealed true
+*goto scene_transition
+
+*comment === REVOLUTIONARY: CONFRONTATION WITH THE COALITION ===
+*label confrontation_coalition
+
+*page_break
+
+You do not go alone.
+
+Zara's agents have secured the perimeter of Reza's estate. General Kadir has, with thinly disguised reluctance, provided a detachment of imperial guards who wait in the adjoining street. Priya's merchant network has ensured that every exit from the noble quarter is watched.
+
+You enter the estate with Zara at your left shoulder and Farid at your right, the secretary clutching a leather case of legal documents with the fervor of a soldier gripping a sword.
+
+The coalition is assembled in Reza's great hall -- a vaulted chamber hung with tapestries depicting the empire's founding. Lord Reza. Elder Vahid, grey-bearded and severe in temple robes. Colonel Rostam, a broad-shouldered officer with a face like hammered bronze. Merchant Tahir, sleek and nervous.
+
+And behind them, a dozen minor nobles, priests, and officers who have staked their futures on the old order's survival.
+
+*page_break
+
+They see you enter. The room goes quiet the way a forest goes quiet when a predator appears.
+
+"Ladies and gentlemen," you say. "This literary society has an unexpected guest."
+
+Reza's voice cuts through the silence like a blade. "The Vizier graces us with a visit. How delightful. I was not aware we had extended an invitation."
+
+"You didn't. Consider my presence a response to the invitations you *have* extended -- to the Northern Khanates, to Prince Kaveh's supporters, to anyone who might help you destroy the reforms this empire desperately needs."
+
+You nod to Farid. He opens the leather case and begins distributing copies of the evidence -- one for each member of the coalition. His hands tremble, but his voice, when he speaks, is steady.
+
+"Per regulation 201 of the Imperial Code, these documents constitute formal notification of charges under the Treason Statutes, Section--"
+
+"Treason." Elder Vahid's voice booms through the hall, rich with temple authority. "The Vizier speaks of treason. The sacred laws of this empire were written to protect the faithful from *precisely* this kind of tyranny."
+
+*page_break
+
+"The sacred laws of this empire were written to protect all its people," you reply. "Not merely those born to privilege."
+
+The room erupts. Not into violence -- not yet -- but into the furious, overlapping arguments of powerful people confronting the end of their world. Reza pounds the table. Vahid invokes the Eternal Flame. Rostam fingers his sword hilt. Tahir edges toward the door.
+
+You let them rage. You stand in the center of it, the calm eye of a storm, and wait.
+
+When the noise subsides -- not into silence, but into a seething, watchful tension -- Lord Reza speaks for them all.
+
+"We did this for the empire."
+
+*page_break
+
+The words are the same. The meaning is different. When the Dowager might have said them with a mother's fierce conviction, and Reza alone might have said them with an aristocrat's arrogance, the coalition says them with the desperate certainty of people who believe -- truly, genuinely believe -- that they are the last defense against chaos.
+
+"The empire has endured for three centuries," Reza continues, "because of order. Because of hierarchy. Because every person knew their place and the system -- however imperfect -- *worked.* You come from the provinces and you see injustice. We have lived here for generations and we see *stability.* You would tear it apart for an ideal. We would preserve it because ideals do not feed people. Systems do."
+
+Vahid nods. "The Flame teaches that change without wisdom is merely destruction wearing a mask."
+
+Rostam says nothing. His hand has not left his sword.
+
+*comment === REAL CHOICE 1: CONFRONTATION APPROACH (REVOLUTIONARY) ===
+*choice
+  #"Stability built on the suffering of millions is not stability. It is oppression with good manners."
+    *set idealist %+ 15
+    *set boldness %+ 10
+    *set confrontation_tone "accusation"
+    The words ring in the vaulted hall. You see them strike -- not Reza, who is armored in certainty, but the younger nobles behind him. The ones who have read the new pamphlets. The ones who have walked the Old City and seen the children sleeping in doorways.
+    "You speak of order. I speak of justice. They are not the same thing. They have never been the same thing."
+    *goto revolutionary_judgment
+  #"I understand what you are trying to protect. But the empire can survive change. It cannot survive stagnation."
+    *set idealist %+ 5
+    *set honest %+ 10
+    *set confrontation_tone "compassion"
+    *set rel_reza %- 5
+    Reza's eyes narrow. He expected fire. Compassion is a weapon he cannot easily counter.
+    "The world moves, Lord Reza. The printing press has ensured that. The question is not whether the empire changes, but whether the change comes with blood or with law."
+    Elder Vahid shifts uncomfortably. The moderate faction within the coalition -- the ones who joined out of fear rather than conviction -- stir.
+    *goto revolutionary_judgment
+  #"You are all under arrest. The evidence is overwhelming, and the law is clear."
+    *set boldness %+ 10
+    *set ruthless %+ 10
+    *set confrontation_tone "formal"
+    *set rel_reza %- 20
+    The words fall like a headsman's blade. Colonel Rostam draws his sword halfway before Zara's voice, cold and precise, stops him.
+    "Colonel. There are forty imperial guards in the courtyard and twelve agents with crossbows in the gallery. I would strongly advise against completing that gesture."
+    Rostam's hand freezes. Slowly, he releases the hilt.
+    *goto revolutionary_judgment
+  *selectable_if (diplomacy > 55) #"The reforms continue. But there is a seat at the table for those willing to build the future instead of fighting it." [Requires Diplomacy 55+]
+    *set diplomacy + 5
+    *set honest %- 5
+    *set idealist %- 5
+    *set confrontation_tone "pragmatic"
+    The offer splits the room. You can see it happen in real time -- the hardliners closing ranks around Reza, the moderates exchanging glances, calculating. Merchant Tahir stops edging toward the door.
+    "You're offering terms," Reza says flatly.
+    "I'm offering a choice. Fight and lose everything. Or work with me and keep a voice in what comes next."
+    *goto revolutionary_judgment
+
+*label revolutionary_judgment
+*set conspiracy_revealed true
+*goto scene_transition
+
+*comment === SHARED: THE SCENE TRANSITION ===
+*label scene_transition
+
+*page_break
+
+*comment === FAKE CHOICE 2: MORAL JUDGMENT ===
+
+The confrontation has been had. The words have been spoken. The evidence lies between you and the enemy like a border drawn in ink and blood.
+
+Now comes the harder part.
+
+*fake_choice
+  #The mastermind deserves justice. Fair trial. Public accounting. The empire must see that no one is above the law.
+    *set honest %+ 10
+    *set idealist %+ 5
+    *set truth_public true
+    *temp judgment "justice"
+    Justice. The word tastes clean, like cold water. The empire deserves to know the truth -- all of it, however painful. Secrets are what created this conspiracy. Transparency is what will prevent the next one.
+  #The mastermind should be dealt with quietly. The empire cannot afford the chaos of a public trial.
+    *set honest %- 10
+    *set ruthless %+ 5
+    *temp judgment "quiet"
+    Pragmatism. The empire is already wounded -- the Khanate invasion, the economic crisis, the temple schism. A public trial of the conspiracy's leader would tear it apart further. Better a quiet resolution. Exile. House arrest. A convenient fiction.
+  #Mercy, where possible. Even traitors are human. Even enemies deserve a chance to atone.
+    *set ruthless %- 10
+    *set idealist %+ 10
+    *set mercy_shown true
+    *temp judgment "mercy"
+    Mercy. The rarest currency in an empire built on power. You have seen enough destruction. Enough blood. The conspiracy is broken. Further punishment serves vengeance, not governance.
+  #Let the Emperor decide. This is his empire. This should be his judgment.
+    *set rel_emperor %+ 10
+    *set honest %+ 5
+    *temp judgment "emperor"
+    You are the Vizier. You serve the throne. The most important decisions should rest with the person who sits upon it -- not with the person who stands beside it.
+
+*page_break
+
+*if (judgment = "justice")
+  The truth will out. You give the order: the evidence will be presented to the full Council, and from there to the people of Khazara. The empire will know who threatened it and how close the threat came.
+
+  Zara nods, though you can see the intelligence officer's instinct warring with the decision. She prefers shadows. But she respects your choice.
+*elseif (judgment = "quiet")
+  The truth will be known -- but not by everyone. The Council will be informed. The public will receive a carefully edited version: a conspiracy was uncovered, the leaders identified, justice served. The specifics -- the names, the connections, the depth of the betrayal -- will remain in Zara's files.
+
+  "Cleaner," Zara says. "But secrets have a way of escaping. They always do."
+*elseif (judgment = "mercy")
+  You look at the evidence one last time. Then at the faces of the people who created it -- people who believed, however wrongly, that they served the empire.
+
+  "Exile," you say. "Not execution. Not imprisonment. Exile, with the understanding that return means death."
+
+  Zara's expression is unreadable. "You are more generous than they deserve."
+
+  "Perhaps. But I would rather be generous and wrong than cruel and right."
+*else
+  "This decision belongs to the Emperor."
+
+  Zara raises an eyebrow. "You trust a sixteen-year-old boy with the fate of the conspiracy?"
+
+  "I trust the Emperor of the Khazaran Empire with the governance of his domain. That is, after all, what a loyal Vizier does."
+
+*page_break
+
+*comment === REAL CHOICE 2: WHAT TO DO WITH THE TRUTH ===
+
+*choice
+  #Share everything with Emperor Roshan immediately. He must know the full truth.
+    *set rel_emperor %+ 15
+    *set honest %+ 10
+    *set truth_public true
+    The Emperor sits in the Garden of Eternal Spring, surrounded by orange trees and the sound of flowing water. He looks up when you approach, and something in your face tells him this is not a routine briefing.
+    You tell him everything.
+    *if (route = 1)
+      You watch a boy learn that his mother tried to replace him on the throne. You watch his face cycle through disbelief, denial, rage, grief, and finally a terrible, quiet understanding.
+      "She thought I was weak," he says at last. His voice is steady. He is not crying. You almost wish he would.
+      "She was wrong."
+      "Was she?" He stares at the fountain. "I suppose we'll find out."
+      *set rel_emperor %+ 10
+    *elseif (route = 2)
+      You watch the Emperor absorb the scope of Lord Reza's betrayal. His jaw tightens. His hands clench on the arms of the marble bench.
+      "The nobility. The people who are supposed to serve the throne. And they were working to undermine it the entire time."
+      "Not all of them. One man, and his followers."
+      "One man with two hundred years of family loyalty behind him. That's not a person. That's an institution."
+      *set rel_emperor %+ 8
+    *else
+      You watch the Emperor process the reality that an entire class of his subjects conspired against his Vizier's reforms -- reforms he himself had cautiously supported.
+      "They're afraid," he says slowly. "Afraid of change."
+      "Yes."
+      "I understand fear. I've been afraid since the day I took the throne." He straightens. "But fear does not justify treason."
+      *set rel_emperor %+ 12
+    *goto approaching_dawn
+  #Hold back the most painful details. Give the Emperor the truth, but not all of it.
+    *set honest %- 10
+    *set rel_emperor %+ 5
+    You tell the Emperor the shape of the conspiracy, its scope and its danger. You name the perpetrators. But you soften the edges -- the personal betrayals, the most damaging details, the depths to which trusted figures sank.
+    It is a kindness. It is also a lie by omission. You are not sure which it is more.
+    The Emperor nods. He looks older than sixteen.
+    "What do we do now?"
+    "Now we prepare. The conspiracy is broken, but its final move has already begun. The Khanate invasion. Kaveh's claim. The economic crisis. These must be answered."
+    *goto approaching_dawn
+  #Discuss the revelation with your closest ally before involving the Emperor.
+    *set honest %- 5
+    *if (romance_active)
+      *if (romance_leila)
+        You find Leila in the library, surrounded by books she is not reading. She sees your face and sets down her pen.
+        "Tell me," she says simply. And you do.
+        When you finish, she is quiet for a long time. Then: "In the old stories, the hero always faces the monster alone. But the old stories are wrong. The hero needs a poet to remember why the fight matters."
+        She takes your hand. Her fingers are ink-stained and warm.
+        *set rel_leila %+ 10
+      *elseif (romance_navid)
+        You find Navid at the garrison, cleaning his sword. He reads your expression the way he reads a battlefield -- quickly, accurately.
+        "How bad?" he asks.
+        You tell him. He listens without interruption, the blade moving steadily across the whetstone, and when you finish, he nods once.
+        "We've faced worse. No -- we haven't. But we'll face this." He looks at you, and for a moment the soldier's mask slips. "Together."
+        *set rel_navid %+ 10
+      *else
+        You find Asha in the Temple gardens. She is sitting beneath the ancient cedar, watching the Eternal Flame through the temple's open doors.
+        "I already know," she says when you approach. "The temple has its own ways of learning things." She turns to face you. "What will you do with the truth?"
+        You tell her. She listens with the focused stillness that, in Asha, replaces the questions she usually asks.
+        "The Third Wisdom says courage is acting despite fear. You are afraid. I can see it. But you're here. That counts."
+        *set rel_asha %+ 10
+    *else
+      You find Farid. Loyal, anxious, steadfast Farid. He listens to the full truth with his eyes growing wider and wider, his tea growing colder and colder.
+      "Oh," he says. And then, very quietly: "Oh my."
+      "I need your help, Farid. I need the regulations. The legal framework. The precedents."
+      He straightens. Sets down the cold tea. Reaches for his files.
+      "Per regulation 201, my lord Vizier, the procedure for treason charges at the highest level of government requires..."
+      He is afraid. But he is here. That is enough.
+      *set rel_farid %+ 10
+    *goto approaching_dawn
+
+*label approaching_dawn
+
+*page_break
+
+The afternoon light slants through the Council Chamber windows, painting gold bars across the table where the evidence still lies. The day has been long. The revelations have left you hollowed out, a vessel from which the storm has been poured.
+
+But the storm is not over. It has barely begun.
+
+The conspiracy's head has been identified. Its network in the capital has been shattered. But its final gambit -- the Khanate invasion, the economic crisis, Kaveh's claim to the throne -- these wheels are already in motion. They cannot be stopped by unmasking the person who set them turning.
+
+Zara appears at the door. "The Council has been summoned for tomorrow morning. General Kadir requests a war briefing. Guildmaster Priya says the treasury has seventy-two hours before the reserve accounts are empty."
+
+She pauses.
+
+"And Prince Kaveh has issued a formal challenge to the Emperor's right to rule. He cites divine authority, noble precedent, and the Eternal Flame's omen."
+
+The Eternal Flame. You remember the guttering -- the sacred fire that has burned for three hundred years flickering like a candle in a draft. Half the city believes it was a sign from the divine that the emperor has lost heaven's favor.
+
+*page_break
+
+You are tired. You are heartsick. You have spent the day confronting the face of betrayal and it has left marks on your soul that will never fully heal.
+
+But you are the Grand Vizier of the Khazaran Empire. And tomorrow, you go to war.
+
+Farid appears with a fresh pot of tea. His hands are steady. His voice, when he speaks, carries none of its usual flutter.
+
+"My lord Vizier. I have prepared a summary of our military, economic, and political assets for the morning briefing. I have also taken the liberty of drafting three contingency plans based on General Kadir's latest border reports."
+
+He sets the tea down. Meets your eyes.
+
+"We will get through this. Per regulation 301 -- well, there is no regulation for this. But we will get through it anyway."
+
+You take the tea. The cardamom is warm on your tongue, and the seal ring glows in the fading light.
+
+Tomorrow, the final battle begins.
+
+*finish Chapter 27: Choose Your Weapons

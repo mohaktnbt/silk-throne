@@ -1,0 +1,896 @@
+*comment === SCENE 9: THE FIRST MOVE ===
+*comment Word target: ~12,000 (~4,000 per route variant)
+*comment Variables modified: act2_chapter, boldness, ruthless, honest, idealist,
+*comment   Loyalist: rel_emperor, rel_dowager, rel_general, rep_military, diplomacy
+*comment   Kingmaker: rel_spy, rel_guild, rel_kaveh, rep_intelligence, cunning
+*comment   Revolutionary: rel_soraya, rel_reza, rep_nobility, rep_trade, scholarship
+
+*temp approach "undecided"
+*temp tactic "undecided"
+*temp dowager_outmaneuvered false
+*temp zara_deflected false
+*temp reform_passed false
+
+*set act2_chapter 1
+
+*comment === ROUTE BRANCHING ===
+
+*if (route = 1)
+  *goto loyalist_opening
+*elseif (route = 2)
+  *goto kingmaker_opening
+*elseif (route = 3)
+  *goto revolutionary_opening
+*else
+  *bug Route not set. Expected 1, 2, or 3.
+
+*comment ============================================================
+*comment === LOYALIST ROUTE: THE EMPEROR'S FIRST STAND ===
+*comment ============================================================
+
+*label loyalist_opening
+
+The morning after your decision, the world looks the same and nothing is the same.
+
+You stand at the window of your chambers, watching dawn break over Khazara. The minarets catch the first light like copper spears. Below, the Garden of Eternal Spring exhales mist from its channels, and the fountains begin their patient work. Somewhere in the Temple Quarter, the call to prayer rises into the pale sky. The city does not know that its Vizier woke before dawn with a new purpose burning behind ${their} ribs.
+
+You will protect the Emperor. Not as the Dowager protects him -- with a mother's suffocating grip, with puppet strings woven from silk and guilt. You will build Roshan into the ruler this empire needs. You will be his shield until he no longer needs one.
+
+Farid arrives with breakfast and a stack of documents. He sets the tray down with his customary nervous precision, then straightens and studies your face.
+
+"You look different this morning, my ${title_honorific} Vizier," he says. "I cannot say how. But something has changed."
+
+"Everything has changed, Farid."
+
+He blinks. Then he nods, once, and pours the tea. The cardamom is strong this morning, the aroma filling the room like a benediction. You drink standing, watching the city wake -- the first merchants unshuttering their stalls in the bazaar, the garrison drums sounding the morning drill, the temple doves wheeling in formation above the dome of the Seven Wisdoms.
+
+This city is the seat of the mightiest empire in the known world. And its emperor is a sixteen-year-old boy who cannot issue a decree without his mother's approval.
+
+That changes today.
+
+*page_break
+
+The opportunity presents itself within the hour. Among Farid's documents is a draft decree from the Emperor's private office -- a military order to reinforce the garrison at Fort Darband with two thousand fresh troops from the central reserves. The order is sound. The northern border has been hemorrhaging soldiers since the Khanate raids, and General Kadir has been begging for reinforcements for months.
+
+But the decree bears no seal. There is a note attached in the Dowager's elegant hand: "Reviewed. Premature. We shall discuss at the next Council meeting."
+
+The Dowager has blocked it. Again.
+
+You turn the parchment over in your hands. The Emperor wrote this order himself -- the handwriting is youthful, earnest, the letters formed with a care that speaks of someone trying very hard to be taken seriously. He has read the reports, studied the maps, consulted the numbers. He has made a sound military decision.
+
+And his mother has set it aside like a child's drawing.
+
+*fake_choice
+  #This is exactly what you feared. The Emperor will never grow into his authority if every decision is filtered through the Dowager's approval.
+    *set idealist %+ 5
+    *set boldness %+ 5
+    The pattern is clear. Every decree, every appointment, every allocation of gold or troops passes through the Dowager's hands before it reaches the world. She does not reject them outright -- that would be too obvious. She delays. She qualifies. She adds conditions that transform a command into a suggestion, and a suggestion into nothing at all. Emperor Roshan does not rule the Khazaran Empire. He merely inhabits its throne while his mother governs from behind a curtain of silk.
+  #Your mind begins working through the politics. There must be a way to get this decree enacted without a direct confrontation with the Dowager.
+    *set boldness %- 5
+    *set ruthless %+ 5
+    You cannot afford a frontal assault on the Dowager's authority. Not yet. She has decades of accumulated power, a network of loyalists throughout the Citadel, and the terrifying advantage of being his mother. A young Vizier from the provinces challenging the Mother of the Empire openly would be crushed before the first blow landed. But there are other ways. There are always other ways.
+  #You feel a surge of anger on the Emperor's behalf. He deserves better than to be managed.
+    *set honest %+ 5
+    *set idealist %+ 10
+    The anger is not for yourself. It is for the boy who sat alone in his chambers and wrote this order with his own hand, who consulted maps and tallied figures and arrived at the right answer -- and who will never know that his mother crumpled his work like wastepaper. How many other decrees lie buried in the Dowager's wing? How many sound judgments has Roshan made that never saw the light of day?
+
+*page_break
+
+You find the Emperor in the Tower of Stars.
+
+The climb to the observatory is a spiral of cold stone, each step worn smooth by centuries of astronomers ascending to read the heavens. Your breath mists in the stairwell's chill. A servant passed you on the way down, carrying an untouched breakfast tray -- the Emperor has been here since before dawn, and he has not eaten.
+
+It is an unusual place for a young ruler to be at this hour. The observatory is cold in the morning, its brass instruments gleaming with dew, the great dome open to a sky still violet at its edges. Roshan stands at the largest telescope, not looking through it but resting his hands on its housing, staring at the floor.
+
+He looks up when you enter. For a moment his face is unguarded -- tired, frustrated, young. Then the mask of imperial composure slides into place, a beat too late.
+
+"Vizier. You are early."
+
+"I could say the same, Your Majesty."
+
+A ghost of a smile. "I could not sleep. The stars are better company than my thoughts." He straightens, and you see the effort it costs him. "What brings you to the tower?"
+
+You hold up the unsigned decree.
+
+The mask cracks. Something raw and hot flashes across his face -- recognition, then anger, then the careful blankness of a boy who has learned that showing his feelings to the wrong person is dangerous.
+
+"She returned it," he says. It is not a question.
+
+"She did."
+
+*page_break
+
+The Emperor turns away. His hands grip the telescope housing until his knuckles whiten. When he speaks, his voice is quiet and controlled, but you can hear the fractures beneath the surface.
+
+"I spent four days on that order. I read every report from the northern garrisons. I consulted General Kadir's logistics assessments. I calculated the cost against the treasury reserves -- Guildmaster Priya's own figures. The reinforcement is sound, Vizier. It is necessary. The Wall of Roshan I is crumbling and the Khanates are testing every weak point."
+
+He releases the telescope. "And my mother returned it with a note. Like a schoolmaster correcting a student's composition."
+
+"The order is sound," you say. "I reviewed it myself."
+
+He turns. His eyes are bright with unshed frustration. "Then why does it not matter? Why does nothing I do matter?"
+
+This is the moment. The hinge on which everything turns. You can feel the weight of the choice settling onto your shoulders like a second set of robes.
+
+*choice
+  #"It matters. And I am going to help you make it stick. Here is what I propose: we bring the decree to the Council ourselves, with General Kadir's public backing."
+    *set boldness %+ 10
+    *set rel_emperor %+ 10
+    *set approach "direct"
+    The Emperor stares at you. The mask is gone entirely now -- what you see is a sixteen-year-old boy who has been offered, for the first time since his father's death, the possibility that someone in power is genuinely on his side.
+
+    "You would do that?" he says. "Support the decree openly? Against her?"
+
+    "Against anyone who prevents you from governing, Your Majesty. That is my function. That is why I am here."
+
+    He is quiet for a long moment. Then his spine straightens, and it is not the practiced posture of a boy imitating his father. It is something new. Something his.
+
+    "Then we present it at the Council. Today."
+    *goto loyalist_kadir_approach
+  #"It matters. But we need to be clever about this. I suggest we work around the Dowager -- enact the decree through channels she does not control."
+    *set boldness %- 5
+    *set ruthless %+ 5
+    *set rel_emperor %+ 8
+    *set approach "indirect"
+    The Emperor's brow furrows. "Work around her? How?"
+
+    "The northern garrison reinforcement falls within the Commander of the Armies' operational authority. General Kadir can move troops within his own command structure without a decree -- it is a matter of redeployment, not new authorization. If we frame it correctly, the Dowager has no legal basis to object."
+
+    Understanding dawns in Roshan's eyes. It is a different kind of education than his tutors provided -- the education of a ruler who must learn to navigate his own court.
+
+    "A redeployment," he repeats. "Not a decree. She cannot block what she does not see."
+
+    "Precisely."
+    *goto loyalist_kadir_approach
+  #"It matters, Your Majesty. And this is not the first decree she has blocked. I think it is time we understood the full scope of what is being kept from you."
+    *set honest %+ 10
+    *set scholarship + 3
+    *set rel_emperor %+ 12
+    *set approach "investigate"
+    You pull a chair to the telescope platform and sit. The Emperor, after a moment's hesitation, sits across from you on the observer's bench. The informality of it -- a Vizier and an Emperor sitting together in a cold observatory like two scholars sharing notes -- would scandalize the court.
+
+    "Your Majesty, how many decrees have you written in the past two months?"
+
+    He thinks. "Eleven. Perhaps twelve."
+
+    "And how many have been enacted?"
+
+    The silence stretches. He counts on his fingers, and you watch the realization bloom across his face like a bruise.
+
+    "Three," he says. "Three out of twelve."
+
+    "I would like to see the others. All of them. Every decree the Dowager has returned, delayed, or modified beyond recognition. I believe the pattern will be instructive."
+    *goto loyalist_kadir_approach
+
+*label loyalist_kadir_approach
+
+*page_break
+
+*comment === RECRUITING GENERAL KADIR ===
+
+The key to any plan involving military matters is General Kadir. The Commander of the Armies is a blunt instrument by temperament, but he is also the most powerful man in the empire after the throne itself. A hundred thousand soldiers obey his word. If Kadir supports the Emperor's order publicly, the Dowager's objections become political rather than procedural -- and political battles, unlike procedural ones, require her to reveal her opposition openly.
+
+*comment === RECRUITING GENERAL KADIR ===
+
+The Garrison is a different world from the Citadel's marble elegance. The stone here is plain, functional, scarred by weather and the marks of practice weapons. The air smells of horse leather, weapon oil, and the mineral dust that training boots kick from packed earth. Soldiers move with purpose -- none of the courtiers' languid strolling here, none of the servants' practiced invisibility. Everything is direct, physical, immediate.
+
+You find the General in the Garrison, as you knew you would. At this hour, the training yard is alive with the sound of clashing steel and barked commands. Dust rises from the sparring circles. The smell of horse and leather fills the air. Kadir stands at the edge of the combat ring, his iron prosthetic hand resting on a fence post, watching two young soldiers batter each other with practice swords.
+
+He does not look at you when you approach.
+
+"Vizier." His voice carries the flat warmth of desert stone. "If you are here about the northern reinforcements, the answer is the same as last month. I need them. I need them now. And if the Council blocks it again, I will personally ride to the Dowager's chambers and --"
+
+"The Emperor has authorized the reinforcements."
+
+Kadir goes still. The two sparring soldiers clash and separate, oblivious.
+
+"Authorized?" he says. "I was told the decree was under review."
+
+"The Emperor wrote the decree himself. It is sound. And I am here to ensure it is carried out."
+
+*page_break
+
+The General turns to face you. His weathered face is a study in assessment. He has survived thirty years of border warfare by judging people quickly and accurately. You can feel that judgment being applied to you now, as precisely as a blade being laid against a whetstone.
+
+"The Dowager blocked it," he says. It is not a question.
+
+"The Dowager returned it for further discussion."
+
+"Same thing." Kadir folds his arms -- the iron hand clicks softly against the other arm's bracer. "So. The boy emperor writes a sensible order and his mother shelves it. And you, the new Vizier with no army, no faction, and no family name worth mentioning, want my help to push it through."
+
+"I want your professional endorsement of a militarily sound decision made by your Emperor."
+
+*fake_choice
+  #"General, you have been asking for these reinforcements for months. The Emperor has given you what you asked for. All I am asking is that you stand behind his judgment."
+    *set diplomacy + 3
+    *set rel_general %+ 8
+    *set rep_military %+ 5
+    Kadir's expression shifts. It is not softening, exactly -- softening is not something that happens to granite. But the assessment changes. You have found the right angle. Not politics. Not flattery. The simple truth that the Emperor has done what Kadir asked, and a soldier who does not support his commander-in-chief's decision is no soldier at all.
+
+    "Two thousand troops," Kadir says. "Central reserves. I want them moving within the week."
+
+    "You will have them."
+  #"The northern border is bleeding, General. The Khanates are testing us. You know this better than anyone alive. This is not about politics -- it is about defense."
+    *set boldness %+ 5
+    *set rel_general %+ 10
+    *set rep_military %+ 8
+    You see the shift in Kadir's eyes -- the move from assessing a politician to recognizing a person who understands what matters. The northern border is not an abstraction to this man. It is the place where his soldiers die. It is Fort Darband, where Navid earned his scar and his reputation. It is the Wall of Roshan I, crumbling like an old man's teeth while the empire's greatest military threat gathers beyond it.
+
+    "You understand the border situation," Kadir says. It is the closest thing to a compliment you have ever heard from his lips. "Good. Two thousand troops. I want quality soldiers, not green recruits."
+
+    "Understood."
+  #"I will be honest with you, General. This is not just about the troops. This is about the Emperor learning to lead. He needs to see that his decisions matter -- that when he gives an order, it is obeyed."
+    *set honest %+ 10
+    *set rel_general %+ 5
+    *set rep_military %+ 3
+    *set rel_emperor %+ 5
+    Kadir stares at you for a long moment. Something you cannot quite read passes behind his eyes.
+
+    "The boy's father was a good emperor," he says, quietly. "Knew when to listen. Knew when to command. Knew the difference." He pauses. "The boy could be good too. If someone lets him."
+
+    He extends his hand -- the one made of flesh. You take it. The grip is crushing.
+
+    "I will support the decree. But this is for the empire, Vizier. Not for you. The moment I think you are using the boy for your own ends, this conversation will have a very different tone."
+
+*page_break
+
+*comment === THE COUNCIL CONFRONTATION ===
+
+*if (approach = "direct")
+  The Council meeting is that afternoon. You have arranged for Kadir to present the reinforcement plan as a matter of operational urgency, with the Emperor's decree already drafted and waiting for the imperial seal. The Dowager will have no time to marshal her objections.
+
+  The Council Chamber fills with the familiar scents of frankincense and ambition. Priya takes her seat with a curious glance at you. Ashoka settles into his customary stillness. Zara occupies her shadow. And the Dowager Empress Nur sits at the Emperor's right hand, her back straight as a column, her dark eyes taking in the room with the patient thoroughness of a hawk surveying a field.
+
+  The Emperor enters. He is nervous -- you can see it in the way his hand finds the arm of his chair, in the careful way he arranges his robes. But he sits, and he does not look at his mother for guidance. He looks at you.
+
+  "The first matter before the Council," Roshan says, and his voice is steady, "concerns the northern defenses."
+*elseif (approach = "indirect")
+  You do not bring the matter to the full Council. Instead, you arrange a private meeting between the Emperor, General Kadir, and yourself in the map room adjacent to the Garrison. The Dowager is not informed. The meeting is logged as an operational briefing -- technically true, and technically beneath the Dowager's notice.
+
+  The map room smells of old ink and dust. Charts of the northern border cover every wall, bristling with colored pins marking garrison positions. The Emperor examines them with genuine interest while Kadir explains the deployment.
+
+  "Two thousand troops, redeployed from the central reserves to the northern garrisons," Kadir says, tracing the route with his iron finger. "Not a new levy. A redeployment within existing operational authority. No decree required."
+
+  The Emperor looks at you. Understanding and gratitude mingle in his young face. "A redeployment," he says. "Not a decree."
+
+  "Your Majesty's operational judgment guides the Commander's deployment decisions," you say. "That is the chain of command as it has always existed."
+*else
+  *comment Investigation approach
+  The Emperor's blocked decrees make for devastating reading. Nine of twelve orders returned, delayed, or modified. Three concerned military matters. Two addressed trade policy. Two involved provincial appointments. Two were minor ceremonial decisions -- even the choice of flower arrangements for the Festival of Lights was redirected.
+
+  The pattern is absolute. The Dowager does not merely advise. She rules.
+
+  You present the findings to General Kadir in the map room, with the Emperor's permission. Kadir examines each document, his expression darkening like a storm front building over the northern steppe.
+
+  "Nine out of twelve," he says. "The boy is a figurehead."
+
+  "Not anymore," you say. "The reinforcement order goes through today. I need your public support."
+
+  Kadir sets the documents down. His iron hand leaves a faint scratch on the table. "You have it."
+
+*page_break
+
+*choice
+  #Press the advantage: ensure the decree is enacted immediately, before the Dowager can respond.
+    *set boldness %+ 10
+    *set rel_emperor %+ 8
+    *set rel_dowager %- 15
+    *set rep_military %+ 10
+    *set dowager_outmaneuvered true
+    The decree is signed, sealed, and dispatched to the northern garrisons before the sun touches the western minarets. Riders leave the Citadel gate at a gallop, carrying orders that bear the Emperor's seal and General Kadir's countersignature. By nightfall, the machinery of military logistics is in motion. Two thousand soldiers will march north within the week.
+
+    The Dowager learns of it at dinner.
+
+    Her reaction is a masterpiece of restraint. Her spoon does not pause on its journey to her lips. Her voice does not change pitch or tempo. But the temperature in the dining hall drops by several degrees, and you notice that the servants nearest her find reasons to be elsewhere.
+
+    "We see our son has been busy today," she says, and the royal plural has never sounded more singular, more pointed, more dangerous.
+
+    The Emperor meets her gaze. He does not flinch. It may be the first time in his life he has not flinched.
+
+    "The northern border required reinforcement, Mother. I acted on the advice of my Vizier and my Commander of the Armies."
+
+    The Dowager's eyes find yours across the table. In them you read a message as clear as any written in ink: You have made your first move. Now we see who moves next.
+    *goto loyalist_close
+  #Proceed carefully: enact the decree but frame it as the Dowager's own wisdom, giving her credit to avoid a direct confrontation.
+    *set boldness %- 5
+    *set ruthless %+ 5
+    *set rel_dowager %+ 5
+    *set rel_emperor %+ 5
+    *set rep_military %+ 5
+    *set dowager_outmaneuvered false
+    *set diplomacy + 3
+    You are not ready for open war with the Dowager. Not yet. The decree goes through, but you ensure that the official record credits the Dowager's wisdom in supporting her son's judgment. The narrative is carefully crafted: the Emperor proposed, the Mother of the Empire endorsed, the Commander of the Armies executed.
+
+    It is a lie. The Dowager blocked the decree and you circumvented her. But it is a useful lie, one that gives her a graceful path to acceptance rather than forcing her into opposition.
+
+    She knows what you have done. When you see her in the corridor that evening, she pauses, and her dark eyes study you with renewed interest.
+
+    "A clever move, Vizier," she says. "The gardener learns quickly which vines to prune and which to leave to climb. You chose to leave this particular vine its trellis. That is wise." She pauses. "For now."
+
+    The compliment is genuine. The warning is also genuine. But the Emperor's decree is enacted, and two thousand soldiers will march north. That is what matters.
+    *goto loyalist_close
+  *selectable_if (diplomacy > 35) #Negotiate directly with the Dowager: explain why the decree matters, and give her something she wants in exchange for stepping back.
+    *set boldness %+ 5
+    *set honest %+ 10
+    *set rel_dowager %+ 10
+    *set rel_emperor %+ 10
+    *set rep_military %+ 5
+    *set dowager_outmaneuvered false
+    *set diplomacy + 5
+    You request a private audience with the Dowager before the decree is enacted. The Dowager's Wing smells of sandalwood and old power. She receives you in her private study, seated in a chair that is not quite a throne, her posture suggesting that the distinction is academic.
+
+    "We know why you are here," she says. "The northern decree."
+
+    "Your Majesty is perceptive."
+
+    "We have been perceptive since before you were born, child." But her voice carries curiosity rather than contempt. "Speak."
+
+    You lay out the case -- not for the decree itself, which she already knows is sound, but for why allowing the Emperor to enact it serves her interests. The Emperor's confidence grows. The military sees the throne as functional. The northern provinces feel protected. And the Dowager is credited as the wise counselor who guided her son's judgment.
+
+    She listens. She is silent for a long time.
+
+    "You are asking us to release the vine from the trellis," she says. "And you promise that it will still grow in the direction we choose."
+
+    "I am asking you to let the vine discover that it was growing in the right direction all along."
+
+    Something shifts in her expression. It is not warmth -- warmth is a luxury the Dowager abandoned decades ago. But it is recognition. She sees in you something she did not expect: a person who understands that protecting the Emperor and respecting his mother are not mutually exclusive.
+
+    "The decree may proceed," she says. "With our blessing. See that our son remembers where his first lesson in governance began."
+    *goto loyalist_close
+
+*label loyalist_close
+
+*page_break
+
+*comment === SCENE 9 LOYALIST CLOSING ===
+
+The evening brings a quiet that the day's battles have earned. Farid appears with the day's final dispatches, his expression a mixture of exhaustion and wonder.
+
+"My ${title_honorific} Vizier, I have never seen anything like today." He sets the papers down and stands there, as if the habit of being in motion has suddenly failed him. "The Emperor issued an independent command. General Kadir supported it. The northern garrisons will receive reinforcements." He pauses. "Something is different."
+
+"Something is."
+
+"It feels like..." He searches for the word. "Like the machinery is starting to move again. Like the gears were stuck and someone -- you -- found the lever."
+
+It is an unexpectedly eloquent observation from a man who normally expresses himself in regulation numbers. You file it away alongside the day's other discoveries: that the Emperor has steel inside him, that General Kadir respects competence above politics, and that the Dowager is not unbeatable.
+
+That night, you stand on the balcony of your chambers and look out over Khazara. The city's lamps are coming alive, one by one, like stars falling to earth. The northern road stretches into darkness, toward the frontier where two thousand soldiers will soon march. Toward the wall that has held for three centuries. Toward the border that someone -- the same someone who murdered your predecessor, who sent the Ghost to kill the Emperor -- has been working to weaken.
+
+The first move is made. The Emperor has issued his first independent command. General Kadir stands with you, at least for now. The Dowager has been outmaneuvered or accommodated, but either way she has been put on notice: the era of ruling through her son is drawing to a close.
+
+But you are not naive enough to think this was easy. This was one decree. One small assertion of imperial authority. The Dowager has been building her power for thirty years. The conspiracy has been at work for months, perhaps years. And somewhere in the shadows, the Ghost is watching.
+
+Farid appears at your side with a cup of cardamom tea. He does not speak. He simply stands there, steady and reliable as the Citadel's foundations, and hands you the cup.
+
+You drink. The tea is sweet and sharp, and the warmth of it spreads through you like a small, stubborn flame.
+
+The long game has begun.
+
+*finish Allies and Enemies
+
+*comment ============================================================
+*comment === KINGMAKER ROUTE: THE SHADOW NETWORK ===
+*comment ============================================================
+
+*label kingmaker_opening
+
+The morning after your decision, you lie in bed for ten minutes longer than usual, staring at the ceiling. The plaster is old, cracked in places, and if you trace the cracks with your eyes you can almost see a map -- branching paths, interconnected routes, dead ends, and hidden passages. A map of the empire's power. A map you intend to redraw.
+
+You rise and dress with care. The robes of the Grand Vizier feel different today. Not heavier -- lighter. As if the weight of duty has been replaced by the weight of purpose. You are no longer merely administering the empire. You are acquiring it.
+
+Farid arrives with the morning documents. His expression is the same as always -- earnest, slightly anxious, the face of a man who triple-checks his filing system and still worries he has mislaid something. He does not know what you have decided. He cannot know. Not yet. Perhaps not ever.
+
+"Good morning, my ${title_honorific} Vizier. The overnight dispatches are on your desk. Nothing urgent, though the Treasury reports suggest Guildmaster Priya may be adjusting the silk tariff without formal approval. Again."
+
+You accept the documents. "Thank you, Farid. Has Guildmaster Priya's schedule been confirmed?"
+
+He blinks. "Her schedule? I -- yes, she has a meeting with the Spice Merchants' Guild at midday, followed by a private lunch. Shall I arrange an audience?"
+
+"Not an audience. A lunch. Private. Tell her I would like to discuss the silk tariff over good food and better wine."
+
+*page_break
+
+A shadow network requires two things: information and money. Spymaster Zara controls the first. Guildmaster Priya controls the second. You cannot build your power base through official channels -- those channels lead straight to the Dowager, who monitors every decree, every appointment, every expenditure that passes through the Vizier's office.
+
+You need channels of your own. And you need them quickly, before the conspiracy that killed your predecessor decides to tidy up its loose ends.
+
+The lunch with Priya takes place in a private dining room above the Grand Bazaar. The room is small, intimate, fragrant with cardamom and roasting lamb. Silk tapestries dampen the noise of the market below to a pleasant murmur. Priya has arranged the setting herself -- she is a woman who understands that the environment of a negotiation is half the negotiation.
+
+She pours the wine before you sit. That tells you something. She is establishing ease, lowering defenses. She wants something.
+
+"Vizier. How kind of you to accept my invitation."
+
+"I invited you, Guildmaster."
+
+Her smile widens. "Did you? I seem to recall expressing a desire for this very meeting yesterday. But let us not quibble about origins. The wine is from the southern provinces. Try it."
+
+*fake_choice
+  #You taste the wine and take a moment to study Priya across the table. Her warmth is genuine, but her eyes are always calculating.
+    *set boldness %- 5
+    *set ruthless %+ 5
+    The wine is excellent -- warm, dark, with notes of cinnamon and black pepper. You sip and study the woman across from you. Priya's charm is not a mask. It is genuine warmth, freely offered, and that is precisely what makes her dangerous. People who are charmed do not watch for the blade. And Priya always has a blade, somewhere, turning slowly in her manicured fingers.
+
+    She watches you watching her, and her smile acquires an edge. "You are calculating, Vizier. I recognize the look. I see it in my mirror every morning."
+  #You set the wine aside. This is not a social call.
+    *set boldness %+ 5
+    *set honest %+ 5
+    You raise the cup to your lips, taste it -- the warmth of southern grapes, the spice of cinnamon -- and set it down. Deliberately. Priya watches the gesture and her eyebrows rise a fraction.
+
+    "The wine is exceptional," you say. "And this is not a social call."
+
+    "No," she agrees, the playfulness dropping from her voice like a shed garment. "It rarely is, in this city. What do you need, Vizier?"
+  #You match her warmth. If this is to be a game, you intend to play it well.
+    *set cunning + 3
+    *set ruthless %+ 5
+    You take the wine, savor it, and let your expression warm to match hers. Two can play at intimacy. "Exceptional vintage," you say. "Your taste is impeccable, as always. I understand you have been adjusting the silk tariff. The Treasury reports are concerned."
+
+    Her laugh is rich and unguarded. "The Treasury is always concerned. That is its function. If it stopped being concerned, I would worry."
+
+    The dance begins.
+
+*page_break
+
+The conversation moves through its stages like a bazaar negotiation -- the pleasantries, the circling, the moment when both parties drop their pretenses and look at the merchandise.
+
+You do not tell Priya your full plan. You tell her the edges of it. You need independent sources of information -- trade contacts, merchant networks, eyes in the provinces that do not report to Zara's apparatus. You need access to unofficial funds -- gold that does not pass through the Treasury's ledgers. You need, in short, a shadow infrastructure.
+
+Priya listens. She eats while she listens, which you have learned is her way of processing. The lamb disappears in neat, precise bites. The bread is torn and dipped and consumed with the efficiency of a woman who grew up hungry and has never quite forgotten the habit.
+
+"You are building a power base," she says, when you have finished.
+
+"I am building the means to protect the empire."
+
+"Those are not mutually exclusive, but they are not the same thing." She sets down her bread. Her dark eyes are serious now, the laughter gone. "What you are describing, Vizier -- an independent intelligence network, unregistered funds, influence channels outside the formal structure -- that is what a usurper builds."
+
+"Or a patriot who cannot trust the formal structure."
+
+*page_break
+
+*choice
+  #"Priya, the conspiracy that killed my predecessor operates within the empire's official channels. The only way to fight it is to build something it cannot see or control."
+    *set honest %+ 10
+    *set rel_guild %+ 10
+    *set rep_trade %+ 5
+    *set approach "honest_pitch"
+    You lean forward. The candlelight catches the seal ring on your finger, and Priya's eyes flick to it and back.
+
+    "Someone in this empire has been running rogue intelligence operations. Feeding border information to the Khanates. Provoking trade wars with the Confederation. Murdering Viziers. And they are doing it through the empire's own systems -- using our gold, our networks, our people."
+
+    Priya is quiet. She reaches for her wine and turns the cup slowly in her hands.
+
+    "The formal channels are compromised," you continue. "Every official report, every Treasury ledger, every intelligence briefing passes through hands that may belong to the conspiracy. I need something outside that structure. Something clean."
+
+    "Something expensive," Priya says. But there is a glimmer in her eyes -- the glimmer of a merchant who has been offered an investment with extraordinary returns.
+    *goto kingmaker_zara_confrontation
+  #"I will be direct. I need your merchant network as an intelligence apparatus, and I need your private funds as an operational budget. In return, I can offer you something you have wanted for years: a Vizier who understands that commerce is the empire's true foundation."
+    *set boldness %+ 10
+    *set rel_guild %+ 8
+    *set rep_trade %+ 8
+    *set approach "trade_deal"
+    The offer hangs in the air between you like the scent of the lamb. Priya is a dealmaker. She respects directness in negotiation, even when it surprises her.
+
+    "A Vizier who supports trade," she says, slowly. "That is a rare commodity. The last three Viziers treated the merchant class as a purse to be emptied."
+
+    "I am offering you a partnership. Your network, your resources, your expertise -- in exchange for genuine influence over trade policy. Not the scraps the Council throws you. Real influence."
+
+    She studies you for a long moment. Then she picks up a piece of bread, tears it, and offers you half.
+
+    In the merchant's world, sharing bread is a contract.
+
+    You take it.
+    *goto kingmaker_zara_confrontation
+  *selectable_if (cunning > 35) #Appeal to her self-interest: frame the shadow network as a business opportunity, with Priya as the majority investor.
+    *set cunning + 3
+    *set ruthless %+ 10
+    *set rel_guild %+ 12
+    *set rep_trade %+ 10
+    *set approach "business_deal"
+    "Think of it as an investment," you say.
+
+    Priya's eyebrows rise. You have spoken her language.
+
+    "Every trade empire has an intelligence arm. You know this -- you have informants in every port from here to the Jade Sea. I am simply proposing we formalize it. An integrated network -- your merchants as eyes and ears, your warehouses as safe houses, your trade routes as communication lines. The empire's interests and your interests, aligned."
+
+    "And the return on this investment?"
+
+    "A Vizier who owes you. A Vizier with the power to reshape trade policy. And, incidentally, the information to destroy whoever is manipulating the empire's economy for their own ends." You pause. "Someone triggered the Western embargo deliberately. That cost you forty thousand gold dirhams a week. I intend to find out who, and make them pay."
+
+    The calculation in her eyes is visible now, clicking through figures and probabilities like an abacus in the hands of a master.
+
+    "I want quarterly returns," she says. "Not in gold. In policy."
+
+    "Done."
+    *goto kingmaker_zara_confrontation
+
+*label kingmaker_zara_confrontation
+
+*page_break
+
+*comment === ZARA'S CONFRONTATION ===
+
+The deal with Priya is barely a day old when Zara finds you.
+
+The intervening hours have been productive. Priya has already activated three provincial contacts -- a factor in Port Tavandar, a warehouse manager in Ashghar Pass, and a courier network linking them to the capital. The information is thin so far -- trade volumes, caravan schedules, the price of silk in regional markets -- but information is like water: pour enough of it through the right channels and it will reveal the landscape beneath.
+
+You have also begun to establish a private correspondence, using codes adapted from the Trade Regulation Code that Farid knows so intimately. The codes are simple but effective: commercial language that carries a second meaning, invisible to anyone who does not hold the key.
+
+She does not summon you. She does not send a message. She simply appears. You are walking through the Garden of Eternal Spring at dusk, reviewing the day's dispatches, and suddenly she is beside you, silent as the shadow she is named for.
+
+"You had lunch with Priya yesterday," she says. No greeting. No preamble. "Private dining room above the bazaar. You were there for two hours. The lamb was excellent -- she orders from a butcher in the River District, if you are curious."
+
+Your heart is beating faster, but you do not let it show. Zara is watching your face with the patient intensity of a cat studying a mousehole.
+
+"I had lunch with a colleague," you say. "That is not unusual."
+
+"No. What is unusual is the three messages you sent to Priya's trade contacts in the provinces afterward. And the coded instruction to her factor in Port Tavandar. And the withdrawal of six hundred gold dirhams from Priya's personal accounts that does not appear in any ledger I can find."
+
+*page_break
+
+She stops walking. You stop with her. The garden fountains murmur around you, and the jasmine is thick in the evening air. It is beautiful. It is also, you realize, the place she chose for this conversation because the water covers whispered words.
+
+"You are building something, Vizier," Zara says. Her voice is flat, factual, empty of accusation. That makes it worse. "Something outside the official structure. Something I am not supposed to see."
+
+*fake_choice
+  #A cold clarity settles over you. Zara is too dangerous to lie to and too dangerous to trust completely.
+    *set boldness %+ 5
+    *set ruthless %+ 5
+    You meet her gaze. The Director of the Eyes stands in front of you, and her eyes are as dark and deep as the wells in the Old City -- the ones they say have no bottom. She is not angry. She is not even surprised. She is simply presenting what she knows and waiting to see what you do with the information.
+
+    The question is not whether to be honest. It is how much honesty you can afford.
+  #You feel a flash of admiration beneath the alarm. Zara is very, very good at her job.
+    *set boldness %- 5
+    *set ruthless %+ 5
+    *set rel_spy %+ 5
+    A part of you -- the part that has learned to appreciate competence in all its forms -- cannot help but be impressed. The private dining room. The provincial messages. Even the butcher's name. Zara's network is not merely efficient; it is omniscient. You have been building your shadow apparatus for exactly one day, and the empire's spymaster already has a complete operational summary.
+
+    If you are going to play this game, you will need to play it better.
+
+*page_break
+
+*choice
+  #Tell Zara a partial truth: you are investigating the conspiracy through unofficial channels because the official ones may be compromised.
+    *set honest %+ 5
+    *set ruthless %- 5
+    *set rel_spy %+ 8
+    *set rep_intelligence %+ 5
+    *set zara_deflected true
+    "The conspiracy has penetrated the empire's official structures," you say. "Intelligence operations are being run without your authorization. Trade crises are being manufactured. My predecessor was murdered by someone with access to the Citadel. I am building backup channels, Zara. Not to replace your network. To supplement it. To create redundancy in case -- forgive the bluntness -- in case your network has been compromised."
+
+    Zara is quiet for a long time. The fountain fills the silence.
+
+    "My network has not been compromised," she says. But there is something in her voice -- a hairline fracture, barely perceptible. Doubt. She cannot be certain. The rogue spy who triggered the embargo operated outside her knowledge. That failure, that single blind spot, has shaken her more than she will ever admit.
+
+    "If you find something through your unofficial channels," she says, "bring it to me. We are not enemies, Vizier. Not yet."
+
+    "Not ever, I hope."
+
+    She turns to leave. At the edge of the garden, she pauses. "The butcher's name is Hassan. His lamb really is excellent."
+
+    And she is gone.
+    *goto kingmaker_close
+  #Deny everything. Zara cannot prove her suspicions, and admitting anything gives her leverage.
+    *set honest %- 10
+    *set boldness %+ 5
+    *set rel_spy %- 8
+    *set rep_intelligence %- 5
+    *set zara_deflected false
+    "I had lunch with a colleague, Zara. Whatever surveillance apparatus you have deployed against the empire's Vizier, I suggest you redirect it toward the actual conspiracy threatening the throne."
+
+    It is a risk. Zara does not react well to being challenged. But she also cannot prove what she suspects -- the messages were coded, the gold was laundered through Priya's merchant accounts, and the details of your arrangement exist only in the minds of two people.
+
+    "Surveillance of the Vizier is standard protocol," Zara says. Her voice has not changed, but something behind her eyes has hardened. "Your predecessor was under the same observation. It did not save his life, but it did tell me how he died."
+
+    The implied threat is clear. She is watching you. She will continue watching you. And if she finds proof, she will act.
+
+    "Then we understand each other," you say.
+
+    "We always have." She turns and walks away. Her footsteps make no sound on the marble path. She was trained for silence, and silence is what she leaves behind.
+    *goto kingmaker_close
+  #Offer Zara a partnership: bring her into the shadow network as a limited participant, sharing information but not control.
+    *set boldness %+ 5
+    *set honest %+ 5
+    *set rel_spy %+ 12
+    *set rep_intelligence %+ 10
+    *set zara_deflected true
+    *set cunning + 3
+    "Walk with me," you say.
+
+    She walks. You speak, quietly, beneath the murmur of the fountains. You tell her about the lunch with Priya. About the merchant network you are building. About the unofficial funds and the provincial contacts. You tell her enough to demonstrate trust, and you withhold enough to maintain leverage.
+
+    "I need you, Zara. Not your apparatus -- you. Your instincts, your analysis, your ability to see patterns where others see noise. I am building something, yes. And I would rather build it with you than against you."
+
+    She listens without expression. When you finish, the garden is dark and the first stars are appearing above the jasmine trees.
+
+    "You are asking me to participate in an unofficial intelligence network that operates outside my own directorate," she says.
+
+    "I am asking you to help me save the empire through channels the conspiracy cannot compromise."
+
+    A pause. "I want oversight. Full access to the information flow. No operational decisions made without my knowledge."
+
+    "Agreed."
+
+    "Then we have an understanding." She does not offer her hand. Instead, she offers something rarer: the ghost of a smile, there and gone like moonlight on water. "Do not make me regret this, Vizier."
+    *goto kingmaker_close
+
+*label kingmaker_close
+
+*page_break
+
+*comment === SCENE 9 KINGMAKER CLOSING ===
+
+*comment === SCENE 9 KINGMAKER CLOSING ===
+
+In your chambers that night, the lamplight casts your shadow long across the wall -- a dark shape that seems, from the right angle, to fill the entire room. You spread Priya's trade maps across your desk beside Farid's neatly filed correspondence. The maps show the empire's arteries -- trade routes, river channels, mountain passes, port cities. You are learning to read them the way Kadir reads military maps and Zara reads intelligence reports: as a landscape of power, of leverage, of possibility.
+
+The shadow network is a seed. It will take weeks to grow, months to bear fruit. Priya's merchant contacts must be cultivated. Information channels must be tested for reliability. Funding must flow through enough intermediary accounts that it cannot be traced back to the Vizier's office.
+
+And Zara is watching. Whether she is watching as an ally or a hawk circling above a field mouse remains to be seen.
+
+Farid knocks softly. "My ${title_honorific} Vizier? The Emperor has retired for the evening. The night dispatches are on your desk. And --" He hesitates. "Is everything all right?"
+
+"Everything is fine, Farid."
+
+"Only you seem -- preoccupied. More than usual. Not that you are usually preoccupied, my ${title_honorific} Vizier. I simply mean that tonight you seem especially --"
+
+"Farid."
+
+"Yes?"
+
+"Go to bed."
+
+"Yes, my ${title_honorific} Vizier."
+
+The door closes. You sit in the lamplight and study the maps. Somewhere beyond the window, the city hums with commerce and conversation, ignorant of the web being woven in its heart. Power, you are learning, is not a throne or a crown or an army. It is information, and gold, and the willingness to use both without hesitation.
+
+The first move is made. The game is far from over.
+
+*finish Allies and Enemies
+
+*comment ============================================================
+*comment === REVOLUTIONARY ROUTE: THE REFORM DECREE ===
+*comment ============================================================
+
+*label revolutionary_opening
+
+The morning after your decision, the world tastes different. The cardamom tea Farid brings you is the same blend as yesterday, but you drink it standing at the window, looking down at the city you have sworn to change, and the sweetness has a new edge to it. Purpose, perhaps. Or the sharp taste of fear.
+
+Below your window, the Grand Bazaar is waking. You can hear it through the glass -- the distant percussion of shutters opening, the first calls of vendors setting out their wares, the clatter of carts on cobblestone. Two million people live in Khazara. Most of them will rise today, work, eat, sleep, and rise again tomorrow, and nothing in their lives will change. Nothing has changed for generations. The noble houses hold their monopolies. The merchants pay their fees. The common people carry the weight of both on their backs and call it tradition.
+
+Reform. The word sounds simple. The reality is a beast with a hundred heads, each one capable of biting.
+
+The Khazaran Empire runs on tradition. For three hundred years, the noble houses have held their monopolies, their tax exemptions, their hereditary claims to land and labor. The merchant class has risen on the crumbs that fall from the aristocratic table. And below them, the farmers and laborers and servants and slaves who produce the empire's actual wealth have had no voice at all.
+
+You intend to change that. Not with a revolution -- that word implies chaos, and chaos serves only the powerful. With reform. With law. With the precise, patient application of policy to the empire's infected wounds.
+
+Farid arrives with the morning documents and a nervous expression that suggests he has been composing a speech.
+
+"My ${title_honorific} Vizier, I took the liberty of reviewing the Trade Regulation Code last night. If you are considering what I think you are considering -- and I may be entirely wrong about what you are considering -- there is a provision in the Second Amendment that allows the Vizier to issue emergency trade regulations without full Council approval. It was meant for wartime, but the language is broad enough to --"
+
+"Farid."
+
+"Yes, my ${title_honorific} Vizier?"
+
+"You are not wrong about what I am considering."
+
+*page_break
+
+The first reform is modest by design. A new regulation that breaks the noble houses' monopoly on the silk-weighing stations. Currently, every bolt of silk that enters the Grand Bazaar must be weighed and certified at one of twelve stations, all owned by noble families. They charge whatever they please for the service. A merchant with a cartload of silk might pay a fifth of its value just to have it certified for sale.
+
+The reform opens the certification process to any licensed weigher, noble or common. It does not abolish the noble stations. It merely creates competition. The cost of certification will fall. Merchants will profit. Consumers will pay less. And the noble houses will lose a revenue stream they have held for two centuries.
+
+It is, in the grand scheme of the empire's injustices, a small thing. But small things are where empires turn.
+
+You draft the regulation yourself, with Farid's encyclopedic knowledge of the Trade Code guiding your pen. He is in his element -- his stammer disappears, his anxiety evaporates, and what emerges is the finest legal mind in the Citadel's administrative apparatus, citing regulation numbers and precedent dates from memory with the fluency of a poet reciting verse.
+
+"The Second Amendment to the Trade Regulation Code, ratified in the Year of the Silver Moon, provides that --" He catches himself. "Sorry. You do not need the history. The relevant section is paragraph fourteen, which defines 'commercial certification' as a licensed activity rather than a hereditary right. The noble monopolies were granted by imperial charter, but the charter does not specify exclusivity. It merely grants them the right to certify. Others can also certify, provided they are licensed."
+
+The loophole is elegant. The regulation does not revoke the noble houses' charter. It merely opens the certification process to others. The distinction is legally critical: you are not attacking noble privilege. You are expanding commercial opportunity.
+
+The language is precise, legally sound, and deliberately narrow in scope. You are building a precedent, not issuing a manifesto.
+
+*fake_choice
+  #You feel the weight of what you are doing -- not the regulation itself, but what it represents. The first crack in a wall that has stood for three centuries.
+    *set idealist %+ 10
+    *set boldness %+ 5
+    As you write, your hand is steady, but your mind is racing ahead. This regulation will be tested. It will be challenged. Every noble family with a silk-weighing station will cry treason and tradition in the same breath. Lord Reza will marshal the conservative faction. The temple will be pressured to condemn the change as an assault on the natural order. But the regulation is legally sound. It is economically rational. And it is just. Those three things should be enough. In this empire, they rarely are.
+  #You approach the draft with cold precision. The regulation must be airtight -- every loophole closed, every objection anticipated.
+    *set boldness %- 5
+    *set ruthless %+ 5
+    *set scholarship + 3
+    Every sentence is a brick in a wall that must withstand a siege. You know what is coming. The noble houses have centuries of practice at destroying regulations they dislike -- they bury them in procedural challenges, drown them in exceptions, or simply ignore them until enforcement becomes impossible. This regulation must be different. It must be so precisely crafted that the only way to defeat it is to oppose it openly, publicly, on the merits. And on the merits, it is indefensible to argue that common merchants should pay a fifth of their income to a nobleman for the privilege of selling silk.
+
+*page_break
+
+*comment === LADY SORAYA AND THE PROGRESSIVE ALLIANCE ===
+
+The regulation is ready by noon. You send a copy to Lady Soraya with a brief note: "Your thoughts would be valued."
+
+Her response arrives within the hour. She appears in person.
+
+Lady Soraya is twenty-four, dark-haired, sharp-eyed, and dressed with an elegance that manages to be both aristocratic and subtly defiant. She wears the jewels of House Valerian -- old money, old name -- but her book collection includes every banned pamphlet the printing presses have produced in the last decade. She is the nobility's guilty conscience, and she has been waiting for someone in power to take her seriously.
+
+"This is good," she says, reading the draft at your desk while Farid hovers nervously with tea. "The language is precise. The scope is narrow. You are creating a precedent without overreaching." She looks up. "You have done this before."
+
+"I administered a province. I saw what monopolies do to local markets."
+
+"And now you see what they do to the empire." She sets the draft down. "Vizier, I want you to know that I am aware of the risk you are taking. My uncle will be furious."
+
+Her uncle is Lord Reza.
+
+*page_break
+
+*choice
+  #"Lord Reza's fury is predictable. What I need from you, Lady Soraya, is the support of the progressive nobles. How many can you bring to our side?"
+    *set boldness %+ 10
+    *set rel_soraya %+ 10
+    *set rep_nobility %+ 5
+    *set approach "coalition"
+    Soraya's eyes brighten. You have offered her what she has been craving: a role. Not the ornamental role her class assigns to young noblewomen -- the pouring of tea, the arrangement of flowers, the production of heirs. A real role. A political function.
+
+    "The younger generation," she says. "Lord Vahid's son. Lady Ariana of House Rostam. The Parviz twins -- they have been reading Soraya's pamphlets, though they would deny it under oath." She counts on her fingers. "Eight, perhaps ten nobles who understand that reform is not revolution. More, if the regulation succeeds and they see that change does not mean the end of their privileges."
+
+    "Eight is a start."
+
+    "Eight is a faction, Vizier." She smiles, and there is something fierce in it. "A small faction, but a vocal one. And the printing presses are on our side."
+    *goto revolutionary_reza_opposition
+  #"I need to understand the opposition before we move. Tell me about Lord Reza's network -- who supports him, and what they are afraid of."
+    *set boldness %- 5
+    *set cunning + 3
+    *set rel_soraya %+ 8
+    *set rep_nobility %+ 3
+    *set approach "intelligence"
+    Soraya sits back. The shift from enthusiasm to calculation is immediate -- she may be idealistic, but she is also a noblewoman who has watched court politics from the cradle.
+
+    "My uncle controls the traditionalist bloc -- perhaps forty noble houses, most of them old money, most of them holding monopolies that would be threatened by reform. He has allies in the temple as well. The conservative elders see reform as a threat to the social order the Flame endorses."
+
+    "And what are they afraid of?"
+
+    "Precedent. This regulation is about silk-weighing stations. But they see where it leads. If you can break one monopoly, you can break them all. Land rights. Tax exemptions. Hereditary offices. The entire structure of aristocratic privilege. They are not wrong to be afraid, Vizier. That is exactly where this leads."
+    *goto revolutionary_reza_opposition
+  #"Lady Soraya, I want to be honest with you. This regulation is the beginning, not the end. I intend to reform the empire from within, and I need allies who understand the full scope of what I am attempting."
+    *set honest %+ 10
+    *set idealist %+ 5
+    *set rel_soraya %+ 12
+    *set approach "full_honesty"
+    Soraya sets down her teacup. The porcelain makes a soft sound against the saucer, and in the quiet of your office, it sounds like a door closing. Or opening.
+
+    "I know," she says. "I have been waiting for someone to say it."
+
+    "Then let me say it plainly. The monopolies are only the surface. Beneath them are land reforms that need enacting, tax structures that need rebalancing, provincial administrations that need overhauling. The printing press has created a literate population that is beginning to ask why a handful of families control the wealth of the richest empire in the world. If we do not answer that question with reform, someone else will answer it with a revolution."
+
+    Soraya is quiet for a moment. Then she reaches across the desk and takes your hand -- not in romance, but in alliance.
+
+    "I am with you, Vizier. Whatever comes."
+    *goto revolutionary_reza_opposition
+
+*label revolutionary_reza_opposition
+
+*page_break
+
+*comment === LORD REZA'S OPPOSITION ===
+
+The regulation is published that evening. By the following morning, the opposition has organized.
+
+*page_break
+
+Lord Reza arrives at the Citadel like a storm front rolling in from the northern steppe. He is seventy-two years old, straight-backed, silver-haired, dressed in the dark crimson of House Reza, and his fury is the cold, controlled fury of a man who has been dismantling political opponents since before you were born.
+
+He does not request an audience. He demands one.
+
+You receive him in the Council Chamber -- neutral ground. Farid is present to take notes, though his hand trembles slightly as he prepares his ink. Lord Reza does not sit.
+
+"Vizier." His voice is soft and carries the way a knife carries through silk -- effortlessly, leaving damage in its wake. "I have read your regulation. I have also read the Trade Regulation Code, the Charter of Noble Privileges ratified under Roshan II, and the sixteen precedents that govern the alteration of hereditary commercial rights. I hope you have read them as well."
+
+"I have, Lord Reza."
+
+"Then you know that this regulation is illegal. The Vizier cannot unilaterally alter commercial privileges that were granted by imperial charter. The process requires a vote of the Noble Council, which -- as you are no doubt aware -- is currently lacking a Lord Speaker to convene it."
+
+*page_break
+
+He is right about the process. The regulation operates under an emergency wartime provision, and there is no declared war. The legal ground is shaky. You knew this going in.
+
+*fake_choice
+  #You hold Lord Reza's gaze without flinching. His legal argument is strong, but his moral position is indefensible.
+    *set boldness %+ 10
+    *set honest %+ 5
+    You stand your ground. Lord Reza's eyes are the pale blue of winter sky, and they carry the same temperature. He is accustomed to intimidating younger politicians with the sheer weight of his experience and his name. Two hundred years of Reza service to the throne. Three generations of Lord Speakers. A family tree that intertwines with the imperial dynasty itself.
+
+    But you are not a younger politician. You are the Grand Vizier, and the seal ring on your finger outweighs two hundred years of noble privilege.
+  #You feel the danger in this confrontation. Reza is not merely an old man shouting about tradition. He is a political force with decades of accumulated power.
+    *set boldness %- 5
+    *set ruthless %+ 5
+    Your pulse quickens, though you keep your face still. Lord Reza is not shouting. He has not raised his voice by a single degree. And that is what makes him dangerous. The men who shout are spending their anger. The men who speak softly are conserving it for the strike. Reza has survived four emperors, two civil wars, and countless Viziers. He will not be defeated by a well-drafted regulation.
+
+*page_break
+
+*choice
+  #"The regulation stands, Lord Reza. The emergency provision is broad enough to cover economic threats to the empire, and noble monopolies that extract a fifth of merchants' income qualify. If you wish to challenge it, do so through the proper legal channels."
+    *set boldness %+ 10
+    *set honest %+ 5
+    *set rel_reza %- 15
+    *set rep_nobility %- 10
+    *set rel_soraya %+ 8
+    *set reform_passed true
+    Lord Reza's expression does not change. But something shifts behind his eyes -- a recalculation. He has tested you and found that you do not bend.
+
+    "The proper legal channels," he repeats. "Yes. I shall use them. And when the Noble Council is reconvened -- which I assure you, Vizier, it will be -- your regulation will be the first item on the agenda. Along with a formal inquiry into the Vizier's authority to override hereditary commercial rights."
+
+    He turns and walks out. He does not slam the door. He closes it with a deliberate, precise click that somehow carries more weight than any slam.
+
+    Farid exhales. "That -- that went badly."
+
+    "No, Farid," you say. "That went exactly as expected. The regulation stands. Lord Reza is free to challenge it. And while he is busy with legal proceedings, the merchants are already benefiting from lower certification costs."
+
+    The reform is enacted. The first crack in the wall.
+    *goto revolutionary_close
+  #"Lord Reza, I respect the legal precedent. I am willing to modify the regulation to include a sunset clause -- it expires in six months unless ratified by the Noble Council. That gives the reform time to prove its worth while respecting the nobility's procedural rights."
+    *set honest %+ 5
+    *set ruthless %- 5
+    *set rel_reza %- 5
+    *set rep_nobility %+ 5
+    *set rel_soraya %+ 5
+    *set reform_passed true
+    *set diplomacy + 3
+    Lord Reza pauses. The offer surprises him. He expected a fight, and you have offered a negotiation. His political instincts -- honed over decades -- recognize the move for what it is: a compromise that costs you very little. Six months is long enough for the reform to take root. Once merchants experience lower certification costs, rescinding the regulation will be politically impossible.
+
+    "A sunset clause," he says, slowly. "With a six-month term."
+
+    "Renewable by Council vote. Which means the Noble Council must be reconvened to decide. I believe you have been advocating for exactly that, Lord Reza."
+
+    His lips thin. He sees the trap -- the reform proceeds now, and its reversal requires the very political process he wants to use. But the concession gives him something to take back to his faction: the Vizier acknowledged noble privilege. The principle is preserved, even if the practice has changed.
+
+    "Six months," he says. "Not a day longer."
+
+    "Agreed."
+
+    He leaves. Farid collapses into a chair.
+    *goto revolutionary_close
+  *selectable_if (scholarship > 35) #"Lord Reza, I have reviewed the sixteen precedents you cite. I notice you have omitted the seventeenth: the Edict of Roshan II, which explicitly grants the Vizier emergency commercial authority 'in times of threat to the empire's economic foundation.' The noble monopolies are that threat."
+    *set scholarship + 5
+    *set boldness %+ 5
+    *set rel_reza %- 10
+    *set rep_nobility %- 5
+    *set rel_soraya %+ 10
+    *set reform_passed true
+    Lord Reza's composure cracks. For the first time in the conversation, emotion bleeds through -- surprise, and behind it, the cold recognition that he has been outmaneuvered.
+
+    "The Edict of Roshan II," he says, "has not been invoked in one hundred and forty years."
+
+    "Then it is well past time." You pull the relevant document from Farid's files -- Farid, who found it at three in the morning and nearly woke you with excitement. "The language is clear. 'In times when the empire's commercial foundation is imperiled by the concentration of trade rights in few hands, the Grand Vizier may act to restore competitive balance.' I believe noble monopolies extracting a fifth of merchant income qualify."
+
+    Lord Reza reads the document. His lips move slightly. When he looks up, his expression has changed. The anger is still there, but it is mixed with something else. Grudging respect, perhaps. Or the recognition that this new Vizier has done something his predecessors never bothered to do: read the law more carefully than the lawyers.
+
+    "This is not over," he says.
+
+    "No. But the regulation stands."
+
+    He leaves without another word. Farid lets out a breath he has been holding for approximately the last five minutes.
+    *goto revolutionary_close
+
+*label revolutionary_close
+
+*page_break
+
+*comment === SCENE 9 REVOLUTIONARY CLOSING ===
+
+That evening, you walk through the Grand Bazaar. You do not wear the Vizier's formal robes -- just a simple traveling cloak, the kind any provincial administrator might wear. Farid trails behind you, uncomfortable outside the Citadel, clutching a ledger as if it were a shield.
+
+The silk-weighing stations are already adjusting. Word travels fast in the bazaar -- faster than any official announcement. Merchants are lining up at the new independent weighers, who have appeared with startling speed. Priya's network, you suspect. The Guildmaster may not know the full scope of your plans, but she recognizes an opportunity to undermine noble monopolies when she sees one.
+
+You stop at a spice merchant's stall. The merchant is old, weathered, his hands stained with turmeric and saffron. He is talking to another merchant about the new regulation.
+
+"About time," the old man says. "I have been paying Lord Reza's weighers for thirty years. Thirty years of handing a fifth of my income to a man who has never touched a sack of pepper in his life."
+
+He does not know you are listening. He does not know you are the one who wrote the regulation. He is simply a man whose life has been made slightly better, slightly fairer, by a few lines of ink on parchment.
+
+It is a small thing. But you stand there in the lamplight of the bazaar, breathing in the scent of cinnamon and cardamom and fresh bread, and you feel the full weight of what you have begun. Not the regulation. What it represents. The possibility that the empire can change. That the wall can crack. That the river the Dowager is so fond of quoting can, eventually, wear the stone to nothing.
+
+Farid appears at your elbow. "My ${title_honorific} Vizier, we should return. It is getting late, and the Old City is not safe after dark."
+
+"One moment."
+
+You buy a bag of cardamom from the old merchant. You pay full price. He grins at you, gap-toothed and genuine, the smile of a man who does not know he is looking at the person who just changed his world.
+
+The long game has begun.
+
+*finish Allies and Enemies

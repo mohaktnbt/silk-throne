@@ -1,0 +1,497 @@
+*comment === SCENE 8: THE CROSSROADS ===
+*comment Word target: ~8,000
+*comment THE ROUTE FORK -- last free scene before paywall
+*comment Variables modified: route (1, 2, or 3), boldness, idealist, ruthless,
+*comment   honest, rel_emperor, rel_dowager, rel_farid
+*comment Route 1 (Loyalist): idealist %+10, honest %+5
+*comment Route 2 (Kingmaker): boldness %+10, ruthless %+5
+*comment Route 3 (Revolutionary): idealist %+10, boldness %+5
+
+*temp closest_ally "farid"
+*temp closest_ally_score 0
+*temp ally_advice ""
+*temp route_choice 0
+*temp confirmed false
+
+*comment === DETERMINE CLOSEST ALLY ===
+*comment Check each major NPC relationship to find the highest
+
+*if (rel_emperor > closest_ally_score)
+  *set closest_ally "emperor"
+  *set closest_ally_score rel_emperor
+*if (rel_general > closest_ally_score)
+  *set closest_ally "general"
+  *set closest_ally_score rel_general
+*if (rel_guild > closest_ally_score)
+  *set closest_ally "guild"
+  *set closest_ally_score rel_guild
+*if (rel_priest > closest_ally_score)
+  *set closest_ally "priest"
+  *set closest_ally_score rel_priest
+*if (rel_spy > closest_ally_score)
+  *set closest_ally "spy"
+  *set closest_ally_score rel_spy
+*if ((rel_leila > closest_ally_score) and (met_leila))
+  *set closest_ally "leila"
+  *set closest_ally_score rel_leila
+*if ((rel_navid > closest_ally_score) and (met_navid))
+  *set closest_ally "navid"
+  *set closest_ally_score rel_navid
+*if ((rel_asha > closest_ally_score) and (met_asha))
+  *set closest_ally "asha"
+  *set closest_ally_score rel_asha
+*if (rel_farid > closest_ally_score)
+  *set closest_ally "farid"
+  *set closest_ally_score rel_farid
+
+*comment === OPENING: MORNING AFTER ===
+
+You wake to the smell of jasmine and smoke.
+
+For a moment -- one merciful moment -- you do not remember. The morning light falls across your sleeping platform in warm bars of gold, and the garden fountains murmur their eternal conversation outside the window, and you are simply a person waking in a beautiful room in the greatest city in the world.
+
+Then memory returns, and the weight of it presses you back against the pillows.
+
+The Emperor. The blood on white marble. The calling card with its familiar, terrible symbol. The longest night, and the morning that followed it. The three paths that crystallized in your mind like frost on glass.
+
+You rise. Your body aches -- you slept three hours, perhaps four, after the crisis was contained. The seal ring sits on the bedside table where you placed it before collapsing into bed. You pick it up. It is warm from the sunlight, and it fits your finger now in a way it did not when you first arrived in Khazara. You have grown into it. Or it has shaped itself to you.
+
+*page_break
+
+Farid arrives with breakfast: flatbread, soft cheese, honey, figs, and a pot of cardamom tea that smells like every good morning you have ever had. He sets the tray down with his usual careful precision, then stands at attention with his hands clasped behind his back.
+
+He looks as though he has not slept at all.
+
+"The situation, my ${title_honorific} Vizier," he begins, and you hear the faintest tremor in his voice. "General Kadir has tripled the Citadel guard. The Dowager Empress has convened a private meeting of the noble houses for this afternoon. High Priest Ashoka is conducting prayers for the Emperor's safety at the Temple of Seven Wisdoms -- the public has been told there was a 'disturbance,' not a full assassination attempt, but rumors are spreading."
+
+He pauses for breath.
+
+"Spymaster Zara has not been seen since before dawn. Her agents are moving through the Old City but will not say why. Guildmaster Priya sent a message asking whether the trade embargo negotiations should continue or be suspended. Captain Navid has requested permission to conduct a sweep of the palace sewer system, which I did not realize we had until he mentioned it."
+
+"And the Emperor?"
+
+Farid's expression softens. "Alive. Guarded. The Dowager is with him. He asked to see you this afternoon."
+
+*page_break
+
+You eat. The bread is warm, the cheese sharp, the figs sweet enough to make your teeth ache. Through the window, Khazara stretches to the horizon -- domes and minarets catching the sun, the two rivers glittering like hammered silver, the Grand Bazaar already humming with commerce despite the night's violence. The city does not stop. It never stops. Two million souls going about their business, trusting that the people in this Citadel will keep them safe.
+
+The thought is staggering. And clarifying.
+
+You pour cardamom tea and let the steam rise between your hands. The fragrance fills the room -- warm, complex, grounding. You think about what you know. What you have learned in these weeks since a nervous secretary met you at the city gates and placed a seal ring on your finger and said, in his flustered, earnest way, that the empire needed you.
+
+The conspiracy is real. It reaches into the Citadel itself -- into the guard rotations, the intelligence networks, the treasury. Someone with power and resources is systematically weakening the empire from within: inciting the Khanate raids, provoking the trade embargo, and now attempting to kill the Emperor himself.
+
+The factions are fracturing. Each one sees the crisis through the lens of their own interests. Kadir sees a military failure requiring military solutions. Priya sees an economic threat requiring economic answers. Ashoka sees a moral crisis. Zara sees intelligence failures. The Dowager sees her son in danger and reaches for the only tool she knows: control.
+
+And the Emperor. The boy on the throne. Sixteen years old, frightened, brave, more intelligent than anyone gives him credit for. Asking: *What should I do?*
+
+*page_break
+
+*comment === FAKE CHOICE 1: Reflection on Act 1 ===
+
+You set down the tea and stare at the evidence spread across your desk. Weeks of investigation, of politics, of careful maneuvering. What does it all add up to?
+
+*fake_choice
+  #The empire is worth saving. Not the throne, not the system -- the people. The merchants in the bazaar, the soldiers on the wall, the grandmother in the provinces. They deserve better.
+    *set idealist %+ 5
+    *set honest %+ 5
+    The empire is not the Citadel. It is not the jade throne or the Council Chamber or the machinations of powerful people in beautiful rooms. It is the merchant in the Grand Bazaar who sells cardamom by the handful and saves his coppers to send his daughter to school. It is the soldier at Fort Darband who stands watch in the cold because someone has to. It is two million ordinary lives, woven together by trade and tradition and a shared belief that tomorrow will be better than today.
+
+    Those people did not ask for a conspiracy. They did not ask for assassins. They asked for bread and justice and a government that remembers they exist.
+  #Power is the only thing that matters in this empire. Those who have it use it. Those who don't suffer. The question is whether you're willing to be one of those who have it.
+    *set boldness %+ 5
+    *set ruthless %+ 5
+    You have watched the Council of Five for weeks. You have seen how decisions are made -- not through wisdom or justice, but through leverage. Kadir gets what he wants because he controls the army. Priya gets what she wants because she controls the gold. Ashoka gets what he wants because he controls the confessions of the powerful. The Dowager gets what she wants because she controls the Emperor.
+
+    And the people who lack leverage? They get what is left.
+
+    The system is not broken. It is working exactly as designed. The question is whether you can make it work for you.
+  #Something fundamental about this empire needs to change. The factions, the secrecy, the concentration of power -- it nearly killed a boy last night. It already killed a man.
+    *set idealist %+ 5
+    *set boldness %+ 5
+    Corporal Behzad is dead. The previous Grand Vizier is dead. The Khanate raids kill border soldiers every month. The trade embargo starves grandmothers in the provinces. And all of it -- all of it -- is the product of a system that concentrates power in a handful of people who are too busy fighting each other to see the cracks widening beneath their feet.
+
+    The throne. The factions. The hereditary power, the secret alliances, the whispered betrayals. This is not governance. This is a game played by the wealthy while the rest of the empire pays the price of every lost round.
+
+*page_break
+
+*comment === CLOSEST ALLY CONVERSATION ===
+
+A knock at the door interrupts your thoughts. Not Farid's knock -- he has a distinctive rapid triple-tap, like a woodpecker with anxiety.
+
+*if (closest_ally = "emperor")
+  It is a palace runner bearing the Emperor's personal seal. Roshan has sent word -- not through the Dowager, not through the formal channels, but directly, with his own ring pressed into wax. He wishes to speak with you. Now. In private. In the Garden of Eternal Spring, where the fountains mask whispered words.
+
+  You find him on a marble bench beneath a pomegranate tree. He is dressed simply -- no crown, no ceremonial robes. Just a young man in a plain white tunic with bandaged hands and dark circles under his eyes.
+
+  "Thank you for coming," he says. No royal "we." Just Roshan, speaking to the one person he trusts. "I could not sleep. I have been thinking about what you said."
+
+  You sit beside him. The fountains splash. A peacock displays its feathers on the far side of the garden, brilliant and absurd and somehow exactly right.
+
+  "I have been thinking about what kind of emperor I want to be," he says quietly. "My father was strong. My grandfather was wise. My great-grandfather was ruthless. History remembers all of them. But none of them stopped the thing that nearly killed me last night. The system they built -- it has rot in it. I can feel it."
+
+  He turns to you. "You are the only person in this palace who tells me the truth without wanting something in return. So tell me: what should I do? Not as emperor. As a person. What is the right thing?"
+*elseif (closest_ally = "general")
+  The door opens to reveal General Kadir, his iron hand resting on his sword pommel, his face a weathered map of worry and determination. He does not wait for an invitation.
+
+  "Vizier. We need to talk." He pulls a chair across from your desk and sits in it the way a man sits on a war horse -- straight, tense, ready to move. "I've tripled the guard. I've sealed the passages. I've done everything the manual says. And it is not enough."
+
+  He leans forward. "Last night was a failure. My failure. And I will carry it. But it was also a symptom. The Citadel's security has been compromised from within. The army's border intelligence is being leaked. The treasury is financing operations I did not authorize."
+
+  His iron hand clenches on the desk. The metal creaks.
+
+  "I am a simple man, Vizier. I solve simple problems. Give me an enemy and a battlefield and I will win. But this -- conspiracies, politics, shadow wars -- I cannot fight what I cannot see." His eyes meet yours. "You can. You have been fighting it since you arrived. So tell me: what do we do?"
+*elseif (closest_ally = "guild")
+  The door opens to Guildmaster Priya, carrying two cups of something that smells expensive. She sets one before you without asking permission and drops into the chair across from your desk with the easy grace of a woman who owns every room she enters.
+
+  "Spiced wine," she says. "From the southern provinces. Thirty gold ashrafs a bottle, and worth every copper. You look like you need it."
+
+  She sips her own cup, watching you over the rim with those dark, calculating eyes that never quite stop adding numbers.
+
+  "I have been awake all night," she says. "Not because of the assassination -- though that was terrible, truly terrible. Because of what it means. The embargo. The spy. The assassin. They are all connected, aren't they?"
+
+  You nod.
+
+  "Someone is attacking the empire's foundations. Its security, its economy, its leadership. And the Council's response is to argue about jurisdiction." She sets down her cup. "I grew up poor, Vizier. I know what happens when the foundations crack. The people at the top float. The people at the bottom drown."
+
+  She leans forward. "You are the only person on that Council who is not protecting their own power base. You are the only one who sees the whole board. So tell me: what is the play?"
+*elseif (closest_ally = "priest")
+  The door opens to High Priest Ashoka, who enters with the slow, deliberate grace of a man who has not hurried in decades. He carries with him the faint scent of temple incense -- sandalwood and frankincense, the smell of the Eternal Flame.
+
+  "Child," he says, and for once the word carries no condescension. Only gentleness. "May I sit?"
+
+  He settles into the chair across from you as if it were a meditation cushion, his hands folded in his lap, his eyes half-closed in their familiar contemplation.
+
+  "The Flame burned brighter last night," he says quietly. "The temple attendants noticed. When great violence occurs near the sacred precincts, the Flame responds. It has always been so." He opens his eyes. "I came to ask if you are well, Vizier. But I also came to ask what you intend."
+
+  He studies your face with the calm, penetrating gaze of a man who has heard forty years of confessions and can read a soul the way you read a ledger.
+
+  "The empire stands at a crossroads, child. The Flame illuminates three paths. Each has its own light. Each has its own shadow. I will not tell you which to choose -- that is not the temple's role. But I will tell you this: the path you choose tonight will echo through the empire for a generation. Choose with your whole heart, not your half."
+*elseif (closest_ally = "spy")
+  The door opens silently. You do not hear it. One moment you are alone; the next, Spymaster Zara is standing by the window, arms crossed, her face as unreadable as ever.
+
+  "You need to lock your door," she says. "Especially now."
+
+  She turns from the window. In the morning light, you notice for the first time the faint dark circles beneath her eyes. She has not slept either.
+
+  "I have been running scenarios," she says. "All night. Every combination of what we know, what we suspect, and what we fear. Every scenario leads to the same conclusion." She pauses -- the deliberate pause. "The conspiracy cannot be defeated by intelligence work alone. It is too embedded. Too well-funded. Too deeply rooted in the power structure."
+
+  She sits across from you. This is, you realize, the first time Zara has ever sat in your presence without maintaining a line of sight to the door.
+
+  "I deal in information," she says. "But information without action is just... noise. You are the one who acts. You are the one the Emperor trusts. So I need to know: what are you going to do? Because my next move depends entirely on yours."
+*elseif (closest_ally = "leila")
+  The door opens to Leila. She is carrying a sheaf of papers and wearing an expression you have never seen on her -- not the sharp wit, not the playful challenge, but something raw and unguarded.
+
+  "I wrote something last night," she says without preamble. "I could not sleep, so I wrote. It is what I do when the world becomes unbearable -- I make it into words, and the words make it small enough to hold."
+
+  She sets the papers on your desk. A poem. You can see the first line: *The throne is not jade but bone.*
+
+  "It is not finished," she says. "I came because..." She trails off. Leila, who always has words, runs out of them.
+
+  "I came because you are the only person in this palace who seems to understand that what happened last night matters. Not politically. Not strategically. It matters because a boy nearly died and a man did die and the empire went on as if the morning prayer would fix everything."
+
+  She sits on the edge of your desk. "I am a poet, Vizier. I do not understand politics. But I understand this: the empire is a story, and the story is broken. Someone needs to choose a new one. I think that someone is you."
+*elseif (closest_ally = "navid")
+  The door opens to Captain Navid. He is in full armor, his sword at his hip, and there is still a bandage on his right hand where he cut himself breaking through the Emperor's door last night. He stands in the doorway with the rigid posture of a man who has come to say something important and is not sure how to begin.
+
+  "Vizier." He steps inside. Closes the door. The soft click is louder than it should be.
+
+  "I failed last night," he says. The words come out flat, factual. "The Emperor was nearly killed on my watch. Corporal Behzad died on my watch. The assassin escaped. I was thirty seconds too slow."
+
+  He stands before your desk like a soldier reporting for punishment.
+
+  "I have spent my life protecting this empire. On the border. In the garrison. At the Emperor's door. And I have never felt more like I am losing."
+
+  He meets your eyes, and behind the soldier's mask you see something you have not seen before: uncertainty.
+
+  "You see things I do not. You understand things about this palace that I cannot. The conspiracies, the politics, the games within games." He pauses. "I need to know what we are fighting for. Not who -- I know who. I need to know *what*. Because a soldier without a cause is just a man with a sword."
+*elseif (closest_ally = "asha")
+  The door opens to Asha. She is dressed in her temple scholar's robes, but they are rumpled, as if she pulled them on in haste. Her usual animation is muted, and her eyes -- normally bright with questions and challenges -- are dark with something you have not seen in them before.
+
+  "I have been in the temple all night," she says, sitting across from you without ceremony. "Praying. Thinking. Arguing with the Seven Wisdoms in my head, which is not as productive as it sounds."
+
+  She draws a breath.
+
+  "The Third Wisdom says courage is acting despite fear. The Fourth says temperance is mastering desire. The Fifth says knowledge is understanding truth." She looks at you. "But what do you do when the truth requires courage, and courage requires mastery, and mastery requires knowledge you do not yet have? The Wisdoms are meant to guide us. Last night, they spun in circles."
+
+  She leans forward. "You are the most interesting person I have met since I entered the temple. That is not flattery -- I do not flatter. It is observation. You see the empire as it is, not as tradition tells us it should be. So I am asking you, not as a scholar asks a Vizier, but as one person asks another: what do you see? What should we do?"
+*else
+  *comment Default: Farid
+  Farid does not knock. He simply appears, as he always does, with a fresh pot of tea and an expression that suggests he has been marshalling his courage for several hours.
+
+  "My ${title_honorific} Vizier," he says. "May I speak freely?"
+
+  You nod.
+
+  "I was secretary to the last Grand Vizier. I watched him navigate this court for two years. He was clever and careful and he trusted the right people and he still died." Farid's voice shakes, but he does not stop. "I have watched you for months now. You are clever too. And careful. But you are also something he was not."
+
+  He sets down the tea with trembling hands.
+
+  "You care. Not about the position. Not about the power. You care about the empire -- the actual empire. The people in it. The boy on the throne. And I think -- I know this is not my place, but I think -- that is why you will succeed where he failed."
+
+  He straightens his spectacles. "I do not know what you are planning. I do not need to know. I will follow you regardless, per regulation 14-C and also because..." He swallows. "Because you are a good person, my ${title_honorific} Vizier. And this empire needs a good person in that chair."
+
+*page_break
+
+The conversation ends. You are alone again. The sun is climbing toward its zenith, painting long shadows across the marble floor. In a few hours, the Dowager will convene the noble houses. The Council will demand answers. The court will swirl with rumor and fear and the endless, exhausting business of power.
+
+But right now, in this room, with the smell of cardamom tea and the sound of fountains and the weight of the seal ring on your finger, you are alone with the most important decision of your life.
+
+*page_break
+
+*comment === FAKE CHOICE 2: Personality confirmation ===
+
+You stand and walk to the window. Khazara spreads below you, golden in the midday light. The Grand Bazaar hums. The Temple of Seven Wisdoms rises white against the sky, the Eternal Flame invisible in daylight but ever-present. The garrison drums beat their steady rhythm. The two rivers wind through the city like veins of silver, carrying the lifeblood of trade and life.
+
+This is what you are choosing for. Not the throne. Not the factions. This.
+
+*fake_choice
+  #You have always believed that the right person, in the right place, with the right intentions, can change the world.
+    *set idealist %+ 5
+    *set honest %+ 5
+    The empire was built by people who believed it was worth building. Roshan the Conqueror was not merely a warlord -- he was a visionary who saw a valley of warring kingdoms and imagined a civilization. The Golden Age was not an accident -- it was the work of rulers and administrators and ordinary people who chose, every day, to build rather than destroy.
+
+    You can choose that too. It is not naive. It is the hardest, most courageous thing a person can do: believe that things can be better, and then do the work to make it so.
+  #You have learned that intentions mean nothing without the will to act. Good people who hesitate are indistinguishable from cowards.
+    *set boldness %+ 5
+    *set ruthless %+ 5
+    Your predecessor was a good person. He investigated the conspiracy. He followed the evidence. And he hesitated -- one moment too long, one night too many spent deliberating instead of acting -- and they killed him.
+
+    The difference between a good person and a dead person, in this empire, is the willingness to move first. To accept that the right choice, made too late, is the wrong choice. To understand that power is not a thing you earn. It is a thing you take.
+  #You know that lasting change requires more than one person's will. It requires a new way of thinking.
+    *set idealist %+ 5
+    *set boldness %+ 5
+    The empire has survived three hundred years because it adapts. The printing press transformed its culture. The trade routes transformed its economy. The Age of Intrigue transformed its politics. Change is not the enemy of empire. Stagnation is.
+
+    The conspiracy thrives because the current system allows it -- because power is concentrated in too few hands, because transparency is a weakness and secrecy is a virtue, because the empire's rulers have confused their own survival with the empire's survival. A different system would not merely defeat this conspiracy. It would prevent the next one.
+
+*page_break
+
+*comment === THE ROUTE FORK ===
+
+You turn from the window. You sit at your desk. You look at the evidence, the reports, the notes you have accumulated since arriving in Khazara.
+
+And you make your choice.
+
+The path forward is not something you decide in this moment. It is something you have been deciding since the day Farid met you at the city gates with a seal ring and a nervous smile. Every conversation. Every choice. Every moment when you could have turned away and did not.
+
+This is merely the moment when you name it.
+
+What kind of Vizier will you be?
+
+*choice
+  #The Emperor's shield. You will protect Roshan, build his strength, and defend the throne against all who would seize it.
+    *set route_choice 1
+    *goto confirm_loyalist
+  #The power behind the throne. You will wield the authority this empire needs, guiding it through the crisis with a steady hand -- your hand.
+    *set route_choice 2
+    *goto confirm_kingmaker
+  #A force for change. The empire's foundations are cracked, and you will rebuild them -- even if it means tearing down the old structures first.
+    *set route_choice 3
+    *goto confirm_revolutionary
+
+*comment === CONFIRMATION CHOICES ===
+
+*label confirm_loyalist
+
+*page_break
+
+The Loyalist path.
+
+You think of Roshan -- sixteen years old, sitting on the edge of his sleeping platform with blood on his hands and courage in his eyes. A boy who threw a water vase at an assassin because he refused to die quietly. A boy who asked *What should I do?* not because he was weak, but because he was wise enough to know he needed help.
+
+The throne is not the problem. The boy on it is not the problem. The problem is that everyone around him is trying to use him, and no one is trying to help him.
+
+You can change that.
+
+It will mean standing between the Emperor and the Dowager, between the Emperor and the Council, between the Emperor and the conspiracy itself. It will make you a target. Every faction that profits from a weak emperor will see you as a threat.
+
+But when Roshan asked you *What should I do?*, something in you answered: *I will show you.*
+
+*choice
+  #Yes. This is who you are. You will be the Emperor's protector, his counselor, his shield. The throne will stand.
+    *set route 1
+    *set idealist %+ 10
+    *set honest %+ 5
+    *set rel_emperor %+ 10
+    *goto route_set
+  #Wait -- reconsider. This is not the right path.
+    *goto reconsider
+
+*label confirm_kingmaker
+
+*page_break
+
+The Kingmaker path.
+
+You think of the authority Roshan placed in your hands last night -- freely, desperately, because he had no one else. And you think of what you could do with that authority if it were not given in crisis but held in permanence. The investigation. The factions. The conspiracy itself. Every piece on the board is visible to you in a way it is not visible to any single council member.
+
+You could manage the Emperor. Guide him. Shape his decisions so carefully that he believes they are his own. You could build a network of influence that makes you, not the Dowager, the true power behind the Silk Throne.
+
+It is what the empire needs. A firm hand. A clear eye. Someone who is not blinded by lineage or ideology but who sees the board for what it is and plays to win.
+
+The cost is your honesty. The cost is the boy's trust. The cost is becoming the very thing you came to Khazara to prevent: another person using the Emperor as a tool.
+
+But the empire cannot afford idealism. Not now. Not with the conspiracy closing in.
+
+*choice
+  #Yes. This is who you are. You will be the hand that guides the throne, the shadow that protects the empire. Power is not given. It is taken.
+    *set route 2
+    *set boldness %+ 10
+    *set ruthless %+ 5
+    *set rel_dowager %+ 5
+    *goto route_set
+  #Wait -- reconsider. This is not the right path.
+    *goto reconsider
+
+*label confirm_revolutionary
+
+*page_break
+
+The Revolutionary path.
+
+You think of Corporal Behzad, dead at twenty-three. Of the grandmother in the provinces who does not eat when the trade embargo bites. Of the street children in the Old City who live and die in the shadow of the grandest palace in the world. Of the conspiracy itself -- which exists because the empire's structure makes it possible, because power is concentrated and accountability is absent and the people who suffer most have no voice.
+
+The throne is not the solution. The throne is part of the problem.
+
+Not the boy on it -- Roshan is a good person, you believe that. But the system that placed a frightened teenager at the apex of an empire and surrounded him with factions competing for control -- that system is broken. It was broken before the conspiracy. It will be broken after.
+
+You could fix it. Not with a sword or a coup, but with law. With reform. With the radical, terrifying idea that the empire belongs to its people, not its rulers.
+
+The cost will be enormous. The nobility will resist. The temple will resist. Perhaps even the Emperor will resist, when he understands what change truly means. You will be fighting the entire weight of three hundred years of tradition.
+
+But some things are worth the fight.
+
+*choice
+  #Yes. This is who you are. You will be the voice of the voiceless, the architect of a new empire. The old ways end here.
+    *set route 3
+    *set idealist %+ 10
+    *set boldness %+ 5
+    *set rel_farid %+ 10
+    *goto route_set
+  #Wait -- reconsider. This is not the right path.
+    *goto reconsider
+
+*label reconsider
+*goto_scene scene8
+
+*comment === ROUTE IS SET ===
+
+*label route_set
+
+*page_break
+
+*comment === FARID'S REACTION ===
+
+The decision settles into you like a key turning in a lock. Something opens. Something else closes. You feel different -- not lighter, not heavier, but *aligned*, as if every scattered piece of yourself has finally found its arrangement.
+
+You straighten in your chair. You look at the evidence on your desk, and for the first time, you see not just problems but a path through them.
+
+A knock. Farid's knock -- the rapid triple-tap.
+
+"Enter."
+
+He opens the door and stops. He looks at you, and something in his expression changes. He has been your secretary for months. He knows your moods, your habits, the way you hold your shoulders when you are worried and the way your eyes narrow when you are calculating. He sees the difference immediately.
+
+"My ${title_honorific} Vizier," he says slowly. "Something has changed."
+
+"Yes," you say.
+
+*if (route = 1)
+  "I am going to protect the Emperor," you say. "Not manage him. Not control him. Protect him, and build him into the ruler this empire deserves. Every faction that stands in the way will have to go through me first."
+
+  Farid's eyes widen. Then, slowly, his face transforms. The anxiety does not disappear -- it is too much a part of him for that -- but something else surfaces alongside it. Hope. Fierce, unexpected hope.
+
+  "The last Vizier tried to stand alone," he says quietly. "You won't be alone, my ${title_honorific} Vizier. I will be right here. Per regulation 14-C. And because it is the right thing to do."
+*elseif (route = 2)
+  "I am going to take control of this crisis," you say. "Not through the Council, not through consensus. Directly. The empire needs a steady hand, and I intend to provide one."
+
+  Farid is quiet for a moment. His eyes search your face, and you see something you have not seen in him before -- not fear, exactly. Concern. The concern of a man who has watched one master walk a dangerous road and does not want to watch another.
+
+  "My ${title_honorific} Vizier," he says carefully. "The last Vizier also believed he could control things. He was very clever about it."
+
+  "I know how that story ended, Farid."
+
+  "Then I will trust you to write a different one." He straightens. "I am with you. Whatever you need. Per regulation 14-C."
+
+  His voice is steady. His hands are not.
+*else
+  "I am going to change the way this empire works," you say. "The factions, the concentration of power, the systems that allowed this conspiracy to take root -- all of it. I am going to build something better."
+
+  Farid stares at you. His mouth opens. Closes. Opens again.
+
+  "That is..." He removes his spectacles, polishes them, replaces them. "That is either the bravest thing anyone has said in this palace in three hundred years, or the most dangerous. Possibly both."
+
+  "Does that change your position?"
+
+  "My ${title_honorific} Vizier, I once reorganized the entire filing system of the provincial archives during a flood. Structural change does not frighten me." He pauses. "Well. It frightens me somewhat. But I am more frightened of doing nothing."
+
+*page_break
+
+*comment === THE CLIFFHANGER ===
+
+Farid leaves to prepare for the afternoon's meetings. You are alone.
+
+You stand. You walk to the window one last time. The sun is directly overhead now, and the city is blazing. Every dome and minaret is a torch of reflected light. The Eternal Flame in the Temple of Seven Wisdoms is invisible against the noonday glare, but you know it is there -- the way you know the conspirators are there, watching, waiting, planning their next move.
+
+You touch the seal ring on your finger. Voice of the Throne. That is what they call you.
+
+It is time to speak.
+
+You turn from the window and walk to the door. Your hand closes on the handle. You are ready.
+
+*page_break
+
+The door opens.
+
+And everything changes.
+
+Spymaster Zara is standing in the corridor. She is not alone. Two of her agents flank her, armed, their faces grim. And Zara herself -- Zara, who never shows emotion, who speaks in flat facts and dry humor and silences that cut deeper than any blade -- Zara looks frightened.
+
+You have never seen Zara look frightened. In this moment, it is the most terrifying thing you have ever witnessed.
+
+"Vizier," she says. "We need to move. Now."
+
+"What's happened?"
+
+She steps closer. Her voice drops to a whisper, barely audible above the distant splash of fountains.
+
+*if (route = 1)
+  "The Dowager's private meeting with the noble houses. It is not a council of safety. It is a coup. She intends to declare the Emperor unfit to rule and install herself as Regent-Absolute before sunset."
+
+  The world stops.
+
+  "She has the support of twelve noble houses. She has the temple's blessing -- Ashoka has agreed to consecrate the regency. She has been planning this for weeks. The assassination attempt gave her the excuse she needed."
+
+  Zara's eyes bore into yours.
+
+  "You have three hours to stop her. If the regency is declared, the Emperor is finished. And so are you."
+*elseif (route = 2)
+  "Prince Kaveh. He arrived in the capital this morning with a private guard of two hundred soldiers. He was not invited. He was not announced. And the noble houses who were supposed to meet with the Dowager this afternoon? They are meeting with him instead."
+
+  The floor seems to tilt beneath your feet.
+
+  "Kaveh is making his move. He has letters of support from six provincial governors and a signed endorsement from the Commander of the Western Garrison. He intends to present himself to the Council as an alternative to the Emperor -- a 'steadying hand' in a time of crisis."
+
+  Zara's jaw is tight.
+
+  "You wanted to be the power behind the throne, Vizier. Someone else wants it more. And they have an army."
+*else
+  "The conspiracy. We found their center. Not a person -- a network. And it is larger than anything I imagined." She holds out a sheaf of documents, her hand trembling. "Treasury records. Military deployments. Temple communications. Trade agreements. All of it connected. All of it pointing to the same conclusion."
+
+  She meets your eyes.
+
+  "The conspiracy is not trying to replace the Emperor. They are trying to prevent reform. Every institution in this empire -- the military, the guilds, the temple, the nobility -- they have elements working together to ensure that the current system never changes. Because the current system makes them rich and powerful and safe."
+
+  Her voice drops lower.
+
+  "And they know about you, Vizier. They know what you are planning. A list was found among the documents. People who threaten the status quo. People who must be... removed. Your name is first."
+
+The corridor is silent. The fountains are silent. The entire world is silent, balanced on the edge of a blade.
+
+You think of the Emperor. Of the empire. Of the path you have chosen and the price it will demand.
+
+Then you straighten. You adjust the seal ring on your finger. And you step forward into the unknown.
+
+*finish Act 2: The Long Game

@@ -1,0 +1,683 @@
+*comment ============================================================
+*comment SCENE 3: "THE COUNCIL OF FIVE"
+*comment Word target: ~12,000
+*comment Variables modified: met_general, met_guild, met_priest, met_spy,
+*comment   scene3_crisis_response, rep_military, rep_trade, rep_temple,
+*comment   rep_intelligence, rel_general, rel_guild, rel_priest, rel_spy,
+*comment   boldness, idealist, ruthless, evidence_count
+*comment ============================================================
+
+*temp crisis_approach "undecided"
+*temp private_talk "none"
+*temp kadir_impression "neutral"
+*temp priya_impression "neutral"
+*temp ashoka_impression "neutral"
+*temp zara_impression "neutral"
+*temp reaction_tone "measured"
+*temp symbol_found false
+
+*comment === OPENING: DAWN AND THE COUNCIL CHAMBER ===
+
+Dawn comes to Khazara in layers: first the call to prayer, rising from a hundred minarets in a wave of sound that breaks across the rooftops like surf. Then the light, seeping through the latticed shutters in thin blades of gold. Then the smell of the city waking -- bread baking, fires being lit, the river giving up its cool morning mist.
+
+You are dressed and waiting when Farid arrives. He has dark circles under his eyes and a stack of briefing papers so thick it requires both hands to carry.
+
+"The Council Chamber is on the second floor of the eastern wing," he says, dealing papers onto your desk like a merchant laying out wares. "It overlooks the Garden of Eternal Spring. The table is round -- symbolically, all council members are equal." He pauses. "In practice, no one in that room has been equal to anyone else for a single moment of their lives. The seating arrangement is itself a political statement. I've drawn a diagram."
+
+He produces a diagram. It is meticulously labeled and slightly coffee-stained.
+
+"General Kadir sits with his back to the window -- he says it prevents anyone from reading his documents over his shoulder. Guildmaster Priya sits opposite, near the door, which she claims is for convenience but which also gives her the best exit route. High Priest Ashoka sits facing the east, toward the Temple Quarter. Spymaster Zara sits wherever she pleases, which is usually wherever no one expects her."
+
+He looks up.
+
+"The Vizier's chair is at the head of the table. Or the point. It's a round table, so geometrically there is no head, but -- you understand."
+
+He shuffles through his papers one more time, then stops. His expression changes -- the nervous energy draining away, replaced by something steadier and more serious.
+
+"${title_honorific} ${player_name}. I need to tell you something." He lowers his voice. "The previous Vizier -- Vizier Cyrus -- chaired his first Council meeting three years ago. He told me afterward that it was the most important hour of his tenure. Not because of the decisions made, but because of what he observed. He said the Council is not a meeting. It is a performance. Everyone in that room is performing for everyone else, and the Vizier's job is to see past the performance."
+
+He pauses.
+
+"He was very good at that. Seeing past performances. I think that might be why --" He stops himself. "I think that is a useful skill to have."
+
+The unfinished sentence hangs in the air between you. You both know what it contains: the name of a dead man, and the reason for his death.
+
+*page_break
+
+*comment === APPROACHING THE COUNCIL CHAMBER ===
+
+The walk from your apartments to the Council Chamber takes you through the heart of the Citadel. The corridors are wide, high-ceilinged, and lined with miniature paintings depicting scenes from the empire's history. You pass the founding of Khazara -- Roshan the First on horseback, sword raised, the valley burning behind him. You pass the Golden Age -- scholars in a garden, astronomers pointing at the sky. You pass the civil wars -- armies clashing before the walls of this very palace, blood rendered in pigment the color of pomegranate.
+
+The history of the empire, painted on its walls. Three hundred years of power, ambition, wisdom, and violence. And at the end of the corridor, through a door of carved walnut, the room where that history is still being written.
+
+Farid stops at the door.
+
+"I cannot enter the Council Chamber," he says. "Only council members and the Vizier. I will be in the antechamber if you need me." He straightens your collar -- a gesture so paternal it startles you both. "You will be --"
+
+"Magnificent," you finish for him. "You said so yesterday."
+
+He manages a strained smile. "I was going to say 'adequate.' But magnificent works too."
+
+The door opens.
+
+*page_break
+
+*comment === THE COUNCIL CHAMBER ===
+
+The Council Chamber is smaller than you expected. After the vast theater of the Jade Throne Room, this room feels almost intimate -- a space designed not for ceremony but for work. The round table dominates the center, its surface scarred with ink stains and the ghost impressions of maps long since removed. The chairs are heavy, practical, and worn smooth by generations of powerful occupants.
+
+Three walls are hung with maps: the empire in its entirety, the northern frontier in detail, and the western mountain passes. The fourth wall is a window, floor to ceiling, overlooking the Garden of Eternal Spring. Morning light pours through it, catching dust motes in the air and illuminating the room with a clean, unflinching clarity.
+
+The air smells of old paper, sandalwood incense, and something sharper -- tension, perhaps, or the memory of arguments that have soaked into the walls over centuries.
+
+The council members are already assembled. They have arranged themselves around the table with the studied casualness of people who have been fighting over seating for years.
+
+The fifth chair -- the Lord Speaker's chair -- is draped in black silk, the traditional sign of mourning for a vacant seat. Above the gallery, Lord Reza sits in an ornamental balcony reserved for observers and petitioners. He is seventy-two years old, white-haired, thin as a blade, and leaning on an ivory cane with the air of a man who has watched fools come and go for five decades and finds each new crop slightly more disappointing than the last. His eyes fix on you as you enter, and the assessment in them is neither hostile nor friendly. It is the assessment of a man who has survived by knowing, immediately and accurately, the precise value of every person in every room.
+
+As you enter, four pairs of eyes at the table turn toward you simultaneously.
+
+Each pair sees something different. The general sees a civilian. The guildmaster sees a variable. The priest sees a soul. The spymaster sees a piece on a board. You are all of these things and none of them, and the trick -- the trick that the last Vizier mastered and that you must learn -- is to be the version each of them needs, without losing the version you actually are.
+
+*page_break
+
+*comment === MEETING GENERAL KADIR ===
+
+General Kadir is the first to speak, because General Kadir is always the first to speak.
+
+He does not rise when you enter. He is studying a map spread across his section of the table -- the northern frontier, annotated in a cramped, aggressive hand -- and he glances up the way a man glances up from important work to acknowledge an interruption he finds unnecessary.
+
+He is fifty-five years old, built like the fortresses he has spent his life defending: broad, solid, and showing the wear of decades of hard use. His face is weathered brown, seamed with scars, and his eyes are the gray of unsheathed steel. His left hand is missing below the wrist, replaced by a prosthetic of black iron that he uses with unconscious ease -- turning pages, pointing at maps, drumming on the table with a metallic rhythm that you suspect drives the other council members to distraction.
+
+"Vizier," he says. Not "welcome." Not "good morning." Just the title, spoken like a rank he has not yet decided to respect.
+
+*set met_general true
+
+*page_break
+
+*comment === MEETING GUILDMASTER PRIYA ===
+
+"General, don't frighten our new colleague before the tea has arrived."
+
+The voice comes from the other side of the table, warm and amused, and it belongs to a woman who is already pouring wine from a crystal decanter -- at dawn -- with the ease of someone who considers wine a tool of diplomacy rather than a vice.
+
+Guildmaster Priya is thirty-eight, dark-eyed, sharp-featured, and possessed of a smile that manages to be simultaneously welcoming and calculating. She wears robes of rich burgundy silk over a practical traveling dress -- the costume of a woman who spends as much time in the bazaar as in the council chamber. Gold glints at her ears, her wrists, her fingers. Not ostentatious. Strategic. Every piece of jewelry is a conversation starter, a negotiating tool, a small, portable advertisement for the empire's wealth.
+
+"Vizier ${player_name}," she says, rising with the fluid grace of a born hostess. "Welcome. Please, sit. Have some wine -- it's from the southern provinces, and I paid far too much for it, but quality is an investment, not an expense." She smiles. "I am Priya. We will be spending a great deal of time together, you and I. Better to start as friends."
+
+Her handshake is firm, her eyes are warm, and underneath both, you sense a mind moving at speeds that would make a lesser person dizzy.
+
+*set met_guild true
+
+*page_break
+
+*comment === MEETING HIGH PRIEST ASHOKA ===
+
+"Friendship is a gift of the Second Wisdom," says a voice like old oak -- deep, unhurried, resonant enough to fill the room without effort. "Let us see if it is given freely or with expectation of return."
+
+High Priest Ashoka sits facing the window, the morning light falling on his face like a blessing he has arranged for himself. He is sixty-two, thin, with close-cropped white hair and a face of extraordinary stillness. His robes are plain white linen, unadorned except for a seven-pointed star embroidered in gold at the breast. He wears no jewelry, no rings, no visible sign of the enormous power he commands -- the temple, the temple guards, the confession system, the moral authority of three centuries of faith.
+
+He does not rise. He does not extend a hand. He simply regards you with dark, calm eyes that hold the patience of a man who has spent forty years listening to confessions, and finds very little surprising anymore.
+
+"Vizier," he says. "The Flame welcomes you. We have prayed for wisdom in this choice." He pauses. "We shall see if the prayer is answered."
+
+There is no hostility in his voice. There is no warmth either. There is only assessment -- the calm, thorough assessment of a man who believes he has the divine right to judge and has rarely been given reason to doubt it.
+
+*set met_priest true
+
+*page_break
+
+*comment === MEETING SPYMASTER ZARA ===
+
+You look for the fourth member. For a moment, you do not see her, and then you do, and the distinction is important -- she was there the entire time, and your failure to notice her immediately tells you more about her skill than any briefing could.
+
+Spymaster Zara is seated in the shadow between the window and the bookshelf, where the light does not reach. She is thirty-three, slight, dark-haired, with a face that is difficult to remember -- not because it is unremarkable, but because it has been trained to be forgettable. She wears dark clothing without insignia. No jewelry. No marks of rank. She could be a servant, a scholar, a visiting merchant. She could be no one.
+
+She does not speak. She lifts one hand -- a small, precise gesture, acknowledging your existence the way a card player acknowledges a new hand dealt to the table. Her eyes meet yours, and in them you see something very different from the other three council members: not judgment, not welcome, not assessment, but calculation. Pure, cold, unwavering calculation. She is not wondering who you are. She already knows. She is wondering what you will do.
+
+You wonder, briefly, how much she knows. About the anonymous note. About your predecessor's death. About the symbol drawn in the margin of a warning. Of all the people in this room, Zara is the one most likely to know the answers to the questions that kept you awake last night. She is also the one most likely to use those answers as leverage.
+
+Trust is a coin in this city. And the Spymaster, you suspect, has a vault full of it -- all owed by others, none spent by her.
+
+*set met_spy true
+
+*page_break
+
+*comment === FAKE CHOICE: FIRST IMPRESSION REACTION ===
+
+You take your seat at the table. The chair is large, old, and bears the faint scratches of generations of occupants. The leather is worn smooth. The armrests are polished by the pressure of hands that made decisions shaping millions of lives.
+
+Four of the most powerful people in the empire are watching you. The general, the merchant, the priest, the spy. Each commands a pillar of the state. Each has their own agenda. And the fifth chair -- the Lord Speaker's chair, draped in black silk to signify its vacancy -- sits empty, a reminder that power in this room is incomplete and contested.
+
+What is your first thought as you take the Vizier's seat?
+
+*fake_choice
+  #These are the people who run the empire. And now, so do I.
+    *set boldness %+ 5
+    *set reaction_tone "confident"
+    You settle into the chair and let the silence work for you. Four pairs of eyes. Let them look. You have walked through the door, taken the seat, and met their gazes without flinching. That is enough for a first morning. The rest will follow.
+  #Each of these people has an agenda. I need to understand every one of them before I act.
+    *set boldness %- 5
+    *set reaction_tone "cautious"
+    You settle into the chair and make yourself still. Listen first. React later. You did not survive the provinces by being the loudest voice in the room. You survived by being the one who heard what the loud voices were really saying.
+  #One of the people in this room may have killed the last Vizier. I need to watch them all.
+    *set ruthless %+ 5
+    *set reaction_tone "suspicious"
+    The anonymous note burns in your memory. [i]Watch the Council. One of them is the spider at the center of the web.[/i] You settle into the chair and begin to watch. Every gesture. Every glance. Every word chosen and every word avoided. Someone in this room has blood on their hands.
+
+*page_break
+
+*comment === THE BORDER CRISIS: KADIR'S BRIEFING ===
+
+General Kadir does not wait for an invitation. He pushes his map to the center of the table, anchoring the corners with his iron fist and a wine cup (Priya's, borrowed without asking), and begins.
+
+"Three raids this month on the northern frontier. The last one, four days ago, hit Fort Darband directly." His voice is clipped, military, stripped of everything that is not information. "The outer wall was breached. The garrison fought for six hours. Fifty soldiers dead. The Khanates took grain, horses, weapons, and sixteen captives. Civilians, mostly."
+
+He jabs at the map with his iron hand, and the metal finger leaves a small dent in the parchment.
+
+"Darband is the primary strongpoint on the northern border. If it falls completely, there is nothing between the Khanates and the Ashar Valley but two days' hard riding and a wall that hasn't been properly maintained since my grandfather's time."
+
+He looks around the table, and his expression is the expression of a man who has been saying these words for months and is running out of patience.
+
+"I need troops. I need gold. I need this council to stop debating tariffs and theology and start debating survival."
+
+*page_break
+
+*comment === FACTION RESPONSES ===
+
+The silence after Kadir's words is a living thing. You can feel the room recalibrating -- each council member preparing their response, their counter-argument, their bid for influence over the crisis.
+
+Guildmaster Priya speaks first, her voice cutting through the tension like a silk knife.
+
+"I grieve for the dead, General. Truly." Her tone is sincere, and you believe her. "But sending the army north is not as simple as loading soldiers onto wagons. Mobilizing the northern garrison costs forty thousand gold dirhams per week. That money comes from trade revenue. Trade revenue that is already under pressure from the Western embargo threats and the southern drought." She taps the table with one finger -- a merchant's rhythm, not a general's. "Money is not abstract. Every gold piece we spend on soldiers is a road that does not get built, a granary that does not get filled, a school that does not open."
+
+"Roads are no use to dead farmers," Kadir says.
+
+"Farmers with no roads to bring their grain to market starve just as surely," Priya replies.
+
+*page_break
+
+High Priest Ashoka raises one hand, and the room stills. It is a remarkable thing to watch -- a gesture so practiced, so saturated with authority, that even General Kadir falls silent.
+
+"The Khanates are not godless barbarians, whatever the popular imagination suggests," Ashoka says. His voice is calm, meditative, the voice of a man addressing a philosophical question rather than a military crisis. "They honor their own spirits, their own traditions. The temple has maintained diplomatic contact with the Khanate shamans for generations. A delegation -- bearing gifts, bearing the word of the Flame -- could negotiate a cease-fire more cheaply and more durably than any army."
+
+"A delegation," Kadir says, and the contempt in his voice could strip varnish. "You want to send monks to negotiate with men who just killed fifty of my soldiers."
+
+"I want to send wisdom where you would send swords," Ashoka says, unperturbed. "The Fifth Wisdom teaches that harmony is strength. The Flame does not burn to destroy, General. It burns to illuminate."
+
+"Tell that to the families of the dead."
+
+*page_break
+
+*comment === ZARA'S REVELATION ===
+
+"There is another problem."
+
+The voice is Zara's. She has not moved from her shadow by the window, and the words are spoken so quietly that the others lean forward to hear them. Which is, you realize, precisely the point.
+
+"The raids are too well-coordinated," she says. Flat. Factual. No emotion. "The Khanates have never hit three garrisons in a single month before. They have never breached Fort Darband's walls. They have never struck during the rotation between garrison shifts, when the walls are at minimum strength."
+
+She pauses. The silence has a different quality now -- sharper, colder.
+
+"Someone is feeding them information. Garrison schedules. Rotation timetables. Strength reports." Her eyes move around the table. "The intelligence is coming from inside the empire."
+
+The word "treason" is not spoken. It does not need to be. It fills the room like incense smoke, settling into every corner, touching every surface. You feel the temperature of the room change -- not physically, but politically. A moment ago, this was an argument about how to respond to an external threat. Now it is something else. Something more dangerous. An internal investigation that could touch anyone, including the people sitting at this table.
+
+You think of the anonymous note. [i]Watch the Council. One of them is the spider at the center of the web.[/i]
+
+Priya sets down her wine glass. Ashoka's hands go still in his lap. Kadir's jaw tightens. Each reaction is a performance, but each performance contains a grain of truth. One of these people is hearing Zara's accusation for the first time. Or perhaps none of them are. Perhaps the spider is sitting quietly, watching the others react, measuring how close the web has come to being discovered.
+
+Kadir's iron hand clenches into a fist, and the metal groans. "If someone in my army is selling information to the Khanates --"
+
+"Not necessarily your army," Zara says. "The information could come from the Citadel. From the Council's own briefing documents." She lets that land. "I need time and resources to investigate. The military response can wait until we know who we are fighting -- and who is fighting against us from within."
+
+*page_break
+
+*comment === FAKE CHOICE: REACTION TO ZARA'S REVELATION ===
+
+The accusation hangs in the air. A spy in the empire. A traitor feeding intelligence to the enemy. Every person in this room is thinking the same thing, and no one is willing to say it aloud: the traitor could be one of them.
+
+How does this revelation strike you?
+
+*fake_choice
+  #With cold fury. If someone is betraying the empire, you will find them and destroy them.
+    *set ruthless %+ 5
+    *set reaction_tone "aggressive"
+    *set kadir_impression "aligned"
+    Your fingers tighten on the arm of the chair. Fifty soldiers dead because someone sold their schedules to the enemy. Sixteen civilians taken as captives because someone in this palace traded their safety for -- what? Gold? Power? Ideology? It does not matter. Treason is treason, and the punishment is absolute.
+  #With careful attention. This changes everything -- the response must account for the leak.
+    *set boldness %- 5
+    *set reaction_tone "analytical"
+    *set zara_impression "aligned"
+    You file the information away, turning it over in your mind like a coin. If Zara is right -- and her reputation suggests she usually is -- then the border crisis is not just a military problem. It is an intelligence failure. And an intelligence failure cannot be solved by sending more soldiers to be betrayed.
+  #With unease. This could be a power play by Zara, using fear to expand her influence.
+    *set ruthless %+ 5
+    *set boldness %- 5
+    *set reaction_tone "skeptical"
+    *set zara_impression "distrustful"
+    Spymasters trade in fear. That is their currency, and Zara has just deposited a large sum. The revelation could be genuine -- or it could be a maneuver, designed to delay the military response that Kadir wants and redirect resources to Zara's intelligence apparatus. In a room where everyone has an agenda, even warnings can be weapons.
+
+*page_break
+
+*comment === THE EMPEROR'S QUESTION ===
+
+The argument continues -- Kadir pounding the table, Priya quoting Treasury figures, Ashoka citing scripture, Zara stating facts in a voice like a knife being drawn from a sheath. From the gallery, Lord Reza's voice rises, thin and imperious: "The noble houses have always provided the levy in times of crisis. The traditional response is --"
+
+"The traditional response," Priya cuts in, "has cost the Treasury two million dirhams in the last decade and produced precisely nothing."
+
+"Tradition is what separates the empire from the barbarians," Reza replies, and the ice in his voice could cool wine.
+
+The argument spirals. Everyone is talking. No one is listening. Kadir pounds the table, and the ink bottles jump. Priya quotes Treasury figures with the rapid-fire precision of an accountant under siege. Ashoka's voice rises into its formal register, resonant with scriptural authority. Zara says nothing, but her eyes move from face to face with the steady, tracking attention of a predator watching prey.
+
+And Lord Reza, from the gallery, delivers a running commentary in a voice like cracking parchment: "In my father's day..." and "The traditional response has always been..." and "If the old families were properly consulted..."
+
+The room is a microcosm of the empire itself -- powerful forces pulling in contradictory directions, each one convinced that their way is the only way, each one willing to fight for it, none of them willing to be the first to yield. You sit in the center and feel the pull. It would be easy, you think, to be torn apart. That is what happened to the last Vizier? Not the poison -- the pull. The impossible task of standing in the center of a storm and choosing a direction.
+
+The morning light moves across the map like a slow, indifferent hand.
+
+And then the door opens.
+
+Emperor Roshan IV stands in the doorway. He is wearing robes of state, and his crown catches the light with a flash that silences the room more effectively than any shout.
+
+"We have been listening," he says. His voice is steady. His hands are not. "And we wish to hear our Vizier's recommendation."
+
+Every eye turns to you.
+
+*page_break
+
+*comment === THE CRISIS RESPONSE: REAL CHOICE ===
+
+*comment This is the first major political decision of the game.
+*comment It sets scene3_crisis_response and shifts faction reputations.
+
+The Emperor is watching you. The Council is watching you. In the gallery, Lord Reza adjusts his grip on his cane. Farid, you imagine, is pressing his ear to the antechamber door.
+
+This is why you are here. Not to observe. Not to record. To decide.
+
+The border is under attack. The enemy is coordinated. There may be a traitor inside the empire. Every option has risks, and every option will align you with one faction and alienate the others. There are no safe choices. There is only the choice you make.
+
+What do you recommend?
+
+*choice
+  #Military response. Reinforce the border, mobilize the northern army, and demonstrate strength.
+    *set scene3_crisis_response 1
+    *set crisis_approach "military"
+    *set rep_military %+ 8
+    *set rep_trade %- 5
+    *set rep_temple %- 5
+    *set rel_general %+ 10
+    *set rel_guild %- 5
+    *set rel_priest %- 5
+    *set boldness %+ 10
+    *set ruthless %+ 5
+    "Your Majesty," you say, and your voice carries across the chamber. "The border is bleeding. Fifty soldiers are dead. Sixteen of our people are in Khanate hands. The empire's strength has been tested, and if we do not respond with strength, we invite further attacks."
+
+    You turn to the map, pointing to the gap in the northern defenses.
+
+    "I recommend full mobilization of the northern garrison. Reinforce Fort Darband. Send the Third and Fifth cavalry regiments to patrol the frontier. The Khanates must see that the cost of raiding the empire is higher than the profit."
+
+    General Kadir nods -- a sharp, definitive nod, like a hammer falling. "Finally," he says. "Someone who understands."
+
+    Priya's smile thins. "And the forty thousand dirhams per week? Shall I harvest it from the fountains?"
+
+    "The Treasury will manage," you say. "It always does."
+
+    "The Treasury will manage," Priya repeats, and there is something in her voice that is not quite a threat but is certainly not acceptance.
+    *goto after_crisis
+  #Diplomatic response. Send envoys to the Khanates and explore negotiation before escalation.
+    *set scene3_crisis_response 2
+    *set crisis_approach "diplomatic"
+    *set rep_temple %+ 8
+    *set rep_military %- 5
+    *set rep_trade %+ 5
+    *set rel_priest %+ 10
+    *set rel_general %- 10
+    *set idealist %+ 10
+    *set honest %+ 5
+    "Your Majesty," you say, "war is expensive, and the empire's resources are not infinite. If the Khanates can be brought to the negotiating table, a diplomatic resolution preserves lives and gold that we cannot afford to spend."
+
+    You turn to Ashoka.
+
+    "I propose a temple delegation, backed by an offer of trade concessions. The Khanates want what every people want -- food, security, recognition. If we can address those needs through diplomacy, we avoid a conflict that could drain the empire for years."
+
+    Ashoka inclines his head. "Wisdom speaks," he says, and the gravity of the pronouncement fills the room. "The Flame illuminates the path of peace."
+
+    Kadir's iron fist slams the table. The sound is like a gunshot, and half the room flinches. "Peace," he says, very quietly. "Tell that to the dead. Tell that to the sixteen captives who are being marched north in chains while we sit here and discuss wisdom."
+
+    The silence after his words is savage.
+    *goto after_crisis
+  #Intelligence response. Investigate the leak before committing forces that may be compromised.
+    *set scene3_crisis_response 3
+    *set crisis_approach "intelligence"
+    *set rep_intelligence %+ 8
+    *set rep_military %- 5
+    *set rep_nobility %- 5
+    *set rel_spy %+ 10
+    *set rel_general %- 5
+    *set boldness %- 5
+    "Your Majesty," you say, "Spymaster Zara has identified a critical vulnerability: someone inside the empire is feeding intelligence to the Khanates. If we mobilize the army before we find the leak, we are sending soldiers into a trap with the traitor watching every move."
+
+    You meet Zara's eyes across the table. Her expression does not change, but something in her posture shifts -- a fraction of a degree, barely perceptible, that you read as approval.
+
+    "I recommend a covert investigation. Give the Director of the Eyes the resources to identify the traitor. Meanwhile, we reinforce the border quietly, without the fanfare that would alert the spy to our awareness."
+
+    Kadir stares at you. "Quietly," he repeats. "The border is on fire, and you want to investigate quietly."
+
+    "I want to catch the person who set the fire," you say. "Before they set another."
+
+    Lord Reza's voice floats from the gallery, dry as old parchment: "And while we investigate, the Khanates raid freely. A bold strategy, Vizier. If by 'bold' one means 'negligent.'"
+    *goto after_crisis
+  #Economic response. Cut off trade with Khanate-allied merchants and apply financial pressure.
+    *set scene3_crisis_response 4
+    *set crisis_approach "economic"
+    *set rep_trade %+ 8
+    *set rep_military %- 5
+    *set rep_temple %- 5
+    *set rel_guild %+ 10
+    *set rel_general %- 5
+    *set boldness %+ 5
+    *set idealist %- 5
+    "Your Majesty," you say, "the Khanates raid for profit. Their economy depends on selling stolen goods and buying supplies they cannot produce on the steppe. If we cut off the merchants who trade with the Khanates -- if we make the economic cost of raiding higher than the economic benefit -- we can strangle the raids at their source."
+
+    You turn to Priya.
+
+    "I propose a trade embargo on all commerce with Khanate-allied merchants. Freeze their assets in the bazaar. Block their access to the mountain passes. Hit them in the purse, and the swords will follow."
+
+    Priya's eyes light up. Not with warmth -- with the sharp, focused attention of a woman who has just been handed a weapon she knows exactly how to use. "Now you are speaking my language, Vizier. The Trade Office can have embargo orders drawn by noon."
+
+    Kadir shakes his head. "Economic pressure. While soldiers die." His voice is quiet, which is worse than shouting. "The Khanates do not pay their warriors with gold, Vizier. They pay them with glory. You cannot embargo glory."
+    *goto after_crisis
+
+*label after_crisis
+
+*page_break
+
+*comment === EMPEROR'S REACTION ===
+
+The Emperor listens to the argument that follows your recommendation. His face is composed, but you can see the wheels turning behind his eyes -- a sharp mind processing information, weighing options, trying to distinguish between the advice that serves the empire and the advice that serves the advisor.
+
+*if (crisis_approach = "military")
+  "We accept the Vizier's recommendation," the Emperor says at last, and his voice, though young, carries the weight of the crown. "Reinforce the border. Let the Khanates know that the empire's sword is not ceremonial."
+  *line_break
+  Kadir bows his head -- the first sign of respect you have seen from him. It is not much. But from General Kadir, it is a great deal.
+*elseif (crisis_approach = "diplomatic")
+  "We accept the Vizier's recommendation," the Emperor says, and there is a thoughtfulness in his voice that surprises you. "Prepare the diplomatic delegation. But General Kadir -- keep the northern garrison on alert. Diplomacy is the first option. It need not be the only one."
+  *line_break
+  A measured response. Better than you expected from a sixteen-year-old. Ashoka nods approvingly. Kadir says nothing, which is his version of grudging acceptance.
+*elseif (crisis_approach = "intelligence")
+  "We accept the Vizier's recommendation," the Emperor says, and you hear a tremor beneath the royal composure. The idea that a traitor walks the corridors of his own palace has shaken him. "Find the spy. Spymaster Zara, you will have whatever resources you require."
+  *line_break
+  Zara inclines her head. That is all. No gratitude, no acknowledgment, no wasted words. She simply notes the authorization and files it away in whatever organizational system lives behind those calculating eyes.
+*else
+  "We accept the Vizier's recommendation," the Emperor says. "Let the Khanates learn that the empire's wealth is also its weapon." He turns to Priya. "Guildmaster, you will coordinate the embargo. Make it swift and make it thorough."
+  *line_break
+  Priya nods. "With pleasure, Your Majesty." And there it is -- the smile of a woman who has just been given official permission to do what she does best: apply pressure until something breaks.
+
+The Emperor withdraws. The council members gather their papers, their arguments, their grudges. The room smells of incense and tension.
+
+*page_break
+
+*comment === FAKE CHOICE: PROCESSING THE COUNCIL ===
+
+The first Council meeting is over. You have made a decision, drawn a line, and placed yourself on one side of it. The consequences will follow, as consequences always do.
+
+As the council members rise and begin to file toward the door, you take a moment to gather yourself.
+
+*fake_choice
+  #You feel the exhilaration of power. You spoke, and the empire moved.
+    *set boldness %+ 5
+    *set reaction_tone "energized"
+    The seal ring glints on your finger. An hour ago, you were an unknown from the provinces. Now you have shaped the empire's response to its greatest crisis. The weight of it is not crushing. It is clarifying. You were made for this room.
+  #You feel the weight of what you have done. Every choice has a cost, and you have just decided who pays.
+    *set idealist %+ 5
+    *set reaction_tone "sober"
+    Somewhere on the northern border, soldiers are bleeding. In the bazaar, merchants are counting their coins. In the Temple Quarter, priests are praying. And here, in this room, you have moved a piece on a board that spans half a continent. The weight of it settles on your shoulders like a second set of robes, heavier than the silk.
+  #You feel wary. You have revealed your hand too early. The other players at this table now know where you stand.
+    *set boldness %- 5
+    *set ruthless %+ 5
+    *set reaction_tone "guarded"
+    Four faction leaders, and you have just chosen sides. The one you backed will smile at you over dinner. The ones you opposed will sharpen their arguments for the next round. You have made a move, and in this game, every move is also a revelation. They know something about you now that they did not know an hour ago.
+
+*page_break
+
+*comment === PRIVATE CONVERSATION: REAL CHOICE ===
+
+As the others file out, you realize you have a brief window -- a few minutes before the next obligation, the next crisis, the next demand. Enough time to speak privately with one council member. To begin building the relationship that may, in time, determine your survival.
+
+Who do you approach?
+
+*choice
+  #General Kadir. The military situation demands clarity, and the General's blunt honesty may be exactly what you need.
+    *set private_talk "kadir"
+    *goto kadir_private
+  #Guildmaster Priya. The economy is the empire's bloodstream, and Priya controls the flow.
+    *set private_talk "priya"
+    *goto priya_private
+  #High Priest Ashoka. The temple's moral authority is a force no army can match, and Ashoka wields it with precision.
+    *set private_talk "ashoka"
+    *goto ashoka_private
+  #Spymaster Zara. The revelation about the traitor demands answers, and Zara is the only one who might have them.
+    *set private_talk "zara"
+    *goto zara_private
+
+*comment === PRIVATE CONVERSATIONS ===
+
+*label kadir_private
+
+*comment === KADIR PRIVATE ===
+
+You catch General Kadir at the door. He pauses, and the look he gives you is evaluating -- a commander assessing a new officer.
+
+"Walk with me," he says. It is not a suggestion.
+
+He leads you down the corridor at a pace that brooks no casual conversation. His iron hand swings at his side with a faint metallic whisper. You walk in silence until he stops before a window overlooking the Garrison across the river. Below, soldiers drill in the morning light, their movements precise, synchronized, beautiful in the way that disciplined violence is always beautiful.
+
+"I have buried better soldiers than anyone in this room will ever be," Kadir says, without looking at you. "That is not a boast. That is the cost of command. You pay it every day, and the only people who understand the price are the ones who have paid it."
+
+He turns to face you.
+
+*if (crisis_approach = "military")
+  "You gave the right order today, Vizier. I don't say that lightly. The border needs strength, not talk." His gray eyes are steady. "But I will tell you this: do not think that one correct order makes you a military leader. You have backed the army. Now fund us, equip us, and stay out of our way. That is all I ask."
+  *set rel_general %+ 5
+*else
+  "You made the wrong call today," he says, bluntly. "People will die because of it. Soldiers. Civilians. The faces you will never see." He holds up his iron hand. "I lost this at the Darband pass, ten years ago. A Khanate saber. I kept fighting with the stump. You know why? Because retreating would have cost more lives than my hand was worth."
+  *set rel_general %- 5
+
+He studies you for a moment longer.
+
+"I don't trust politicians, Vizier. I've watched them smile and sign papers while my soldiers bled. But I will give you one chance. One." He holds up a finger -- the iron one, which makes the gesture considerably more memorable. "Do not waste it."
+
+He turns and walks away. His footsteps are precise, measured, deliberate -- the footsteps of a man who has never taken an unnecessary step in his life. Through the window, you watch him cross the courtyard toward the bridge that leads to the Garrison. The soldiers on the ramparts straighten as he approaches -- an involuntary response, like flowers turning toward the sun. Whatever else General Kadir may be, he is loved by the men and women who serve under him. That kind of loyalty is not bought. It is earned in blood and sweat and shared cold nights on the frontier. And it is, you suspect, a weapon that cannot be purchased by the Treasury, negotiated by the Temple, or subverted by the Eyes.
+
+*set rel_general %+ 5
+*set conv_general + 1
+*goto after_private
+
+*label priya_private
+
+*comment === PRIYA PRIVATE ===
+
+You find Guildmaster Priya lingering by the refreshment table, refilling her wine glass with the unhurried ease of a woman who conducts all her most important business over drinks.
+
+"Vizier ${player_name}," she says, and the smile she turns on you is warm enough to heat a room. "Join me. The vintage is excellent -- I should know, I imported it myself." She pours a second glass and holds it out. "I find that difficult conversations go more smoothly with good wine. And I suspect this conversation may be quite difficult."
+
+The wine is rich, dark, smooth -- tasting of blackberries and something spicier underneath, like cinnamon or clove. You recognize quality. This bottle costs more than most families earn in a month.
+
+"People think I am just a merchant," Priya says, settling into a chair with the ease of a woman who is at home in any room. "Kadir thinks I am soft because I count coins instead of corpses. Ashoka thinks I am worldly because I value profit. Zara thinks I am transparent because I smile." She sips her wine. "They are all wrong."
+
+*page_break
+
+*if (crisis_approach = "economic")
+  "You chose wisely today, Vizier. An embargo is a weapon the enemy cannot parry with swords. It works slowly, yes, but it works permanently." She leans forward. "I can make this hurt them. Deeply. But I will need your support when the military lobby pushes back. Can I count on it?"
+  *set rel_guild %+ 5
+*else
+  "Your recommendation today was -- understandable," she says, choosing the word like a jeweler choosing a stone. "But it was incomplete. No crisis in this empire is solved without money. Whatever you choose -- war, diplomacy, investigation -- you will need the Treasury. Which means you will need me."
+
+She regards you over the rim of her glass.
+
+"My father sold pepper from a wooden cart in the provinces. I built a trading empire before I was thirty. I was appointed to this council because the empire's wealth flows through my hands." She sets down the glass. "I am not asking you to like me, Vizier. I am asking you to understand that in this empire, gold is not a resource. It is the resource. Everything else is decoration."
+
+Her smile returns, warm and disarming. But her eyes -- her eyes are the eyes of someone who learned long ago that warmth and calculation are not opposites. They are complementary tools, like a hammer and a chisel, and she wields both with the precision of a master craftsman.
+
+She raises her glass. "To new partnerships, Vizier. May they be profitable for us both."
+
+The wine is excellent. The smile is impeccable. And underneath both, the gears are turning -- always turning, always calculating, always measuring the distance between where she is and where she wants to be. You drink. You smile in return. And you make a mental note: Guildmaster Priya is the most dangerous person in this room, not because she commands armies or spies or the moral weight of a three-hundred-year-old faith, but because she makes you want to trust her. And wanting to trust someone in a palace full of liars is the most dangerous impulse of all.
+
+*set rel_guild %+ 5
+*set conv_guild + 1
+*goto after_private
+
+*label ashoka_private
+
+*comment === ASHOKA PRIVATE ===
+
+High Priest Ashoka has not moved from his chair. The others have departed, but the old priest remains, hands folded in his lap, gazing out the window at the Temple Quarter. The sunlight falls on his face, and for a moment he looks exactly like a painting in the Temple of Seven Wisdoms -- serene, ageless, carved from the same stone as the pillars.
+
+"Sit, child," he says, without turning.
+
+You sit. The chair beside his is warm from the morning sun. Through the window, you can see the spire of the Temple of Seven Wisdoms and, at its base, the amber glow of the Eternal Flame.
+
+"The Council argues," Ashoka says. "It has always argued. Four voices pulling in four directions, and a Vizier in the middle trying to hold the rope." He turns to you, and his dark eyes are calm as deep water. "Do you know the parable of the rope and the flame?"
+
+You shake your head.
+
+"A rope pulled in four directions holds nothing. It merely vibrates, taut and useless. But if you set it aflame --" He pauses. "The flame destroys the rope. And what remains? Only the truth of what the rope was holding."
+
+*page_break
+
+*if (crisis_approach = "diplomatic")
+  "You chose the path of wisdom today," he says. "Swords solve nothing that wisdom cannot solve more lastingly. I am pleased." He pauses. "But wisdom has enemies, child. Powerful enemies, who profit from violence and fear. Walk carefully."
+  *set rel_priest %+ 5
+*else
+  "Your choice today was not the one I would have made," he says. "But the Flame does not judge decisions. It judges hearts." He regards you steadily. "What is in your heart, Vizier? Not your mind -- I have no doubt your mind is sharp. But the mind serves the heart, not the other way around."
+
+"I have heard the confessions of every person in this council," Ashoka continues, and his voice drops to a register that fills the room the way incense fills a temple. "I know what each of them has done in the dark. I know what they fear. I know what they pray for when they think the Flame is not listening." He pauses. "I will not tell you their secrets. But I will tell you this: trust is a flame. It is given freely, burned through quickly, and nearly impossible to relight once it goes out."
+
+He rises. His movements are slow and deliberate, as though each joint is a decision to be considered.
+
+"Come to the Temple, when you have time. We will talk about the Seven Wisdoms, and you will tell me which one you believe is most important. The answer will tell me more about you than any council meeting ever could."
+
+He pauses at the door, and when he turns back, the morning light catches the seven-pointed star embroidered on his breast. The gold thread glints, and for a moment, the symbol seems to burn -- not with fire, but with the steady, patient luminance of a faith that has outlasted empires.
+
+"One more thing, child," he says. "The confessional is always open. For you, as for everyone. The Flame does not judge rank. It judges truth." His dark eyes hold yours. "When you are ready to speak the truth -- not the truth you want to be true, but the truth that frightens you -- come to the Temple. The Flame will be waiting."
+
+He leaves. The scent of incense lingers long after he is gone, a ghost of sandalwood that clings to the air and to your thoughts. You are not a person of deep faith. But you recognize power when you feel it, and High Priest Ashoka radiates a power that has nothing to do with armies or gold. It is the power of certainty -- the calm, absolute certainty of a man who believes he answers to something greater than any throne. You are not sure whether that makes him an ally or a threat. Perhaps it makes him both.
+
+*set rel_priest %+ 5
+*set conv_priest + 1
+*goto after_private
+
+*label zara_private
+
+*comment === ZARA PRIVATE ===
+
+You look for Spymaster Zara. The chair she occupied is empty. The shadow where she sat has no occupant. For a moment, you think she has left without a word, which would be entirely consistent with everything you know about her.
+
+Then a voice, from behind you:
+
+"You're looking in the wrong place."
+
+You turn. She is leaning against the doorframe, arms crossed, watching you with eyes that miss nothing and give away less.
+
+"I don't usually talk to new Viziers," she says. "The last three have been -- disappointing. They wanted reports summarized in three sentences, threats rated on a scale of one to five, and intelligence delivered in time for breakfast." She pushes off the doorframe. "The world does not work in summaries and scales. It works in patterns. I deal in patterns."
+
+She walks to the map on the wall -- the northern frontier -- and traces a line with one finger.
+
+"Three raids. Here, here, and here." Her finger marks the locations. "The first was a distraction. The second was a test. The third -- Darband -- was the real attack. Someone told them exactly where our weaknesses were. Not a general intelligence leak. Specific. Current. The kind of information that changes every two weeks when the garrison rotations shift."
+
+*page_break
+
+*if (crisis_approach = "intelligence")
+  "You backed the right horse today," she says. No warmth. No gratitude. Just fact. "The traitor is close. Closer than anyone in this room wants to believe. I will find them. But I need time, and I need the council not to blunder into a military response that tells the spy we are looking."
+  *set rel_spy %+ 5
+*else
+  She glances at you. "You didn't choose my recommendation. That's fine. I don't expect people to follow intelligence advice. It's uncomfortable. It asks them to sit with uncertainty, and powerful people hate uncertainty."
+
+She steps back from the map.
+
+"Your predecessor found something. Vizier Cyrus. He was investigating -- quietly, carefully, the way a smart man investigates when he suspects the people around him might be involved. He found a thread, and he pulled it."
+
+Her eyes meet yours.
+
+"He pulled it, and someone cut the thread. Along with his life." She pauses. "I am telling you this because you are new, and because the last Vizier who ignored me is dead. Take it as you will."
+
+The words land like stones dropped into still water.
+
+"I don't trust you," she adds, as calmly as if she were reporting the weather. "I don't trust anyone. But I would prefer not to attend a second Vizier's funeral in the same year. It would look careless."
+
+She nods -- the same small, precise gesture from the council meeting -- and walks out. Her footsteps make no sound on the marble floor. She does not look back. The door does not creak. It is as though she was never here -- a ghost made of caution and calculation, leaving nothing behind but the faint impression that you have just been assessed, catalogued, and filed in a system you cannot access.
+
+You stand alone in the Council Chamber. The morning light has shifted. Priya's wine glass sits abandoned on the table, a circle of red at the bottom like a small, contained sunset. Kadir's map is still spread across the wood, its corners curling. Ashoka's chair retains the faint impression of his weight.
+
+Four people. Four powers. Four agendas. And somewhere among them, or behind them, or beneath them, a spider.
+
+*set rel_spy %+ 5
+*set conv_spy + 1
+*goto after_private
+
+*label after_private
+
+*page_break
+
+*comment === THE SYMBOL UNDER THE TABLE ===
+
+The Council Chamber is empty now. The others have gone -- to their offices, their factions, their private calculations. The morning light has moved across the floor, and the dust motes have settled. The room smells of cold incense and the lingering ghost of Priya's wine.
+
+You should leave. There are documents to review, decisions to implement, a dozen obligations competing for the remainder of your day. But something holds you -- a restlessness, an instinct, a feeling that you have not yet seen everything this room has to show you.
+
+You walk the perimeter. You study the maps on the walls. You run your fingers along the spines of the books on the shelf -- histories, legal codes, treatises on governance. Everything is in order. Everything is as it should be.
+
+And then you drop a paper. It is an accident -- one of Farid's briefing sheets, slipping from the stack you have been carrying. It flutters to the floor and slides under the round table, and when you crouch to retrieve it, you see it.
+
+Scratched into the underside of the table, where no one sitting at the table would ever see it, is a symbol.
+
+*page_break
+
+It is small -- no larger than a thumbnail -- and crudely carved, as though made quickly, furtively, with the point of a dagger or a stylus. A circle, with seven lines radiating from the center, like a sun or a star. But the lines are uneven, and the seventh is thicker than the others, drawn twice, as though the carver wanted to emphasize it.
+
+You stare at the symbol. Your blood cools. The room seems to contract around you -- the maps on the walls pressing closer, the empty chairs leaning in, the morning light hardening into something cold and bright and accusatory.
+
+You have seen this symbol before. Last night, on the anonymous note slipped under your door. In the margin, below the text, someone had drawn the same mark -- a circle with seven asymmetric rays and one line doubled. You had taken it for a smudge. A nervous flourish. Now, crouching beneath the Council table in the empty chamber, you know better.
+
+It is a sign. A signature. A declaration.
+
+Someone in this room -- someone who sits at this table, who participates in the most sensitive discussions of imperial policy, who has access to the empire's secrets -- is part of whatever killed your predecessor. And they have left their mark here, in the heart of the empire's power, like a wolf marking territory.
+
+*set evidence_count + 1
+
+*page_break
+
+*comment === CLOSING ===
+
+You rise slowly. The symbol is burned into your memory. You do not touch it, do not alter it, do not draw attention to it. You simply stand, straighten your robes, and place Farid's briefing paper back on the stack.
+
+The Council Chamber is quiet. The fountains murmur in the Garden of Eternal Spring. Through the window, the city of Khazara goes about its morning -- merchants opening their stalls, soldiers drilling, priests tending the Flame. Two million people, living their lives, unaware that somewhere in this beautiful palace, a spider sits at the center of a web that reaches from the Citadel to the northern frontier.
+
+The anonymous note said: [i]Watch the Council. One of them is the spider.[/i]
+
+You have watched. You have listened. You have seen General Kadir's rage and Priya's calculations and Ashoka's patience and Zara's cold precision. You have heard them argue, negotiate, threaten, and plead. And now you have found the spider's mark, scratched into the underside of the table where they all sit.
+
+One of them. Or all of them. Or someone else entirely, someone who has access to this room when the council is not in session, someone who moves through the Citadel like a shadow.
+
+The conspiracy is real. It is here. And it is watching you, just as you are watching it.
+
+*page_break
+
+You leave the Council Chamber and find Farid in the antechamber, where he has been pacing a trench in the carpet.
+
+"${title_honorific} ${player_name}! How was it? Was it terrible? Per regulation 22-B, the Vizier is entitled to a post-Council debriefing period, and I have prepared a summary document for --"
+
+"Farid," you say. "The Council went well. I will brief you later."
+
+He nods, reading something in your face that stops the torrent of words.
+
+"You found something," he says. Not a question. He may be anxious, he may be flustered, but Secretary Farid is not a fool.
+
+"I found something," you say. And you walk past him, toward your chambers, toward the desk where the anonymous note lies hidden in a book of tax law, toward the questions that are multiplying faster than you can answer them.
+
+Behind you, the Council Chamber door swings shut. The symbol waits in the dark beneath the table, patient as a buried seed.
+
+The conspiracy is real. Your predecessor found it and died. Now you have found its mark, and the question is no longer whether the threat exists.
+
+The question is what you are going to do about it.
+
+*finish Chapter 4: The Dead Man's Office

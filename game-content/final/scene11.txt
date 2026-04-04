@@ -1,0 +1,684 @@
+*comment === SCENE 11: THE SHADOW MOVES ===
+*comment Word target: ~10,000 (~3,300 per route variant)
+*comment Variables modified: evidence_count, boldness, ruthless, honest, idealist,
+*comment   Loyalist: rel_emperor, rel_dowager, rel_general, rel_chen, rep_military
+*comment   Kingmaker: rel_spy, rel_guild, rel_dowager, rep_intelligence, cunning
+*comment   Revolutionary: rel_soraya, rel_reza, rel_guild, rep_nobility, rep_trade
+
+*temp response "undecided"
+*temp damage_control "none"
+*temp escalate false
+
+*comment === ROUTE BRANCHING ===
+
+*if (route = 1)
+  *goto loyalist_attack
+*elseif (route = 2)
+  *goto kingmaker_exposure
+*elseif (route = 3)
+  *goto revolutionary_murder
+*else
+  *bug Route not set. Expected 1, 2, or 3.
+
+*comment ============================================================
+*comment === LOYALIST ROUTE: THE EMPEROR'S HUMILIATION ===
+*comment ============================================================
+
+*label loyalist_attack
+
+The blow comes at a diplomatic reception, on an evening that begins with music and ends with ashes in your mouth.
+
+You should have seen it coming. Later, in the small hours of the morning, replaying every moment like a scholar studying a text for hidden meanings, you will identify the signs you missed. But the truth of ambush is that it only looks obvious afterward.
+
+Ambassador Chen has arranged an evening of cultural exchange -- Western Confederation music, Khazaran poetry, fine wine, and the kind of polished conversation that conceals more than it reveals. The Jade Throne Room has been transformed for the occasion: silk banners in both Khazaran crimson and the Confederation's sea-blue hang from the pillars. Musicians tune their instruments in the gallery. The scent of rosewater and imported perfume mingles with the ever-present sandalwood incense.
+
+The Emperor is present. He has been looking forward to this. Since the northern decree, Roshan has been growing into his authority with a confidence that has surprised even you. He has been reading about the Western Confederation, asking intelligent questions about their political structure, their naval technology, their ambitions. He wants to meet Ambassador Chen as a peer, not a child.
+
+You stand behind the Emperor's chair, watching the room fill. The Dowager is in attendance, seated in a position of honor but no longer at the Emperor's side -- a small change in protocol that cost you three days of negotiation with the palace chamberlain. General Kadir stands near the door, uncomfortable in formal robes, his iron hand concealed within a ceremonial glove. Priya circulates, her laughter ringing above the conversation. Ashoka observes from a seat near the Eternal Flame's representative candles.
+
+Everything is in order. Everything feels wrong.
+
+*page_break
+
+The evening proceeds smoothly through the first hour. The music is pleasant -- a Confederation string quartet playing intricate melodies that weave through the room like silk thread through a loom. The wine flows, a rich vintage from the Confederation's western vineyards that Priya pronounced "acceptable" with the particular emphasis that means "excellent." Laughter ripples through clusters of courtiers and diplomats, the sound of power at ease.
+
+The Emperor converses with Ambassador Chen in fluent Trade Tongue -- he has been practicing, and the effort shows. Chen is gracious, complimentary, his professional charm turned to full brightness.
+
+Then Chen asks a question.
+
+"Your Majesty, the Confederation has heard with great interest about the recent military reinforcements to the northern border. A bold decision. May I ask -- what is Your Majesty's strategic assessment of the Khanate threat? Specifically, how does Your Majesty reconcile the commitment of two thousand troops to the north with the intelligence suggesting coordinated Khanate operations across the entire frontier?"
+
+The room does not go silent. The music continues. The conversations around the edges persist. But in the immediate circle -- the Emperor, the Ambassador, the Dowager, the Council members -- the air changes. A tightening. A held breath.
+
+The question is a trap. It is phrased with Chen's characteristic courtesy, but the blade is real. The "intelligence suggesting coordinated Khanate operations across the entire frontier" is classified information. The Emperor does not have it. No one briefed him on it. The intelligence comes from Zara's most recent assessment, distributed only to the Council of Five in a sealed report three days ago.
+
+Someone gave Chen that report.
+
+*page_break
+
+The Emperor's face does not change. He has learned that much. But you see his jaw tighten, and his hand -- resting on the arm of his chair -- closes into a fist.
+
+He does not know the answer. He has been studying the Khanate threat, but not at the level of classified intelligence assessments. He was not given Zara's report because -- you realize, with a cold certainty that drops through your stomach like a stone -- someone ensured he was not given Zara's report.
+
+The Emperor is being humiliated. In public. In front of the Western Confederation's ambassador. By someone who arranged for classified intelligence to reach foreign hands while keeping it from the emperor's own.
+
+Roshan's mouth opens. Closes. He looks, for one terrible moment, like the frightened boy he was before the northern decree -- the boy who asked you, "Why does nothing I do matter?"
+
+*fake_choice
+  #Cold fury fills you. This is not merely an embarrassment. This is a coordinated attack on the Emperor's credibility, designed to make him look incompetent before a foreign power.
+    *set ruthless %+ 10
+    *set boldness %+ 5
+    Your mind is already cataloguing the attack's architecture. The leaked intelligence report. The carefully crafted question, designed to expose a gap in the Emperor's knowledge that should not exist. The timing -- a public event, maximum audience, maximum damage. And the precision of the question itself, referencing specific classified material that proves the leak was deliberate.
+
+    Someone on the Council betrayed the Emperor tonight. Someone with access to Zara's sealed assessments. The list of suspects is short. The implications are devastating.
+  #Your heart breaks for the Emperor. He was so proud tonight, so prepared. And someone has turned his moment of growth into a trap.
+    *set idealist %+ 10
+    *set honest %+ 5
+    *set rel_emperor %+ 5
+    Roshan practiced his Trade Tongue for this event. He read three books on Confederation politics. He chose his robes himself, spent twenty minutes debating the color with Farid, settled on a deep blue that honored the Confederation's palette while retaining Khazaran dignity. He was ready.
+
+    And someone has made his readiness irrelevant. You watch his composure crack, hairline fractures spreading across the mask he has so carefully built, and you feel the anger of a guardian watching a child struck.
+
+*page_break
+
+The silence stretches. Chen waits, his pleasant smile unchanged. The Dowager watches her son with an expression that you cannot read -- concern, or calculation, or both.
+
+*choice
+  #Step forward and answer the question yourself, giving the Emperor time to recover. Frame it as protocol: "Military intelligence matters are the Vizier's purview."
+    *set boldness %+ 5
+    *set diplomacy + 3
+    *set rel_emperor %+ 10
+    *set rel_chen %- 5
+    *set response "intervene"
+    You step forward. The movement is smooth, unhurried, as if you had always planned to speak at this moment.
+
+    "Ambassador Chen." Your voice cuts across the space between the Emperor's chair and the diplomat's seat. "Questions of military intelligence are properly directed to the Vizier's office, as I am sure you are aware. I would be happy to discuss the northern situation in the appropriate setting."
+
+    Chen's smile flickers. He did not expect intervention -- or rather, he expected it from the Dowager, not from the Vizier. The redirection is technically correct. Military intelligence briefings are the Vizier's domain. But the question was asked of the Emperor, and your intervention, however smooth, tells the room that the Emperor could not answer it.
+
+    Roshan's face is unreadable. He is sixteen, and he is learning, in this moment, one of the most painful lessons of power: sometimes being protected feels worse than being attacked.
+    *goto loyalist_aftermath
+  #Lean toward the Emperor and whisper the key points from Zara's report, giving him the information to answer with authority.
+    *set cunning + 3
+    *set rel_emperor %+ 12
+    *set boldness %+ 5
+    *set response "coach"
+    You move to the Emperor's side. The gesture is natural -- a Vizier conferring with his sovereign. To the room, it looks like counsel. To the Emperor, it is a lifeline.
+
+    You whisper: "Zara's latest assessment. The Khanates are coordinating across three sectors. The northern reinforcement secures the weakest point. The eastern and western sectors are held by existing garrison strength. The strategic picture supports your decision."
+
+    Roshan listens. You watch the information settle into him, and you watch the boy become, for a moment, the emperor.
+
+    He turns to Chen. "The intelligence assessment confirms that our northern reinforcement addresses the most critical sector. The eastern and western garrison strengths are adequate for the current threat level. We are monitoring all three sectors." He pauses. "I am curious, Ambassador, how the Confederation came to possess classified Khazaran intelligence assessments. Perhaps we can discuss that in the appropriate setting."
+
+    Chen's smile freezes. The room shifts. Murmurs ripple through the courtiers. The Emperor has not only answered the question -- he has turned it back on the Ambassador.
+    *goto loyalist_aftermath
+  *selectable_if (diplomacy > 40) #Signal to Kadir. The General's presence at this reception was planned for exactly this kind of moment. Let him handle the military question with his characteristic authority.
+    *set diplomacy + 5
+    *set rel_general %+ 8
+    *set rel_emperor %+ 8
+    *set rep_military %+ 5
+    *set response "kadir"
+    Your eyes find Kadir across the room. The General has been watching the exchange with the stillness of a predator tracking movement. You catch his gaze. A slight nod -- the signal you arranged before the reception, for exactly this contingency.
+
+    Kadir steps forward. The iron hand emerges from its ceremonial glove, and the sight of it -- functional, brutal, the prosthetic of a man who gave his flesh for the empire -- commands immediate attention.
+
+    "Ambassador Chen." Kadir's voice fills the room the way a drum fills a parade ground. "The northern deployment is my responsibility. I am happy to discuss the strategic assessment in professional terms, soldier to soldier. Though --" he pauses, and the pause is devastating, "-- I confess curiosity about how the Confederation acquired a classified assessment that was distributed to precisely five people in this empire."
+
+    The question lands like a thrown gauntlet. Chen's composure holds, but barely. The evening's balance of power has shifted. The Emperor was the target, but the General has made the attacker the attacked.
+
+    Roshan watches Kadir with something approaching awe. The boy is learning what a loyal ally looks like in action.
+    *goto loyalist_aftermath
+
+*label loyalist_aftermath
+
+*page_break
+
+*comment === DEALING WITH THE FALLOUT ===
+
+*set evidence_count + 1
+
+The reception continues, but its character has changed. The music sounds thinner. The conversations are quieter. Everyone in the room understands that something significant just happened, even if they do not fully understand what.
+
+You find the Emperor afterward in his private chambers. The guards at the door let you through without question -- a small sign of how much has changed since you took office. The chambers are lit by a single lamp, its flame casting a warm circle that makes the shadows beyond it darker, deeper.
+
+Roshan is standing at the window, looking out at the city's lights. His formal robes are undone at the collar. He looks very young and very tired.
+
+"Someone set me up," he says. Not a question. "Someone made sure I would not have that intelligence report. And someone gave it to Chen."
+
+"Yes."
+
+"Who?"
+
+"I do not know yet. But I will find out."
+
+He turns. In the lamplight, his face is half shadow and half gold. "I was prepared, Vizier. I studied. I practiced. I was ready for every question except the one that required information someone deliberately kept from me."
+
+*page_break
+
+*choice
+  #"Your Majesty, tonight was an attack. Planned and coordinated. But it failed -- you are still standing, and the question has been turned back on the attackers. That is a victory."
+    *set rel_emperor %+ 10
+    *set boldness %+ 5
+    *set honest %+ 5
+    *set idealist %+ 5
+    "A victory?" He laughs, but there is no humor in it. "I froze, Vizier. In front of Ambassador Chen, in front of the court, in front of my mother. I froze like a schoolboy caught without his lesson."
+
+    "You were ambushed. You recovered. Any general will tell you that the measure of a commander is not whether they are surprised, but how they respond. You responded."
+
+    *if (response = "coach")
+      "Because you whispered the answer in my ear."
+
+      "Because you listened. Because you processed the information under pressure and delivered it with authority. The knowledge came from me. The composure was yours."
+    *elseif (response = "kadir")
+      "Because General Kadir rescued me."
+
+      "Because you have allies who are prepared to stand with you. A ruler who inspires that loyalty is not weak. A ruler who inspires that loyalty is worth following."
+    *else
+      "Because you stepped in. You handled it."
+
+      "I handled the protocol. You handled the moment. You did not crumble. You did not flee. You sat in that chair and held your ground."
+
+    The Emperor is quiet for a long time. Then he straightens, and the gesture is becoming familiar -- the moment when the boy puts on the ruler, not as a costume, but as a skin.
+
+    "Find out who leaked that report," he says. "And find out how to make sure it never happens again."
+    *goto loyalist_closing
+  #"This was the conspiracy, Your Majesty. The same people who murdered my predecessor and sabotaged the northern defenses. They are targeting you now."
+    *set rel_emperor %+ 8
+    *set boldness %+ 10
+    *set evidence_count + 1
+    The Emperor's eyes widen. Then they narrow. You can see the connections forming behind them -- the intelligence leak, the border sabotage, the predecessor's murder, the assassination attempt. Separate events coalescing into a single picture.
+
+    "They want me off the throne," he says.
+
+    "They want a throne they can control. You are becoming too independent. The northern decree proved that. Tonight was their response -- a reminder that they can reach you, embarrass you, undermine you, whenever they choose."
+
+    "And your response?"
+
+    "We find them. We expose them. And we make them answer for what they have done."
+
+    The Emperor looks at you. The boy is still there, but something else is emerging -- something harder, more focused, tempered by humiliation into a new and sharper edge.
+
+    "Do it," he says. "Whatever resources you need. Whatever authority you require. Find them."
+    *goto loyalist_closing
+  #"Your Majesty, tonight revealed something valuable: the conspiracy is afraid of you. They would not have bothered with this attack if your northern decree had not worried them."
+    *set rel_emperor %+ 12
+    *set idealist %+ 10
+    *set honest %+ 5
+    The Emperor stares at you. "Afraid? Of me?"
+
+    "You made a decision. An independent, sound, militarily correct decision. You enacted it against the Dowager's wishes. You showed the empire that its ruler can govern. That terrifies whoever is trying to control the throne -- because a confident, independent Emperor is the one thing they cannot manage."
+
+    "So they humiliated me. To remind me to be small."
+
+    "Yes. And here is what you need to understand, Your Majesty: they will do it again. Every time you grow stronger, they will try to cut you back. The question is not whether they will attack. The question is whether you let the attack define you, or whether you use it."
+
+    The silence stretches. Outside, the city's lamps flicker in the night wind. The Emperor's face is still, contemplative.
+
+    "My father was poisoned," he says, quietly. "My Vizier was murdered. And now they are trying to destroy me in a different way -- not with poison, but with shame." He pauses. "They will not succeed."
+
+    There is a new quality in his voice. Not bravado. Not the imitation of his father that he used to attempt. Something earned. Something that came from being knocked down and deciding to stand back up.
+    *goto loyalist_closing
+
+*label loyalist_closing
+
+*page_break
+
+*comment === LOYALIST CLOSING: ESCALATE OR RETREAT ===
+
+You return to your own chambers. The evidence is mounting: the leaked intelligence report, the northern sabotage, the assassination attempt, the predecessor's murder. The threads converge, but the hand that holds them remains invisible.
+
+Farid is waiting with a list of everyone who had access to Zara's sealed intelligence report. The list is short: the five Council members, their immediate secretaries, and the Dowager's private office.
+
+"My ${title_honorific} Vizier," Farid says, his voice barely above a whisper. "The Dowager's office is on this list."
+
+"I know."
+
+"And the Dowager was at the reception tonight. Watching."
+
+"I know, Farid."
+
+He sets the list down. His hands are shaking slightly.
+
+The question crystallizes in the silence: Do you escalate -- pursue the leak aggressively, confront the suspects, risk exposing the conspiracy before you have enough evidence to prove it -- or do you retreat, absorb the blow, and continue building your case in the shadows?
+
+The answer will define the weeks to come.
+
+*fake_choice
+  #You choose to press forward. The Emperor's humiliation demands a response, and delay only gives the conspiracy time to cover its tracks.
+    *set boldness %+ 10
+    *set escalate true
+    The chess metaphor is inadequate. This is not a game of careful moves and patient strategy. This is a knife fight in a dark room, and the person who hesitates is the person who bleeds. The conspiracy struck tonight. If you do not strike back, they will read your inaction as weakness and hit harder.
+
+    Tomorrow, you will begin interrogating the intelligence distribution chain. Someone in the Council's secretariat delivered that report to Ambassador Chen. That person has a name, a routine, a pressure point. You will find all three.
+  #You choose patience. The conspiracy wants you to react -- to make mistakes in anger. You will deny them that satisfaction.
+    *set boldness %- 5
+    *set ruthless %+ 5
+    *set escalate false
+    The instinct to strike back is powerful. But instinct is what the conspiracy is counting on. They planned tonight's humiliation to provoke a reaction -- an accusation made too soon, an investigation conducted too loudly, a confrontation that reveals how much (or how little) you know. Every piece of evidence you have is a card in a hand that must be played at the right moment, not thrown down in anger.
+
+    You will wait. You will watch. And when you move, it will be with the precision of Zara's agents and the patience of the Dowager herself.
+
+*page_break
+
+The night deepens. You sit at your desk, the intelligence report's distribution list spread before you, the seal ring heavy on your finger. Through the window, the Eternal Flame's glow paints the Temple Quarter in amber, and the city's sounds -- distant music, the murmur of the night watch, the splash of fountains -- settle into the quiet rhythms of a capital that does not know it is under siege.
+
+The conspiracy has made its move. The Emperor is wounded but standing. Your alliance with Kadir holds. The evidence grows.
+
+And somewhere in the shadows, the next attack is already being planned.
+
+*finish The Price of Power
+
+*comment ============================================================
+*comment === KINGMAKER ROUTE: THE EXPOSURE ===
+*comment ============================================================
+
+*label kingmaker_exposure
+
+The rumor starts in the bazaar and reaches the Citadel before noon, moving through the city's gossip networks with the speed and inevitability of water finding its way downhill.
+
+You are reviewing provincial dispatches when the first hint arrives -- a subtle shift in the tone of a guard's greeting as you pass through the corridor, a hushed conversation that dies when you round a corner. The Citadel's atmosphere has changed overnight, as if the very marble has absorbed something toxic from the air.
+
+Farid brings it to you with the morning documents, his face pale and his hands uncharacteristically still. He sets the papers down, straightens, and opens his mouth three times before the words emerge.
+
+"My ${title_honorific} Vizier, there is a -- a rumor. In the bazaar. In the tea houses. In the garrison. It is -- I do not know how to describe it, except to say that people are saying --" He swallows. "People are saying that the Grand Vizier is building a private intelligence network to seize control of the empire."
+
+The words land in your office like a dropped blade.
+
+"The specifics vary," Farid continues, miserably. "Some versions say you are working with the Guildmaster. Some say you are working with the Spymaster. Some say you are working with Prince Kaveh." He pauses. "Some say all three."
+
+*page_break
+
+*page_break
+
+The damage is difficult to assess because the rumors are both wrong and right. You are not planning to seize the empire -- at least, not in the crude way the rumors suggest. But you are building a shadow network. You are working with Priya, or Zara, or both. And Prince Kaveh did find you in the Old City.
+
+Someone has taken the truth and shaped it into a weapon. The distortion is precise: enough accuracy to be credible, enough exaggeration to be damning.
+
+*fake_choice
+  #The exposure jolts you. Your shadow network is barely operational, and already someone has compromised it.
+    *set boldness %- 5
+    *set ruthless %+ 10
+    Your mind races through the possibilities. The leak could have come from Priya's merchant contacts -- traders gossip as a professional reflex. It could have come from Zara's apparatus, though that would be a deliberate act of sabotage rather than a careless slip. It could have come from Kaveh's own network -- the prince's presence in the Old City that night was itself suspicious.
+
+    Or it could have come from the conspiracy. If the conspiracy has its own surveillance network -- and the evidence of the predecessor's murder, the border sabotage, and the embassy leak suggests it does -- then they may have been watching you from the beginning.
+  #You feel a cold anger. Not at the exposure itself, but at its timing. Someone waited until your network was just functional enough to be worth destroying.
+    *set boldness %+ 5
+    *set ruthless %+ 5
+    The timing is surgical. A week earlier, and the rumors would have been baseless -- you had not yet built anything worth exposing. A week later, and the network might have been robust enough to survive exposure. But now, at this precise moment, the rumor catches you at your most vulnerable: committed enough to be guilty, not established enough to be powerful.
+
+    Whoever planted this rumor understands timing. They understand you. And they have access to information about your movements that should be impossible to acquire.
+
+*page_break
+
+The summons from the Dowager arrives within the hour. A servant in the Dowager's crimson livery presents a sealed note with the imperial mother's personal cipher. The message is brief: "We would speak with you. Now."
+
+The Dowager's Wing smells of sandalwood and judgment. She receives you in her private study, seated behind a desk of dark wood inlaid with mother-of-pearl. The room is beautiful and claustrophobic -- heavy curtains, low lamps, the air thick with incense. It feels like the inside of a jewel box. Or a cage.
+
+"Sit," she says. Not "please." Not "Vizier." Just the command, stripped of all courtesy.
+
+You sit.
+
+"We have heard interesting things this morning," the Dowager says. Her voice is calm. The calm of deep water. The calm of a blade before it falls. "The bazaar speaks of our Vizier building a personal army. The tea houses speak of secret meetings with the Guildmaster and the Spymaster. The garrison whispers of a provincial nobody who aspires to be an emperor."
+
+She pauses.
+
+"Tell us, child. How much of this is true?"
+
+*page_break
+
+*choice
+  #Lie. Deny everything. The rumors are vague enough to dismiss, and admitting anything gives the Dowager leverage she will use without mercy.
+    *set honest %- 15
+    *set boldness %+ 5
+    *set rel_dowager %- 10
+    *set response "deny"
+    "None of it, Your Majesty." You meet her gaze without flinching. "I had lunch with Guildmaster Priya to discuss the silk tariff. I consulted with Spymaster Zara about the embassy intelligence leak. These are normal functions of the Vizier's office. The rumor mill has inflated routine meetings into a conspiracy."
+
+    The Dowager watches you. Her dark eyes are unreadable. For a long moment, the only sound is the hiss of incense and the distant splash of a fountain.
+
+    "The river lies too," she says. "It tells you it is shallow until you step in and drown." She leans forward. "We chose you, Vizier, because we believed you could be guided. If you are building something behind our back, we will discover it. We always do."
+
+    The threat is real. But the denial holds. For now.
+    *goto kingmaker_damage_control
+  #Tell a partial truth. Admit to building an unofficial investigation into the conspiracy, but conceal the full scope of the shadow network.
+    *set honest %+ 5
+    *set ruthless %+ 5
+    *set rel_dowager %+ 5
+    *set cunning + 3
+    *set response "partial"
+    "Some of it is true," you say. "I have been building an unofficial investigation into the conspiracy that killed my predecessor. The official channels may be compromised -- the rogue spy who triggered the embargo proves that. I consulted Guildmaster Priya for her merchant contacts and Spymaster Zara for her analytical expertise."
+
+    You pause. Let the Dowager absorb the admission before continuing.
+
+    "I did not inform the Council because I do not know which Council members I can trust. Someone on the Council leaked classified intelligence to Ambassador Chen. Someone with access to sealed assessments. The list of suspects is short, Your Majesty, and it includes people in this room."
+
+    The Dowager's expression does not change. But something shifts in the quality of her attention -- a focusing, a sharpening, like a lens being adjusted.
+
+    "You are telling us that you suspect a member of the Council," she says.
+
+    "I am telling you that the evidence points in that direction."
+
+    "And you did not come to us with this information."
+
+    "I was not sure I could."
+
+    A long silence. Then, remarkably, the ghost of a smile crosses her lips. "Honest, at least in part. That is refreshing. Most Viziers lie entirely or not at all."
+    *goto kingmaker_damage_control
+  #Go on the offensive. Turn the confrontation around -- the real question is not what you are building, but who exposed you, and why.
+    *set boldness %+ 15
+    *set rel_dowager %- 5
+    *set cunning + 3
+    *set evidence_count + 1
+    *set response "counter"
+    "Your Majesty, the more interesting question is not whether the rumors are true. The interesting question is who planted them."
+
+    The Dowager's eyes narrow. She did not expect this.
+
+    "Someone knows about my meetings with Priya and Zara. Someone watched my movements in the Old City. Someone has surveillance capabilities that rival the Director of the Eyes' own apparatus. And someone chose this specific moment to expose me -- not when my activities were trivial, and not when they were powerful enough to survive exposure. Now. When the damage would be maximum."
+
+    You lean forward. "Your Majesty, the conspiracy that killed my predecessor has an intelligence network inside this Citadel. The rumors about me are not grassroots gossip. They are a targeted operation designed to neutralize me before I can uncover the truth. The question is not what I am doing. The question is who is afraid of what I might find."
+
+    The Dowager is quiet for a very long time. The incense smoke curls between you like a slow thought taking shape.
+
+    "You are either very clever or very dangerous," she says.
+
+    "I would prefer to be both."
+
+    "Yes. That is what concerns us."
+    *goto kingmaker_damage_control
+
+*label kingmaker_damage_control
+
+*page_break
+
+*comment === DAMAGE CONTROL ===
+
+*set evidence_count + 1
+
+You leave the Dowager's Wing with the distinct sensation of having survived a sword fight while blindfolded. The corridor outside is quiet, the marble cool under your boots, the air carrying the faint scent of the Dowager's sandalwood incense like a ghost of the confrontation that lingers in your clothes and your hair and the tight knot at the base of your skull. The confrontation is over, but the damage remains. The rumors are loose in the city. Your shadow network is partially exposed. And the conspiracy -- because this was the conspiracy, you are certain of it -- has demonstrated that it can reach you, watch you, and strike at the moment of maximum vulnerability.
+
+The next hours are spent in damage control. You meet with Farid, who has prepared a summary of the rumor's spread and its likely points of origin.
+
+"The earliest version appeared in the Coppersmith Quarter bazaar at approximately the third hour," Farid says, reading from his notes. "It spread to the Spice Market by the fourth hour, the garrison by the fifth, and the Citadel by the sixth. The pattern suggests a single point of origin, deliberately placed to maximize spread through the bazaar's gossip networks."
+
+*choice
+  #Focus on containing the rumor: plant counter-narratives through Priya's merchant contacts, framing your activities as routine Vizier business.
+    *set ruthless %+ 5
+    *set cunning + 3
+    *set rel_guild %+ 5
+    *set damage_control "counter_narrative"
+    You send a message to Priya through the newly established secure channels. Within hours, a counter-narrative begins circulating: the Vizier's meetings with the Guildmaster were about the silk tariff reform. The meetings with the Spymaster were about the embassy intelligence leak. The visit to the Old City was an inspection of the water channel repairs the Vizier has ordered.
+
+    The counter-narrative is not entirely false, which makes it more convincing. By evening, the bazaar's gossip has splintered -- half the merchants believe the original rumor, half believe the innocent explanation. Uncertainty is not as good as silence, but it is better than consensus.
+
+    Priya sends a note with the evening dispatches: "The narrative is holding. But whoever planted the original rumor has access to operational details they should not have. Be careful."
+    *goto kingmaker_closing
+  #Focus on finding the source: trace the rumor back to its origin and identify who planted it.
+    *set boldness %+ 10
+    *set evidence_count + 1
+    *set cunning + 3
+    *set damage_control "trace_source"
+    You deploy what remains of your shadow network to trace the rumor's origin. Priya's merchant contacts canvas the Coppersmith Quarter. Zara's informants -- if she is with you -- probe the Old City's information channels. Farid cross-references the rumor's details with the list of people who could have known about your activities.
+
+    By evening, the trail leads to a single tea house in the Coppersmith Quarter. The owner, when pressed, admits that a well-dressed man he did not recognize paid ten gold dirhams to spread a "piece of interesting news" about the Grand Vizier. The man's description is generic -- average height, average build, dark clothing.
+
+    But one detail stands out: the man wore a ring with a symbol the tea house owner recognized. It was the same symbol you found beneath the council table. The conspiracy's mark.
+
+    Your heart beats faster. The conspiracy did this. Not rumor. Not coincidence. A deliberate operation, funded and executed with professional precision.
+    *goto kingmaker_closing
+  #Focus on hardening the network: accept the exposure and rebuild, this time with better security protocols.
+    *set boldness %- 5
+    *set ruthless %+ 10
+    *set cunning + 5
+    *set damage_control "rebuild"
+    The exposure cannot be undone. The shadow network, in its current form, is compromised. But the infrastructure remains: Priya's merchant contacts, the communication channels, the funding mechanisms. What failed was security, not structure.
+
+    You spend the evening redesigning the network's operational protocols. New dead drop locations. New communication codes. New rules: no meetings in the Old City, no face-to-face contact between network nodes, no information shared that is not absolutely necessary.
+
+    It is slower. It is less efficient. But it is harder to surveil.
+
+    Farid watches you work, his expression a mixture of concern and admiration. "My ${title_honorific} Vizier, I do not fully understand what you are building. But I want you to know that I -- that is, whatever you need from me, I am --"
+
+    "I know, Farid."
+
+    "I am loyal. That is what I am trying to say."
+
+    "I know."
+    *goto kingmaker_closing
+
+*label kingmaker_closing
+
+*page_break
+
+*comment === KINGMAKER CLOSING ===
+
+That night, you stand at your window and look out at the city. The Citadel's walls glow in the moonlight. The bazaar's covered rooftops stretch toward the river like a second, darker city. Somewhere in that darkness, the conspiracy is watching you. They know about your shadow network. They may know about your alliance with Priya, or Zara, or both. They have demonstrated the ability to strike with precision and withdraw without trace.
+
+And you are still here. Bruised, exposed, diminished -- but standing.
+
+The game has changed. The shadow network is no longer a secret weapon. It is a known quantity, and that changes the calculus of every move you make from this point forward. But knowledge cuts both ways. If the conspiracy knows about your network, you now know that the conspiracy has an intelligence apparatus capable of surveilling the Grand Vizier. That is a piece of the puzzle you did not have before.
+
+You sit at your desk and write a single line on a fresh sheet of parchment: "They are watching. Let them see what we want them to see."
+
+The first shadow has been cast. The game continues. And somewhere in the Citadel's labyrinth of corridors and secrets, the next move is already in motion.
+
+*finish The Price of Power
+
+*comment ============================================================
+*comment === REVOLUTIONARY ROUTE: THE MURDER ===
+*comment ============================================================
+
+*label revolutionary_murder
+
+The news arrives at dawn, carried by a city guardsman whose face is the color of old parchment and whose boots are still muddy from the streets of the merchant quarter.
+
+The morning is cold. An unseasonable chill has settled over Khazara during the night, and the fountains in the Garden of Eternal Spring are rimmed with a thin lace of frost that will be gone by midmorning but that gives the world, for now, a brittle, crystalline quality. The call to prayer sounds thin in the cold air. The doves that nest in the Temple Quarter's eaves are huddled and silent.
+
+Captain Darius delivers the report personally. He stands in your office doorway, his uniform dust-stained, his sword still at his hip -- a violation of Citadel protocol that tells you the situation is severe enough to override etiquette.
+
+"Vizier." His voice is flat, professional, wrung of emotion. "Merchant Hamid of the Spice Merchants' Guild was found dead in his chambers two hours ago. Throat cut. No sign of forced entry. No witnesses."
+
+The world tilts.
+
+Hamid. Jovial, generous, overwhelming Hamid. The man who pressed dates into your hands and called you "Vizier" with the warmth of an uncle greeting a favorite nephew. The man who stood in Priya's chambers a week ago and pledged the merchant class's support for your reforms. The man who believed in you.
+
+Dead. Throat cut. No witnesses.
+
+*page_break
+
+*fake_choice
+  #The grief hits you like a physical blow. Hamid was more than an ally. He was a good man, and his death is a direct consequence of your reforms.
+    *set idealist %+ 10
+    *set boldness %- 5
+    You sit down. The chair catches you, which is fortunate, because your legs have failed. The room is the same -- the morning light through the window, the stack of documents on your desk, the smell of Farid's cardamom tea going cold on the tray. The room is the same, and Hamid is dead, and these two facts exist simultaneously in a world that has become suddenly, brutally smaller.
+
+    He believed in you. He stood in a room full of cautious merchants and said, "Tell us what you need." And now he is dead because someone decided that the cost of silence was a spice merchant's life.
+
+    The grief will come later. Right now, there is only a void where Hamid's laugh used to be.
+  #The rage comes first, hot and clean, before the grief can find its footing. They killed a man to send a message. You intend to send one back.
+    *set ruthless %+ 10
+    *set boldness %+ 10
+    Your hands close into fists on the desk. The seal ring presses into your palm, its jade edge sharp enough to draw blood. Hamid was not a soldier. He was not a spy. He was a spice merchant who sold cardamom and pepper and laughed too loudly and gave too generously and had the audacity to believe that the empire could be better.
+
+    They killed him for that belief. They cut his throat in his own chambers, in the city he loved, to send a message: stop pushing for change, or more people die.
+
+    You hear the message. You reject it utterly.
+
+*page_break
+
+Captain Darius waits while you compose yourself. He is a patient man, weathered by years of city guard work, accustomed to delivering bad news and waiting for its recipients to process it.
+
+"There is more," he says, when you look up. "A note was found at the scene. Pinned to the bed with a dagger. The handwriting has not been identified."
+
+He produces the note. The parchment is fine -- too fine for a common criminal. The handwriting is precise, deliberate, each letter formed with the care of someone who wanted the words to be unmistakable.
+
+"The old ways are not suggestions. They are commandments. Those who defy them will be reminded. This is the first reminder."
+
+Below the text, a symbol. The conspiracy's mark. The same mark you found under the council table, on the note that warned you about your predecessor's death, on the Ghost's calling card after the assassination attempt.
+
+"The conspiracy," you say.
+
+"Yes, Vizier." Darius's voice carries the weight of a man who has connected the same dots. "This was not a robbery. This was an execution."
+
+*page_break
+
+*page_break
+
+Priya arrives within the hour. She enters your office without knocking, without her usual warmth, without the calculated charm that is her professional armor. Her face is raw with grief and fury.
+
+"Hamid," she says. One word. It contains everything.
+
+"I know."
+
+"He was my friend, Vizier. Not my subordinate. Not my political ally. My friend. He taught me the spice trade when I was fourteen. He lent me my first hundred dirhams. He --" Her voice breaks. She turns away, and for a moment she is not the Guildmaster of the Treasury, not the Master of the Guilds, not the most powerful merchant in the empire. She is a woman who has lost someone who mattered.
+
+"They killed him because of me," she says. "Because of the reforms. Because he stood up in that meeting and said he would support you."
+
+"They killed him because they are afraid," you say. "Afraid of what we are building. Afraid of change. This is not about Hamid. This is about the fact that for the first time in three hundred years, someone is challenging the system that keeps them powerful."
+
+*page_break
+
+*choice
+  #"Priya, we cannot let this stop us. If we retreat now, Hamid died for nothing. The reforms continue."
+    *set boldness %+ 10
+    *set idealist %+ 10
+    *set rel_guild %+ 10
+    *set rep_trade %+ 5
+    *set response "press_forward"
+    Priya turns back. Her eyes are red, but the grief is hardening into something else. Something that looks, if you squint, like the expression she wears when a business rival underestimates her.
+
+    "If they think murder will stop me, they do not know me very well," she says. "Hamid would not want us to stop. He would want us to open every monopoly, break every privilege, and send the bill to Lord Reza's door."
+
+    "Then that is what we will do."
+
+    "With guards," she adds. "From now on, every reform supporter gets protection. Visible protection. I will not lose another friend."
+    *goto revolutionary_investigation
+  #"We need to find who did this. The reforms mean nothing if the people who support them are being murdered."
+    *set boldness %+ 5
+    *set ruthless %+ 5
+    *set rel_guild %+ 8
+    *set evidence_count + 1
+    *set response "investigate"
+    "The conspiracy's mark was on the note," you say. "This was not random violence. It was organized, professional, and directed. The same people who killed my predecessor, who sabotaged the northern border, who leaked intelligence to the Confederation."
+
+    Priya's expression sharpens. The merchant's mind is working behind the grief, calculating connections and consequences.
+
+    "Hamid was killed in his chambers," she says. "No forced entry. That means either the killer was known to him, or someone provided a key. Hamid's domestic staff is small and loyal. I will have them questioned."
+
+    "Captain Darius is already investigating. But I want our own people on this as well. The city guard answers to General Kadir. I am not certain of Kadir's loyalties in this matter."
+
+    "Done."
+    *goto revolutionary_investigation
+  #"Priya, I need you to do something difficult. I need you to be publicly seen at Hamid's funeral, standing with me, showing the city that we will not be intimidated."
+    *set boldness %+ 10
+    *set honest %+ 10
+    *set rel_guild %+ 12
+    *set rep_trade %+ 8
+    *set diplomacy + 3
+    *set response "public_stand"
+    Priya looks at you for a long moment. The request is not merely political. It is a declaration of war. A public funeral attended by the Grand Vizier and the Guildmaster, standing together over the body of a reform supporter murdered by the conspiracy -- that is a message the entire city will read.
+
+    "You want to make Hamid a martyr," she says. Not accusingly. Assessingly.
+
+    "I want to make his death mean something. I want every person in Khazara to know that the people fighting for reform are being killed for it. And I want whoever ordered this to know that we are not afraid."
+
+    "I am afraid," Priya says, quietly. "Hamid was a large man, Vizier. Strong. He died in his sleep with his throat opened and he did not even have time to fight. That frightens me."
+
+    "It frightens me too. But fear and surrender are not the same thing."
+
+    She nods. Slowly. "The funeral will be public. I will arrange it. And you will stand beside me."
+    *goto revolutionary_investigation
+
+*label revolutionary_investigation
+
+*page_break
+
+*comment === THE INVESTIGATION ===
+
+*set evidence_count + 1
+
+*comment === THE INVESTIGATION ===
+
+The investigation begins immediately. You cannot bring Hamid back from the Flame, but you can ensure his killers are found. That purpose settles over you like armor, cold and heavy and necessary.
+
+Captain Darius's city guard secures Hamid's chambers. Priya's merchant contacts canvas the neighborhood. Farid, pale but determined, begins cross-referencing the conspiracy's known activities with the timeline of the murder.
+
+By evening, two pieces of evidence emerge from the investigation like stones rising from a receding tide.
+
+The first: the dagger used to pin the note to Hamid's bed is distinctive. It is Khanate-made, with a curved blade and a hilt wrapped in horse leather. Such daggers are uncommon in Khazara. They can be purchased in the Foreign Quarter, or obtained through military channels.
+
+The second: a neighbor heard a door close at approximately the second hour of night. She looked out her window and saw a figure in dark clothing moving away from Hamid's building. The figure was limping -- favoring the left leg.
+
+*page_break
+
+*page_break
+
+Lady Soraya arrives as the lamps are being lit, their flames catching in the geometric tilework of your office walls and casting moving patterns across the ceiling. She brings information of her own, and a face that carries the particular tension of a young woman who has been wrestling with loyalty all day.
+
+"My uncle," she says. Her voice is taut. "Lord Reza held a private meeting with six noble house leaders yesterday. The meeting was not on any official calendar. I learned about it from a servant who -- well, who is sympathetic to our cause."
+
+"What was discussed?"
+
+"I do not have details. But the servant overheard one phrase: 'The merchants must be taught their place.'"
+
+The words settle in the room like ash from a fire.
+
+"That is not proof," you say.
+
+"No," Soraya agrees. "It is not. But it is a pattern. My uncle has always believed that force is the appropriate response to change. He calls it 'restoring order.' I call it terrorism."
+
+*choice
+  #"Soraya, can your servant testify to what they heard? If we can connect Lord Reza to the murder, even circumstantially, it changes everything."
+    *set boldness %+ 5
+    *set evidence_count + 1
+    *set rel_soraya %+ 8
+    *set cunning + 3
+    Soraya hesitates. "The servant is afraid. If Lord Reza discovers they spoke to me, their life is in danger."
+
+    "Then we protect them. Quietly. And we find corroborating evidence."
+
+    "There may be more. Reza has been corresponding with someone outside the capital -- sealed letters, carried by private couriers. I have not been able to intercept one, but I know the courier's route. It passes through the Coppersmith Quarter every third day."
+
+    A thread. Thin, fragile, but a thread nonetheless. If you can intercept one of Reza's private letters, you may find the connection between the traditionalist noble faction and the conspiracy that murdered Hamid. That murdered your predecessor. That has been dismantling the empire from within.
+    *goto revolutionary_closing
+  #"We need to be careful. Lord Reza is powerful enough to destroy us if we accuse him without proof. The investigation continues quietly."
+    *set boldness %- 5
+    *set ruthless %+ 5
+    *set rel_soraya %+ 5
+    "I know you want justice," you tell Soraya. "I want it too. But an accusation we cannot prove is worse than silence. It tells Reza we are watching, and it gives him time to cover his tracks."
+
+    Soraya's jaw tightens. She is young enough to want justice and idealistic enough to believe it is achievable. You are old enough -- or perhaps your time in this court has aged you -- to know that justice and proof are different things, and the gap between them is where the powerful live.
+
+    "Continue gathering information," you say. "The courier route. The private meetings. Everything. When we move against Lord Reza, it will be with evidence so complete that no legal challenge, no political maneuvering, no noble privilege can save him."
+
+    "And in the meantime?"
+
+    "In the meantime, we mourn Hamid. We protect our allies. And we do not stop."
+    *goto revolutionary_closing
+
+*label revolutionary_closing
+
+*page_break
+
+*comment === REVOLUTIONARY CLOSING ===
+
+Hamid's funeral is held three days later. The rites of the Eternal Flame require cremation, and the pyre is built in the Temple Quarter, near the great brazier where the Flame has burned for three hundred years.
+
+The crowd is enormous. Not just merchants -- though the merchant class turns out in force, Priya at their head, her formal robes black with mourning. Commoners come. Laborers and washerwomen and fishermen from the Old City, people who knew Hamid from the bazaar, who bought his spices and received his generosity. And nobles come too -- Soraya's eleven progressive allies, standing in a quiet cluster, their presence a political statement that requires no words.
+
+The High Priest Ashoka presides. His voice carries across the crowd, speaking of the Fourth Wisdom -- Temperance -- and the Sixth Wisdom -- Beauty -- and the way a life well-lived embodies both.
+
+You stand beside the pyre. The heat is immense. The smoke rises in a column that catches the afternoon light and turns it amber.
+
+You do not speak publicly. You do not need to. Your presence speaks. The Grand Vizier, standing beside the burning body of a reform supporter, in full view of the city. The message is clear to everyone who watches: this death will not be forgotten. This death will not be forgiven. And the reforms that inspired it will not be abandoned.
+
+In the crowd, you catch a glimpse of a face you recognize. Lord Reza, standing at the edge of the gathering, watching the smoke rise with an expression that you cannot read from this distance. He meets your eyes across the flames. He does not look away.
+
+Neither do you.
+
+The smoke carries Hamid's ashes toward the sky. The Eternal Flame accepts them. And in the silence after the prayers, you make a promise that is not spoken aloud but is written in the set of your jaw and the weight of the seal ring on your finger:
+
+This will not be for nothing.
+
+*finish The Price of Power

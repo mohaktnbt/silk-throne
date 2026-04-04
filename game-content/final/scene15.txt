@@ -1,0 +1,766 @@
+*comment === SCENE 15: THE FESTIVAL OF LIGHTS ===
+*comment Word target: ~12,000
+*comment Act 2, All routes (convergence point, route-inflected)
+*comment Variables modified: festival_event, romance variables, met_kaveh,
+*comment   rel_kaveh, multiple relationship shifts, personality axes
+*comment Choices: 3 *choice, 3 *fake_choice
+
+*comment === LOCAL VARIABLES ===
+*temp festival_mood "neutral"
+*temp speech_outcome "adequate"
+*temp kaveh_impression "wary"
+*temp romance_moment false
+*temp incident_type 0
+
+*comment === THE FESTIVAL BEGINS ===
+
+*label festival_opening
+
+The city is on fire.
+
+Not the fire of destruction -- the fire of ten thousand oil lamps, each one placed by hand along every street, every bridge, every rooftop in Khazara. The Festival of Lights has transformed the capital into something that belongs more to dream than to waking life. From the heights of the Citadel, the city below looks like a fallen constellation, its reflected glow turning the Ashar and Tavan rivers into ribbons of liquid gold.
+
+You stand on the balcony of the Grand Terrace, dressed in festival robes of deep crimson silk embroidered with thread-of-gold. The Vizier's seal ring catches the lamplight on your finger. The air smells of jasmine and rosewater and the sweet smoke of sandalwood incense rising from a hundred braziers.
+
+Below, the Citadel's Garden of Eternal Spring has been transformed. Silk canopies in saffron and midnight blue stretch between the cypress trees. Musicians play from a raised pavilion -- the liquid notes of the tar weaving through the steady heartbeat of the daf, the ney's voice rising above it all like a prayer given sound.
+
+*page_break
+
+Two million people celebrate tonight. The Festival of Lights falls on the autumn equinox, the night when darkness and light stand in perfect balance. By tradition, the lamps are lit at sunset and burn until dawn, holding back the dark. The Eternal Flame in the Temple of Seven Wisdoms burns brighter than any other night of the year, visible from every quarter of the city.
+
+It is the empire's most sacred holiday. It is also, as Farid has reminded you three times today, the most politically significant night of the year.
+
+"My lord Vizier," Farid says at your elbow, clutching a sheaf of parchment. "The -- the guest list. I have confirmed two hundred and forty-seven attendees of note. Seventeen ambassadors. Nine provincial governors. The full Council of Five. And -- and the imperial family, of course. Including --" He pauses. "Prince Kaveh has confirmed his attendance."
+
+The name lands like a stone in still water.
+
+*page_break
+
+*fake_choice
+  #You feel the weight of responsibility settle on your shoulders.
+    *set boldness %- 5
+    *set festival_mood "serious"
+    The Festival is beautiful. You cannot afford to enjoy it. Every conversation tonight is a negotiation, every smile a potential mask. You straighten your robes and prepare for battle dressed in silk.
+  #You allow yourself a moment of wonder at the spectacle.
+    *set idealist %+ 5
+    *set festival_mood "wonder"
+    For one breath, you let it in -- the beauty of this ancient celebration, the warmth of the lamplight, the music that seems to rise from the stones themselves. Whatever comes tonight, this city and its people deserve this moment of joy. You owe it to them to protect it.
+  #You scan the crowd below with a strategist's eye.
+    *set boldness %+ 5
+    *set festival_mood "strategic"
+    The Garden is a chessboard in silk. You identify clusters of power -- General Kadir's officers gathered near the weapons display, Guildmaster Priya's merchants laughing too loudly by the wine pavilion, temple scholars in their saffron robes circling the ceremonial braziers. Everyone is positioned. The game is already in play.
+
+*if (festival_mood = "serious")
+  Farid notices your expression and adjusts his own, his nervous smile dimming to match your gravity. "Shall I review the protocol once more, my lord Vizier?"
+*if (festival_mood = "wonder")
+  Farid notices you staring at the city and, for once, does not interrupt. He simply stands beside you, and when you glance at him, his eyes are bright. "It is beautiful, isn't it, my lord Vizier?" he says quietly. "Even after everything."
+*if (festival_mood = "strategic")
+  Farid follows your gaze and begins pointing out dignitaries with the precision of a military briefing, his nervousness forgotten in the comfort of organization. "Lord Reza, near the pomegranate fountain. Lady Soraya, by the east canopy. Ambassador Chen, already on his second glass of wine."
+
+You descend from the balcony into the Festival.
+
+*page_break
+
+*comment === ENTERING THE FESTIVAL ===
+
+*label entering_festival
+
+The stairway from the Grand Terrace curves downward through an arch of flowering jasmine, and with each step the Festival rises to meet you -- the sound swelling, the light brightening, the air thickening with perfume and possibility. Servants in white livery stand at the arch's base, offering goblets of rosewater sherbet and platters of honeyed dates. A musician plays the ney from a balcony overhead, the flute's voice lonely and lovely against the murmur of the crowd below.
+
+You pause at the bottom of the stairs. The Garden stretches before you, and for one breath -- just one -- you see it not as a political arena but as a miracle of human making. Three hundred years of empire condensed into a single night of beauty.
+
+*page_break
+
+The Garden of Eternal Spring is almost unrecognizable. Paper lanterns hang from every branch, their glow turning the leaves to stained glass. Channels of water run with reflected flame, the geometric patterns of the garden now outlined in light. Peacocks strut between the guests, their tails spread wide, each eye-feather catching a different lamp.
+
+The scent hits you first -- roasting lamb and saffron rice from the feast pavilions, layered over the garden's own perfume of rose and jasmine and fresh-cut herbs. Servants move through the crowd with trays of rosewater sherbet and spiced wine, their silver pitchers beaded with condensation in the warm evening air.
+
+Music is everywhere. The court musicians on the main stage play formal arrangements, but from deeper in the garden you hear a woman singing a ghazal -- her voice high and clear, threading between the notes of a solitary tar.
+
+*page_break
+
+The court parts for you as you walk. The crimson robes of the Grand Vizier are impossible to miss, and you feel the attention shift -- eyes tracking, whispered assessments, the recalculation of strategy that happens whenever a powerful piece moves across the board.
+
+General Kadir stands near a display of ceremonial weapons, his iron hand wrapped around a goblet of water -- he never drinks wine. He nods as you pass. One sharp dip of the chin, acknowledging rank.
+
+Guildmaster Priya materializes at your side with the effortless grace of a woman who has navigated a thousand such gatherings. "Vizier. You look magnificent. That particular shade of crimson is from Tavandar, if I'm not mistaken -- excellent quality." She offers you a glass of wine. "The vintage is southern. My gift to the Festival. If the Emperor compliments it, do mention who provided it."
+
+*if (rel_guild > 50)
+  Her smile is warm, genuine. She squeezes your arm. "Enjoy yourself tonight. You've earned it."
+*else
+  Her smile is precise, calculated. Her eyes, as always, are doing arithmetic.
+
+You take the wine. It is, in fact, exceptional -- warm with cinnamon and a ghost of saffron, the southern sun trapped in amber liquid.
+
+*page_break
+
+You move deeper into the Garden. The paths wind between geometric flower beds outlined in flickering oil lamps, each bed a work of horticultural precision -- roses here, jasmine there, marigolds in chains of gold that echo the lamplight. The channels of water that cross the garden catch the sky and the fire in equal measure, so that walking along them feels like walking between two worlds -- the reflected stars below, the real stars above, and you suspended between.
+
+Children chase each other through the crowds, their laughter cutting through the music like bright thread through dark cloth. A woman sells paper birds on sticks, each one painted with a tiny flame. A group of soldiers from the Garrison, stiff in their dress uniforms, cluster near a wine station and try to look as though they attend such events every week. Near the central fountain, a storyteller has gathered an audience of merchants and their wives, spinning a tale of the first Festival -- three hundred years ago, when Roshan the Conqueror lit a single lamp and told his people that the darkness would never win.
+
+The empire at its best. The empire at its most seductive.
+
+*page_break
+
+High Priest Ashoka presides over the ceremonial braziers near the garden's center, where a flame fed by sacred oil mirrors the Eternal Flame in the temple beyond. His saffron robes catch the light as he blesses the gathered faithful. When he sees you, he raises one hand in a gesture that is part greeting, part benediction.
+
+"The Flame burns brighter tonight, child," he says. His voice carries the calm of a man who has stood at the center of a hundred such festivals. "It is a sign. Whether of hope or warning, the Wisdoms alone know. Shall you stand in its light with me?"
+
+*if (rel_priest > 50)
+  His eyes are kind. There is genuine welcome there.
+*else
+  His eyes search your face, as if reading a text in a language he has not yet mastered.
+
+*page_break
+
+And then you see Spymaster Zara.
+
+She does not move through the crowd so much as exist in its negative space -- the gaps between conversations, the shadow behind a lantern, the pause between one breath and the next. She wears black, as always, but tonight it is black silk rather than black cotton, her only concession to the occasion. A single silver pin in the shape of an eye holds her hair back.
+
+She does not approach you. She simply appears at your side, as if she has always been there.
+
+"Four operatives in the Garden," she says, without preamble. "Eight more in the corridors. Two on the rooftops. Standard precaution. Nothing to concern you." A pause. "Yet."
+
+*if (rel_spy > 50)
+  She glances at you -- and for a moment, something almost like warmth flickers in those watchful eyes. "Try the sherbet. It's the only honest thing at this Festival."
+*else
+  She disappears back into the crowd without another word. You are left holding your wine, wondering if you imagined her.
+
+*page_break
+
+The first hour passes in a blur of faces, fragrances, and the steady, intoxicating rhythm of the Festival's music. You eat -- saffron rice studded with pistachios, lamb cooked so tender it falls apart at the touch, bread warm from the tandoor, torn by hand and dipped in pomegranate sauce. You drink -- spiced wine, then sherbet, then tea sharp with cardamom. The food is extraordinary, as if every kitchen in the Citadel has spent a week in competition.
+
+Between the food and the music, politics flows like the water in the garden's channels -- constant, directed, impossible to escape. Lord Reza holds court near the oldest fountain, his circle of elderly nobles nodding at every pronouncement. Lady Soraya argues passionately with a cluster of young reformers near the eastern pavilion, her cheeks flushed with conviction and wine. A group of foreign dignitaries stand in a tight circle, their interpreter working double-time, their expressions alternating between wonder and calculation.
+
+You note who speaks to whom, who avoids whom, who stands alone. The Festival is a map of the empire's power structure, drawn in silk and lamplight, and you are learning to read it the way Zara reads coded messages -- not the surface, but the pattern beneath.
+
+*page_break
+
+*comment === THE EMPEROR'S ENTRANCE ===
+
+*label emperor_entrance
+
+A trumpet sounds -- three rising notes, ancient and commanding. The crowd stills. The music fades. Every head turns toward the Garden's grand staircase, where two lines of imperial guards in ceremonial armor stand at attention, their spear-tips catching the lamplight like stars.
+
+Emperor Roshan IV descends.
+
+He is dressed in white -- the pure white that only the Emperor may wear -- with a cloak of cloth-of-gold flowing behind him. The Crown of the Seven Wisdoms, a circlet of white jade set with seven stones, sits upon his brow. At sixteen, he is still growing into his own frame, still learning how to carry the weight of the crown without tilting his head. But tonight -- tonight he looks like an emperor.
+
+The Dowager Empress Nur descends three steps behind, as protocol demands. She wears deepest purple, her hair threaded with gold chains, her expression as composed as a painted mask. Her eyes sweep the crowd with the practiced assessment of a woman who has attended these festivals for thirty years.
+
+*page_break
+
+The crowd bows. You bow. The Empire's ritual machinery engages its gears.
+
+"Light of the World," Ashoka intones, stepping forward with the ceremonial lamp. "Shadow of God upon the Earth. The Flame welcomes its guardian."
+
+The Emperor takes the lamp. His hands are steady -- you note this with something that might be pride. He carries it to the great brazier at the Garden's center and touches the wick to the sacred oil.
+
+The flame leaps. The crowd gasps, then cheers. The Festival is officially begun.
+
+*if (route = 1)
+  You watch the Emperor descend into the crowd and think: he is not yet the ruler he could be. But he is closer than he was when you arrived. The thought sustains you like a warm drink on a cold night.
+*if (route = 2)
+  You watch the Emperor descend into the crowd and calculate: the boy is growing. Growing means unpredictable. You must ensure that his growth bends toward the trellis you have built for him.
+*if (route = 3)
+  You watch the Emperor descend into the crowd and wonder: does he understand what the people need from him? Can he learn? The Festival is for the empire. The empire belongs to all its people. Not just the ones who drink wine in gardens.
+
+*page_break
+
+*comment === POLITICAL MANEUVERING (REAL CHOICE 1) ===
+
+*label political_choice
+
+The evening unfolds in layers of silk and strategy. You circulate through the Festival, and every conversation is a negotiation wearing the mask of celebration. Lord Reza holds court among the elder nobility, his ancient voice carrying complaints dressed as compliments. Lady Soraya argues politics with a circle of young reformers, her cheeks flushed with wine and conviction. Ambassador Chen samples delicacies with the focused attention of a man cataloguing an enemy's strengths.
+
+Farid appears at your elbow. "My lord Vizier. You have an opportunity. The Emperor's speech is in an hour. Before then, there is time to -- to advance a position. I have identified three possibilities."
+
+He lowers his voice. "Lord Reza has expressed willingness to discuss the vacant Lord Speaker position. Guildmaster Priya has arranged a meeting with Ambassador Chen to discuss the trade embargo's aftermath. And General Kadir has requested a private word about the northern border."
+
+*page_break
+
+Each opportunity carries weight. Lord Reza's support among the nobility could shore up your weakest flank, but his price will be high. Priya's meeting with Chen could yield trade concessions that fill the treasury, but might require compromises. Kadir's request suggests something urgent about the military situation -- and urgent, with Kadir, means lives at stake.
+
+You have time for only one.
+
+*choice
+  #Approach Lord Reza about the Lord Speaker position. The nobility must be managed.
+    *set rep_nobility %+ 10
+    *set rel_reza %+ 8
+    *set rep_trade %- 5
+    *set festival_event 1
+    *goto reza_meeting
+  #Join Priya's meeting with Ambassador Chen. Trade is the empire's lifeblood.
+    *set rep_trade %+ 10
+    *set rel_guild %+ 8
+    *set rel_chen %+ 5
+    *set festival_event 2
+    *goto chen_meeting
+  #Hear what General Kadir has to say. If he asks for a private word, it matters.
+    *set rep_military %+ 10
+    *set rel_general %+ 8
+    *set rep_nobility %- 5
+    *set festival_event 3
+    *goto kadir_meeting
+
+*comment === POLITICAL MEETING BRANCHES ===
+
+*label reza_meeting
+
+Lord Reza sits beneath a canopy of blue silk, surrounded by the empire's oldest families like a spider at the center of its web. He is seventy-two years old and has served four emperors, and the lamplight carves his face into a relief map of centuries.
+
+"Vizier." He does not rise. This is itself a statement -- he has not risen for a Vizier in decades. "Sit. The wine is adequate. The company is not, but one makes do."
+
+He regards you through eyes that have watched empires tremble. "The Lord Speaker position. You have delayed the appointment. An error. The nobility does not tolerate a vacuum -- we fill it ourselves, and the result is chaos. I have a candidate. Myself, naturally."
+
+*if (route = 1)
+  "A Loyalist Vizier needs loyal nobles," he says. "I can be loyal. For the right price."
+*if (route = 2)
+  "You seek power, Vizier. I recognize the look -- I wore it myself, once. We could be useful to each other."
+*if (route = 3)
+  "Your reforms threaten my class. You know this. I know this. But I am old enough to know that some change is inevitable. The question is whether it is guided by people of quality."
+
+The conversation is a dance of implications and unsaid debts. Reza speaks of the old families as if they are the pillars of a building -- remove one, and the rest might stand, but remove too many and the ceiling comes down. He does not threaten. He does not need to. His power is the power of architecture -- structural, invisible, load-bearing.
+
+When it ends, a servant refills your wine and Lord Reza inclines his head -- the barest nod, a concession from a man who concedes nothing without calculation.
+
+"The Lord Speaker position will be discussed at the next Council session," you say.
+
+"Discussed." He tastes the word. "A beginning. Discussions have a way of becoming agreements, in my experience, when both parties understand the alternative." He pauses. "The alternative, Vizier, is that the nobility discusses the position among ourselves. Without you. I suspect you would find our conclusions less favorable."
+
+You rise. You bow correctly. You walk away carrying Lord Reza's conditional support and the uncomfortable sense that you have bargained with something you cannot yet name -- something ancient and patient and not entirely tame.
+
+*goto post_meeting
+
+*label chen_meeting
+
+Guildmaster Priya has commandeered a pavilion near the eastern fountain, where the spray masks conversation from eavesdroppers. Ambassador Chen sits across from her, his wine glass untouched, his smile unchanged through three languages' worth of pleasantries.
+
+"Vizier! Perfect timing." Priya's warmth is genuine, but her eyes are all business. "The Ambassador and I were just discussing the unfortunate unpleasantness of the embargo. I believe there is room for -- what was your phrase, Ambassador?"
+
+"Mutually beneficial recalibration," Chen says smoothly. "The Confederation desires nothing more than fair and open commerce. We simply disagree on the definition of 'fair.' Your presence, Vizier, adds a welcome gravity to the discussion."
+
+The negotiation unfolds over sherbet and pomegranate. Chen is a master of the diplomatic parry -- he yields nothing directly but suggests volumes, his phrases turning corners like water finding the lowest ground. Priya matches him move for move, her merchant's instincts reading his offers the way a sailor reads the wind.
+
+Between them, you navigate. Chen wants reduced tariffs at Ashghar Pass. Priya wants guaranteed purchase commitments for Khazaran silk. Both are willing to concede on secondary points -- port fees, customs procedures, inspection protocols -- to secure their primary objective. The negotiation is a three-dimensional puzzle, and the pieces fit together only if all three of you agree to turn them the same way.
+
+By the time the sherbet is finished, a framework has emerged. Chen gives ground on port tariffs in exchange for guaranteed silk quotas. Priya smiles like a cat watching cream being poured.
+
+*if (cunning > 40)
+  You catch Chen's hand signal to an aide -- he's sending a message. He sees you seeing it. For a moment, his polished mask slips, and you glimpse the strategist beneath. He nods, acknowledging the hit. "The Vizier is observant," he murmurs.
+  *set cunning + 3
+  *set evidence_count + 1
+
+*goto post_meeting
+
+*label kadir_meeting
+
+General Kadir waits by the weapons display, away from the crowd. His iron hand rests on the pommel of a ceremonial sword. He does not look at the festivities. He looks north.
+
+"Vizier." His voice is pitched low, military-quiet. "Apologies for the intrusion. This couldn't wait for morning."
+
+He reaches inside his coat and produces a folded dispatch, the seal broken. "Arrived this evening. Fort Darband. The raids have intensified. Three villages burned this week. My garrison commander reports Khanate forces massing on the Steppe in numbers we haven't seen in a decade."
+
+He meets your eyes. His are steady, grim, utterly without pretense. "I need authorization to mobilize the Second Army. Tonight. The paperwork can follow, but the troops need to march by dawn."
+
+*if (route = 1)
+  "The Emperor trusts your judgment, General. I trust the Emperor."
+  *set rel_emperor %+ 5
+*if (route = 2)
+  "This is exactly the kind of decision that a wise advisor handles quietly. I will ensure the authorization reaches you within the hour."
+*if (route = 3)
+  "The people of those border villages deserve protection. You have my word."
+
+He nods once -- that sharp military acknowledgment that means more than any courtier's elaborate bow. Then he turns back to the weapons display, and his good hand closes around the pommel of a sword that has seen more battles than most of the guests at this Festival have seen sunrises.
+
+"I'll have the mobilization orders drafted tonight," he says without turning. "When you sign them, use your seal. The official one. Stamped in red. My officers need to know the order comes from the Throne, not from a friendly conversation at a party."
+
+You leave Kadir standing among the ceremonial swords, a general at a festival, a soldier in a garden of silk. The urgency of his request clings to you like smoke -- the border is real, the raids are real, the soldiers dying in the north are real, and the Festival's beauty suddenly feels thin, a painted screen concealing the empire's bleeding edges.
+
+*goto post_meeting
+
+*page_break
+
+*label post_meeting
+
+The meeting concludes as the Festival's music shifts, signaling the approach of the Emperor's speech. You rejoin the main gathering, the seal ring heavy on your finger, the weight of the evening's negotiations settling into your bones like silt at the bottom of a river.
+
+The Garden has grown more crowded while you were away. The Festival's gravitational pull has drawn half of Khazara into the Citadel's orbit -- not just the court, but the merchants and guild officers and military wives and temple scholars who make up the empire's middle layer. They cluster at the edges of the Garden, pressed against the silk ropes that separate the inner celebrations from the outer, their faces lit by lamps and wonder.
+
+You think of the two million people beyond the Citadel walls. They have their own lamps tonight, their own celebrations, their own versions of this ancient ritual. The Festival belongs to them too. Perhaps to them more than to the silk-wrapped power brokers who populate this garden.
+
+*page_break
+
+*comment === FAKE CHOICE 2: FESTIVAL OBSERVATIONS ===
+
+*fake_choice
+  #You pause to watch the dancers -- their movements tell stories older than the empire.
+    *set idealist %+ 5
+    The dancers move in patterns that mirror the constellations -- the Warrior, the Merchant, the Scholar. Their bare feet whisper on the marble stage. A girl no older than twelve executes a spin so perfect it seems to stop time. Art, you think. This is what the empire is for.
+  #You study the faces of the powerful -- their expressions tell stories the dancers cannot.
+    *set ruthless %+ 5
+    The real performance is in the crowd. You read Lord Reza's tightened jaw, Priya's calculating smile, the Dowager's perfectly controlled blankness. Each face is a mask, and you are learning to read the faces behind the masks. Power is never at rest, not even on a festival night.
+  #You look beyond the silk canopies to where the city's lamps stretch to the horizon.
+    *set idealist %+ 5
+    Beyond the Garden's walls, the city blazes with ordinary light -- the lamps of merchants and craftsmen, of mothers and children, of beggars and thieves. Two million souls celebrate tonight. They do not know the names of the people in this Garden. They know only that the Flame burns, the lamps are lit, and the empire endures. You carry their faith like a second robe.
+
+*page_break
+
+*comment === ROMANCE CULMINATION ===
+
+*label romance_section
+
+The Festival deepens. The hour grows late. The stars emerge above the lamplight, and the music turns from celebration to something slower, more intimate -- a ghazal of longing that seems to make the very air ache.
+
+*if (romance_active)
+  *if (romance_leila)
+    *goto romance_leila_festival
+  *if (romance_navid)
+    *goto romance_navid_festival
+  *if (romance_asha)
+    *goto romance_asha_festival
+*else
+  *goto no_romance_festival
+
+*label romance_leila_festival
+
+You find Leila -- or she finds you. With Leila, it is always difficult to tell. She stands beside the fountain where the singing ghazal rises from a hidden performer, her head tilted as if catching a melody only she can hear. She wears midnight blue, the silk shimmering like deep water in the lamplight, and her dark hair is loose over her shoulders.
+
+"Vizier." She does not turn to face you. "This singer has a passable voice and a mediocre grasp of meter. I could do better. Would you like me to prove it?"
+
+She turns then, and her eyes -- dark, bright, dangerous as poetry -- find yours.
+
+*if (rel_leila >= 60)
+  "Walk with me," she says. It is not a question.
+
+  She leads you away from the crowd, past the silk canopies and the lantern-lit paths, to a quiet corner of the garden where a single pomegranate tree stands beside a marble bench. The music is distant here, the lamplight softer, the jasmine thicker in the air.
+
+  "I wrote something," she says. She sits on the bench and draws a folded paper from her sleeve. "I wrote it for you. Don't look like that -- a poet writes for people. It's what we do." A pause. "I've never written anything for someone I --"
+
+  She stops. Leila, who always has words, runs out of them.
+
+  *set romance_moment true
+  *goto romance_choice
+*else
+  She offers you a wry smile and a glass of wine. "Come. Let us critique this singer together. It is the only honest entertainment at this Festival."
+  *set rel_leila %+ 5
+  *goto post_romance
+
+*label romance_navid_festival
+
+You find Navid at the edge of the Garden, near the wall that overlooks the Garrison below. He stands apart from the celebration with the focused stillness of a man whose training never sleeps. His festival uniform is formal but spare -- dark blue, silver buttons, the imperial guard insignia on his chest. His hand rests on his sword hilt. It always rests on his sword hilt.
+
+"Vizier." He straightens when he sees you. "The perimeter is secure. I've posted additional guards for the event."
+
+A pause. The lamplight catches the scar across his cheekbone.
+
+*if (rel_navid >= 60)
+  "You don't have to call me Vizier," you say.
+
+  Something shifts in his expression. It is a small change -- a loosening of the jaw, a softening around the eyes -- but from Navid, it is an avalanche.
+
+  "I -- no. I suppose not." He looks away, then back. "Would you -- the view from the eastern battlement. The Festival from above. I thought you might --" He stops. Starts again. "I thought you might want to see it. With me."
+
+  The battlement is quiet, high above the celebration. The city spreads below in a tapestry of flame. The wind carries the scent of smoke and jasmine.
+
+  "I'm not good at this," he says quietly, standing beside you. His shoulder almost touches yours. "I can secure a perimeter. I can read a battlefield. But this --" He gestures between you, an oddly vulnerable motion from a man trained to show nothing.
+
+  *set romance_moment true
+  *goto romance_choice
+*else
+  He nods, professional and courteous. "The Festival is well-guarded. If you need anything, I am here."
+  *set rel_navid %+ 5
+  *goto post_romance
+
+*label romance_asha_festival
+
+You find Asha near the ceremonial braziers, arguing with a temple elder about the philosophical implications of the equinox. Her saffron scholar's robes are her only finery, but her face is alight with the joy of intellectual combat.
+
+When she sees you, she breaks off mid-sentence. The elder looks offended. Asha does not notice.
+
+"Vizier!" She crosses to you with that particular energy she carries -- part scholar's enthusiasm, part something warmer. "Did you know that the original Festival of Lights was not about holding back the darkness at all? The earliest texts suggest it was about welcoming it. Balance, not conquest. The elders hate when I mention this." She grins.
+
+*if (rel_asha >= 60)
+  Her grin softens into something else. "Walk with me? There is a courtyard behind the Temple of the Third Wisdom where the lamps are arranged in the old pattern -- the pattern that represents courage. I want to show you."
+
+  The courtyard is small, intimate, ringed with low walls covered in trailing jasmine. The lamps here are arranged in a spiral pattern that draws the eye inward, to a single flame at the center burning on a bronze stand.
+
+  "The spiral is the soul's journey," Asha says quietly. "Inward, always inward. Toward the truth at the center." She pauses. She is not looking at the flame. She is looking at you. "I ask questions, Vizier. It is what I do. But there is a question I have been afraid to ask."
+
+  She is very still. Asha, who is always in motion, is perfectly, tremblingly still.
+
+  *set romance_moment true
+  *goto romance_choice
+*else
+  She launches into a passionate analysis of the Festival's symbolism, and you listen, caught in the current of her mind.
+  *set rel_asha %+ 5
+  *goto post_romance
+
+*page_break
+
+*comment === ROMANCE CHOICE (REAL CHOICE 2) ===
+
+*label romance_choice
+
+The moment hangs between you like a held breath. The lamplight wavers. The music is distant, the crowd far away. There is only this -- this person, this night, and the question that needs no words.
+
+*choice
+  *if (romance_leila)
+    #Take the poem from Leila's hands, read it, and then take her hands instead.
+      *set rel_leila %+ 15
+      *set romance_moment true
+      You unfold the paper. The poem is five lines long. It is about a flame that finds, after a lifetime of burning alone, another flame. The last line reads: "I did not know fire could feel cold until I imagined a world without you."
+
+      Your hands are shaking. Or hers are. It is difficult to tell where your trembling ends and hers begins.
+
+      "Leila," you say.
+
+      "Don't say anything clever," she whispers. "For once. Just --"
+
+      You lean forward, and the space between you becomes the smallest poem either of you has ever known. The kiss tastes of pomegranate wine and jasmine and something that has no name in any language. Her fingers curl into your robes and hold on as if the world were tilting.
+
+      When you part, she is breathing unevenly. Leila. Who is never at a loss for words. Who carries language like a blade. She opens her mouth, closes it, and laughs -- a sound like water running over smooth stone.
+
+      "Well," she says. "That was better than the poem."
+      *goto post_romance
+  *if (romance_navid)
+    #Close the distance between you and Navid. Words are not what this moment requires.
+      *set rel_navid %+ 15
+      *set romance_moment true
+      You turn to face him. The wind catches your robes. Below, the Festival burns. Up here, it is quiet enough to hear your own heartbeat.
+
+      "Navid."
+
+      He looks at you. His eyes -- soldier's eyes, watchful and guarded -- are unguarded for the first time since you have known him. The vulnerability in them is more courage than any battlefield charge.
+
+      You reach out and take his hand. The one that is not resting on his sword. His fingers are rough with calluses, warm, and they close around yours with a gentleness that makes your chest ache.
+
+      "I'm not good at this," he says again, barely above a whisper.
+
+      "You're better than you think," you say. And you rise onto your toes and press your lips to his.
+
+      He is still for one terrible, beautiful moment. Then his free hand comes up to cradle your jaw, and he kisses you back with the careful intensity of a man who has waited a very long time to hold something precious.
+
+      When you pull apart, his thumb traces the line of your cheekbone. "I should tell you," he says, his voice rough. "I have been wanting to do that since the first time you beat me at strategy on the battlement maps."
+      *goto post_romance
+  *if (romance_asha)
+    #Answer Asha's unasked question with the truth she already knows.
+      *set rel_asha %+ 15
+      *set romance_moment true
+      "Ask it," you say.
+
+      She swallows. "Do you -- is this -- are we --" Asha, who questions everything, who leads Socratic dialogues with temple elders, who has never met a thought she could not articulate -- Asha cannot finish the sentence.
+
+      So you finish it for her. Not with words. You step forward, cup her face in your hands, and kiss her.
+
+      She tastes of cardamom tea and surprise and something that burns brighter than the flame at the spiral's center. For a moment she is utterly still. Then her hands come up to grip your wrists, and she kisses you back with the fierce, questioning intensity that she brings to everything she does.
+
+      When you part, her eyes are wide and bright, and she lets out a breath that becomes a laugh -- startled, joyful, full of wonder.
+
+      "I have studied every text in the temple library," she says. "I have debated the Seven Wisdoms with the finest minds in the empire. And I have to tell you, Vizier, that none of it prepared me for that."
+      *goto post_romance
+
+*label no_romance_festival
+
+The Festival deepens around you. You move through the crowd alone, and the solitude has its own clarity. Without the distraction of the heart, the mind is free to observe, to calculate, to plan.
+
+You watch the dancers and the diplomats and the dreamers, and you carry the weight of the empire without the comforting fiction that anyone shares it.
+
+*page_break
+
+*label post_romance
+
+The music swells. The lamps burn. The Festival reaches its zenith, and for one perfect, suspended moment, the Khazaran Empire is everything it has ever claimed to be -- beautiful, magnificent, eternal.
+
+Then the Emperor rises to speak.
+
+*page_break
+
+*comment === THE EMPEROR'S SPEECH ===
+
+*label emperor_speech
+
+The crowd assembles before the grand staircase. Emperor Roshan stands on the middle landing, flanked by guards, bathed in lamplight. The Crown of the Seven Wisdoms gleams on his brow. Behind him, the Dowager Empress watches from the shadows of the colonnade, her face unreadable.
+
+The speech is the Festival's centerpiece -- a tradition as old as the empire itself. The Emperor addresses the people, the court, and the gods. It is equal parts prayer, policy, and performance.
+
+*if (rel_emperor > 60)
+  You coached him for this. Three evenings of quiet rehearsal in the Garden, Farid taking notes, the boy-emperor slowly finding his voice. You taught him to speak from the chest, to let the silence do work, to look at individuals in the crowd rather than the crowd itself. The investment pays off now.
+
+  Roshan speaks clearly. His voice carries the natural authority of the dynasty -- that resonance that three centuries of rule have bred into the blood. He speaks of the Eternal Flame, of the empire's endurance, of the light that holds back darkness. And then he departs from the prepared text.
+
+  "The empire faces threats," he says. "We will not pretend otherwise. But the Flame does not burn brighter by denying the wind. It burns brighter by being tended -- by every hand, every heart, every citizen who believes that light is worth defending."
+
+  The crowd cheers. It is not a polite court response -- it is a genuine, full-throated roar. Roshan's eyes find yours in the crowd. He is trying very hard not to smile.
+
+  *set speech_outcome "triumph"
+  *set rel_emperor %+ 10
+*elseif (rel_emperor > 40)
+  Roshan delivers the speech competently. He does not stumble, does not hesitate, does not lose his place. The words are the traditional ones, delivered with the traditional gravity. It is adequate.
+
+  But adequacy is not enough for an emperor. The court applauds politely. The Dowager's expression does not change. You can see the boy wanting more -- wanting the crowd to love him, not merely tolerate him -- and the wanting itself makes him seem younger.
+
+  *set speech_outcome "adequate"
+*else
+  Roshan stumbles twice. The second stumble is bad -- he loses his place in the prepared text and stands in silence for three agonizing heartbeats before the Dowager's voice, quiet but carrying, feeds him the next line from the shadows.
+
+  The crowd claps. The Dowager's intervention was visible to anyone paying attention. The boy on the staircase is, for a moment, only a boy.
+
+  *set speech_outcome "stumble"
+  *set rel_emperor %- 5
+
+*page_break
+
+The speech ends. The ceremonial duties resume -- the blessing of the Festival lamps, the traditional toast with spiced wine, the Emperor's circuit through the Garden to greet the assembled dignitaries. You watch Roshan move through the crowd, his white robes catching every lamp's light, and you think about the gap between ceremony and truth -- the distance between the emperor the Festival projects and the boy who lives inside the projection.
+
+*if (speech_outcome = "triumph")
+  Tonight, the gap is narrow. The boy and the emperor are nearly aligned, and the alignment has a beauty of its own -- like watching a young tree grow into the shape the wind has been demanding.
+*if (speech_outcome = "adequate")
+  Tonight, the gap is visible but not insurmountable. The boy is trying. The effort itself is something -- not yet enough, but something.
+*if (speech_outcome = "stumble")
+  Tonight, the gap is wide enough to fall through. You watch the Dowager's hand on Roshan's elbow, guiding him through the crowd, and you cannot tell if the hand is support or control.
+
+*page_break
+
+*comment === FAKE CHOICE 3: PERSONALITY UNDER SPECTACLE ===
+
+*fake_choice
+  #The speech, whatever its quality, reminds you why this empire matters.
+    *set idealist %+ 5
+    *if (speech_outcome = "triumph")
+      You think: this is what it looks like when a nation remembers what it is. The lamps, the speech, the faces turned upward -- this is the empire at its best. And you helped build this moment.
+    *if (speech_outcome = "adequate")
+      Even adequacy has its dignity. The empire endures not through brilliance but through persistence -- the daily, grinding refusal to let the flame go out.
+    *if (speech_outcome = "stumble")
+      The boy stumbled, but the words were still true. The Flame endures. So must its guardian.
+  #You note who applauded loudly, who applauded softly, and who did not applaud at all.
+    *set ruthless %+ 5
+    The applause is a map. You read it as you would read a military dispatch -- who supports, who wavers, who opposes. Three noble families near Lord Reza offered only perfunctory applause. Ambassador Chen clapped with diplomatic precision. The merchants clapped longest.
+  #You watch the Dowager's reaction, because her face tells the truth the crowd cannot see.
+    *set cunning + 3
+    The Dowager Empress Nur stands in the colonnade's shadow, and her face is a lesson in control. Her son just spoke to the empire, and her expression reveals nothing. Nothing at all. But her left hand, hidden beneath the folds of her sleeve, is clenched so tightly that the tendons stand out like cords.
+
+*page_break
+
+*comment === PRINCE KAVEH'S ENTRANCE ===
+
+*label kaveh_entrance
+
+The speech ends. The music resumes. The crowd disperses into clusters of conversation and congratulation. Servants replenish the wine. The musicians shift from the formal post-speech processional into something livelier -- a popular melody that draws couples to the open space near the central fountain, where the marble is smooth enough for dancing.
+
+And then a murmur ripples through the crowd -- a shift in attention, like wind changing direction.
+
+Prince Kaveh arrives.
+
+You feel it before you see it -- the subtle realignment of the room's gravity, the way conversations pause mid-sentence, the way heads turn as if pulled by invisible thread. The Festival has had its official spectacle. Now it receives its unofficial one.
+
+He enters the Garden through the eastern archway, where the lamplight is warmest and the approach most dramatic. This is not an accident. Nothing about Prince Kaveh is an accident.
+
+He is twenty-two and beautiful in the way that dynastic breeding sometimes produces -- the strong jaw, the dark eyes, the easy grace of a man who has never doubted his right to occupy space. He wears white and gold -- white, a bold choice. Only the Emperor may wear pure white, but Kaveh's robes are white embroidered with gold, skirting the edge of protocol without quite breaking it. The message is clear to anyone literate in the court's textile language: I am of the blood. I could be on those stairs.
+
+*if (met_kaveh)
+  You have met Kaveh before. You know the smile, the charm, the practiced warmth that draws people in like moths to a very particular kind of flame. Knowing does not make it less effective.
+*else
+  *set met_kaveh true
+
+*page_break
+
+"Cousin!" Kaveh calls out as he approaches the Emperor, his voice carrying perfectly across the Garden. He bows -- a bow that is precisely correct in depth, which itself is a kind of insult, since a deeper bow would suggest deference and a shallower one would be an open challenge.
+
+"Light of the World. A beautiful speech. Truly. Our family's gift for words runs strong in your generation." He places a hand over his heart. "I am, as always, your devoted servant."
+
+The Emperor's jaw tightens. He manages a smile. "Cousin. We are glad you could attend."
+
+"Wild horses could not have kept me away." Kaveh turns to the Dowager. "Aunt Nur. You are, as always, the empire's most radiant ornament."
+
+The Dowager's smile could freeze the Ashar River.
+
+*page_break
+
+*comment === KAVEH APPROACHES THE PLAYER ===
+
+And then Kaveh's gaze finds you.
+
+He crosses the Garden with the confident stride of a man who owns every room he enters. The crowd parts for him as it parted for you, and you are acutely aware that this is a contest -- who commands more attention, who draws more eyes, whose gravity bends the court's orbit.
+
+"The Grand Vizier." Kaveh stops before you and bows -- a fraction less deeply than he bowed to the Emperor, which is technically correct but socially loaded. "I have heard so much about you. The provinces' gift to the capital." He smiles. "You have accomplished remarkable things in a short time. Remarkable and, some might say, surprising."
+
+His voice is warm. His eyes are not.
+
+*if (rel_kaveh > 40)
+  "I understand we share certain concerns about the empire's future," he says. "Perhaps we might discuss them. Not tonight -- tonight is for celebration. But soon."
+*if (rel_kaveh <= 40)
+  "I hope you are enjoying the Festival, Vizier. These celebrations have a way of... clarifying things. Loyalties. Ambitions. Who belongs in this garden and who is merely visiting."
+
+*page_break
+
+*comment === RESPONSE TO KAVEH (REAL CHOICE 3) ===
+
+*label kaveh_response
+
+The prince waits for your response. Behind his smile, you see the machinery of calculation turning -- testing, probing, measuring. He is charming the way a blade is charming: beautiful and designed to cut.
+
+*choice
+  #Meet his charm with equal grace, revealing nothing. "The Prince's reputation precedes him as well."
+    *set diplomacy + 3
+    *set rel_kaveh %+ 8
+    *set honest %- 5
+    *set kaveh_impression "diplomatic"
+    You match his smile with one of your own, and for a moment you are two mirrors facing each other -- surface reflecting surface, depth concealing depth. "I look forward to that conversation, Your Highness. I am sure we have much to discuss."
+
+    Kaveh's eyes narrow -- just slightly, just for an instant. He expected more resistance. Your composure has surprised him, and surprised men reveal themselves.
+
+    "Delightful," he says. "Truly delightful. We shall be friends, I think."
+    *goto kaveh_aftermath
+  #Let him see the steel beneath the courtesy. "The Vizier serves the Emperor. All else is commentary."
+    *set boldness %+ 10
+    *set rel_kaveh %- 10
+    *set honest %+ 5
+    *set kaveh_impression "defiant"
+    Your voice carries the quiet weight of the seal ring on your finger. You do not smile. You do not need to. The title of Grand Vizier is its own armor.
+
+    Kaveh's charm does not waver, but something behind his eyes recalibrates. He takes your measure, and you see the moment he realizes you will not be charmed, flattered, or intimidated into compliance.
+
+    "The Emperor is fortunate in ${their} servants," he says lightly. "Some servants are so devoted they forget the difference between service and ownership."
+    *goto kaveh_aftermath
+  *selectable_if (cunning > 40) #Turn the conversation to extract information. What does he actually want? [Requires Cunning 40+]
+    *set cunning + 3
+    *set rel_kaveh %+ 5
+    *set evidence_count + 1
+    *set kaveh_impression "probing"
+    You lean in, lower your voice, and play the role of the curious newcomer. "Your Highness, I confess I am still learning the capital's currents. A man of your standing must have insights that a provincial administrator could only envy."
+
+    Flattery. But flattery of a specific kind -- the kind that invites the target to speak, to reveal, to show off. Kaveh is too intelligent to fall for crude manipulation. But he is also vain enough to enjoy the invitation.
+
+    He talks. Not much -- he is careful. But enough. A reference to "friends in the northern provinces." A mention of "certain concerns shared by the old families." A comment about "the empire's future -- our future, perhaps."
+
+    Each phrase is a thread. You file them away.
+    *goto kaveh_aftermath
+
+*label kaveh_aftermath
+
+Kaveh bows again, precisely, and melts back into the crowd. You are left with the aftertaste of his charm -- sweet on the surface, with something bitter underneath.
+
+*if (suspect_kaveh)
+  You think of the evidence in your chambers. The conspiracy. The rival claimant. Kaveh moves through this Festival like a man who already owns what he has not yet taken.
+
+*page_break
+
+*comment === THE INCIDENT ===
+
+*label festival_incident
+
+The hour is late. The great mechanical clock in the Tower of Stars has struck ten -- ten chimes rolling across the Citadel like stones dropping into deep water. The lamps are beginning to gutter, their oil running low, the first casualties of the night winking out one by one as if the darkness is reclaiming its territory inch by inch.
+
+The Festival's energy has shifted from celebration to something quieter, more intimate. The dancers have slowed. Conversations are murmured over cooling wine. Couples walk arm in arm beneath the remaining lanterns. Children lie asleep on their parents' shoulders, dreaming whatever children dream when the world is full of music and fire.
+
+The air has cooled. The first autumn chill creeps in from the river, carrying with it the scent of water and dead leaves and the faint, mineral smell of the approaching season's turn. You pull your festival robes tighter around your shoulders.
+
+You are standing near the central brazier when it happens.
+
+A servant approaches the Emperor's party carrying a tray of sherbet. Nothing unusual. Servants have been carrying trays all night. But Spymaster Zara materializes at your elbow, and her hand closes around your wrist.
+
+"Watch," she says.
+
+*page_break
+
+The servant stumbles. The tray tips. A glass of sherbet spills across the Emperor's white robes, staining them a vivid, shocking crimson -- the color of pomegranate, the color of blood.
+
+In the gasping silence that follows, the servant drops to her knees, babbling apologies. But Zara's grip on your wrist tightens.
+
+"The servant is real," she murmurs. "The stumble was not. Someone pushed her. And that stain --"
+
+She is right. The crimson stain is spreading across the Emperor's robes in a pattern that is too deliberate, too symbolic. It looks like blood. It is designed to look like blood.
+
+*if (speech_outcome = "triumph")
+  The triumph of the speech is instantly forgotten. The crowd sees their Emperor stained in what looks like blood, and the image sears itself into memory -- an omen, a humiliation, a message.
+*if (speech_outcome = "adequate")
+  An adequate evening collapses into something worse. The Emperor stands frozen in his stained robes, and the adequacy of the speech is retroactively erased by the inadequacy of this moment.
+*if (speech_outcome = "stumble")
+  The stumble in the speech was bad. This is worse. The Emperor, already diminished, now stands before his court marked in what looks like blood. The image is devastating.
+
+*page_break
+
+The Dowager moves first. She sweeps forward, removes her own purple cloak, and wraps it around her son's shoulders in a single, fluid motion that is equal parts maternal protection and political theater.
+
+"The Festival continues," she says. Her voice is ice and command. "An accident. Nothing more."
+
+But the damage is done. You see it in the whispers that spiral outward, in Lord Reza's calculating gaze, in Prince Kaveh's expression -- concern that does not quite hide satisfaction. In Ambassador Chen's studied neutrality. In the way General Kadir's hand moves to his sword, instinct reading the room as threat.
+
+*if (romance_moment)
+  *if (romance_leila)
+    Leila catches your eye from across the Garden. Her face has changed -- the tenderness of the pomegranate tree is gone, replaced by the sharp alertness of a poet who has just witnessed something she will never be able to write about.
+  *if (romance_navid)
+    Navid is already moving, placing himself between the Emperor and the crowd, his hand on his sword. He glances at you once -- a look that says everything: I am on duty. This is what I do. We will speak later.
+  *if (romance_asha)
+    Asha stands frozen by the ceremonial braziers, her hands pressed to her mouth. The philosopher's questions have been replaced by something more primal -- fear, and the knowledge that the world has just become more dangerous.
+
+*page_break
+
+Farid is at your side, pale as the marble beneath your feet. "My lord Vizier. The -- the servant. Someone should question the servant. And the -- the guests saw -- everyone saw --"
+
+He is right. Everyone saw. The image of the Emperor in blood-colored robes will be in every quarter of the city by morning. The story will mutate, as stories do -- it was real blood, it was a curse, it was an omen from the gods. The conspiracy does not need blades when it has symbolism.
+
+*if (route = 1)
+  Your stomach turns. Everything you built -- the speech, the progress, the slow strengthening of Roshan's authority -- is threatened by one shattered glass of sherbet.
+*if (route = 2)
+  Your mind races. The timing is too precise. Someone used the Festival to send a message, and the message is: the Emperor can be reached. The Emperor can be humiliated. The Emperor is weak.
+*if (route = 3)
+  Your blood runs cold. The reformer in you sees it clearly: this is how systems defend themselves. Not through argument but through spectacle. Through fear.
+
+*page_break
+
+*comment === FINAL OBSERVATIONS ===
+
+*label festival_ending
+
+The Dowager's intervention has restored a fragile order. The musicians resume playing, though the melody now feels forced, a smile painted on a worried face. Servants move through the crowd with fresh wine, and the guests drink it with an urgency that has nothing to do with thirst.
+
+But the image cannot be un-seen. The Emperor in crimson. The stained white robes. The Dowager's purple cloak, settling over her son's shoulders like a claim.
+
+You watch the crowd and read its verdict. This Festival is over. The celebration has been poisoned as surely as your predecessor was poisoned -- with something that looks harmless until its effects become clear.
+
+*page_break
+
+The Festival winds down. The music fades. One by one, the lamps begin to gutter and go dark, the oil consumed, the wicks burned to nothing. The Garden empties slowly, guests departing in murmuring groups, their festival finery creased and wine-stained, the evening's magic dissolving into the cool reality of approaching dawn.
+
+You stand in the Garden as the last lamps die. The darkness creeps in from the edges, and the scent of dead smoke replaces the incense and jasmine and rosewater. The Eternal Flame in the distant Temple still burns -- it always burns -- but from here, in the growing dark, it seems very small.
+
+*fake_choice
+  #You think of the romance, the kiss, the promise of something worth protecting.
+    *if (romance_moment)
+      *set idealist %+ 5
+      The memory of the kiss -- the warmth, the taste, the feeling of not being alone -- burns brighter than any lamp. Whatever comes next, that was real. That is yours. No conspiracy can take it.
+    *if (not(romance_moment))
+      *set boldness %+ 5
+      You have no one to hold. The thought is not self-pity but clarity. You are alone, and alone is how you do this work. The seal ring is cold on your finger.
+  #You think of Kaveh -- his smile, his words, the threat wrapped in silk.
+    *set ruthless %+ 5
+    The prince's face lingers in your mind. That practiced charm. That casual menace. He walked into this Festival like a man who already knows how the story ends, and you are not certain he is wrong.
+  #You think of the Emperor -- the boy in the stained robes, the woman wrapping him in purple.
+    *set idealist %+ 5
+    Roshan stood on those stairs and spoke to an empire. Roshan stood in stained robes and did not cry, did not crumble, did not run. He is sixteen. He deserved better than this night. You think of the Dowager's cloak settling over his shoulders and you are not sure if it was love or ownership.
+
+*page_break
+
+Farid collects the last of the evening's paperwork -- the guest lists, the security reports, the diplomatic assessments that will need to be written by morning. His hands tremble slightly. He has the look of a man who knows that dawn will bring something terrible.
+
+"My lord Vizier," he says quietly. "What happens now?"
+
+You look out over the darkened Garden. The paper lanterns hang limp and lightless in the branches. The fountains still run, but without the lamplight they are only sound -- the whisper of water in the dark.
+
+"Now," you say, "we wait for morning."
+
+*page_break
+
+*comment === CLOSING ===
+
+You return to your chambers. The seal ring weighs more than it did this morning. You sit at your desk and stare at the reports, the letters, the coded messages that have accumulated during the Festival. Somewhere in this pile is the truth. Somewhere in this empire is the hand that pushed the servant, the mind that planned the stain, the voice that whispered to Prince Kaveh.
+
+Somewhere in this empire is the knife aimed at your back.
+
+You do not sleep. The window faces east, and you watch the horizon for the first gray thread of dawn.
+
+The lamps are extinguished. Morning brings disaster.
+
+*finish The Knife in the Back

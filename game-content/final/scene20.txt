@@ -1,0 +1,737 @@
+*comment === SCENE 20: THE EVE OF BATTLE ===
+*comment Word target: ~10,000
+*comment Variables modified: love_fulfilled, final_alliance_military,
+*comment   final_alliance_trade, final_alliance_temple, final_alliance_intelligence,
+*comment   final_alliance_nobility, rel_emperor, rel_leila, rel_navid, rel_asha,
+*comment   rel_general, rel_guild, rel_priest, rel_spy, rel_farid,
+*comment   boldness, ruthless, honest, idealist,
+*comment   conv_emperor, conv_leila, conv_navid, conv_asha
+*comment Choices: Hub structure (3-4 selections from options using *disable_reuse
+*comment   + *gosub), romance choice, Emperor conversation choice, strategic
+*comment   planning choice
+
+*temp hub_visits 0
+*temp alliance_secured false
+*temp emperor_conversation_had false
+*temp romance_farewell_had false
+*temp strategy_set false
+*temp final_strategy "undecided"
+*temp emperor_relationship "undefined"
+
+*comment === OPENING: THE LAST NIGHT ===
+
+The sky over Khazara is the color of a bruise.
+
+Purple and gold, streaked with the last violent light of a sun that descends behind the Ashghar Mountains as if it knows what tomorrow brings and does not wish to watch. The city is quiet tonight -- quieter than you have ever heard it. The bazaar closed early. The garrison gates are shut. Even the fountains in the Garden of Eternal Spring sound different, their music carrying a minor key, a note of farewell.
+
+You stand on the balcony of your chambers and breathe.
+
+The air smells of jasmine and woodsmoke and the clean mineral scent of the Tavan River. Somewhere in the Temple Quarter, a single voice chants the evening prayer, and the sound threads through the purple dusk like a silver needle through dark silk.
+
+Tomorrow, you move against the conspiracy.
+
+*page_break
+
+Tomorrow, everything changes.
+
+But tonight -- tonight is yours. These last hours before the storm, when the air is heavy with possibility and the city holds its breath. You have preparations to make. Alliances to secure. People to see.
+
+People who matter.
+
+You breathe the evening air. It carries the smells of the city -- the jasmine from the garden below, the woodsmoke from the kitchens where tomorrow's bread is already baking, the faint mineral tang of the Tavan River, the incense from the Temple Quarter. The smells of home. When did Khazara become home? You cannot remember the exact moment. It happened the way the best things happen -- gradually, then suddenly, then so completely that you cannot imagine having lived anywhere else.
+
+The city has entered your blood. Its rhythms have become your rhythms. The call to prayer is the clock by which you measure your days. The splash of the fountains is the sound you hear in your dreams. The taste of cardamom tea is the taste of every morning you have lived since the day you walked through the gates and a stammering secretary handed you a cup and said, with touching formality, "Welcome to the Citadel, my lord Vizier."
+
+*page_break
+
+Farid appears at the balcony door, his ledger under his arm, a lamp in his hand. The warm light catches the worry lines that have etched themselves into his young face over the past weeks -- lines that do not belong on a twenty-five-year-old face but that have taken up residence nonetheless, like uninvited guests who refuse to leave.
+
+"My ${title_honorific} Vizier. I have compiled a list of -- well, everything. Everyone who has requested to see you. Everything that must be done before morning." He glances at his ledger. "It is a rather long list."
+
+"Then we had better begin."
+
+*page_break
+
+*comment === HUB MENU ===
+
+*label hub_menu
+
+*if (hub_visits >= 4)
+  *goto hub_complete
+
+The evening unfolds before you. The Citadel is a constellation of lamplight, each window a warm star in the gathering dark. You have time for a few more things before you must rest. The morning will demand everything you have.
+
+What do you do?
+
+*choice
+  *disable_reuse #Secure an alliance with a key faction. [Strategic Planning]
+    *set hub_visits + 1
+    *gosub alliance_hub
+    *goto hub_menu
+  *disable_reuse #Speak with Emperor Roshan. [Defining Conversation]
+    *set hub_visits + 1
+    *gosub emperor_conversation
+    *goto hub_menu
+  *if (romance_active)
+    *disable_reuse #Find your beloved. [Final Romantic Moment]
+      *set hub_visits + 1
+      *gosub romance_farewell
+      *goto hub_menu
+  *disable_reuse #Walk the Citadel alone. [Quiet Reflection]
+    *set hub_visits + 1
+    *gosub solitary_walk
+    *goto hub_menu
+  *disable_reuse #Consult with Farid on final preparations. [Logistics]
+    *set hub_visits + 1
+    *gosub farid_preparation
+    *goto hub_menu
+  #You have done what you can. Rest now. [End the Evening]
+    *goto hub_complete
+
+*comment ============================================
+*comment === ALLIANCE HUB SUBROUTINE ===
+*comment ============================================
+
+*label alliance_hub
+
+The Council Chamber is cold at this hour. The fire has not been lit. The round table sits in shadow, the maps on the walls barely visible in the lamplight Farid carries. But you are not here for comfort. You are here to secure the support you will need tomorrow.
+
+The question is: which ally?
+
+*page_break
+
+*choice
+  *if (rel_general > 40)
+    #Send word to General Kadir. The military must stand with you.
+      *set final_alliance_military true
+      *set rel_general %+ 10
+      *set rep_military %+ 8
+      *set alliance_secured true
+      Kadir arrives in his campaign coat, the one he wears when expecting action. His iron hand gleams in the lamplight. He does not sit.
+
+      "You have made your decision," he says. Not a question.
+
+      "I move tomorrow. I need the garrison."
+
+      His jaw works. He studies you for a long moment -- reading you the way he reads a battlefield, assessing terrain and threat and the quality of the commander before him.
+
+      "I have served four emperors," he says at last. "Three of them were fools. The current one is not a fool, but he is young, and young rulers are clay in the hands of whoever shapes them." He meets your eyes. "You have shaped him well, Vizier. Better than the Dowager. Better than anyone."
+
+      He draws his sword. Not a threat -- a gesture. An old one, older than the empire itself. He holds the blade across his palms, presenting it the way generals have presented their swords to their commanders since the Age of Conquest, three centuries ago. The steel catches the lamplight and throws it back, a ribbon of fire across the dark chamber.
+
+      "The garrison is yours. Tomorrow and after."
+
+      The weight of the gesture settles over the room. You understand what it means. Not merely military support -- a career. A reputation. Thirty years of service, staked on your word and your plan.
+
+      *page_break
+
+      "General--"
+
+      "I am not finished." His voice drops, quiet and hard as the iron that replaces his hand. "I am giving you the army because I believe you are acting in the empire's interest. Not your own. Not a faction's. The empire's." He returns the sword to its scabbard with a motion so smooth it barely disturbs the air. "If I discover otherwise, I will take the army back. And I will not be gentle about it."
+
+      "Understood."
+
+      "Good." He turns to leave, his campaign coat swinging. At the door, he pauses. The lamplight catches his profile -- the strong jaw, the weathered lines, the prosthetic hand gleaming at his side. A man built for war, standing on the eve of a battle fought with documents and seals and the fragile currency of trust.
+
+      "Vizier. I have lost my hand for this empire. I have buried soldiers who were better than me. I have watched good men die on walls that should have been rebuilt ten years ago." His eyes meet yours. "Whatever happens tomorrow -- you have earned my respect. Do not make me regret giving it."
+
+      The door closes behind him. The lamplight steadies. The room feels emptier, and at the same time, more full.
+      *goto alliance_hub_end
+  *if (rel_guild > 40)
+    #Summon Guildmaster Priya. The treasury and the merchants must support you.
+      *set final_alliance_trade true
+      *set rel_guild %+ 10
+      *set rep_trade %+ 8
+      *set alliance_secured true
+      Priya arrives with wine. She always arrives with wine.
+
+      "A good vintage for a bad night," she says, pouring two cups. "Drink. You look like you need it."
+
+      You drink. The wine is warm, spiced with cinnamon and cloves, and it burns a path of warmth through the cold knot in your chest.
+
+      "I need the guilds," you say.
+
+      "You need the guilds, the treasury, the merchant fleet, and the trade networks." She sips her wine. "That is what you are asking for, even if you do not know it yet."
+
+      "Can you deliver?"
+
+      *page_break
+
+      She sets down her cup with a click that echoes in the empty chamber. "I built a trading empire from a spice cart, Vizier. I have spent twenty years learning every financial lever in this empire. I know where the money is, where it goes, and who screams when it stops flowing."
+
+      She leans forward. "Tomorrow, I will make the conspiracy's funding vanish. Every account. Every shell company. Every bribed official's salary. In a single morning, I will cut the financial throat of every person who moved against you."
+
+      "And the cost?"
+
+      "To you? Nothing. To me?" She smiles, and it is the smile of a woman who has calculated every price and found the bargain acceptable. "Let us say that favors are an investment, and I invest long-term."
+      *goto alliance_hub_end
+  *if (rel_priest > 40)
+    #Request an audience with High Priest Ashoka. The temple's moral authority is invaluable.
+      *set final_alliance_temple true
+      *set rel_priest %+ 10
+      *set rep_temple %+ 8
+      *set alliance_secured true
+      The Temple of Seven Wisdoms is never truly dark. The Eternal Flame burns in its central courtyard, casting dancing shadows on the tiled walls. Ashoka receives you in the Chamber of the First Wisdom -- Justice. His choice of room is not accidental.
+
+      "Child," he says, his voice resonant in the quiet. "You have come to ask for the temple's support."
+
+      "I have come to ask for justice."
+
+      A long silence. The Flame's light flickers across his weathered face. He is sixty-two years old, and every year is etched into his features like scripture carved in stone.
+
+      *page_break
+
+      "I have heard confessions, child. Confessions that would burn this empire to ashes if spoken aloud. I have carried those secrets for decades because the temple's role is not to judge the powerful but to guide them toward the light."
+
+      He rises. In the Flame's glow, his shadow stretches across the floor like a dark wing.
+
+      "But there comes a moment when silence becomes complicity. When the shepherd must act to protect the flock, even if acting means stepping out of the sacred space and into the mud of worldly conflict." He turns to you. "Tomorrow, the temple speaks. The Flame condemns those who use its name for darkness."
+
+      The words settle over you like a benediction and an armor.
+      *goto alliance_hub_end
+  *if (rel_spy > 35)
+    #Contact Spymaster Zara. Eyes and ears will be essential.
+      *set final_alliance_intelligence true
+      *set rel_spy %+ 10
+      *set rep_intelligence %+ 8
+      *set alliance_secured true
+      Zara does not come to the Council Chamber. You find a note slipped under a cup on the round table: "Tower of Stars. Come alone."
+
+      You go. The spiral staircase is dark, the observatory empty except for Zara, who stands by the great brass telescope, silhouetted against the star-filled sky.
+
+      "I know what you are going to ask," she says.
+
+      "Then you know my answer."
+
+      "Your answer is yes, you want my network deployed in full support of your action tomorrow. My answer is: I have already begun." She turns from the telescope.
+
+      *page_break
+
+      "Fourteen agents in the Citadel. Eight in the city. Three in the Foreign Quarter watching Ambassador Chen's door. Two on the northern road in case anyone tries to run."
+
+      "You anticipated me."
+
+      "I anticipated the situation. You are the variable. The situation is the constant." She pauses. "I do not trust easily, ${player_name}. I have told you this. But I have watched you for months. I have tested you, and you have passed tests you did not know you were taking."
+
+      She extends her hand. Not for a handshake -- she places a small object in your palm. A ring, plain iron, unadorned, warm from her hand. The mark of the Director of the Eyes. You have seen it before, on her finger, a shadow among shadows, so unremarkable that it is easy to forget the empire's most dangerous intelligence network answers to the person who wears it.
+
+      "My agents will know that ring. Show it, and they will follow your orders as if they were mine. Tomorrow and after."
+
+      The ring is lighter than you expected. Lighter than the seal ring of the Vizier. But the weight of what it represents is immeasurable.
+
+      "You are giving me command of the intelligence network?"
+
+      "I am giving you the means to survive." She turns back to the telescope, as if the conversation is finished. Then, without looking at you: "I was an orphan in the Old City. I survived because I learned to read people. To know who was dangerous and who was safe. To trust my instincts when everything else was uncertain."
+
+      She pauses. The stars wheel silently above her.
+
+      "My instincts say you are safe, ${player_name}. Do not make me regret trusting them."
+      *goto alliance_hub_end
+
+*label alliance_hub_end
+*return
+
+*comment ============================================
+*comment === EMPEROR CONVERSATION SUBROUTINE ===
+*comment ============================================
+
+*label emperor_conversation
+
+*set emperor_conversation_had true
+*set conv_emperor + 1
+
+You find the Emperor in the Garden of Eternal Spring.
+
+The garden at night is a different world from the garden by day. By day it is orderly, precise, a triumph of geometric beauty -- channels of water in straight lines, fruit trees in measured rows, rose bushes trimmed to mathematical perfection. By night the precision dissolves. The moonlight softens the angles. The water channels become streams of silver. The trees cast shadows that overlap and merge, creating a darkness that is not threatening but embracing, like the inside of a cupped hand.
+
+The scent is intoxicating. Night jasmine -- the small white flowers that open only after sunset, pouring their sweetness into the dark air with the extravagance of a poet who writes only for the night. Beneath it, the deeper scent of the pomegranate trees, their fruit ripening in the autumn warmth, and the clean wet smell of the fountain's spray.
+
+He is alone -- truly alone, which is rare for the ruler of the world's greatest empire. He has dismissed his guards to the garden's perimeter, where they stand like statues among the hedgerows, close enough to protect, far enough to grant the illusion of privacy. He sits on the marble bench beside the central fountain, his imperial robes pooled around him like white water, staring at the night sky.
+
+He is sixteen years old, and he looks it. In the moonlight, with the fountain's whisper the only sound, he could be any boy. A scholar's son, sitting up late with thoughts too heavy for his age. A merchant's heir, dreaming of the sea. A farmer's child, counting stars because the world is full of things he does not yet understand and each star seems like an answer to a question he has not learned to ask.
+
+But he is not any boy. He is the light of the world, the shadow of god upon the earth, Emperor Roshan IV of the Khazaran Empire, and tomorrow his empire will be shaken to its foundations.
+
+*page_break
+
+"Vizier," he says, without turning. He heard your footsteps on the gravel path. "I hoped you would come."
+
+You sit beside him. The marble bench is cool through your robes. The garden smells of night jasmine and wet stone.
+
+"I know what is happening," he says. His voice is steady. "I know what you have discovered. I know what tomorrow brings."
+
+*if (rel_emperor > 65)
+  He turns to look at you, and his eyes are clear. Not the eyes of a frightened child. Not the eyes of a boy performing royalty. The eyes of a young man who has been paying attention.
+
+  "I am not a fool, Vizier. I have never been a fool. I simply... needed time to learn. And someone to teach me."
+*elseif (rel_emperor > 40)
+  He turns to you. There is fear in his eyes, but it is controlled, managed. The fear of a person who is afraid and has decided to act anyway.
+
+  "I know I have not always listened. I know I have been -- difficult. Impulsive." A pause. "But I am listening now."
+*else
+  He does not look at you. His hands grip the edge of the bench, knuckles white.
+
+  "I do not know if I trust you fully, Vizier. I do not know if I trust anyone. But I know what is coming, and I know I cannot face it alone."
+
+*page_break
+
+*choice
+  #"You have grown into a ruler, Your Majesty. The empire is fortunate."
+    *set rel_emperor %+ 12
+    *set emperor_relationship "supportive"
+    *set honest %+ 5
+    *if (route = 1)
+      The words are not flattery. You have watched this boy wrestle with the weight of a crown that was placed on his head too soon, and you have watched him grow beneath it. Not quickly enough for some. Not gracefully enough for others. But genuinely, stubbornly, with a courage that the court does not always see because it is not the loud, martial courage they understand.
+
+      Roshan is quiet for a moment. Then: "My father told me once that the measure of an emperor is not whether he is afraid, but whether his people know it." He looks at the stars. "I am afraid, Vizier. But I will not show it tomorrow."
+    *else
+      Roshan straightens on the bench. Something in his posture shifts -- the boy receding, the emperor emerging.
+
+      "Thank you," he says. "I have not heard that from many people." He pauses. "I have heard it from you, and I remember every time."
+    *goto emperor_end
+  #"Tomorrow will be dangerous, Your Majesty. I need to know you are ready."
+    *set rel_emperor %+ 8
+    *set emperor_relationship "honest"
+    *set boldness %+ 5
+    Roshan's jaw tightens. For a moment you see the flash of the defensive teenager, the boy who hates being reminded of his youth. Then it passes, and what remains is something older.
+
+    "I am ready," he says. "Or I will be, by morning. I have spent the night reading the accounts of my ancestors who faced crises like this. Roshan the First at the Battle of the Valley. Empress Safiya during the Second Civil War." He pauses. "They were afraid too. They just did not write about it."
+
+    *if (route = 1)
+      "You do not need to be your ancestors, Your Majesty. You need to be yourself."
+
+      "Myself." He considers this. "Myself is a sixteen-year-old boy on a throne that was carved for a giant. But you are right. Myself is all I have."
+    *else
+      "Ready is not fearless," you say. "Ready is afraid and standing anyway."
+
+      "Then I am the readiest person in the empire," he says, and something that is almost a smile crosses his face.
+    *goto emperor_end
+  #"Whatever happens tomorrow, the decisions are yours. You are the Emperor."
+    *set rel_emperor %+ 10
+    *set emperor_relationship "empowering"
+    *set idealist %+ 5
+    *if (route = 1)
+      This is the gift you have been working toward since the day you arrived. Not power given or power taken, but power acknowledged. The boy is becoming a man. The emperor is becoming a ruler. And the hardest part of your job has always been this: knowing when to step back.
+
+      Roshan looks at you. His eyes are bright, and you realize with a start that they are bright with unshed tears.
+
+      "No one has ever said that to me," he whispers. "Not my mother. Not the Council. Not anyone. They all want to make my decisions for me. You are the only one who ever wanted me to make them myself."
+    *else
+      Roshan nods slowly. "The decisions are mine," he repeats, as if testing the weight of the words. "Yes. They are." He straightens. "I may ask your counsel, Vizier. I hope you will give it honestly."
+
+      "Always, Your Majesty."
+
+      "Then we face tomorrow together. Emperor and Vizier. As it was meant to be."
+    *goto emperor_end
+
+*label emperor_end
+
+*page_break
+
+You sit together in the garden for a while longer. The fountain whispers. The stars turn overhead. The jasmine breathes its sweetness into the night.
+
+A boy and his Vizier, on the eve of a battle that will determine the fate of the world's greatest empire.
+
+When you finally rise to leave, Roshan speaks once more.
+
+"Vizier?"
+
+"Your Majesty?"
+
+*if (rel_emperor > 70)
+  "Thank you. For everything. Whatever happens tomorrow -- I am glad you came to Khazara."
+
+  The words follow you back through the garden like a blessing and a burden. You carry them carefully, like a flame cupped in your hands against the wind.
+*else
+  "Be careful tomorrow."
+
+  Two words. But from an emperor who has learned not to show fear, they mean more than a speech.
+
+*return
+
+*comment ============================================
+*comment === ROMANCE FAREWELL SUBROUTINE ===
+*comment ============================================
+
+*label romance_farewell
+
+*set romance_farewell_had true
+
+*if (romance_leila)
+  *set conv_leila + 1
+  *if (rel_leila > 75)
+    *set love_fulfilled true
+  You find Leila in the Library.
+
+  Not reading. Sitting in one of the hidden alcoves, surrounded by books she has not opened, a sheet of paper before her covered in crossed-out lines. She is trying to write, and the words will not come.
+
+  "I have been trying to write a poem," she says, when she sees you. "Something for -- for tomorrow. Something that captures what I want to say to you before--" She stops. Crumples the paper. "It is terrible. Every word I write is a lie, because no poem can contain what I actually feel."
+
+  *page_break
+
+  You sit beside her in the alcove. The library is empty at this hour. The only light comes from a single oil lamp, its flame reflected in the glass cases that hold the rarest manuscripts. The air smells of old paper and cedar and the faint perfume she wears -- rose, always rose.
+
+  "Then don't write," you say. "Tell me."
+
+  She turns to face you. Her dark eyes are liquid in the lamplight.
+
+  "I am a poet, ${player_name}. Words are my life. My craft. My weapon. And for the first time in my life, they are not enough." She takes your hand. Her fingers are ink-stained, trembling. "I am afraid. Not of what happens tomorrow -- I do not understand politics well enough to fear the right things. I am afraid of losing you. I am afraid that the world I have found -- this world where someone looks at me and sees more than a clever girl with a sharp tongue -- I am afraid that world ends tomorrow."
+
+  *set rel_leila %+ 15
+
+  *page_break
+
+  *if (love_fulfilled)
+    You pull her close. In the quiet of the library, surrounded by the words of a thousand poets, you hold the only poet who matters.
+
+    "I cannot promise you tomorrow," you say. "But I can promise you this: whatever I do, I do it knowing that you are waiting. And that makes me braver than any poem could."
+
+    She laughs -- a broken, beautiful sound. "That was terrible," she whispers. "That was the worst poetry I have ever heard." She presses her forehead against yours. "Say it again."
+
+    You do. And this time, the words are not terrible at all.
+
+    Later, as you prepare to leave, she presses a folded paper into your hand.
+
+    "I lied," she says. "The poem was not terrible. It is the best thing I have ever written." She kisses your cheek, and her lips are warm and her eyes are bright with tears she will not shed. "Read it tomorrow. When you need courage."
+  *else
+    You hold her hand in the lamplight and say what you can. Not enough. It is never enough, and you both know it. But the touch, the warmth, the shared space in the quiet library -- these things are their own language. A language that does not require poetry.
+
+    "Be careful," she says, as you leave. "I have not finished writing about you. You owe me at least ten more couplets."
+*elseif (romance_navid)
+  *set conv_navid + 1
+  *if (rel_navid > 75)
+    *set love_fulfilled true
+  You find Navid on the Citadel walls.
+
+  He is standing watch, though the duty roster does not require it. He is looking north, toward the mountains and the frontier beyond them, and his hand rests on his sword hilt in the unconscious posture of a man who has carried a weapon longer than he has not.
+
+  "Vizier," he says, when he hears you approach. Then, softer: "${player_name}."
+
+  The use of your name. Not your title. After months of military formality, the intimacy of it still catches you off guard.
+
+  *page_break
+
+  You stand beside him on the wall. The city spreads below, a constellation of lamplight beneath the stars. The wind carries the scent of the river and the faint tang of the garrison fires.
+
+  "I was thinking about the frontier," he says. "Fort Darband. The wall that needs rebuilding. The soldiers who hold it." A pause. "I was thinking about how strange it is that I am here, in the capital, on the eve of a battle that has nothing to do with swords."
+
+  "This battle has everything to do with swords," you say. "We have simply chosen a different field."
+
+  He turns to look at you. The scar on his cheek is silver in the moonlight. His eyes, usually so guarded, are open.
+
+  *set rel_navid %+ 15
+
+  *page_break
+
+  "I am a soldier," he says. "I know how to fight. I know how to follow orders. I know how to stand on a wall and wait for the enemy." His voice drops. "I do not know how to say what I want to say to you tonight."
+
+  "Try."
+
+  A long silence. The wind moves over the wall. Then:
+
+  *if (love_fulfilled)
+    "When I was recalled to the capital, I thought it was a punishment. A demotion. A soldier taken from the real fight and put in a gilded cage." He faces you fully. "I was wrong. The real fight was here. And the person I was meant to stand beside was you."
+
+    He reaches out and takes your hand. His grip is strong, calloused, warm. The grip of a man who holds on.
+
+    "Tomorrow, I will be beside you. Not because it is my duty. Because there is nowhere else I would rather be."
+
+    He kisses you. Brief, fierce, like a sword drawn and sheathed. A soldier's kiss -- efficient, devastating, and over before you can catch your breath.
+
+    "Now go," he says. "Rest. Tomorrow, we fight."
+  *else
+    "I want you to come back," he says. "From whatever happens tomorrow. That is what I want to say." He squeezes your hand, once, and lets go. "Now go rest. The wall will be here in the morning."
+*elseif (romance_asha)
+  *set conv_asha + 1
+  *if (rel_asha > 75)
+    *set love_fulfilled true
+  You find Asha in the Temple garden.
+
+  She is sitting beneath the pomegranate tree that she has told you is her favorite -- the one whose branches arch over the meditation pool like hands held in prayer. The Eternal Flame's light filters through the leaves, casting golden patterns on her upturned face.
+
+  She is not reading. She is not asking questions. She is simply sitting, and the stillness of it tells you everything about her state of mind.
+
+  "I knew you would come," she says, without opening her eyes. "The Third Wisdom says courage is acting despite fear. You always act. Even when you are afraid."
+
+  *page_break
+
+  You sit beside her under the pomegranate tree. The meditation pool reflects the stars and the Flame, twin heavens folded into still water. The garden smells of temple incense and the overripe sweetness of fallen fruit.
+
+  "I have been thinking," she says. "About faith. About whether the Flame is truly eternal, or whether it is simply a fire that has been tended for three hundred years by people who refused to let it die."
+
+  "Does it matter?"
+
+  "That is exactly the right question." She opens her eyes and looks at you. "It matters because of what the answer reveals about us. If the Flame is divine, we are servants. If it is a fire we choose to maintain, we are something more terrifying. We are the ones who decide what is sacred."
+
+  *set rel_asha %+ 15
+
+  *page_break
+
+  *if (love_fulfilled)
+    She turns to face you fully. The firelight catches the tears she has been holding back, and they gleam like amber.
+
+    "I have asked a thousand questions since we met," she says. "About the Wisdoms. About the empire. About the nature of courage and justice and truth. But tonight I want to ask only one." She takes your hand. "Will you come back to me?"
+
+    "Yes."
+
+    "That is not a question you can answer with certainty."
+
+    "No. But it is a promise I can make with everything I have."
+
+    She leans into you, her head against your shoulder, her fingers interlaced with yours. The pomegranate tree shelters you both. The Eternal Flame burns steady.
+
+    "I will hold you to that promise," she whispers. "The Flame is my witness."
+  *else
+    She takes your hand briefly. "Come back," she says. "There are questions I have not finished asking you."
+
+*return
+
+*comment ============================================
+*comment === SOLITARY WALK SUBROUTINE ===
+*comment ============================================
+
+*label solitary_walk
+
+You walk the Citadel alone.
+
+The corridors are nearly empty at this hour. A handful of servants move through the lamplight on errands you do not ask about. A pair of guards salute as you pass, their faces young and solemn. You wonder, briefly, whether they will still salute you this time tomorrow.
+
+Through the Jade Throne Room. Empty now, vast and echoing, the great seat of white jade glowing faintly in the moonlight that falls through the high windows. Your footsteps echo on the marble floor. The geometric patterns in gold leaf catch the light and release it, a silent conversation between stone and sky.
+
+You pause before the throne.
+
+*page_break
+
+It is smaller than you remember. Or perhaps you have grown larger -- not in body, but in understanding. The first time you saw this throne, it seemed like the center of the world. A sacred object, charged with three centuries of imperial power. Now you see it for what it is: a chair. A beautiful chair, carved with extraordinary skill from a stone of extraordinary value. But a chair.
+
+The power was never in the jade. It was in the people who gathered around it and agreed -- through loyalty or fear or habit or hope -- that the person who sat here was worthy of obedience. That agreement is the real throne. And it is that agreement, not this stone, that is in danger.
+
+In the morning, this room will be the stage for the empire's transformation. The thought is vertiginous -- like standing at the edge of a high wall and looking down, feeling the pull of gravity and the equal pull of something else, something that wants to fly.
+
+*page_break
+
+You continue. Through the Hall of Mirrors, where your reflection multiplies in the glass -- a hundred versions of you, stretching into infinity, each one the same and each one alone. You stop and stare at the nearest reflection. The person who looks back is a stranger and a friend, someone you are still learning to recognize.
+
+Through the Gallery of Emperors, where painted faces watch from the walls. Roshan the First, fierce and young, his hand on a sword, his eyes burning with the fire of a man who carved an empire out of wilderness and blood. Empress Safiya the Wise, her eyes gentle and knowing, the only ruler in three centuries who abdicated voluntarily, who gave away the crown and lived out her years in a garden. Darius III, the Emperor who died too soon and left a boy on a throne -- his portrait is the newest, the paint still bright, his face still a living memory to everyone in the Citadel.
+
+You stop before the portrait of the previous Vizier. The face is kind, intelligent, painted in the three-quarter pose traditional for officials of rank. He does not know, in this painting, that he is already dead. That the tea he will drink tomorrow evening contains blue lotus venom. That the person who served it to him served the empire's enemies.
+
+"I found them," you say to the painting. "I know who did this to you."
+
+The painting does not answer. But the silence feels, for a moment, like gratitude. Or perhaps like permission.
+
+*page_break
+
+You end your walk on the eastern wall, where the Citadel looks out over the city toward the Jade Sea. The docks are dark. The river reflects the stars, a second sky flowing slowly toward the distant coast. A single barge, lit by a lantern at its prow, moves silently downstream, its wake a trail of silver in the black water.
+
+You rest your hands on the stone parapet. The stone is cool, rough with age, and beneath your fingers you feel the work of masons who lived and died two centuries before you were born. They built this wall to last. They could not have imagined the battles that would be fought within it -- not battles of swords and siege engines, but battles of whispers and seals and the careful, patient destruction of trust.
+
+The empire stretches before you in the darkness. Two million souls in this city alone. Millions more in the provinces, the mountains, the coast. Farmers rising before dawn to tend their fields in the Valley of the Ashar. Soldiers standing watch on the Wall of Roshan I, their breath clouding in the cold northern air. Merchants counting their wares in the bazaars of a dozen cities. Scholars bending over manuscripts in libraries lit by tallow candles. Children sleeping in their mothers' arms, dreaming of whatever children dream of in an empire that does not know it is at war with itself.
+
+All of them trusting that the Citadel -- this gleaming fortress of marble and jade -- will protect them.
+
+*page_break
+
+*if (route = 1)
+  You have spent months protecting the boy on the throne. Tomorrow, you protect the throne itself. Not the jade chair in the empty room behind you, but the idea it represents: that an empire of a hundred million people can be governed justly, by law and not by conspiracy, by a ruler who earns authority rather than seizing it.
+*elseif (route = 2)
+  You have spent months building a web of power in the shadows. Tomorrow, you step into the light. The web will hold or it will not. The alliances you forged in darkness will prove their worth in the harsh glare of public scrutiny. You have played the long game, the shadow game, and now the shadows are running out.
+*elseif (route = 3)
+  You have spent months trying to change the empire from within. Tomorrow, the empire discovers whether it can survive the change. Reform is a gamble -- you are betting that the empire's foundations are strong enough to bear the weight of transformation, that the walls can be rebuilt without the house collapsing. It is the bravest gamble in the world. It is also the most dangerous.
+
+The wind off the river is cool on your face. You close your eyes and breathe. One breath. Two. Three.
+
+The stars turn overhead. The city breathes beneath you. The barge drifts downstream, its lantern dwindling to a point of light, then vanishing around the river's bend.
+
+Then you turn from the wall and walk back toward your chambers, and toward tomorrow.
+
+*return
+
+*comment ============================================
+*comment === FARID PREPARATION SUBROUTINE ===
+*comment ============================================
+
+*label farid_preparation
+
+*set rel_farid %+ 8
+
+Farid has transformed your study into a command center. Maps cover the walls -- the Citadel in detail, the city in broader strokes, the empire in the sweeping lines of a cartographer who understood that geography is destiny. A timeline of tomorrow's planned actions stretches across the desk in his meticulous hand, each entry annotated with alternative outcomes and fallback positions. Stacks of documents are organized by category, each marked with a colored tab: red for urgent, blue for supporting evidence, green for legal authority. A fresh pot of cardamom tea steams on the side table, its fragrance the only gentle thing in the room.
+
+"My ${title_honorific} Vizier," he says, gesturing at the organized chaos with a mixture of pride and anxiety. "I have prepared contingency plans for seven possible outcomes. Eight, if you count the one where everything goes perfectly, which I included for -- well, for morale."
+
+"And how likely is the perfect outcome?"
+
+"Per my calculations? Approximately four percent. But it is a very well-documented four percent."
+
+*page_break
+
+You work together through the logistics. Messages to be sent at dawn -- sealed, coded, distributed through three separate messenger networks in case one is compromised. Documents to be filed with the Court of Records, establishing the legal framework for what is to come. Copies of the evidence, stored in secure locations throughout the city, insurance against the possibility that the originals are destroyed.
+
+"The evidence package will be delivered simultaneously to four locations at the seventh hour," Farid says. "The Council Chamber. The Garrison command office. The Temple of Seven Wisdoms. And the Printing House in the Scholar's Quarter."
+
+"The Printing House?"
+
+"If the official channels fail, the truth goes to the presses. By midday, every literate person in Khazara will know." He meets your eyes. "I learned that from the previous Vizier. He said: 'Secrets are the currency of power. But truth, distributed widely enough, is beyond any currency.'"
+
+*page_break
+
+You review the legal authorities to be invoked.
+
+"Regulation 224-C," Farid says. "The Vizier's investigative authority. Regulation 88-A, the Commercial Crisis Protocol -- Priya invoked it during the embargo, and the precedent stands. Regulation 305-D, which grants the Vizier the authority to convene an emergency session of the Council without the Dowager's consent."
+
+He produces this last regulation with the satisfaction of a man pulling a sword from a stone.
+
+"305-D has not been invoked in forty-seven years," he says. "But it is still in the code. I checked. Twice. And then I had Scholar Miriam verify my reading of the Classical Parvani original, because the modern translation is ambiguous on the question of quorum requirements. She confirmed my interpretation. The regulation stands."
+
+"Farid."
+
+"Yes, my ${title_honorific} Vizier?"
+
+"You are, without question, the finest secretary in the history of the Khazaran Empire."
+
+*page_break
+
+His ears turn crimson. "That is -- that is a statistically unverifiable claim, my ${title_honorific} Vizier, given the limited records of previous secretaries' performance metrics. But I -- I appreciate the sentiment very much."
+
+He busies himself with the tea, pouring two cups with the careful precision he brings to everything. The cardamom is strong tonight. He has added extra, you notice -- his own small rebellion against the anxiety of the hour.
+
+When he turns back, his eyes are suspiciously bright.
+
+"I want you to know," he says, in the careful, measured voice of someone who has rehearsed this in front of a mirror, "that when you arrived in Khazara, I was terrified. My previous master was dead. The empire was in chaos. And here was this stranger from the provinces who did not know which fork to use at a state dinner."
+
+He pauses. "You still do not know which fork to use at a state dinner."
+
+"Farid--"
+
+"But you know something more important. You know which people to trust, and you trust them completely. You trusted me. From the very beginning. A stammering, tea-spilling secretary who could not even be present on the day his master needed him most." His voice catches, but he presses on. "You trusted me, and that trust -- that single act of faith in a person nobody else noticed -- changed my life."
+
+He straightens to his full, modest height. "I will not forget that. Whatever happens tomorrow, I will not forget."
+
+The silence that follows is the silence of a church -- not empty, but full. Full of things that do not need to be said because they are already understood.
+
+"Now," Farid says, clearing his throat, "shall we review the contingency plan for outcome number three? It involves a rather creative application of maritime law that I am quite proud of."
+
+*return
+
+*comment ============================================
+*comment === HUB COMPLETE: THE FINAL NIGHT ===
+*comment ============================================
+
+*label hub_complete
+
+*page_break
+
+*comment === FINAL STRATEGY REFLECTION ===
+
+The hour is late.
+
+The Citadel has fallen into the deep hush that comes only after midnight, when even the servants have sought their beds and the guards walk their rounds in silence, their footfalls muffled by centuries of marble worn smooth by the passage of feet. The oil lamps burn low in your chambers, their wicks drowning in the last of their fuel, casting a warm amber light that makes the room feel smaller, closer, like a hand cupped around a flame.
+
+Through the window, the sky is a bowl of black silk sewn with silver. The crescent moon has set behind the mountains. The Eternal Flame is a distant glow above the Temple Quarter, steady as a heartbeat, patient as faith.
+
+You sit at your desk. The wood is warm under your hands -- sandalwood, you realize, as you have always known but never noticed. The grain runs in whorls and eddies like the current of a river. Before you lies Farid's timeline, marked with tomorrow's actions in ink that is still fresh enough to smell. Beside it, the evidence that will bring the conspiracy into the light, stacked and tabbed and cross-referenced, a monument to diligence and desperation. And on your finger, the Vizier's seal ring -- jade and silver, smooth and cold, the weight of an empire compressed into a circle of stone and metal.
+
+You turn the ring slowly. The jade catches the lamplight and holds it, a green fire trapped in stone.
+
+*page_break
+
+Tomorrow.
+
+*if (route = 1)
+  Tomorrow, you will confront the forces that have tried to control the Emperor and corrupt the throne. You will stand between Roshan and those who would use him, as you have stood from the beginning. The Loyalist's path was never easy. It asked you to serve without seizing, to protect without possessing. It asked you to believe that a sixteen-year-old boy could become a great emperor, when every voice in the Citadel told you otherwise.
+
+  You believed. You still believe. And tomorrow, you will prove it.
+*elseif (route = 2)
+  Tomorrow, the shadow game reaches its conclusion. The web you have woven -- alliances, information, influence -- will either hold or tear. The Kingmaker's path was never clean. It asked you to build power in the darkness, to manipulate where others commanded, to see the empire as a mechanism and yourself as the hand on the lever.
+
+  You have paid the price. You have compromised. You have made choices that the person who walked through Khazara's gates would not recognize.
+
+  But the empire is still standing. And tomorrow, you will ensure it stays that way.
+*elseif (route = 3)
+  Tomorrow, the revolution you have been building in silence will announce itself. Not with violence -- with truth. With evidence. With the voices of every person in the empire who has been told that the old order is the only order.
+
+  The Revolutionary's path was never safe. It asked you to challenge three centuries of tradition, to look at the Silk Throne and see not a sacred symbol but a problem to be solved. It asked you to believe that change is possible, even in an empire that has been calcifying for generations.
+
+  You believe. You have always believed. Tomorrow, the empire discovers whether belief is enough.
+
+*page_break
+
+*comment === CLOSING: THE SEAL RING ===
+
+You remove the seal ring from your finger and hold it in your palm.
+
+Jade and silver. The seal of the Grand Vizier of the Khazaran Empire. The same ring that hung on the finger of your predecessor as the blue lotus venom burned through his veins. The same ring that was placed on your finger on the day you arrived, when Khazara was a dream on the horizon and the Citadel was a stranger's house.
+
+It is warm from your skin. It is heavy with the weight of every decision you have made.
+
+You slide it back onto your finger. The fit is perfect. It has always been perfect.
+
+*page_break
+
+You extinguish the lamp. The room falls into darkness, broken only by the faint glow of the Eternal Flame visible through your window, burning steady over the Temple Quarter. Three hundred years of fire. Three hundred years of empire.
+
+You lie down.
+
+*if (romance_farewell_had)
+  *if (love_fulfilled)
+    You think of the person you love. The warmth of their hand. The sound of their voice. The promise made tonight, fragile as a flame and stubborn as the faith that tends it.
+  *else
+    You think of the person who cares for you. Their words tonight, simple and true. A kindness in the darkness.
+
+*if (emperor_conversation_had)
+  You think of the Emperor. Sixteen years old. Sitting alone in the garden, staring at stars. Ready.
+
+You think of Farid. Loyal, stammering, brilliant Farid, who has organized tomorrow's revolution with the same precision he brings to filing tax receipts. Who was spared, by accident or design, on the day his master was murdered, and who has spent every day since earning the life that was given back to him.
+
+You think of the conspiracy. The mastermind. The web. The darkness that has been growing in the heart of the empire for years, patient and methodical, feeding on grievance and ambition and the quiet corruption of institutions that were built to protect.
+
+Tomorrow, you bring it into the light.
+
+*page_break
+
+You rise from the desk. You walk to the window one last time.
+
+The city is dark now, truly dark, the last lamps extinguished, the last voices silenced. Only the Eternal Flame remains -- a golden point of light above the Temple Quarter, burning as it has burned for three centuries, through invasion and civil war and plague and prosperity and every kind of human folly.
+
+You think about what Asha once told you: that the Flame might be divine, or it might simply be a fire that has been tended by human hands for so long that the distinction no longer matters. You think she is right. Perhaps the keeping is the sacred part. Perhaps the empire is the same -- not a divine institution, not an eternal truth, but a thing that endures because people choose, every day, to tend it.
+
+Tomorrow, you choose again.
+
+*page_break
+
+You prepare for sleep. The rituals of the body: washing your face in the basin of cool water drawn from the Tavan aqueduct, the water that has traveled miles through stone channels older than the current dynasty. Changing from your robes into the simple cotton of nightclothes. Setting the seal ring on the bedside table, where it gleams like a green eye in the last of the lamplight.
+
+The bed is cool. The silk sheets carry the faint scent of lavender -- the servants' work, their small, anonymous kindness. You lie on your back and stare at the ceiling, where the last reflections of the oil lamp play across the plaster in patterns that resemble maps of countries you have never visited.
+
+*page_break
+
+Sleep comes slowly. You lie in the darkness and listen to the city -- the distant bark of a dog in the Old City, where the streets are narrow and the shadows are deep. The murmur of the Ashar and the Tavan, the two great rivers that converge at the heart of the city, their waters mingling in the darkness as they have mingled for millennia, indifferent to the affairs of the empire that has risen on their banks. The faint chime of the mechanical clock in the Tower of Stars, marking the first hour past midnight with a sound like a silver coin dropped into still water.
+
+The last midnight of the old order.
+
+*if (romance_farewell_had)
+  *if (love_fulfilled)
+    You touch the place on your chest where your heart beats. Steady. Certain. Carrying a promise that was made tonight, under stars or under lamplight, in a garden or a library or on a wall -- a promise that tomorrow is not an ending but a beginning.
+  *else
+    You think of a voice, a touch, a pair of eyes that held something more than friendship and less than certainty. The future is a country neither of you has visited. But you will enter it together, or as close to together as the world allows.
+
+*if (route = 1)
+  Tomorrow, you defend the throne. Not the jade seat, but the boy who sits on it, and the idea he represents: that power can be wielded with justice, that a ruler can serve rather than devour, that the empire's story is not yet finished.
+*elseif (route = 2)
+  Tomorrow, you seize the reins. The web you have woven will hold or it will tear, and if it tears, you fall. But you have climbed too high to descend by the path you came. The only way out is through.
+*elseif (route = 3)
+  Tomorrow, you change the world. Or the world changes you. The empire is a river, and you have been trying to alter its course. Tomorrow, you discover whether the river can be turned, or whether it will drown the person foolish enough to stand in its path.
+
+*page_break
+
+Tomorrow, everything changes.
+
+Your eyes close. The darkness is complete. The seal ring glows on the bedside table, a small green flame in the night.
+
+Sleep takes you. And in the last moment before consciousness dissolves, you feel it -- the weight of what is coming, settling over you like a blanket of silk and iron. It is terrifying. It is necessary. It is, in its own strange way, beautiful.
+
+The Eternal Flame burns. The rivers flow. The empire sleeps.
+
+Tomorrow.
+
+*finish Act 3: The Reckoning

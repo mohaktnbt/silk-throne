@@ -1,0 +1,731 @@
+*comment === SCENE 10: ALLIES AND ENEMIES ===
+*comment Word target: ~12,000 (~4,000 per route variant)
+*comment Variables modified: evidence_count, boldness, ruthless, honest, idealist,
+*comment   Loyalist: rel_general, rel_emperor, rel_navid, rep_military, strength
+*comment   Kingmaker: rel_guild, rel_spy, rel_kaveh, rep_intelligence, cunning
+*comment   Revolutionary: rel_soraya, rel_guild, rep_trade, rep_nobility, diplomacy
+
+*temp ally_secured false
+*temp sabotage_discovered false
+*temp old_city_danger "none"
+*temp coalition_strength 0
+*temp meeting_location "undecided"
+
+*comment === ROUTE BRANCHING ===
+
+*if (route = 1)
+  *goto loyalist_northern_journey
+*elseif (route = 2)
+  *goto kingmaker_alliance_building
+*elseif (route = 3)
+  *goto revolutionary_coalition
+*else
+  *bug Route not set. Expected 1, 2, or 3.
+
+*comment ============================================================
+*comment === LOYALIST ROUTE: THE NORTHERN INSPECTION ===
+*comment ============================================================
+
+*label loyalist_northern_journey
+
+Three days after the Emperor's first independent decree, General Kadir summons you to the Garrison.
+
+It is not a polite request. The message is written in the General's own hand -- blunt, economical, each letter pressed into the parchment like a boot print in mud: "Vizier. Map room. Dawn. Bring boots, not slippers."
+
+You arrive as the garrison drums are sounding morning drill. The map room is cold, lit by a single lamp that throws long shadows across charts of the northern frontier. Kadir is already there, standing before the largest map, his iron hand tracing a line along the Wall of Roshan I.
+
+He does not look up.
+
+"You want to protect the Emperor," he says. No greeting. "I respect that. But the boy's greatest threat is not his mother. It is this." His iron finger strikes the map at Fort Darband, leaving a small dent in the parchment. "The northern border is collapsing. The Khanates are raiding deeper into imperial territory every month. The Wall is crumbling. And someone -- I cannot prove who -- is feeding the enemy information about our garrison rotations."
+
+He turns. The lamplight catches the scar tissue where his left hand meets the iron prosthetic.
+
+"I want you to see it for yourself. Come north with me. A three-day inspection. See the Wall. See the garrisons. See what the empire's defenders are working with."
+
+*page_break
+
+*fake_choice
+  #The invitation surprises you. Kadir does not invite civilians into his domain lightly. This is a test -- and an offer of alliance.
+    *set boldness %+ 5
+    *set rel_general %+ 5
+    You study the General's face. He is not a man given to social gestures. If he wants you at the northern border, it is because he wants you to see something that words and reports cannot convey. He wants you to understand, in your bones, what the empire faces. And he wants to know if you are the kind of Vizier who can be trusted with that understanding.
+
+    This is not just an inspection. It is an interview.
+  #You think immediately of the Emperor. Three days away from the capital means three days in which the Dowager can operate unopposed.
+    *set boldness %- 5
+    *set ruthless %+ 5
+    Three days. It might as well be three years, in the currency of court politics. The Dowager operates on a timescale measured in hours. Every meal, every audience, every quiet word in the Emperor's ear is a move in her endless campaign to maintain control. Your absence will be noticed. Exploited.
+
+    But the northern border is real, and the threat it represents dwarfs anything the Dowager can do in three days.
+
+*page_break
+
+You ride north with General Kadir and an escort of twenty cavalry. Captain Navid leads the escort, his scarred face set in the alert stillness of a soldier returning to familiar ground. Farid stays behind to manage the Vizier's office in your absence -- his face, as you depart through the Citadel's northern gate, is a portrait of professional anxiety that would make a fine subject for one of the miniature painters.
+
+The journey takes you out of the capital on the North Road -- a highway of packed earth and gravel that was once the empire's great military artery, built under Roshan II for the rapid movement of troops to the frontier. It has seen better days. Potholes the size of wagon wheels pock the surface. Drainage ditches have silted up. In places, the road narrows where farmers have encroached on its margins, planting crops in the good soil of the embankments.
+
+Kadir rides in silence, but you see his eyes cataloguing every defect. The road, like the Wall, is his responsibility. The road, like the Wall, has been starved of funding while the capital's fountains gleam.
+
+The journey takes you out of the fertile valley and into the foothills. The landscape changes -- lush green giving way to scrubby brown, cultivated fields to wild grass, the scent of jasmine to the smell of dust and horse. By the second day, the Wall of Roshan I is visible on the horizon, a dark line across the steppe like a wound in the earth.
+
+It is smaller than you expected. The histories describe it as an engineering marvel, a barrier that held the Khanate hordes for three centuries. What you see is a crumbling line of stone, perhaps fifteen feet high, with gaps where entire sections have collapsed. Watchtowers dot its length, but many are dark. Unmanned.
+
+"That," Kadir says, riding beside you, "is the empire's first line of defense." The bitterness in his voice could strip paint from a wall.
+
+*page_break
+
+*page_break
+
+Fort Darband is worse.
+
+You smell it before you see it -- the acrid tang of recently burnt timber, mixed with the dust of shattered mortar and the animal stink of horses kept in close quarters. The fortress resolves from the haze of the steppe like a broken jaw: walls that should stand straight are sagging, towers that should gleam with imperial crimson are blackened with smoke, and the great gate that should announce the empire's authority hangs on its hinges at a drunken angle.
+
+The fortress is functional -- barely. The outer wall has been hastily repaired after the Khanate raid, but the patches are visible: new stone mortared over old, wooden palisades filling gaps where masonry should stand. The garrison is understaffed. The soldiers you see are competent, disciplined, but stretched thin. Eyes that have seen too many night watches, bodies that carry the lean tension of men who sleep with their swords.
+
+Kadir leads you through the fort with the efficiency of a man giving a tour he has given before and dreads giving again. The armory: half-empty, swords outnumbering the men who carry them only because they take the weapons from the dead. The granary: two months' supply, not enough if the passes close early. The infirmary: three wounded soldiers, two from Khanate arrows, one from a training accident.
+
+"We lose a man every week," Kadir says. "Raids, skirmishes, the occasional full assault. The reinforcements you helped the Emperor send will arrive in days, and they are welcome. But two thousand men do not fix a wall that needs twenty thousand men and five years of engineering."
+
+*page_break
+
+That evening, you dine with the garrison officers in the fort's mess hall. The food is plain -- flatbread, dried meat, a thin stew of lentils and whatever vegetables survived the last supply run. The officers eat in silence, with the focused economy of people who have learned not to waste food or time.
+
+After the meal, Navid approaches you. He has been quiet during the inspection, but you have noticed him watching the wall, the garrison, the soldiers. His jaw has been tight since you arrived.
+
+"This is where I served," he says. "Before I was recalled to the capital. This wall. This fort." He pauses. "It was better then. Not much. But better."
+
+*choice
+  #"What changed?"
+    *set rel_navid %+ 8
+    *set boldness %- 5
+    Navid is quiet for a moment. The mess hall is emptying, soldiers drifting to their bunks. The lamp on the table between you burns low.
+
+    "Supply lines started failing," he says. "Equipment requisitions lost in the bureaucracy. Garrison rotation schedules leaked -- twice, the Khanates hit outposts within hours of a shift change. That is not coincidence." He meets your eyes. "Someone is sabotaging the northern defenses, Vizier. I reported it up the chain. Nothing happened."
+
+    Your blood runs cold. "How long?"
+
+    "Six months. Maybe longer." He glances at the door. "I told General Kadir. He believes me. But he cannot prove it, and without proof, the Council dismisses it as frontier paranoia."
+    *goto loyalist_sabotage_discovery
+  #"Navid, I need to know everything. Every failed supply shipment, every leaked rotation, every suspicious incident. I am building a case."
+    *set rel_navid %+ 10
+    *set scholarship + 3
+    *set boldness %+ 5
+    Navid studies you. The assessment is slower than Kadir's -- more careful, more personal. He is not evaluating a politician. He is evaluating a person.
+
+    "I kept records," he says. "Dates, incidents, names. I wrote them down because I thought no one would believe me without documentation." He reaches into his jacket and produces a leather journal, worn and stained. "Everything is in here. Six months of sabotage."
+
+    You take the journal. It is heavy with evidence.
+    *goto loyalist_sabotage_discovery
+  *selectable_if (cunning > 35) #"Captain, I have been reading the intelligence reports from the northern border. The patterns do not match normal Khanate behavior. The raids are too well-timed, too precisely targeted. Someone inside is feeding them information."
+    *set cunning + 3
+    *set rel_navid %+ 12
+    *set evidence_count + 1
+    *set boldness %+ 5
+    Navid's eyes widen slightly. It is the most emotion you have seen on his face since meeting him.
+
+    "You see it too," he says. "I have been saying this for months. The raids are surgical. They hit supply depots, not villages. They target garrison weak points that only someone with access to our deployment maps would know. This is not random raiding. This is intelligence-driven warfare."
+
+    He leans forward. "Vizier, I have a list. Fourteen incidents in six months. Each one tracks to information that was available only to a small number of people -- garrison commanders, supply officers, and whoever reads the dispatches in the capital."
+
+    Your mind is already racing. Dispatches from the northern border pass through the Citadel's central communications office. They are read by the Emperor's secretariat, the Commander of the Armies' staff, the Director of the Eyes' apparatus, and -- you realize with a chill -- the Dowager's private office.
+    *goto loyalist_sabotage_discovery
+
+*label loyalist_sabotage_discovery
+
+*page_break
+
+*comment === THE SABOTAGE EVIDENCE ===
+
+*set sabotage_discovered true
+*set evidence_count + 1
+
+The next morning, Kadir takes you to the section of the Wall that failed during the last Khanate raid. The breach is fifty feet wide, the stone scattered across the steppe like broken teeth. Engineers are working to fill the gap, but their efforts are hampered by a shortage of materials.
+
+"The stone was requisitioned three months ago," Kadir says. "It never arrived. The supply convoy was 'redirected' to a provincial construction project. On whose authority?" He holds up a crumpled dispatch. "The authorization carries the seal of the Treasury office. But Priya's people swear they never issued it."
+
+A forged requisition. Using Treasury seals. Redirecting military supplies away from the border.
+
+"This is the sabotage," you say.
+
+"This is one instance. There are dozens." Kadir's voice drops. "Vizier, I am a soldier. I fight enemies I can see. This enemy is inside our own walls, wearing our own uniforms, using our own seals. I need help."
+
+*page_break
+
+*fake_choice
+  #The scope of the conspiracy stuns you. This is not a single traitor. This is a coordinated campaign to weaken the empire's defenses from within.
+    *set idealist %+ 5
+    *set boldness %+ 5
+    *set evidence_count + 1
+    You stand at the edge of the breach and look north, across the endless steppe. The grass ripples in the wind like a green sea. Somewhere beyond the horizon, the Khanate warriors are sharpening their blades, waiting for the next gap in the Wall, the next leaked schedule, the next opportunity created by an enemy they do not even know they have.
+
+    The conspiracy is not merely threatening the throne. It is threatening the border. The empire's very survival is being traded for -- what? Power? Position? The throne itself?
+  #You feel cold rage. Soldiers are dying because someone in the capital is playing politics with their lives.
+    *set ruthless %+ 10
+    *set boldness %+ 10
+    Fifty dead soldiers. That was the toll from the last breach. Fifty names that General Kadir carries in his memory like stones in a sack. Fifty families who received a rider in imperial crimson carrying a letter no parent, spouse, or child ever wants to read. And every one of those deaths was enabled by someone sitting in a comfortable office in Khazara, forging requisitions and leaking schedules.
+
+    "General," you say, and your voice is quiet in the way that Kadir himself goes quiet when truly angry. "When we find who is responsible, I want them in front of the Council. In chains."
+
+*page_break
+
+*choice
+  #"General Kadir, I am pledging you my full support. The military will get its supplies, its reinforcements, and my personal commitment to hunting down whoever is sabotaging the border."
+    *set rel_general %+ 15
+    *set rep_military %+ 10
+    *set boldness %+ 5
+    *set ally_secured true
+    Kadir looks at you. The assessment that began when you first entered his garrison is over. You can see the verdict forming behind his weathered eyes.
+
+    "I have served four Viziers," he says. "Three of them never left the capital. One visited the border, looked at the Wall, and went home to write a report that nothing happened." He extends his hand. "You came. You listened. You are angry. That is a start."
+
+    You grip his hand. The calluses on his palm are like ridges on a map of a life spent holding swords and reins and the responsibility for a hundred thousand soldiers.
+
+    "I will need regular intelligence from the border," you say. "Direct reports, bypassing the normal channels. The normal channels are compromised."
+
+    "You will have them. And Vizier --" He pauses. "Navid. Keep him close. He is the best soldier I have, and he sees things others miss. In the capital, you will need eyes you can trust."
+
+    You look across the mess hall to where Navid sits, cleaning his blade with the careful attention of a man who takes nothing for granted. He catches your gaze and nods, once.
+    *goto loyalist_allies_close
+  #"We need to set a trap. If someone is forging Treasury requisitions, we can feed them false information and track where it goes."
+    *set cunning + 3
+    *set rel_general %+ 10
+    *set rep_military %+ 8
+    *set evidence_count + 1
+    *set ally_secured true
+    Kadir's eyebrows rise. "A trap. That is not a soldier's tactic, Vizier."
+
+    "No. It is a spy's tactic. But I have learned that fighting this enemy requires more than swords." You lay out your plan: create a fake supply requisition, route it through the compromised channels, and monitor who alters it. The forger will reveal themselves.
+
+    The General considers. His iron hand taps the table -- a metallic rhythm like a slow heartbeat.
+
+    "It could work," he says. "But if they realize it is a trap, they will disappear. We get one chance."
+
+    "Then we make it count."
+
+    Kadir nods. The alliance is sealed -- not with words, but with the shared understanding that you are now fighting the same enemy, from different directions, toward the same end.
+    *goto loyalist_allies_close
+  #"I need to take this evidence back to the capital. The Council must see the scope of the sabotage. We cannot fight this alone."
+    *set honest %+ 10
+    *set rel_general %+ 8
+    *set rep_military %+ 5
+    *set ally_secured true
+    *set idealist %+ 5
+    "The Council," Kadir says. The word sits in his mouth like something bitter. "The Council that has been ignoring my reports for six months."
+
+    "This time will be different. I will present the evidence personally. Navid's journal, the forged requisitions, the pattern of sabotage. If the Council ignores this, they are complicit."
+
+    "And if they are complicit?"
+
+    The question hangs in the air. You do not have an answer. Not yet.
+
+    "Then we will know that too," you say. "And we will act accordingly."
+
+    Kadir is quiet for a long moment. Then he takes the forged requisition, folds it carefully, and hands it to you.
+
+    "Take this back to your capital, Vizier. Show it to whoever you trust. And remember what you saw here." He gestures at the crumbling Wall, the undermanned garrison, the breach that swallowed fifty lives. "This is what the conspiracy costs. Not politics. Not reputation. Lives."
+    *goto loyalist_allies_close
+
+*label loyalist_allies_close
+
+*page_break
+
+*comment === LOYALIST CLOSING ===
+
+*page_break
+
+The ride back to Khazara takes two days. The steppe gives way to foothills, the foothills to the fertile valley, and with each mile southward the landscape grows softer, greener, more cultivated -- and the memory of the crumbling Wall grows heavier. You carry Navid's journal, the forged requisitions, and a weight in your chest that was not there when you left. The northern border is not an abstraction anymore. It is real -- the smell of horse and dust, the sound of wind over the steppe, the faces of soldiers who serve and suffer while the capital debates tariffs and precedence.
+
+Kadir rides beside you in silence for the first hour. Then he speaks.
+
+"The boy emperor. Roshan." He says the name like a soldier says the name of a commander he has not yet decided to follow. "Is he worth it?"
+
+"Yes."
+
+"That was fast."
+
+"Some questions do not need deliberation."
+
+Kadir grunts. It might be approval. With him, it is difficult to tell.
+
+The capital appears on the horizon on the second day -- the domes and minarets rising from the valley like a crown of gold and white. It is beautiful. It is also, you now understand, a city built on a border that is being deliberately eroded. If the Wall falls, if the Khanates pour through in force, this beauty will burn.
+
+You will not let that happen. The Emperor has made his first stand. General Kadir has pledged his support. Navid watches the shadows. The alliance is fragile, held together by trust that has not yet been tested.
+
+But it is a beginning. And beginnings are enough.
+
+*finish The Shadow Moves
+
+*comment ============================================================
+*comment === KINGMAKER ROUTE: THE SHADOW ALLIANCE ===
+*comment ============================================================
+
+*label kingmaker_alliance_building
+
+A week passes. The shadow network grows like a vine in fertile soil, but slowly -- too slowly for the urgency that presses at your ribs like a held breath.
+
+Priya's merchant contacts provide a trickle of information from the provinces -- trade patterns, caravan movements, the quiet pulse of commerce that reveals, to those who know how to read it, the health of the empire. It is not enough.
+
+You need a true alliance. Not the official kind, sealed with ink and witnessed by the Council. The kind sealed in shadows, with mutual leverage substituting for trust.
+
+Two candidates present themselves.
+
+The first is Guildmaster Priya herself. She has been your entry into the unofficial economy, but the current arrangement is transactional. A deeper alliance would give you access to her full network -- merchants, factors, warehouse managers, dock workers, couriers. An economic intelligence apparatus that rivals Zara's.
+
+The second is Spymaster Zara. She confronted you about your activities and either accepted your explanation or filed her suspicions for future use. A genuine alliance with Zara would be the most powerful asset imaginable -- but also the most dangerous. Zara's loyalty is to the empire, not to you. If she ever decides you are a threat rather than an asset, her knowledge of your shadow network becomes a weapon pointed at your throat.
+
+*page_break
+
+*fake_choice
+  #Both options carry risk. Priya could expose you to protect her own interests. Zara could dismantle your network with a single report to the Dowager.
+    *set boldness %- 5
+    *set ruthless %+ 5
+    The calculus of power is not mathematics. It is gambling. Every alliance is a bet -- a wager that the other person's interests will align with yours long enough to be useful. The question is not who to trust. Trust is a word for children and fools. The question is whose interests most closely mirror your own.
+
+    Priya wants wealth and influence. Zara wants security and control. You want power. The trick is finding where these desires overlap and anchoring your alliance to that shared ground.
+  #You have always believed that the best alliances are built on genuine mutual benefit, not manipulation. Even in the shadows.
+    *set honest %+ 5
+    *set idealist %+ 5
+    The shadow network does not have to be a web of deceit. It can be a network of aligned interests -- people who work together because they benefit together. Priya benefits from a Vizier who protects trade. Zara benefits from a Vizier who supports intelligence. Both benefit from a stable empire free of conspiracy.
+
+    The challenge is convincing them that your vision of a stable empire matches theirs. It might not. But the effort of alignment is worth more than the efficiency of manipulation.
+
+*page_break
+
+*choice
+  #Deepen the alliance with Priya. Her economic network is the foundation you need -- less dangerous than Zara and more immediately useful.
+    *set rel_guild %+ 10
+    *set rep_trade %+ 8
+    *set cunning + 3
+    *set approach "priya_alliance"
+    *goto kingmaker_old_city
+  #Bring Zara fully into the shadow network. The risk is enormous, but an alliance with the empire's spymaster is worth any price.
+    *set rel_spy %+ 10
+    *set rep_intelligence %+ 8
+    *set cunning + 3
+    *set approach "zara_alliance"
+    *goto kingmaker_old_city
+  *selectable_if (cunning > 40) #Play both sides: give each of them the impression they are your primary ally while maintaining independent control.
+    *set ruthless %+ 10
+    *set cunning + 5
+    *set approach "double_play"
+    *goto kingmaker_old_city
+
+*label kingmaker_old_city
+
+*page_break
+
+*comment === THE OLD CITY MEETING ===
+
+The alliance -- whichever form it takes -- requires a meeting. Not in the Citadel, where every wall has ears and every corridor has eyes. Not in the Bazaar, where Priya's face is known to every merchant. Not in the Foreign Quarter, where Ambassador Chen's people watch the comings and goings of Khazaran officials with professional interest.
+
+In the Old City.
+
+The Old City at night is a different world. The narrow streets swallow lamplight. Buildings lean toward each other overhead, nearly touching, creating tunnels of shadow where the moonlight cannot reach. The smell is different from the Citadel's sandalwood and jasmine -- here it is cooking oil, sewage, unwashed bodies, and beneath it all the mineral tang of the river that flows through the Old City's ancient channels.
+
+You wear a plain cloak. No seal ring. No Vizier's robes. Farid wanted to come and you refused -- this is no place for a man whose anxiety is visible from fifty paces. You carry a concealed dagger, though if it comes to the point of using it, something has gone terribly wrong.
+
+*if (approach = "priya_alliance")
+  Priya is waiting in a tea house on Coppersmith Street. She has shed her own finery for a merchant's practical garments -- cotton, linen, sensible boots. She looks more natural here than she does in the Council Chamber, and the realization strikes you: this is where she came from. Before the guilds, before the Treasury, before the silk and gold, Priya was a girl in a market stall.
+
+  "Vizier." She slides a cup of tea across the table. "Welcome to my office. The real one."
+*elseif (approach = "zara_alliance")
+  Zara materializes from the shadows like a cat stepping out of its own reflection. She is dressed in black -- not dramatically, but practically. Dark linen, soft boots, a cloak that absorbs light rather than reflecting it. In the Old City's darkness, she is nearly invisible.
+
+  "You came alone," she says. It is not a question. It is an assessment, and from her tone, you have passed. "Good. The tea house is through the next alley. Walk naturally. You are being watched, but not by my people."
+*else
+  *comment Double play
+  You have arranged separate meetings, thirty minutes apart, in adjacent establishments on Coppersmith Street. Priya in the tea house. Zara in the apothecary's back room. Neither knows the other is here. The logistics are a nightmare, but the advantage of playing both sides is that each alliance reinforces the other without either party knowing.
+
+  You enter the tea house first. Priya is waiting, practical and sharp-eyed. You have thirty minutes before the second meeting.
+
+*page_break
+
+The meeting stretches through the evening. Outside, the Old City's night sounds filter through the thin walls: a woman singing a lullaby in a dialect you do not recognize, the bark of a dog, the creak of a door on ancient hinges. The tea grows cold and is replaced. The lamp is refilled twice.
+
+Details are negotiated with the precision of a trade contract: communication protocols, information-sharing procedures, funding channels, emergency contacts. Dead drop locations are selected -- a loose stone in the Bridge of Founders' railing, a hollowed-out book in the Library's restricted section, a marked tile in the Temple Quarter's public baths. Coded language is agreed upon -- commercial terminology with a second layer of meaning visible only to those who hold the cipher key.
+
+The architecture of a shadow network, built brick by careful brick.
+
+*if (approach = "priya_alliance")
+  Priya produces a ledger -- not from her official accounts but from a private record she keeps in her own hand. The numbers tell a story of accumulated wealth, investment, and quiet power. She has been building her own shadow apparatus for years.
+
+  "I started this when I was twenty-three," she says. "A merchant needs information more than she needs gold. Gold can be earned. Information determines whether you earn it or lose it."
+
+  She opens the ledger to a page showing a network of trade contacts stretching from Port Tavandar to the Ashghar Pass. Factors, couriers, warehouse managers, dock workers, innkeepers. Each one is a node in a web that sees and hears and remembers.
+
+  "This is yours," she says. "On one condition."
+
+  "Name it."
+
+  "When this is over -- when the conspiracy is broken, when the empire is stable -- you remember who helped you build this. And you remember what the merchant class needs: fair tariffs, open markets, and a Vizier who does not treat us as a purse to be emptied."
+*elseif (approach = "zara_alliance")
+  Zara's contribution is not a ledger. It is a conversation -- quiet, precise, and devastating in its implications.
+
+  "The conspiracy's intelligence operations have a signature," she says. "They use dead drops in the Old City -- seven locations, rotated on a cycle I have partially mapped. They communicate with the Khanates through a chain of intermediaries that starts here in the capital and runs through three provincial cities before reaching the border."
+
+  She lays out what she knows. It is extensive. The Director of the Eyes has been hunting the conspiracy in parallel, piecing together fragments that the player's own investigation has uncovered from a different angle.
+
+  "I brought you something," she says, and produces a folded parchment. It is a partial list of the conspiracy's financial transactions -- amounts, dates, account references. The numbers are staggering.
+
+  "Where did you get this?"
+
+  "A dead man's pocket." A pause. "He was already dead when I found him."
+*else
+  *comment Double play results
+  Priya provides the economic infrastructure: trade contacts, couriers, funding channels. You spend twenty-five minutes absorbing her information, promise to advance her trade interests, and excuse yourself.
+
+  Five minutes later, you are in the apothecary's back room with Zara. She provides the intelligence architecture: dead drop locations, communication protocols, a partial map of the conspiracy's network. You share enough of the economic intelligence to demonstrate value without revealing its source.
+
+  Two alliances. Two sets of leverage. Two people who believe they are your primary partner. The moral weight of the deception sits in your stomach like cold lead, but the power it provides is undeniable.
+
+*page_break
+
+*fake_choice
+  #The Old City meeting leaves you energized. The shadow network is taking shape, and for the first time, you feel the conspiracy is within your reach.
+    *set boldness %+ 5
+    *set idealist %- 5
+    The walk back through the Old City's narrow streets feels different now. You are not merely passing through -- you are seeing it with new eyes. Every tea house is a potential safe house. Every messenger boy could be a courier. Every merchant stall could be an observation post. The city's shadow infrastructure is as real as its marble and gold, and you are learning to read it like a second language.
+  #The meeting disturbs you. You are building something that operates outside every law and tradition the empire holds sacred.
+    *set honest %+ 5
+    *set idealist %+ 5
+    As you walk back through the dark streets, you catch your reflection in a rain puddle. A cloaked figure, face in shadow, moving through the Old City's alleys like a thief. This is what you are becoming. A person who meets in back rooms, who builds secret networks, who operates outside the law. The Vizier's seal ring is in your pocket, hidden. The symbol of legitimate authority, concealed while you conduct illegitimate business.
+
+    Is this what power requires? Or is this what power excuses?
+
+*page_break
+
+*comment === THE PRINCE KAVEH ENCOUNTER ===
+
+The Old City has one more surprise.
+
+You are navigating the final stretch of narrow streets before the bridge that leads back to the New City when a voice speaks from a doorway.
+
+"Out rather late for a Grand Vizier."
+
+You turn. Prince Kaveh steps from the shadow of a lintel, his smile bright even in the dim lamplight. He is dressed as casually as you are -- plain clothes, no jewels, no entourage. He looks like a prosperous young merchant enjoying the evening air. He does not look like a man who may be plotting to seize the throne.
+
+"Prince Kaveh."
+
+"Just Kaveh, please. We are in the Old City. Titles are conspicuous here." He falls into step beside you, uninvited but not unwelcome. His presence is like that -- it fills spaces without seeming to push. "I come here often. The food is better than anything in the Citadel, and the conversation is more honest."
+
+*choice
+  #Engage carefully. Kaveh's appearance is either coincidence or surveillance. Either way, information flows both directions.
+    *set cunning + 3
+    *set rel_kaveh %+ 5
+    *set boldness %- 5
+    "I was not aware you frequented the Old City, Prince."
+
+    "Kaveh. And yes -- I find it clarifying. The Citadel is a beautiful cage, but a cage nonetheless." He gestures at the narrow streets. "Here, people say what they mean. In the Citadel, they mean what they do not say. I find the simplicity refreshing."
+
+    You walk together. He asks about the embargo's resolution, about the Emperor's decree, about your impressions of the northern border. The questions are casual but precise -- each one probing a specific area of interest. You answer with equal care, giving enough to maintain the conversation, withholding enough to reveal nothing.
+
+    It is, you realize, a negotiation. One conducted with smiles and small talk, but a negotiation nonetheless.
+    *goto kingmaker_allies_close
+  #Confront him directly. The Old City is neutral ground, and the shadows provide cover for an honest exchange.
+    *set boldness %+ 10
+    *set honest %+ 5
+    *set rel_kaveh %+ 8
+    "You are following me," you say.
+
+    Kaveh's smile does not falter, but something in his eyes shifts. A reassessment. "Following is a strong word. I was informed you would be in the neighborhood. I was curious."
+
+    "Informed by whom?"
+
+    "Does it matter? We are both here. We are both interested in the empire's future. And we are both aware that the current arrangement --" he pauses, choosing his words with visible care, "-- may not be sustainable."
+
+    The careful phrasing tells you more than the words themselves. Kaveh is testing you. He wants to know if the Grand Vizier's ambitions extend beyond serving the Emperor. He wants to know if there is space in your plans for a prince with a claim to the throne.
+
+    "The current arrangement serves the empire," you say.
+
+    "For now." His smile widens. "But arrangements change. I simply wanted you to know that when they do, I am available for conversation."
+    *goto kingmaker_allies_close
+  #Deflect and disengage. Kaveh is too dangerous for an unplanned encounter.
+    *set boldness %- 5
+    *set ruthless %+ 5
+    *set rel_kaveh %- 5
+    "A pleasant evening for a walk," you say. "But I must return to the Citadel. The dispatches wait for no one."
+
+    "Of course." Kaveh's disappointment is barely visible -- a fractional dimming of his smile. "Another time, then. I hope we shall have the opportunity to talk properly. There is much to discuss."
+
+    "There always is."
+
+    You part at the bridge. He turns back into the Old City's shadows with the ease of a man who belongs there. You cross into the lamplit streets of the New City with the uneasy awareness that Prince Kaveh knows more about your movements than he should.
+
+    Someone told him you would be in the Old City tonight. That means someone in your nascent shadow network is already compromised, or someone with their own surveillance apparatus is watching you.
+
+    Either possibility is deeply troubling.
+    *goto kingmaker_allies_close
+
+*label kingmaker_allies_close
+
+*page_break
+
+*comment === KINGMAKER CLOSING ===
+
+*set ally_secured true
+
+The Citadel's white walls glow faintly in the moonlight as you cross the bridge. The contrast with the Old City is stark -- marble instead of brick, lamplight instead of shadow, the scent of jasmine instead of cooking oil. Two worlds, one city.
+
+In your chambers, you spread your notes across the desk. The shadow network is taking shape:
+
+*if (approach = "priya_alliance")
+  Priya's merchant network provides the economic backbone -- trade contacts, couriers, funding channels stretching from the capital to the ports. The infrastructure of commerce, repurposed as an intelligence apparatus.
+*elseif (approach = "zara_alliance")
+  Zara's intelligence provides the analytical framework -- dead drop locations, communication protocols, a partial map of the conspiracy's operations. Professional espionage, operating in tandem with your own growing network.
+*else
+  Two alliances running in parallel, each reinforcing the other. The economic infrastructure of Priya's merchants and the intelligence architecture of Zara's apparatus, woven together by a Vizier who sits at the center like a spider at the heart of its web.
+
+And then there is Kaveh. The prince with the claim, the charm, and the unsettling habit of appearing where he should not be. He is either a potential asset or an active threat, and the line between those categories is thin as a silk thread.
+
+Farid knocks. You let him in. He has waited up, of course.
+
+"My ${title_honorific} Vizier, you were out late. I was -- not worried, exactly. Concerned. Professionally concerned."
+
+"I appreciate your professional concern, Farid."
+
+"Also I made tea. In case you wanted tea. It has gone slightly cold. I could make more."
+
+"The cold tea is fine."
+
+You drink the tepid tea and look at your notes. The web grows. The game continues. And somewhere in the city's shadows, other players are making their own moves.
+
+*finish The Shadow Moves
+
+*comment ============================================================
+*comment === REVOLUTIONARY ROUTE: THE REFORM COALITION ===
+*comment ============================================================
+
+*label revolutionary_coalition
+
+The silk regulation has been in effect for one week. The results are already visible, tangible, written in the ledgers of every merchant who sells in the Grand Bazaar and in the faces of every trader who no longer pays a nobleman for the privilege of weighing their own goods.
+
+Certification costs at the bazaar have dropped by a third. Merchants who previously paid a fifth of their income to noble weighing stations now have options -- independent weighers have appeared with the speed that only free commerce can produce. The spice merchants are jubilant. The silk traders are cautious but hopeful. And the noble houses that owned the monopoly are bleeding revenue.
+
+Lord Reza has been conspicuously silent since your confrontation. That silence worries you more than his anger did.
+
+You need allies. Not the cautious, conditional support of individual officials, but a genuine coalition -- progressive nobles, forward-thinking merchants, and the commoners whose lives the reforms are meant to improve. A coalition broad enough to survive the inevitable counterattack.
+
+Lady Soraya is your bridge to the first group. She arrives at your office on a morning that smells of rain, carrying a stack of books and a list of names.
+
+"Eleven nobles," she says. "I have spoken to each personally. They are willing to support further reform, provided the reforms are gradual and do not directly threaten their own estates." She pauses. "That last condition is a problem, because eventually, meaningful reform will threaten everyone's estate."
+
+*page_break
+
+*fake_choice
+  #Soraya's pragmatism grounds you. She understands that reform requires compromise, and compromise requires knowing exactly how much each ally is willing to give.
+    *set idealist %- 5
+    *set ruthless %+ 5
+    You take the list and read the names. Old families, most of them -- but the younger generation, the ones who read the pamphlets and debate in the coffee houses and understand that the empire's current trajectory leads to either reform or revolution. Their support is conditional, as Soraya warned. But conditional support is a foundation. You can build on foundations.
+
+    "Eleven is enough to begin," you say. "Not enough to win."
+
+    "No," Soraya agrees. "For that, we need the merchants. And the people."
+  #The list of names fills you with cautious hope. Eleven nobles willing to support reform is eleven more than you had a week ago.
+    *set idealist %+ 5
+    *set honest %+ 5
+    *set rel_soraya %+ 5
+    Eleven names. Eleven families who have decided that their future lies with change rather than tradition. It is not a revolution. It is not even a movement. It is a dinner party with political leanings. But every great change begins with a small number of people in a room, agreeing to want the same thing.
+
+    "Tell me about each of them," you say. "What they want. What they fear. What they are willing to sacrifice."
+
+    Soraya smiles. "Now you are thinking like a reformer."
+
+*page_break
+
+*comment === THE MERCHANT MEETING ===
+
+*page_break
+
+*comment === THE MERCHANT MEETING ===
+
+The second pillar of the coalition is the merchant class. Guildmaster Priya is the obvious ally, but you need more than one powerful merchant. You need the rank and file -- the spice sellers, the silk traders, the bookmakers and potters and blacksmiths who form the backbone of Khazara's economy.
+
+Priya arranges a meeting in her private chambers above the Grand Bazaar. The room is rich with the smell of coffee -- a new import, fashionable among the merchant class, bitter and stimulating. Merchant Hamid is there, enormous and jovial, pressing dates and sweet pastries on everyone who enters. Three other guild representatives attend: the bookmakers' guild, the potters' guild, and the textile merchants' alliance.
+
+"Vizier!" Hamid rises and clasps your hand in both of his. His grip is warm and enveloping. "Sit, sit. Have coffee. Have dates. The dates are from the southern provinces -- best quality, very fresh. Now, Guildmaster Priya tells us you have plans. Plans that involve making the merchant class less miserable. We are very interested in being less miserable."
+
+*page_break
+
+The coffee is strong and bitter, a taste you are still learning to appreciate. The merchants drink it like water, and you suspect it is the fuel that powers the empire's commercial engine. You sip, and the caffeine sharpens your focus as you present the reform agenda.
+
+You present your reform agenda to the gathered merchants. The silk regulation was the first step. The next steps are more ambitious: standardized weights and measures across all bazaars (currently each noble house uses its own, creating chaos and opportunities for fraud), a merchant tribunal to resolve trade disputes without going through the noble-dominated courts, and a reduction in the tariffs that provincial merchants pay to transport goods to the capital.
+
+The merchants listen with the focused attention of people calculating profit.
+
+*choice
+  #Appeal to their idealism: frame the reforms as creating a fairer empire where merit matters more than birth.
+    *set idealist %+ 10
+    *set honest %+ 5
+    *set rel_guild %+ 8
+    *set rep_trade %+ 8
+    *set diplomacy + 3
+    "The empire was built by people who made things," you say. "Who grew things, who traded things, who created wealth with their hands and their minds. For three hundred years, the fruits of that labor have flowed upward to a handful of families who contribute nothing but a name. That is not tradition. That is theft."
+
+    The room is quiet. Hamid has stopped eating, which may be a first.
+
+    "I am not asking you to support these reforms because they will make you richer -- though they will. I am asking you to support them because they are right. Because an empire where a spice merchant's daughter can become Guildmaster of the Treasury is an empire worth fighting for. And because the alternative -- an empire where nothing ever changes -- is an empire that is already dying."
+
+    Priya is watching you with an expression you cannot quite read. It might be admiration. It might be calculation. With Priya, it is often both.
+
+    "The merchant class is with you, Vizier," Hamid says. His voice is quieter than you have ever heard it. "Tell us what you need."
+    *goto revolutionary_commoners_petition
+  #Appeal to their self-interest: frame the reforms as a business opportunity with measurable returns.
+    *set ruthless %+ 5
+    *set boldness %+ 5
+    *set rel_guild %+ 10
+    *set rep_trade %+ 10
+    "Let me put this in terms you will appreciate," you say. "The noble monopolies cost the merchant class an estimated two hundred thousand gold dirhams per year in unnecessary fees, fraudulent weights, and rigged courts. My reforms would return that money to the people who earned it: you."
+
+    Hamid leans forward. Numbers are his language.
+
+    "Standardized weights alone would save the spice guild forty thousand dirhams annually," you continue. "The merchant tribunal would reduce dispute resolution costs by half. And the provincial tariff reduction would open markets that are currently too expensive for smaller traders to reach."
+
+    "I like these numbers," Hamid says. "I like them very much. Priya, why have we not had this Vizier before?"
+
+    "Because the previous Viziers were content to let the nobility bleed us," Priya says. "This one is not."
+    *goto revolutionary_commoners_petition
+  *selectable_if (diplomacy > 35) #Appeal to their pride: frame the merchants as the empire's true strength, too long denied their rightful place at the table.
+    *set boldness %+ 10
+    *set rel_guild %+ 12
+    *set rep_trade %+ 10
+    *set diplomacy + 5
+    "The Khazaran Empire has five pillars," you say. "The army. The temple. The nobility. The intelligence service. And the treasury -- which is to say, you. The merchant class. The people who generate the wealth that funds everything else."
+
+    You pause. Let them feel the weight of the truth.
+
+    "Four of those pillars have seats on the Council of Five. Four of them shape policy, direct resources, influence the Emperor. The fifth -- the richest, the most productive, the one without which the other four collapse -- has been treated as a servant. A purse to be opened when the army needs funding. A tax base to be squeezed when the treasury runs low."
+
+    Hamid is nodding. The other guild representatives are leaning forward.
+
+    "These reforms are not charity. They are recognition. The merchant class has earned its place at the empire's table. I am here to make sure you get it."
+
+    "Well said, Vizier," Priya says. Her voice is warm, but her eyes are sharp with the look of a woman who has found an investment she intends to hold for a very long time.
+    *goto revolutionary_commoners_petition
+
+*label revolutionary_commoners_petition
+
+*page_break
+
+*page_break
+
+*comment === THE COMMONERS' PETITION ===
+
+The third pillar is the most difficult and the most essential: the common people.
+
+They are the empire's majority and its silence. Two million souls in Khazara alone, and perhaps ten million across the provinces. They farm the fields, crew the boats, build the walls, clean the streets, carry the loads, cook the meals, wash the clothes. They are the empire's hands and back and legs, and they have no voice. No seat on the Council. No noble patron. No guild to champion their interests. They exist, in the eyes of the law, as subjects to be administered rather than citizens to be consulted.
+
+Three days after the merchant meeting, Soraya brings you a scroll. It is rough parchment, not the smooth vellum of official documents. The handwriting is varied -- some careful, some barely literate, some marked with thumbprints instead of signatures. It is a petition from the commoners of the Old City, requesting an audience with the Grand Vizier.
+
+"They heard about the silk regulation," Soraya says. "News travels fast among people who have been waiting for change their entire lives."
+
+The petition asks for three things: repair of the Old City's water channels (which have been crumbling for years while the Citadel's fountains flow endlessly), a reduction in the grain tax that falls disproportionately on the poorest farmers, and the right to bring grievances directly to the Vizier's office without going through noble intermediaries.
+
+*page_break
+
+*fake_choice
+  #The petition moves you. These are not abstract policy demands. These are people asking for clean water, fair taxation, and the simple right to be heard.
+    *set idealist %+ 10
+    *set honest %+ 5
+    *set rel_soraya %+ 5
+    You read the petition twice. The thumb prints are dark against the pale parchment, each one a person who could not sign their name but pressed their mark into ink with the determination of someone who believed -- perhaps for the first time -- that it might matter. Clean water. Fair taxes. A voice. The most basic functions of government, denied to the people who need them most.
+
+    Your hand tightens on the scroll. This is why you chose this path. Not for the merchants' profit margins or the nobles' political calculations. For the thumbprints.
+  #The petition is politically valuable. A Vizier seen to champion the common people gains a power base that no noble or merchant faction can match.
+    *set ruthless %+ 5
+    *set boldness %+ 5
+    The petition is leverage. The common people of Khazara number in the hundreds of thousands. They have no formal political power, but they have something more potent: presence. They fill the bazaars, work the fields, serve in the households. They are the empire's foundation, and a Vizier who commands their loyalty commands something no army or treasury can buy: popular support.
+
+    The reforms you champion for their sake are genuine. But the political calculation is equally real. You are building a power base that reaches from the noble houses to the market stalls to the Old City's crumbling streets. When Lord Reza moves against you -- and he will -- you want the entire city at your back.
+
+*page_break
+
+*choice
+  #Grant the audience. Meet the commoners in person, in the Old City, on their ground.
+    *set boldness %+ 10
+    *set idealist %+ 5
+    *set rep_nobility %- 5
+    *set rel_soraya %+ 10
+    *set coalition_strength + 3
+    *set ally_secured true
+    *set diplomacy + 3
+    You go to the Old City.
+
+    The meeting takes place in a warehouse near the river, cleared of its usual cargo and filled instead with people. They are the empire's invisible majority: laborers, washerwomen, potters, street vendors, fishermen. Their faces are weathered by sun and work and the particular hardship of living in a great city's forgotten quarter.
+
+    They are also, you realize, afraid. Afraid of the Vizier. Afraid that this is a trap. Afraid that hope is something they cannot afford.
+
+    You stand on a crate -- the only elevated surface available -- and address them. Not with the formal language of the Citadel, but plainly, simply, in the voice of a provincial administrator who has spent years watching ordinary people struggle with systems designed by the powerful for the powerful.
+
+    "I have read your petition," you say. "I will address each point. The water channels will be repaired. The grain tax will be reviewed. And my office will hear your grievances directly. You do not need a nobleman's permission to speak to your government."
+
+    The silence that follows is not the silence of the court. It is the silence of two hundred people deciding whether to believe.
+
+    Then an old woman in the front row begins to clap. The sound is sharp in the warehouse's emptiness. Another joins. Then another. The applause swells, ragged and astonished, the sound of people who have just been told that they matter.
+    *goto revolutionary_coalition_close
+  #Grant the audience, but hold it in the Citadel. Bringing commoners into the seat of power sends a message that reforms extend to the highest levels.
+    *set boldness %+ 5
+    *set idealist %+ 10
+    *set rep_nobility %- 8
+    *set rel_soraya %+ 8
+    *set coalition_strength + 2
+    *set ally_secured true
+    The commoners arrive at the Citadel gates in a delegation of twelve, chosen by their community. They are scrubbed clean and dressed in their best -- which is still rough cotton and patched linen, a stark contrast to the silk and gold that flows through these halls like water.
+
+    The guards let them in. You have arranged this personally, over the objections of the palace chamberlain, who considered the request only slightly less scandalous than an invasion.
+
+    You receive them in the Council Chamber. The round table. The maps on the walls. The window overlooking the Garden of Eternal Spring. They stand in a tight cluster, their eyes wide, touching nothing.
+
+    "Please sit," you say.
+
+    They sit. The chairs were made for nobles. The commoners perch on them like birds on an unfamiliar branch.
+
+    You listen to their petition. You respond to each point. The water channels. The grain tax. The right of direct petition. When you agree to address their concerns, the delegation's leader -- a weathered fisherman named Tariq -- reaches across the table and grips your hand.
+
+    "Vizier," he says. His voice is rough with emotion. "In sixty years, no one in the Citadel has ever asked us what we need."
+
+    The word spreads. By evening, the Old City knows that the new Vizier heard their petition. In the Citadel's marble corridors, the news spreads differently: the Vizier brought commoners to the Council table. Lord Reza's faction will use it as ammunition. Let them.
+    *goto revolutionary_coalition_close
+  #Send a formal response to the petition, committing to the reforms in writing. Personal meetings carry political risk -- written commitments carry legal weight.
+    *set boldness %- 5
+    *set honest %+ 10
+    *set rep_nobility %+ 3
+    *set rel_soraya %+ 5
+    *set coalition_strength + 1
+    *set ally_secured true
+    *set scholarship + 3
+    You draft the response yourself, with Farid's help. The language is careful -- legal commitments rather than emotional promises. The water channel repairs are authorized under the Infrastructure Maintenance Code. The grain tax review is initiated through proper Treasury channels. The direct petition process is established through a new regulation, citing historical precedent.
+
+    "This is less dramatic than a meeting," Soraya says, reading the draft.
+
+    "Drama inspires people for a day. Legal commitments protect them for a generation."
+
+    She looks at you with an expression that is part admiration, part frustration. "You are right. I just wish being right were more exciting."
+
+    The formal response is delivered to the Old City by a Vizier's messenger. The effect is quieter than a personal appearance would have been, but it is real. The commoners have something no personal meeting can provide: a document with the Vizier's seal. A promise with legal force. Something they can hold and point to when the powerful try to take back what has been given.
+    *goto revolutionary_coalition_close
+
+*label revolutionary_coalition_close
+
+*page_break
+
+*comment === REVOLUTIONARY CLOSING ===
+
+That evening, you sit in the Garden of Eternal Spring as the lamps are lit. The fountain's murmur covers your thoughts, and the jasmine is heavy in the warm air. Soraya sits beside you, reviewing the day's accomplishments.
+
+"Eleven noble supporters," she says, counting on her fingers. "The merchant guilds are committed. And the commoners --" She pauses. "The commoners believe in you, Vizier. That is the most valuable thing you have gained today, and the most dangerous."
+
+"Dangerous?"
+
+"Belief is powerful. But it is also fragile. If you disappoint them -- if the reforms stall, if the water channels are not repaired, if the grain tax is not reduced -- the belief turns to anger. And the anger of two hundred thousand common people is not something any wall or army can contain."
+
+She is right. The coalition is a beginning, not a triumph. Three pillars -- progressive nobles, forward-thinking merchants, hopeful commoners -- held together by your personal commitment and the thin thread of early success. Lord Reza is silent, and silence from that quarter means preparation. The conservative nobles, the temple elders, the entrenched interests of three centuries of privilege -- they are watching, and they will not watch forever.
+
+Farid appears with the evening dispatches and a cup of cardamom tea.
+
+"My ${title_honorific} Vizier, the overnight reports include a message from Lord Reza's steward. Lord Reza has requested a meeting of the full Noble Council. He intends to convene it by --" Farid checks the document, "-- by any means available under the Charter of Noble Privileges."
+
+You take the tea. It is sweet and sharp, and you drink it while looking at the fountain, where the water catches the lamplight like liquid gold.
+
+The coalition is built. The enemy is moving. The long game continues.
+
+*finish The Shadow Moves

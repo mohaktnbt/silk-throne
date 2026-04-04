@@ -1,0 +1,754 @@
+*comment === SCENE 12: "THE PRICE OF POWER" ===
+*comment Route-divergent. ~10,000 words total (~3,300 per route).
+*comment Variables modified: ruthless, honest, idealist, boldness,
+*comment   betrayal_committed, rel_farid, rel_emperor, rel_dowager,
+*comment   rel_guild, rel_spy, rel_soraya, rel_reza, rel_priest,
+*comment   rep_military, rep_trade, rep_temple, rep_nobility,
+*comment   rep_intelligence, evidence_count, act2_chapter
+
+*temp moral_choice ""
+*temp inner_response ""
+
+*set act2_chapter 4
+
+*comment === ROUTE BRANCH ===
+*if (route = 1)
+  *goto loyalist_price
+*elseif (route = 2)
+  *goto kingmaker_price
+*elseif (route = 3)
+  *goto revolutionary_price
+*else
+  *bug Route variable is not set (value: ${route})
+
+*comment ============================================================
+*comment LOYALIST ROUTE: "The Price of Power"
+*comment Sacrifice an innocent to protect the Emperor's image.
+*comment ============================================================
+
+*label loyalist_price
+
+The morning is cold. An unusual wind has come down from the Ashghar Mountains, carrying with it the scent of snow and pine, and you can feel it through the marble walls of your chambers as you dress. The silk of your vizier's robes does nothing against the chill. You fasten the seal ring on your finger and notice that your hands are steady.
+
+They should not be. Not after what Farid told you an hour ago.
+
+A pamphlet is circulating through the bazaar -- cheaply printed, anonymously authored, devastating in its claims. It alleges that Emperor Roshan ordered the execution of a merchant family in the northern provinces to seize their trade routes. The pamphlet names the family. It names the village. It names the children.
+
+The story is a lie. You know this because you have seen the intelligence reports: the family was killed by Khanate raiders, not imperial soldiers. But the lie is crafted with surgical precision, and it has arrived at the worst possible moment -- three days before the Emperor is to address the guilds about trade reform.
+
+*page_break
+
+Farid is waiting in the antechamber, his face the color of old parchment. He has the pamphlet in his hand, and he holds it the way a man holds a dead rat -- at arm's length, with visible distaste.
+
+"My lord Vizier," he says. "The situation is... it is not good. The pamphlet has reached every coffeehouse in the city. The printing press makes things -- well, it makes things fast. The wrong things, mostly."
+
+You take the pamphlet from him. The paper is rough, the ink smudged. Someone printed this in haste, but the words are not hasty. They are deliberate. Every detail is designed to be believable.
+
+"Who wrote this?" you ask.
+
+Farid shakes his head. "Spymaster Zara has her people looking. She believes the conspiracy is behind it. Someone wants the Emperor to look like a tyrant before his address to the guilds."
+
+You set the pamphlet down on your desk. The seal ring catches the morning light, and for a moment you study the jade -- cool, green, ancient. The weight of it has become familiar. You are not sure whether that is reassuring or alarming.
+
+*page_break
+
+The problem is not the pamphlet. Pamphlets can be countered with truth. The problem is the witness.
+
+A man named Jalil, a grain merchant from the northern provinces, has appeared in the bazaar. He claims to have survived the alleged massacre. He weeps in the coffeehouses. He shows scars. He names the soldiers who came to his village. He describes the Emperor's seal on the execution order.
+
+Jalil is lying. You are almost certain of it. The scars are real, but they could have come from the Khanate raid itself. The details he provides about the "execution order" contain errors that anyone familiar with imperial documents would catch -- but the common people of the bazaar are not familiar with imperial documents. They see a weeping man with scars and they believe him.
+
+*fake_choice
+  #The conspiracy has grown bolder. This is an escalation I did not expect.
+    *set boldness %- 5
+    *temp inner_response "cautious"
+    You press your fingers to your temples. The conspiracy's tactics are evolving. They have moved from assassination and sabotage to something more subtle and perhaps more dangerous: the destruction of the Emperor's reputation among his own people.
+  #This is a battle for truth, and truth will prevail if I act decisively.
+    *set boldness %+ 5
+    *temp inner_response "resolute"
+    You fold the pamphlet and tuck it into your robe. This is a battle, yes, but not the kind fought with swords. It is fought with ink and voices and the fragile trust between a ruler and his people. And you intend to win it.
+  #I must understand who benefits from this before I react.
+    *set boldness %- 5
+    *set ruthless %- 5
+    *temp inner_response "analytical"
+    You spread the pamphlet flat on the desk and read it again, slowly. Every lie contains a truth -- the truth of what the liar wants. Someone wants the Emperor weakened before the guild address. Someone wants the merchant class to fear imperial power. The conspiracy is showing you its strategy, if you can read it clearly enough.
+
+*page_break
+
+The solution presents itself within the hour. It arrives in the person of Spymaster Zara, who enters your office without knocking, as is her custom.
+
+"Jalil," she says, without preamble. She sits uninvited in the chair across from your desk and crosses her legs. "The weeping merchant. He's a fraud. My people traced him to a caravanserai outside the city. He arrived two weeks ago from the east, not the north. His accent is wrong. His story has three factual errors about the village he claims to be from."
+
+"Can you prove it?" you ask.
+
+Zara's expression does not change. "I can prove he's lying about where he's from. I can prove his scars predate the alleged massacre by at least a year. But I cannot prove he's connected to the conspiracy. Not yet." She pauses. "There is, however, a faster way."
+
+You wait.
+
+"There is a woman in the Old City. Tahira. She is a real survivor of the Khanate raid on the village Jalil claims was massacred by the Emperor. She lost her husband. She lost her home. She is genuine." Zara's voice is flat, clinical. "If she publicly contradicts Jalil -- if a real survivor stands up and says the Emperor did not do this -- the pamphlet dies. The crisis ends."
+
+*page_break
+
+"And the difficulty?" you ask, because there is always a difficulty with Zara.
+
+"Tahira doesn't want to speak publicly. She is terrified. She came to the capital to start a new life and she does not want to be dragged back into the worst day of her existence. She has a daughter, seven years old. She wants to be left alone."
+
+The room is quiet. Through the window you can hear the distant call to prayer, the sound softened by marble and distance until it is almost musical.
+
+"If we compel her testimony," Zara continues, "we save the Emperor's reputation. We destroy the pamphlet's credibility. We protect the guild address. But we do it by forcing a grieving woman to relive her worst memory in public, for an audience of strangers, for a political purpose she did not choose."
+
+She meets your eyes. Her gaze is steady, measuring.
+
+"The alternative is to discredit Jalil through investigation, which will take a week. The guild address is in three days. By then, the damage may be irreversible."
+
+*fake_choice
+  #You feel the weight of it -- the woman's suffering weighed against the empire's need.
+    *set idealist %- 5
+    *temp inner_response "burdened"
+    The seal ring is heavy on your finger. You think of Tahira in the Old City, trying to build something from the ashes of her life. You think of the Emperor, sixteen and trying to be brave. Both of them are being used by forces they did not choose and cannot control.
+  #You are angry. The conspiracy has placed you in this position deliberately.
+    *set ruthless %+ 5
+    *temp inner_response "angry"
+    Your jaw tightens. This is the conspiracy's true weapon: not the lie itself, but the impossible choice it creates. Protect the Emperor and harm an innocent woman. Protect the woman and let the Emperor's reputation bleed. They have made you the instrument of suffering either way.
+  #You search for a third option, a way to protect both the Emperor and Tahira.
+    *set idealist %+ 5
+    *temp inner_response "searching"
+    Your mind works quickly, turning the problem over like a jeweler examining a flawed gem. There must be another way. There must be a path that does not require you to use a grieving mother as a political weapon.
+
+*page_break
+
+The question crystallizes in the silence of your office. The incense has burned low, its sandalwood scent fading into the cold mountain air. Zara watches you with the patient attention of a hawk.
+
+The Emperor's reputation. The guild address. The conspiracy's plan to undermine Roshan's authority.
+
+A woman named Tahira and her seven-year-old daughter.
+
+This is the price. This is what power costs.
+
+*choice
+  #Compel Tahira's testimony. The Emperor's image must be protected at any cost.
+    *set ruthless %+ 15
+    *set idealist %- 10
+    *set honest %- 5
+    *set rel_emperor %+ 8
+    *set rep_military %+ 5
+    *set moral_choice "sacrifice"
+    *goto loyalist_sacrifice
+  #Refuse to use Tahira. Find another way, even if it means the guild address suffers.
+    *set idealist %+ 15
+    *set ruthless %- 10
+    *set honest %+ 5
+    *set moral_choice "refuse"
+    *goto loyalist_refuse
+
+*label loyalist_sacrifice
+
+You speak the words and they taste like ashes.
+
+"Bring her. Offer gold -- enough for her daughter's future. Be kind about it. But she must testify."
+
+The sentence hangs in the air between you. Zara absorbs it the way she absorbs all information: without expression, without judgment, filing it away in the vast archive of her mind alongside a thousand other decisions made by a thousand other powerful people in rooms exactly like this one.
+
+She nods, once. She stands and moves to the door with the silent efficiency that makes her the empire's most dangerous woman, and then she pauses, her hand on the frame. The lamplight catches the sharp angles of her face.
+
+"For what it's worth," she says, without turning, "the Emperor is lucky to have someone willing to make this choice for him. Most people would hesitate. Hesitation, in politics, is a luxury the empire cannot afford."
+
+The door closes. The latch clicks with a sound of finality that echoes in your chest. You sit alone with the cold mountain air and the dead incense and the distant sound of the city waking below your window -- the clatter of a cart on cobblestones, the first vendor's call from the bazaar, the life of two million souls continuing in blissful ignorance of the decisions being made in their name.
+
+You have protected the Emperor. You have used a grieving woman to do it.
+
+*page_break
+
+Tahira testifies two days later, in the Grand Bazaar, before a crowd of merchants and guild members. She is a small woman with dark circles under her eyes and hands that tremble when she speaks. Her daughter stands beside her, holding her mother's robe.
+
+She describes the Khanate raid. She describes her husband's death. She describes the soldiers who came afterward -- imperial soldiers, with the Emperor's banner, who pulled survivors from the rubble and gave them food and water and blankets.
+
+She weeps. The crowd is silent. Jalil, watching from the edges, slips away. The pamphlet's credibility shatters like thin glass.
+
+Afterward, in a quiet room behind the bazaar, you give Tahira the gold Zara promised. She takes it without looking at you. Her daughter stares at you with wide, dark eyes that hold no accusation -- she is too young for that -- but hold a question you cannot answer.
+
+*set evidence_count + 1
+*set rep_trade %+ 5
+
+*goto loyalist_farid
+
+*label loyalist_refuse
+
+"No." The word comes out harder than you intended. "Find another way. Discredit Jalil through evidence. Buy time for the guild address if you must. But I will not use that woman."
+
+Zara studies you for a long moment. Something shifts in her expression -- not approval, exactly, but a recalibration. She has adjusted her understanding of who you are.
+
+"It will cost us," she says. "The guild address may be undermined. The Emperor's reputation will take damage."
+
+"Then we repair it afterward. With truth, not with a grieving mother's tears."
+
+*page_break
+
+The guild address is difficult. The merchants are restless. The pamphlet's poison has done its work, and while Zara's investigators race to discredit Jalil, the damage to the Emperor's reputation is real and immediate. Roshan stumbles over his prepared remarks. The crowd murmurs.
+
+But you stand beside him, steady and visible, and when the address ends you take questions from the guild leaders with the calm authority of someone who has nothing to hide. You cannot undo the damage in a day, but you have preserved something more important: you have not broken an innocent woman to win a political battle.
+
+A week later, Zara's investigation bears fruit. Jalil is exposed as a fraud, hired by intermediaries connected to Prince Kaveh's circle. The truth emerges, slowly, like dawn after a long night.
+
+*set evidence_count + 1
+*set rep_trade %- 5
+*set rel_emperor %- 5
+
+*goto loyalist_farid
+
+*comment === LOYALIST: Farid's Reaction ===
+
+*label loyalist_farid
+
+*page_break
+
+That evening, Farid brings you tea. Cardamom, sweet, steaming in a porcelain cup painted with blue flowers. He sets it on your desk with the careful precision of a man performing a sacred ritual and then stands there, not quite meeting your eyes.
+
+"My lord Vizier," he says. "I heard about -- about the testimony. The woman from the village."
+
+*if (moral_choice = "sacrifice")
+  He does not say more. He does not need to. You can see it in the set of his shoulders, the way his hands fidget with the cuff of his sleeve. Farid is a man who believes in regulations and proper procedure and the fundamental decency of the system he serves. What you did today was legal. It was effective. It may even have been necessary.
+
+  It was not decent.
+
+  "You think I was wrong," you say.
+
+  "I think -- " He stops. Starts again. "I think, my lord Vizier, that the previous Vizier once told me that the hardest part of this office is not making difficult decisions. It is living with the easy ones that turned out to be cruel." He swallows. "I don't know if that applies here. I just... I remembered it."
+
+  *set rel_farid %- 10
+
+  He leaves the tea and goes. The cup is warm in your hands. The taste of cardamom is sweet on your tongue. Outside, the sun is setting over Khazara, painting the domes gold and crimson, and somewhere in the Old City a woman is explaining to her daughter why she had to cry in front of strangers.
+
+  You drink the tea. It goes cold before you finish it.
+*else
+  His face opens with something you can only call relief. "The guild address was difficult, I know. But I -- if I may speak freely, my lord Vizier?"
+
+  "Always, Farid."
+
+  "I am glad you did not compel her. I know it cost us. I know the Emperor's address suffered. But I think -- I think the system only works if the people who run it remember that the people it governs are not tools. They're -- they're people." He flushes. "That was not very articulate. I apologize."
+
+  "It was perfectly articulate."
+
+  *set rel_farid %+ 10
+
+  He beams, and for a moment he looks like a boy who has been given a gift he did not expect. Then he remembers himself and straightens his robes and becomes Secretary Farid once more.
+
+  "Your next meeting is in thirty minutes, my lord Vizier. With the General. Shall I prepare the border reports?"
+
+  "Please."
+
+  He goes. The tea is warm. The sun sets over Khazara. The system, for today at least, has remembered what it is for.
+
+*page_break
+
+You stand at the window and watch the last light fade from the minarets. The city below you is vast and restless and alive, two million souls going about their evening business, unaware of the invisible war being fought above their heads.
+
+The Vizier's seal ring catches the dying light. You turn it on your finger, feeling the cool jade against your skin. You chose this path -- the loyalist's path, the protector's path -- because you believed that a good ruler deserves a good servant. But today you learned that service has a price, and the currency is not always gold.
+
+*if (moral_choice = "sacrifice")
+  The price, today, was Tahira's tears and her daughter's questioning eyes. You paid it because you believed the Emperor's reputation was worth more. Perhaps it was. Perhaps it will be, in the long reckoning of history. But history does not weep. People do.
+
+  *set betrayal_committed true
+*else
+  The price, today, was the Emperor's stumble at the guild address, the murmurs of the merchants, the slow work of truth in a world that prefers easy lies. You paid it because you believed that some things are not for sale, even in the service of a cause you believe in.
+
+You close the curtains. Tomorrow there will be new crises, new prices, new choices that taste of ash or honey or both. But tonight you sit in the dark with cold tea and the weight of your office, and you think about the distance between the person you were when you arrived in Khazara and the person you are becoming.
+
+The distance is not as great as you feared. Or perhaps it is greater than you know.
+
+*goto scene12_end
+
+*comment ============================================================
+*comment KINGMAKER ROUTE: "The Price of Power"
+*comment Betray a minor ally for a more powerful backer.
+*comment ============================================================
+
+*label kingmaker_price
+
+The evening air in the Garden of Eternal Spring carries the scent of jasmine and the distant murmur of fountains. You walk the gravel paths slowly, your hands clasped behind your back, the Vizier's seal ring turning on your finger in a habit you have developed over these weeks of power. The peacocks have retired for the night. The garden is empty except for you and the weight of your ambitions.
+
+You are building something. A network of influence, invisible to the court, woven through the fabric of the empire like gold thread through silk. It requires allies -- each one carefully chosen, each one serving a specific purpose in the architecture of your power.
+
+Merchant Hamid is one such ally.
+
+*page_break
+
+You recruited him three weeks ago. Priya's chief subordinate in the spice trade, Hamid is a jovial man of fifty with a laugh that fills a room and a mind that calculates profit margins faster than any abacus. He has been feeding you information about the trade guilds' internal politics -- who is loyal to Priya, who resents her rise, who might be turned.
+
+The information has been invaluable. It has allowed you to build relationships within the merchant class independent of Priya's control. Hamid trusted you because you treated him with respect, because you remembered his daughter's name, because you shared cardamom tea with him in his office above the Spice Market and listened to his stories about his father's pepper cart.
+
+Tonight, Lord Reza has offered you something far more valuable than Hamid's gossip.
+
+The old lord's message arrived by private courier, written in his own hand on thick cream paper sealed with the Reza family crest. The handwriting is spidery but precise, and the words are chosen with the care of a man who has spent seventy-two years navigating the treacheries of court.
+
+*page_break
+
+"I know what you are building, Vizier. I do not disapprove. The empire needs a strong hand, and the boy on the throne does not yet possess one. I offer my house's support -- our connections among the nobility, our influence in the provinces, our considerable treasury. In return, I require a gesture of good faith. Guildmaster Priya's hold on the treasury depends on Merchant Hamid's loyalty. Remove him from her network, and I will ensure the noble houses align with your interests rather than against them."
+
+You read the letter three times. Each reading reveals new layers -- the careful phrasing that commits Reza to nothing while demanding everything from you, the implied threats beneath the formal courtesies, the way his handwriting presses harder into the paper when he writes the word "gesture," as though the pen itself were a weapon.
+
+Then you burned it in the flame of your desk lamp and watched the cream paper curl to black ash. The smoke tasted of ink and old ambition and the faintest trace of the rosewater that Lord Reza uses to scent his correspondence.
+
+Lord Reza's support would be transformative. The nobility controls the provincial governments, the land, the traditional military levies. With Reza behind you, your shadow network would extend from the merchant class into the aristocracy. You would have influence in places Zara's spies cannot reach.
+
+The price is Hamid. Not his life -- Reza is not asking for murder. He is asking you to expose Hamid's information-sharing to Priya, which will destroy Hamid's career and his relationship with the Guildmaster. Priya will view it as a betrayal. Hamid will lose everything he has built. And the information pipeline you have cultivated so carefully will be severed.
+
+*fake_choice
+  #Power requires sacrifice. Hamid is a tool, and tools can be replaced.
+    *set ruthless %+ 10
+    *set honest %- 5
+    *temp inner_response "cold"
+    You have always known that the path you chose -- the kingmaker's path -- would require you to make calculations that others would call cruel. Every alliance is a transaction. Every relationship is an investment. And sometimes investments must be liquidated to fund greater ambitions.
+  #This feels wrong. Hamid trusted you. He shared tea and stories with you.
+    *set ruthless %- 5
+    *set idealist %+ 5
+    *temp inner_response "conflicted"
+    You think of Hamid's face -- round, warm, creased with laugh lines. You think of his daughter, whose name you remember: Maryam. She is studying to be a calligrapher. Hamid showed you her practice sheets with the pride of a father who has given his child a better life than his own.
+  #This is a test. Reza wants to see if you are willing to pay the price of his alliance.
+    *set boldness %+ 5
+    *set ruthless %+ 5
+    *temp inner_response "strategic"
+    You recognize the shape of Lord Reza's offer. It is not merely a transaction. It is an audition. The old lord wants to know what kind of power-broker you are. Will you sacrifice a minor ally for a major one? Will you demonstrate the ruthlessness that the nobility respects? Reza is not buying your loyalty. He is testing your capacity for the game.
+
+*page_break
+
+Guildmaster Priya invites you to dinner the following evening, and you accept because refusing would draw suspicion and because you want to look her in the eye before you make your decision. The dinner is held in her private dining room above the Grand Bazaar -- a space of warm lamplight, rich carpets, and the smell of roasting lamb with saffron.
+
+Priya is in fine form. She pours wine from the southern provinces, a vintage she paid too much for, and she tells you about a new trade route she is developing through the eastern ports. Her eyes sparkle with the pleasure of commerce, and her laugh is warm and genuine, and you remember why you allied with her in the first place. She is brilliant and ambitious and she understands power in a way that most people do not.
+
+"Hamid tells me you've been spending time together," she says, over a dish of honey-glazed figs. "He likes you. He says you listen. Not many people in this court listen -- they just wait for their turn to talk."
+
+Her smile is open. She trusts you. She should not.
+
+*page_break
+
+After dinner, alone in your chambers, you sit with Lord Reza's offer and the aftertaste of Priya's wine and the memory of Hamid's trusting face. The seal ring gleams on your finger. The garden below is silent. Somewhere in the city a dog barks, once, and is quiet.
+
+The facts are simple. With Hamid, you have a useful information source and a genuine human connection. With Reza, you have the nobility -- their land, their soldiers, their influence in every province. The kingmaker needs both, but tonight you can only have one.
+
+*fake_choice
+  #You think about the person you were before you came to Khazara.
+    *set idealist %- 5
+    *temp inner_response "reflective"
+    A provincial administrator. Honest. Competent. Unremarkable. That person would have been appalled by this choice. But that person did not sit in the Vizier's chair, did not feel the weight of an empire on ${their} shoulders, did not understand that governance is the art of choosing between different kinds of harm.
+  #You think about what happens if you refuse Reza's offer.
+    *set boldness %+ 5
+    *temp inner_response "calculating"
+    Without the nobility, your shadow network has a ceiling. The merchants and the intelligence operatives give you information and money, but the nobles give you legitimacy and provincial power. Without Reza, you are building a house with no foundation. With him, you are building an empire within the empire.
+  #You think about Hamid's daughter, Maryam, and her calligraphy.
+    *set idealist %+ 5
+    *set ruthless %- 5
+    *temp inner_response "guilty"
+    The practice sheets he showed you were beautiful -- careful, precise strokes, each character formed with the devotion of a child learning to make something perfect. You wonder if she knows that her father's career depends on the decision of a stranger who once shared tea with him.
+
+*page_break
+
+The night deepens. The cold mountain wind has died, and the air is still and heavy with the scent of roses from the garden below. You pour yourself a cup of cold tea and drink it standing at the window, watching the lights of Khazara flicker in the darkness like earthbound stars.
+
+The choice is before you.
+
+*choice
+  #Betray Hamid to Lord Reza. The kingmaker's path requires sacrifices.
+    *set ruthless %+ 15
+    *set honest %- 10
+    *set idealist %- 10
+    *set rel_reza %+ 15
+    *set rep_nobility %+ 10
+    *set rel_guild %- 10
+    *set betrayal_committed true
+    *set moral_choice "betray"
+    *goto kingmaker_betray
+  #Refuse Reza's offer. Find another way to secure noble support without sacrificing Hamid.
+    *set idealist %+ 10
+    *set honest %+ 5
+    *set ruthless %- 10
+    *set moral_choice "refuse"
+    *goto kingmaker_refuse
+
+*label kingmaker_betray
+
+You write the letter to Lord Reza before dawn. The words come easily, which disturbs you more than you would like to admit.
+
+You provide Reza with the details of Hamid's information-sharing -- dates, subjects, the specific intelligence he has passed to you. The letter is sealed with the Vizier's ring and sent by private courier. Within three days, the information will reach Priya through Reza's channels, and Hamid's world will collapse.
+
+*page_break
+
+It happens on a Tuesday. You hear about it from Farid, who heard it from a clerk who heard it from a bazaar merchant. Guildmaster Priya summoned Hamid to her office, confronted him with evidence of his side dealings, and stripped him of his guild rank in front of his subordinates. Hamid wept. He protested. He said that the Vizier had asked him, that it was for the good of the empire, that he had not betrayed her, only served two masters --
+
+Priya, who does not forgive disloyalty, did not listen.
+
+That evening, Lord Reza's second letter arrives. It is warm, congratulatory, written with the satisfaction of a man whose test has been passed. He welcomes you into an alliance that will reshape the empire's power structure. He offers his provincial networks, his family connections, his considerable treasury.
+
+*set evidence_count + 1
+*set rep_trade %- 5
+
+You should feel triumph. The alliance is everything you needed. Instead, you sit in your chair and remember Hamid's face across the dinner table, round and warm and trusting, and the sound of his laugh, and the way he talked about his daughter's calligraphy with the quiet pride of a man who has given his child a better life.
+
+You have taken that pride and used it as currency.
+
+*goto kingmaker_farid
+
+*label kingmaker_refuse
+
+You write the letter to Lord Reza before dawn. The words do not come easily, and you draft it three times before you are satisfied.
+
+You decline his offer. You do so with respect, acknowledging the value of his support, expressing your hope that an alliance might be forged on different terms. You do not mention Hamid by name. You seal the letter with the Vizier's ring and send it by private courier and then you sit in the morning light and wonder what you have lost.
+
+*page_break
+
+Lord Reza's response arrives the following evening. It is brief, correct, and cold. He is disappointed. He had believed the Vizier to be a person of vision. It seems he was mistaken. The noble houses will, of course, continue to serve the empire as they always have. He wishes you well.
+
+The message beneath the message is clear: you have made an enemy.
+
+*set rel_reza %- 10
+*set rep_nobility %- 8
+
+In the days that follow, you feel the absence of the alliance like a missing tooth. The noble houses close ranks. Provincial information dries up. Your shadow network, built so carefully over these weeks, hits the ceiling you feared -- powerful within the capital, blind in the provinces.
+
+But Hamid still meets you for tea on Thursday afternoons. He still tells you stories about his father's pepper cart. He still shows you Maryam's calligraphy, which is improving with each visit.
+
+*set evidence_count + 1
+*set rel_guild %+ 5
+
+Some currencies, you tell yourself, do not appear on any ledger.
+
+*goto kingmaker_farid
+
+*comment === KINGMAKER: Farid's Reaction ===
+
+*label kingmaker_farid
+
+*page_break
+
+Farid brings the evening reports at the usual hour. He arranges them on your desk with his customary precision -- trade figures on the left, intelligence summaries on the right, a small pot of fresh ink beside the quill you prefer. His movements are efficient, practiced, the gestures of a man who has made order his religion.
+
+He does not look at you.
+
+"Farid," you say.
+
+"My lord Vizier."
+
+"You heard about Hamid."
+
+*if (moral_choice = "betray")
+  A pause. His hands stop their arranging. "Yes, my lord Vizier. The bazaar talks about little else." Another pause. "Merchant Hamid was -- he was a kind man. Is a kind man. I am told he has been -- that he is no longer welcome in the Spice Market."
+
+  "I did what was necessary."
+
+  "Yes, my lord Vizier." His voice is careful, neutral, the voice of a secretary reciting a regulation. But you know Farid. You know the difference between his professional neutrality and his genuine agreement. This is the former.
+
+  *set rel_farid %- 10
+
+  "You disapprove," you say.
+
+  "It is not my place to -- "
+
+  "Farid."
+
+  He meets your eyes. In them you see something you have not seen before: the first seed of doubt. Not about your competence. Not about your intelligence. About your character. It is a small thing, a hairline crack in the foundation of his loyalty, but you feel it like a blade between your ribs.
+
+  "I trust your judgment, my lord Vizier," he says, and goes.
+
+  The reports sit on your desk, perfectly arranged. You do not read them for a long time.
+*else
+  "Yes, my lord Vizier. I heard that you -- that Lord Reza's offer was declined." He hesitates. "I confess I am relieved. Merchant Hamid has always been -- well, he brings the most wonderful cardamom. And his daughter's calligraphy is really quite remarkable. She wrote me a letter once. Very proper penmanship."
+
+  He is babbling, which is how Farid expresses affection.
+
+  *set rel_farid %+ 8
+
+  "Lord Reza will be a problem," you say.
+
+  "Yes, my lord Vizier. But I think -- and I may be wrong, I am frequently wrong about political matters -- I think that problems you can face honestly are better than victories that cost you..." He trails off, gesturing vaguely at something he cannot quite name.
+
+  "Cost you what, Farid?"
+
+  "The part of yourself that can still drink tea with a friend without wondering what they're worth," he says, and looks immediately horrified at his own eloquence.
+
+  You pour him a cup. He drinks it standing, too flustered to sit.
+
+*page_break
+
+Later, alone, you pace the length of your chambers. The moonlight falls through the windows in long silver bars, striping the marble floor. Your shadow moves across the room like a second self, darker and more certain than you feel.
+
+The kingmaker's path is a path of calculation. You chose it because you believed you could wield power more wisely than the boy on the throne, more justly than the Dowager who controls him, more effectively than the factions who squabble over scraps. You still believe this. But tonight you have learned that calculation has a price, and the price is paid in the currency of human trust.
+
+*if (moral_choice = "betray")
+  Hamid trusted you. You spent that trust like a coin in a market, purchasing something more valuable. The transaction was sound. The returns will be significant. But you cannot unspend the coin. You cannot un-betray the trust.
+
+  The kingmaker, you are learning, must be willing to be hated by the people ${they} use. The question is whether ${they} can live with it.
+*else
+  You kept Hamid's trust and lost Reza's support. The transaction was costly. The returns are uncertain. But you can still drink tea with a man who trusts you, and that, tonight, feels like it matters.
+
+  The kingmaker, you are learning, must choose which currencies to spend and which to hoard. The question is whether wisdom lies in calculation or in the stubborn refusal to calculate certain things.
+
+The moon moves on. The shadows shift. You stop pacing and stand at the window, looking out over the sleeping city, and you wonder how many other people in Khazara are awake tonight, counting the cost of their choices.
+
+*goto scene12_end
+
+*comment ============================================================
+*comment REVOLUTIONARY ROUTE: "The Price of Power"
+*comment Accept corrupt support to advance reform.
+*comment ============================================================
+
+*label revolutionary_price
+
+The rain comes at midday, sudden and fierce, turning the streets of Khazara into rivers of brown water that cascade down the marble steps of the Temple Quarter and flood the lowest reaches of the Old City. You watch it from the window of the reform council's meeting room -- a modest chamber in the Scholars' Quarter that Lady Soraya donated for your use -- and you think about how water always finds the lowest point.
+
+The common people live at the lowest point. The water finds them first.
+
+*page_break
+
+The reform agenda is stalling. You have pushed three measures through the council in the past month: a regulation limiting noble monopolies on grain distribution, a fund for widows and orphans of soldiers killed on the northern border, and a pilot program for public literacy in two districts. Each one was a battle. Each one cost political capital. Each one was, in the grand scheme of what the empire needs, a raindrop in a river.
+
+Lady Soraya sits across the table, her notes spread before her, her face drawn with the particular exhaustion of an idealist confronting reality. She is twenty-four years old and she has aged a decade in the weeks since she joined your cause. The nobility has shunned her. Her family sends letters that alternate between threats and pleas. She endures it all with a quiet determination that you have come to admire deeply.
+
+"The literacy program is working," she says. "Two hundred students in the first week. The teachers we hired are excellent. But we need to expand, and expansion requires gold, and the treasury is..." She trails off, searching for a diplomatic word.
+
+"Hostile," you supply.
+
+"I was going to say 'constrained,' but hostile is more accurate."
+
+*page_break
+
+The problem is not merely money. The problem is that the nobility has learned to fight reform not through open opposition -- Lord Reza's furious speeches in the council chamber -- but through slow strangulation. Permits delayed. Funds diverted. Inspectors dispatched to find violations in the new grain distribution centers. The machinery of imperial bureaucracy, so vast and intricate, turned against you with the patient malice of an institution protecting its own.
+
+You need more power. More money. More leverage. The reform movement needs a patron with resources that the nobility cannot strangle.
+
+And one has appeared.
+
+His name is Merchant Darvish. He is not one of Priya's people -- he operates outside the guild structure, in the gray spaces where legitimate trade shades into something darker. He controls a network of warehouses, ships, and trading posts that stretch from the capital to the eastern ports. Some of his goods pass through customs. Others do not.
+
+*fake_choice
+  #Darvish is exactly the kind of person your reforms are supposed to hold accountable.
+    *set idealist %+ 5
+    *set honest %+ 5
+    *temp inner_response "troubled"
+    You know what Darvish is. A smuggler. A briber. A man who has built his wealth by exploiting the same system your reforms seek to change. Taking his money would be like drinking from a poisoned well and calling it rain.
+  #Pragmatism has its place. Even good causes need funding from imperfect sources.
+    *set idealist %- 5
+    *set ruthless %+ 5
+    *temp inner_response "pragmatic"
+    The history books are full of revolutions funded by impure gold. The canal that brings water to the parched field does not ask where the water came from. What matters is the crop it grows, not the path it took to get there.
+  #You need to understand Darvish's angle before you can judge his offer.
+    *set boldness %+ 5
+    *temp inner_response "wary"
+    No one offers something for nothing, especially not a man like Darvish. He wants something in return -- protection, perhaps, or the loosening of certain trade regulations. Understanding his price is the first step in deciding whether you can afford to pay it.
+
+*page_break
+
+Darvish comes to you in the evening, at the reform council's meeting room, after the others have gone. He is a lean man with an angular face and eyes that miss nothing. His robes are expensive but not ostentatious -- the clothing of a man who has money but does not need you to know it. He smells of sea salt and cedar.
+
+"Vizier." His voice is low, measured. He bows precisely the correct depth -- not too deep, not too shallow. "I have a proposal."
+
+He lays it out with the economy of a man who values time. Each sentence is precise, unadorned, stripped of the flowery courtesies that most Khazaran negotiations require. This is not a man who wastes words. This is a man who has learned that words are coins, and he does not spend coins unnecessarily.
+
+He will fund the literacy program, the grain distribution reform, and the soldiers' widows fund. He will do so through a charitable foundation that bears his name, giving the reforms a financial base independent of the hostile treasury. The foundation will be legally impeccable -- every document filed, every regulation followed, every copper fils accounted for. The amount he offers is staggering -- enough to fund the reforms for two years, enough to expand the literacy program to six districts, enough to ensure that every widow of a soldier killed in the northern campaigns receives a pension that will keep her family from starvation.
+
+The number sits in the air between you like a physical thing. You can almost feel its weight.
+
+"In return?" you ask.
+
+He smiles. It does not reach his eyes. "I ask only that the new trade regulations your council is drafting -- the ones affecting harbor tariffs and customs inspections -- include a provision for 'established merchant networks' to continue operating under the previous framework."
+
+*page_break
+
+The translation is simple: he wants his smuggling operation exempted from your reforms.
+
+You sit with this for a moment, letting the silence fill the room. The rain has stopped. Through the window you can see the sky clearing, stars appearing one by one above the wet rooftops.
+
+"You understand what you are asking," you say.
+
+"I understand perfectly," Darvish replies. "I am asking you to be practical. Your reforms are noble. They are also dying. The nobility is strangling them, and you do not have the resources to fight on every front. I offer you those resources. In return, I ask you to look the other way on a matter that, in the grand scheme of your vision for the empire, is a footnote."
+
+"A footnote that involves smuggling."
+
+"A footnote that involves feeding two hundred children who are learning to read this week. The question is not whether my gold is clean, Vizier. The question is whether those children's futures are worth more to you than your principles."
+
+*fake_choice
+  #He is right about the children. He is wrong about everything else.
+    *set idealist %+ 5
+    *temp inner_response "torn"
+    The children are real. Their futures are real. The literacy program has given them something that no amount of political maneuvering can replace: the ability to read their own names. To lose that because your principles could not bend -- is that strength, or is it selfishness disguised as virtue?
+  #Accepting his money means building the house of reform on a rotten foundation.
+    *set idealist %+ 10
+    *set honest %+ 5
+    *temp inner_response "resolute"
+    If you take Darvish's gold, every reform you enact will carry the stain of his corruption. When Lord Reza discovers the connection -- and he will discover it, because men like Reza always discover such things -- he will use it to destroy everything you have built. The foundation must be clean, or the house will fall.
+  #There might be a way to take the gold and still hold Darvish accountable later.
+    *set ruthless %+ 5
+    *set honest %- 5
+    *temp inner_response "cunning"
+    What if you accept Darvish's money now, use it to entrench the reforms until they are too popular to dismantle, and then bring the full weight of the reformed system down on his smuggling operation? It would be a betrayal. It would also be effective. The question is whether you can live with that kind of calculation.
+
+*page_break
+
+Lady Soraya is waiting in the corridor. She heard nothing -- the walls are thick -- but she can read the tension in your face.
+
+"Was that Merchant Darvish?" she asks, and when you nod, her expression tightens. "I know his reputation, Vizier. My family has dealt with his network. His goods come through channels that -- " She stops. "What did he offer?"
+
+You tell her. You tell her everything -- the amount, the conditions, the exemption. You watch her face as the numbers sink in, as the scale of the offer becomes real. Two years of funding. Two hundred children learning to read. Widows receiving pensions. Grain reaching villages that have gone hungry for a generation.
+
+"Oh," she says, very quietly. And then: "What are you going to do?"
+
+*choice
+  #Accept Darvish's offer. The reforms are more important than the purity of their funding.
+    *set ruthless %+ 10
+    *set idealist %- 15
+    *set honest %- 10
+    *set rep_trade %+ 5
+    *set rep_nobility %- 5
+    *set moral_choice "accept"
+    *goto revolutionary_accept
+  #Refuse Darvish's offer. The reforms must be built on clean foundations, even if they are slower.
+    *set idealist %+ 15
+    *set honest %+ 10
+    *set ruthless %- 5
+    *set moral_choice "refuse"
+    *goto revolutionary_refuse
+
+*label revolutionary_accept
+
+"I am going to take his money," you say, and the words taste like the bitter herbs the mendicant monks chew to stay awake during long prayers. They taste like compromise. They taste like the first sip of water from a well you know is contaminated but drink from anyway because thirst is a more immediate death than poison.
+
+Soraya is quiet for a long time. The corridor stretches empty in both directions -- stone walls, oil lamps in iron sconces, the distant sound of a scholar's debate echoing from somewhere deep in the building. The lamp nearest to you flickers, sending your shadows dancing on the wall in a partnership neither of you chose.
+
+"The children need to eat," she says at last, and you cannot tell whether she is agreeing with you or forgiving you or simply stating a fact that has no answer. Her voice is steady but her hands, clasped at her waist, grip each other with a force that whitens her knuckles.
+
+*page_break
+
+The gold arrives within the week. It is clean, freshly minted, bearing the Emperor's face. Darvish's foundation is established with legal precision -- every document in order, every signature correct. The literacy program expands to six districts. The grain distribution reform hires forty new inspectors. The widows' fund begins paying pensions.
+
+The reforms bloom like flowers after rain.
+
+*set evidence_count + 1
+*set rep_temple %- 5
+
+And in the harbor, Darvish's ships continue to pass through customs unchecked, carrying goods that you have chosen not to see. The exemption you drafted is buried in the regulatory language, a single clause among hundreds, invisible unless you know where to look.
+
+You know where to look. You drafted it yourself.
+
+*goto revolutionary_farid
+
+*label revolutionary_refuse
+
+"I am going to tell him no," you say, and the words taste like cold water from a mountain stream -- clean, sharp, and not enough.
+
+Soraya closes her eyes. Opens them. Nods.
+
+"It will be harder," she says.
+
+"Yes."
+
+"The literacy program may not survive the quarter."
+
+"I know."
+
+*page_break
+
+She reaches out and takes your hand. It is an unexpected gesture, intimate and deliberate, and her fingers are warm against your skin. "Then we find another way. We go to the guilds. We go to the temples. We go to the people themselves and we ask them to fund their own future. It will be slower. It will be smaller. But it will be ours."
+
+*set rel_soraya %+ 12
+*set rep_temple %+ 5
+*set rep_trade %- 5
+
+In the weeks that follow, the reforms contract. The literacy program survives in two districts instead of six, funded by small donations from guild members and temple offerings. The grain distribution reform limps forward. The widows' fund pays half pensions instead of full ones.
+
+*set evidence_count + 1
+
+It is not enough. It is never enough. But every coin in the treasury is clean, and every signature on every document is honest, and when Lord Reza's investigators come looking for corruption -- and they come, as you knew they would -- they find nothing.
+
+You build slowly. You build honestly. And at night, when the doubts come, you remind yourself that the house you are building may be small, but its foundation is stone.
+
+*goto revolutionary_farid
+
+*comment === REVOLUTIONARY: Farid's Reaction ===
+
+*label revolutionary_farid
+
+*page_break
+
+Farid finds you in the reform council's meeting room, late, after the lamps have been lit and the streets have gone quiet. He has brought tea -- of course he has brought tea; Farid's answer to every crisis is tea and paperwork -- and he sets it before you with the careful gravity of a priest preparing a sacrament.
+
+"My lord Vizier," he says. "I have been reviewing the reform accounts."
+
+You look up. His face is doing the thing it does when he has something to say that he is afraid to say, which is to say it looks like a man trying to swallow a pomegranate whole.
+
+*if (moral_choice = "accept")
+  "The Darvish Foundation funds," he says. "They are -- the paperwork is impeccable, my lord Vizier. Every form correctly filed. Every regulation followed. It is, from a bureaucratic standpoint, flawless."
+
+  He pauses. The tea steams between you.
+
+  "But the regulations themselves," he says, very carefully, "the harbor tariff exemption -- per regulation 291, subsection 4, a categorical exemption of this nature would normally require a full council review. It did not receive one. I mention this only because -- well. Because I notice things. That is my job. Noticing things."
+
+  *set rel_farid %- 8
+
+  He is telling you that he knows. He is telling you with the language of regulations because that is the only language in which Farid can express betrayal without breaking apart.
+
+  "I understand, Farid."
+
+  "Yes, my lord Vizier." He stands. "I remain, as always, your servant. I just -- I wanted you to know that I noticed. That is all."
+
+  He goes. The tea cools. The numbers in the account books are black ink on white paper, precise and damning and correct.
+*else
+  "The reform accounts are -- well, they are modest, my lord Vizier. Quite modest. The literacy program in particular is operating on what I would call a 'prayer and determination' budget. Which is to say, not a real budget at all."
+
+  He sits down, uninvited, which tells you how worried he is. Farid never sits uninvited.
+
+  "But the accounts are clean," he says, and something in his voice catches. "They are -- my lord Vizier, they are the cleanest government accounts I have ever seen. Every copper fils accounted for. Every donation traced. It is -- it is how the system is supposed to work." He pushes his spectacles up his nose. "I just wanted you to know. In case that matters."
+
+  *set rel_farid %+ 10
+
+  "It matters, Farid."
+
+  He beams. It is the beam of a man whose faith in the system has been, against all odds, justified.
+
+*page_break
+
+Later, alone, you stand at the window of the meeting room and look out over the Scholars' Quarter. The rain-washed rooftops gleam in the lamplight. A cat picks its way along a wall. In the distance, the Eternal Flame flickers above the Temple of Seven Wisdoms, its light reflected in the puddles that fill the streets like scattered mirrors.
+
+You came to Khazara to change the world. Not the whole world -- that is the work of centuries -- but this piece of it, this empire of two million souls bound together by trade and tradition and the flickering light of a flame that has burned for three hundred years. You believed that change could be achieved through justice, through reason, through the patient application of good ideas to willing minds.
+
+*if (moral_choice = "accept")
+  Today you learned that patience has limits and principles have prices. The reforms are alive because a smuggler's gold feeds them. The children are reading because you chose their future over your integrity. Whether that choice was wisdom or corruption -- whether the house you are building will stand on its compromised foundation or collapse under the weight of its contradictions -- that is a question you cannot answer tonight.
+
+  You drink the cold tea and taste the bitterness of it.
+*else
+  Today you learned that principles are expensive and patience is a discipline, not a virtue you are born with. The reforms are smaller than they should be because you refused to build them on poisoned ground. Whether that choice was wisdom or pride -- whether the smaller house you are building will outlast the faster, larger, dirtier one you refused to build -- that is a question you cannot answer tonight.
+
+  You drink the cold tea and taste the clarity of it.
+
+The Eternal Flame burns on, indifferent to the choices of viziers and revolutionaries. The cat finds its way off the wall and disappears into the shadows. The night is quiet and you are tired and tomorrow there will be more battles to fight, more prices to pay, more choices that test the distance between who you are and who you want to be.
+
+The distance, tonight, is exactly the width of a cup of cold tea.
+
+*goto scene12_end
+
+*comment ============================================================
+*comment SCENE 12 ENDING (all routes converge)
+*comment ============================================================
+
+*label scene12_end
+
+*page_break
+
+*if (moral_choice = "sacrifice")
+  You have paid the price. The Emperor's reputation is intact. A woman named Tahira has wept in public for a cause that was not hers. The conspiracy has been checked, but not defeated. And you carry the weight of what you did like a stone in your chest.
+*elseif (moral_choice = "betray")
+  You have paid the price. Lord Reza's alliance is secured. A man named Hamid has lost his career and his place in the Spice Market. The kingmaker's network has grown, but its growth has left a wound that will not heal cleanly. And you carry the knowledge of what you did like a ledger that will never balance.
+*elseif (moral_choice = "accept")
+  You have paid the price. The reforms are funded. A smuggler named Darvish moves his goods through the harbor unchecked. The revolution grows, but it grows in compromised soil. And you carry the contradiction of what you have done like a seed that may bloom or poison the garden.
+*elseif (moral_choice = "refuse")
+  You have refused the price. The cost is real -- diminished influence, slower progress, enemies emboldened by your restraint. But you carry something that cannot be weighed on any scale: the knowledge that you did not break.
+*else
+  *bug moral_choice variable not set properly
+
+Farid's words echo in the chambers of your mind as the night deepens. The Citadel settles into its nocturnal rhythms -- the changing of the guard, marked by the distant tramp of boots on marble; the closing of the kitchen, marked by the fading scent of bread and spice; the final extinguishing of lamps in the corridors, marked by the deepening of shadows until the only light that remains is the moonlight through your window and the distant, unwavering glow of the Eternal Flame above the Temple Quarter.
+
+The seal ring gleams on your finger. The city sleeps.
+
+Tomorrow the game continues. The conspiracy moves. The empire turns on its axis of silk and steel and the prayers of two million souls who wake and work and love and die beneath the shadow of a throne they will never sit upon. But tonight you sit with the price you have paid -- or refused to pay -- and you learn the first lesson of power that no book in the Great Library can teach:
+
+The heaviest things you carry in this office are not the documents or the seal ring or the robes of state. They are the choices. They stay with you. They weigh what they weigh. And the weight does not diminish with time.
+
+*finish Chapter 13: Deep Water

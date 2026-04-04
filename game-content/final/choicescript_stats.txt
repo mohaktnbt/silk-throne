@@ -1,0 +1,67 @@
+*comment === THE SILK THRONE -- STAT SCREEN ===
+*comment File: choicescript_stats.txt
+*comment Displays player stats when the "Show Stats" button is pressed.
+
+*stat_chart
+  text player_name Name
+
+*comment === PERSONALITY ===
+
+Personality
+
+*stat_chart
+  opposed_pair boldness
+    Bold
+    Cautious
+  opposed_pair ruthless
+    Ruthless
+    Compassionate
+  opposed_pair honest
+    Honest
+    Deceptive
+  opposed_pair idealist
+    Idealist
+    Pragmatist
+
+*comment === SKILLS ===
+
+Skills
+
+*stat_chart
+  percent strength Strength
+  percent cunning Cunning
+  percent diplomacy Diplomacy
+  percent scholarship Scholarship
+
+*comment === RELATIONSHIPS ===
+
+Relationships
+
+*stat_chart
+  percent rel_emperor Emperor Roshan
+  percent rel_dowager Dowager Empress Nur
+  percent rel_general General Kadir
+  percent rel_guild Guildmaster Priya
+  percent rel_priest High Priest Ashoka
+  percent rel_spy Spymaster Zara
+  percent rel_farid Secretary Farid
+
+*comment === ROMANCE ===
+
+*if (romance_active)
+  Romance
+
+  *stat_chart
+    *if (romance_leila)
+      percent rel_leila Leila (Court Poet)
+    *if (romance_navid)
+      percent rel_navid Navid (Guard Captain)
+    *if (romance_asha)
+      percent rel_asha Asha (Temple Scholar)
+
+*comment === RESOURCES ===
+
+Resources
+
+*stat_chart
+  text gold Gold

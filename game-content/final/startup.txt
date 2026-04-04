@@ -1,0 +1,676 @@
+*title The Silk Throne
+*author Mohak
+*scene_list
+  startup
+  scene2
+  scene3
+  scene4
+  scene5
+  scene6
+  scene7
+  scene8
+  scene9
+  scene10
+  scene11
+  scene12
+  scene13
+  scene14
+  scene15
+  scene16
+  scene17
+  scene18
+  scene19
+  scene20
+  scene21
+  scene22
+  scene23
+  scene24
+  scene25
+  scene26
+  scene27
+  scene28
+  scene29
+  scene30
+  epilogue
+
+*comment === PLAYER IDENTITY ===
+*create player_name "Unknown"
+*create gender "unknown"
+*create they "they"
+*create them "them"
+*create their "their"
+*create theirs "theirs"
+*create themself "themself"
+*create theyre "they're"
+*create are "are"
+*create were "were"
+*create have "have"
+*create plural true
+*create title_honorific "Mx."
+*create person "person"
+*create child "child"
+*create player_origin "provincial"
+*create player_background 0
+
+*comment === PERSONALITY AXES (fairmath, start 50) ===
+*create boldness 50
+*create ruthless 50
+*create honest 50
+*create idealist 50
+
+*comment === SKILLS (arithmetic, start 20) ===
+*create strength 20
+*create cunning 20
+*create diplomacy 20
+*create scholarship 20
+
+*comment === FACTION REPUTATION (fairmath) ===
+*create rep_military 25
+*create rep_trade 30
+*create rep_temple 30
+*create rep_intelligence 20
+*create rep_nobility 25
+
+*comment === NPC RELATIONSHIPS (fairmath) ===
+*create rel_emperor 40
+*create rel_dowager 30
+*create rel_general 25
+*create rel_guild 30
+*create rel_priest 35
+*create rel_spy 20
+*create rel_farid 50
+*create rel_leila 20
+*create rel_navid 20
+*create rel_asha 20
+*create rel_reza 20
+*create rel_soraya 25
+*create rel_kaveh 30
+*create rel_darius 30
+*create rel_chen 25
+
+*comment === ROMANCE FLAGS ===
+*create romance_leila false
+*create romance_navid false
+*create romance_asha false
+*create romance_active false
+
+*comment === MEETING FLAGS ===
+*create has_met_emperor false
+*create has_met_dowager false
+*create met_general false
+*create met_guild false
+*create met_priest false
+*create met_spy false
+*create met_leila false
+*create met_navid false
+*create met_asha false
+*create met_kaveh false
+
+*comment === MURDER MYSTERY FLAGS ===
+*create predecessor_murder_known false
+*create discovered_poison false
+*create found_letter false
+*create identified_poison_type false
+*create met_yusuf false
+*create traced_poison_source false
+*create suspect_dowager false
+*create suspect_kaveh false
+*create suspect_reza false
+*create knows_ghost_identity false
+
+*comment === EXPLORATION FLAGS ===
+*create secret_passage_found false
+*create tower_of_stars_visited false
+*create old_city_visited false
+*create library_secret_found false
+*create hidden_treasury_found false
+
+*comment === ROUTE AND MAJOR DECISIONS ===
+*create route 0
+*create alliance_sealed false
+*create betrayal_committed false
+*create rebellion_started false
+*create reforms_enacted false
+*create emperor_confronted false
+*create dowager_confronted false
+
+*comment === ACT 2 PROGRESSION ===
+*create act2_chapter 0
+*create midpoint_betrayer 0
+*create survived_midpoint_betrayal false
+*create recovered_from_betrayal false
+*create identified_true_enemy false
+
+*comment === ACT 3 PROGRESSION ===
+*create conspiracy_revealed false
+*create final_alliance_military false
+*create final_alliance_trade false
+*create final_alliance_temple false
+*create final_alliance_intelligence false
+*create final_alliance_nobility false
+*create siege_outcome 0
+*create throne_room_choice 0
+
+*comment === SCENE-SPECIFIC TRACKING ===
+*create scene3_crisis_response 0
+*create scene6_embargo_result 0
+*create scene7_assassination_result 0
+*create festival_event 0
+
+*comment === RESOURCES ===
+*create gold 100
+
+*comment === CONVERSATION COUNTERS ===
+*create conv_emperor 0
+*create conv_dowager 0
+*create conv_general 0
+*create conv_guild 0
+*create conv_priest 0
+*create conv_spy 0
+*create conv_farid 0
+*create conv_leila 0
+*create conv_navid 0
+*create conv_asha 0
+
+*comment === EVIDENCE ===
+*create evidence_count 0
+
+*comment === ENDING VARIABLES ===
+*create ending_type 0
+*create heir_alive true
+*create empire_intact true
+*create player_alive true
+*create love_fulfilled false
+
+*comment === HIDDEN QUEST FLAGS ===
+*create found_last_poem false
+*create eternal_flame_quest_complete false
+
+*comment === ACHIEVEMENTS ===
+
+*achievement golden_age visible 100 The Golden Age
+  The empire awaits its greatest era.
+  You ushered in a golden age of peace and prosperity under Emperor Roshan IV.
+
+*achievement shadow_emperor visible 100 The Shadow Emperor
+  Power has many forms.
+  You became the true ruler of the Khazaran Empire, governing from behind the throne.
+
+*achievement new_dawn visible 100 The New Dawn
+  The old order trembles.
+  You reformed the Khazaran Empire, creating a new system of governance for all its people.
+
+*achievement eternal_flame_ending hidden 100 The Eternal Flame
+  ???
+  You unlocked the secret of the Eternal Flame and transcended mortal politics.
+
+*achievement conspiracy_unveiled visible 50 The Truth Unveiled
+  Shadows hide many secrets.
+  You uncovered the full conspiracy threatening the Khazaran Empire.
+
+*achievement true_love visible 50 True Love
+  The heart wants what it wants.
+  You found lasting love amid the chaos of imperial politics.
+
+*achievement master_diplomat visible 50 Master Diplomat
+  Words are the sharpest weapons.
+  You resolved three or more major crises through diplomacy alone.
+
+*achievement spymaster_ally visible 50 Trust No One
+  Except, perhaps, one person.
+  You earned the complete trust of Spymaster Zara.
+
+*achievement five_factions visible 50 Balance of Power
+  All factions serve the throne.
+  You achieved allied status with all five factions simultaneously.
+
+*achievement last_poem hidden 50 The Last Poem
+  ???
+  You discovered the meaning of Leila's father's final poem.
+
+*achievement first_council visible 25 Voice of the Throne
+  Your first council meeting awaits.
+  You survived your first Council of Five meeting.
+
+*achievement poison_expert visible 25 Poison Expert
+  Knowledge is power -- even deadly knowledge.
+  You identified the poison used on your predecessor.
+
+*achievement secret_passage visible 25 Hidden Ways
+  The palace has more doors than you think.
+  You discovered the secret passage in the Citadel.
+
+*achievement star_reader hidden 25 Star Reader
+  ???
+  You deciphered the astronomical code in the conspiracy's messages.
+
+*achievement old_city_survivor visible 25 Streets of Shadow
+  The Old City has its own rules.
+  You survived a dangerous encounter in the Old City.
+
+*achievement poetry_duel visible 25 War of Words
+  The pen is mightier.
+  You won a poetry duel at the Imperial Court.
+
+*achievement saved_emperor visible 25 The Shield
+  The Emperor's life is in your hands.
+  You personally saved Emperor Roshan from the assassination attempt.
+
+*achievement merchant_prince visible 25 Merchant Prince
+  Gold opens every door.
+  You accumulated over 500 gold through trade and shrewd dealing.
+
+*achievement warrior_vizier hidden 25 Warrior Vizier
+  ???
+  You defeated Captain Navid in a sparring match.
+
+*achievement seven_wisdoms hidden 25 The Seventh Wisdom
+  ???
+  You debated all Seven Wisdoms with Asha and reached a new understanding.
+
+*achievement ghost_unmasked visible 25 Ghost Unmasked
+  Every shadow has a source.
+  You discovered the true identity of the assassin known as the Ghost.
+
+*achievement peoples_champion hidden 25 People's Champion
+  ???
+  You improved the lives of Khazara's common people through three or more reforms.
+
+*comment ============================================================
+*comment SCENE 1: "THE ROAD TO KHAZARA"
+*comment Variables modified: player_name, gender, pronouns,
+*comment   player_background, skills, boldness, idealist, rel_farid
+*comment ============================================================
+
+*temp arrival_mood "steady"
+
+The dust of three provinces clings to your clothes. Your horse is tired beneath you, sides dark with sweat, and the sun has turned the road ahead into a ribbon of trembling white. You have been riding for six weeks, through river valleys and mountain passes, through villages where children chased your horse and market towns where merchants eyed your travel-worn cloak and judged you not worth the effort of a sales pitch.
+
+But none of that matters now. Because you have crested the last hill, and the city of Khazara lies before you like the answer to a question you have been asking your entire life.
+
+Two rivers converge in the valley below -- the broad, slow Ashar, brown with silt and heavy with trade barges, and the swift blue Tavan, running down from the northern highlands with water so clear you can see the riverbed stones from a mile away. Where they meet, the city rises. Khazara. Two million souls. A hundred markets. A thousand fountains. And at its heart, catching the late-afternoon sun like a fist of white fire, the domes of the Citadel.
+
+You shade your eyes. The minarets of the Temple Quarter spike the sky to the south, a cluster of pale needles from which, even at this distance, you can see the smoke of the Eternal Flame climbing in a thin, unwavering line. The Grand Bazaar sprawls to the north, a dark labyrinth of vaulted roofs. Beyond it, the Garrison stretches along the river's eastern bank, its parade ground a tawny square in the green patchwork of fields.
+
+*page_break
+
+You have been summoned to this city to serve as Grand Vizier of the Khazaran Empire. Chief administrator. Voice of the Throne. The person who stands beside the Silk Throne and speaks when the Emperor cannot, decides when the Emperor will not, and bears the weight when the Emperor is too young to carry it himself.
+
+Emperor Roshan IV is sixteen years old. He has held the throne for three months. His father died of a sudden fever that no physician could explain and no courtier will discuss. The empire is three hundred years old, the richest civilization in the known world, and it is balanced on the shoulders of a boy.
+
+Someone, somewhere in that gleaming city, has decided that you are the person to help him carry it.
+
+You are fairly certain there has been a mistake.
+
+A sound interrupts your thoughts -- the slap of sandals on packed earth, the fluttering of loose papers, and a voice that arrives slightly ahead of the person producing it.
+
+"My -- my lord! My lady! My -- oh dear --"
+
+*page_break
+
+A young man scrambles up the hillside path, clutching a leather satchel that is shedding documents like a bird in molt. He is perhaps twenty-five, thin as a reed, with ink-stained fingers and the wide, slightly desperate eyes of a person who has been given an important task and insufficient time. His court robes are a size too large. His turban lists to port. He bows so deeply he nearly overbalances, catches himself on one knee, and rises with a paper stuck to his forehead.
+
+"Secretary Farid," he gasps, peeling the paper away. "Secretary to the Grand Vizier. Which is you. I was sent to meet you at the city gates -- I may have miscalculated the arrival time, or the distance, or both -- the point is, welcome. Welcome to Khazara." He clutches his satchel to his chest like a shield. "I have your briefing documents. They are mostly organized. I apologize in advance for the tea stain on page seven."
+
+Despite everything -- the dust, the heat, the low hum of apprehension that has been your constant companion since the imperial letter arrived -- you feel the corner of your mouth twitch. There is something reassuring about a man who apologizes for tea stains. It suggests a world where the worst thing that can happen is a blemished document.
+
+You suspect that world is about to end.
+
+"Before we proceed," Farid says, coloring slightly, "I should -- that is, the formal protocols require -- may I ask how you prefer to be addressed? The appointment letter used only the family name, and I was not informed of the proper -- the appropriate --"
+
+He trails off, gesturing helplessly.
+
+*page_break
+
+*comment === CHARACTER CREATION: NAME AND GENDER ===
+
+*if (choice_randomtest)
+  *set player_name "TestPlayer"
+  *goto after_name
+*else
+  What name do you give the flustered secretary?
+  *input_text player_name
+  *goto after_name
+
+*label after_name
+
+*choice
+  #"I am ${player_name}. 'My lord' will serve."
+    *set gender "male"
+    *goto set_pronouns
+  #"I am ${player_name}. 'My lady' will serve."
+    *set gender "female"
+    *goto set_pronouns
+  #"I am ${player_name}. Simply 'Vizier' will do."
+    *set gender "non-binary"
+    *goto set_pronouns
+
+*label set_pronouns
+
+*if (gender = "male")
+  *set they "he"
+  *set them "him"
+  *set their "his"
+  *set theirs "his"
+  *set themself "himself"
+  *set theyre "he's"
+  *set are "is"
+  *set were "was"
+  *set have "has"
+  *set plural false
+  *set title_honorific "Lord"
+  *set person "man"
+  *set child "boy"
+*elseif (gender = "female")
+  *set they "she"
+  *set them "her"
+  *set their "her"
+  *set theirs "hers"
+  *set themself "herself"
+  *set theyre "she's"
+  *set are "is"
+  *set were "was"
+  *set have "has"
+  *set plural false
+  *set title_honorific "Lady"
+  *set person "woman"
+  *set child "girl"
+*else
+  *comment Non-binary defaults already set by *create
+  *set title_honorific "Vizier"
+
+Farid's entire body sags with relief. "${title_honorific} ${player_name}. Yes. Of course. I have it committed to memory." He pats his satchel. "And written down. In three places. One can never be too careful with forms of address. Per regulation 14-A, subsection 2, an error in the formal greeting of a newly appointed Vizier is grounds for -- well, it's not pleasant. There is a historical example involving a secretary and a goat, but this is perhaps not the time."
+
+He turns and begins walking down the hill toward the city. You fall into step beside him, and the road to Khazara begins in earnest.
+
+*page_break
+
+*comment === THE BRIEFING: CITY APPROACH ===
+
+Farid walks with the gait of a man who has spent his life indoors and is unhappy about the sunshine. His satchel bounces against his hip, shedding the occasional paper, which he retrieves with a practiced scoop that suggests this happens often. He smells of ink and cardamom tea, and when the wind catches his robes, you see that his undershirt has an inkblot in the shape of something that might be a cat.
+
+He is, you decide, the most honest thing you have encountered since the imperial letter arrived. Everyone else in this story -- the Dowager Empress who summoned you, the courtiers who will greet you, the faction leaders who will test you -- has an agenda. Farid's agenda is to get you to the Citadel without losing more than three documents. You appreciate the simplicity.
+
+The road descends through terraced fields of rice and cotton that catch the sunlight in long, golden shelves. The air changes as you approach the city -- the clean dust of the road giving way to something richer. Cinnamon. Cardamom. The warm, yeasty scent of bread baking in a hundred ovens. Underneath it, the living smell of two million people pressed together between ancient walls: cook-fire smoke and horse dung, jasmine and sewage, incense and sweat.
+
+Farid talks as you walk, and you begin to understand the shape of the world you are entering.
+
+"His Imperial Majesty, Emperor Roshan IV -- Light of the World, Shadow of God upon the Earth -- ascended to the Silk Throne three months ago, following the sudden death of his father. He is sixteen. The Dowager Empress Nur -- Mother of the Empire, She Who Endures -- serves as his principal advisor." Farid pauses. "She is the one who selected you for this post."
+
+He glances at you with an expression that says, very clearly: and she does not select people at random.
+
+A merchant's train passes -- twenty camels laden with silk bales, their drivers singing a traveling song in a language you do not recognize. The smell of the silk is subtle but distinct: a cool, mineral scent, like water over stone. Each bale is worth more than a provincial village earns in a year. Each one has crossed a thousand miles of road to reach this city. And each one will be taxed, at the gates, at the market, at the point of sale, the wealth flowing upward like water running against gravity, into the channels and coffers and gilded rooms of the empire's capital.
+
+This is what you are here to manage. Not a kingdom. A system. The largest, most complex, most profitable system of trade and governance in the known world. And at its center, a throne occupied by a frightened boy.
+
+"The empire is governed through the Council of Five, which you will chair. General Kadir commands the armies. Guildmaster Priya controls the treasury and the guilds. High Priest Ashoka presides over the Eternal Flame and the temple. Spymaster Zara directs the Eyes -- the intelligence network." He ticks them off on his fingers. "The fifth seat, Lord Speaker of the Nobility, is vacant. The previous holder died alongside the old Emperor. It has been a season of -- of endings."
+
+His voice catches on the last word, and something in his expression shifts. Not just anxiety. Grief. You file it away. In the provinces, you learned to listen not just to what people say but to the silences between the words -- the pauses that last a beat too long, the sentences that end before they should, the names that are not spoken aloud. Farid is carrying something he has not told you yet. You will wait. The road is long, and grief has its own timetable.
+
+*page_break
+
+*comment === ENTERING THE CITY ===
+
+The city walls appear first as a white line on the horizon, then as a presence that grows until it fills the world ahead of you. The walls of Khazara are forty feet of dressed limestone, ancient and formidable, their surfaces smoothed by three centuries of wind and rain into something that looks almost organic -- more like a cliff face than a construction. Guard towers punctuate the walls at regular intervals, each one flying the crimson banner of the empire: a seven-pointed star above a jade throne.
+
+At the city gates, the traffic thickens to a crawl. Camel caravans laden with silk bales jostle against ox-carts heaped with grain. A group of monks in saffron robes walks past in silent file. A merchant from the Western Confederation -- you recognize the cut of the coat, the pale complexion -- argues with a customs officer while his partner counts copper fils into a wooden bowl.
+
+You produce your letter of appointment. The gate captain reads it. Reads it again. His eyebrows climb his forehead like men scaling a wall.
+
+"At once, Voice of the Throne," he says, and bows so quickly his helmet slips. "Clear the road! The new Vizier passes!"
+
+The crowd parts. Heads turn. You feel a hundred eyes on you, measuring, assessing, filing away. In a city of merchants, everyone takes stock.
+
+Inside the gates, Khazara swallows you whole.
+
+The noise hits first -- a wall of sound so dense and varied it takes your ears a moment to separate the strands. Vendors calling prices in a dozen languages. The rhythmic clang of a coppersmith's hammer. The liquid notes of a tar being tuned in an upper window, cascading down the scale like water over stones. Children shrieking. A donkey braying. The low, persistent murmur of two million lives happening simultaneously, layered and overlapping like the geometric tilework on the walls.
+
+Then the smells: roasting lamb, hot bread, cinnamon, sewage, jasmine, horse, incense, and a dozen spices you cannot name but that settle on the back of your tongue and make your mouth water. The streets are narrow, teeming, vibrant -- buildings of plastered brick rising three and four stories on each side, their upper floors leaning toward each other until they nearly touch. Laundry lines crisscross above like the rigging of ships. Light falls through the gaps in slanting bars, striping the cobblestones with gold.
+
+You catch glimpses of the city's many faces as Farid guides you through the crowds. The edge of the Grand Bazaar, where the scent of spices becomes so concentrated you can taste saffron on the back of your tongue. A broad avenue leading toward the Temple Quarter, where the minarets loom and the smoke of the Eternal Flame smudges the sky above. A side street that opens onto a view of the Garrison across the river -- drilling soldiers, the flash of steel, the distant bark of a commander's orders.
+
+*page_break
+
+*comment === PERSONALITY FAKE CHOICE: OBSERVATION ===
+
+Through it all, you observe. You have not survived a career in the provinces without learning to read a place quickly -- its wealth, its fractures, its unspoken rules. And what you observe now tells you something about the empire you are about to serve.
+
+*fake_choice
+  #You notice the soldiers -- their numbers, their readiness, the way the crowd parts around them like water around stones.
+    *set boldness %+ 5
+    *set arrival_mood "martial"
+    The patrols move in pairs, hands resting on sword hilts. Their equipment is well-maintained -- oiled leather, polished steel -- but their eyes are tired. These are men who have been on alert for weeks. You count four patrols in two streets. Either the city is always this heavily guarded, or something has the military on edge.
+  #You notice the commerce -- the staggering volume of goods flowing through every street, the weight of purses, the language of negotiation.
+    *set boldness %- 5
+    *set arrival_mood "mercantile"
+    Even in this side street, five transactions are happening simultaneously. A spice merchant weighing cardamom pods on a brass scale. A silk trader unfurling a bolt of fabric so fine it seems to float in the air. A boy selling cups of tea from a battered copper samovar. Wealth flows through this city like blood through a beating heart. Where there is wealth, there are levers. And levers can be pulled.
+  #You notice the people -- the beggar at the gate, the child without shoes, the tired faces of laborers pressed against the walls to let your horse pass.
+    *set idealist %+ 5
+    *set arrival_mood "compassionate"
+    For every silk-robed merchant, there are ten laborers in threadbare cotton. A woman fills a clay jug at a public fountain, balancing a baby on her hip. An old man sits outside a tea house with the patient expression of someone who has been waiting for something better for a very long time. The empire's wealth is real. So is its poverty. And you suspect the distance between the two is growing.
+  #You notice the architecture -- the tilework, the domes, the way light falls through carved marble screens to pattern the streets with lace.
+    *set idealist %+ 5
+    *set boldness %- 5
+    *set arrival_mood "aesthetic"
+    Even in the common quarters, the walls are decorated with geometric tilework in turquoise and cobalt, patterns that repeat and tessellate with mathematical precision. Carved wooden screens cover the upper windows, casting filigrees of shadow on the paving stones. Arched doorways frame courtyard glimpses -- a fountain here, a vine-covered wall there, a flash of crimson bougainvillea. This is a civilization that takes beauty seriously. You wonder if it takes justice as seriously.
+
+*page_break
+
+*comment === THE PREDECESSOR ===
+
+Farid has been watching you watch the city. When you turn back to him, he nods, as if you have passed a test he was not aware of administering.
+
+"There is one more thing, ${title_honorific} ${player_name}. About the previous Vizier." He swallows. "My former master. Vizier Cyrus."
+
+His hands tighten on the satchel strap.
+
+"He died six weeks ago. A sudden fever. He was well at dinner and confined to bed by midnight. Three days later, he was gone." Farid's voice is steady, but his jaw is set. "The physicians attributed it to river sickness. It happens, they said. Especially in the hot season."
+
+He does not look at you.
+
+"I served him for three years. I was his secretary from the day he took office until the day he -- until the end." The muscles in his throat work. "I was home sick that day. A stomach ailment. If I had been here, perhaps I could have -- " He stops. "The physicians said the fever might have been catching. They said it was fortunate I was absent."
+
+Fortunate. The word sits in the air between you like a stone in still water.
+
+You have spent your career reading faces, and you can read this one. Secretary Farid does not believe his master died of a fever. He believes something else happened in those rooms, something the physicians could not or would not name. And the guilt of having been absent -- of having lived when his master died -- is eating him from the inside.
+
+*page_break
+
+*comment === THE CITADEL ===
+
+The Citadel of Khazara -- the Arg-e-Shahi -- rises before you like a mountain made by human hands. White marble walls forty feet high, smooth and luminous in the slanting light. Guard towers capped with domes of hammered copper gone green with age. The main gate is flanked by stone lions the size of carriages, their eyes inlaid with chips of lapis lazuli that catch the sun and seem to track your approach.
+
+Inside the walls, the noise of the city falls away as if a door has been shut. The Citadel is a world apart. Courtyards unfold in careful sequence, each one paved with geometric tilework in turquoise and gold. Fountains murmur in every direction -- the sound of water is constant here, a soft, perpetual music that fills the silence the way incense fills a room. Gardens bloom behind latticed walls, heavy with jasmine and rose and the deep, drowsy scent of orange blossom. Servants in white livery move along covered walkways with the quiet efficiency of people trained to be invisible.
+
+It is beautiful. You feel the beauty settle on your skin like the mist from the fountains. And beneath it, you feel something else: the attention. The walls have eyes here. Every servant is a potential informant. Every corridor has a line of sight. The Citadel is a palace, yes. But it is also a trap -- gorgeously appointed, exquisitely maintained, and designed so that nothing within its walls can move unseen.
+
+Farid leads you through a colonnade where the columns are carved with climbing vines so realistic you almost expect them to sway in the breeze. Courtiers pass you -- men and women in silks of crimson and saffron and midnight blue, their glances quick, appraising, as sharply focused as a jeweler's loupe. They know who you are. They knew before you arrived. In a court this small and this powerful, the appointment of a new Vizier is the most significant event since the Emperor's coronation. You are being watched, catalogued, and slotted into a hundred different calculations before you have spoken a single word.
+
+A woman in deep violet catches your eye and nods -- a tiny gesture, precise and weighted with meaning you cannot yet decode. A man in military crimson looks away too quickly. A servant carrying a tray of tea cups glances up, and in his eyes you see not deference but curiosity. Even the servants are reading you. In this palace, everyone reads everyone. It is the national pastime. It may also be the national sport.
+
+*page_break
+
+*comment === THE SEAL RING ===
+
+Farid leads you through a final colonnade to a door of carved cedarwood. Your chambers. They are larger than the house you grew up in -- a sitting room with silk carpets in deep crimson, a study with a desk of carved rosewood, a bedchamber, a private courtyard with a fountain shaped like a pomegranate tree. The walls are painted with miniatures: hunting scenes, garden parties, a battle in which tiny horsemen clash beneath a sky of hammered gold.
+
+On the desk, resting on a cushion of crimson velvet, there is a ring.
+
+"The Vizier's seal," Farid says, and his voice drops to something barely above a whisper. "A band of gold, set with a cabochon of jade carved with the crest of the Vizier's office -- a hand holding a set of scales. With this ring, you may issue commands in the Emperor's name. You may seal treaties, authorize payments, and order arrests."
+
+He pauses. His eyes are on the ring.
+
+"The last person to wear it died in the room next to this one."
+
+The ring is cool in your fingers. The jade is pale green, almost translucent, with a single darker vein running through it like a buried river. The imperial cipher is cut into the face -- intricate, ancient, beautiful. You slide it onto your finger. The gold band grips your skin with a faint, persistent pressure, like a hand that will not let go.
+
+*page_break
+
+*comment === PERSONALITY FAKE CHOICE: REACTION TO THE RING ===
+
+You hold your hand up and watch the seal catch the light. The jade glows faintly, as though lit from within. In the courtyard beyond the window, a fountain splashes. Somewhere in the Citadel, a door opens and closes.
+
+How do you feel, with the weight of the empire on your hand?
+
+*fake_choice
+  #You feel resolve settle into your bones. This is what you came here for. You will not waste it.
+    *set boldness %+ 5
+    *set idealist %+ 5
+    *set arrival_mood "determined"
+    The jade warms against your skin. You close your fist and feel something crystallize inside you -- not confidence, not yet, but purpose. You did not ask for this. But you are here, and the ring is on your finger, and you will carry the weight of it as long as you are able.
+  #You feel the burden of it. So many lives, balanced on so small a stone.
+    *set idealist %+ 10
+    *set arrival_mood "solemn"
+    Two million people in this city alone. Twelve provinces beyond. Soldiers freezing on the northern frontier. Farmers praying for rain in the southern valleys. Merchants counting their coins in the bazaar. Children playing in streets that your decisions will shape. The ring is light. The responsibility behind it could crush mountains.
+  #You feel a prickle of wariness. The last wearer is dead, and no one seems eager to explain how.
+    *set boldness %- 5
+    *set arrival_mood "wary"
+    The jade is cool. Too cool, you think, for a stone that has been sitting in a warm room. You think of other fingers that have worn this ring. Other plans. Other fates. Farid said fever. His eyes said something else. You turn the ring on your finger and feel the weight of an unanswered question.
+
+*page_break
+
+*comment === CHARACTER CREATION: BACKGROUND ===
+
+Farid hovers near the door, his initial torrent of words having given way to something quieter. He watches you with the careful attention of a man who has learned, through painful experience, to study the people he serves.
+
+"Forgive me, ${title_honorific} ${player_name}," he says, "but there is a matter of the official record. The Citadel registry requires a full accounting of every Vizier's prior service. Your appointment letter was -- well, it was unusually sparse. The Dowager selected you from a list of forty candidates. Your provincial record is exemplary. But your background is not the usual path to this office."
+
+He is not wrong. Viziers are typically drawn from the capital's elite -- the great families, the senior bureaucrats, the well-connected. You are none of those things. You are a provincial administrator plucked from obscurity by a Dowager Empress who, by all accounts, does nothing without a reason.
+
+Before the letter came -- before the seal ring and the title and the long road to Khazara -- what were you?
+
+*choice
+  #A scholar. You spent years in a provincial archive, studying law and history, until a brilliant legal analysis caught the Dowager's eye.
+    *set player_background 1
+    *set scholarship 40
+    *set cunning 25
+    *set diplomacy 25
+    "Twelve years in the archives at Kuhsar," you say. "Tax records, legal codes, diplomatic correspondence, histories going back to the founding. You would be surprised how much of an empire's truth is buried in its paperwork."
+
+    Farid's eyes light with something approaching rapture. "A fellow scholar. Oh -- oh, this is -- the filing system, ${title_honorific}. The filing system in this office was a disaster under Vizier Cyrus, rest his soul. I have been reorganizing it for six weeks. If you have opinions about indexing methodology -- cross-referencing by date versus subject matter -- I have been agonizing over this --"
+
+    You suppress a smile. In a court of swords and secrets, at least one person cares about proper indexing.
+    *set rel_farid %+ 10
+    *goto after_background
+  #A soldier. You commanded a frontier garrison until your strategic reports impressed the capital.
+    *set player_background 2
+    *set strength 40
+    *set cunning 20
+    *set diplomacy 20
+    *set scholarship 25
+    "Eight years commanding the garrison at Kuhsar," you say. "Mountain passes, border patrols, Khanate raiders. I know what a frontier looks like when it is about to break, and I know how to hold it."
+
+    Farid blinks. "A soldier. That is -- unusual. The last three Viziers were diplomats or scholars." He pauses, then adds, with the careful neutrality of someone choosing his words: "Though, given recent events, perhaps a civil servant was not what was needed." He catches himself. "That was not a comment on -- I simply meant -- shall I show you where General Kadir has his maps? You might -- that is, you might want to see the maps."
+    *set rel_farid %+ 5
+    *goto after_background
+  #A merchant. You ran a customs house on the eastern coast, and your understanding of trade flows made you invaluable.
+    *set player_background 3
+    *set cunning 40
+    *set diplomacy 25
+    *set scholarship 20
+    "I ran the customs house at Port Tavandar," you say. "Every bolt of silk, every sack of pepper, every chest of porcelain that entered the empire passed through my ledgers. I know what things cost, who profits, and where the money disappears."
+
+    Farid nods slowly. "A merchant's eye. Guildmaster Priya will either embrace you as a kindred spirit or view you as competition. Possibly both at once -- she is talented that way." He brightens. "At the very least, you might be able to explain why the price of cardamom tea has doubled since last season. I have theories, but they are mostly complaints."
+    *set rel_farid %+ 5
+    *goto after_background
+  #A diplomat. You served as a provincial envoy, and your gift for negotiation drew the Dowager's attention.
+    *set player_background 4
+    *set diplomacy 40
+    *set cunning 25
+    *set scholarship 25
+    "I served as envoy to the Southern Kingdoms for six years," you say. "Negotiated trade agreements, prisoner exchanges, and two ceasefire accords. I know how to sit across a table from someone who wants you dead and make them think they want you alive."
+
+    Farid exhales with visible relief. "A diplomat. Oh, thank the Flame. The Council meetings have been -- 'contentious' is the diplomatic word. 'Barely restrained warfare' is more accurate. General Kadir overturned a table at the last one. The table was solid oak. I do not know how he managed it with one hand."
+    *set rel_farid %+ 8
+    *goto after_background
+
+*label after_background
+
+You allow yourself a small smile. Whatever else this court may hold -- whatever dangers, whatever deceits, whatever killed the last person who wore this ring -- at least your secretary is genuine. In a palace of masks, that may prove worth more than gold.
+
+*page_break
+
+*comment === THE SEAL RING: WEIGHT OF OFFICE ===
+
+You turn the ring on your finger. The jade is warming now, absorbing the heat of your skin, becoming a part of you in the way that tools become part of the people who use them. A mason's hands are shaped by the hammer. A scribe's fingers are stained by the ink. And a Vizier -- what does the ring shape the Vizier into?
+
+Through the window, the Garden of Eternal Spring stretches below -- water channels in precise geometric patterns, fruit trees heavy with late-season pomegranates, marble benches placed at intervals along gravel paths. Peacocks strut among the flower beds, their tails folded, their movements precise and self-important. A gardener kneels beside a rose bush, trimming with small, careful cuts. The garden is maintained with a meticulousness that borders on obsession. Every hedge is exact. Every channel runs clear. Every flower blooms in its appointed place.
+
+The Citadel, you are beginning to understand, is a metaphor for itself. Order imposed on nature. Beauty constrained by design. Control made visible in every trimmed hedge and every channeled stream. The question is what happens when the order breaks. When the channels overflow. When the hedges grow wild.
+
+You suspect you are about to find out.
+
+*page_break
+
+*comment === THE VIZIER'S APARTMENTS ===
+
+Evening descends on the Citadel the way evening descends on a stage -- slowly, beautifully, with every shift in light revealing a new dimension of the set. The amber hour comes first, turning the white marble walls to warm honey. Through the open shutters of your new chambers, you can hear the fountains in the Garden of Eternal Spring and the evening call to prayer rising from the Temple Quarter -- a single voice first, then a dozen, then a hundred, echoing across the rooftops in a wave of sound that makes the air itself tremble.
+
+Farid brings a tray of food: saffron rice crowned with slivers of almond, roasted lamb fragrant with sumac and dried lime, flatbread warm from the oven, a bowl of pomegranate seeds gleaming like rubies, and a cup of cardamom tea that fills the room with its fragrance. You eat slowly, tasting the city for the first time. The pomegranate seeds burst between your teeth -- tart and bright, a small, contained surprise. The lamb is tender, seasoned with spices you cannot yet name.
+
+Through the window, Khazara transforms. Oil lamps bloom across the valley in their thousands, turning the city into a constellation of warm amber points that mirror the stars emerging overhead. The Eternal Flame is visible now, a steady orange glow in the Temple Quarter -- the only fire in the city that never goes out.
+
+*page_break
+
+*comment === PERSONALITY FAKE CHOICE: EVENING REFLECTION ===
+
+You stand at the window of a dead man's chambers, wearing a dead man's ring, looking out over a city that does not yet know your name. The seal ring gleams faintly in the lamplight.
+
+*fake_choice
+  #You feel the weight of purpose settling into your bones. This empire needs you. You will not fail it.
+    *set idealist %+ 5
+    *set boldness %+ 5
+    The night air is warm and heavy with jasmine. You rest your hands on the balcony railing and let the city fill your senses -- its sound, its light, its vast, humming life. Somewhere out there, a soldier stands watch on the walls. A merchant closes her shop. A mother sings a child to sleep. They do not know you. But you know your duty to them. It is written in the weight on your finger.
+  #You feel the thrill of standing at the center of the world. Every road in the empire leads here.
+    *set boldness %+ 10
+    The provinces were necessary. Important. Real. But small. This is the heart of the empire -- the place where every road converges, every river of gold flows, every decision sends ripples to the farthest borders. You have spent your life on the periphery, watching the center from a distance. Now you are here, and the view is everything you imagined. The question is whether you can master it before it masters you.
+  #You feel a bone-deep weariness, and beneath it, the loneliness of a stranger in a strange land.
+    *set honest %+ 5
+    *set boldness %- 5
+    The beauty of this place does not disguise its strangeness. You are a thousand miles from home, in a palace where a man died under circumstances no one will discuss, surrounded by factions and powers you have only read about. No friends. No allies. No one who owes you a favor or remembers your name from before. Only Farid -- anxious, earnest Farid, who lost his last master to something he cannot bring himself to name aloud.
+
+*page_break
+
+*comment === THE PREDECESSOR'S GHOST ===
+
+The chambers are quiet. The kind of quiet that comes when noise has been recently subtracted -- a silence with a shape, an outline, as though the rooms remember being occupied by someone else and have not yet adjusted to the change. The bookshelves are full of volumes you did not choose. The desk drawers contain files you did not create. A pair of reading glasses sits on the windowsill, their lenses catching the lamplight -- someone's glasses, forgotten or left behind, a tiny artifact of a life that ended in these rooms.
+
+You pick them up. The frames are fine silver, worn smooth at the temples where they rested against the wearer's face. Vizier Cyrus had bad eyes. He wore silver glasses. He sat at this desk and read by lamplight, and one evening he put down his glasses and went to bed with a fever, and three days later he was dead.
+
+A sudden fever. That is the official account.
+
+You set the glasses back on the windowsill. You do not know, yet, whether the official account is a lie. But the anonymous note in your pocket says it is, and Farid's shaking hands say it is, and the silence in these rooms says it louder than either.
+
+*page_break
+
+*comment === CLOSING: FIRST NIGHT IN THE CITADEL ===
+
+A knock. Farid, one more time.
+
+"A message, ${title_honorific} ${player_name}." He holds out a folded paper sealed with the imperial crest -- a seven-pointed star pressed into crimson wax. "From the Emperor's chamberlain. His Imperial Majesty -- the Light of the World -- requests the honor of your attendance at a formal audience tomorrow morning. Sunrise."
+
+He pauses. His voice drops.
+
+"The Dowager Empress will also be present."
+
+The way he says it tells you everything you need to know. The Emperor is sixteen. The Dowager is the power behind the throne. Tomorrow, they will take your measure -- the boy who wears the crown and the woman who controls the hand that wears it.
+
+"Sunrise," you repeat.
+
+"Sunrise," Farid confirms. He lingers at the door a moment longer. "Get some sleep, ${title_honorific}. If you can."
+
+He bows and withdraws, pulling the door shut behind him with a soft, careful click.
+
+*page_break
+
+You extinguish the oil lamp. The room fills with moonlight and the distant, watery sound of fountains. You lie in the dark, on sheets finer than anything you have ever touched, and listen to the Citadel settle into sleep. A nightbird calls from the garden. Footsteps pass in the corridor outside -- measured, deliberate, then gone. The monks in the Temple Quarter are chanting, their voices carrying across the rooftops like smoke, like prayer, like a warning.
+
+The seal ring presses against your finger. The jade has warmed to the temperature of your skin, and in the dark, it feels less like jewelry and more like a part of you -- an extra joint, a new bone, something that has always been there and is only now making itself known.
+
+Tomorrow you will meet an emperor who is little more than a boy, struggling beneath a crown that was thrust upon him too soon. You will meet a dowager empress who has survived thirty years of court politics and three assassination attempts, and who chose you for reasons she has not shared. You will enter a palace where someone may have murdered the last person who held your title.
+
+Sleep comes slowly. The fountains murmur. The Eternal Flame burns.
+
+When you dream, it is of jade and fire.
+
+*finish Chapter 2: The Audience

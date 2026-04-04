@@ -1,0 +1,740 @@
+*comment === SCENE 5: THE HEART OF THE CITY (HUB SCENE) ===
+*comment Word target: ~10,000
+*comment Variables modified: met_leila, met_navid, met_asha, rel_leila, rel_navid,
+*comment   rel_asha, rel_guild, rel_emperor, rep_military, rep_trade, rep_temple,
+*comment   rep_intelligence, conv_ counters, skills (+5 from training),
+*comment   possible romance_ flags, old_city_visited, boldness, ruthless, honest,
+*comment   idealist, rel_farid, evidence_count
+*comment Hub pattern: *label hub_menu -> *choice with *disable_reuse -> *gosub -> *goto hub_menu
+
+*temp activities_done 0
+*temp visited_bazaar false
+*temp visited_garrison false
+*temp visited_temple false
+*temp visited_poetry false
+*temp visited_old_city false
+*temp visited_library false
+*temp visited_garden false
+
+*comment === OPENING: MORNING IN KHAZARA ===
+
+Dawn comes to Khazara the way a lover enters a room -- slowly, then all at once.
+
+You stand on your balcony and watch the city wake. First the call to prayer, rising from the Temple Quarter like smoke made into sound, threading between the minarets and domes until it fills the sky. Then the light -- pale gold pouring over the eastern rooftops, catching the turquoise tilework of the Grand Bazaar, gilding the slow brown waters of the Ashar where it bends past the River District.
+
+Below you, the Garden of Eternal Spring stirs with the industry of early morning: gardeners pruning the rose arbors, servants carrying trays of tea and fresh bread along the colonnaded paths, two peacocks strutting past the central fountain as though they own the place. The smell of jasmine rises on warm air, mingling with cardamom from the palace kitchens.
+
+It is the first morning since your arrival that you do not wake to a crisis.
+
+The thought settles over you with an unfamiliar lightness. No anonymous threats slipped under your door. No emergency summons from the Council. No dead men's offices to search, no poison vials to examine, no spymasters materializing from shadows to deliver revelations that rearrange the architecture of your understanding. Just a morning. Just a city. Just the smell of jasmine and the sound of water and the weight of the seal ring on your finger, which today feels less like a burden and more like a key.
+
+*page_break
+
+Farid appears at your door, predictably early, carrying a leather folio and a cup of cardamom tea. He has the look of a man who has been awake for hours and is slightly offended that the sun took so long to join him.
+
+"My ${title_honorific} Vizier. Good morning. Today's schedule is -- well." He pauses. Consults the folio. Consults it again. "Today's schedule is remarkably open. You have no Council meetings. No formal audiences. No crises that I am aware of, though the day is young."
+
+He says this last part with the air of a man who has learned that Khazara generates crises the way the Ashar generates mosquitoes.
+
+"Guildmaster Priya's invitation stands for the Bazaar. Beyond that, several opportunities have presented themselves. Captain Navid has extended an invitation to observe the garrison drills. The Temple of Seven Wisdoms holds open hours for the faithful. And there is a poetry reading this afternoon in the Court of the Silver Fountain."
+
+He sets the tea on the balcony railing and straightens. "I took the liberty of mapping the most efficient routes between locations, accounting for traffic, festival preparation, and the probability of being stopped by petitioners." He produces a folded map, annotated in his small, precise handwriting. "You will not have time for everything. I recommend selecting three activities. Perhaps four, if you walk briskly and skip lunch."
+
+You take the tea. It is perfect -- strong, sweet, fragrant with cardamom. You look out at the city spread below you like a tapestry, two million souls stirring in the morning light.
+
+Three choices. Three windows into the heart of an empire.
+
+*page_break
+
+You dress in lighter robes -- the formal court silks are ill-suited for the streets -- and descend to the Citadel's main courtyard, where two members of the imperial guard wait to escort you. The seal ring on your finger marks you as the Voice of the Throne. In the streets of Khazara, that ring is both shield and target.
+
+The morning air is warm and thick with the smell of the city: baking bread, horse dung, jasmine, the sharp mineral tang of the river. Above you, the sky is the deep, impossible blue that only exists in the hours before the heat settles in like a guest who refuses to leave.
+
+Khazara awaits.
+
+*comment === HUB MENU ===
+
+*label hub_menu
+
+*if (activities_done >= 3)
+  *goto hub_exit_check
+*else
+  *goto hub_choice
+
+*label hub_exit_check
+
+The sun has climbed past its zenith. The shadows of the minarets have shortened and begun to lengthen again, and the heat sits on the city like a hand pressed flat against a drum. You have spent hours in the streets and markets and sanctuaries of Khazara, and the city has opened itself to you in ways you did not expect.
+
+*if (activities_done >= 4)
+  *goto hub_closing
+*else
+  There is time, perhaps, for one more visit before the day grows too old. Or you could return to the Citadel and reflect on what you have seen.
+
+  *choice
+    *if ((not(visited_bazaar)) or (not(visited_garrison)) or (not(visited_temple)) or (not(visited_poetry)) or (not(visited_old_city)) or (not(visited_library)) or (not(visited_garden)))
+      #There is one more place you wish to visit.
+        *goto hub_choice
+    #Return to the Citadel. You have seen enough for one day.
+      *goto hub_closing
+
+*label hub_choice
+
+*page_break
+
+The city stretches before you, its arteries of commerce and worship and power radiating outward from the Citadel like spokes of a wheel. Where will you go?
+
+*choice
+  *disable_reuse #Visit the Grand Bazaar, where Guildmaster Priya awaits.
+    *set activities_done + 1
+    *set visited_bazaar true
+    *gosub bazaar_activity
+    *goto hub_menu
+  *disable_reuse #Visit the Garrison to observe the soldiers and meet Captain Navid.
+    *set activities_done + 1
+    *set visited_garrison true
+    *gosub garrison_activity
+    *goto hub_menu
+  *disable_reuse #Visit the Temple of Seven Wisdoms to see the Eternal Flame.
+    *set activities_done + 1
+    *set visited_temple true
+    *gosub temple_activity
+    *goto hub_menu
+  *disable_reuse #Attend the poetry reading at the Court of the Silver Fountain.
+    *set activities_done + 1
+    *set visited_poetry true
+    *gosub poetry_activity
+    *goto hub_menu
+  *disable_reuse #Venture into the Old City, where the empire's poor live in the shadow of its wealth.
+    *set activities_done + 1
+    *set visited_old_city true
+    *gosub old_city_activity
+    *goto hub_menu
+  *disable_reuse #Visit the Great Library to research the conspiracy.
+    *set activities_done + 1
+    *set visited_library true
+    *gosub library_activity
+    *goto hub_menu
+  *disable_reuse #Walk in the Garden of Eternal Spring, where Emperor Roshan takes his morning air.
+    *set activities_done + 1
+    *set visited_garden true
+    *gosub garden_activity
+    *goto hub_menu
+
+*comment ============================================================
+*comment === ACTIVITY SUBROUTINES ===
+*comment ============================================================
+
+*comment === BAZAAR: MEET PRIYA ===
+
+*label bazaar_activity
+
+The Grand Bazaar hits you like a wall of sound and smell and color.
+
+You enter through the Gate of the Silk Merchants -- a vaulted archway thirty feet high, carved with geometric patterns that catch the light filtering through openings in the domed ceiling above. Beyond it, the bazaar opens into a labyrinth of corridors and courtyards, each one a world of its own. The Silk Quarter, where bolts of fabric cascade from wooden frames in waterfalls of crimson, saffron, and midnight blue. The Spice Market, where the air is so thick with cinnamon and cardamom and pepper that your eyes water. The Gem Sellers' Row, where rubies and sapphires glow in velvet-lined cases, each stone worth a year of a soldier's wages.
+
+The noise is overwhelming. Merchants haggling in five languages. The clink of coins, the rustle of silk, the sharp crack of a spice merchant cracking cinnamon bark for a customer to smell. A boy runs past carrying a tray of steaming tea glasses. A woman argues with a cloth merchant, her voice rising and falling like music.
+
+This is the heart of the empire, the place where wealth is made and moved and multiplied. And in the center of it, in a private courtyard behind the Silk Quarter, Guildmaster Priya waits.
+
+*page_break
+
+*set rel_guild %+ 10
+*set rep_trade %+ 8
+*set conv_guild + 1
+
+She is seated at a low table surrounded by ledgers, a cup of coffee at her elbow -- the fashionable new drink from the eastern imports, bitter and strong. She is dressed in merchant's clothes rather than court robes: practical cotton, jeweled only at the ears and wrists. Here, in her domain, she looks entirely different from the woman you met at the Council table. Looser. Sharper. More real.
+
+"Vizier!" She rises and clasps your hand -- not the formal court greeting, but the merchant's grip, firm and direct. "Welcome to my world. Sit. Have coffee. It's terrible and wonderful, like most things worth knowing."
+
+You sit. The coffee is, in fact, both terrible and wonderful.
+
+"You wanted to see the heart of the empire," she says. "The Council Chamber is the empire's head. The Garrison is its fist. But this -- " She gestures at the bazaar around her, the swirl of commerce and humanity. "This is where the blood flows. Gold is the blood of the empire, Vizier. Every bolt of silk, every sack of pepper, every gem that changes hands in this bazaar keeps a soldier fed, a road maintained, a wall standing."
+
+She leans forward. Her dark eyes are warm, but behind the warmth, the calculating mind is always working.
+
+*page_break
+
+"My father sold pepper from a wooden cart. Did I tell you that? He stood right there -- " She points to a spot near the courtyard entrance. "Thirty years ago. A man with calloused hands and a good nose for quality. He taught me that the price of everything is determined by one thing: what someone is willing to pay when they need it badly enough."
+
+She pauses. Sips her coffee.
+
+"The empire needs this bazaar badly, Vizier. And the bazaar needs a Vizier who understands that wealth is not a sin. It is an engine." She meets your eyes. "Tell me you understand that."
+
+*fake_choice
+  #"I understand. Commerce is the foundation on which everything else is built."
+    *set rep_trade %+ 5
+    *set rel_guild %+ 5
+    *set idealist %- 5
+    Priya's smile widens. It is the smile of a woman who has found an ally and is already calculating the returns on the investment. "Good. Good. Then we can work together. I have ideas, Vizier -- about the tariffs, about the Guild's representation, about the embargo. But they are conversations for the Council table. Today, just look. See what this place is. Let the empire's blood flow over your hands."
+  #"I understand, but wealth means nothing if it does not reach the people who need it most."
+    *set idealist %+ 5
+    *set rel_guild %+ 3
+    Priya tilts her head, considering. "An idealist. Those are rare in this part of the city." But her tone is not dismissive -- it is curious. "You are not wrong. The wealth that flows through this bazaar pools at the top. I know that better than anyone. I came from the bottom." She sets down her cup. "The question is how to change it without breaking what works. Smash the engine and no one gets anything."
+  #"I have seen the numbers, Guildmaster. I know what the trade routes mean. What I need is your advice on the embargo."
+    *set boldness %+ 5
+    *set rel_guild %+ 8
+    *set cunning + 3
+    Priya's expression sharpens. She leans forward, both hands on the table. "Straight to business. I like that." She drops her voice. "The embargo is a stranglehold, Vizier. Every day it continues, we lose revenue we cannot recover. I have contacts in the Confederation -- merchants who are hurting as badly as we are. If you give me room to negotiate through back channels, I can have the embargo lifted within a fortnight. Officially, of course, it would be your victory."
+
+Priya walks you through the bazaar after your conversation, and the transformation is remarkable. In the Council Chamber, she is a politician -- measured, strategic, always calculating. Here, she is something else entirely. She knows every merchant by name. She haggles with a silk trader in rapid-fire Trade Tongue, switching to Khazari to tease him about the quality of his latest shipment. She tastes a new spice blend offered by a woman at a market stall and pronounces it "adequate, which from me means extraordinary." She examines a shipment of books fresh from the printing press, running her fingers along the spines with genuine delight.
+
+"My father could not read," she tells you, holding up a volume of poetry. "He sold pepper by smell and weight and instinct. These books -- this press -- it is changing everything. Merchants' children are reading philosophy now. Weavers' daughters are learning mathematics. The old families hate it. They say literacy should be a privilege." She sets the book down. "I say it should be a weapon. Give a farmer's son a book and you give him the same power that Lord Reza inherited with his bloodline. That terrifies people like Reza. It should."
+
+The bazaar bends around her like a river around a stone -- she is its natural center, and it moves to accommodate her. People greet her not with the cringing deference of subjects but with the genuine warmth of a community that recognizes its own.
+
+You leave with the taste of coffee on your tongue, the smell of cinnamon in your robes, and a deeper understanding of the engine that powers the empire -- and the woman who keeps it running.
+
+*return
+
+*comment === GARRISON: MEET NAVID ===
+
+*label garrison_activity
+
+The Garrison occupies the northern bank of the Tavan River -- a sprawling complex of barracks, training grounds, armories, and stables surrounded by a wall of practical stone. No marble here. No tilework. Everything is built for function, not beauty. The air smells of horse leather, steel, and dust.
+
+You hear the garrison before you see it. The clash of practice swords, metal on metal, a sound like an argument made physical. The rhythmic thud of boots on packed earth. Shouted orders in the clipped military dialect, called responses that come as one voice from fifty throats. The entire complex moves with the discipline of a single organism, its parts interchangeable, its purpose singular and unambiguous in a way that the rest of the empire is not.
+
+There is something honest about a garrison. In the Council Chamber, words are weapons and silence is strategy. Here, the weapons are weapons. The simplicity is almost refreshing.
+
+*page_break
+
+*set met_navid true
+*set rep_military %+ 8
+*set conv_navid + 1
+
+A young officer meets you at the gate -- barely older than the Emperor, his armor polished to a mirror shine, his salute crisp enough to cut paper. He escorts you to the training yard, where soldiers spar in paired circles under the morning sun. They are good -- disciplined, precise, their movements economical and practiced. But one pair draws your eye.
+
+One of the sparring soldiers is taller than the other by half a head, broad-shouldered, moving with a controlled grace that makes the blade in his hand look like an extension of his arm. He fights left-handed, which gives him an advantage against opponents trained to face right-handed attackers. There is a scar across his right cheekbone -- a thin white line that catches the light when he turns.
+
+He disarms his opponent in three moves, helps the man to his feet, and turns to face you. He straightens. The practice sword lowers to his side.
+
+"Vizier." His voice is level, formal, the voice of a man who measures every word the way he measures every sword stroke. "Captain Navid, Imperial Guard. Welcome to the Garrison."
+
+*page_break
+
+*set rel_navid %+ 10
+
+Navid is a man of economy. Economy of speech, economy of motion, economy of expression. He gives you a tour of the garrison in sentences that are as precise as his swordwork: the armory, the barracks, the stables, the map room where the northern border is tracked with colored pins.
+
+"Fort Darband," he says, stopping before the map. He touches a point on the northern border. The gesture is gentle -- the gesture of a man touching a wound. "I was stationed there for three years. The wall is crumbling. The garrison is undermanned. The Khanates raid every month."
+
+His jaw tightens. "I was recalled to the capital to command the Imperial Guard. An honor, they said. It does not feel like an honor. It feels like being pulled away from a fight that is not over."
+
+The silence is not uncomfortable. It is the silence of a man who has said more than he intended and is deciding whether to continue.
+
+*fake_choice
+  #"The capital needs capable soldiers too. The Emperor's safety matters."
+    *set rel_navid %+ 5
+    *set honest %+ 5
+    Navid looks at you for a long moment. Something in his face shifts -- not a softening, exactly, but a loosening. The assessment of a man who is deciding whether to trust.
+
+    "You may be right," he says, and it sounds like it costs him something to admit it. "The threats here are different. Less visible. A blade in the dark instead of an army on the horizon." He pauses. "But a blade in the dark kills just as surely."
+  #"What would you do if you could go back to the border?"
+    *set rel_navid %+ 8
+    *set boldness %+ 5
+    The question catches him off guard. For the first time, the formal reserve cracks, and beneath it you see something raw: longing, duty, the particular ache of a soldier who believes he is in the wrong fight.
+
+    "I would reinforce the wall. Patrol the passes. Train the provincial militia to fight like regulars." His voice gains an energy you have not heard before. "The border can be held, Vizier. With the right resources and the right leadership. The Khanates are brave but undisciplined. Fortification and patience would break their raids within two years."
+
+    He stops. Catches himself. The formal mask returns, but not entirely. You have seen behind it.
+  #"Tell me about the scar."
+    *set rel_navid %+ 5
+    *set boldness %+ 5
+    Navid's hand rises unconsciously to his cheekbone. "Khanate raider. Darband pass. Two years ago." The words come with the cadence of a story told before, polished smooth by repetition. "He was fast. I was faster. But not fast enough to avoid his blade entirely."
+
+    He lowers his hand. "I keep the scar to remind myself that 'faster' is a relative term. There is always someone who can reach you."
+
+    The words hang in the air between you. In another context, they might be a threat. From Navid, they are simply a truth he has learned in blood.
+
+*page_break
+
+Before you leave, Navid hesitates. It is the first time you have seen him hesitate. The hesitation looks wrong on him, like a crack in a wall that is supposed to be solid.
+
+"Vizier. If you --" He stops. Starts again. "The garrison is open to you. If you wished to train. It is not my place to suggest that a Vizier needs combat instruction, but --" He pauses, choosing words with the care of a man disarming a trap. "The Citadel is not safe. Skill with a blade might serve you better than another set of guards."
+
+*set strength + 5
+
+*if (not(romance_active))
+  He turns to go, then stops. Reaches into a pocket and produces a small object: a wooden carving, no larger than his thumb. A horse, rearing on its hind legs. The detail is extraordinary -- every muscle defined, the mane flowing, the posture alive with frozen motion.
+
+  "I carve these," he says. "In my spare time. It is --" The slightest flush rises to his cheeks, barely visible beneath the weathered brown of his skin. "A hobby. This one did not come out right. The proportions are off. But I thought --" He holds it out. "For you. A gift. The horse is considered good luck in the border garrison tradition."
+
+  The carving is warm from his pocket. The proportions are not, in fact, off. It is beautiful.
+
+  *choice
+    #Accept the carving and hold his gaze. Let the moment be what it is.
+      *set romance_navid true
+      *set romance_active true
+      *set rel_navid %+ 12
+      You take the horse. Your fingers brush his. The contact lasts a fraction of a second, but you both feel it -- a warmth that has nothing to do with the sun, a stillness that exists only between two people who have recognized something in each other that has no name yet but will find one.
+
+      "Thank you, Captain," you say.
+
+      "Navid," he says. Then catches himself. "I mean -- Captain is correct. Navid is -- that was --" He straightens. The formal mask returns, but it does not fit as well as it did before. Something has loosened behind it.
+
+      "Navid," you say.
+
+      He nods. Once. Turns. Walks away. You watch the disciplined stride, the sword on his shoulder, the scar catching the light. And in your hand, a small wooden horse that is still warm.
+      *goto garrison_end
+    #Accept the carving with thanks, but keep the exchange professional.
+      *set rel_navid %+ 5
+      *set honest %+ 5
+      "Thank you, Captain. It is finely made."
+
+      Navid nods. Whatever he was offering -- and you are not entirely certain either of you knows what it was -- he accepts the professional distance without flinching. He is a soldier. Soldiers are accustomed to boundaries.
+
+      "The garrison is open to you anytime, Vizier," he says. The formal register is back in place, smooth as a sheathed blade. He offers a short bow and returns to the training yard.
+      *goto garrison_end
+*else
+  He offers a short bow and returns to the training yard. You watch him go -- the disciplined stride, the sword balanced on his shoulder, the scar catching the light.
+
+*label garrison_end
+
+*return
+
+*comment === TEMPLE: MEET ASHA ===
+
+*label temple_activity
+
+The Temple of Seven Wisdoms rises from the Temple Quarter like a prayer made stone. Seven interconnected chambers circle a central courtyard, each one representing a different Wisdom. The domes are tiled in turquoise and gold. The arched doorways are carved with scripture in flowing calligraphy. And in the center, visible from every approach, the Eternal Flame burns in its great bronze brazier -- a pillar of fire that has not gone out in three hundred years.
+
+The air is thick with frankincense. The sound of chanting drifts from the inner chambers, low and rhythmic, mingling with the splash of the ritual fountain where the faithful wash their hands before entering. Temple guards stand at every entrance, their armor ceremonial but their swords real.
+
+*page_break
+
+*set met_asha true
+*set rep_temple %+ 8
+*set conv_asha + 1
+
+You are studying the flame -- the way it dances without wind, the way it seems to breathe -- when a voice comes from behind you.
+
+"Most people stare at it for about thirty seconds, nod respectfully, and leave. You have been standing here for almost two minutes. That is either genuine spiritual interest or exceptionally good political theater."
+
+You turn. The speaker is a young woman in the saffron robes of a temple scholar, her dark hair pulled back, her face alight with an expression that is equal parts amusement and curiosity. She carries a stack of books in one arm and a half-eaten fig in the other hand.
+
+"Scholar Asha," she says, dipping her head in a greeting that is precisely calibrated between respect and irreverence. "Third Wisdom -- that is Courage, in case you were wondering. And you are the new Vizier. I have been hoping you would visit."
+
+*set rel_asha %+ 10
+
+"Hoping?"
+
+"Most Viziers treat the temple as a formality. Bow to the Flame, nod at the High Priest, leave as quickly as possible. The fact that you came voluntarily, without a religious holiday forcing you, suggests you are either curious or troubled." She bites the fig. "Both would be interesting."
+
+*page_break
+
+Asha leads you through the temple as though it were her personal library -- which, in a sense, it is. She shows you the Chamber of Courage, where the walls are painted with scenes of ordinary people performing extraordinary acts. She points out the hidden details that most visitors miss: a farmer facing a flood, a mother standing before soldiers, a child reaching into a fire to save a scroll.
+
+"Courage is not the absence of fear," she says, and her voice loses its playfulness, dropping into something deeper. "That is what the Third Wisdom teaches. But what if fear is sometimes wisdom? What if the person who fears nothing is merely foolish?"
+
+She stops before a mural of a woman holding a torch against a wall of darkness.
+
+"I have been writing a treatise about this. The Masters do not approve. They think I am being heretical. I think I am being honest, and that those two things should not be confused."
+
+*fake_choice
+  #"I think questioning the teachings takes more courage than blindly following them."
+    *set rel_asha %+ 8
+    *set idealist %+ 5
+    *set rep_temple %- 3
+    Asha's eyes widen. For a moment, the playful mask drops entirely, and beneath it is something raw and sincere -- the face of a woman who has been arguing alone and has suddenly found someone willing to argue with her.
+
+    "You understand," she says quietly. Then the smile returns, but warmer. "Or you are flattering me, which I usually detect within seconds. I do not detect it now."
+  #"The Masters may have a point. Tradition exists for a reason."
+    *set rel_asha %+ 3
+    *set rep_temple %+ 5
+    *set honest %+ 5
+    Asha tilts her head, studying you. "A measured response. Not wrong, exactly. Tradition is a foundation -- but a foundation that cannot be examined is a foundation that might be cracked." She smiles. "I prefer the company of people who disagree with me thoughtfully over those who agree with me carelessly. Consider this an invitation to return."
+  #"I came to the temple seeking answers, not philosophy."
+    *set boldness %+ 5
+    *set rel_asha %+ 5
+    "Answers are philosophy," Asha says. "Or they should be. What answers are you seeking?" She holds up a hand. "Don't answer yet. The Flame teaches that the best questions are the ones we sit with before speaking." A pause. A smile. "Come. I will show you the library of the Third Wisdom. Whatever you seek, it is better sought with a full understanding of courage."
+
+*page_break
+
+As you leave the temple, Asha walks you to the gate. The Eternal Flame throws long shadows across the courtyard, and the frankincense hangs in the air like a memory of prayers offered and answered and forgotten.
+
+"Vizier," she says. "If you want to understand this empire, do not only read its laws and its ledgers. Read its prayers. Read what the people believe when they are alone and afraid. That is where the truth lives."
+
+*if (not(romance_active))
+  She pauses at the gate. The firelight catches her face -- the animation quieting, the playfulness settling into something still and warm. She holds your gaze a moment longer than courtesy requires.
+
+  "I do not usually show visitors the Chamber of Courage," she says. "The Masters say I am too passionate about the Third Wisdom. That I make it personal." She tilts her head. "I suppose I do. I suppose I did today. With you."
+
+  It is the most vulnerable thing she has said. The most deliberate. The question behind it is unspoken but unmistakable.
+
+  *choice
+    #"I am glad you made it personal. I would like to hear more. About the Third Wisdom. About you."
+      *set romance_asha true
+      *set romance_active true
+      *set rel_asha %+ 12
+      Asha goes very still. It is the stillness you noticed before -- the sudden quiet that descends on her when something touches the real person beneath the playful scholar. The animation is gone. In its place, something luminous.
+
+      "Well," she says. And then she laughs -- not the easy, frequent laugh of before, but something softer, surprised, as though the sound had escaped before she could catch it. "Well. That is -- I was not expecting you to say that."
+
+      "Did you want me to?"
+
+      "I think," she says carefully, "that I wanted you to mean it. And I think you do." She touches your hand, briefly, her fingers warm from the tea she has been holding. "Come back, Vizier. The Third Wisdom has much more to teach you. And so do I."
+      *goto temple_end
+    #Smile, but keep the conversation where it is. There is too much at stake for complications.
+      *set rel_asha %+ 5
+      *set honest %+ 5
+      You hold her gaze and let the moment pass with a warmth that acknowledges what she offered without taking it further. Asha reads you with the skill of a woman who studies faces the way she studies texts.
+
+      "Another time, perhaps," she says. The playfulness returns, but gentler. "The Third Wisdom teaches patience as well as courage. I am learning both."
+      *goto temple_end
+*else
+  She dips her head again -- the same careful balance of respect and irreverence -- and disappears back into the temple, books in one arm, the other hand already reaching for another fig.
+
+*label temple_end
+
+*return
+
+*comment === POETRY READING: MEET LEILA ===
+
+*label poetry_activity
+
+The Court of the Silver Fountain is a small, enclosed garden in the Scholars' Quarter, named for the fountain at its center -- a confection of silver filigree and crystal water that catches the afternoon light and scatters it across the stone walls in restless patterns. Benches of carved marble ring the fountain, and on them sit perhaps thirty people: scholars, courtiers, a few merchants dressed in their finest, all gathered for the weekly poetry reading.
+
+The air smells of orange blossom and old stone. A tar player sits in the corner, fingers moving over the strings in a melody that is more silence than sound.
+
+*page_break
+
+*set met_leila true
+*set conv_leila + 1
+
+And at the center, standing beside the fountain with a scroll in her hand and a look in her eyes that suggests the scroll is a sword and the audience a battlefield, is Leila.
+
+She is not what you expected. The Poet Laureate of the Imperial Court -- you imagined someone older, more grave, draped in the dignified melancholy that poets seem to cultivate like orchids. Leila is none of these things. She is twenty-seven, sharp-featured, dressed in deep blue silk that catches the fountain-light, and she holds the attention of the room the way a flame holds a moth's.
+
+She reads.
+
+"The vizier arrives at a city made of knives.
+He thinks: I will be the sheath.
+He does not yet know that the city prefers its blades bare."
+
+*set rel_leila %+ 10
+
+A murmur runs through the audience. Heads turn toward you. Leila's dark eyes find yours across the courtyard, and one corner of her mouth lifts in a smile that is not entirely innocent.
+
+She wrote that today. For you. About you. And she is watching to see what you make of it.
+
+*page_break
+
+After the reading, the audience disperses into small groups. Leila makes her way to you with the unhurried confidence of a woman who knows she is the most interesting person in any room she enters.
+
+"Vizier." She offers her hand -- not for you to shake, but for you to hold, briefly, in the courtly manner. Her fingers are ink-stained. "I hope you don't mind being the subject of a poem. I find that power, like love, is best understood from the outside."
+
+"And is that what the poem is? Understanding?"
+
+"It is an observation. Understanding comes later, if we are both lucky." She studies you with the frank, assessing gaze of someone who is accustomed to looking closely at things. "You came to a poetry reading. In the middle of a political crisis. That is either admirable devotion to culture or a very sophisticated form of procrastination."
+
+*fake_choice
+  #"Perhaps it's both. The best things usually are."
+    *set rel_leila %+ 8
+    *set boldness %+ 5
+    Leila laughs. It is a good laugh -- warm, surprised, genuine. "Oh, you're clever. I was worried you'd be one of those grim, efficient Viziers who treats art as a tax deduction. You're not, are you?"
+
+    "I make no promises."
+
+    "Good. Promises are boring. Surprise me instead."
+  #"Your poem was pointed. Do you often write about the people who could have you arrested?"
+    *set rel_leila %+ 10
+    *set boldness %+ 5
+    *set ruthless %+ 5
+    Her eyes brighten. "Always. The powerful are the best subjects. You cannot write an honest poem about power without making someone uncomfortable." She lowers her voice. "My father wrote a poem about the old Emperor's tax policy. The poem was brilliant. The consequences were... educational."
+
+    "Was your father arrested?"
+
+    "Worse. He was ignored. There is no punishment crueler for a poet." A pause. "He died before the next Emperor could appreciate his work. I plan to outlast every Vizier who sits in that chair."
+  #"I came because I wanted to hear something beautiful. The Citadel is full of crisis and conspiracy. I needed this."
+    *set rel_leila %+ 8
+    *set idealist %+ 5
+    *set honest %+ 5
+    Leila is quiet for a moment. The playfulness recedes, and beneath it is something softer, something she does not show often.
+
+    "That," she says, "is the only honest thing anyone in a position of power has ever said to me in this courtyard." She holds your gaze. "Beauty is not a luxury, Vizier. It is a necessity. The person who forgets that is already lost."
+
+*page_break
+
+You walk together through the Scholars' Quarter as the afternoon light slants gold across the rooftops. Leila talks about poetry the way soldiers talk about warfare -- with passion, precision, and the particular intensity of someone who has given their life to a single pursuit.
+
+"A poem is a blade," she says. "You forge it in fire, you hone it on truth, and when it cuts, the reader bleeds. If your poem does not draw blood, it is decoration." She glances at you. "I do not make decorations."
+
+*if (not(romance_active))
+  There is a moment, as you part at the corner of the Street of Calligraphers, when Leila's hand brushes yours. It might be accidental. It might not. The touch lingers -- ink-stained fingers against your palm -- and something in her eyes asks a question that her mouth does not.
+
+  *choice
+    #Let the touch linger. Hold her gaze. Let the question hang between you like a line of unfinished verse.
+      *set romance_leila true
+      *set romance_active true
+      *set rel_leila %+ 12
+      Something passes between you. Not a word. Not a promise. Something quieter and more dangerous than either -- a recognition, perhaps. That you see her. That she sees you. That in a city of masks and maneuvers, this moment is bare.
+
+      Leila withdraws her hand slowly. "Well," she says. And for once, the Poet Laureate of the Imperial Court has no words for what she means.
+
+      "Well," you agree.
+
+      She smiles -- not the sharp, performing smile of the poetry reading, but something private. Something real.
+
+      "Come back," she says. "Next week. I'll write you a better poem."
+      *goto poetry_end
+    #Step back. This is not the time or the place for whatever this might become.
+      *set rel_leila %+ 5
+      *set honest %+ 5
+      You step back. The distance opens between you like a line break in a verse. Leila reads it instantly -- she is a poet; she reads everything -- and her smile does not falter, but it changes. Becomes lighter. Less charged.
+
+      "Until next time, Vizier," she says. "I will keep writing about you whether you like it or not."
+      *goto poetry_end
+*else
+  Leila clasps your hand in farewell. "Come back, Vizier. I write better when I have someone worth writing about."
+
+*label poetry_end
+
+*return
+
+*comment === OLD CITY: MEET LILA ===
+
+*label old_city_activity
+
+The Old City begins where the marble ends.
+
+You cross from the Scholars' Quarter through an archway that has not been repaired in decades -- the stone crumbling, the tilework cracked and faded -- and enter a different world. The streets narrow to corridors barely wide enough for two people abreast. The buildings lean inward, upper stories almost touching overhead, shutting out the sky. The smell changes: cooking oil, sewage, the sharp copper tang of something you do not want to identify.
+
+This is where the empire's wealth does not reach. This is where the two million people who are not courtiers or merchants or scholars or soldiers live. The other Khazara. The one the Council does not discuss.
+
+*page_break
+
+*set old_city_visited true
+*set rep_intelligence %+ 5
+
+You dismissed your guards at the archway -- Farid's protests notwithstanding. The seal ring is hidden in your pocket. In lighter robes, without the markers of power, you are just another face in the crowd.
+
+The crowd is dense and moves with the particular rhythm of poverty -- purposeful, watchful, every step an economy. Children run between the legs of adults, barefoot, quick-eyed, their laughter sharp and bright against the stone. An old woman sells flatbread from a cart, her hands moving with the mechanical precision of decades of practice, each motion identical to the last, a performance of survival refined to its essence. A man sits against a crumbling wall, cradling a cup of tea, watching the street with eyes that have stopped expecting anything.
+
+A boy no older than eight carries a bundle of firewood on his back that would stagger a grown man. A girl hangs laundry from a rope strung between two buildings, the fabric so thin the sunlight passes through it like water through gauze. Everywhere, the evidence of a life lived in the margins of the empire's vast ledger -- the entries that do not appear in the treasury accounts, the human arithmetic that no regulation number captures.
+
+"Boss."
+
+The voice comes from below your line of sight. You look down. A girl of perhaps twelve stands before you, thin as a reed, her clothes patched with a seamstress's skill and a beggar's materials, her dark eyes enormous and bright with intelligence. She has a scar on her chin and a smudge of something that might be ink or might be soot on her nose. Her hair is cut short and uneven, as though she did it herself with a dull knife.
+
+"You're the new Vizier," she says. It is not a question. "The ring's in your left pocket. Don't worry, I won't nick it. Zara would have my ears."
+
+*page_break
+
+*set rel_spy %+ 5
+
+"You know Zara?"
+
+"Everybody in the Old City knows the Eyes. Some of us work for them." She offers a hand. "Lila. Informant, street guide, occasional pickpocket -- though I've gone mostly legitimate since Zara started paying regular. Regular-ish."
+
+She falls into step beside you as though the arrangement had been planned in advance. It occurs to you that it may have been. Zara does not leave things to chance.
+
+"The Old City's got three rules," Lila says, leading you through a tangle of alleys with the confidence of a river finding its channel. "Don't flash gold. Don't make promises. And don't eat the meat pies from the stall on Copper Lane unless you want to meet your ancestors early."
+
+She grins. It is the grin of a child who has learned to survive by being fast, smart, and entirely without reverence for authority.
+
+*fake_choice
+  #"What can you tell me about what's happening in the Old City?"
+    *set boldness %+ 5
+    *set cunning + 3
+    Lila glances around, then drops her voice. "Someone's been buying up blue lotus from every apothecary in the quarter. All of it. Every last drop. That's either a really big party or a really big murder." She looks at you sideways. "My money's on murder. What's my fee?"
+
+    *set evidence_count + 1
+
+    "Information first. Fee after."
+
+    "Smart. Zara says the same thing. Difference is, Zara actually pays."
+  #"How do you know Zara?"
+    *set rel_spy %+ 3
+    *set honest %+ 5
+    "She found me when I was seven. Trying to pick the pocket of one of her agents." Lila grins. "I was terrible at it. She should have turned me in. Instead she bought me dinner and taught me how to pick pockets properly. Professional standards, she said. Even thieves should have professional standards."
+
+    There is something in Lila's voice when she speaks of Zara -- not quite affection, but the fierce loyalty of a stray dog that has been fed.
+  #"You're young to be working for the intelligence service."
+    *set idealist %+ 5
+    *set ruthless %- 5
+    Lila's grin fades, replaced by something older and harder. "I'm young to be a lot of things, Boss. Young to be an orphan. Young to be sleeping in alleys. Young to be watching my friends disappear into the gem mines and never come back." She shrugs. "Working for Zara means I eat every day and sleep with a roof over my head. You got a better offer?"
+
+    The words land like a slap. Not aimed at you, exactly, but at the world you represent -- the world of silk and marble and fountains that exists a hundred yards from children who sleep in alleys.
+
+*page_break
+
+Lila guides you through the Old City for an hour. You see things that the Council reports do not describe, things that exist in the spaces between the numbers that Guildmaster Priya recites and the regulations that Farid cites. A school run by a retired soldier, teaching children to read with books from the printing press -- twenty children crammed into a room meant for six, sharing three books between them, the retired soldier's voice hoarse from repetition but patient, endlessly patient. A well that has been dry for months, its stone lip worn smooth by centuries of use, forcing an entire neighborhood to carry water from the river in clay jars balanced on their heads. A building that collapsed last winter, killing four people -- a mother and her three children -- because no one in the Citadel authorized the funds to repair the foundation. The rubble is still there. No one has come to clear it. Wildflowers have begun to grow in the cracks.
+
+You pause before the rubble. Lila stands beside you, her arms crossed, her face unreadable.
+
+"Her name was Parisa," Lila says. "The mother. She did laundry for the Foreign Quarter. Walked two miles each way, six days a week. Her oldest was nine. He wanted to be a soldier."
+
+She does not say anything else. She does not need to.
+
+The empire's wealth flows through the Grand Bazaar in rivers of gold. Here, in the Old City, it does not even trickle. It evaporates somewhere between the marble colonnades and the crumbling archway, lost in the vast and indifferent machinery of a civilization that measures its greatness in domes and minarets and armies and trade routes, and counts its people only when it needs their taxes or their labor.
+
+You leave with the seal ring still in your pocket, and a heaviness in your chest that has nothing to do with the heat and everything to do with the distance between the Garden of Eternal Spring and a building that collapsed on a mother and her children while the empire looked the other way.
+
+*return
+
+*comment === LIBRARY: RESEARCH ===
+
+*label library_activity
+
+The Great Library of Khazara is a cathedral of knowledge. The comparison is not a metaphor -- it is an architectural fact. The building was designed by the same architect who built the Temple of Seven Wisdoms, and the resemblance is deliberate: vaulted ceilings soar above rows of shelves that stretch into shadow, the domed reading hall echoes with the same reverent hush, and shafts of light fall through high windows at angles calculated to illuminate the reading desks below. If the temple is dedicated to spiritual truth, the library is its secular twin -- a monument to the belief that knowledge, accumulated and preserved and shared, is its own form of prayer.
+
+The air smells of old paper, binding glue, lamp oil, and the particular dusty sweetness of books that have been loved by centuries of hands. Scholars move between the shelves in soft shoes, carrying armloads of volumes with the careful tenderness of parents carrying sleeping children. The silence is not empty but full -- a silence made of concentrated attention, of minds at work, of thousands of words being read simultaneously in the hush.
+
+*page_break
+
+*set scholarship + 5
+
+You came here with purpose. The grandeur of the place is secondary to the hunt. The evidence from Massoud's office -- the journal, the name "Saravan," the traces of a financial conspiracy running through the empire's accounts like a crack through marble -- demands research. Answers live in libraries. You have always believed that.
+
+You begin in the financial records section: a long hall of identical shelves holding identical leather-bound ledgers, each one a year's worth of imperial treasury disbursements, account registries, taxation records. The dense bureaucratic literature of an empire that records everything. You pull ledger after ledger, running your finger down columns of names and figures until the numbers blur. The name Saravan appears nowhere.
+
+You widen the search. Historical records. Property registries. Trade licenses. Correspondence archives. Nothing. Saravan is a ghost -- a name that exists in Massoud's journal but nowhere in the vast documentary apparatus of the Khazaran state.
+
+The frustration sharpens your focus rather than dulling it. You move to the genealogical section, where the histories of provinces and villages are recorded in census documents that stretch back to the empire's founding.
+
+Then, in a dusty corner of the stacks, wedged between two volumes of noble house lineages so thick they could serve as masonry, you find it. A single line in a census record from forty years ago, written in a clerk's careful hand: "Saravan -- village, southern province of Kuhsar. Depopulated. Year of the Iron Horse. Cause: mine collapse."
+
+A village. Not a person. A village destroyed by a mining disaster, its entire population scattered or dead, its name surviving only in a census footnote that no one has read in decades.
+
+*page_break
+
+*set evidence_count + 1
+
+Someone is using the name of a dead village as a code name for a secret treasury account. The connection to the Kuhsar mines -- the gem mines that produce a significant portion of the empire's wealth -- cannot be coincidence.
+
+You copy the reference carefully. Your hand is steady, but your mind is racing.
+
+*if (found_letter)
+  The letter from Massoud's office mentioned a "gathering of shadows." The treasury discrepancies point to the Kuhsar mines. The threads are beginning to converge, and the pattern they suggest is larger and more dangerous than a single murder.
+*else
+  You do not yet have enough to see the full picture. But the frame is becoming visible, and it is larger than you expected.
+
+A voice behind you makes you turn. "Vizier. You are reading about mining villages at a table usually reserved for scholars of the Second Wisdom."
+
+Scholar Miriam stands at the end of the shelf, a stack of astronomical charts under one arm. She is tall, sharp-featured, with the distracted intensity of a woman whose mind is usually elsewhere -- specifically, among the stars.
+
+"I am researching a name," you say. "Saravan."
+
+"Saravan." She frowns. "The collapsed mine. I know of it -- the geological survey is in the Tower of Stars archives. The mine was one of the deepest in the Kuhsar range." She pauses. "Why would a Vizier be interested in a forty-year-old mining disaster?"
+
+You weigh your response. Miriam is a scholar, not a politician. But scholars talk.
+
+"Curiosity," you say.
+
+"Mm." She does not believe you, but she does not press. Scholars respect the privacy of research. "If you need the geological records, come to the Tower. I will be there after sunset."
+
+*return
+
+*comment === GARDEN: EMPEROR PRIVATE TALK ===
+
+*label garden_activity
+
+The Garden of Eternal Spring is the Citadel's jewel. Channels of water run in precise geometric patterns between beds of roses, jasmine, and orange trees. Marble pavilions stand at the intersections, their columns draped in flowering vines. Peacocks wander the paths with the proprietary air of beings who consider the garden their personal domain.
+
+*page_break
+
+*set rel_emperor %+ 10
+*set conv_emperor + 1
+
+Emperor Roshan is sitting on a bench beside the central fountain, a book open on his knee, a cup of tea cooling beside him. He is alone -- or as alone as an emperor ever is, which is to say that two guards stand at the garden entrance, far enough to allow privacy, close enough to intervene.
+
+He looks up as you approach. The expression that crosses his face is complicated: pleasure at the company, self-consciousness at being found reading rather than ruling, and the habitual wariness of a boy who has learned that every visitor wants something.
+
+"Vizier." He closes the book. You notice the title: "The Campaigns of Roshan the First." He sees you noticing. A flush rises to his cheeks.
+
+"I am not -- I do not read it for entertainment," he says, too quickly. "It is study. A ruler must understand his predecessors."
+
+"No one would fault you for studying, Your Majesty."
+
+He relaxes, fractionally. "Sit. Please. I spend too many hours in the Throne Room being talked at by people who want things from me. It is pleasant to talk with someone who -- well." He stops. "You probably want something too. Everyone does."
+
+*page_break
+
+*fake_choice
+  #"I want to know how you are, Your Majesty. Not the Emperor. You."
+    *set rel_emperor %+ 8
+    *set honest %+ 5
+    *set idealist %+ 5
+    Roshan stares at you. The wariness does not leave his eyes, but something else enters them -- surprise, and beneath it, a hunger. The hunger of a sixteen-year-old boy who has been surrounded by people who see only the crown.
+
+    "No one asks me that," he says quietly. "Not even my mother. She asks how the Emperor is. She asks how the throne sits. She does not ask about me."
+
+    He looks at the fountain. The water catches the light and throws shifting patterns across his face.
+
+    "I am frightened," he says. "I dream about my father. I dream that I am sitting on the throne and it grows larger and larger until I cannot see over the armrests. And everyone in the room is waiting for me to say something wise, and I cannot think of anything." He pauses. "That is how I am, Vizier. Frightened and pretending not to be."
+  #"I want to serve you well, Your Majesty. Tell me what you need."
+    *set rel_emperor %+ 5
+    *set boldness %+ 5
+    Roshan considers this. "Everyone says that. 'I serve at Your Majesty's pleasure.' 'The throne commands and we obey.' Words. Always words." He taps the book on his knee. "Roshan the First did not listen to words. He watched what people did. He said, 'A man who speaks of loyalty while reaching for my purse is a thief who has learned to bow.'"
+
+    He looks at you. "I will watch what you do, Vizier. The words are pleasant. Show me the rest."
+  #"I want the empire to thrive. The same thing you want."
+    *set rel_emperor %+ 5
+    *set idealist %+ 5
+    "The empire." Roshan's voice is flat. "Everyone wants the empire to thrive. The general wants it to thrive through conquest. The priest wants it to thrive through prayer. The merchant wants it to thrive through gold. My mother wants it to thrive through my obedience to her." He sets the book aside. "What does thriving look like to you, Vizier? Because I am beginning to suspect that the word means something different to every person who says it."
+
+You sit together in the garden as the morning light strengthens and the shadows of the orange trees shorten on the geometric paths. The fountain splashes its endless silver conversation. The peacocks strut and display to no one in particular, their tail feathers catching the light in iridescent bursts of blue and green. The scent of jasmine hangs in the warm air like a benediction.
+
+For a little while, the Emperor is not an emperor and you are not a Vizier. You are two people in a garden, talking about the weight of the things they carry. Roshan tells you about his father -- the way Darius III could silence a room with a look, the way he carved wooden chess pieces for his son on winter evenings, the way his hands shook in the final months though he never acknowledged it. You listen. The listening is the thing. In a palace full of people who speak at this boy, you sit beside him and listen, and you can see the relief in his eyes like water released from a dam.
+
+He is sixteen years old. He carries the weight of three centuries of empire on shoulders that have not finished growing. He misses his father with a grief so raw it bleeds through the regal composure like ink through thin paper.
+
+It does not last. It never does. A servant appears at the garden entrance with a sealed message, and the mask comes down again -- the formal posture, the controlled expression, the boy becoming the monarch before your eyes. The transformation is seamless and heartbreaking in equal measure.
+
+"Thank you," he says, rising. It is not a dismissal. It is gratitude, offered quickly, almost furtively, the way a boy might offer something precious before someone tells him he should not. If you had blinked, you would have missed it.
+
+*return
+
+*comment ============================================================
+*comment === HUB CLOSING: FARID INTERRUPTS ===
+*comment ============================================================
+
+*label hub_closing
+
+*page_break
+
+*comment === CLOSING: END OF DAY ===
+
+The evening call to prayer finds you on the bridge that crosses the Tavan River, halfway between the Temple Quarter and the Citadel. Below you, the water runs dark and smooth, reflecting the first stars and the glow of a thousand oil lamps being lit across the city. The air has cooled. The heat has retreated to the stones, which give it back slowly, like a memory that refuses to fade.
+
+You lean on the bridge railing and look at Khazara.
+
+The city is vast, and you have seen only fragments of it today -- a courtyard here, a market there, a garden, a garrison, a temple. But those fragments have given you something that reports and briefings cannot: the sense of a living thing. Khazara is not an administrative unit or a dot on a map. It is two million people waking, working, praying, arguing, loving, dying. It is the smell of cardamom and the sound of fountains and the sight of a child running barefoot through streets older than the empire.
+
+It is worth protecting. Whatever else you are uncertain about -- the conspiracy, the factions, the path that lies ahead -- you are certain of that.
+
+*page_break
+
+The moment breaks.
+
+"My ${title_honorific} Vizier!"
+
+Farid is running. Actually running -- his robes hiked up, his folio clutched to his chest, his face flushed with exertion and alarm. The guards at the bridge straighten as he approaches.
+
+"My ${title_honorific} Vizier," he gasps, stopping before you and bending double to catch his breath. "I am sorry -- I ran from the Citadel -- there is -- you must come back immediately."
+
+"What happened?"
+
+Farid straightens. The alarm on his face is not the familiar Farid-alarm of misplaced documents and missed deadlines. This is something colder. Something real.
+
+"A trade crisis, my ${title_honorific} Vizier. A message from the western provinces, arrived by fast rider not an hour ago. The Western Confederation has -- they have imposed a full trade embargo. The mountain passes are closed. All Khazaran merchant ships in Confederation ports have been impounded. All caravans approaching the western border are being turned back." He swallows. "Guildmaster Priya has called an emergency session of the Council. She invoked the Commercial Crisis Protocol -- regulation 88-A -- which I did not even know existed until today, which tells you something about the severity."
+
+He stops. Collects himself. Smooths the front of his robes with trembling hands. When he speaks again, his voice is steady, and you realize that beneath the anxiety, beneath the fluster, beneath the perpetual stammering and the protocol citations, Farid is a man who rises when the ground shakes. He has been rising since the day his master was murdered. He has not stopped.
+
+"She says the empire is bleeding, my ${title_honorific} Vizier. Forty thousand gold dirhams a week. And it will not stop on its own."
+
+*page_break
+
+You take one last look at Khazara. The city glitters below you, beautiful and oblivious, its lamps reflected in the dark river like fallen stars.
+
+Then you turn from the railing and walk toward the Citadel. The white marble walls glow faintly in the rising moonlight, a pale ghost of the structure that blazes gold in the morning sun. Somewhere behind those walls, the Council is gathering. Somewhere behind those walls, Guildmaster Priya is pacing and General Kadir is clenching his iron fist and Spymaster Zara is sitting in shadow, watching, always watching.
+
+Farid falls into step beside you, already pulling documents from his folio, already briefing you on the numbers, the positions, the precedents. His voice is steady. His hands have stopped trembling. The crisis has focused him the way a lens focuses light -- all the scattered energy of his anxiety converging into a single bright point of competence.
+
+Behind you, the bridge empties. The call to prayer fades into the soft murmur of evening -- water and wind and the distant notes of a ney flute playing in some courtyard you will never visit. The stars come out, one by one, over a city that does not yet know what is coming.
+
+You have walked the heart of the empire today. You have tasted its coffee and heard its poetry and touched its wounds. You know it now in a way that reports and briefings could never teach -- in the way that only direct contact, only the press of hand against stone and foot against dust and eye against eye, can teach.
+
+The heart of the empire beats on. And you, its Voice, must speak.
+
+*finish Chapter 6: The Embargo

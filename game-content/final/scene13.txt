@@ -1,0 +1,679 @@
+*comment === SCENE 13: "DEEP WATER" ===
+*comment Route-divergent. ~10,000 words total (~3,300 per route).
+*comment Variables modified: evidence_count (significant increase),
+*comment   suspect_kaveh, suspect_reza, suspect_dowager,
+*comment   rel_emperor, rel_dowager, rel_spy, rel_priest, rel_guild,
+*comment   rel_kaveh, rel_reza, rep_intelligence, rep_military,
+*comment   rep_temple, rep_nobility, boldness, ruthless, idealist,
+*comment   honest, scholarship, cunning
+
+*temp investigation_approach ""
+*temp revelation_reaction ""
+
+*comment === ROUTE BRANCH ===
+*if (route = 1)
+  *goto loyalist_deep
+*elseif (route = 2)
+  *goto kingmaker_deep
+*elseif (route = 3)
+  *goto revolutionary_deep
+*else
+  *bug Route variable is not set (value: ${route})
+
+*comment ============================================================
+*comment LOYALIST ROUTE: "Deep Water"
+*comment Conspiracy aims to replace Roshan with Prince Kaveh.
+*comment ============================================================
+
+*label loyalist_deep
+
+Three days after the pamphlet crisis, Spymaster Zara sends you a message. It arrives in the manner all her messages arrive -- not through a courier, not through a servant, but folded into the spine of a book that appears on your desk while you are at breakfast, as though placed there by a ghost.
+
+The message is two words: "Tower. Midnight."
+
+You go. Of course you go. You have learned that when Zara speaks in whispers, the world is about to tilt.
+
+*page_break
+
+The Tower of Stars is cold at midnight. The spiral staircase winds upward through darkness, your footsteps echoing off stone walls worn smooth by centuries of astronomers' feet. The air smells of brass and old oil and the faint, metallic tang of the instruments that fill the domed chamber at the top.
+
+Zara is waiting. She stands beside the great brass astrolabe, her face half-lit by a single lamp that casts her shadow long and dark across the curved wall. Scholar Miriam is with her, which surprises you. The astronomer's eyes are red-rimmed, her hair escaping its pins. She has been crying, or working through the night, or both.
+
+"Close the door," Zara says.
+
+You do.
+
+"What you are about to hear does not leave this room." Zara's voice is flat, stripped of its usual mordant edge. She is not performing. She is afraid. You have never seen Zara afraid.
+
+*page_break
+
+"Show ${them}," Zara says to Miriam.
+
+The astronomer moves to a table where a collection of documents is spread in careful rows. Letters. Ledger pages. A map of the empire with markings in red ink. A seal impression on wax that you do not immediately recognize.
+
+"I found these in the Tower's archive," Miriam says. Her voice is thin. "Hidden behind a false panel in the wall of the observatory's storage chamber. Someone has been using this tower for more than stargazing."
+
+She indicates the letters. "These are coded correspondence. I have decoded them using a cipher based on astronomical tables -- the positions of the Warrior's Star and the Merchant's Star over the past year. The cipher is elegant. Whoever designed it understood mathematics as well as espionage."
+
+"What do they say?" you ask.
+
+*fake_choice
+  #You lean forward, studying the documents with the careful attention of a scholar.
+    *set scholarship + 3
+    *temp revelation_reaction "studied"
+    The handwriting in the letters varies -- at least three different authors. The paper quality differs too: some is cheap bazaar stock, others the thick cream vellum favored by the nobility. Whoever built this correspondence network drew from every level of Khazaran society.
+  #You focus on Zara's face, reading the fear she is trying to hide.
+    *set cunning + 3
+    *temp revelation_reaction "observed"
+    Zara's hands are at her sides, but her left thumb is pressing hard against her forefinger -- a habit you have noticed she displays only when processing information she wishes were false. Whatever Miriam found in these letters, it has shaken the Spymaster to her foundations.
+  #You steel yourself. You have felt the conspiracy's hand before, but this feels different.
+    *set boldness %+ 5
+    *temp revelation_reaction "braced"
+    The lamp flickers in a draft from somewhere above, sending shadows skittering across the documents like dark birds. You set your jaw. You have faced the conspiracy's lies and its assassins and its pamphlets. Whatever new shape it wears tonight, you will face that too.
+
+*page_break
+
+Miriam takes a breath. "The letters describe a plan. A sequence of events designed to -- " She glances at Zara, who nods. "Designed to remove Emperor Roshan from the throne and replace him with Prince Kaveh."
+
+The words land in the cold air of the Tower and hang there, sharp-edged, irreversible.
+
+"The plan is sophisticated," Miriam continues, her scholar's mind taking over from her fear. "It operates on three levels simultaneously. Military: the Khanate raids are being coordinated to stretch the northern defenses to breaking, creating a security crisis that undermines confidence in the Emperor's ability to defend the empire. Economic: the trade disruptions -- the embargo, the tariff disputes -- are designed to erode the merchant class's support. Political: the pamphlet campaign and the rumors about the Emperor's competence are preparing the ground for a transition of power."
+
+She pauses. "The letters refer to 'the Ascension' -- a specific event, planned for a date that corresponds with the Festival of Lights. On that night, the conspirators intend to present Prince Kaveh as the alternative ruler, supported by a coalition of discontented nobles, nervous merchants, and military officers who have lost faith in Roshan."
+
+*set evidence_count + 3
+*set suspect_kaveh true
+
+*page_break
+
+You stand very still. The astrolabe gleams beside you, its brass circles marking the orbits of celestial bodies that move with serene indifference to the intrigues of empires. You think of Emperor Roshan -- sixteen years old, trying so hard to be worthy of a throne carved from a single block of jade. You think of the way he straightens his shoulders before entering the Throne Room, the way his voice wavers and then steadies, the way he looks to you for reassurance he would never admit he needs.
+
+They want to take his throne. They have been planning it for months, perhaps years, building toward a single night when the lamps of the Festival of Lights will illuminate not a celebration but a coup.
+
+"Kaveh," you say. "Is he the leader, or is he the puppet?"
+
+Zara's mouth tightens. "The letters are ambiguous. Some suggest he is directing the operation. Others refer to a figure they call 'the Architect' -- someone above Kaveh, someone who designed the plan."
+
+*choice
+  #"We must warn the Emperor immediately. He deserves to know the full scope of the threat."
+    *set honest %+ 10
+    *set rel_emperor %+ 8
+    *set rep_intelligence %+ 5
+    *set investigation_approach "warn"
+    *goto loyalist_warn_emperor
+  #"We need to identify the Architect before we act. Warn the Emperor with incomplete information and we risk a premature confrontation."
+    *set boldness %- 5
+    *set cunning + 3
+    *set investigation_approach "investigate"
+    *goto loyalist_investigate_more
+
+*label loyalist_warn_emperor
+
+"The Emperor first," you say. "He is the target. He needs to understand what he is facing."
+
+Zara raises an eyebrow. "If we tell him now, he may react emotionally. He is sixteen. He has never faced a coup."
+
+"He is the Emperor. It is his life and his throne. He has the right to know."
+
+*page_break
+
+You go to Roshan that night. The guards admit you to his private chambers, where the boy-emperor sits reading by lamplight. He is in a simple robe, no crown, no ceremony, just a teenager hunched over a book of military history. When he sees your face, the book closes.
+
+"What is wrong?" He does not say "What is wrong, Vizier?" or "What news do you bring?" He says it the way a frightened child says it, because he has learned to read the weather of your expressions and tonight the weather is storm.
+
+You tell him. You tell him everything -- the letters, the three-level plan, the Festival of Lights, the name of Prince Kaveh. You do not soften it. You do not translate it into court language. You give him the truth, whole and unvarnished, because you believe that a ruler who cannot face the truth will be destroyed by it.
+
+*set rel_emperor %+ 10
+
+Roshan is quiet for a long time. His hands grip the edge of his book. His knuckles are white. When he finally speaks, his voice is steady, and you hear something in it that was not there before -- not the imitation of authority, but the first stirring of the real thing.
+
+"Kaveh is my cousin. We played together as children. He taught me to ride a horse." A pause. The lamplight catches the moisture in his eyes, but his voice does not break. "And now he wants my throne."
+
+"We do not know yet if he is the leader or the puppet," you say. "The letters are ambiguous."
+
+"Does it matter?" The question is sharp, older than his years. "If a man stands at the gate with an army, does it matter whether he chose to come or was sent?"
+
+You have no answer that will comfort him, so you offer the only thing you have: the truth. "It matters because a puppet can be cut from its strings. A willing traitor cannot."
+
+Roshan nods. He sets the book of military history on the table beside his bed. When his hand comes away, it is steady. "Then we must find out which one he is. Before the festival. Before the Ascension. Before it is too late."
+
+*set rel_emperor %+ 5
+
+He stands, and for a moment he is not a frightened boy in a simple robe. He is the Emperor of the Khazaran Empire, and the look on his face is the look of a young man who has just discovered that he is capable of being angry in a useful way.
+
+*goto loyalist_second_choice
+
+*label loyalist_investigate_more
+
+"Not yet," you say. "If we warn the Emperor with half a picture, we give the conspiracy a chance to scatter. We need the Architect."
+
+Zara nods -- the crisp nod of a professional whose assessment has been confirmed. "I have three leads. The correspondence references locations: a warehouse in the River District, a private library in the Old City, and a name -- Councilor Tariq, a minor noble in the provincial government of the eastern territories."
+
+*page_break
+
+Over the following days, you pursue the leads with the methodical focus of a scholar tracking a difficult text through a vast library. The warehouse in the River District yields coded shipping manifests showing gold transferred from foreign accounts. The private library in the Old City contains a cache of documents detailing troop movements along the northern border -- the same intelligence that has been feeding the Khanate raiders.
+
+Each piece of evidence clarifies the picture and deepens your dread.
+
+*set evidence_count + 2
+*set cunning + 3
+*set scholarship + 3
+
+Councilor Tariq, when Zara's agents locate him, proves to be a nervous man with sweating hands and a tendency to look over his shoulder. Under Zara's questioning -- conducted in a quiet room in the Old City where the walls are thick and the neighbors have learned not to listen -- he confirms the outline of the plot and adds a crucial detail.
+
+"The Architect is not Kaveh," Tariq whispers. His eyes are wide, the whites showing like a horse that has scented a predator. Sweat beads on his upper lip despite the chill of the room. "Kaveh is the face. The Architect is someone in the Citadel. Someone close to the throne. Someone who has been planning this since before the old Emperor died."
+
+The words settle in the room like dust after an earthquake.
+
+"Since before the old Emperor died," you repeat. "You are saying the Architect was in place when Emperor Darius was alive."
+
+Tariq nods. "The Architect chose the timing of the old Emperor's death. The Architect chose the timing of the Vizier's murder. The Architect has been shaping events for years, waiting for the moment when all the pieces aligned." He leans closer, his voice barely audible. "The boy on the throne was always supposed to fail. He was chosen to fail. The Architect wanted a weak emperor so that when the alternative was presented -- Prince Kaveh, strong, charming, backed by a coalition of nobles and foreign money -- the empire would welcome the change."
+
+*set evidence_count + 1
+
+The room is very quiet. Zara, standing in the corner, has not moved. But the look on her face -- you have never seen that look. It is the face of a woman who has just realized that the game she thought she was playing was, all along, someone else's game.
+
+*goto loyalist_second_choice
+
+*label loyalist_second_choice
+
+*page_break
+
+The conspiracy is deeper than you imagined. Not a cabal of discontented nobles, not a foreign plot, not a simple power grab. This is an operation that has been in motion for years, built layer by layer, reaching into every institution of the empire. And at its center, somewhere, is the Architect -- a figure who has been close enough to the throne to watch its weaknesses and patient enough to wait for the perfect moment to strike.
+
+You think of the people around the throne. The Dowager. The General. The Guildmaster. The High Priest. The Spymaster. The Vizier.
+
+One of them, or someone close to them, is the Architect. And you cannot yet see which one.
+
+*choice
+  #Focus the investigation on the Dowager. She has the motive and the proximity.
+    *set suspect_dowager true
+    *set evidence_count + 1
+    *set rel_dowager %- 8
+    *set investigation_approach "dowager"
+    The Dowager Empress Nur. She chose you. She controls the Emperor. She has spent thirty years accumulating power, and the letters reference "the old hand" -- a phrase that could describe no one so precisely as the woman who has guided every imperial decision for a decade. If she has decided that her son is too weak, that the empire needs a stronger hand -- her hand, through Kaveh...
+
+    The thought makes you cold -- a different cold from the mountain wind, deeper, more personal, the kind of cold that settles in the marrow and does not warm with any fire. But you have learned that cold truths are the only truths worth knowing. You cannot protect the Emperor from all threats. But you can look at the likeliest threat and not flinch.
+
+    You begin to assemble the case. The Dowager's access to the Emperor's schedule. Her network of loyal servants throughout the Citadel. Her thirty years of accumulated influence. Her relationship with Prince Kaveh's mother, her sister-in-law, who died five years ago under circumstances that the court called natural and Zara called convenient.
+  #Focus on Prince Kaveh himself. Whether puppet or player, he is the key.
+    *set suspect_kaveh true
+    *set evidence_count + 1
+    *set rel_kaveh %- 10
+    *set investigation_approach "kaveh"
+    Prince Kaveh. Charming, ambitious, entitled. You remember meeting him -- the practiced warmth, the smile that was slightly too wide, the way he said "Cousin Roshan" with an emphasis that turned a title of kinship into a claim of equality. He was raised believing the throne should have been his family's, and that belief has shaped him like water shapes stone: slowly, invisibly, until the original form is barely recognizable.
+
+    The question is whether that belief has hardened into action or whether he is being wielded by someone with deeper plans. Either way, understanding Kaveh is understanding the conspiracy's endgame. You send a message to Zara: watch Kaveh. Note his meetings, his correspondence, the company he keeps and the company he avoids. If he is the heart of the Ascension, his movements in the days before the festival will tell you everything.
+
+*page_break
+
+You carry these discoveries back to your chambers as dawn breaks over Khazara. The city wakes below you -- the call to prayer rising from the minarets, the first merchants setting up their stalls in the bazaar, the garrison drums beginning their morning rhythm. It is the same city it was yesterday. It is entirely different.
+
+The conspiracy is real. It is vast. It has a name -- the Ascension -- and a target -- the Festival of Lights. Between now and that night, you must unravel a web that has been years in the weaving, protect an emperor who does not yet know the full shape of the danger, and identify an enemy who wears a friend's face.
+
+The water is deep. The current is strong. And you are swimming.
+
+*goto scene13_end
+
+*comment ============================================================
+*comment KINGMAKER ROUTE: "Deep Water"
+*comment A rival shadow ruler exists.
+*comment ============================================================
+
+*label kingmaker_deep
+
+You discover it by accident, which is how most true discoveries are made.
+
+The night is late. The lamp on your desk has burned low, its wick sputtering in the last pool of oil, and the shadows in your office have grown long and thick. The Citadel is quiet around you -- the kind of silence that comes after midnight, when even the most dedicated courtiers have surrendered to sleep and only the guards on the walls and the Vizier behind a desk remain awake.
+
+You are reviewing Priya's trade ledgers -- an exercise in due diligence that the Guildmaster indulges because she has nothing to hide, or at least nothing she believes you are clever enough to find. The numbers are complex, dense with the arcane notation of imperial commerce: abbreviations for trade routes, coded references to tariff categories, margin calculations in a shorthand that the merchant class guards as jealously as the temple guards its scriptures. You have been reading them for three hours, your eyes aching, your tea long since cold, when a pattern emerges from the columns of figures like a face surfacing from deep water.
+
+You sit up. The weariness falls away like a shed cloak. You reach for a fresh sheet of paper and begin cross-referencing the entries, and the pattern sharpens with each comparison.
+
+*page_break
+
+The pattern is this: for the past eighteen months, a series of trade licenses has been issued to merchants who do not exist. The licenses are legitimate -- properly filed, properly taxed, bearing the correct seals and signatures. But the merchants they name have no physical presence in the bazaar, no warehouses in the River District, no ships in the harbor. They are ghosts.
+
+Ghost merchants who handle real money. Large amounts of it. The sums flow through their accounts like water through a channel, arriving from multiple sources and departing to a single destination: a financial instrument called a hawala, an informal transfer network that moves money without physically moving money. The hawala trail ends at a name you do not recognize.
+
+Dastan.
+
+You have never heard the name. It does not appear in any court record, any guild roster, any intelligence file that Zara has shared with you. It is, as far as the official apparatus of the Khazaran Empire is concerned, nobody.
+
+Nobody who controls an enormous amount of money.
+
+*page_break
+
+You bring the discovery to Zara because there are some waters you do not swim alone.
+
+The meeting takes place in Zara's domain -- a nondescript room in the Old City, accessed through a spice shop whose owner never makes eye contact and whose wares are suspiciously fragrant for a business that appears to have no customers. The room is small, clean, windowless. A single lamp burns on a table that holds nothing but a cup of water that Zara never drinks. It is, you have come to understand, her thinking space.
+
+The Spymaster receives the information in her usual manner: silence, then a single question that cuts to the center.
+
+"How much?"
+
+"Approximately forty thousand gold ashrafs in the past year, based on the license volumes."
+
+Zara does not react visibly, but her left thumb presses hard against her forefinger. The lamplight catches the faint scar on her wrist -- a memento, you have gathered, from an early career incident she has never discussed and never will. "That is more than the military budget for the northern border garrison."
+
+"Yes."
+
+Another silence. In the spice shop above, something shifts -- a footstep, a board creaking -- and Zara's eyes flick to the ceiling and back, cataloging the sound, assessing the threat, dismissing it, all in the space of a heartbeat. Then: "Dastan is not a name I know. And I know every name worth knowing in this city."
+
+*fake_choice
+  #"Then Dastan is either very new or very good at hiding."
+    *set cunning + 3
+    *temp revelation_reaction "analytical"
+    The possibilities map themselves in your mind like trade routes on a merchant's chart. A figure controlling that much money, operating entirely outside the known power structures of the empire, with no footprint in the intelligence apparatus -- this is not an amateur. This is someone who has built a parallel system of influence, invisible and deliberate.
+  #"There is a third possibility. Dastan is someone we already know, wearing a different face."
+    *set cunning + 3
+    *set boldness %+ 5
+    *temp revelation_reaction "suspicious"
+    Names are masks. You wear one yourself -- the loyal Vizier, the faithful servant of the throne, while behind that mask you build your own architecture of power. Someone else in this court may be doing the same thing, and doing it better.
+  #"This changes everything. If someone else is playing the same game I am..."
+    *set idealist %- 5
+    *temp revelation_reaction "shaken"
+    The realization strikes you like cold water. You have been building a shadow network, believing yourself the only player in this invisible game. But the ghost merchants, the hawala network, the sheer scale of the money -- someone else has been building longer, deeper, with resources that dwarf your own. You are not the kingmaker. You are the kingmaker's apprentice.
+
+*page_break
+
+Over the next week, you and Zara dissect the Dastan network with the patient precision of surgeons. What you find is remarkable and terrifying.
+
+Dastan's operation mirrors your own but exceeds it in every dimension. Where you have cultivated allies in the merchant class and the intelligence service, Dastan has operatives in the military, the nobility, the trade guilds, and the temple. Where you have built a network over weeks, Dastan has built over years. Where your resources are limited to your personal funds and a few allies' contributions, Dastan commands wealth that could fund a small army.
+
+"It's a shadow government," Zara says, her voice flat with professional admiration. "Whoever Dastan is, they have built exactly what you are trying to build. But they started first."
+
+*set evidence_count + 3
+
+*page_break
+
+The shape of it emerges slowly, like a mosaic assembled in poor light. Each new piece of intelligence reveals connections that were invisible before -- financial links between noble houses and foreign trading companies, personnel overlaps between provincial governments and the ghost merchant network, a web of mutual obligation and shared profit that spans the empire like a second government operating in the spaces the first one cannot see.
+
+The critical breakthrough comes from an unexpected source. Merchant Hamid --
+*if (betrayal_committed)
+  whose career you destroyed to buy Lord Reza's alliance, and who has, despite everything, maintained a fragile professional contact with your office --
+*else
+  who still meets you for tea on Thursdays, who still trusts you with information that a wiser man might hoard --
+sends you a message through Farid.
+
+"The man behind the ghost merchants," Hamid writes. "I have met him. Once, at a private dinner in the Foreign Quarter. He uses the name Dastan but that is not his real name. He is older than you would expect. He spoke of the empire as though it were a puzzle he had been solving for decades. He was..." Hamid's careful hand wavers here, the letters growing unsteady. "He was not someone I would wish to oppose."
+
+The description is tantalizing but incomplete. An older man. Foreign Quarter. A puzzle solver. You need more.
+
+*choice
+  #Arrange a meeting with Ambassador Chen. The Foreign Quarter is his domain, and he may know Dastan.
+    *set diplomacy + 3
+    *set rel_chen %+ 5
+    *set investigation_approach "diplomatic"
+    *goto kingmaker_chen
+  #Task Zara with a deep surveillance operation in the Foreign Quarter. Watch and wait.
+    *set cunning + 3
+    *set rep_intelligence %+ 8
+    *set investigation_approach "covert"
+    *goto kingmaker_surveillance
+
+*label kingmaker_chen
+
+Ambassador Chen receives you in his residence, a graceful building in the Foreign Quarter decorated in a style that blends Western Confederation aesthetics with Khazaran flourishes. Tea is served -- a Western variety, lighter than the cardamom tea of the court. Chen is, as always, impeccably polite and gently probing.
+
+"Dastan," he says, tasting the name. "An interesting inquiry, Vizier. The name is not unknown in certain circles. A facilitator. A patron. A person who makes things happen for people who require discretion." He sips his tea. "I have never met Dastan personally, but I understand that Dastan's network has... shall we say, an international dimension."
+
+*page_break
+
+"The Confederation?" you ask.
+
+Chen smiles. It is the smile of a diplomat who has said exactly what he intended to say and not one syllable more. "The Confederation has many citizens who conduct business in the Khazaran Empire. Some of that business is conducted through intermediaries. I could not possibly comment on specific arrangements."
+
+The message is clear: Dastan's network has foreign backing. The conspiracy is not merely internal -- it has connections to the empire's trade rivals.
+
+*set evidence_count + 2
+*set rel_chen %+ 5
+
+"One more thing," Chen says, as you rise to leave. "Be careful, Vizier. Dastan has been playing this game for a long time. Newcomers to deep water often underestimate the current."
+
+*goto kingmaker_rival_reveal
+
+*label kingmaker_surveillance
+
+Zara's surveillance operation produces results within five days. Her agents track the hawala network's physical couriers to a series of safe houses in the Foreign Quarter. From there, the trail leads to a private residence on the edge of the district -- a handsome stone house with a walled garden and a single servant who admits visitors only after a complex series of signals.
+
+"The house is owned by a trading company registered in the Western Confederation," Zara reports. "The trading company is owned by another company, which is owned by a trust, which is administered by a law firm in Port Tavandar. The layers go deep."
+
+*page_break
+
+She spreads her findings on your desk: surveillance reports, financial documents, intercepted messages. "My agents observed seven visitors to the house over five days. Three are known agents of the Western Confederation's intelligence service. Two are Khazaran nobles with connections to Prince Kaveh. One is a senior officer in the northern garrison. And one..." She pauses, choosing her words. "One is someone I recognize."
+
+"Who?"
+
+"I am still confirming. But if I am right, the implications are significant."
+
+*set evidence_count + 2
+*set rep_intelligence %+ 8
+
+The surveillance continues. The picture clarifies, detail by detail, like a mosaic being assembled from scattered tiles.
+
+*goto kingmaker_rival_reveal
+
+*label kingmaker_rival_reveal
+
+*page_break
+
+You spend the next three evenings in your office, assembling the evidence on a large sheet of paper that gradually fills with names, arrows, and connections drawn in the red ink Zara favors for intelligence work. The map of Dastan's network grows like a living thing, spreading across the page, reaching into corners of the empire you had not considered.
+
+Farid watches this process with the quiet alarm of a man who has wandered into a predator's den and is trying to decide whether to back out slowly or remain perfectly still. He brings tea. He adjusts the lamp. He does not ask questions, because he is wise enough to know that some knowledge is a burden and he already carries enough of those.
+
+The full picture emerges over the following days, assembled from Chen's hints, Zara's surveillance, Hamid's observations, and your own analysis of the financial records. The picture is this:
+
+Dastan is not one person. Dastan is a title -- a code name for whoever currently leads a shadow organization that has existed, in various forms, for at least two decades. The organization predates the current conspiracy. It predates the current Emperor. It is, in essence, a permanent shadow government designed to ensure that whoever sits on the Silk Throne serves the interests of a specific coalition of Khazaran nobles and foreign trading partners.
+
+The previous Vizier discovered Dastan. That is why he was murdered.
+
+And now you are building exactly the kind of power network that Dastan was designed to prevent any individual from building without Dastan's approval.
+
+*set evidence_count + 1
+
+"You are not the first person to try to be the power behind the throne," Zara says, and there is no mockery in her voice. Only the bone-deep seriousness of a woman who understands what you are facing. "Dastan has been there before you. Dastan will be there after you. Unless you dismantle the network entirely."
+
+*choice
+  #"Then we dismantle it. I did not come this far to be second to a shadow."
+    *set boldness %+ 10
+    *set ruthless %+ 5
+    *set investigation_approach "dismantle"
+    You feel the heat of it rising in your chest -- not anger, exactly, but the cold fire of ambition confronted with its own mirror. You did not build your network, did not make the sacrifices the kingmaker's path demanded, to discover that someone else had already claimed the throne behind the throne. Dastan must fall, or you will never be more than a pawn in someone else's game.
+
+    *set evidence_count + 1
+  #"We need to infiltrate the network. Learn its structure. Find its weaknesses."
+    *set cunning + 3
+    *set boldness %- 5
+    *set investigation_approach "infiltrate"
+    Dismantling a network that has survived for two decades requires understanding it first. You cannot fight an enemy whose shape you cannot see. Infiltration is slower, more dangerous, but it offers something confrontation does not: knowledge.
+
+    *set evidence_count + 1
+
+*page_break
+
+You stand at the window of your chambers, looking out over the city. The lights of Khazara spread below you like a constellation fallen to earth -- lanterns in windows, torches on walls, the distant glow of the Eternal Flame above the Temple Quarter. Somewhere in that constellation, in a stone house in the Foreign Quarter, the current Dastan sits in a walled garden and moves pieces on a board that you are only beginning to see.
+
+The kingmaker's path, you have discovered, is not a road you walk alone. It is a board game, and you have just learned that you are not the only player. The question is not whether you can build a shadow empire. The question is whether you can dismantle the one that already exists.
+
+The water is deep. Deeper than you knew. And somewhere in the darkness beneath the surface, something is watching you.
+
+You extinguish the lamp and stand in the darkness of your chambers. The moonlight falls through the window in a silver bar, and in that light you can see the intelligence map spread across your desk -- the names, the arrows, the web of connections that constitutes a shadow empire.
+
+Your shadow empire is not the only one. It may not even be the strongest. But it is yours, and you have paid too much to build it -- in trust betrayed, in alliances forged, in the quiet sacrifice of the person you were before you came to Khazara -- to surrender it now.
+
+Dastan has been here before you. Dastan will not be here after you. That much, at least, you can promise yourself in the dark.
+
+*goto scene13_end
+
+*comment ============================================================
+*comment REVOLUTIONARY ROUTE: "Deep Water"
+*comment Temple schism threatens from within.
+*comment ============================================================
+
+*label revolutionary_deep
+
+It begins with a sermon.
+
+The Temple of Seven Wisdoms is full this morning. The faithful crowd the courtyard in their hundreds -- merchants in their guild colors, soldiers in undress uniform, scholars with ink-stained fingers, beggars wrapped in rags that have been washed for the occasion because even poverty has its dignity before the Flame. You stand among them in your vizier's robes, the seal ring on your finger, the scent of frankincense filling your lungs with each breath.
+
+The Eternal Flame burns in its great bronze brazier at the center of the courtyard, its light steady and golden against the white marble columns. Incense smoke drifts upward through the open dome in spirals that catch the early morning light and dissolve into the sky. The temple is a place of peace, of contemplation, of the kind of silence that fills the gaps between heartbeats.
+
+You have come to value this ritual in the weeks since your arrival. The morning observance strips away the titles and the politics and the weight of the seal ring, and for a few minutes you are simply a person standing before a flame that has burned for three hundred years, asking the same questions that every person in this temple is asking: Am I doing the right thing? Am I enough?
+
+High Priest Ashoka presides from the raised platform beside the brazier. His voice is calm, measured, resonant with the authority of sixty-two years and the accumulated weight of a million confessions heard in the privacy of the Unburdening chamber. He speaks today of the Fifth Wisdom -- Knowledge -- and the duty of the faithful to seek truth even when truth is painful.
+
+*page_break
+
+It is a good sermon. It is also, you realize as it unfolds, a political statement aimed directly at you.
+
+"Knowledge without mercy is cruelty," Ashoka says, his gaze sweeping the congregation with the unhurried patience of a man who has learned to read souls through their postures. "Reform without reverence is destruction. The person who would reshape the world must first ask: does the world wish to be reshaped? Or does the reformer merely wish to see ${their} own reflection in the world's new face?"
+
+You sit very still. The words land like precisely aimed arrows, each one finding the gap between your convictions and your doubts. Ashoka has always been political, but this is different. This is a declaration.
+
+After the service, Asha finds you in the colonnade. She is pale. Her usual animation is gone, replaced by a tension you have never seen in her.
+
+"Vizier. We need to talk. Not here. The garden."
+
+*page_break
+
+The Garden of Eternal Spring is quiet at this hour. The fountains murmur. The roses are opening in the morning warmth. Asha leads you to a bench beside a channel of clear water, where the sound of flowing water will mask your words from any listener.
+
+"There is a schism forming in the temple," she says, without preamble. "Ashoka's sermon was not just aimed at you. It was aimed at me, at the younger scholars, at everyone who has supported the reform movement from within the faith. He is drawing a line."
+
+"What kind of line?"
+
+*fake_choice
+  #You lean forward, giving Asha your full attention. This is serious.
+    *set diplomacy + 3
+    *temp revelation_reaction "focused"
+    The temple is the empire's moral authority. If it turns against the reform movement, the consequences will be devastating. The common people who support your reforms do so because they believe the Flame blesses change. If Ashoka declares that the Flame condemns it...
+  #You feel a cold knot forming in your stomach. You anticipated resistance, but not from the temple.
+    *set boldness %- 5
+    *temp revelation_reaction "alarmed"
+    The military opposed you. The nobility opposed you. You expected that. But the temple has been, if not an ally, at least neutral. Ashoka's personal disapproval was known, but a formal theological opposition to reform is something entirely different. It threatens the moral foundation of everything you are building.
+  #You are angry. Ashoka is using the Flame to protect the status quo.
+    *set ruthless %+ 5
+    *set idealist %+ 5
+    *temp revelation_reaction "defiant"
+    The Eternal Flame is supposed to illuminate truth, not guard privilege. If Ashoka has decided that the old order is sacred simply because it is old, then he has confused the Flame's purpose with his own comfort. The reform movement serves the very Wisdoms the temple claims to uphold.
+
+Asha takes a breath. "A group of temple elders -- the Masters of the First, Second, and Sixth Wisdoms -- have drafted a theological declaration. It argues that the existing social order is divinely ordained and that attempts to reform it are acts of spiritual rebellion against the Wheel of Fate. If you change a person's station in life, you interfere with the karma that placed them there."
+
+*page_break
+
+"That is not what the scriptures say," you reply.
+
+"It is what the scriptures can be made to say, if you read them selectively and with sufficient motivation." Asha's voice is tight. "The declaration has not been published yet. Ashoka has not endorsed it publicly. But if he does -- if the High Priest of the Eternal Flame declares that your reforms are heresy -- the common people will turn against you. Not all of them. But enough."
+
+She pulls a folded document from her robe and hands it to you. "I copied this from the elder council's records. It is the draft declaration."
+
+You read it. The language is dense, theological, layered with scriptural citations. But the meaning is clear: reform is sin, the reformer is a threat to the divine order, and the faithful must resist.
+
+*set evidence_count + 2
+
+"There is more," Asha says. "The declaration is being funded."
+
+"Funded?"
+
+"Someone is providing gold to the conservative elders. Not Ashoka himself -- he is too careful for direct corruption. But the elders who drafted this, the ones who are pushing hardest for the declaration -- they have suddenly acquired resources. New robes. Restored temples. Funded pilgrimages. Someone is buying the theological opposition to your reforms."
+
+*set evidence_count + 1
+
+*page_break
+
+"Who?"
+
+Asha shakes her head. "I do not know. The money comes through temple donation channels, which are confidential by law. Even Spymaster Zara cannot easily penetrate the temple's financial records -- the Unburdening system gives Ashoka leverage that keeps the intelligence service at arm's length."
+
+You sit with this information. The garden is beautiful around you -- roses, jasmine, the geometric precision of water channels reflecting the sky. You hold in your hands a document that could destroy everything you are building, funded by an enemy you cannot see, wielded by an institution you cannot easily oppose.
+
+*choice
+  #Bring this to Spymaster Zara. Her network can trace the money even through temple channels.
+    *set rep_intelligence %+ 8
+    *set rel_spy %+ 8
+    *set investigation_approach "spy"
+    *goto revolutionary_zara
+  #Confront High Priest Ashoka directly. He may not endorse the declaration if he knows you are aware of it.
+    *set boldness %+ 10
+    *set diplomacy + 3
+    *set investigation_approach "confront"
+    *goto revolutionary_ashoka
+
+*label revolutionary_zara
+
+Zara receives the information with her customary economy of expression. She reads the draft declaration once, sets it down, and says, "This is not theology. This is a weapon."
+
+"Can you trace the funding?"
+
+"Temple finances are the most opaque in the empire. The Unburdening system gives Ashoka leverage over every powerful person who has confessed -- which is all of them. He uses that leverage to keep the intelligence service out of temple business." She pauses. "But opaque is not impenetrable. Give me a week."
+
+*page_break
+
+Zara's week yields results that are both valuable and disturbing.
+
+The money flowing to the conservative elders comes from a network of "charitable donations" that trace, through several layers of intermediaries, to two sources. The first is a consortium of noble families led by -- unsurprisingly -- Lord Reza's house. The second is more unexpected: a trading company registered in the Foreign Quarter with connections to the Western Confederation.
+
+"The conspiracy," you say, staring at the financial charts Zara has assembled.
+
+"The conspiracy," she confirms. "They are funding the theological opposition to your reforms. If the temple declares reform to be heresy, the common people turn against you, and the conspiracy's position is strengthened."
+
+*set evidence_count + 2
+*set suspect_reza true
+
+"But that means the conspiracy is not merely a political threat," you say, working through the implications. "They are attacking the ideological foundation of reform itself. If they win the theological argument, it does not matter how many regulations you pass. The people will believe that change is sin."
+
+*goto revolutionary_depth
+
+*label revolutionary_ashoka
+
+You request a private audience with High Priest Ashoka. He receives you in his personal chamber within the Temple of Seven Wisdoms -- a room of spare elegance, furnished with cushions, a low table, and a single lamp that burns with a flame drawn from the Eternal Flame itself.
+
+Ashoka is seated when you enter. He does not rise. The gesture -- or its absence -- is deliberate. You are not in the Citadel now. You are in his domain.
+
+"Vizier." His voice is measured. "I expected you sooner."
+
+*page_break
+
+"You know why I am here."
+
+"The draft declaration." He nods. "You have read it, which means someone in my temple has shared confidential deliberations with the secular government. I am displeased but not surprised. The young scholars have never understood the difference between transparency and betrayal."
+
+"The declaration would undermine the reform movement," you say. "It would tell the common people that improving their lives is a sin against the divine order."
+
+Ashoka's expression does not change. "The declaration would remind the faithful that the Wheel of Fate turns as it will, and that mortal hands should not presume to spin it faster."
+
+"That is the same thing, spoken in a different register."
+
+*set rel_priest %- 10
+
+A silence falls between you. The lamp flame flickers. Ashoka's eyes, deep-set and ancient, study you with the patient attention of a man who has heard confessions from people far more powerful than you.
+
+"I will be honest with you, Vizier, because the Fifth Wisdom requires it. The declaration exists because powerful people have asked for it. I did not commission it. I have not endorsed it. But I have not prevented it, because the concerns it raises are legitimate."
+
+*set evidence_count + 2
+
+"And the money?" you ask. "The funding that has suddenly appeared for the conservative elders?"
+
+A flicker. Just a flicker -- the briefest tightening of his jaw, the slightest shift in his posture. "I do not control the charitable impulses of the faithful."
+
+"You know who is behind it."
+
+"I know many things, child. That is the burden of this office."
+
+*goto revolutionary_depth
+
+*label revolutionary_depth
+
+*page_break
+
+The full scope of the threat becomes clear over the following days, as you assemble the pieces that Zara and Asha and your own investigation have provided.
+
+The temple schism is not an organic theological dispute. It is a manufactured crisis, funded by the conspiracy, designed to attack the reform movement at its ideological roots. The conservative elders are sincere in their beliefs -- they genuinely oppose reform on theological grounds -- but they are being amplified and weaponized by forces with purely political motivations.
+
+Lord Reza provides the domestic funding. The Western Confederation, through its agents in the Foreign Quarter, provides the foreign backing. And somewhere in the shadows between them, the conspiracy pulls the strings, using the temple's authority to accomplish what military force and economic pressure have failed to achieve: the destruction of the reform movement's moral legitimacy.
+
+*set evidence_count + 1
+
+*choice
+  #Rally the progressive temple scholars to counter the declaration with their own theological argument.
+    *set idealist %+ 10
+    *set rep_temple %+ 5
+    *set rel_asha %+ 8
+    *set investigation_approach "counter"
+    If the conservative elders can weaponize theology against reform, then the progressive scholars can weaponize it in reform's defense. The scriptures are not the exclusive property of the powerful. The Seven Wisdoms speak of justice and courage and knowledge -- virtues that the reform movement embodies.
+
+    Asha leads the effort. She has spent years developing a reinterpretation of the Wisdoms that supports change and growth. Now that reinterpretation becomes a manifesto, written with the passion of a scholar who has found her purpose.
+
+    *set evidence_count + 1
+  #Expose the conspiracy's funding of the conservative elders. If the people know the declaration is bought, they will reject it.
+    *set honest %+ 10
+    *set boldness %+ 5
+    *set rep_intelligence %+ 5
+    *set investigation_approach "expose"
+    Theology can be debated endlessly. But corruption is a fact that people understand. If you can prove that the conservative elders' campaign is funded by the same conspiracy that has been sabotaging the empire -- by the same forces that armed the Khanate raiders and triggered the trade embargo -- the declaration's moral authority collapses.
+
+    The risk is significant. Exposing corruption within the temple is an assault on one of the empire's most sacred institutions. But the alternative is allowing that institution to be used as a weapon against the people it is supposed to serve.
+
+    *set evidence_count + 1
+
+*page_break
+
+You return to the reform council's meeting room as the sun sets. Lady Soraya is there, and two of the guild representatives who have joined your cause, and a clerk from the provincial government who has been quietly channeling information about noble obstruction. They look to you -- tired, worried, determined -- and you realize that you have become something more than a Vizier pursuing reforms.
+
+You have become the center of a movement. A movement that the conspiracy is now attacking on every front: military, economic, political, and theological.
+
+The water is deep. The currents are treacherous. And you are swimming toward a shore you cannot yet see. But you are not swimming alone.
+
+The reform council gathers around the table. You spread the evidence before them -- the financial documents, the draft declaration, the maps of the conspiracy's connections. Lady Soraya reads the financial trail with the focused intensity of a woman who has spent her life in noble houses and recognizes the names and the methods. The guild representatives study the trade connections with professional interest. The provincial clerk, a quiet man named Behnam who rarely speaks, looks at the map and says, very simply, "They are afraid of us."
+
+Everyone turns to him.
+
+"If they were not afraid," he says, "they would not need to spend this much gold to stop us. They would not need to corrupt the temple and fund the Khanate raiders and manipulate the trade routes. They are afraid because the reforms are working. Because the children are reading. Because the grain is reaching villages that were hungry. They are afraid because we are right."
+
+*page_break
+
+The silence that follows is not the silence of defeat. It is the silence of people hearing something they needed to hear.
+
+"Behnam is right," you say. "They are afraid. And fear makes people dangerous. But it also makes them visible. Every gold coin they spend, every alliance they forge, every theological argument they manufacture -- it all leaves a trail. We follow that trail. We expose it. And we show the people of this empire that the forces opposing reform are the same forces that have been sabotaging their lives."
+
+Soraya nods. The guild representatives nod. Behnam goes back to his quiet corner and resumes his work, having said the most important thing anyone has said in weeks.
+
+You begin, together, to plan.
+
+*goto scene13_end
+
+*comment ============================================================
+*comment SCENE 13 ENDING (all routes converge)
+*comment ============================================================
+
+*label scene13_end
+
+*page_break
+
+The night finds you in the Garden of Eternal Spring.
+
+You came here because you needed to breathe. The marble corridors of the Citadel, for all their beauty, have begun to feel like the walls of a maze -- each turning revealing another corridor, another door, another shadow that might or might not conceal a blade. The Garden is different. The Garden does not pretend. Its beauty is honest: water flowing because water flows, roses blooming because roses bloom, moonlight falling on marble because the moon has no agenda and the marble no ambitions.
+
+You sit on a bench beside the central channel, where the water from the Tavan River -- cold, clear, drawn from the northern highlands through two centuries of aqueducts -- runs in a straight line through the heart of the garden. The sound of it is gentle and steady, like a heartbeat. A peacock sleeps in the branches of a fig tree, its magnificent tail folded, its vanity surrendered to exhaustion. You understand the feeling.
+
+The evidence is mounting. The conspiracy is real. It is vast. It reaches into every institution of the empire.
+
+*if (route = 1)
+  Prince Kaveh, your Emperor's cousin, stands at its center -- puppet or player, you do not yet know. But the Ascension is planned for the Festival of Lights, and between now and that night, you must protect a throne that a shadowed army is working to topple.
+*elseif (route = 2)
+  A rival shadow government -- Dastan -- has been operating for years, doing exactly what you are trying to do, but with greater resources, deeper roots, and the advantage of decades of patience. Between you and your ambitions stands an enemy who is, in every measurable way, a more experienced version of yourself.
+*elseif (route = 3)
+  The temple itself has been compromised -- not through corruption of the High Priest, but through the weaponization of theology by the very forces your reforms seek to dismantle. Between you and the future you are trying to build stands the empire's oldest moral authority, wielded by the empire's most entrenched interests.
+
+The Eternal Flame flickers above the Temple Quarter, its light reflected in the garden's channels. You watch it burn and you think about the three hundred years of history it represents -- three centuries of intrigue, ambition, reform, and betrayal, all illuminated by a fire that has never gone out.
+
+The fire does not take sides. It illuminates. It shows what is, not what you wish to see.
+
+You have seen. And what you have seen cannot be unseen.
+
+A footstep on the gravel path behind you. You do not turn -- you have learned, in these weeks of conspiracy and counter-conspiracy, to identify people by their approach. This step is careful, slightly hesitant, accompanied by the faint rustle of paper and the scent of cold tea.
+
+Farid.
+
+"My lord Vizier." His voice is quiet, respectful of the garden's peace. "I saw the lamp in your window go out and I thought -- well, I thought you might be here. You come here when you are thinking. I have noticed that. Noticing things is -- it is part of my job."
+
+He stands beside the bench, a dark shape against the moonlit marble, holding a sheaf of documents he probably does not need and a cup of tea he has certainly forgotten.
+
+"Are you all right, my lord Vizier?"
+
+The question is simple. The answer is not. But you say, "I am thinking, Farid. The water is deep."
+
+"Yes, my lord Vizier." A pause. "But you are a strong swimmer. I have noticed that, too."
+
+*page_break
+
+He leaves the tea on the bench and retreats with his characteristic blend of loyalty and embarrassment, and you sit alone in the garden with the moon and the water and the sleeping peacock and the weight of everything you have learned.
+
+The conspiracy is vast. The enemy is closer than you thought. The Festival of Lights approaches, and with it a reckoning that will test every alliance you have forged, every skill you have honed, every choice you have made since the day you arrived in Khazara with a seal ring on your finger and a dead man's office waiting for you.
+
+The water is deep.
+
+But Farid is right. You are a strong swimmer. And you are not done yet.
+
+*finish Chapter 14: The Gathering Storm

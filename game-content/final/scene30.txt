@@ -1,0 +1,476 @@
+*comment === SCENE 30: "THE SCALES OF FATE" -- ENDING CALCULATION ===
+*comment Word target: ~6,000
+*comment Variables modified: ending_type (finalized), achievement triggers
+*comment This scene is primarily conditional logic with brief narrative transitions.
+*comment Uses the Ending Gate Pattern from game-design-patterns.md.
+
+*comment === OPENING NARRATIVE ===
+
+*temp final_label "ending_13"
+
+The scales of fate are balanced.
+
+Every choice you have made -- every alliance forged, every oath kept or broken, every whispered word in the Garden of Eternal Spring and every shout in the Council Chamber -- has been weighed. The sum of your deeds is a number only the gods can calculate, but the shape of it is clear.
+
+You are who you have become.
+
+*page_break
+
+*comment =====================================================
+*comment === ENDING GATE PATTERN: DETERMINATION LOGIC ===
+*comment =====================================================
+*comment
+*comment Priority order:
+*comment   1. Check for hidden endings first (14, 15)
+*comment   2. Check universal override endings (12 Martyr, 4 Broken Oath)
+*comment   3. Check walk-away endings (13 Exile, 15 Last Poem)
+*comment   4. Check route-specific endings by route
+*comment   5. Fallback to Exile (13)
+*comment
+*comment Each block sets ending_type and final_label, then falls through
+*comment to the transition section at the bottom.
+*comment =====================================================
+
+*comment === HIDDEN ENDING 15: THE LAST POEM ===
+*comment Requires: romance with Leila, very high relationship, found the poem,
+*comment love fulfilled, and chose to walk away.
+*if ((romance_leila) and (rel_leila > 90) and (found_last_poem) and (love_fulfilled) and (throne_room_choice = 5))
+  *set ending_type 15
+  *set final_label "ending_15"
+  *goto narrative_transition
+
+*comment === HIDDEN ENDING 14: THE ETERNAL FLAME ===
+*comment Requires: completed the temple quest, very high temple reputation,
+*comment very high priest relationship.
+*if ((eternal_flame_quest_complete) and (rel_priest > 80) and (rep_temple > 70))
+  *set ending_type 14
+  *set final_label "ending_14"
+  *goto narrative_transition
+
+*comment === UNIVERSAL ENDING 12: THE MARTYR ===
+*comment Requires: player chose to sacrifice themselves during the siege,
+*comment high idealism.
+*if ((not(player_alive)) and (idealist > 70))
+  *set ending_type 12
+  *set final_label "ending_12"
+  *goto narrative_transition
+
+*comment === UNIVERSAL ENDING 4: THE BROKEN OATH ===
+*comment Requires: betrayal committed, low honesty. Overrides route endings
+*comment because the truth of betrayal poisons everything.
+*if ((betrayal_committed) and (honest < 30))
+  *set ending_type 4
+  *set final_label "ending_4"
+  *goto narrative_transition
+
+*comment === WALK-AWAY ENDING 13: THE EXILE ===
+*comment Requires: chose to walk away (throne_room_choice 5) and does NOT
+*comment qualify for Last Poem (already checked above).
+*if (throne_room_choice = 5)
+  *set ending_type 13
+  *set final_label "ending_13"
+  *goto narrative_transition
+
+*comment =====================================================
+*comment === ROUTE-SPECIFIC ENDINGS ===
+*comment =====================================================
+
+*comment === ROUTE 1: LOYALIST ENDINGS (1, 2, 3, 4) ===
+*if (route = 1)
+  *comment Best Loyalist ending: Golden Age
+  *comment Requires: defended emperor, heir alive, empire intact,
+  *comment high emperor relationship.
+  *if ((throne_room_choice = 2) and (heir_alive) and (empire_intact) and (rel_emperor > 70))
+    *set ending_type 1
+    *set final_label "ending_1"
+    *goto narrative_transition
+
+  *comment Good Loyalist ending: Iron Throne
+  *comment Requires: defended emperor, heir alive, empire intact,
+  *comment but relationship not high enough for Golden Age.
+  *if ((throne_room_choice = 2) and (heir_alive) and (empire_intact))
+    *set ending_type 2
+    *set final_label "ending_2"
+    *goto narrative_transition
+
+  *comment Loyalist chose reform instead of pure loyalty
+  *if (throne_room_choice = 4)
+    *comment If idealist is high enough, this becomes People's Vizier
+    *if ((idealist > 60) and (empire_intact))
+      *set ending_type 10
+      *set final_label "ending_10"
+      *goto narrative_transition
+    *comment Otherwise Fallen Crown -- loyalty wavered
+    *set ending_type 3
+    *set final_label "ending_3"
+    *goto narrative_transition
+
+  *comment Loyalist betrayal ending
+  *if (betrayal_committed)
+    *set ending_type 4
+    *set final_label "ending_4"
+    *goto narrative_transition
+
+  *comment Fallen Crown: heir dead, empire broken, or loyalty failed
+  *set ending_type 3
+  *set final_label "ending_3"
+  *goto narrative_transition
+
+*comment === ROUTE 2: KINGMAKER ENDINGS (5, 6, 7, 8) ===
+*if (route = 2)
+  *comment Tyrant ending: very high ruthlessness overrides other outcomes
+  *if ((ruthless > 70) and (throne_room_choice = 1))
+    *set ending_type 7
+    *set final_label "ending_7"
+    *goto narrative_transition
+
+  *comment Usurper's Fall: exposed and caught
+  *if ((conspiracy_revealed) and (not(empire_intact)))
+    *set ending_type 8
+    *set final_label "ending_8"
+    *goto narrative_transition
+
+  *comment Shadow Emperor: claimed throne with Dowager's blessing
+  *if ((throne_room_choice = 1) and (rel_dowager > 50) and (empire_intact))
+    *set ending_type 5
+    *set final_label "ending_5"
+    *goto narrative_transition
+
+  *comment Puppet Master: claimed throne without support, or low dowager
+  *if ((throne_room_choice = 1) and (empire_intact))
+    *set ending_type 6
+    *set final_label "ending_6"
+    *goto narrative_transition
+
+  *comment Kingmaker chose to defend emperor instead
+  *if (throne_room_choice = 2)
+    *if ((heir_alive) and (empire_intact) and (rel_emperor > 70))
+      *set ending_type 1
+      *set final_label "ending_1"
+      *goto narrative_transition
+    *if ((heir_alive) and (empire_intact))
+      *set ending_type 2
+      *set final_label "ending_2"
+      *goto narrative_transition
+    *set ending_type 3
+    *set final_label "ending_3"
+    *goto narrative_transition
+
+  *comment Kingmaker chose reform
+  *if (throne_room_choice = 4)
+    *if (idealist > 60)
+      *set ending_type 10
+      *set final_label "ending_10"
+      *goto narrative_transition
+    *set ending_type 6
+    *set final_label "ending_6"
+    *goto narrative_transition
+
+  *comment Kingmaker chose abolition
+  *if (throne_room_choice = 3)
+    *if ((ruthless > 60) and (not(empire_intact)))
+      *set ending_type 11
+      *set final_label "ending_11"
+      *goto narrative_transition
+    *if ((rep_trade > 50) and (rep_temple > 50))
+      *set ending_type 9
+      *set final_label "ending_9"
+      *goto narrative_transition
+    *set ending_type 11
+    *set final_label "ending_11"
+    *goto narrative_transition
+
+  *comment Fallback for Kingmaker: Usurper's Fall
+  *set ending_type 8
+  *set final_label "ending_8"
+  *goto narrative_transition
+
+*comment === ROUTE 3: REVOLUTIONARY ENDINGS (9, 10, 11, 12) ===
+*if (route = 3)
+  *comment Burning Throne: ruthless revolution
+  *if ((ruthless > 60) and (throne_room_choice = 3) and (not(empire_intact)))
+    *set ending_type 11
+    *set final_label "ending_11"
+    *goto narrative_transition
+
+  *comment Burning Throne: abolished monarchy and empire broke
+  *if ((throne_room_choice = 3) and (not(empire_intact)))
+    *set ending_type 11
+    *set final_label "ending_11"
+    *goto narrative_transition
+
+  *comment New Dawn: best revolutionary ending
+  *comment Requires: abolished throne, good trade and temple support,
+  *comment empire still intact.
+  *if ((throne_room_choice = 3) and (rep_trade > 50) and (rep_temple > 50) and (empire_intact))
+    *set ending_type 9
+    *set final_label "ending_9"
+    *goto narrative_transition
+
+  *comment New Dawn variant: reforms enacted with strong support
+  *if ((throne_room_choice = 3) and (reforms_enacted) and (empire_intact))
+    *set ending_type 9
+    *set final_label "ending_9"
+    *goto narrative_transition
+
+  *comment People's Vizier: reform compromise with high idealism
+  *if ((throne_room_choice = 4) and (idealist > 60) and (empire_intact))
+    *set ending_type 10
+    *set final_label "ending_10"
+    *goto narrative_transition
+
+  *comment People's Vizier: defended emperor as a reformer
+  *if ((throne_room_choice = 2) and (reforms_enacted) and (idealist > 60))
+    *set ending_type 10
+    *set final_label "ending_10"
+    *goto narrative_transition
+
+  *comment Revolutionary who defended emperor loyally
+  *if (throne_room_choice = 2)
+    *if ((heir_alive) and (empire_intact) and (rel_emperor > 70))
+      *set ending_type 1
+      *set final_label "ending_1"
+      *goto narrative_transition
+    *if ((heir_alive) and (empire_intact))
+      *set ending_type 2
+      *set final_label "ending_2"
+      *goto narrative_transition
+    *set ending_type 3
+    *set final_label "ending_3"
+    *goto narrative_transition
+
+  *comment Revolutionary who claimed the throne
+  *if (throne_room_choice = 1)
+    *if (ruthless > 70)
+      *set ending_type 7
+      *set final_label "ending_7"
+      *goto narrative_transition
+    *set ending_type 6
+    *set final_label "ending_6"
+    *goto narrative_transition
+
+  *comment Fallback for Revolutionary: Burning Throne
+  *if (not(empire_intact))
+    *set ending_type 11
+    *set final_label "ending_11"
+    *goto narrative_transition
+
+  *comment Reform fallback
+  *if (throne_room_choice = 4)
+    *set ending_type 10
+    *set final_label "ending_10"
+    *goto narrative_transition
+
+  *comment Abolish fallback
+  *if (throne_room_choice = 3)
+    *set ending_type 9
+    *set final_label "ending_9"
+    *goto narrative_transition
+
+  *comment Final Revolutionary fallback
+  *set ending_type 11
+  *set final_label "ending_11"
+  *goto narrative_transition
+
+*comment =====================================================
+*comment === UNIVERSAL FALLBACK ===
+*comment =====================================================
+*comment If no route-specific ending was triggered (should not happen,
+*comment but safety net), default to Exile.
+*set ending_type 13
+*set final_label "ending_13"
+*goto narrative_transition
+
+*comment =====================================================
+*comment === NARRATIVE TRANSITION ===
+*comment =====================================================
+
+*label narrative_transition
+
+*page_break
+
+*comment === FIRE ACHIEVEMENTS ===
+
+*if (ending_type = 1)
+  *achieve golden_age
+*elseif (ending_type = 5)
+  *achieve shadow_emperor
+*elseif (ending_type = 9)
+  *achieve new_dawn
+*elseif (ending_type = 14)
+  *achieve eternal_flame_ending
+
+*comment Standard achievement: True Love (if romance fulfilled)
+*if ((romance_active) and (love_fulfilled))
+  *achieve true_love
+
+*comment Standard achievement: Conspiracy Unveiled
+*if ((conspiracy_revealed) and (evidence_count >= 6))
+  *achieve conspiracy_unveiled
+
+*comment Standard achievement: Spymaster Ally
+*if (rel_spy > 80)
+  *achieve spymaster_ally
+
+*comment Standard achievement: Balance of Power (all factions allied)
+*if ((rep_military > 70) and (rep_trade > 70) and (rep_temple > 70) and (rep_intelligence > 70) and (rep_nobility > 70))
+  *achieve five_factions
+
+*comment Standard achievement: Last Poem (hidden)
+*if (ending_type = 15)
+  *achieve last_poem
+
+*comment === NARRATIVE TRANSITION TEXT ===
+
+*page_break
+
+*comment Brief reflective prose before the epilogue.
+*comment Each ending type gets a short transition passage.
+
+*if (ending_type = 1)
+  The years will be kind to the Khazaran Empire.
+
+  You know this the way you know the sun will rise: not with certainty, but with the bone-deep faith of someone who has fought for a future and won. The Golden Age that the poets will name after Roshan IV begins not with a decree or a battle, but with a quiet moment in the Jade Throne Room -- a young emperor and a loyal vizier, standing together.
+
+  The empire breathes. The world turns. The story continues.
+
+*elseif (ending_type = 2)
+  The empire will endure. It has always endured.
+
+  But endurance is not the same as flourishing. The Iron Throne -- that is what the historians will call this reign, though no one calls it that yet. A throne that functions. A Vizier who serves. An Emperor who rules. No warmth. No golden age. Just the steady, cold, necessary machinery of governance grinding forward.
+
+  It is enough. It has to be.
+
+*elseif (ending_type = 3)
+  The crown has fallen.
+
+  Not literally -- the Jade Throne still stands, the Emperor still sits upon it. But something has cracked that cannot be repaired. The loyalty you offered was genuine, and it was not enough. The empire limps on, diminished, carrying the weight of what was lost.
+
+  In the years to come, scholars will argue about where it went wrong. You will not need to argue. You will know.
+
+*elseif (ending_type = 4)
+  The truth will out. It always does.
+
+  Every secret you buried, every oath you broke while wearing the mask of loyalty -- the empire keeps records, and the empire keeps score. The reckoning comes not with a blade but with a whisper: *Did you know? Did you know what the Vizier did?*
+
+  The oath is broken. So is everything it held together.
+
+*elseif (ending_type = 5)
+  Power is a strange thing. The person who wields it is not always the person who holds the scepter.
+
+  You stand in the shadow of the Jade Throne, and from that shadow, you move the empire like a chess master moves pieces on a board. The Emperor reigns. You rule. The Dowager watches from her chambers and smiles, because she recognizes the game -- she invented it.
+
+  The Shadow Emperor. They will never call you that to your face.
+
+*elseif (ending_type = 6)
+  The puppet master's fingers never rest.
+
+  You have woven a web so intricate that no one -- not the Emperor, not the Council, not the factions -- can see the threads. You are the invisible hand, the whisper behind the decree, the mind behind the throne. You have everything you wanted.
+
+  It is colder than you expected.
+
+*elseif (ending_type = 7)
+  Fear is its own kind of order.
+
+  The empire you have built is a machine of obedience. The trains of commerce run on time. The borders are secure. The streets are silent after dark. No one challenges you, because the last person who did is no longer a person. They are a lesson.
+
+  This is not what you wanted. But it is what you made.
+
+*elseif (ending_type = 8)
+  The usurper falls.
+
+  They always do. The empire has seen ambitious viziers before -- clever, ruthless, certain of their own destiny. They climb and climb and climb, and the fall is always from the same height: the gap between what they believed they deserved and what the world was willing to give.
+
+  You were so close.
+
+*elseif (ending_type = 9)
+  A new dawn breaks over Khazara.
+
+  The light is not golden -- it is the pale, uncertain gray of a morning that might bring rain or might bring sun. But it is new. That is what matters. The old order is dismantled. The new one is fragile, untested, full of arguments and contradictions and the messy, beautiful chaos of people deciding their own fate.
+
+  It is enough. It is everything.
+
+*elseif (ending_type = 10)
+  They will call you the People's Vizier.
+
+  Not because you sought the title -- you did not. Not because you won a war or conquered a nation -- you did neither. They will call you that because you listened. Because you cared. Because you believed, against all evidence, that the empire could be better, and you spent your life proving it.
+
+  Change is slow. Change is thankless. Change is the hardest work there is.
+
+  You would not trade it for the throne.
+
+*elseif (ending_type = 11)
+  The throne burns.
+
+  Not literally -- jade does not burn. But the system it represents, the hierarchy it embodies, the three hundred years of accumulated power and privilege and ossified tradition -- all of it goes up in the flames of revolution. And revolution, like fire, does not discriminate between what it destroys and what it sets free.
+
+  Freedom born in fire is still freedom. But the scars are real.
+
+*elseif (ending_type = 12)
+  You will not see the dawn.
+
+  But the dawn will come. It always does. And when it breaks over Khazara, it will illuminate a city changed by your sacrifice -- a city that remembers the Vizier who gave everything, including the most precious thing a person has, for the chance that the empire might become what it was always meant to be.
+
+  Some flames, when extinguished, burn brighter in memory than they ever did in life.
+
+*elseif (ending_type = 13)
+  The road stretches ahead.
+
+  Behind you, the domes and minarets of Khazara catch the last light of the sun. Ahead of you, the world. The empire will carry on without you -- it always does, it always has. Emperors rise and fall. Viziers come and go. The Silk Road stretches from mountain to sea, and the caravans will keep moving long after the last person alive remembers your name.
+
+  You are free.
+
+  It tastes like dust and honey and the open wind.
+
+*elseif (ending_type = 14)
+  The Eternal Flame burns.
+
+  It has burned for three hundred years, and it will burn for three hundred more. But now it burns for you -- not as a symbol of imperial power, but as a gateway to something older and stranger and more beautiful than any throne or crown or empire.
+
+  You step into the light. The warmth is absolute. The silence is perfect.
+
+  You are home.
+
+*else
+  *comment Ending 15: The Last Poem
+  The poem has no ending.
+
+  That is what Leila's father understood, in his last night on earth, when he wrote about a bird that forgot how to land. The best poems do not end. They trail off into white space, into silence, into the territory where language fails and only living remains.
+
+  You and Leila walk the Silk Road, and the poem continues -- unfinished, unfinishable, and all the more beautiful for it.
+
+*page_break
+
+*comment === TRANSITION TO EPILOGUE ===
+*comment We use *goto_scene with specific labels.
+
+*if (ending_type = 1)
+  *goto_scene epilogue ending_1
+*elseif (ending_type = 2)
+  *goto_scene epilogue ending_2
+*elseif (ending_type = 3)
+  *goto_scene epilogue ending_3
+*elseif (ending_type = 4)
+  *goto_scene epilogue ending_4
+*elseif (ending_type = 5)
+  *goto_scene epilogue ending_5
+*elseif (ending_type = 6)
+  *goto_scene epilogue ending_6
+*elseif (ending_type = 7)
+  *goto_scene epilogue ending_7
+*elseif (ending_type = 8)
+  *goto_scene epilogue ending_8
+*elseif (ending_type = 9)
+  *goto_scene epilogue ending_9
+*elseif (ending_type = 10)
+  *goto_scene epilogue ending_10
+*elseif (ending_type = 11)
+  *goto_scene epilogue ending_11
+*elseif (ending_type = 12)
+  *goto_scene epilogue ending_12
+*elseif (ending_type = 13)
+  *goto_scene epilogue ending_13
+*elseif (ending_type = 14)
+  *goto_scene epilogue ending_14
+*else
+  *goto_scene epilogue ending_15

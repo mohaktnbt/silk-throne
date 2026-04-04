@@ -1,0 +1,545 @@
+*comment === SCENE 25: "THE SHADOW WAR" ===
+*comment Act 3 | ~8,000 words | PAID
+*comment Variables modified: rep_intelligence, rel_spy, final_alliance_intelligence,
+*comment   evidence_count, cunning (+3 to +5), boldness, ruthless
+*comment Choices: 2 *choice, 1 *fake_choice
+*comment Previous: Scene 24 | Next: Scene 26
+
+*comment === SCENE-LOCAL VARIABLES ===
+*temp shadow_approach "unknown"
+*temp lila_survived true
+*temp agents_captured 0
+*temp player_in_field false
+*temp old_city_familiar false
+
+*comment Check if player has been to the Old City before
+*if (old_city_visited)
+  *set old_city_familiar true
+
+*comment === OPENING: THE BRIEFING ===
+
+The night is a living thing in Khazara. It breathes through the alleys, exhales fog from the river, and swallows the Citadel's white walls in shadow. You stand in the intelligence chamber -- a windowless room beneath the Tower of Stars that most courtiers do not know exists -- and stare at the map Zara has pinned to the wall.
+
+It is not a map of geography. It is a map of people.
+
+Names. Connections. Red threads linking informant to handler, handler to paymaster, paymaster to the conspiracy's beating heart. Months of work reduced to pins and string, and still the web is incomplete.
+
+"Three cells," Zara says from the corner where she leans against the wall, arms crossed. She has not slept. You can see it in the bruised skin beneath her eyes, in the way she holds herself as though stillness requires effort. "Operating in the Old City, the River District, and the Foreign Quarter. Twelve agents we've identified. Perhaps twenty we haven't."
+
+*page_break
+
+She pushes off the wall and approaches the map, tapping a cluster of pins near the river.
+
+"Tonight they move. My sources say they're consolidating -- burning documents, shifting safe houses, preparing to disappear before the final strike. If we lose them tonight, we lose them permanently."
+
+Secretary Farid hovers near the door, clutching a stack of reports to his chest like armor. "My -- my lord Vizier, the hour is very late. Perhaps we could coordinate from the Citadel? It's -- the Old City at night is not precisely safe."
+
+Zara does not look at him. "Nothing is safe, Farid. That's rather the point."
+
+She turns to you, and in the lamplight her eyes are dark and steady as river stones. "I need a decision. My network is stretched thin. Lila's street children have located two of the three cells. The third -- the one in the Foreign Quarter -- is the most dangerous. That's where their handler operates. A woman called the Weaver."
+
+*page_break
+
+"The Weaver has been feeding intelligence to the Northern Khanates for months. She's the reason General Kadir's garrison rotations keep ending up in enemy hands. She's the reason fifty soldiers died at Fort Darband."
+
+Zara pauses. Chooses her next words with the precision of a woman selecting a blade.
+
+"I can take two cells tonight. Not three. Not with the people I have left. The conspiracy's purge of my network saw to that." A muscle tightens in her jaw -- the only sign of the rage that must burn beneath that controlled exterior. "So I need you to decide. Do you come with me into the Old City and help take the third cell? Or do you coordinate from here, directing my agents by messenger, and accept that the Weaver may escape?"
+
+The question hangs in the incense-thick air. Beyond the chamber walls, you can hear the distant drum of the garrison's night watch, steady as a heartbeat.
+
+*page_break
+
+*comment === REAL CHOICE 1: Intelligence Strategy ===
+
+*choice
+  #"I'm coming with you. We take all three cells tonight."
+    *set boldness %+ 10
+    *set player_in_field true
+    *set rep_intelligence %+ 10
+    *set rel_spy %+ 10
+    Zara's expression does not change, but something shifts behind her eyes -- a recalculation, perhaps. Or the faintest trace of respect.
+    "Good. Wear dark clothes. Leave the Vizier's ring."
+    Farid makes a sound like a stepped-on cat. "My lord Vizier, with the utmost respect, the Grand Vizier of the Khazaran Empire cannot simply wander into the Old City at midnight to hunt spies. There are protocols. Regulation 74-C clearly states--"
+    "Farid." Zara's voice cuts like a wire. "Go find the Vizier something dark to wear. Now."
+    He goes, clutching his reports tighter, muttering about regulations and mortality rates.
+    *goto field_preparation
+  #"I'll coordinate from here. You take the Old City -- I'll direct operations against the Foreign Quarter by messenger."
+    *set boldness %- 5
+    *set shadow_approach "coordination"
+    *set rep_intelligence %+ 5
+    You have survived enough to know that a Vizier's life is not theirs to risk carelessly. Your value is in the decisions you make, not the alleys you haunt.
+    Zara nods once. No judgment in it -- she is too practical for that. "I'll send runners every quarter-hour. You'll have the latest intelligence. Direct my agents in the Foreign Quarter as you see fit."
+    She pauses at the door. "The Weaver is clever. Don't underestimate her."
+    *goto coordination_setup
+  *selectable_if (cunning > 50) #"There's a third option. I'll go to the Foreign Quarter myself -- not as a spy, but as the Vizier. Let the Weaver come to me." [Requires Cunning 50+]
+    *set boldness %+ 15
+    *set cunning + 3
+    *set player_in_field true
+    *set shadow_approach "bait"
+    *set rep_intelligence %+ 8
+    *set rel_spy %+ 12
+    For a full three seconds, Zara is silent. Then her mouth twitches -- the closest she has ever come to a smile in your presence.
+    "You want to use yourself as bait."
+    "I want to use myself as an opportunity. The Weaver has been trying to get close to the Citadel's inner circle for months. If the Vizier walks into the Foreign Quarter tonight, she won't be able to resist."
+    Zara studies you. Weighing. Calculating.
+    "That's either brilliant or suicidal. I'll have people in position. But if this goes wrong, I won't be close enough to save you."
+    "I know."
+    *goto bait_preparation
+
+*comment === FIELD PREPARATION BRANCH ===
+*label field_preparation
+
+*set shadow_approach "field"
+
+The clothes Farid finds are a servant's -- plain wool, dark gray, a hooded cloak that smells of horse and woodsmoke. You strip off the Vizier's robes, and the silk slides from your shoulders like a shed skin. Beneath the brocade and the embroidery, your body feels lighter. Smaller. The seal ring you tuck into an inner pocket, close to your heart, where its weight rests against your ribs like a second pulse.
+
+Without the robes, without the ring visible on your finger, you are no one. A face in the dark. It is terrifying and strangely liberating.
+
+You catch a glimpse of yourself in the polished brass mirror by the door. A stranger stares back -- someone with your face but none of your authority. The Grand Vizier of the Khazaran Empire has vanished. In ${their} place stands a person who could be anyone: a servant, a laborer, a spy.
+
+Zara studies you with clinical assessment. She adjusts the cloak's hood, pulls it forward to shadow your features, and nods once.
+
+"You'll do. Keep your hands in your pockets -- the calluses are wrong for a servant, but no one looks at hands in the dark."
+
+*page_break
+
+She leads you through a passage you have never seen -- a narrow tunnel behind the intelligence chamber that descends through the Citadel's foundations. The stairs are ancient, worn smooth by centuries of secret feet. The walls weep moisture. The air is cold and damp, thick with the smell of stone and slow water and the faintest trace of river sewage.
+
+The tunnel emerges in a drainage culvert near the Ashar River. The night air hits you like a splash of cold water -- the smell of the city, raw and alive. Cooking fires. Rotting fruit. The mineral tang of the river. Above, the stars are hard and bright, untouched by the Citadel's lamplight.
+
+Zara moves like smoke. Her feet find the path without hesitation, navigating loose stones and puddles of standing water as though she can see in the dark. Perhaps she can. The Old City raised her.
+
+"Stay close," she says. "Don't speak unless spoken to. And if I tell you to run, you run. No questions. No heroics. Run."
+
+"Understood."
+
+"Good. Because the last person who didn't listen to that instruction ended up floating in the river. I did recover the body, eventually."
+
+You cannot tell if she is joking. With Zara, you can never tell.
+
+*page_break
+
+*goto old_city_night
+
+*comment === COORDINATION SETUP BRANCH ===
+*label coordination_setup
+
+You settle into the chair before the map and accept the cup of bitter coffee Farid presses into your hands. It is thick and dark, brewed in the southern style, and the bitterness strips the fog from your mind like wind clearing smoke. The intelligence chamber becomes your war room.
+
+The map dominates the wall before you. Zara has marked it in three colors: blue for her agents, red for known conspiracy positions, yellow for suspected locations. The blue dots are outnumbered. You count them twice to be sure.
+
+Farid stands at a small writing desk in the corner, ink and parchment ready for transcription. His face is pale, but his pen is steady. He has found his courage where he always finds it -- in procedure. In the comfort of a task with clear rules.
+
+"I will record all incoming intelligence in chronological order, my lord Vizier. Per standard field communication protocol -- well, there is no standard protocol for this, but I have adapted regulation 63-A, subsection 12, which covers emergency correspondence procedures during--"
+
+"Perfect, Farid. Thank you."
+
+*page_break
+
+Zara's runners begin arriving within the quarter-hour -- street children, most of them, barefoot and quick-eyed, carrying coded messages in clenched fists. They appear at the chamber door like ghosts, delivered their packets, and vanish before Farid can offer them tea.
+
+You decode each message using the cipher Zara taught you -- a substitution cipher that changes hourly, keyed to the lunar calendar. Your fingers move across the code sheet, translating gibberish into intelligence. The picture assembles itself piece by piece, like a mosaic seen from increasing height.
+
+The Old City cells are moving. Zara's people shadow them through the labyrinth of alleys. In the Foreign Quarter, your agents report movement near the Ambassador's row -- the Weaver's people, consolidating. A cart loaded with sealed crates has been seen leaving a house on Merchant's Lane.
+
+You dispatch orders. Position agents at the canal bridges. Close off the eastern approach. Funnel the Weaver's people toward the Spice Market, where your strongest assets wait. Every order is a gamble -- you are moving pieces across a board you cannot see, trusting Zara's reports and your own instincts to guide you.
+
+*page_break
+
+The night unfolds in fragments: coded messages, hurried decisions, the scratch of your pen on parchment. The oil lamp flickers. Farid's quill scratches steadily in the corner, recording every dispatch. The intelligence chamber smells of coffee, lamp oil, and the cold stone of the Citadel's foundations.
+
+You cannot see the action, but you can feel it -- the city's pulse quickening, the web tightening. Every message is a heartbeat. Every silence between messages is a held breath.
+
+A runner arrives, breathing hard. A girl, no more than ten, with soot on her face and terror in her eyes. "Shadow One reports the first cell is taken. Six agents in custody. One dead -- resisted."
+
+Then another, barely a minute later: "Shadow One says the second cell is running. They've split. Half toward the river, half toward the Old City walls."
+
+You stare at the map. The pins. The threads. The red dots scattering like drops of blood on water. And you make a choice that will ripple outward.
+
+*if (cunning > 40)
+  *set cunning + 3
+  *set agents_captured + 1
+  You see it -- the pattern in the runners' reports. The second cell isn't running randomly. They're heading for a prearranged extraction point near the River Gate. You redirect Zara's reserves to cut them off.
+
+  It works. The message comes back forty minutes later: "Second cell taken. All agents in custody."
+
+  *set agents_captured + 1
+*else
+  The second cell scatters. Zara's people chase them through the dark, but the Old City's alleys are a maze, and by dawn, half have escaped into the city's vast anonymity.
+
+  Zara's message is terse: "Second cell partially taken. Four escaped. We'll find them."
+
+  *set agents_captured + 1
+
+*page_break
+
+The Foreign Quarter is harder. Without Zara's direct presence, without your own eyes on the ground, you are directing blind -- relying on agents who are good but not Zara, in territory that favors the Weaver's people.
+
+The messages become contradictory. Your agent in the Spice Market reports the Weaver is moving east. Another says west. A third goes silent entirely.
+
+Then: "The Weaver's people have barricaded a house on Merchant's Lane. They are burning documents. We cannot breach without force."
+
+You send the order. Breach. Take what survives the fire.
+
+The report comes back near dawn: the house is taken. Most of the documents are ash. But the Weaver herself escaped through a tunnel beneath the building -- a tunnel your agents did not know existed.
+
+*set evidence_count + 1
+
+You sit back in the chair. Your coffee is cold. The map stares back at you, its threads still incomplete.
+
+*goto shadow_war_aftermath
+
+*comment === BAIT PREPARATION BRANCH ===
+*label bait_preparation
+
+You go as yourself -- no disguise, no pretense. The Vizier's robes. The seal ring. A lantern-bearer and two of Navid's most trusted guards walking a respectful distance behind you, visible enough to be identified, far enough to leave gaps a bold operative might exploit.
+
+The Foreign Quarter at night is a different world from its daytime elegance. The embassy torches have burned low. The streets are emptier, but the shadows are alive -- you can feel eyes on you, the way you feel a change in the wind before a storm.
+
+You walk to the tea house that Ambassador Chen frequents. You sit at an outdoor table. You order cardamom tea and wait.
+
+*page_break
+
+The tea arrives. You drink it slowly, letting the Foreign Quarter's watchers see you -- the Vizier, exposed, unhurried, seemingly unconcerned. The seal ring catches the lamplight. A declaration.
+
+*I am here. Come and see.*
+
+An hour passes. The tea grows cold. You order another cup.
+
+Then a woman sits down across from you.
+
+She is perhaps forty, with grey-streaked hair pulled back from a face that is handsome rather than beautiful -- strong bones, clever eyes, a mouth that suggests she finds the world faintly amusing. She wears the plain traveling clothes of a merchant, but her hands are clean and her posture is too controlled for commerce.
+
+"The Vizier drinks tea alone at midnight," she says. "That is either bravery or an invitation."
+
+"It is the latter," you say.
+
+*page_break
+
+Her eyes narrow. She is recalculating, and you can see the process as clearly as Zara reading a report. She did not expect directness.
+
+"I am told you are looking for a woman called the Weaver."
+
+"I am looking for the person feeding my General's troop rotations to the Northern Khanates. I am told that person is called the Weaver. Whether that is you or not, I cannot say."
+
+Silence. The Foreign Quarter's night sounds fill the gap -- distant music, a dog barking, the lap of canal water against stone.
+
+*if (diplomacy > 45)
+  *set diplomacy + 3
+  "I am also told," you continue, choosing your words with the care of a jeweler setting stones, "that the Weaver is a professional. Not a fanatic. A professional can be reasoned with. Compensated. Redirected."
+
+  Something shifts in her face. Interest, perhaps. Or the recognition of a fellow practitioner.
+
+  "You are offering me a way out."
+
+  "I am offering you a conversation. What comes of it depends on what you tell me."
+*else
+  "I think we both know what you are," you say simply.
+
+  She tilts her head. Considering. The lamplight plays across her features, and for a moment you see the intelligence beneath the merchant's mask -- cold, precise, utterly without sentiment.
+
+  "And you've come alone. Mostly. The two soldiers behind you are good but not exceptional. You're gambling."
+
+  "I'm investing. There's a difference."
+
+*page_break
+
+The conversation that follows is the most dangerous chess game of your life. The Weaver probes, tests, retreats, advances. She wants to know what you know. You want to know who she serves.
+
+*if (cunning > 45)
+  *set cunning + 5
+  *set agents_captured + 2
+  *set evidence_count + 2
+  You catch her in a contradiction -- a detail about the Khanate intelligence drops that she could not know unless she had direct access to the conspiracy's command structure. Her mask slips for half a heartbeat.
+
+  "You're good," she says quietly. "Better than the last Vizier."
+
+  "The last Vizier is dead."
+
+  "Yes. He was clever but not careful. You appear to be both."
+
+  She tells you nothing directly, but you have confirmed her identity, her connection to the conspiracy, and -- through the questions she asks -- the shape of what the conspiracy fears most.
+
+  Zara's people move in before dawn. The Weaver sees them coming and does not run. She inclines her head to you, almost respectfully, as they lead her away.
+*else
+  *set evidence_count + 1
+  *set agents_captured + 1
+  The Weaver is careful. She gives nothing away that she does not intend, and you cannot quite catch the threads of truth hidden in her careful words.
+
+  But she stays too long. That is her mistake. While you hold her attention with conversation and cold tea, Zara's agents identify and follow three of her operatives in the surrounding streets.
+
+  When dawn begins to grey the eastern sky, the Weaver rises. "An interesting evening, Vizier. I hope you found what you were looking for."
+
+  She vanishes into the Foreign Quarter's maze of alleys. But her network has been mapped. Three of her people are taken before noon.
+
+*goto shadow_war_aftermath
+
+*comment === OLD CITY NIGHT (FIELD BRANCH) ===
+*label old_city_night
+
+The Old City at night is everything you remember -- or everything you have been warned about.
+*if (old_city_familiar)
+  The narrow streets are familiar from your earlier visit, but darkness transforms them utterly. The overhanging buildings that seemed quaint by day now lean inward like conspirators, blocking the sky. Shadows pool in doorways like spilled ink. The smell is sharper -- sewage, cooking oil, the sweet rot of garbage in the heat. A cat watches you from a windowsill with lamp-bright eyes and vanishes when you look directly at it.
+*else
+  The narrow streets close around you like a fist. Buildings lean overhead until they nearly touch, blocking the stars. The air smells of sewage, frying onions, and something sour you choose not to identify. Laundry hangs between upper windows like ghostly banners. The ground beneath your feet is uneven -- cobblestones worn smooth by centuries of bare feet and cart wheels, slick with moisture you do not want to think about too carefully.
+
+Zara moves through this maze as though born to it -- which, you remind yourself, she was. An orphan of these streets before she was an agent. A pickpocket before she was a spy. She reads the Old City the way scholars read books -- fluently, instinctively, seeing meaning in details that others walk past without noticing.
+
+A drunk staggers from a doorway ahead. Zara adjusts course without breaking stride, guiding you down a side alley so narrow your shoulders brush both walls.
+
+"Stay left," she murmurs. "The right alley floods with runoff. And watch the third step -- there's a loose stone that sounds like a drum."
+
+You navigate the stone. The Old City's sounds envelop you: a baby crying behind a shuttered window, dogs barking in a distant courtyard, the rhythmic clang of a smith working late. Somewhere, impossibly, someone is playing a ney -- the thin, haunting notes of a flute drifting from an upper story like smoke.
+
+This is the empire's underbelly. The part that ambassadors never see, that court poets never write about, that the Dowager would prefer did not exist. Two million people live in Khazara, and more than half of them live like this -- stacked in ancient buildings, breathing each other's air, surviving on resilience and the grace of the Eternal Flame.
+
+*page_break
+
+Zara stops. You stop. Her hand comes up -- a clenched fist, the field signal for *hold.*
+
+You hear them before you see them -- voices, low and urgent, from a courtyard behind a sagging wooden gate. The voices speak in Trade Tongue, quick and clipped, the language of people who are accustomed to hiding meaning. Zara holds up a fist. You stop.
+
+She produces a mirror no larger than a coin and angles it past the gate's edge. Her face, lit faintly by reflected lamplight, goes still.
+
+"Six," she whispers. "Armed. They're loading crates onto a handcart. Documents, most likely. Maybe weapons."
+
+From behind you, a soft whistle -- three notes, low-high-low. Zara answers with two sharp clicks of her tongue.
+
+A shape detaches from the shadows. Small. Quick. Lila.
+
+The street urchin's face is smudged with soot, and she wears a dark cloth wound around her head. She cannot be more than twelve, but her eyes are old.
+
+"Boss," she whispers to you. "Six in the yard. Two more on the roof. Crossbows."
+
+*page_break
+
+Zara takes this in. Recalculates.
+
+"The rooftop sentries change everything. We can't rush the gate without taking bolts." She glances at you. "I didn't plan for eight. I planned for six."
+
+*fake_choice
+  #Study the courtyard's layout, looking for tactical advantages.
+    *set boldness %- 5
+    You peer through the gap in the gate. The courtyard is roughly square, bounded by crumbling walls on three sides. A single door leads deeper into the building. The crates are stacked near the handcart. The lamplight comes from a brazier near the door.
+    *temp response "tactical"
+  #"We hit them fast, before they can signal. Speed over caution."
+    *set boldness %+ 10
+    *set ruthless %+ 5
+    Your blood is moving now, hot and quick, and the seal ring in your pocket feels like a stone of purpose. The enemy is here, now, within reach.
+    *temp response "aggressive"
+  #"Lila, is there another way into that building?"
+    *set cunning + 3
+    Lila grins -- a flash of white teeth in the dark. "Boss, there's always another way. Storm drain under the east wall. Tight, but I've done it."
+    *temp response "clever"
+
+*if (response = "tactical")
+  Zara follows your gaze and nods. "The brazier. If we douse it, they're blind for ten seconds. That's enough."
+
+  She signals her agents -- shadows peeling from the night like living things. Four of them, silent, armed with short blades and leather saps.
+
+  "The crossbowmen first. Lila, take your two best climbers up the north wall. No noise. On my signal."
+
+  Lila vanishes without a sound.
+*elseif (response = "aggressive")
+  Zara's mouth thins. "Speed has merits. But the crossbows--"
+
+  "Won't matter if we're through the gate before they can aim. Your people take the sentries the moment we move. Simultaneous."
+
+  She considers. Nods. "Simultaneous. On my signal."
+
+  Her agents fan out -- two circling toward the building's rear, two bracing at the gate.
+*else
+  Lila leads two of Zara's agents along the wall to the storm drain -- a gap in the foundation stones barely wide enough for a child, let alone a grown agent.
+
+  "They'll manage," Zara says, reading your doubt. "My people are flexible."
+
+  "I was going to say the same about the rats."
+
+  The faintest breath of a laugh from Zara. You are not sure you have ever heard that sound from her before.
+
+*page_break
+
+The assault is over in ninety heartbeats. You count them, your pulse hammering in your ears, as Zara's agents flow through the courtyard like dark water.
+
+The crossbow sentries go down first -- Lila's climbers, quick and sure, reaching the rooftop through a broken window. You hear nothing from above. Then a soft thud. Then another. Then silence. The sentries are down. The sky is clear.
+
+Zara raises three fingers. Two. One.
+
+The gate swings open and the courtyard erupts.
+
+Zara's agents hit the conspiracy cell like a breaking wave. There is no war cry, no dramatic charge -- just the swift, violent efficiency of trained operatives striking a target they have studied for hours. One agent takes the man nearest the gate with a choke hold. Another drives a leather sap into the back of a head with a sound like a melon splitting. A third closes off the building's door, trapping anyone inside.
+
+The brazier topples in the struggle. Sparks scatter across the cobblestones like fallen stars. For a moment, the courtyard is lit only by the dying embers and the faint glow of the sky, and in that dim, shifting light, the fight becomes a thing of shadows and sounds -- grunts, the ring of steel, the crash of a body against crates.
+
+*if (player_in_field)
+  *if (strength > 40)
+    *set strength + 3
+    You are in the thick of it. A man lunges at you from behind a crate, a knife gleaming in the ember-light, and your body responds before your mind catches up -- a twist, a block, a strike that sends him stumbling into the wall. The frontier soldier's training that Navid drilled into you holds firm. Your muscles remember what your mind forgets: lower your center of gravity, keep your elbows in, never let them close the distance.
+
+    The man hits the wall and slides down it. He does not get up.
+  *else
+    You are in the thick of it. A man lunges at you, and you barely dodge -- the blade tears through your sleeve, a line of fire along your forearm that you feel more as heat than pain. You stagger back, your heel catching on a loose cobblestone, and for one terrible moment you are falling.
+
+    One of Zara's agents materializes from the dark and drops the attacker with a blow to the temple before he can swing again. The man crumples like a puppet with cut strings.
+
+    "Stay behind me," the agent hisses, not looking at you, already scanning for the next threat. "That's not a suggestion."
+
+*set agents_captured + 2
+
+It is brutal, brief, and remarkably quiet. Zara's people are professionals. Within two minutes, four conspiracy agents are bound and gagged on the courtyard stones. Two are unconscious -- one will have a headache for a week. The crates are secured, their contents intact: papers, maps, coded ledgers. Evidence.
+
+The silence after the fight is deafening. Your heart is a drum. Your breath is a bellows. The bruise on your forearm throbs in time with your pulse. One of the captured agents is bleeding from a head wound, his eyes glassy with shock. Another stares at you with naked, burning hatred -- the look of a true believer who has been caught but not broken.
+
+*page_break
+
+Zara kneels beside the crates, rifling through papers with quick, practiced hands. Her face, lit by the brazier, is intent and focused.
+
+"Correspondence. Cipher keys. Supply manifests." She holds up a sheet of parchment, translating the code in her head. "Troop movements at Darband. Garrison rotations for the next three months. This is what they've been feeding to the Khanates."
+
+She looks up at you. Something fierce burns in her eyes -- vindication, perhaps. Or the cold satisfaction of a hunt completed.
+
+"The second cell?" you ask.
+
+A runner arrives as if summoned by the question -- one of Lila's children, gasping for breath. "Shadow One says Cell Two is down. Five taken. One ran. Malik is tracking."
+
+*set agents_captured + 1
+
+Lila appears at your elbow, her face bright with the terrible excitement of a child who does not yet understand that this is not a game. "Boss, I found something. In the building. There's a room -- locked, but I got through the window." She holds up a leather satchel. "Papers. And these."
+
+She opens the satchel. Inside, wrapped in oiled cloth, are three seals -- official seals. One belongs to the Northern Garrison. One to the Treasury. And one -- your stomach drops -- bears the mark of the Grand Vizier's office.
+
+Your predecessor's seal. The one that should have been destroyed when he died.
+
+*set evidence_count + 2
+
+*page_break
+
+"They've been forging orders," Zara says, her voice flat. "Using the old Vizier's seal to authorize troop movements, treasury withdrawals, intelligence dispatches. Every document looks legitimate."
+
+The implications unfold in your mind like a poisoned flower. Every suspicious order, every unexplained transfer, every leak that Zara could not trace -- all of it explained by a dead man's seal in a conspiracy's hands.
+
+"This is how they stayed hidden," you say. "Not by avoiding the system. By *being* the system."
+
+Zara nods. "And now we have the proof."
+
+*goto shadow_war_aftermath
+
+*comment === SHADOW WAR AFTERMATH ===
+*label shadow_war_aftermath
+
+*page_break
+
+Dawn finds you back in the intelligence chamber.
+
+The first light of morning creeps in through the ventilation shaft above, a thin blade of grey that cuts across the map on the wall. The lamps have burned low, their oil nearly spent, and the room smells of smoke and cold coffee and the sharp tang of adrenaline wearing off.
+
+The map has changed. Red pins have been removed, threads cut, new connections drawn in Zara's precise hand. Annotations in her cramped script mark each taken cell, each captured agent, each confirmed piece of intelligence. The web is thinning. The conspiracy's network in the capital is broken, if not destroyed.
+
+The captured agents are being held in the Citadel's lower cells -- the ones that officially do not exist. Zara's interrogators are already at work, patient and methodical, separating truth from desperate fabrication. The documents recovered from the raids are stacked on the table beside you, awaiting decryption.
+
+*if (agents_captured >= 3)
+  *set rep_intelligence %+ 12
+  *set final_alliance_intelligence true
+  Zara stands before the map, arms crossed, and for the first time since you have known her, she looks almost -- not pleased. Pleased is too strong. But the iron band of tension that has gripped her for months seems to have loosened by a fraction.
+
+  "Three cells taken. Twelve agents in custody. The Weaver's network is crippled." She turns to you. "The intelligence war is won. For now."
+
+  *if (player_in_field)
+    "You did well tonight." She says it simply, without embellishment. From Zara, it is the equivalent of a standing ovation. "I've worked with agents who would have frozen in that courtyard. You didn't."
+    *set rel_spy %+ 8
+*elseif (agents_captured >= 2)
+  *set rep_intelligence %+ 8
+  *set final_alliance_intelligence true
+  Zara studies the map with the expression of a surgeon assessing a wound -- clinical, focused, not entirely satisfied.
+
+  "Two cells taken. The third is scattered but not eliminated. We've hurt them. Whether we've hurt them enough remains to be seen."
+
+  She glances at you. "The intelligence alliance holds. Barely."
+*else
+  *set rep_intelligence %+ 5
+  Zara stands before the map, and the silence is heavier than words.
+
+  "One cell taken. The others are in the wind. The Weaver has escaped." A pause. "We have wounded the conspiracy's intelligence network. We have not killed it."
+
+  She does not say *you should have come with me.* She does not need to. The absence of the words is louder than their presence.
+
+*page_break
+
+Farid arrives with breakfast -- flatbread, honey, and strong tea that smells of cardamom and the particular warmth of the palace kitchens. He sets the tray down with the careful reverence of a man who believes food can heal what strategy cannot. The bread is fresh, still warm from the oven, and the honey glistens in the lamplight like liquid amber.
+
+"My lord Vizier, the Council has been notified of the night's operations. General Kadir sends his..." He consults a note, adjusting his spectacles. "His 'grudging acknowledgment that the Eyes did something useful for once.' His exact words, my lord Vizier. I thought about paraphrasing, but accuracy seemed important. I apologize for the General's -- well. He is who he is."
+
+*if (player_in_field)
+  You reach for the tea. Your hands, you notice, are still shaking -- the aftermath of adrenaline, of the Old City's dark, of violence in a courtyard lit by brazier-glow. There is a bruise forming on your forearm that you do not remember receiving. Your servant's cloak is folded on a chair, and beside it, neatly arranged, are the Vizier's robes you shed hours ago.
+
+  You put the robes back on. The silk settles on your shoulders, heavy and familiar, and the transformation is immediate. The servant vanishes. The Vizier returns.
+
+  The seal ring slides onto your finger. It feels different now. Heavier, perhaps. Or lighter. You are not sure which. You are not sure it matters. What matters is that the hand wearing it no longer shakes.
+*else
+  You reach for the tea. The night has been long, the intelligence chamber's windowless walls pressing inward like the sides of a coffin, and the maps and cipher sheets have blurred before your eyes. But the work is done. The coded messages have been decoded, the orders dispatched, the responses tallied. The shadow war, at least, has been fought.
+
+  The tea is hot and sweet and cuts through the exhaustion like a blade through silk. You drink it in long, grateful swallows and feel something loosen in your chest.
+
+*page_break
+
+Lila appears one more time -- a knock on the chamber door, and then her soot-smudged face peering around the frame.
+
+"Boss. The ones we caught are talking. Some of them." She pauses, and for a moment the street urchin's bravado slips, and you see the child beneath -- wide-eyed, uncertain. "One of them said a name. The person at the top. The one giving all the orders."
+
+The room goes still.
+
+Zara straightens. "What name?"
+
+Lila looks between you and Zara. She is twelve years old, and she carries a piece of intelligence that could shatter the empire.
+
+*if (route = 1)
+  "They said... the Mother of the Empire."
+
+  The words fall like stones into deep water. The Mother of the Empire. The Dowager Empress Nur.
+*elseif (route = 2)
+  "They said... the Old Lion. Lord Reza."
+
+  The words fall like stones into deep water. The Old Lion. The name the nobility uses for Lord Reza behind his back.
+*else
+  "They said... everyone. They said it's not one person. It's all of them. The nobles, the old priests, the generals who don't want things to change."
+
+  The words fall like stones into deep water. Not one mastermind. A coalition. A wall of power, united in fear.
+
+*page_break
+
+Zara's face is a mask. Porcelain smooth. Utterly still. But her hands -- her hands are perfectly still too, and you have learned that when Zara is perfectly still, when every muscle is locked in place and her breathing is so controlled you cannot see her chest move, it means something inside her is moving very fast. Computing. Assessing. Preparing.
+
+"We need to be certain," she says. Her voice is flat. Professional. But there is something beneath it -- a vibration, like a string pulled taut and plucked. "Agents under duress will say anything. I need corroboration. Physical evidence. A confession that holds under scrutiny."
+
+She crosses to the table. Picks up one of the cipher keys recovered from the Old City cell. Turns it over in her fingers.
+
+"The captured agents will be interrogated separately. Different rooms. Different questions. If the name holds -- if all roads lead to the same destination--" She sets the cipher key down with a soft click. "Then we know."
+
+She meets your eyes. "But if this is true--"
+
+"Then we know who the true enemy is."
+
+"Then we know who the true enemy is," she repeats, and the words hang in the air between you, heavy as smoke, bitter as blue lotus. The promise of a reckoning. The taste of iron and fire.
+
+Farid sets down his tea with a clatter that sounds like cannon fire in the silence. "Oh dear," he whispers. His face has gone the color of old parchment. "Oh dear, oh dear, oh dear."
+
+*page_break
+
+You walk to the ventilation shaft and look up. Through the narrow opening, you can see a slice of sky turning from black to grey to the faintest blush of pink. Dawn is coming.
+
+Somewhere beyond the Citadel's walls, the city of Khazara begins to stir. The minarets catch the first light, gold and rose against the paling sky. The call to prayer echoes across the waking capital -- that ancient, wavering cry that has marked every sunrise for three centuries, summoning the faithful to the Eternal Flame.
+
+The Old City is quiet now. The courtyards where the fighting happened are empty, the blood already drying on the stones. Zara's agents have been and gone, leaving nothing behind but shadows and silence.
+
+In the intelligence chamber, the map on the wall tells its final story. The red pins are fewer. The blue dots are ascendant. The web of conspiracy has been torn, its strands scattered, its anchors pulled from the wall.
+
+But the center holds. The name. The person at the top, who set all of this in motion -- the murders, the leaks, the betrayals, the slow unraveling of an empire's fabric. That person is still free. Still powerful. Still dangerous.
+
+Not for much longer.
+
+The shadow war is over.
+
+The real war is about to begin.
+
+*finish Chapter 26: The True Enemy

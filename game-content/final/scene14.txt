@@ -1,0 +1,877 @@
+*comment === SCENE 14: "THE GATHERING STORM" ===
+*comment Hub scene with route-inflected conversations. ~10,000 words.
+*comment Uses *disable_reuse and *gosub pattern. Player picks 3 of 6.
+*comment Variables modified: rel_leila, rel_navid, rel_asha, rel_emperor,
+*comment   rel_general, rel_spy, rel_guild, rel_farid, rel_priest,
+*comment   rel_soraya, rel_reza, conv_leila, conv_navid, conv_asha,
+*comment   conv_emperor, conv_general, conv_spy, conv_guild, conv_farid,
+*comment   romance_leila, romance_navid, romance_asha, romance_active,
+*comment   rep_military, rep_trade, rep_temple, rep_intelligence,
+*comment   rep_nobility, strength, cunning, diplomacy, scholarship,
+*comment   boldness, idealist, evidence_count
+
+*temp hub_visits 0
+*temp visited_leila false
+*temp visited_navid false
+*temp visited_asha false
+*temp visited_route_npc false
+*temp visited_training false
+*temp visited_farid false
+
+The Grand Festival of Lights is three days away.
+
+You can feel the city gathering itself, the way a river gathers speed before a waterfall. Merchants drape their stalls in crimson and gold. Temple acolytes polish the great bronze brazier of the Eternal Flame until it gleams like a second sun. Children run through the streets trailing paper lanterns, their laughter bright in the cooling autumn air.
+
+In the Citadel, the preparations are grander and quieter. Servants hang silk banners in every corridor. The kitchens have been working since before dawn, and the smell of saffron and roasting almonds drifts through the marble halls like a benevolent ghost. The Garden of Eternal Spring is being transformed into a stage for the Emperor's address, with terraced seating, a speaker's platform, and a thousand oil lamps that will be lit at sunset on the festival night.
+
+*page_break
+
+Farid finds you after the morning briefing, his arms full of documents and his face full of the particular anxiety that precedes large-scale events.
+
+"My lord Vizier, the festival preparations require your attention on -- let me see -- fourteen separate matters, ranging from the Emperor's seating arrangement to the allocation of lamp oil, which has become surprisingly contentious. The Temple Quarter is requesting double their usual allotment and General Kadir is insisting that the garrison receive enough to light the watchtowers, which is reasonable but leaves the River District short by approximately forty barrels, and --"
+
+He catches your expression and stops.
+
+"But perhaps," he says, more quietly, "you have other plans for the day."
+
+You do. The festival is important, but it is also cover. Three days of celebration mean three days of loosened security, distracted guards, and crowded streets where conspirators can move unseen. You need to use the time before the festival to prepare -- to strengthen alliances, gather intelligence, and shore up the defenses that matter most.
+
+You have time for three tasks before the festival preparations consume the remainder of the day.
+
+*page_break
+
+*label hub_menu
+
+*if (hub_visits >= 3)
+  *goto hub_end
+
+The autumn sun is warm on the Citadel's marble walls. A breeze from the mountains carries the scent of woodsmoke and apples. You consider your options.
+
+*choice
+  *disable_reuse *if (not(visited_leila)) #Seek out Leila in the Scholars' Quarter.
+    *set visited_leila true
+    *set hub_visits + 1
+    *gosub leila_scene
+    *goto hub_menu
+  *disable_reuse *if (not(visited_navid)) #Find Navid at the garrison.
+    *set visited_navid true
+    *set hub_visits + 1
+    *gosub navid_scene
+    *goto hub_menu
+  *disable_reuse *if (not(visited_asha)) #Visit Asha at the Temple of Seven Wisdoms.
+    *set visited_asha true
+    *set hub_visits + 1
+    *gosub asha_scene
+    *goto hub_menu
+  *disable_reuse *if (not(visited_route_npc)) #Have a route-specific conversation.
+    *set visited_route_npc true
+    *set hub_visits + 1
+    *gosub route_npc_scene
+    *goto hub_menu
+  *disable_reuse *if (not(visited_training)) #Train your skills.
+    *set visited_training true
+    *set hub_visits + 1
+    *gosub training_scene
+    *goto hub_menu
+  *disable_reuse *if (not(visited_farid)) #Spend time with Farid reviewing preparations.
+    *set visited_farid true
+    *set hub_visits + 1
+    *gosub farid_scene
+    *goto hub_menu
+
+*comment ============================================================
+*comment LEILA ROMANCE/CONVERSATION SCENE
+*comment ============================================================
+
+*label leila_scene
+
+You find Leila in the Scholars' Quarter, in a courtyard where a pomegranate tree drops its fruit into a stone basin. She is sitting on a bench with a writing board on her knees, her pen moving in swift, certain strokes across the paper. The afternoon light falls across her face, catching the darkness of her hair and the intensity of her expression.
+
+She does not look up when you approach. A poet in the act of writing is as unreachable as a hawk in flight.
+
+You wait. The pomegranate tree rustles. A fruit drops into the basin with a soft splash.
+
+"There," she says, and looks up. Her eyes find yours, and something in them shifts -- the focus of creation giving way to a different kind of attention. "Vizier. You have the look of someone who needs a poem."
+
+"I have the look of someone who needs a friend."
+
+*page_break
+
+*set conv_leila + 1
+
+*if ((romance_leila) and (rel_leila > 60))
+  *goto leila_romance
+*elseif ((not(romance_active)) and (rel_leila >= 40))
+  *goto leila_romance_option
+*else
+  *goto leila_friendship
+
+*label leila_romance_option
+
+She sets down her writing board and studies you with the frank appraisal of a woman who makes her living from the precise observation of human nature.
+
+"A friend," she repeats. "Is that what you need? Because the word you just used has several meanings in Classical Parvani, and at least two of them are considerably more interesting than friendship."
+
+The air between you shifts. The courtyard is quiet. The pomegranate tree drops another fruit.
+
+*fake_choice
+  #"Perhaps I should learn Classical Parvani."
+    *set rel_leila %+ 8
+    *set diplomacy + 3
+    Leila's lips curve. "I could teach you. But I warn you -- my teaching methods are unconventional. I believe in full immersion."
+
+    "I would expect nothing less."
+
+    "Good. We begin with the word 'habibi.' It means 'my beloved.' The pronunciation requires --" She pauses, her dark eyes holding yours with a directness that makes the autumn air feel suddenly warm. "The pronunciation requires practice."
+  #"I value your friendship, Leila. Especially now."
+    *set rel_leila %+ 5
+    Leila nods. The flirtation withdraws like a wave from the shore, leaving the solid ground of respect. "Then you have it. Sit. Tell me what weighs on you. I am told I am an excellent listener, though my poems suggest otherwise."
+
+You talk. About the conspiracy, in careful generalities. About the festival. About the weight of office. Leila listens with the attentive silence of a poet hearing a story she might one day write.
+
+*if ((rel_leila >= 40) and (not(romance_active)))
+  *page_break
+
+  As you stand to leave, she catches your sleeve. Her fingers are stained with ink.
+
+  "Vizier. The poem I was writing when you arrived. It is about a person who carries the world on ${their} shoulders and does not know that someone is watching and wishing ${they} would put it down."
+
+  She presses the paper into your hand. Her fingers touch yours. The contact is brief, warm, deliberate.
+
+  "It is not finished," she says. "But the best poems never are."
+
+  You look at the paper. The handwriting is beautiful. The poem is beautiful. And the question it asks -- may I share your burden? -- is the most beautiful thing you have read in a long time.
+
+  *choice
+    #Take her hand. "I would like to hear the rest. When it is finished."
+      *set romance_leila true
+      *set romance_active true
+      *set rel_leila %+ 12
+      Her hand is warm in yours. The pomegranate tree drops another fruit. The autumn light is gold.
+
+      "I will write the rest tonight," she says. "Come find me at the festival. I will read it to you by lamplight."
+
+      She does not let go of your hand. Not yet.
+      *goto leila_end
+    #Return the poem gently. "I am honored. But the world on my shoulders leaves no room for..."
+      *set rel_leila %+ 5
+      You cannot finish the sentence. She finishes it for you, with a poet's precision: "For anything fragile. I understand." She takes the poem back. Her smile is steady, without hurt. "The offer stands, Vizier. Poems are patient."
+      *goto leila_end
+*goto leila_end
+
+*label leila_romance
+
+She sees you and her face opens -- not a smile, exactly, but a softening of the guarded intensity she wears like armor. She sets down her pen and moves the writing board aside, making room on the bench.
+
+You sit beside her. Your shoulders touch. The pomegranate tree shades you both.
+
+*page_break
+
+"I wrote something," she says. "For the festival. The Emperor requested a commemorative ode, which I will deliver with appropriate grandeur and empty rhetoric. But this --" She pulls a folded paper from her robe. "This is the real poem. The one I wrote for no one. Or for one person. I have not decided yet."
+
+She reads it to you. Her voice is low, stripped of its usual performance, and the words fall into the quiet courtyard like seeds into still water.
+
+The poem is about fire. Not the Eternal Flame of the temple, but the other kind -- the fire that burns between two people who have found each other in a burning world. It speaks of hands touching across a map of the empire, of whispered words masked by the sound of fountains, of the dangerous luxury of tenderness in a place where tenderness is a weapon others can use against you.
+
+It is, without question, the finest thing she has ever written. And it is, without question, about you.
+
+*set rel_leila %+ 15
+*set conv_leila + 1
+
+"Leila," you say.
+
+"Don't." She folds the poem and tucks it back into her robe. "Don't say anything adequate. I could not bear adequate right now."
+
+*page_break
+
+You do not say anything adequate. Instead, you take her ink-stained hand and hold it, and the pomegranate tree drops its fruit around you, and the autumn light is gold, and for a moment -- just a moment -- the conspiracies and the crises and the weight of the empire recede, and there are only two people on a bench beneath a tree, holding hands in the afternoon sun.
+
+"At the festival," she says, her voice very quiet, "I will read the commemorative ode for the court. But I will be looking at you. And the poem I am reading will not be the one they hear."
+
+"I know."
+
+"Good." She squeezes your hand. "Now go. Save the empire or whatever it is you do. I have a terrible ode to finish."
+
+*label leila_end
+
+*page_break
+
+You leave the Scholars' Quarter with the scent of pomegranate on your hands and the memory of a poet's voice in your ears. The city prepares for celebration. You prepare for storm.
+
+*return
+
+*label leila_friendship
+
+She sets down her writing board and gestures to the bench beside her. "Sit. You look like you need something that is not a briefing document or a conspiracy theory."
+
+You sit. You talk about poetry and the festival and the way the autumn light falls on the pomegranate tree. She tells you about the commemorative ode the Emperor has requested, which she describes with elaborate disdain and obvious pride.
+
+*set rel_leila %+ 8
+
+"Poetry is the empire's conscience," she says. "When the politicians lie and the generals posture, the poets tell the truth. That is why they fear us. Not because our words are powerful, but because they are honest."
+
+*page_break
+
+She reads you a few lines of the new ode. It is magnificent. It is also, you suspect, more subversive than it appears.
+
+"The line about the flame that 'burns brightest in the dark' -- that is not about the Eternal Flame, is it?"
+
+She grins. "Vizier. A poem that means only one thing is not a poem. It is an announcement."
+
+You leave the courtyard lighter than you arrived. There is a sweetness in friendship that conspiracy cannot touch.
+
+*goto leila_end
+
+*comment ============================================================
+*comment NAVID ROMANCE/CONVERSATION SCENE
+*comment ============================================================
+
+*label navid_scene
+
+The garrison is loud with the sound of preparation. Soldiers drill in the yard, their boots raising dust that catches the autumn sunlight in golden clouds. Armor is being polished, weapons inspected, horses groomed. The festival brings crowds, and crowds bring risk, and the military takes risk personally.
+
+You find Navid on the walls. He is standing at the parapet, looking north, his hand resting on the pommel of his sword in the unconscious gesture of a man who was born with steel at his hip. The wind ruffles his hair. The scar on his cheekbone catches the light like a silver thread.
+
+"Vizier." He turns. His bow is correct, precise, exactly the depth protocol requires. Then: "You should not be on the walls without an escort."
+
+"I have you."
+
+*page_break
+
+*set conv_navid + 1
+
+*if ((romance_navid) and (rel_navid > 60))
+  *goto navid_romance
+*elseif ((not(romance_active)) and (rel_navid >= 40))
+  *goto navid_romance_option
+*else
+  *goto navid_friendship
+
+*label navid_romance_option
+
+A pause. Something shifts in his posture -- the rigid formality softening, just slightly, like a wall developing its first crack.
+
+"Yes," he says. "I suppose you do."
+
+You stand beside him at the parapet. The view stretches north across the city to the distant line of the northern road, which disappears into haze and dust and the unseen frontier where Navid spent his youth.
+
+"You miss it," you say. "The frontier."
+
+"I miss the clarity." His voice is quiet, stripped of military formality. "On the frontier, the enemy carries a sword and rides a horse and you can see him coming. In this city, the enemy smiles and offers you tea."
+
+*fake_choice
+  #"Not all of us who offer tea are enemies, Navid."
+    *set rel_navid %+ 8
+    *set diplomacy + 3
+    He looks at you. His expression is the careful blankness of a man who is feeling something he has not given himself permission to feel.
+
+    "No," he says. "Not all of you."
+
+    The wind blows. The silence between you is not uncomfortable. It is the silence of two people standing on the edge of something they have not yet named.
+  #"I understand that kind of clarity. I wish I had more of it."
+    *set rel_navid %+ 5
+    He nods. "You have a different kind of clarity, Vizier. I have watched you in council. You see through the words to the meaning underneath. That is its own kind of combat."
+
+You talk about the festival, about security arrangements, about the garrison's readiness. Navid is thorough and professional, and you find yourself appreciating not just his competence but the quiet steadiness that underlies it. He is a man who does not waver, and in a world of shifting alliances, that constancy is more valuable than gold.
+
+*if ((rel_navid >= 40) and (not(romance_active)))
+  *page_break
+
+  As you turn to leave, he says your name. Not "Vizier." Your name. ${player_name}.
+
+  It is the first time he has used it. The sound of it in his voice -- careful, deliberate, as though he has been practicing it in the privacy of his thoughts -- stops you mid-step.
+
+  "The festival," he says. "The night watch on the walls. I will be here. If you -- " He stops. Starts again. The man who can face a Khanate warband without flinching is struggling to finish a sentence. "If you wished to walk the walls with me. After the ceremonies. The view of the city with the lamps lit is..." Another pause. "It is worth seeing."
+
+  *choice
+    #"I would like that, Navid. Very much."
+      *set romance_navid true
+      *set romance_active true
+      *set rel_navid %+ 12
+      Something happens to his face. It is not a smile -- Navid does not smile easily -- but it is the nearest thing, a lightening of the severity that transforms the soldier into the man beneath.
+
+      "Good," he says. Then, with visible effort: "I will... look forward to it."
+
+      He turns back to the parapet. But his hand, resting on the stone wall, is closer to yours than it was before. The gap between your fingers is the width of a breath.
+      *goto navid_end
+    #"I appreciate the invitation, Navid. But I should keep my focus on the festival itself."
+      *set rel_navid %+ 5
+      He nods, once, and the lightening in his face dims. But he does not look wounded. He looks like a soldier who has received an answer he expected. "Of course, Vizier. The offer stands." The title is back. The wall is back.
+      *goto navid_end
+*goto navid_end
+
+*label navid_romance
+
+He sees you and something in his posture changes. It is subtle -- a soldier's discipline does not vanish because his heart has shifted -- but you have learned to read him. The shoulders ease. The jaw unclenches. His hand lifts from his sword pommel, as though he has decided, for this moment, that he does not need a weapon.
+
+"${player_name}." Your name, spoken in the voice he uses only when no one else can hear. "You're early."
+
+"I wanted to see the view."
+
+"The view faces north."
+
+"I know. But you face north too."
+
+*page_break
+
+*set rel_navid %+ 15
+*set conv_navid + 1
+
+A pause. Then, very quietly: "That may be the least military compliment anyone has ever given me."
+
+You stand together at the parapet, shoulders almost touching, and the wind from the north ruffles your hair and his, and the city spreads below you like a map drawn in light and shadow. He tells you about the frontier -- about the silence of the steppe at dawn, about the sound horses make crossing a frozen river, about the night sky above Fort Darband where the stars are so thick you can read by their light.
+
+He tells you about the sister he sends carvings to. About the small wooden horse he is making for the festival, its mane no bigger than his thumbnail, its legs thinner than matchsticks.
+
+"It is for a child," he says. "There is a girl in the garrison -- the daughter of a soldier who died at Darband. Seven years old. She has never had a toy."
+
+You look at his hands -- scarred, calloused, capable of violence that would make most people flinch. Those hands carve tiny horses for orphans. The contradiction is not a contradiction at all. It is the whole of him.
+
+*page_break
+
+"At the festival," you say, "I will find you."
+
+"I will be on the walls."
+
+"I know. I will bring wine."
+
+"I don't drink on duty."
+
+"Then I will bring tea."
+
+The ghost of a smile. "Tea would be acceptable."
+
+You hold his gaze for a long moment. The wind dies. The dust settles. And in the stillness, something passes between you that neither of you has a word for yet, though you are both beginning to understand its shape.
+
+*label navid_end
+
+*page_break
+
+You descend the garrison walls into the bustle of preparation. The soldiers salute as you pass. The dust swirls. Somewhere above you, a man with a scar on his cheekbone watches you go, and does not look away until you have disappeared from sight.
+
+*return
+
+*label navid_friendship
+
+He gives you a status report -- thorough, precise, exactly what you would expect. The garrison is prepared for festival security. Extra patrols will cover the major routes. Plainclothes soldiers will mix with the crowds.
+
+*set rel_navid %+ 8
+
+"You are thorough," you say.
+
+"Thoroughness keeps people alive, Vizier."
+
+*page_break
+
+You walk the walls together, and he points out the security positions, the vulnerable intersections, the rooftops where his observers will be posted. His knowledge of the city's geography is extraordinary for a man who grew up on the frontier.
+
+"I study maps," he says, when you remark on this. "Every night. The city is a battlefield I have not yet had to fight on. I prefer to be prepared."
+
+There is something admirable in his discipline, something that reminds you that not all strength is political. Some strength is simply the daily practice of doing a difficult thing well.
+
+*goto navid_end
+
+*comment ============================================================
+*comment ASHA ROMANCE/CONVERSATION SCENE
+*comment ============================================================
+
+*label asha_scene
+
+The Temple of Seven Wisdoms is hushed in the late afternoon. The Eternal Flame burns low, its light softened by the angle of the sun through the open dome. Incense drifts in slow spirals. The temple guards stand at the entrances, motionless as the marble columns they flank.
+
+Asha is in the Chamber of the Third Wisdom -- Courage -- where she does most of her work. She is surrounded by scrolls and books and the organized chaos of a mind that moves faster than her filing system. When she sees you, she laughs.
+
+"The Vizier comes to the temple. Again. The Masters are beginning to talk."
+
+"Let them."
+
+"Oh, I do. Their gossip is far more entertaining than their sermons."
+
+*page_break
+
+*set conv_asha + 1
+
+*if ((romance_asha) and (rel_asha > 60))
+  *goto asha_romance
+*elseif ((not(romance_active)) and (rel_asha >= 40))
+  *goto asha_romance_option
+*else
+  *goto asha_friendship
+
+*label asha_romance_option
+
+She clears a space on the bench beside her, moving a stack of scrolls with the casual disregard of a scholar who knows exactly where everything is in her disorder.
+
+"Sit. I have been thinking about something you said last time we spoke. About the relationship between justice and power. You said that justice without power is merely a wish, and power without justice is merely force. I have been turning that over in my mind for three days."
+
+"And?"
+
+"And I think you are wrong. But I think you are interestingly wrong, which is much better than boringly right."
+
+*fake_choice
+  #"Interestingly wrong. I have never been so flattered and insulted simultaneously."
+    *set rel_asha %+ 8
+    *set scholarship + 3
+    She laughs. It is a real laugh, the kind that comes from genuine delight, and it transforms her face from studious to radiant. "That is the highest compliment a philosopher can give. Ask any of my colleagues. They will tell you I am never boring in my criticisms."
+  #"Tell me where I am wrong. I am here to learn."
+    *set rel_asha %+ 5
+    *set scholarship + 3
+    She leans forward, her eyes bright with the pleasure of intellectual engagement. "The error is in the binary. Justice and power are not opposites, and they are not complements. They are the same thing seen from different angles. The Flame does not distinguish between light and warmth. It produces both, or it produces neither."
+
+The conversation deepens. You debate the nature of justice, the obligations of power, the tension between the ideal and the real. Asha challenges every assumption you bring, not to defeat you but to sharpen you, and you find yourself sharpened -- your thoughts clearer, your convictions tested and tempered like steel in a forge.
+
+*if ((rel_asha >= 40) and (not(romance_active)))
+  *page_break
+
+  The light changes. The afternoon becomes evening. Neither of you has noticed the time passing, which is itself a kind of answer to a question neither of you has asked.
+
+  "We missed dinner," Asha says, looking at the angle of light through the dome.
+
+  "We did."
+
+  "I am not sorry about that."
+
+  "Neither am I."
+
+  She looks at you. The playfulness is gone. In its place is something quieter, more vulnerable, the still center beneath her constant motion.
+
+  "Vizier. I ask questions for a living. I am going to ask you one now and I need you to answer honestly, because the Third Wisdom says courage is acting despite fear, and I am --" She swallows. "I am somewhat afraid of your answer."
+
+  *choice
+    #"Ask."
+      *set romance_asha true
+      *set romance_active true
+      *set rel_asha %+ 12
+      "When you come to the temple," she says, "is it for the philosophy? Or is it for the philosopher?"
+
+      The question hangs in the air between you, lit by the Eternal Flame's glow through the chamber doorway. You answer it not with words but with your hand, which finds hers among the scrolls and the books and the beautiful chaos of her life's work.
+
+      "Both," you say. "But more and more, the philosopher."
+
+      She is still. Completely still. The woman who is always in motion, always questioning, always laughing -- she is still. And in that stillness, her fingers close around yours, and the smile that finds her face is not the grin of a debater or the laugh of a provocateur. It is the quiet, startled joy of a woman who has received an answer she hoped for but did not expect.
+
+      "Well," she says, very softly. "That is the most interesting thing anyone has ever said to me."
+      *goto asha_end
+    #"Asha, I treasure our conversations. But I cannot offer you more than that. Not now."
+      *set rel_asha %+ 5
+      She nods. The stillness breaks, and the motion returns -- not the same as before, but close. "I appreciate your honesty. The Fifth Wisdom prizes it above all things. So do I." A pause. Then: "The offer to debate remains open. Always."
+      *goto asha_end
+*goto asha_end
+
+*label asha_romance
+
+She is waiting for you. You can tell because her usual disorder has been subtly reorganized -- the scrolls stacked more neatly, the books arranged with what, for Asha, passes as care. She has made room on the bench. She has combed her hair.
+
+"You came," she says. Not a question. Not quite a statement. Something in between, where hope and certainty have not yet decided which one is speaking.
+
+"I came."
+
+*page_break
+
+*set rel_asha %+ 15
+*set conv_asha + 1
+
+You sit together in the Chamber of the Third Wisdom, and Asha tells you about the treatise she is writing -- the one the temple elders consider heretical, the one that reinterprets the Seven Wisdoms as principles of change rather than principles of preservation.
+
+"The First Wisdom is Justice," she says, leaning close enough that you can smell the scent of old paper and jasmine that clings to her. "The elders say justice means maintaining the order the Flame established. I say justice means creating the order the Flame demands. There is a difference. A vast one."
+
+"A dangerous one," you say.
+
+"The Third Wisdom is Courage." Her hand finds yours. "Dangerous is the philosopher's natural habitat."
+
+*page_break
+
+She reads you a passage from the treatise. Her voice in the quiet chamber is low and fierce and beautiful, and the words she has written are the words of a woman who has spent her life asking questions and has finally begun to hear answers.
+
+"At the festival," she says, when the passage ends, "the temple will light seven flames -- one for each Wisdom. I have been asked to light the flame for Courage. Will you be there?"
+
+"I will be there."
+
+"Good. Because the flame I light will not be for the elders' version of Courage. It will be for mine. And I would very much like you to see it."
+
+She leans her head against your shoulder. Her hair tickles your chin. The Eternal Flame flickers through the doorway, and the scrolls and books surround you like the walls of a fortress built from ideas.
+
+*label asha_end
+
+*page_break
+
+You leave the temple as the evening call to prayer echoes across the Quarter. The incense follows you like a benediction. The Eternal Flame burns on, as it has for three hundred years, illuminating the faithful and the questioning alike.
+
+*return
+
+*label asha_friendship
+
+She launches into a description of her latest research with the enthusiasm of a woman for whom ideas are food, air, and entertainment all at once.
+
+*set rel_asha %+ 8
+
+"The question I keep returning to," she says, gesturing with a scroll she has forgotten she is holding, "is whether the Seven Wisdoms are prescriptive or descriptive. Do they tell us what to do, or do they describe what we already are? The elders say prescriptive. I say descriptive. The argument has been ongoing for approximately three years and shows no signs of resolution."
+
+*page_break
+
+"Which do you prefer?" you ask.
+
+"I prefer the argument itself. The moment we resolve it, we stop thinking. And the Fifth Wisdom -- Knowledge -- requires us to never stop thinking."
+
+You leave the temple with a mind sharper than when you entered. Asha has that effect on people.
+
+*goto asha_end
+
+*comment ============================================================
+*comment ROUTE-SPECIFIC NPC CONVERSATION
+*comment ============================================================
+
+*label route_npc_scene
+
+*if (route = 1)
+  *goto route1_npc
+*elseif (route = 2)
+  *goto route2_npc
+*elseif (route = 3)
+  *goto route3_npc
+*else
+  *bug Route not set in hub NPC scene
+
+*label route1_npc
+
+*comment LOYALIST: Conversation with the Emperor
+
+You find Emperor Roshan in the Tower of Stars, which surprises you. He is sitting cross-legged on the observation floor, looking up through the open dome at the afternoon sky where the first stars are becoming visible in the east.
+
+"My father used to bring me here," he says, without turning. He knows your footstep. "He said the stars are the only honest courtiers. They do not flatter. They do not scheme. They simply are what they are."
+
+*set conv_emperor + 1
+
+*page_break
+
+You sit beside him. The marble floor is cool. The brass instruments gleam.
+
+"The festival," he says. "Everyone tells me it will be magnificent. They say the lamps will number in the thousands. They say the music will be the finest in a generation. They say the Empire will show its strength." A pause. "No one asks if I am ready."
+
+"Are you ready?"
+
+He turns to look at you. In the dim light of the Tower, he looks older than sixteen. The boyishness has faded. What remains is a young man carrying a weight that would crush most adults.
+
+"I do not know," he says. "But I know that I am not alone. You have taught me that." He straightens. "Whatever happens at the festival -- whatever the conspiracy has planned -- I will face it. Not because I am brave. Because you are there."
+
+*set rel_emperor %+ 12
+
+*fake_choice
+  #"You are braver than you know, Your Majesty."
+    *set rel_emperor %+ 5
+    "Roshan the First was not born brave," you say. "He became brave because the world demanded it. You are becoming what the empire needs. I have seen it."
+
+    His jaw sets. His shoulders square. For a moment, in the starlight, he looks like the emperor he is becoming.
+  #"We face it together. That is what loyalty means."
+    *set rel_emperor %+ 5
+    *set idealist %+ 5
+    "The throne does not stand alone," you say. "It never has. It stands because the people around it choose to hold it up. I choose."
+
+    He nods. The stars turn above you, ancient and indifferent, and for a moment you are not Vizier and Emperor. You are two people who have decided to trust each other in a world that punishes trust.
+
+*page_break
+
+*goto route_npc_end
+
+*label route2_npc
+
+*comment KINGMAKER: Conversation with Zara
+
+Zara appears without announcement, as she always does, materializing in your chambers like smoke through a keyhole. She is carrying a rolled map and her expression is grimmer than usual, which is saying a great deal.
+
+"Dastan's network," she says, unrolling the map on your desk. It is covered in her precise handwriting -- names, locations, connections drawn in red ink like veins on an anatomical chart. "I have mapped what I can. It is not complete, but it is enough to see the shape."
+
+*set conv_spy + 1
+
+*page_break
+
+You study the map. The Dastan network is vast -- trading companies, noble houses, military officers, even a few temple functionaries. It stretches from the capital to the provinces, from the harbor to the mountain passes. It is, you realize with a chill, almost exactly what you have been trying to build.
+
+"The Festival of Lights," Zara says. "Dastan will make a move. The crowds, the distraction, the loosened security -- it is the perfect cover. I do not yet know what the move will be, but I know it will come."
+
+"How do we prepare?"
+
+She looks at you with an expression that might, in another person, be called respect. "We watch. We wait. And when they move, we are ready. You and I are the only people who see the full picture. That makes us dangerous. It also makes us targets."
+
+*set rel_spy %+ 10
+*set rep_intelligence %+ 5
+
+*fake_choice
+  #"Then we had better be good at being dangerous."
+    *set boldness %+ 5
+    *set rel_spy %+ 5
+    Zara's mouth twitches. "I have always been good at being dangerous. You are learning."
+
+    "High praise, from you."
+
+    "It is the only kind I give."
+  #"What do you need from me?"
+    *set rel_spy %+ 5
+    "Your eyes. Your mind. Your willingness to make decisions that others cannot." She rolls the map up. "And your survival. I have invested too much in this partnership to start over with a new Vizier."
+
+    You are almost certain that is Zara's version of affection.
+
+*page_break
+
+*goto route_npc_end
+
+*label route3_npc
+
+*comment REVOLUTIONARY: Conversation with Soraya
+
+Lady Soraya meets you in the reform council's chamber, her face lit by the lamp she has been working under since dawn. The table is covered in draft legislation, petition signatures, and budget calculations. She looks exhausted and determined and fierce.
+
+"The literacy program's third-quarter report," she says, handing you a document. "Enrollment is up. Reading comprehension is ahead of schedule. And --" She permits herself a smile. "The children have started a newspaper. Handwritten, illustrated, distributed through the Old City. They call it 'The Little Flame.' It is possibly the most important publication in the empire."
+
+*set conv_guild + 1
+
+*page_break
+
+You read the report. The numbers are modest but real. Children learning to read. Grain reaching villages. Widows receiving pensions. The reforms are small, but they are alive, and they are changing lives.
+
+"The festival," Soraya says. "The Elder Council's theological declaration -- have they decided whether to publish?"
+
+"Not yet. The festival may force the issue."
+
+She nods. "Then we must be ready. If they declare reform a heresy, we need the people to hear our answer immediately. I have prepared a response -- a public reading of the reform charter, translated into common language, to be distributed at the festival."
+
+*set rel_soraya %+ 10
+*set rep_nobility %+ 5
+
+*fake_choice
+  #"You have done remarkable work, Soraya. The movement is lucky to have you."
+    *set rel_soraya %+ 5
+    She flushes. "The movement is lucky to have a Vizier willing to risk everything for it. I merely do the paperwork."
+
+    "The paperwork is what makes revolution possible."
+
+    "Now you sound like Farid."
+
+    "I will take that as a compliment."
+  #"We must be careful. The festival is dangerous ground."
+    *set boldness %- 5
+    *set rel_soraya %+ 5
+    "I know," she says. "But the festival is also an opportunity. Two million people celebrating together. If we can show them what the reform means -- not in abstract, but in the faces of the children who can now read, the widows who can now eat -- the theological declaration becomes irrelevant."
+
+*page_break
+
+*goto route_npc_end
+
+*label route_npc_end
+
+You leave the conversation with a clearer sense of the battle ahead. The festival is approaching. The conspiracy is moving. And the people you have chosen to stand beside are ready.
+
+*return
+
+*comment ============================================================
+*comment SKILL TRAINING SCENE
+*comment ============================================================
+
+*label training_scene
+
+You have a few hours before the festival preparations consume the day. The sun hangs at its midpoint, warm and golden, and the Citadel hums with the energy of preparation -- servants carrying bolts of crimson silk, musicians rehearsing in a courtyard, a parade of cooks transporting enormous copper pots of saffron rice across the main courtyard with the solemnity of a religious procession.
+
+But preparation takes many forms. The conspiracy does not rest for festivals. The enemies of the empire do not pause for celebrations. Time spent honing your skills is time invested in your survival and the survival of everyone who depends on you.
+
+*page_break
+
+*choice
+  #Spar with Navid's soldiers in the garrison yard. [Strength training]
+    *set strength + 5
+    *set rep_military %+ 5
+    The garrison yard is hot and loud, filled with the clang of practice swords on wooden shields and the bark of drill sergeants whose vocabulary appears to consist entirely of insults and orders, delivered in equal measure. You strip to your shirt and join the sparring circle, where a drill sergeant with a face like hammered leather pairs you with a soldier twice your weight and half your age.
+
+    The bout is brief and educational: you learn that the floor of the garrison yard is made of packed earth and that it tastes of dust. You also learn that getting up after being knocked down, in front of two dozen grinning soldiers, requires a specific kind of courage that has nothing to do with politics or diplomacy.
+
+    You get up. You get knocked down again. You get up again. The soldiers stop grinning. By the third round, they are watching with something that might be respect, or at least curiosity.
+
+    The drill sergeant teaches you three new holds, a disarming technique that involves stepping inside your opponent's reach -- terrifying but effective -- and the precise angle at which a hip-throw becomes devastating. You leave the yard bruised, sweating, and marginally more dangerous than you arrived.
+
+    *page_break
+    *goto training_end
+  #Study the conspiracy evidence in the library with Scholar Miriam. [Scholarship training]
+    *set scholarship + 5
+    *set evidence_count + 1
+    The library is cool and quiet, a sanctuary of old paper and careful thought. The smell of aged vellum and fresh ink fills the air, and the sound of turning pages is the only music in these halls. Miriam has assembled your accumulated evidence on a reading table -- documents, maps, financial records, decoded messages -- arranged in the precise chronological order that is the astronomer's gift to intelligence work.
+
+    Together you analyze the patterns. Miriam's mind works differently from yours or Zara's -- she sees numbers, relationships, the mathematical bones beneath the flesh of events. Where you see political motivations, she sees frequencies. Where Zara sees networks of agents, Miriam sees curves and correlations.
+
+    "Here," she says, pointing to a sequence of dates in the correspondence with a finger that still bears the calluses of years of working with brass instruments. "The communications increase in frequency approximately ten days before each major crisis. The border raid, the embargo, the pamphlet campaign -- all preceded by a spike in traffic through the coded channels. The pattern is consistent. It is also predictable."
+
+    The pattern clicks into focus like a lens being adjusted. You can now predict, roughly, when the next move will come. And the Festival of Lights falls precisely within the predicted window.
+
+    *page_break
+    *goto training_end
+  #Practice the art of negotiation with Priya over a trade dispute. [Diplomacy training]
+    *set diplomacy + 5
+    *set rep_trade %+ 5
+    Priya has a minor trade dispute that she has been using as a training exercise for new guild negotiators -- a disagreement between two pepper merchants over warehouse allocation that has been simmering for weeks. She invites you to observe from behind a silk screen. Then, with a mischievous smile that tells you she planned this from the moment you walked in, she pushes you out from behind the screen and makes you mediate.
+
+    You negotiate opposite a veteran spice merchant named Omid who has been haggling since before you were born and who treats the negotiation table like a battlefield. He concedes nothing. He disputes everything. He employs a technique Priya later describes as "the avalanche" -- burying the opponent in so many demands that they cannot find the real ones beneath the noise.
+
+    You lose the negotiation, which Priya finds hilarious. She laughs so hard she spills her wine, which she then charges to your account as a lesson in the cost of failure. Then she shows you, point by point, why you lost and how to win next time.
+
+    "Negotiation is not about getting what you want," she says, refilling her glass with the casual expertise of a woman who has closed a hundred deals over a hundred dinners. "It is about making the other person believe that what they want is what you are offering. You were trying to be fair. Fair is for judges. Negotiators make both sides feel like they won."
+
+    *page_break
+    *goto training_end
+  #Practice reading people with Zara's observation techniques. [Cunning training]
+    *set cunning + 5
+    *set rep_intelligence %+ 5
+    Zara takes you to a coffeehouse in the Scholars' Quarter -- a modest establishment with low tables, strong coffee, and a clientele of students and minor scholars who are too absorbed in their debates to notice the empire's Spymaster and its Vizier sitting by the window.
+
+    "Watch," she says, wrapping her hands around a cup she will not drink from. "Tell me what you see."
+
+    You watch. At first you see what everyone sees: people walking, talking, buying, selling, living their small and complicated lives. But Zara's training has sharpened something in you, and gradually the surface gives way to the substance beneath. The people passing outside become texts to be read -- the woman whose smile does not match her clenched hands, who is frightened of something she has left behind her. The merchant whose eyes dart to the alley where his partner waits, conducting business that prefers shadows to sunlight. The soldier whose limp favors the wrong leg for his alleged injury, suggesting the injury is not what he claims. The couple who walk two paces apart and never touch, bound by duty rather than desire.
+
+    "Better," Zara says, after an hour. Her voice carries the faintest trace of approval, which from Zara is the equivalent of a standing ovation. "You are beginning to see people as they are instead of as they present themselves. That is the first skill of intelligence work. The second is not getting caught looking. The third --" A pause. "The third is knowing when to look away."
+
+    *page_break
+    *goto training_end
+
+*label training_end
+
+The training is done. You are stronger, or smarter, or more perceptive than you were this morning. In the days ahead, you will need every advantage.
+
+*return
+
+*comment ============================================================
+*comment FARID PREPARATION SCENE
+*comment ============================================================
+
+*label farid_scene
+
+You find Farid in the Vizier's office, surrounded by the controlled chaos of festival logistics. Documents are stacked in precise columns across every surface. A pot of tea, long since cold, sits forgotten beside a half-eaten roll. Farid himself is bent over a scheduling chart that appears to require a degree in mathematics to interpret.
+
+"My lord Vizier!" He looks up with the expression of a man who has been drowning and has just spotted a ship. "I am -- the preparations are -- everything is under control. Mostly. The lamp oil situation has been resolved. General Kadir has agreed to share the garrison's surplus, which was generous, or strategic, I cannot tell which. The seating arrangement for the Emperor's address is finalized except for the question of whether Lord Reza sits before or after the Ambassador, which is a question of protocol that I have been unable to resolve because the relevant regulation -- regulation 88-C, subsection 12 -- was amended under Emperor Darius II but the amendment was never properly ratified, so --"
+
+"Farid."
+
+He stops. Breathes.
+
+*page_break
+
+*set conv_farid + 1
+
+"Sit down," you say. "Have tea."
+
+"The tea is cold, my lord Vizier."
+
+"Then I will make new tea."
+
+You make tea. It is a small thing, domestic and human, and it feels like an act of rebellion against the empire of paperwork and protocol that threatens to consume you both. You pour two cups. Farid sits, and for a moment he is not the Secretary to the Grand Vizier. He is a young man of twenty-five who is tired and frightened and doing his best.
+
+"Farid," you say. "Are you all right?"
+
+He wraps his hands around the warm cup. "The last Grand Festival -- the one before the old Emperor died -- my previous master, the Vizier, he was alive. He stood in this office and he reviewed the same preparations and he drank tea from the same pot. Three months later he was dead."
+
+*page_break
+
+A silence. The tea steams between you.
+
+"I do not want that to happen again," Farid says, very quietly. "I know I am only a secretary. I know I cannot protect you from conspiracies and assassins. But I can make sure the paperwork is in order and the oil lamps are allocated correctly and the seating chart does not cause a diplomatic incident. That is my contribution. That is what I can do."
+
+*set rel_farid %+ 12
+
+"Farid. You are not only a secretary. You are the reason this office functions. You are the reason I can focus on conspiracies instead of lamp oil. You are --" You search for the right word. "You are indispensable."
+
+He blinks. His eyes are bright. For a moment his mouth works without sound, like a fish that has been unexpectedly told it is an eagle.
+
+"Oh," he says. "Oh, that is -- thank you, my lord Vizier. I will -- I should note that compliment in my employment record, if that is -- is that appropriate? I am not sure of the regulation regarding -- "
+
+"Farid."
+
+"Yes, my lord Vizier."
+
+"Drink your tea."
+
+He drinks his tea. And smiles. It is the smile of a man who has been seen -- not as a function, not as a title, not as the nervous young secretary who spills tea on important documents, but as a person whose contribution matters.
+
+You drink your tea too, and for a few minutes you sit together in comfortable silence, two people bound not by rank or protocol but by the simple, durable thing that Farid has always offered and you have only now learned to name: loyalty that asks nothing in return except the chance to be useful.
+
+"The seating arrangement," Farid says, eventually, setting down his cup with renewed purpose. "Lord Reza before the Ambassador. I have found the relevant precedent. Regulation 88-C, subsection 12, as amended in the Year of the Silver Horse. The amendment was ratified. I checked the archive personally."
+
+"I never doubted it."
+
+"I did. But I checked anyway. That is also part of my job."
+
+*page_break
+
+*goto farid_end
+
+*label farid_end
+
+You leave the office feeling steadier. The preparations continue. The festival approaches. But the foundation -- the human foundation of loyalty and trust and shared purpose -- holds firm.
+
+*return
+
+*comment ============================================================
+*comment HUB END -- FESTIVAL APPROACHES
+*comment ============================================================
+
+*label hub_end
+
+*page_break
+
+The day ends as it began: with the city gathering itself for the festival.
+
+The last hours of the afternoon have passed in a blur of conversations, preparations, and the quiet accumulation of readiness. You have used the time well. You are stronger, or wiser, or closer to the people who matter than you were at dawn. In the calculus of the court, where time is the only currency that cannot be replenished, that is no small thing.
+
+The sunset paints the sky in crimson and gold, the colors of the empire, and the Eternal Flame catches the dying light and throws it upward into the deepening blue.
+
+You stand on the balcony of your chambers and look out over Khazara. The domes and minarets glow in the last light. The rivers -- the Ashar and the Tavan -- catch the sunset on their surfaces and carry it through the city in ribbons of liquid gold. The Grand Bazaar is closing for the night, its merchants folding their stalls, but the coffeehouses are filling, and the sound of music and laughter drifts upward on the evening air.
+
+*page_break
+
+Tomorrow the preparations intensify. The day after that, the lamp oil will be distributed to every household in Khazara -- forty barrels to the Temple Quarter, twenty to the garrison, the rest divided among the districts in a formula that Farid has calculated to the last copper measure. The day after, the Festival of Lights begins.
+
+*if (route = 1)
+  The conspiracy is planning something they call the Ascension. Prince Kaveh waits in the wings. The Emperor you have sworn to protect will stand before the empire and deliver an address that may be his last act as ruler -- or the beginning of his true reign.
+*elseif (route = 2)
+  Dastan's network is moving. The shadow government you have been trying to build has a rival, older and deeper, and the festival is the cover they need to make their move. You must be ready. You must be better.
+*elseif (route = 3)
+  The temple schism threatens to tear the reform movement apart from within. The theological declaration hangs over the festival like a storm cloud. But the reforms are real, the children can read, and the people deserve better than a divine excuse for their suffering.
+
+Farid appears at your elbow with a final sheaf of documents. "The festival schedule, my lord Vizier. And the updated security protocols from Captain Navid. And --" He hesitates. "And a personal note. From me."
+
+He holds it out. A small folded paper, sealed with his personal stamp -- a tiny quill and inkwell.
+
+"You do not need to read it now," he says. "It is merely -- I wanted to say, my lord Vizier, that whatever happens at the festival, it has been an honor to serve you. A genuine honor. The previous Vizier was a good man, but you are -- you are something more. I am not sure what, exactly. But more."
+
+*set rel_farid %+ 8
+
+He bows, crisply and correctly, and leaves.
+
+*page_break
+
+You stand on the balcony with Farid's note in your hand and the city at your feet and the Festival of Lights approaching like a tide.
+
+The gathering storm. The conspiracies in motion. The alliances forged, the prices paid, the choices made in cold offices and warm gardens and quiet moments between the crises. All of it converging on a single night when the lamps will burn and the empire will show its face to the world.
+
+You turn the Vizier's seal ring on your finger. The jade is cool. The weight is familiar.
+
+*if (visited_leila)
+  *if (romance_leila)
+    Somewhere, a poet is writing a poem that is not for the court.
+  *else
+    Somewhere, a poet is composing an ode for the ages.
+*if (visited_navid)
+  *if (romance_navid)
+    On the garrison walls, a soldier carves a tiny horse and thinks of a name he has recently learned to say aloud.
+  *else
+    On the garrison walls, a soldier watches the northern horizon.
+*if (visited_asha)
+  *if (romance_asha)
+    In the temple, a scholar prepares to light a flame for Courage and thinks about the person she will look for in the crowd.
+  *else
+    In the temple, a scholar sharpens her arguments like a smith sharpens a blade.
+
+Three days.
+
+The lamps are being filled. The banners are being hung. The Eternal Flame burns, as it has for three hundred years, as it will burn for three hundred more -- or as it will gutter and die, if the storm that is coming proves stronger than the fire.
+
+You close your eyes. You breathe. And then you go inside, because there is work to do, and the Grand Vizier does not rest while the empire gathers its breath.
+
+The festival is coming. And with it, everything changes.
+
+*finish Chapter 15: The Festival of Lights

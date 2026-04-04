@@ -1,0 +1,600 @@
+*comment === SCENE 21: THE STORM BREAKS ===
+*comment Word target: ~10,000
+*comment Act 3 opener. Triple crisis hits simultaneously.
+*comment Variables modified: boldness, ruthless, idealist, honest,
+*comment   rep_military, rep_trade, rep_temple, rep_nobility,
+*comment   rel_general, rel_guild, rel_priest, rel_kaveh, rel_emperor,
+*comment   rel_farid, strength, diplomacy
+
+*temp crisis_priority "undecided"
+*temp delegation_target "undecided"
+*temp kaveh_reaction "undecided"
+*temp farid_composure "shaken"
+
+*comment === OPENING: THE THREE MESSENGERS ===
+
+The first messenger arrives at dawn.
+
+You are not asleep. You have not slept. The hours since the Eve of Battle have passed in a strange suspended state -- half vigil, half dread -- as you sit in your chambers with the evidence spread before you on the desk like the bones of a dissected animal. The conspiracy laid bare. The true enemy named, if not yet confronted. The empire balanced on a blade's edge, and you the hand that must keep it from falling.
+
+The knock comes at the door. Three sharp raps -- the military cadence.
+
+Farid opens it. A border rider stands in the corridor, dust-caked and swaying on his feet. His horse, you will learn later, died beneath him at the city gates. He rode the last mile on a borrowed mount, the dispatch case clutched to his chest like a child.
+
+"The Northern Khanates," he says. His voice is a ruin. "They've crossed the Wall of Roshan. All of them. Every tribe. Fort Darband has fallen."
+
+*page_break
+
+The words land like stones dropped into your chest.
+
+Fort Darband. The empire's northern shield, the fortress that has held the steppe at bay for a century. Fallen. And not to a raiding party, not to the probing attacks that General Kadir has spent his career repelling. Every tribe. A full invasion, coordinated and overwhelming, striking at the precise moment when the empire's attention is turned inward.
+
+You know, with the cold clarity of exhaustion, that this is no coincidence.
+
+The messenger sags against the doorframe. Farid catches him, guides him to a chair, presses a cup of water into his shaking hands. The man drinks like someone who has forgotten what water tastes like.
+
+"How many?" you ask.
+
+"Thirty thousand horse. Maybe more. They came at night, through the breach in the eastern section -- the section that was due for repair." His eyes are hollow. "Someone told them where the wall was weakest."
+
+*page_break
+
+The second messenger arrives before you have finished reading the dispatch.
+
+This one is not a soldier. She is a trade runner -- one of Priya's network of commercial couriers who carry market intelligence faster than any official dispatch system. She is cleaner than the border rider but no less frightened.
+
+"The Ashghar Pass is closed," she says, without preamble. "The western merchants have seized the customs house. They're demanding renegotiation of all tariff agreements and payment of so-called damages for -- for I don't know what, but the number they're quoting is two hundred thousand gold ashrafs. The caravans are backed up for three miles. And someone has been buying up grain futures in every market between here and the coast."
+
+She pauses, swallows. "Guildmaster Priya says to tell you the treasury has been raided. Not physically -- through falsified withdrawal orders bearing forged seals. She's still calculating the damage, but her first estimate is that a third of the imperial reserve is gone."
+
+A third of the reserve. The number hangs in the air between you like smoke.
+
+*page_break
+
+The third messenger arrives with the sunrise.
+
+He is not a messenger at all. He is Secretary Farid, who has been running between the Citadel's corridors like a man trying to outpace a fire, gathering reports and dispatches and rumors and assembling them into a picture that grows more terrible with each new piece.
+
+He stands in the doorway of your chambers. He is not trembling, which is how you know this is truly bad. When Farid stops trembling, it means the situation has passed beyond the reach of anxiety into something harder and colder.
+
+"Prince Kaveh," he says, "has proclaimed himself the rightful Emperor of the Khazaran Empire."
+
+He holds up a broadsheet -- fresh ink, still damp. You can smell it from across the room. The printing press, that revolutionary engine of ideas and disruption, has been turned to a new purpose. Kaveh's face stares from the paper with the confident half-smile you remember from the Festival of Lights. Beneath it, in bold calligraphy:
+
+*By Right of Blood and Divine Mandate, Prince Kaveh of House Roshan Claims the Silk Throne.*
+
+*page_break
+
+You stand at the window of your chambers and look out over Khazara.
+
+The city is waking. Smoke rises from ten thousand cooking fires. The call to prayer echoes from the Temple Quarter, a sound so familiar it has become part of the air itself. Below the Citadel walls, merchants are opening their stalls in the Grand Bazaar, unaware that the world they knew when they went to sleep has ended.
+
+Three crises. Simultaneous. Coordinated.
+
+An invasion from the north. An economic collapse from within. A political challenge to the throne itself.
+
+*if (route = 1)
+  You think of Emperor Roshan -- the boy you have spent these long months strengthening, teaching, protecting. Everything you have built for him is under assault from three directions at once.
+*elseif (route = 2)
+  You think of the power you have so carefully accumulated -- the networks, the leverage, the quiet arrangements that keep the empire running with your hand on the tiller. All of it threatened by a crisis designed to shatter every structure you have built.
+*else
+  You think of the reforms you have fought for -- the fragile new systems, the tentative alliances between merchants and commoners and progressive nobles. A crisis like this could sweep it all away and return the empire to the old brutalities.
+
+Farid appears at your elbow. He has composed himself. His hands are steady and his voice, when he speaks, has the quiet precision of a man who has decided that someone must be competent and it might as well be him.
+
+"The Council is assembling, my ${title_honorific} Vizier. They are waiting for you."
+
+*page_break
+
+*comment === THE COUNCIL IN CRISIS ===
+
+The Council Chamber has never felt smaller.
+
+Every seat is filled. General Kadir stands rather than sits -- he is already in his field armor, the iron prosthetic hand catching the morning light like a weapon. Guildmaster Priya has dark circles beneath her eyes and a stack of ledgers before her that rises like a fortification. High Priest Ashoka sits with his hands folded, but you notice that his fingers are interlaced tightly -- the knuckles white. Spymaster Zara occupies her usual shadow, but today she has brought two of her agents, who stand behind her like sentinels.
+
+And Emperor Roshan sits at the head of the table.
+
+He is not the boy you met on your first day. The months have changed him -- sharpened the jaw, steadied the eyes, added a weight to his bearing that was not there before. But this morning, with three crises bearing down on his empire like wolves on a wounded deer, you can see the fear beneath the composure. It lives in the tightness around his mouth and the way his hands grip the arms of his chair.
+
+*if (rel_emperor > 60)
+  His eyes find yours the moment you enter. In them you read something that makes the weight on your shoulders both heavier and easier to bear: trust.
+*elseif (rel_emperor > 40)
+  He nods as you enter -- a measured acknowledgment. Whatever distance lies between you, this crisis demands unity.
+*else
+  He watches you enter with an expression you cannot quite read. Wariness, perhaps. Or the calculation of a young ruler who is not certain whether you are part of the solution or part of the problem.
+
+"Vizier," the Emperor says. "We are told the empire faces three immediate threats. We require your counsel."
+
+*page_break
+
+General Kadir speaks first. He does not wait for permission.
+
+"Thirty thousand Khanate horse warriors have crossed the Wall of Roshan through a breach in the eastern section. Fort Darband has fallen. The garrison commander is dead. The northern provinces are undefended." He speaks with the clipped brevity of a man delivering a field report, but his iron hand is clenched into a fist at his side. "My reserve forces can march in three days. If I strip the capital garrison to minimum strength, I can field twenty-five thousand. It will not be enough, but it will hold the line."
+
+"Strip the capital garrison?" Priya's voice cuts across the chamber. "While the treasury is bleeding and a pretender is printing broadsides in the streets? You might as well open the city gates and hand Kaveh the throne."
+
+"If the Khanates reach the heartland, there will be no throne to hand anyone," Kadir says quietly. The quiet is worse than shouting.
+
+*page_break
+
+Priya stands. She places her palms flat on the table, a gesture you have seen her make when the numbers are so bad that standing is the only alternative to despair.
+
+"The imperial treasury has been systematically looted through forged withdrawal orders. I have traced the forgeries back three months. Someone with access to the Seal Master's office has been bleeding us dry." She draws a breath. "We have lost approximately one hundred and forty thousand gold ashrafs. A third of our operational reserve. What remains will fund the government for six weeks. Perhaps eight, if we suspend all nonessential expenditure."
+
+"Define nonessential," Ashoka says.
+
+"Road maintenance. Library funding. Temple subsidies." She meets the High Priest's gaze without flinching. "Half the military budget."
+
+The sound Kadir makes is not quite a word.
+
+*page_break
+
+Ashoka speaks into the wreckage of the silence.
+
+"The temple's concerns are no less grave. Prince Kaveh has published a proclamation claiming divine mandate for his rule. He cites the Prophecy of the Seventh Age -- a text that has not been invoked in two centuries. The conservative elders are..." He pauses, and you see him choose his next word with the care of a man defusing an explosive device. "...receptive."
+
+"Receptive," Zara repeats, flatly.
+
+"Seven of the twelve temple elders have signed a letter calling for a Council of Discernment -- a formal religious evaluation of whether the current Emperor holds divine favor." Ashoka's voice does not waver, but his hands have not unclenched. "If the Council of Discernment rules against the Emperor, the temple withdraws its blessing. Without the temple's blessing, the coronation is technically illegitimate."
+
+Emperor Roshan's grip on the chair tightens. He says nothing. The silence from the head of the table is louder than any of the voices that have filled it.
+
+*page_break
+
+Zara speaks last. She always speaks last.
+
+"The three crises are connected. The Khanate invasion was timed to coincide with the treasury raid, which was timed to coincide with Kaveh's proclamation. The breach in the Wall of Roshan was not accidental -- I have evidence that the repair schedules were deliberately falsified. The forged withdrawal orders used intelligence that only someone within the inner government could possess. And Kaveh's broadsheets were printed on presses that were purchased three months ago under false names."
+
+She lets the implications settle.
+
+"This is not a convergence of bad luck. This is a coordinated assault. Someone with access to military intelligence, financial systems, and political networks has orchestrated the simultaneous destruction of the empire's defenses, economy, and legitimacy."
+
+*if (identified_true_enemy)
+  You know who. The name sits in your throat like a blade.
+*else
+  The web of conspiracy you have spent months untangling suddenly reveals its final, terrible shape.
+
+"The question before this Council," Zara continues, "is not whether we can survive. It is which of the three threats we address first, knowing that the other two will worsen while we do."
+
+*page_break
+
+*comment === FIRST REAL CHOICE: CRISIS PRIORITY ===
+
+Every face at the table turns to you. Even Kadir, who has never looked to a civilian for military guidance without resentment, is watching you with an intensity that borders on desperation.
+
+This is the moment. The empire is bleeding from three wounds, and you have two hands. You cannot staunch them all.
+
+*fake_choice
+  #You feel the weight of it settle onto your shoulders like iron -- the knowledge that whatever you choose, something will be lost.
+    *set idealist %- 5
+    *set ruthless %+ 5
+    *temp inner_reaction "weight"
+    The weight of command is not the weight of the seal ring or the weight of the robes. It is the weight of knowing that every choice you make condemns someone. The soldiers on the northern wall. The merchants watching their livelihoods drain away. The people in the streets, uncertain whether their emperor is truly their emperor. You cannot save them all. You can only choose.
+  #A strange calm descends -- the calm of crisis, when fear burns away and leaves only clarity.
+    *set boldness %+ 10
+    *temp inner_reaction "calm"
+    Something shifts inside you. The fear that has been building since the first messenger arrived does not vanish -- it transforms. It becomes fuel. Your mind sharpens to a point. You see the three crises not as an overwhelming catastrophe but as a puzzle, and puzzles have solutions. Not perfect solutions. Not painless ones. But solutions.
+  #Anger rises in you -- cold, focused anger at the architects of this devastation.
+    *set ruthless %+ 5
+    *set boldness %+ 5
+    *temp inner_reaction "anger"
+    The anger is not hot. It is cold, precise, surgical. Someone planned this. Someone sat in a quiet room and drew lines on a map and calculated the exact moment to strike, knowing that thousands would suffer, that soldiers would die, that an empire would shake. And they did it anyway. You will find them. You will stop them. But first, you must decide which fire to fight.
+
+*page_break
+
+The Emperor speaks. His voice is steady, which costs him more than anyone at this table will ever know.
+
+"Vizier. We have heard the counsel of our advisors. Each crisis demands immediate attention. We cannot address all three simultaneously." A pause. His jaw tightens. "Which threat do you judge most urgent?"
+
+You stand. The seal ring catches the light.
+
+*choice
+  #"The Khanate invasion. If the northern provinces fall, the empire's heartland is exposed. We address the military threat first."
+    *set crisis_priority "military"
+    *set rep_military %+ 10
+    *set rep_trade %- 5
+    *set rel_general %+ 8
+    *set boldness %+ 5
+    *goto crisis_military
+  #"The economic collapse. An army marches on its treasury. Without gold, we cannot fund any response to any threat."
+    *set crisis_priority "economic"
+    *set rep_trade %+ 10
+    *set rep_military %- 5
+    *set rel_guild %+ 8
+    *set idealist %- 5
+    *goto crisis_economic
+  #"Kaveh's claim. If the throne's legitimacy collapses, no military victory or economic recovery will matter. The political crisis strikes at the empire's foundation."
+    *set crisis_priority "political"
+    *set rep_temple %+ 5
+    *set rep_nobility %+ 5
+    *set rel_priest %+ 5
+    *set diplomacy + 3
+    *goto crisis_political
+
+*comment === CRISIS PRIORITY BRANCHES ===
+
+*label crisis_military
+General Kadir's iron hand unclenches. It is the closest thing to relief you have ever seen on his scarred face.
+
+"Finally," he says. "Someone at this table who understands that empires are defended at their borders, not their counting houses."
+
+Priya opens her mouth to object, but you raise a hand.
+
+"The treasury and Kaveh's claim are critical. But thirty thousand horsemen do not wait for balance sheets or broadsheets. If the Khanates reach the Valley of the Ashar, there will be no empire left to argue over."
+
+*if (rel_general > 50)
+  Kadir meets your eye and nods -- a soldier's nod, short and sharp and weighted with respect. "I'll have deployment orders drafted within the hour."
+*else
+  Kadir nods curtly. "Then get me troops and get out of the way."
+
+The Emperor's expression is grave. "The northern provinces contain four million of our subjects," he says quietly. "Do what must be done."
+
+*goto delegation_choice
+
+*label crisis_economic
+Priya exhales -- a long, controlled breath that speaks of a woman who has been holding the empire's finances together with her fingernails and has been waiting for someone to notice.
+
+"Thank you," she says, and for once there is no calculation in her voice. Only exhaustion and determination. "I need three things: authority to freeze all treasury withdrawals, a forensic audit of every transaction in the last three months, and emergency lending agreements with the Guild of Spice Merchants and the Gem Cutters' Association."
+
+General Kadir's jaw works. "And the northern wall? The soldiers dying while we count coins?"
+
+"Dead soldiers need no pay, General," Priya says, and immediately closes her eyes. "That was -- I apologize. That was unworthy of me."
+
+*if (rel_guild > 50)
+  She looks at you, and in her gaze you see something you rarely see from Priya: gratitude that is not also a transaction.
+*else
+  She straightens, and the mask of professional competence settles back over her face. "I will need your full support, Vizier. This will not be painless."
+
+*goto delegation_choice
+
+*label crisis_political
+Ashoka inclines his head. The movement is slight, but from a man who has spent sixty years mastering the art of stillness, it carries the weight of a bow.
+
+"You understand," he says, "that the throne rests not on gold or steel, but on belief. The people must believe in their Emperor. If that belief falters, no army can restore it."
+
+"Belief," Kadir mutters. "I'll take steel."
+
+"Steel without belief is tyranny, General," Ashoka replies. "Tyranny does not endure."
+
+*if (rel_priest > 50)
+  The High Priest meets your gaze, and you see in his ancient eyes something you have not seen before: a willingness to fight. Not with swords. With something older and more powerful.
+*else
+  Ashoka folds his hands again, but his posture has shifted. The serene detachment is gone. In its place is the bearing of a man preparing for battle -- the spiritual kind, which is no less deadly.
+
+Emperor Roshan's chin lifts. "We will not surrender our throne to a cousin with a printing press and a stolen prophecy."
+
+*goto delegation_choice
+
+*page_break
+
+*comment === SECOND REAL CHOICE: DELEGATION ===
+
+*label delegation_choice
+
+The decision of priority is made. But two crises remain, and you cannot be in three places at once. The question now is who you trust to handle what you cannot.
+
+Farid appears at your elbow with a sheaf of notes. His handwriting, usually so precise, is slightly unsteady at the edges.
+
+"My ${title_honorific} Vizier," he says quietly, "you will need to delegate the other two crises to members of the Council. Based on their -- their areas of competence."
+
+He hesitates, then adds, even more quietly: "And based on who you trust."
+
+*if (inner_reaction = "calm")
+  Your mind is already working through the permutations. Strengths, weaknesses, loyalties, risks.
+*elseif (inner_reaction = "anger")
+  The cold anger in your chest sharpens your assessment. No room for sentiment. Only capability and loyalty.
+*else
+  The weight of it presses down, but you bear it. This is what the seal ring means.
+
+*page_break
+
+*choice
+  #Delegate based on expertise -- each crisis goes to the Council member best qualified to handle it, regardless of personal loyalty.
+    *set delegation_target "expertise"
+    *set idealist %+ 5
+    *set honest %+ 5
+    *set rep_military %+ 5
+    *set rep_trade %+ 5
+    *set rep_temple %+ 5
+    *goto delegation_expertise
+  #Delegate based on trust -- the crises go to the people you know are loyal, even if they are not the obvious choice.
+    *set delegation_target "trust"
+    *set ruthless %+ 5
+    *set boldness %+ 5
+    *goto delegation_trust
+  *selectable_if (cunning > 45) #Delegate strategically -- assign tasks in ways that test wavering allies and expose potential traitors. [Requires Cunning 45+]
+    *set delegation_target "strategic"
+    *set ruthless %+ 10
+    *set cunning + 3
+    *goto delegation_strategic
+
+*label delegation_expertise
+You address the Council.
+
+"General Kadir will take command of the military response, regardless of which crisis I address personally. Guildmaster Priya will manage the economic stabilization. High Priest Ashoka will coordinate the religious and political response to Kaveh's claim."
+
+*if (crisis_priority = "military")
+  Priya nods crisply. "I'll have the treasury locked down within the hour."
+  Ashoka rises. "I will convene the loyal elders before Kaveh's supporters can solidify their position."
+*elseif (crisis_priority = "economic")
+  Kadir is already moving toward the door. "I'll dispatch the reserves. Try not to bankrupt the army before I get there."
+  Ashoka rises. "The temple will counsel patience to the faithful. But patience has limits, Vizier."
+*else
+  Kadir's jaw tightens. "I'll hold the north. But I need funds, Vizier. Soldiers fight better when they eat."
+  Priya is already scribbling figures. "I'll find the money. Somehow."
+
+Each member of the Council departs to their task. The chamber empties by degrees, each departure carrying a piece of the empire's fate out the door.
+
+*goto kaveh_broadsheet
+
+*label delegation_trust
+You speak carefully, weighing each word.
+
+*if (rel_general > 50)
+  "General Kadir -- I trust your judgment on the northern front. Take whatever forces you need."
+  Kadir's expression shifts. Something in the hard lines softens, just fractionally. "You'll have my best, Vizier."
+*else
+  "The northern front requires military leadership. General Kadir, you will command -- but I want daily dispatches. No deviations from the agreed strategy."
+  Kadir's eyes narrow, but he nods. A soldier follows orders. Even orders he resents.
+
+*if (rel_guild > 50)
+  "Priya, the treasury is yours. I know you'll guard it as fiercely as your own ledgers."
+  She manages a ghost of her usual smile. "More fiercely. My ledgers have never been robbed."
+*else
+  "The economic crisis needs steady hands. Guildmaster Priya, I want full transparency. Every expenditure reported."
+  "Of course," Priya says, her voice carefully neutral. "Transparency is always my preference."
+
+*if (rel_priest > 50)
+  "Ashoka -- hold the temple together. I know it costs you."
+  The old priest's eyes meet yours. "The Flame endures," he says softly. "And so shall we."
+*else
+  "High Priest Ashoka, the temple must not fracture. Whatever your personal feelings, unity is essential."
+  "The temple's unity is not yours to command, child," Ashoka says. But he inclines his head. "I will do what I can."
+
+*goto kaveh_broadsheet
+
+*label delegation_strategic
+A calculation, cold and precise. You assign each crisis not merely to the most capable handler, but in configurations that will reveal loyalty -- or its absence.
+
+*if (crisis_priority != "military")
+  You place General Kadir on the northern front but assign one of Zara's agents to shadow him. If his loyalty wavers, you will know.
+  *set rep_intelligence %+ 5
+  *set rel_general %- 5
+*if (crisis_priority != "economic")
+  You give Priya the economic crisis but require all financial decisions to pass through Farid's office first. A leash, disguised as procedure.
+  *set rel_guild %- 5
+  *set rel_farid %+ 5
+*if (crisis_priority != "political")
+  You task Ashoka with the temple response but position Lady Soraya as a secular counterweight to the religious establishment.
+  *set rep_temple %- 5
+  *set rel_soraya %+ 5
+
+Zara catches your eye across the chamber. Her expression does not change, but you could swear you see the faintest nod of approval. She understands the game you are playing.
+
+*goto kaveh_broadsheet
+
+*page_break
+
+*comment === KAVEH'S BROADSHEET ===
+
+*label kaveh_broadsheet
+
+The Council has dispersed to their tasks. The chamber is nearly empty now -- only you, Farid, and the broadsheet that still lies on the table, Kaveh's face smiling up from the fresh ink.
+
+You pick it up and read it properly for the first time.
+
+*page_break
+
+The text is masterful. You have to give Kaveh that. Or whoever wrote it for him.
+
+It begins with genealogy -- a careful, scholarly argument that Kaveh's father, as the elder son of Emperor Roshan III, held the true claim to the succession, and that the current emperor's grandfather usurped the line through a technicality in the inheritance law. The argument is not entirely wrong. That is what makes it dangerous.
+
+Then it invokes religion. The Prophecy of the Seventh Age -- an obscure text from the early empire that speaks of a "prince born under the Warrior's Star" who will "restore the Flame to its full brightness in a time of darkness." The astronomical details, the broadsheet claims, match Kaveh's birth chart.
+
+Finally, it lists grievances. The Khanate raids that have gone unanswered. The economic instability. The young emperor's reliance on "foreign-born advisors of uncertain loyalty" -- a phrase that makes your jaw tighten, because it means you.
+
+"It's well written," Farid says, reading over your shoulder. "I -- I mean, as a piece of propaganda. Not that I agree with -- I should stop talking."
+
+*page_break
+
+*fake_choice
+  #You set the broadsheet down carefully, deliberately. Anger is a luxury you cannot afford.
+    *set honest %+ 5
+    *set ruthless %- 5
+    *temp kaveh_reaction "controlled"
+    You fold the broadsheet and place it on the table. Your hands are steady. The words are poison, but poison only kills if you swallow it. You have faced conspiracies and assassins and betrayals. A piece of paper will not break you.
+  #You crumple the broadsheet in your fist, the ink smearing against your palm.
+    *set boldness %+ 5
+    *set ruthless %+ 5
+    *temp kaveh_reaction "angry"
+    The paper crushes in your grip, ink bleeding onto your skin like a bruise. Kaveh. The smiling prince with the practiced charm and the birthright grievance. You remember his face at the Festival of Lights -- the easy confidence, the way he moved through the crowd as if the throne were already his. He has been planning this for months. Perhaps years. And now, with the empire on its knees, he strikes.
+  #You read it again, more carefully, looking for the seams -- the weaknesses in his argument.
+    *set scholarship + 3
+    *set boldness %- 5
+    *temp kaveh_reaction "analytical"
+    Your eyes move across the text a second time, and now you read it not as a proclamation but as a battlefield. The genealogical argument has a flaw -- the inheritance law Kaveh cites was amended under Emperor Darius II. The prophecy is real but the interpretation is selective. The grievances are genuine but the attribution of blame is dishonest. Every argument has a counterargument. You simply need time to prepare them.
+
+*page_break
+
+*comment === THE EMPEROR'S BURDEN ===
+
+A knock at the chamber door. Farid opens it, and Emperor Roshan enters alone.
+
+He has dismissed his guards. He has removed the formal robes of state. In his plain white tunic, with his dark hair uncombed and shadows beneath his eyes, he looks exactly like what he is: a sixteen-year-old boy whose world is collapsing.
+
+He sits in the chair nearest you. For a moment, he says nothing.
+
+Then:
+
+"Kaveh's broadsheet is in every market square in the city." His voice is quiet, stripped of the royal register. "The street criers are reading it aloud for those who cannot read. They are calling him the Warrior Prince."
+
+"Your Majesty --"
+
+"My grandfather took the throne from Kaveh's father. I know this. I have read the histories." He looks at his hands. "The law supported my grandfather's claim. But law and justice are not always the same thing, are they?"
+
+*page_break
+
+*if (route = 1)
+  You recognize this moment. You have seen it before -- the doubt that creeps in when the weight of the crown becomes real. And you know that what the Emperor needs now is not flattery or reassurance, but truth.
+*elseif (route = 2)
+  The boy's vulnerability tugs at something in you, but the pragmatist in your chest is already calculating. A doubting emperor is a manageable emperor. But a broken one is useless. You need Roshan functional.
+*else
+  You see in Roshan's eyes the same question that drives your reforms: is the system worth preserving? The answer you give him now will shape the empire's future as surely as any battle or treasury audit.
+
+"The law supported your grandfather's claim," you say. "And the empire has prospered under your family's rule for three generations."
+
+"Has it?" Roshan looks up. "The Khanates are invading. The treasury is empty. The temples are divided. And a cousin I barely know is claiming my throne with better arguments than I can muster to keep it." A pause. "My father would have known what to do."
+
+"Your father is not here," you say. The words are hard, but true. "You are."
+
+*page_break
+
+*if (rel_emperor > 60)
+  Something shifts in his expression. The doubt does not vanish, but it retreats -- pushed back by something stronger. Trust. Trust in you, in the months of counsel and protection and quiet guidance. He sits straighter.
+  *set rel_emperor %+ 8
+  "You're right," he says. "I am." He draws a breath, and when he speaks again, the royal register is back. Not as a mask this time, but as armor, donned deliberately. "What do you need from me, Vizier?"
+*elseif (rel_emperor > 40)
+  He nods slowly. The doubt remains, but beneath it is the stubbornness that you have come to recognize -- the streak of iron that runs through the Roshan line like a vein in marble.
+  *set rel_emperor %+ 5
+  "Then I will do what must be done," he says. "Guide me."
+*else
+  His expression hardens. Not with trust, but with something colder -- the survival instinct of a cornered animal.
+  "Then I will fight," he says. "With or without your help, Vizier. This is still my throne."
+
+*page_break
+
+*comment === THE CITY STIRS ===
+
+You leave the Council Chamber and step into the corridor that overlooks the Citadel's central courtyard. The morning sun has climbed above the eastern walls, and the white marble blazes with light. It is, by some cruel irony, a beautiful day.
+
+Below, the courtyard churns with activity. Soldiers form ranks by the northern gate -- the first units being mobilized for the frontier. Runners carry dispatches between the administrative wings, their sandals slapping against the stone. A delegation of merchants has gathered near the treasury office, their voices rising in anxious speculation.
+
+And beyond the Citadel walls, the city of Khazara is beginning to learn what has happened.
+
+You can hear it -- a low murmur that rises from the streets like heat from a furnace. Not panic, not yet. But the sound of two million people processing the news that their borders have been breached, their treasury has been robbed, and a prince is claiming their emperor is a usurper.
+
+The Eternal Flame is visible from here -- a bright point in the Temple Quarter, burning as it has burned for three hundred years. Today, for the first time, you wonder if it is enough.
+
+*page_break
+
+Farid joins you at the balustrade. He has a stack of documents in his arms that reaches nearly to his chin.
+
+"Reports from the district captains," he says. "The city is... unsettled. Kaveh's broadsheets are everywhere. Captain Darius reports that street preachers in the Old City are calling for the Emperor's abdication. There have been three fistfights in the Grand Bazaar over grain prices, which have doubled since this morning."
+
+He shifts the stack of documents and nearly drops them. You catch the top third before they scatter.
+
+"Thank you, my ${title_honorific} Vizier. I -- I also have messages from --" He consults a list scrawled on his palm. "General Kadir's quartermaster, requesting immediate release of war funds. Guildmaster Priya's office, requesting authorization to freeze private bank withdrawals. High Priest Ashoka's secretary, requesting an audience regarding the Council of Discernment. Ambassador Chen's office, expressing the Western Confederation's 'concern' about stability, which I believe is diplomatic language for 'we are circling like vultures.' And --" He pauses. "And a sealed letter from Prince Kaveh himself, addressed to you personally."
+
+*page_break
+
+You take the sealed letter. Kaveh's personal seal -- a falcon in flight -- is pressed into dark blue wax. You break it.
+
+The letter is brief, written in a flowing hand:
+
+*Vizier,*
+
+*The empire does not need to bleed. I am not a monster, and I am not a fool. I know you have served the throne faithfully, by your own lights. I respect that.*
+
+*When the dust settles -- and it will settle, one way or another -- I would rather have you beside me than against me. A Vizier of your talents would be wasted in exile.*
+
+*Consider my offer. There is a place for pragmatism in the new order.*
+
+*Your servant in all but title,*
+*Kaveh*
+
+*set rel_kaveh %+ 5
+
+*page_break
+
+*comment === ALLIED NPCS RESPOND ===
+
+*if (romance_active)
+  *if (romance_leila)
+    Before you can process Kaveh's letter, a familiar voice reaches you from the corridor below.
+
+    "I've been looking for you." Leila climbs the stairs two at a time, her poet's robes trailing behind her. Her face is drawn, but her eyes are fierce. "The printing houses are in chaos. Kaveh has been commissioning poets -- second-rate hacks, but prolific ones -- to write verses supporting his claim. The narrative war has already begun."
+
+    She reaches the balustrade and stands close enough that her shoulder brushes yours. The contact is brief, deliberate, grounding.
+
+    "I can fight this," she says. "Words are my weapons. Give me a press and I'll write verses that make Kaveh's poets look like children scratching on walls."
+  *elseif (romance_navid)
+    Before you can process Kaveh's letter, the sound of boots on marble reaches you -- the measured tread of a soldier who refuses to run even in crisis.
+
+    Navid appears at the top of the stairs. He is in full armor, his hand on his sword hilt, and his eyes sweep the corridor with professional efficiency before settling on you.
+
+    "Vizier." A pause. Then, more quietly: "${player_name}. I've doubled the Emperor's guard and posted sentries at every corridor junction. No one reaches you or the Emperor without going through my soldiers."
+
+    He stands beside you, a wall of steel and discipline and something warmer that lives in the way he positions himself between you and the open courtyard -- instinctive, protective.
+
+    "Whatever comes," he says, "I am here."
+  *elseif (romance_asha)
+    Before you can process Kaveh's letter, light footsteps sound on the stairs -- quick, purposeful, and preceded by the faint scent of temple incense.
+
+    Asha appears, her scholar's robes ink-stained and her hair escaping its pins. She has clearly come straight from the temple library.
+
+    "The Prophecy of the Seventh Age," she says without preamble. "Kaveh is misquoting it. The original text -- I've been studying it for months -- does not say what his broadsheet claims. The astronomical references are wrong. The 'Warrior's Star' conjunction he cites occurred three years before his birth, not at it."
+
+    She reaches you and takes your hand. Her grip is firm, her fingers stained with ink.
+
+    "I can prove it," she says. "I can dismantle his religious argument with scholarship. But I need access to the restricted archive, and Ashoka has sealed it."
+
+*page_break
+
+*if (rel_farid > 60)
+  Farid clears his throat. "My ${title_honorific} Vizier, I know this is not -- I mean, it is not my place to offer strategic counsel. I am a secretary. But I have been thinking."
+
+  He straightens the documents in his arms, a nervous habit, but his voice is steady.
+
+  "The three crises are designed to overwhelm. But they are also connected, which means the response can be connected too. A military victory strengthens the Emperor's legitimacy, which undermines Kaveh's claim. Economic stabilization funds the military, which enables victory. And religious unity undermines the prophecy, which weakens Kaveh's position."
+
+  He blinks. "I -- I may have overstepped."
+
+  "No," you say. "You haven't."
+
+  *set rel_farid %+ 8
+*else
+  Farid busies himself organizing the documents, his face a mask of determined competence.
+
+*page_break
+
+*comment === CLOSING: THE STORM BREAKS ===
+
+You stand on the balustrade above the Citadel courtyard, the city spread before you, and you feel the weight of what is coming settle into your bones.
+
+This is not like the crises that came before. The border raid in your first days as Vizier. The embargo. The assassination attempt. The betrayal. Each of those was a single blow, and you met each one with the tools at hand.
+
+This is different. This is the killing stroke -- the conspiracy's final, coordinated attack, designed not merely to wound the empire but to end it. To crack it open along its fault lines and let the pieces fall where they may.
+
+*if (crisis_priority = "military")
+  You have chosen to meet the invasion first. Steel against steel, at the Wall of Roshan, where the empire's survival will be measured in cavalry charges and supply lines and the courage of soldiers who are outnumbered and know it.
+*elseif (crisis_priority = "economic")
+  You have chosen to save the treasury first. Gold against chaos, in the counting houses and market squares, where the empire's survival will be measured in balance sheets and grain prices and the trust of merchants who are watching their fortunes evaporate.
+*else
+  You have chosen to fight the political battle first. Words against claims, in the temples and council halls, where the empire's survival will be measured in legitimacy and belief and the loyalty of people who are being told their emperor is false.
+
+The wind off the Ashar River carries the smell of the city -- cooking fires, river mud, jasmine from the Citadel gardens, and beneath it all, the acrid tang of fear. Two million people, and every one of them is looking toward the Citadel today, wondering whether the walls will hold.
+
+*page_break
+
+Below you, a column of soldiers marches through the northern gate, their armor catching the morning sun. Their faces are young. Some of them will not come back.
+
+In the Grand Bazaar, merchants are hoarding grain and locking their strongboxes. The price of bread will double by nightfall.
+
+In the Temple Quarter, the Eternal Flame burns. But even from this distance, you think -- you imagine, perhaps -- that it flickers.
+
+And somewhere in this city, Prince Kaveh is smiling.
+
+The storm has broken.
+
+*if (crisis_priority = "military")
+  The northern front awaits. Before the day is out, you will be riding toward the Wall of Roshan and the thirty thousand horsemen who mean to tear the empire apart.
+*elseif (crisis_priority = "economic")
+  The treasury war awaits. Before the day is out, you will be in the counting houses, fighting with ledgers and leverage to keep the empire's lifeblood flowing.
+*else
+  The temple awaits. Before the day is out, you will be standing before the Eternal Flame, fighting for the Emperor's divine mandate with words and faith and whatever authority you have left.
+
+You turn from the balustrade and walk back into the Citadel.
+
+There is work to do.
+
+*finish The Northern Front

@@ -1,0 +1,645 @@
+*comment === SCENE 19: THE WEB UNTANGLED ===
+*comment Word target: ~10,000
+*comment Variables modified: identified_true_enemy, recovered_from_betrayal,
+*comment   evidence_count (major increase), conspiracy flags, skills (+3 for
+*comment   successful checks), boldness, ruthless, honest, idealist,
+*comment   rel_emperor, rel_spy, rel_farid, rel_general, rel_guild, rel_priest
+*comment Choices: 3 *choice (investigation method, confrontation, revelation response),
+*comment   1 *fake_choice (processing revelations)
+
+*temp investigation_method "undecided"
+*temp confrontation_target "none"
+*temp evidence_breakthrough false
+*temp full_picture false
+*temp scholarship_success false
+*temp cunning_success false
+*temp diplomacy_success false
+*temp strength_success false
+
+*comment === OPENING: THE EVIDENCE WALL ===
+
+You have cleared the writing desk.
+
+It was not enough. You have cleared the reading table, the side table, the low cedar chest beneath the window. Every flat surface in your chambers is now covered in paper. Letters, dispatches, financial records, decoded messages, witness accounts, military reports, trade manifests, temple correspondence. Months of evidence, gathered piece by piece, spread across the room like the fragments of a shattered mosaic.
+
+Farid stands in the doorway, holding a cup of cardamom tea he has nowhere to set down.
+
+"It looks like a library exploded," he says.
+
+*page_break
+
+"It looks like a conspiracy," you correct him.
+
+The morning light falls through the high arched windows, illuminating the papers in shafts of gold. Dust motes float in the beams like tiny stars. The air smells of ink and old parchment and the cardamom rising from Farid's neglected tea.
+
+You have been at this since before dawn. Something woke you in the grey hours before sunrise -- not a sound, not a dream, but a thought. A connection between two pieces of evidence that had seemed unrelated until the moment they clicked together in the darkness of your bedroom, and you sat upright, heart hammering, and knew.
+
+The conspiracy has a shape. You are close to seeing it whole.
+
+"Farid. The letter we found in the predecessor's desk. The one in Classical Parvani."
+
+*if (found_letter)
+  He produces it immediately. The parchment is old, the ink faded but legible. You have read it a dozen times. But this morning, in the light of everything you now know, the words rearrange themselves into new meaning.
+*else
+  "We never found a letter, my ${title_honorific} Vizier. The predecessor's desk was cleaned before we could search it thoroughly."
+
+  "Then we work with what we have." You gesture at the landscape of documents. "It is enough. It has to be."
+
+*page_break
+
+*comment === INVESTIGATION SEQUENCE: SKILL CHECKS ===
+
+You begin to work.
+
+Not reading -- you have read each document a hundred times. The words are engraved in your memory like inscriptions on stone. Now you are connecting. Drawing lines between events. Tracing the web of the conspiracy backward from effect to cause, from symptom to disease, from the surface disturbances that everyone saw to the deep currents that only you -- and perhaps the mastermind -- can perceive.
+
+The methodology is simple. You organize the documents into three categories: what happened, when it happened, and who benefited. The "what" is spread across your desk in chronological order. The "when" is marked on a timeline that Farid draws across a long scroll of paper, stretching from three years ago to yesterday. The "who" is the question that burns at the center of everything, the question you have been circling since the day you arrived in Khazara and found a dead man's office waiting for you.
+
+Farid takes notes in his meticulous hand, cross-referencing names, dates, amounts. He has developed a system of colored inks -- black for confirmed facts, red for suspicions, blue for connections that need verification. Together, bent over the papers like astronomers studying a new constellation, you build the picture.
+
+The first category: the coded messages.
+
+*comment Scholarship check
+*if (scholarship > 40)
+  *set scholarship_success true
+  *set scholarship + 3
+  *set evidence_count + 1
+  The breakthrough comes from the coded messages. You have been studying them for weeks, but this morning, with fresh eyes, you notice what you missed before. The code is not random. It is based on a classical Parvani cipher system described in a text you read years ago -- a system used by the old Parvani empire for military communications.
+
+  But the system has been modified. The modifications follow a specific pattern, and that pattern corresponds to a text. A specific, identifiable text.
+
+  "The Meditations of Roshan the First," you say aloud.
+
+  Farid looks up. "The founder's philosophical treatise? The one required reading for all high officials?"
+
+  "The cipher key is drawn from the Meditations. Whoever designed this code chose a text that every senior official would have access to -- and that no one outside the government would think to use." You tap the decoded message. "This was created by someone inside the Citadel. Someone educated. Someone senior."
+*else
+  The coded messages resist your efforts. The cipher system is sophisticated, and without the key, the deeper meanings remain locked. You can extract fragments -- dates, locations, a handful of names -- but the complete picture eludes you.
+
+  "I need Scholar Miriam," you say. "Or more time. Time we do not have."
+
+*page_break
+
+*page_break
+
+You move to the next layer of documents. The financial records. Columns of numbers that Farid has transcribed from treasury reports, trade manifests, and the banking records that Guildmaster Priya shared during your investigation. Numbers are not your native language -- you think in words, in people, in the weight of a conversation's silences. But numbers have their own grammar, and today, you are determined to read it.
+
+*comment Cunning check
+*if (cunning > 40)
+  *set cunning_success true
+  *set cunning + 3
+  *set evidence_count + 1
+  The financial trail is where the conspiracy's armor cracks. You trace the money -- the six thousand ashrafs, the ghost merchant house, the payments to bribed officials -- and you find the pattern. Every major conspiracy action was preceded by a financial transaction. The raid on the northern border, the embargo crisis, the assassination attempt, the betrayal. Each one cost money, and money leaves tracks.
+
+  "Here," you say, circling a name on a trade manifest. "This shipping company received payments from three separate accounts, each controlled by a different faction within the conspiracy. They did not know they were paying the same intermediary." You look at Farid. "But the intermediary knew exactly what it was doing. It was the spider at the center of the financial web."
+
+  The shipping company is registered to a name you recognize: a minor noble family that has been in decline for a decade. But their patron -- the house they owe allegiance to -- is not minor at all.
+*else
+  The financial records blur before your eyes. The conspiracy's money trail is deliberately fragmented, routed through shell companies and false accounts. You can see that money moved, but tracing it to its source requires a merchant's instinct you do not fully possess.
+
+  "I need Guildmaster Priya for this," you say. "She reads ledgers the way I read reports."
+
+*page_break
+
+*page_break
+
+The afternoon call to prayer echoes from the Temple Quarter. You barely hear it. The investigation has consumed you -- the way a river consumes a stone, surrounding it, eroding it, wearing away everything that is not essential. You are aware of hunger, distantly, the way a swimmer is aware of the shore. Farid has placed food beside you. You have not touched it.
+
+You move to the final category of evidence: the people.
+
+*comment Diplomacy check
+*if (diplomacy > 40)
+  *set diplomacy_success true
+  *set diplomacy + 3
+  *set evidence_count + 1
+  You turn to the human evidence. The witnesses, the allies, the people who spoke to you in confidence over the past months. You review every conversation, every sideways glance, every moment when someone said one thing but meant another.
+
+  And you find it. The pattern in the relationships.
+
+  "The conspiracy recruited by exploiting grievances," you say. "Each person they turned had a specific, personal reason to be angry. The military officer whose promotion was blocked. The noble whose estate was taxed. The priest whose reform proposals were rejected." You tap the table. "Someone studied the court's fault lines and drove wedges into every crack."
+
+  That level of social intelligence, that ability to read and exploit human weakness, is not a talent that belongs to military men or merchants. It belongs to someone who has spent a lifetime navigating the most dangerous social terrain in the empire.
+
+  Someone who has sat at the heart of court politics for decades.
+*else
+  The web of personal relationships is too complex to untangle by analysis alone. You can see that the conspiracy recruited from across every faction, but the logic of the recruitment -- why these people, why now -- remains opaque.
+
+  "We need someone who understands how this court breathes," you say.
+
+*page_break
+
+*comment === REAL CHOICE 1: INVESTIGATION METHOD ===
+
+The morning is gone. Farid has filled three notebooks. Your chambers look like a war room, which, you suppose, they are. The picture is forming, but gaps remain. How you fill them matters.
+
+*choice
+  #Summon Spymaster Zara. Her intelligence assets can fill the gaps in the evidence.
+    *set investigation_method "intelligence"
+    *set rel_spy %+ 8
+    *set rep_intelligence %+ 5
+    Zara arrives within the hour. She surveys the evidence wall with an expression that, on anyone else, might be called impressed.
+
+    "You have been busy," she says.
+
+    "Not busy enough. I need your network."
+
+    She moves through the room, reading documents, rearranging them with quick, precise hands. She works in silence for twenty minutes. Then she stops.
+
+    "You are missing two pieces," she says. "The connection between the financial trail and the coded messages. And the identity of the person who recruited the betrayer."
+
+    "Can you find them?"
+
+    "I already have." She pulls two thin scrolls from her sleeve -- she came prepared, you realize. She always comes prepared. "My agents intercepted these last night. I was waiting to see how much you had assembled on your own before sharing them."
+
+    *if (rel_spy > 50)
+      She meets your eyes. "I wanted to be sure you were worthy of the information. You are."
+    *else
+      "Efficiency," she says, before you can take offense. "If you already had the full picture, sharing these would be redundant. You did not. So here we are."
+    *goto assemble_picture
+  #Call on Guildmaster Priya. Follow the money to its source.
+    *set investigation_method "financial"
+    *set rel_guild %+ 8
+    *set rep_trade %+ 5
+    Priya arrives with her own stack of documents and a look on her face that reminds you of a hunting cat that has cornered its prey.
+
+    "I have been working on this independently," she says, spreading her papers alongside yours. "The financial trail. The conspiracy's weakness is its need for money. Spies need paying. Bribes need funding. Operations need logistics. And all of it leaves a paper trail if you know where to look."
+
+    She works beside you for an hour, her quick fingers sorting through trade records and treasury disbursements. She finds connections you missed, links between accounts that span the empire.
+
+    "There," she says at last, pointing to a pattern that makes your blood run cold. "The money flows from a single source. It is laundered through seventeen intermediaries, but it all begins in the same place."
+
+    *if (rel_guild > 50)
+      She looks at you. "I considered keeping this to myself. Leverage, you understand. Information is currency." She pauses. "But some things are more important than profit. The empire is one of them."
+    *else
+      "This information is worth more than I can calculate," she says. "Remember that I gave it to you freely. I do not forget debts, Vizier. And I do not let others forget them either."
+    *goto assemble_picture
+  *selectable_if (scholarship > 55) #Decode the remaining messages yourself. The cipher key is in the Meditations of Roshan I. [Requires Scholarship 55+]
+    *set investigation_method "scholarly"
+    *set scholarship + 5
+    *set evidence_count + 1
+    You send Farid for a copy of the Meditations. He returns within minutes -- the text is in every library, every study, every official's bookshelf in the Citadel. You open it to the first chapter and begin decoding.
+
+    The work is painstaking. Each message uses a different chapter as its key, and the modification pattern shifts with each communication. But you have the system now, and the system is breakable.
+
+    By midafternoon, you have decoded seven messages. The contents paint a picture of a conspiracy that is vast, patient, and methodical. Recruitment plans. Operation timelines. Payment schedules. And, in the earliest messages, the instructions that set everything in motion.
+
+    The language of those first messages is distinctive. Formal. Educated. Laced with historical references and metaphor. You have heard this voice before. You have stood in a room with this person. You have looked them in the eye and been lied to.
+
+    Farid reads the decoded messages over your shoulder. His face goes white.
+
+    "My ${title_honorific} Vizier... this is..."
+
+    "Yes," you say. "It is."
+    *goto assemble_picture
+
+*page_break
+
+*label assemble_picture
+
+*comment === ASSEMBLING THE FULL PICTURE ===
+
+The afternoon light has shifted to amber. The Garden of Eternal Spring glows below your window, its fountains catching the sun. The beauty is a lie, or rather, it is a truth that exists alongside a terrible other truth -- that beneath the beauty, the empire is being devoured from within.
+
+But you can see the mouth now. You can see the throat. You can trace the gullet to its source.
+
+You and Farid work through the midday heat. Servants bring food -- saffron rice, flatbread, a bowl of figs -- and you eat without tasting, your hands moving between documents and bread and back again. Farid transcribes. You dictate. The conspiracy takes shape on his pages like a map being drawn of territory you have crossed by feel in the dark.
+
+The mechanical clock in the Tower of Stars chimes once. Twice. The afternoon advances. The light in your chambers moves from gold to copper to the deep amber of late day, and the shadows of the window frame lengthen across the paper-covered floor like the bars of a cage closing around the truth.
+
+*page_break
+
+Farid lays out the final timeline on the last clear surface in the room -- a section of floor, cleared of rugs, where he kneels with his papers arranged in chronological order. He has drawn a line of ink across a long scroll of paper and marked it with dates. Along the line, events are noted in his meticulous hand, each one connected by arrows to the documents that prove it.
+
+It looks, you realize, like a river. The conspiracy flowing through time the way the Ashar flows through the valley -- with branches, tributaries, and a single, inevitable destination.
+
+"Start at the beginning," you say.
+
+"The beginning." Farid swallows. "Three years ago. Two years before you arrived. The conspiracy begins with a series of quiet financial transactions. Small amounts, moved carefully. Investments in businesses that would later become front operations."
+
+"Continue."
+
+"Two years ago. Recruitment begins. Disaffected officers, minor nobles with grievances, a handful of temple functionaries. Each recruited individually, each given only enough information to perform their role. Classic cell structure."
+
+*if (scholarship_success)
+  "The coded messages begin at this point. The cipher system is established using the Meditations of Roshan I as the key. A clever choice -- hiding in plain sight."
+
+*if (cunning_success)
+  "The financial infrastructure expands. Shell companies, foreign accounts, the ghost merchant house in the Foreign Quarter. The money begins to flow toward specific objectives."
+
+*page_break
+
+"One year ago," Farid continues. "The pace accelerates. The previous Vizier begins to notice discrepancies. He starts his own investigation." Farid's voice catches. "He was getting close."
+
+"And he was killed for it."
+
+"Blue lotus venom. Administered over three days. By the time he showed symptoms, it was too late." Farid's hand trembles on his notebook. "I was home sick. If I had been there--"
+
+"You would be dead too, Farid."
+
+He nods. He knows. It does not help.
+
+*page_break
+
+"The conspiracy's objectives crystallize around this time," you continue, taking over. "Based on the evidence we have assembled, the goals are threefold."
+
+You hold up a finger. "One. Destabilize the northern border by feeding intelligence to the Khanates. Create a military crisis that drains resources and attention."
+
+A second finger. "Two. Undermine trade by engineering diplomatic incidents. The rogue spy, the embargo, the disrupted routes. Bleed the treasury."
+
+A third. "Three. Position a rival claimant."
+
+*if (suspect_kaveh)
+  "Prince Kaveh," Farid says quietly.
+
+  "Prince Kaveh. Whether he is a willing participant or an unwitting tool remains to be seen. But the conspiracy's endgame is to remove Emperor Roshan and install Kaveh as a puppet."
+*else
+  "Someone with a claim to the throne," you say. "The evidence points toward the imperial bloodline. A cousin, perhaps, or an uncle. Someone who can be controlled."
+
+*set evidence_count + 1
+
+*page_break
+
+*comment === FAKE CHOICE: PROCESSING REVELATIONS ===
+
+The scope of it takes your breath away. This is not a plot by a handful of malcontents. This is a years-long operation, professionally organized, extensively funded, with roots in every institution of the empire. Military. Commerce. Temple. Nobility. Even the intelligence service has been penetrated.
+
+*fake_choice
+  #The precision of it terrifies you. This is the work of a master strategist.
+    *set boldness %- 5
+    *set idealist %- 5
+    *temp reaction "awed"
+    You stand at the window and look out at the city. Two million people living their lives beneath the shadow of a conspiracy they cannot see. The strategist behind this understands the empire better than most of the people who rule it. ${they} have mapped its weaknesses with the patience of a cartographer and exploited them with the efficiency of a general.
+
+    That kind of understanding does not come from outside. It comes from someone who has been inside the machinery of power for a very long time.
+  #The arrogance of it angers you. They think the empire is theirs to destroy and rebuild.
+    *set boldness %+ 10
+    *set ruthless %+ 5
+    *temp reaction "furious"
+    The anger rises in you like the Ashar in flood season -- slow, powerful, and impossible to stop. These people, whoever they are, have decided that the empire's fate is theirs to dictate. They have killed. They have corrupted. They have fed imperial secrets to enemies. They have treated two million lives as pieces on a game board.
+
+    Your hands close into fists. The seal ring bites into your palm.
+
+    They will answer for this. All of them.
+  #The sadness of it weighs on you. Someone you know did this. Someone who once served the empire.
+    *set idealist %+ 5
+    *set honest %+ 5
+    *temp reaction "grieving"
+    The heaviest weight is not the conspiracy's ambition or its scope. It is the knowledge that the person behind it was once -- must have once been -- someone who loved this empire. You do not build a conspiracy this sophisticated, this deeply rooted in the empire's institutions, unless you understand those institutions intimately. Unless you were part of them.
+
+    Somewhere in the history of this plot, there is a moment when someone who served the empire decided to destroy it. That moment, whatever it was, is the true tragedy.
+
+*page_break
+
+*comment === THE TRUE ENEMY: IDENTIFICATION ===
+
+And then you see it.
+
+Not in a single document. Not in a single piece of evidence. You see it in the spaces between the evidence -- in the pattern of what the conspiracy knew, what it exploited, what it protected.
+
+*if (route = 1)
+  The conspiracy always knew the Emperor's schedule. It always knew which decisions would reach the Council and which would be handled privately. It always knew where the Emperor would be most vulnerable and most isolated.
+
+  There is only one person in the empire who has that knowledge. Only one person who controls the Emperor's access to information, his meetings, his movements.
+
+  *if (diplomacy_success)
+    And the social engineering -- the recruitment through personal grievances, the exploitation of every fault line in the court. That is the work of someone who has spent decades observing the court's human terrain. Someone who knows every secret, every weakness, every buried resentment.
+
+  The Dowager Empress Nur.
+
+  The words form in your mind with the weight and finality of a stone dropped into still water. You have been looking for the conspiracy's mastermind in the shadows, in the hidden rooms, in the coded messages. But the mastermind has been sitting in the most visible seat in the empire, hiding behind the very power she wields openly.
+
+  Nur chose you. Nur brought you to Khazara. Nur placed you in the Vizier's chair. And when you proved too competent, too independent, too loyal to her son rather than to her, Nur moved to destroy you.
+
+  *if (suspect_dowager)
+    You suspected. Now you know.
+  *else
+    *set suspect_dowager true
+    The realization hits you like a physical blow. You grip the edge of the desk and breathe.
+*elseif (route = 2)
+  The conspiracy always moved against any concentration of unofficial power. It targeted shadow networks, informal alliances, anyone building influence outside the traditional channels. It struck not at the empire's official structure but at those who might rival it.
+
+  There is one person who would see unofficial power as a threat. One person whose entire political identity is built on the supremacy of the traditional order.
+
+  *if (cunning_success)
+    And the financial trail -- the old noble families, the traditional patronage networks, the ancient wealth that moves through channels established centuries ago. This is not new money. This is old money, wielded by old hands.
+
+  Lord Reza.
+
+  The ancient nobleman, the keeper of tradition, the voice of the aristocracy. You have watched him sit in the Council gallery and pronounce judgment on a world he believes belongs to him by right of blood and history. He is seventy-two years old, and he has decided that his legacy will not be the quiet decline of the noble houses. It will be the restoration of their supremacy.
+
+  *if (suspect_reza)
+    The suspicion crystallizes into certainty.
+  *else
+    *set suspect_reza true
+    You sit down heavily. Lord Reza. The old man with the sharp tongue and the sharper mind. You underestimated him.
+*elseif (route = 3)
+  The conspiracy's targets are surgical: every reform you proposed, every institution you tried to change, every person who supported transformation. The conspiracy does not merely oppose you. It opposes the idea that the empire can change at all.
+
+  *if (diplomacy_success)
+    And the coalition -- military, commercial, religious, noble -- is not united by ideology or loyalty. It is united by threat. Each faction within the conspiracy has a different reason to fear reform, but they all fear it.
+
+  The true enemy is not a single person. It is an alliance -- a coalition of threatened interests that has decided your reforms are a greater danger to the empire than any external foe.
+
+  But every coalition has a leader. A coordinator. A hand that holds the disparate threads together. And the evidence points to a figure who bridges all the threatened factions: a conservative cleric with noble connections and military allies, operating from within the Temple of Seven Wisdoms.
+
+  The conspiracy's nerve center is in the Temple itself, hidden beneath the sanctity of the Eternal Flame. And the person who built the coalition did so not through ambition but through genuine, terrifying conviction that reform will destroy the empire.
+
+*set identified_true_enemy true
+
+*page_break
+
+*comment === REAL CHOICE 2: CONFRONTATION DECISION ===
+
+You know. The shape of the conspiracy is clear. The identity of the mastermind burns in your mind like a coal in the hand -- impossible to hold, impossible to drop.
+
+The question is: what do you do with what you know?
+
+Farid watches you with wide eyes. He has followed the evidence to its conclusion alongside you. His face is pale, his notebook clutched to his chest.
+
+*choice
+  #Confront the suspect directly. Force them into the open.
+    *set confrontation_target "direct"
+    *set boldness %+ 10
+    *set honest %+ 5
+    *if (route = 1)
+      "I am going to the Dowager's Wing," you say.
+
+      Farid nearly drops his notebook. "My ${title_honorific} Vizier, you cannot -- she will -- the guards alone --"
+
+      "She is expecting me to hide. She is expecting me to build a case, gather allies, prepare for weeks. She does not expect me to walk into her parlor and tell her I know."
+
+      You check the seal ring on your finger. "Prepare copies of the evidence. Store them in three separate locations. If something happens to me, ensure they reach the Emperor."
+      *set rel_emperor %+ 5
+    *elseif (route = 2)
+      "I need a meeting with Lord Reza," you say.
+
+      Farid stares. "You want to walk into the lion's den?"
+
+      "I want to look the lion in the eye and let him know I see his teeth." You straighten your robes. "Arrange it. The old man's estate. This evening."
+
+      "He will have guards. Allies. He has been consolidating support--"
+
+      "Good. Let him feel safe. Safe men are careless men."
+      *set cunning + 3
+    *elseif (route = 3)
+      "I need to enter the Temple. The conspiracy's command structure is there, hidden in the administrative chambers beneath the Eternal Flame."
+
+      Farid swallows. "The Temple guards--"
+
+      "Will not stop the Grand Vizier from visiting the Temple of Seven Wisdoms. Not openly. And what I need is in the records they keep in the lower chambers. Records of meetings, correspondences, decisions. The evidence of the coalition's formation."
+      *set idealist %+ 5
+    *goto investigation_aftermath
+  #Build an airtight case first. When you move, you move with overwhelming proof.
+    *set confrontation_target "cautious"
+    *set boldness %- 5
+    *set ruthless %+ 5
+    *if (route = 1)
+      "Not yet," you say. "The Dowager has survived thirty years of court politics. If I confront her with incomplete evidence, she will not merely deny it. She will destroy whatever evidence remains and eliminate the witnesses."
+
+      Farid exhales with relief. "What do we do?"
+
+      "We build a case so complete that denial is impossible. Every document verified. Every financial trail confirmed. Every witness statement corroborated."
+      *set scholarship + 3
+    *elseif (route = 2)
+      "Lord Reza has had seventy-two years to prepare for this moment," you say. "He has contingencies for his contingencies. If we move before the case is complete, he will slip through and destroy us in the counterattack."
+
+      You begin organizing the documents into categories. "We need more. The financial trail is clear, but we need names. Specific noble houses. Specific payments. Enough to show the Council that this is not accusation but proof."
+      *set cunning + 3
+    *elseif (route = 3)
+      "The coalition is held together by fear of reform," you say. "If we confront them before we have complete evidence, we give them a common enemy to rally around. They will close ranks and become stronger."
+
+      Farid nods. "And if we present overwhelming proof?"
+
+      "Then the coalition fractures. Each member will try to save themselves. The person who betrays first gets the best deal."
+      *set diplomacy + 3
+    *goto investigation_aftermath
+  #Share the evidence with the Emperor first. This decision belongs to the throne.
+    *set confrontation_target "emperor"
+    *set honest %+ 10
+    *set idealist %+ 5
+    *set rel_emperor %+ 10
+    *if (route = 1)
+      "The Emperor needs to know," you say. "This is his mother, Farid. His mother. I cannot act on this without his knowledge and consent."
+
+      Farid's face is a battlefield of conflicting emotions. "He is sixteen years old, my ${title_honorific} Vizier. This will destroy him."
+
+      "He is the Emperor. Treating him as a child is what brought us to this point. The Dowager's greatest crime is not conspiracy -- it is the belief that her son cannot handle the truth."
+    *elseif (route = 2)
+      "The Emperor deserves to know what is being done in the name of tradition," you say. "Lord Reza claims to act for the empire, but his conspiracy has weakened every institution it touched."
+
+      Farid hesitates. "Will the Emperor believe us? Lord Reza has friends everywhere."
+
+      "That is why we bring the evidence. Not accusations. Evidence."
+    *elseif (route = 3)
+      "Emperor Roshan must be the one to act on this," you say. "If I confront the coalition alone, it becomes a power struggle between the Vizier and the establishment. If the Emperor confronts them, it becomes the throne asserting its authority."
+
+      Farid considers this. "The Emperor as the face of the confrontation, with our evidence behind him."
+
+      "Exactly. The reforms were never mine. They are the empire's. And the empire answers to the throne."
+    *goto investigation_aftermath
+
+*page_break
+
+*label investigation_aftermath
+
+*comment === REAL CHOICE 3: WHAT TO DO WITH REMAINING GAPS ===
+
+*set recovered_from_betrayal true
+
+The decision is made. But the evidence, comprehensive as it is, still has gaps. Gaps that a skilled opponent could exploit.
+
+"There are three areas where our case is weakest," Farid says, consulting his notes. "The direct link between the mastermind and the predecessor's murder. The identity of the Ghost -- we know the assassin is connected, but not how. And the foreign dimension -- the extent to which external powers are involved."
+
+The afternoon is fading. You have limited time before your next move.
+
+*choice
+  *selectable_if (strength > 55) #Pursue the Ghost connection. Track the assassin through the Citadel's hidden passages. [Requires Strength 55+]
+    *set strength + 3
+    *set evidence_count + 1
+    *if (secret_passage_found)
+      The secret passages you discovered months ago become your hunting ground. You move through the hidden corridors of the Citadel, tracing the routes the Ghost must have used. In a dead-end passage behind the Dowager's Wing, you find what you are looking for: a cache of weapons, a change of clothes, and a journal.
+
+      The journal belongs to the Ghost. It is sparse -- an assassin's record, not a philosopher's diary. But it contains enough: dates, targets, payment records, and a single reference to the person who recruited the Ghost from the disgraced temple guard.
+
+      *if (knows_ghost_identity)
+        The pieces fall into place. The Ghost's true identity, the recruitment from the temple guard, the connection to the conspiracy's leadership -- it forms a chain of evidence that cannot be denied.
+      *else
+        *set knows_ghost_identity true
+        The Ghost's identity is revealed at last. A former temple guard, expelled five years ago for questioning the High Priest's authority. Recruited by the conspiracy. Turned into a weapon.
+    *else
+      You search the Citadel's corridors, looking for traces of the assassin's movements. You find scratch marks on stone, a faint residue of lamp oil in an unused passage, the ghost of footprints in the dust. The trail is cold but not dead.
+
+      At its end, wedged into a crack in the masonry, you find a scrap of parchment. A set of orders, torn in haste, but partially legible. Enough to establish the connection between the Ghost and the conspiracy's command structure.
+    *goto closing
+  #Investigate the foreign connection. Ambassador Chen knows more than he has told.
+    *set diplomacy + 3
+    *set evidence_count + 1
+    *set rel_chen %+ 5
+    Ambassador Chen receives you in the Confederation embassy's garden, where roses imported from the western lowlands bloom in defiant profusion. He is drinking coffee -- the fashionable new import -- and his expression, when he sees you, is a carefully calibrated mixture of surprise and welcome.
+
+    "Vizier. I heard you were... indisposed."
+
+    "I am disposed to have a conversation, Ambassador."
+
+    He studies you over the rim of his cup. Then he sets it down.
+
+    *if (diplomacy > 55)
+      "You are more resilient than they anticipated," he says. And the mask slips, just for a moment. "The Confederation did not orchestrate the conspiracy, Vizier. But we were approached. Two years ago. An intermediary offered us intelligence about your empire's military deployments in exchange for economic cooperation -- the embargo, the disruption of trade routes."
+
+      "You accepted."
+
+      "We accepted some of it. The military intelligence was useful. The economic disruption served our interests." He meets your eyes. "But we did not know the full scope of what we were being drawn into. And we did not authorize the assassination of your predecessor. That was... beyond the arrangement."
+
+      It is not an apology. But it is a confession, and it is a piece of the puzzle you needed.
+    *else
+      The conversation is a dance of implication and inference. Chen does not confess, does not reveal, does not confirm. But in the spaces between his careful words, you hear enough. The Confederation was approached. They cooperated, to a point. They did not know everything.
+
+      It is thin. But it establishes the foreign dimension.
+    *goto closing
+  #Focus on the predecessor's murder. Consult Poison-maker Yusuf for the final link.
+    *set evidence_count + 1
+    *set cunning + 3
+    *if (met_yusuf)
+      Yusuf greets you in his cluttered workshop with the cheerful enthusiasm of a man who does not understand -- or does not care -- that his knowledge is terrifying.
+
+      "Blue lotus venom, yes, we discussed this before. Nasty compound. Beautiful chemistry. Now, you want to know who purchased it?" He shuffles through his records. "I keep meticulous records, Vizier. A professional must. And I recall this particular sale because the buyer paid double my usual price and asked me not to record the transaction." He beams. "I recorded it anyway. I always do. Professional integrity."
+
+      The name in his ledger is not the mastermind's. It is an intermediary. But the intermediary's connection to the conspiracy's leadership is documented in your other evidence. The chain is complete.
+
+      "Blue lotus venom, properly administered, is untraceable by anyone who does not know what to look for," Yusuf says. "Your predecessor's physician diagnosed fever. I could have told him otherwise in ten seconds." He shakes his head sadly. "Such a waste of good poison. And good people."
+    *else
+      You seek out the Master Apothecary in his shop in the Scholar's Quarter. Yusuf's workshop is a cabinet of wonders and horrors: dried plants in labeled jars, mineral compounds in glass vials, and what appears to be a small collection of preserved insects arranged by toxicity.
+
+      "A visitor," he says, his grandfatherly face lighting up. "And one with questions about poison, if I read the look in your eyes correctly. Come in. Have some tea -- don't worry, it's safe. I only poison for a fee."
+
+      *set met_yusuf true
+
+      He examines the residue from the vial you found months ago and confirms what you have long suspected: blue lotus venom, administered over several days, undetectable to anyone without specialized knowledge. And he provides one crucial detail you did not have.
+
+      "The venom was refined," he says. "Not raw extract. Someone with alchemical training processed this. That narrows your field of suspects considerably."
+    *goto closing
+
+*page_break
+
+*label closing
+
+*comment === CLOSING: THE FULL PICTURE ===
+
+*page_break
+
+You return to your chambers as evening falls.
+
+The walk back through the Citadel is different now. You pass through corridors you have walked a hundred times, but they have changed -- or rather, you have changed, and the world has rearranged itself around your new understanding. The marble floors that once felt cool and solid beneath your feet now feel like the skin of a living thing, an organism that breathes and schemes and hides its intentions behind beauty.
+
+The courtiers you pass bow and murmur greetings. Do they know? Which of them are loyal, and which were purchased? The guard at the corner salutes. Was his rotation altered by the conspiracy? The servant carrying linens averts her eyes. Is she carrying messages in the folds of that cloth?
+
+This is what the conspiracy does. It does not merely threaten the empire. It poisons your ability to trust it.
+
+*page_break
+
+The city below is lighting its lamps, ten thousand points of fire piercing the gathering dark like stars fallen to earth. The Eternal Flame is visible from your window -- a steady golden glow above the Temple Quarter, the oldest light in the empire. You wonder, not for the first time, whether the Flame truly is eternal. Or whether it, too, is simply a fire that has been maintained by human hands, century after century, tended and guarded and kept alive by the stubborn refusal to let it die.
+
+Perhaps it does not matter. Perhaps the keeping is the point.
+
+Farid is waiting with fresh tea -- cardamom again, always cardamom -- and an organized summary of everything you have found today. He has assembled it into a single document, cross-referenced and annotated, with margin notes and appendices and a table of contents. It is the best administrative work you have ever seen, and you tell him so. His ears turn pink.
+
+"My ${title_honorific} Vizier," he says, handing you the document with both hands, as if it is a sacred text. "I believe this is the complete picture."
+
+*page_break
+
+You read it. Page by page. Every thread, traced to its source. Every connection, documented. Every payment, every order, every coded message, every bribed official, every murdered obstacle.
+
+The conspiracy that killed your predecessor. That fed intelligence to the Northern Khanates, enabling raids that killed soldiers and terrorized the border provinces. That engineered the trade embargo, bleeding the treasury and threatening the livelihoods of thousands. That placed an assassin in the heart of the Citadel to strike at the Emperor. That orchestrated the betrayal that nearly destroyed you.
+
+All of it. Connected. Documented. Named.
+
+*if (route = 1)
+  The Dowager Empress Nur, Mother of the Empire, She Who Endures. The woman who chose you. The woman who placed you on this chair because she believed she could control you. The woman who loves her son and fears his independence in equal measure.
+
+  She would call it protection. She would say she is saving the empire from a boy emperor's mistakes. She would say that her hand on the levers of power is the only thing standing between the empire and collapse.
+
+  And she would believe it. That is what makes her the most dangerous person in the empire.
+*elseif (route = 2)
+  Lord Reza, Elder of the Noble Council, keeper of two hundred years of aristocratic privilege. The old man who sat in the gallery and watched you with eyes like a hawk watching a field mouse.
+
+  He would call it duty. He would say the nobility is the empire's spine, and that reformers and newcomers and commoners with ideas above their station are a disease that must be purged. He would say that the old ways are the only ways.
+
+  And part of him would be sincere. That is what makes him so effective.
+*elseif (route = 3)
+  A coalition of fear. Military officers who see reform as weakness. Nobles who see it as theft. Temple elders who see it as heresy. Merchants who see it as disruption. All of them united by a single conviction: that the old order, for all its flaws, is better than the unknown.
+
+  They are not evil. Most of them, taken individually, are people who love the empire in their own way. But together, coordinated by a mind that knows how to turn fear into action, they have become something monstrous.
+
+*page_break
+
+You set the document down. The tea is cold again. Through the window, the Eternal Flame burns steady and sure, as it has for three centuries.
+
+You know who the enemy is. You know what they want. You know how they operate.
+
+*page_break
+
+Now you need a plan.
+
+You go to the window. The night air is cool, carrying the scent of the river and the distant sound of the mechanical clock in the Tower of Stars. The city is a map of light below you -- the Grand Bazaar, dark now, its vaulted corridors empty; the Temple Quarter, glowing with the Eternal Flame's steady gold; the Garrison, lit with watch fires; the Old City, a labyrinth of shadows where Zara's agents move like fish through dark water.
+
+Every district. Every institution. Every light represents someone who lives in this empire and trusts that the people in the Citadel are governing in their interest. That trust is the most valuable thing in the world. More valuable than silk, or jade, or gold. And the conspiracy has been spending it like cheap copper, debasing it coin by coin, until the treasury of public faith is nearly empty.
+
+You will fill it again. Or you will die trying.
+
+*page_break
+
+"Farid," you say, turning from the window. "We have work to do."
+
+He opens his notebook to a fresh page. The quill is ready. His eyes are steady. The stammering, tea-spilling secretary who greeted you at the gates of Khazara is still in there, somewhere. But the person sitting before you now is something more: a partner. An ally. Someone who has walked through fire at your side and emerged with singed robes and intact loyalty.
+
+"What do we need?" he asks.
+
+"We need allies. Specific ones. People whose support will ensure that when we move, we move with irresistible force."
+
+*if (route = 1)
+  "The Emperor must be at the center," you say. "This is his throne we are defending. His empire. If the confrontation comes from anyone other than Roshan himself, the Dowager can dismiss it as a power grab. But if the Emperor stands and speaks in his own voice -- truly his own voice, not coached, not scripted -- then the court will see what I have seen. A ruler."
+*elseif (route = 2)
+  "We need to isolate Lord Reza from his allies before we strike," you say. "The old man's power comes from the collective weight of the noble houses behind him. Separate the houses from the man, and the man is just a seventy-two-year-old with a long memory and a short future."
+*elseif (route = 3)
+  "The coalition must be fractured from within," you say. "Fear holds it together. If we can show each member that the coalition's interests do not align with their own -- that they are being used, not served -- the fractures will do our work for us."
+
+Farid writes. The quill scratches across the paper. Outside, the stars continue their slow wheel above the sleeping city.
+
+*page_break
+
+*if (determination = "defiant")
+  "They tried to break us," you say. "They failed. Now it is our turn."
+*elseif (determination = "calculating")
+  "We have the evidence," you say. "Now we need the strategy to use it."
+*elseif (determination = "principled")
+  "The empire deserves the truth," you say. "Let us give it to them."
+*else
+  "Tomorrow," you say, "we begin the endgame."
+
+Farid nods. He gathers his papers, checks his ink supply, and straightens the stack of evidence on the desk with the reverence of a temple scholar arranging sacred texts. Then he pauses at the door.
+
+"My ${title_honorific} Vizier?"
+
+"Yes, Farid?"
+
+"I have been thinking about something. About my predecessor -- the secretary before me. The one who served the Vizier before you." He swallows. "He was not sick the day the Vizier was murdered. I learned that recently. He was sent away. Given a task in another part of the city, far from the Citadel, by someone who knew what was about to happen."
+
+He meets your eyes. "Someone saved my life by sending me away. And I have spent every day since then wondering why I was spared and my master was not."
+
+"Farid--"
+
+"I think I know now," he says. "I was spared so that I could be here. Tonight. With you. Doing this." He straightens his collar. "Goodnight, my ${title_honorific} Vizier. Tomorrow, we save the empire."
+
+The door closes softly behind him.
+
+*page_break
+
+You are alone with the lamplight and the evidence and the knowledge that will change everything. The Eternal Flame burns above the Temple Quarter, patient and undying. The fountain in the garden whispers its eternal song. The city sleeps beneath its canopy of stars, unaware that tomorrow its foundations will be shaken to bedrock.
+
+You sit at your desk. You read the evidence one more time, beginning to end. Then you close the document and press the Vizier's seal ring to your lips -- a gesture that surprises you, half prayer and half promise.
+
+The lamplight flickers. The night deepens. Somewhere in the Citadel, the enemy sleeps too, unaware that the web they wove has been untangled, thread by thread, and that the person they thought they had destroyed is sitting in a room full of their secrets, planning the morning.
+
+You are ready.
+
+*finish The web untangled -- the eve of battle approaches.

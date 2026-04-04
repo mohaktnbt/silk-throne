@@ -1,0 +1,569 @@
+*comment === SCENE 6: THE EMBARGO ===
+*comment Word target: ~8,000
+*comment Variables modified: scene6_embargo_result, rep_trade, rep_military,
+*comment   rel_guild, rel_chen, gold, evidence_count, boldness, idealist,
+*comment   ruthless, honest, rel_general, rep_intelligence, rel_spy
+
+*temp embargo_approach "undecided"
+*temp chen_mood "neutral"
+*temp spy_connection_found false
+*temp negotiation_tone "undecided"
+
+*comment === OPENING: THE TRADE CRISIS ===
+
+The summons comes at the hour when the evening call to prayer still hangs in the air like smoke.
+
+You are in your chambers, reviewing the day's correspondence by lamplight. The wick needs trimming -- the flame gutters and sways, making the ink on the parchment seem to crawl. Through the open window, the Garden of Eternal Spring exhales the scent of jasmine and wet stone. A fountain murmurs in the courtyard below, its voice as steady and constant as a heartbeat.
+
+It is the kind of evening that could lull you into believing the empire is at peace.
+
+Then Farid bursts through the door without knocking.
+
+He is pale. In the months you have known him, Farid has never once forgotten to knock. He has knocked on doors that were already open. He once knocked on a curtain. Protocol runs through his veins the way the Ashar River runs through the valley -- it simply does not stop.
+
+Tonight, it has stopped.
+
+"My ${title_honorific} Vizier," he says, and the words come out in a rush, tumbling over one another like merchants fleeing a fire. "There is an emergency session of the Council. Guildmaster Priya has called it herself. She invoked the Commercial Crisis Protocol -- regulation 88-A, subsection -- well, the specifics don't matter, though I have the relevant documentation if you -- no. What matters is the Western Confederation has imposed a full trade embargo."
+
+*page_break
+
+The word settles over the room like a stone dropped into still water.
+
+An embargo.
+
+The Western Confederation controls the far end of the Silk Road. Every bolt of Khazaran silk, every sack of pepper, every chest of rubies that crosses the Ashghar Mountains passes through their ports and markets before reaching the wider world. They are the gateway, and tonight they have slammed it shut.
+
+If the Confederation closes its doors to Khazaran goods, the empire does not simply lose profit. It hemorrhages. The tariff revenue that funds the army, maintains the roads, feeds the garrisons on the northern wall -- all of it flows from trade. Cut the trade, and the empire begins to starve. Not in months. In weeks.
+
+You rise and reach for your formal robes. Farid is already holding them out, his hands trembling slightly. You notice he has brought the heavier robe -- the one with gold thread at the collar and the imperial seal embroidered on the breast. He wants you to look imposing. You are grateful for the instinct.
+
+"How bad?" you ask, fastening the sash.
+
+"Guildmaster Priya used the word 'catastrophic,'" Farid says, following you into the corridor. His sandals slap against the marble in a frantic rhythm. "She does not use that word lightly. She once described a warehouse fire that destroyed ten thousand gold dirhams' worth of silk as 'an inconvenience.' She described the collapse of the southern bridge -- the one that killed three mules and blocked traffic for a week -- as 'suboptimal.'"
+
+"And this is catastrophic."
+
+"This is catastrophic."
+
+The corridors of the Citadel are never fully dark. Oil lamps burn in iron sconces every twenty paces, casting pools of warm amber light between stretches of shadow. You pass a pair of guards who snap to attention as you approach, their armor catching the lamplight in brief, sharp flashes. The air smells of sandalwood incense and the faint, ever-present musk of old stone. The Citadel is three centuries old, and no amount of perfume entirely masks its age.
+
+*page_break
+
+The Council Chamber is lit by a hundred oil lamps, their flames reflected in the polished surface of the round table. The air smells of frankincense and anxiety -- the latter you identify by the particular quality of the silence when you enter. It is the silence of people who have been arguing and have paused to watch the door.
+
+Everyone is already present. A rare thing.
+
+General Kadir stands by the window with his iron hand resting on the sill, his jaw clenched so tight you can see the muscle jumping in his cheek. The prosthetic gleams dully in the lamplight -- dark iron, articulated at the wrist, a thing of grim utility. His good hand rests on the pommel of his sword, though there is nothing in this room to fight. The habit of a lifetime spent at war.
+
+High Priest Ashoka sits in his customary stillness, hands folded in his lap, eyes half-closed in an expression that might be meditation or might be a man calculating three moves ahead while appearing to pray. His white robes are immaculate. They are always immaculate. You have begun to suspect that this is, itself, a form of political statement.
+
+Spymaster Zara occupies her chair in the deepest shadow, as always. She has chosen the seat where the lamplight does not quite reach, where her face is a study in angles and darkness. Her expression is unreadable. It is always unreadable. You have begun to suspect that the expression itself is the message: *I see everything. You see nothing of me.*
+
+And Guildmaster Priya is pacing.
+
+You have never seen Priya pace. Priya sits. Priya lounges. Priya leans back in her chair with a cup of wine and presides over conversations with the easy confidence of a woman who knows the price of everything in the room, including the people. She smiles when others frown and laughs when others shout. Pacing is not in her vocabulary.
+
+Tonight, it is.
+
+She stops when you enter. Her dark eyes fix on you with an intensity that cuts through the lamplight like a blade through gauze.
+
+"Vizier. Thank you for coming quickly." Her voice is controlled -- Priya's voice is always controlled -- but beneath the control you hear something you have never heard from her before: fear. "Sit down. I have numbers, and they are ugly."
+
+You take your seat at the round table. The seal ring on your finger catches the lamplight -- jade and silver, a small cold weight that carries the authority of three centuries. Every person at this table is watching you. You can feel it the way you feel the heat of a fire: a pressure on the skin, invisible but unmistakable.
+
+*page_break
+
+Priya does not sit. She stands at the head of the table and speaks as if presenting testimony before a court.
+
+"Six hours ago, the Confederation Merchant Council voted unanimously to halt all trade with the Khazaran Empire. Effective immediately. Every Khazaran merchant ship currently in Confederation ports is impounded. Every caravan approaching the western passes is being turned back. The Ashghar Pass customs house -- the largest land crossing between our empire and the western world -- has been shuttered."
+
+She lets the silence do its work. She is good at this -- the merchant's instinct for timing, for knowing when a pause is worth more than words.
+
+"The cost," she continues, her voice dropping half a register, "is forty thousand gold dirhams per week. Per *week*. That is not an abstract number, Vizier. That is soldiers who do not get paid. Roads that do not get built. Medicines that do not reach frontier garrisons. A grandmother in the provinces who does not eat." She places both hands flat on the table, fingers spread, as if she is physically holding the empire's economy together by force of will. "This is not a diplomatic spat. This is an attack on the empire's lifeblood. Every day we spend arguing about a response is a day we bleed."
+
+General Kadir breaks the silence with a fist on the windowsill. The sound is startling in the enclosed chamber -- iron on stone, a battlefield sound in a room built for whispers.
+
+"Then we respond in kind. Send the navy. Blockade their southern ports. See how they like it when their own merchants come begging at our gates."
+
+"With what navy?" Priya snaps, turning on him. "We have thirty warships. They have a hundred and fifty. We are a land power, General. Naval threats from us are a joke they tell in Confederation taverns while drinking wine from goblets they bought with our tariff money."
+
+"Then send the army through the passes. Seize the customs house by force."
+
+"And start a war that will destroy the very trade routes we are trying to protect. Brilliant. That is like burning down the bazaar to kill a rat."
+
+*page_break
+
+High Priest Ashoka opens his eyes. When he speaks, his voice is the calm at the center of the storm -- low, measured, each word placed with the precision of a master calligrapher's brushstroke.
+
+"The Flame teaches us that the hand which strikes in anger often wounds itself. Perhaps before we discuss responses, we should first understand causes. Why has the Confederation acted now? What specific provocation has produced this drastic response?"
+
+All eyes turn to Spymaster Zara.
+
+She is quiet for a moment. The deliberate pause -- you have come to recognize it as the interval in which Zara selects exactly which truths to share and which to hold in reserve. She is always choosing. Her entire existence is an exercise in selective disclosure.
+
+"A Khazaran intelligence operative was captured in the Confederation port of Westmarch three weeks ago," she says at last. Her voice is flat, factual, stripped of inflection. "He was carrying documents related to Confederation naval deployments. Fleet movements. Harbor defense rotations. Shipyard production schedules. The Confederation considers this an act of espionage."
+
+The room erupts. Kadir demands to know who authorized the operation. Priya wants to know why she was not informed of an intelligence action that could trigger an economic crisis. Ashoka speaks of the wisdom of transparency and the dangers of shadow operations conducted without the knowledge of the Flame. Their voices overlap and collide -- General's bark, Guildmaster's snap, Priest's measured reproach -- filling the chamber with the particular cacophony of powerful people discovering they have been blindsided.
+
+Zara endures the storm without expression. She sits in her shadow and waits. She is very good at waiting.
+
+"I did not authorize the operation," she says, when the noise subsides. Her voice has not changed -- still flat, still factual. "The operative was not mine."
+
+The silence that follows is different from the one before. This one has teeth.
+
+"If he was not yours," you say into that silence, "then whose was he?"
+
+Zara's eyes meet yours across the table. In the lamplight, they are dark and sharp and absolutely unforgiving.
+
+"That," she says, "is an excellent question."
+
+*page_break
+
+*comment === FAKE CHOICE 1: Reaction to the revelation ===
+
+*fake_choice
+  #The revelation sends a chill through you. Someone is running intelligence operations outside the sanctioned network -- someone with the resources to provoke a trade war.
+    *set boldness %- 5
+    *set idealist %+ 5
+    The implications settle over you like frost on marble. If someone within the empire is running rogue intelligence operations -- operations significant enough to provoke a trade war -- then the conspiracy you have been uncovering reaches further than you imagined.
+
+    This is not merely about your predecessor's murder. This is not merely about the Khanate raids or the symbol under the council table. This is about someone willing to damage the empire itself, to bleed its treasury and starve its people, to achieve their ends. Someone who treats the Silk Road like a piece on a game board.
+
+    You think of the poison vial, the secret passage, the anonymous note. *Your predecessor died screaming.* Whoever wrote those words is not afraid of pain, not theirs and not anyone else's.
+  #Your mind immediately begins calculating who benefits from this chaos. Every crisis has an architect.
+    *set ruthless %+ 5
+    *set boldness %+ 5
+    Your mind works like an abacus, sliding pieces into place. A rogue intelligence operation -- someone with access to Khazaran spies and Khazaran gold, but operating outside the official channels. A captured operative -- conveniently caught with the kind of documents that would force the Confederation to respond. An embargo -- bleeding the treasury at precisely the moment the empire can least afford it, with the northern border under pressure and the army demanding funds.
+
+    Someone wanted this crisis. Someone who profits from the empire's economic weakness, or who needs the Council distracted while they move other pieces on the board. The question is not who is responsible. The question is who benefits.
+
+    The answer, you suspect, is the same shadow that has been lurking behind every crisis since you arrived.
+  #You feel a flash of anger. The empire's people will suffer for this shadow game, and they did not ask to be pawns.
+    *set idealist %+ 10
+    *set honest %+ 5
+    The anger comes quick and clean, like a blade drawn from a sheath. Forty thousand gold dirhams a week. Soldiers unpaid, roads unbuilt, grandmothers unfed. Real people, real suffering, all because someone in the shadows decided to play games with the empire's foreign relations.
+
+    You think of the Grand Bazaar -- the merchants who rose before dawn to arrange their stalls, the spice sellers with their pyramids of saffron and cardamom, the weavers displaying silk in colors that catch the morning light. Those people will feel this embargo in their bones. Those people did not authorize spy missions or forge intelligence documents.
+
+    You grip the edge of the table and feel the wood grain press into your palms. Whoever engineered this will answer for it.
+
+The Council is fracturing before your eyes. Priya and Kadir are arguing across the table, their voices a discordant counterpoint of military urgency and economic fear. Ashoka is attempting mediation, his calm voice threading through their argument like a stream between boulders. Zara has gone silent, watching the room with the patient attention of a cat at a mouse hole.
+
+The Emperor is not present -- the Dowager judged the emergency session a matter for the Council to resolve. But you feel the weight of the Silk Throne in this room as surely as if Roshan himself were sitting at its head. Every faction is pulling in a different direction. Every moment of indecision costs the empire gold it cannot afford to lose.
+
+It falls to you. It always falls to you. That is what the seal ring means.
+
+*page_break
+
+*comment === REAL CHOICE 1: Approach to the embargo ===
+
+You stand. The movement cuts through the argument like a blade through silk. One by one, they turn to you -- Kadir with his iron hand clenched, Priya with her dark eyes blazing, Ashoka with his serene, watchful calm, Zara with her face of stone.
+
+"Enough," you say. The seal ring glints on your finger. "We have a crisis. We need a response. Not tomorrow. Not at dawn. Tonight."
+
+*choice
+  #"I will negotiate directly with Ambassador Chen. Diplomacy is faster than armies and cheaper than sanctions."
+    *set embargo_approach "diplomatic"
+    *set rep_trade %+ 8
+    *set rep_military %- 5
+    *set rel_guild %+ 10
+    *set rel_general %- 5
+    *set boldness %+ 5
+    *set honest %+ 5
+    *set diplomacy + 3
+    Priya nods sharply. A single, decisive motion, like a ledger being closed. "Good. Chen is a snake, but a reasonable snake. He'll negotiate if you give him a reason to. I can have trade figures and counter-proposals ready within the hour."
+
+    General Kadir's iron hand clenches on the windowsill. "Diplomacy. While our merchants rot in foreign ports. While our caravans are turned back at the passes like beggars."
+
+    "While our merchants are returned safely," you correct him, "with their goods and their ships intact. A naval engagement against a fleet five times our size accomplishes nothing that words cannot do better and faster, General."
+
+    Kadir's jaw works -- the muscle jumping, clenching, releasing. But he does not argue further. Even he knows the empire's navy cannot match the Confederation's. The Khazaran Empire is a creature of mountains and rivers, not of the sea.
+
+    Zara speaks from her shadow. "I can arrange a meeting with Chen within the hour. He's expecting it. He's been expecting it since the embargo was announced -- probably before. His agents in the Foreign Quarter have been unusually active since noon."
+
+    "Then he came prepared to negotiate," you say.
+
+    "Or prepared to stall," Zara replies. "Be careful. Chen's smile has more edges than Kadir's sword."
+    *goto prepare_chen_meeting
+  #"We impose counter-sanctions. Cut off their access to eastern goods entirely. Make the embargo hurt both sides -- but them more than us."
+    *set embargo_approach "economic"
+    *set rep_trade %+ 5
+    *set rep_military %+ 5
+    *set rel_guild %+ 5
+    *set boldness %+ 10
+    *set ruthless %+ 5
+    *set cunning + 3
+    Priya's eyes widen -- then narrow with calculation. You can almost hear the abacus clicking behind those dark irises, the rapid assessment of cost and gain that is as natural to her as breathing.
+
+    "Counter-sanctions," she says. "Bold. If we block all eastern goods from reaching Confederation markets -- silk, spices, porcelain, lacquerware, everything that crosses the Jade Sea -- their own merchants will pressure the Merchant Council to end the embargo. Their economy depends on reselling our goods to the Island Kingdoms and the southern trade routes. Without our products, their merchant fleet sits idle in harbor."
+
+    "Economic warfare," Kadir says, and for the first time tonight there is something like approval in his voice. "Hit them in the purse. I understand that language."
+
+    "It will hurt us too," Ashoka warns, his calm voice cutting through the approval. "Our merchants lose revenue as well. The eastern traders who depend on Confederation markets will suffer."
+
+    "For weeks," Priya says. "They lose revenue for months. The asymmetry is our advantage."
+
+    "Then we move quickly," you say. "Draft the sanctions tonight. Seal the eastern ports to all Confederation-flagged vessels at dawn."
+
+    Zara watches the exchange without expression. "While you wage your economic war, I suggest someone also investigate who sent that rogue spy. The embargo is a symptom. The spy is the disease."
+    *goto prepare_chen_meeting
+  #"Spymaster Zara -- find out who sent that operative. The embargo is a weapon. I want to know who forged it."
+    *set embargo_approach "intelligence"
+    *set rep_intelligence %+ 10
+    *set rep_trade %- 5
+    *set rel_guild %- 5
+    *set rel_spy %+ 10
+    *set boldness %- 5
+    *set ruthless %+ 5
+    *set cunning + 3
+    Zara's expression does not change. But something shifts in the quality of her attention -- a subtle realignment, like a hunting cat that has seen movement in the tall grass. Her eyes sharpen. Her stillness becomes a different kind of stillness: not passive, but gathered. Ready.
+
+    "You want me to find the rogue operative's handler," she says. It is not a question.
+
+    "I want you to find the person who started this crisis," you say. "The embargo is a weapon someone aimed at us. I want to know who pulled the trigger, who forged the blade, and who paid for the steel."
+
+    Priya's face tightens. "Vizier, while we investigate, the empire bleeds. Forty thousand a week--"
+
+    "I know the cost, Guildmaster. But lifting the embargo solves nothing if the person who engineered it can simply trigger another crisis next month. We treat the disease, not the symptom."
+
+    Zara stands. The motion is fluid, unhurried, but carries with it a sense of machinery engaging -- gears turning, networks activating.
+
+    "I will need access to the Confederation embassy's correspondence. Ambassador Chen's private messages, incoming and outgoing. I will also need three days of quiet -- no military posturing, no counter-sanctions, nothing that alerts the target. Give me silence, Vizier, and I will give you a name."
+    *goto prepare_chen_meeting
+  *selectable_if (strength > 35) #"General Kadir -- mobilize the mountain garrisons. If they want to play games with our trade, we close the passes entirely." [Requires Strength 35+]
+    *set embargo_approach "military"
+    *set rep_military %+ 10
+    *set rep_trade %- 10
+    *set rel_general %+ 10
+    *set rel_guild %- 10
+    *set boldness %+ 10
+    *set ruthless %+ 10
+    *set strength + 3
+    Kadir straightens. The transformation is immediate and striking -- the frustrated general at the window is gone, replaced by the Commander of the Armies, the Sword of the Empire. His iron hand unclenches. His shoulders square. For the first time in the session, he looks at you with something that is not contempt.
+
+    "Finally," he says. "Someone who understands that a fist speaks louder than a ledger."
+
+    "The mountain passes are sovereign Khazaran territory," you say. "We have every right to close them. If the Confederation wants to impose an embargo on Khazaran goods, let them deal with the consequences of losing all access to the eastern trade routes. Not just our goods -- everyone's goods. Every merchant in the known world who wants to move silk or spice or gems between East and West does it through our passes."
+
+    Priya's face has gone white. "Vizier, you're talking about shutting down the Silk Road. The economic consequences--"
+
+    "The economic consequences will be severe," you agree. "For everyone. Including the Confederation. Especially the Confederation. They need our passes more than we need their ports. Geography is our weapon, and it cannot be blockaded."
+
+    Ashoka shakes his head. "This is a blade that cuts both ways, child."
+
+    "Every blade cuts both ways, High Priest. The question is which side has the harder grip."
+
+    Kadir is already moving toward the door. "I can have the Ashghar garrison reinforced by dawn. Eagle's Nest can close the northern pass by noon. Give the word, Vizier."
+    *goto prepare_chen_meeting
+
+*comment === MEETING WITH AMBASSADOR CHEN ===
+
+*label prepare_chen_meeting
+
+*page_break
+
+Regardless of your strategy, one thing is clear: you must speak with Ambassador Chen. Whether to negotiate, to deliver an ultimatum, to extract information, or to stall for time, the Confederation's representative in Khazara is the fulcrum on which this crisis turns. He is the face of the embargo, and faces can be read.
+
+You send word to the Foreign Quarter. The response comes within minutes -- a polite note on cream-colored paper, sealed with the Confederation's eagle-and-compass emblem. Chen, it seems, has been waiting for your message. You suspect the note was written before your messenger arrived.
+
+The meeting is arranged in a neutral space: a private room in the House of the Blue Fountain, a diplomatic guesthouse near the Foreign Quarter. The room is small but elegant -- turquoise tiles on the walls in geometric patterns that catch and scatter the lamplight, a low table of dark wood between two cushioned seats, and a fountain in the corner whose gentle splashing masks the conversation from any listeners beyond the door.
+
+The fountain is not decorative. It is strategic. In Khazara, every beautiful thing serves at least two purposes.
+
+*page_break
+
+Ambassador Chen arrives precisely on time. He is a lean man of middle years, clean-shaven, with the sharp, watchful eyes of a merchant assessing goods. He is impeccably dressed in Confederation fashion -- tailored jacket, embroidered vest, high polished boots -- but with a Khazaran silk sash draped over one shoulder. A deliberate blend of cultures, a visual argument for the interconnectedness he is currently working to sever.
+
+His Khazari is excellent, spoken with a slight accent that you suspect he maintains by choice rather than necessity. The accent says: *I am foreign. I am not bound by your rules. I can say things your people cannot.*
+
+"Vizier," he says, offering a bow that is correct to the millimeter -- respectful without being deferential, formal without being cold. "Thank you for seeing me so promptly. I had hoped we might discuss recent developments over civilized refreshment."
+
+He gestures to the table, where a servant has laid out cardamom tea and almond pastries on porcelain dishes that are, you note, of Khazaran manufacture. Another message: *We value your products. We simply wish to renegotiate the terms.*
+
+"I took the liberty," he adds, with a smile that reveals nothing and suggests everything.
+
+*page_break
+
+You study him as you take your seat. His face is composed, pleasant, as smooth and unreadable as the porcelain on the table. He might be greeting a friend for afternoon tea. He might be negotiating the fate of empires.
+
+He is doing both.
+
+"Ambassador," you say. "The Confederation has imposed a full trade embargo on the Khazaran Empire. I trust you can explain why."
+
+Chen pours tea with the careful precision of a man who has made an art of the gesture. The liquid is pale gold, fragrant with cardamom. Steam curls between you, rising and dissipating in the lamplight like a thought not quite formed.
+
+"The Confederation Merchant Council acted in response to a specific provocation," he says, setting the teapot down with the exact same control. "A Khazaran operative was apprehended in Westmarch carrying classified documents. Naval deployments, harbor defense rotations, fleet movement schedules." He aligns the teapot with the edge of the tray. "You can appreciate that this was... alarming."
+
+"The operative was not sanctioned by the Khazaran intelligence service."
+
+"So I am told." Chen's smile does not waver. "But he carried Khazaran documents. He spoke Khazari. He was funded with Khazaran gold ashrafs. The Confederation must act on what it sees, not on what it is told."
+
+The fountain murmurs between you, filling the silence with its silver commentary. You lift the tea to your lips. It is perfectly brewed -- the cardamom precise, the sweetness restrained, the temperature ideal. Even Chen's tea is diplomatic.
+
+*page_break
+
+*comment === FAKE CHOICE 2: Negotiation approach ===
+
+*fake_choice
+  #You sip the tea and let the silence work. Chen is a man who fills silence with concessions -- his training will not allow dead air.
+    *set honest %- 5
+    *set boldness %+ 5
+    *temp negotiation_tone "patient"
+    The silence stretches. The fountain fills it with silver sound. Chen sips his own tea. His eyes are steady on yours, but you see the faintest flicker of uncertainty at the corner of his mouth -- a micro-expression, there and gone, like a fish breaking the surface of still water. He expected you to speak first. Diplomats always expect the other side to speak first, because the first speaker reveals the most.
+
+    You do not speak. You sip your tea. You wait.
+
+    It takes twenty seconds. Twenty seconds of the fountain murmuring and the lamps flickering and two people sitting across a table, playing the oldest game in the world: who will blink first.
+
+    Chen blinks.
+
+    "The Confederation," he says at last, "is not interested in a prolonged economic conflict. We are, however, interested in assurances."
+
+    There it is. The opening. The crack in the porcelain.
+  #You set the cup down and lean forward. Directness may surprise him -- it is not the Khazaran way.
+    *set honest %+ 5
+    *set boldness %+ 10
+    *temp negotiation_tone "direct"
+    You set the teacup down with a deliberate click against the saucer. The sound is small but precise, and it draws Chen's attention the way a sword drawn from a sheath draws attention.
+
+    "Ambassador Chen. We both know the operative was not sanctioned by this government. We both know the embargo is a lever, not a response. And we both know that you did not arrange this meeting, with this tea, at this hour, because you are interested in prolonged conflict."
+
+    You lean forward.
+
+    "Let us dispense with the performance and discuss what the Confederation actually wants."
+
+    Chen's eyebrows rise a fraction -- the tiniest breach in the diplomatic facade. His smile broadens, and for a moment you see the real man beneath the ambassador: sharp, amused, and slightly impressed.
+
+    "Direct," he says. "I find that refreshing. Khazaran diplomacy is usually conducted in metaphors so elaborate that by the time you understand what someone is saying, the moment for action has passed." He sets down his own cup. "Very well. Let us be direct."
+  #You match his calm, watching his hands, his eyes, the micro-expressions beneath the mask. This man is not your enemy -- but he is not your friend, either.
+    *set cunning + 3
+    *set honest %- 5
+    *temp negotiation_tone "analytical"
+    You match his composure, but your eyes are busy. You watch the way his fingers rest on the teacup -- steady, but the knuckle of his index finger is white with pressure. You watch the way his gaze flickers to the door every thirty seconds -- not fear, but awareness, the habit of a man who never forgets he is in foreign territory. You watch the tiny tension in his jaw when you mention the operative.
+
+    He is not afraid. But he is watchful in a way that suggests the stakes are higher than he is showing. Something about this embargo is costing him, too -- not just politically, but personally.
+
+    "The Confederation's position is clear," you say carefully. "What interests me is whether the Confederation's position and your position are entirely the same thing, Ambassador."
+
+    A pause. The fountain fills it with its patient silver voice. Then Chen's smile changes -- becomes, for just a moment, genuine. Not the diplomat's smile. The smile of a man who has been recognized.
+
+    "You are more observant than your predecessor," he says quietly. "That may prove to be either very useful or very dangerous. Possibly both."
+
+*page_break
+
+*comment === REAL CHOICE 2: Specific negotiation decision ===
+
+The negotiation unfolds over the next hour. The tea grows cold. The almond pastries sit untouched, their honey glaze dimming in the lamplight. Chen is skilled -- a master of the craft, every concession wrapped in a condition, every condition wrapped in a smile, every smile hiding another condition beneath. It is like peeling an onion, and there is always another layer.
+
+But you are learning. And the contours of a deal begin to emerge from the fog of diplomatic language like mountains appearing through morning mist.
+
+The Confederation wants three things: a formal apology for the spy incident, a reduction in tariffs at Ashghar Pass, and an agreement to allow Confederation observers at the border customs houses.
+
+*if (embargo_approach = "diplomatic")
+  Priya's preparation serves you well. She sent a runner before you left the Citadel -- trade figures, counter-proposals, a detailed analysis of what the empire can offer without weakening its position. The documents sit in your robe, ammunition for a different kind of battle.
+*elseif (embargo_approach = "economic")
+  Your counter-sanctions give you leverage, and Chen knows it. Word has already reached the Foreign Quarter that Khazaran ports may close to Confederation shipping. His merchant contacts are, he admits with careful understatement, "expressing concern."
+*elseif (embargo_approach = "intelligence")
+  Zara's preliminary findings give you an unexpected card to play. A note, slipped to you by one of her agents as you entered the guesthouse, contains a detail Chen does not expect you to know: the captured spy was already under Confederation surveillance before his arrest.
+*else
+  The military mobilization at the passes gives your words weight. Chen has already received word -- his intelligence network is fast -- that the Ashghar garrison is doubling. The mountain passes are narrowing, and the Confederation is on the wrong side.
+
+*choice
+  #Offer a compromise: a formal expression of "regret" (not an apology), a modest tariff reduction, and limited observer access to non-military areas.
+    *set scene6_embargo_result 3
+    *set gold + 30
+    *set rep_trade %+ 10
+    *set rep_military %- 5
+    *set rel_chen %+ 10
+    *set rel_guild %+ 10
+    *set honest %+ 5
+    *set diplomacy + 3
+    Chen considers the offer. His fingers tap the edge of his teacup -- once, twice, three times. A rhythm that maps, you suspect, to the three conditions: regret, tariff, observers.
+
+    "A formal expression of regret," he repeats, testing the word. "Not an apology."
+
+    "An apology implies fault. The operative was not sanctioned by this government. We regret the incident. We do not accept blame for it. The distinction is not semantic, Ambassador -- it is sovereign."
+
+    "The tariff reduction?"
+
+    "Five percent at Ashghar Pass. Renewable annually, subject to reciprocal trade access in Confederation ports. Not a capitulation -- a mutual adjustment."
+
+    Another pause. The fountain speaks its silver language.
+
+    "And the observers?"
+
+    "May inspect cargo manifests and tax records at designated facilities. May not access military installations, garrison deployments, or intelligence operations. May not carry weapons on Khazaran soil. May not detain Khazaran citizens."
+
+    Chen lifts his cold tea. Sips it with the same careful precision he applied to the first cup. Sets it down. You see the calculation resolve behind his eyes -- the moment when the numbers align and the deal crosses from possible to probable.
+
+    "I believe the Merchant Council can be persuaded to accept these terms," he says. "With one additional provision: the tariff reduction is reviewed in three years, not one."
+
+    "Two years."
+
+    "Done."
+
+    He extends his hand in the Confederation fashion. You take it. His grip is firm, dry, and precisely calibrated. Even his handshake is diplomatic.
+    *goto embargo_aftermath
+  #Reject all three demands. The Confederation overplayed its hand, and you will not reward aggression with concessions.
+    *set scene6_embargo_result 4
+    *set gold - 20
+    *set rep_trade %- 10
+    *set rep_military %+ 10
+    *set rel_chen %- 10
+    *set rel_guild %- 10
+    *set rel_general %+ 5
+    *set boldness %+ 10
+    *set ruthless %+ 5
+    "No," you say.
+
+    The word hangs between you like a blade suspended in air. One syllable, two letters, and the temperature in the room drops by several degrees. Chen's composure flickers -- not breaks, but flickers -- the briefest crack in the porcelain.
+
+    "The Khazaran Empire does not apologize for acts it did not authorize. The Khazaran Empire does not reduce tariffs under duress. And the Khazaran Empire does not allow foreign observers in its sovereign facilities." You lean forward. "The embargo hurts both sides, Ambassador. But it hurts you more. Your merchant fleet depends on our goods. Your economy depends on reselling our silk and our spices to the Island Kingdoms and the southern trade networks. Close your ports if you wish. The Silk Road has survived three centuries. It will survive the Confederation's tantrum."
+
+    Chen is quiet for a long moment. The fountain fills the silence with its indifferent music. Then the ambassador rises. His smile is still in place, but the warmth has gone from it like heat from a banked fire.
+
+    "I will convey your position to the Merchant Council, Vizier. I hope you will not regret it." He inclines his head -- a bow that is technically correct and emotionally arctic. "The tea was excellent. As always."
+
+    The embargo will continue. The cost will be real, measured in gold and hunger and the creeping anxiety of an empire that feels the wind change. But no Khazaran Vizier in three hundred years has yielded to foreign pressure, and you will not be the first.
+    *goto embargo_aftermath
+  #Agree to the apology and the observers, but demand full intelligence sharing about the captured spy -- every document, every contact, every coin that funded him.
+    *set scene6_embargo_result 2
+    *set gold + 50
+    *set rep_trade %+ 5
+    *set rep_intelligence %+ 10
+    *set rel_chen %+ 5
+    *set rel_spy %+ 10
+    *set evidence_count + 1
+    *set spy_connection_found true
+    *set cunning + 3
+    *set honest %- 5
+    "I accept the apology," you say. "And the observers."
+
+    Chen blinks. He expected resistance -- the careful, layered resistance of a Khazaran negotiator who concedes nothing without extracting twice its value. Your immediate acceptance has thrown him. For a fraction of a second, the diplomat is off-balance.
+
+    "But I want something in return," you continue, pressing the advantage. "The captured operative. I want your full intelligence file on him. Who funded him. Who directed him. Every document he carried, every contact he made in Confederation territory, every copper he spent and where it came from."
+
+    Chen's pleasant mask slips further. "That is an unusual request."
+
+    "This is an unusual situation. A rogue operative, acting with Khazaran resources but without Khazaran authorization, suggests a conspiracy within my own government. An enemy we share, Ambassador -- because whoever engineered this crisis wanted to damage relations between our empires. Help me find them, and I will ensure nothing like this happens again."
+
+    The calculation behind Chen's eyes is almost visible -- gears turning, scenarios branching, outcomes weighed. He sees the offer for what it is: a chance to gain an intelligence foothold inside the Khazaran power structure. A chance to help a Vizier who might, if this conspiracy is real, prove to be a more valuable partner than a hostile one.
+
+    "I will need to consult with the Merchant Council," he says at last. "But I believe this can be arranged."
+
+    When you part, the handshake is firm on both sides. You have given something significant. But what you may receive in return could crack the conspiracy wide open.
+    *goto embargo_aftermath
+  *selectable_if (diplomacy > 40) #Propose a joint investigation into the rogue spy, turning enemies into allies against a mutual threat. [Requires Diplomacy 40+]
+    *set scene6_embargo_result 1
+    *set gold + 40
+    *set rep_trade %+ 8
+    *set rep_intelligence %+ 5
+    *set rel_chen %+ 15
+    *set rel_guild %+ 5
+    *set rel_spy %+ 5
+    *set evidence_count + 1
+    *set spy_connection_found true
+    *set diplomacy + 5
+    *set honest %+ 10
+    "Ambassador," you say, leaning back in your chair. "I want to propose something neither of us expected."
+
+    Chen's teacup pauses halfway to his lips.
+
+    "The rogue operative is not our problem or yours. He is a symptom of a conspiracy that threatens both nations. Someone within the Khazaran power structure sent him to your territory -- not to spy on the Confederation, but to trigger exactly this crisis. To drive a wedge between our empires at the precise moment when cooperation would be most valuable."
+
+    You let that settle. The fountain provides its patient commentary.
+
+    "I propose a joint investigation. Your intelligence services and ours, working in concert. We find the conspirators, we expose them publicly, and the embargo is lifted as a gesture of renewed partnership. The Confederation looks strong and principled. The empire looks transparent and cooperative. And the real enemy -- the one that has been playing both sides -- loses everything."
+
+    Chen sets down his cup. For the first time in the conversation, his diplomatic mask falls away entirely. Behind it is a man who is, you realize, genuinely afraid. Not of you. Not of the empire. Of something he has seen in the intelligence reports that he has not shared.
+
+    "You are more dangerous than the Confederation gives you credit for, Vizier," he says quietly. "I will send word tonight. I believe we have an agreement."
+
+    His hand, when you shake it, is trembling. Just slightly. Just enough.
+    *goto embargo_aftermath
+
+*label embargo_aftermath
+
+*page_break
+
+*comment === AFTERMATH AND CONSPIRACY CONNECTION ===
+
+You return to the Citadel as the moon rises over the minarets of Khazara. The city is quieter than usual tonight -- word of the embargo has spread through the bazaars with the speed of fire through dry silk, and the merchants are anxious. Stalls that would normally stay open until midnight are shuttered. The haggling that fills the evening air with its familiar music has gone quiet. Even the street food vendors seem subdued, their grills sending up thin columns of smoke into a sky full of stars and worry.
+
+The fountains in the Garden of Eternal Spring catch the moonlight like scattered silver coins as you pass. The jasmine is in bloom, heavy and sweet, and the peacocks have settled on their roosts for the night. A beautiful evening. You wish you could enjoy it.
+
+Farid is waiting at the gate with a lantern and a stack of papers. His face is drawn but hopeful -- he has been waiting for news.
+
+"The Council has been informed of the outcome, my ${title_honorific} Vizier," he says, falling into step beside you. "Guildmaster Priya requests a meeting first thing tomorrow to discuss implementation details. General Kadir sent a single-word response. I believe it was intended to convey disapproval, but I am not entirely certain it qualifies as language."
+
+*if (scene6_embargo_result = 1)
+  The joint investigation is a masterstroke -- if it holds. You have turned an enemy's weapon into a tool of cooperation, transformed a crisis into an alliance. But the conspirators will know. They will learn what you have done, and they will adapt. The shadow that has been eating at the empire's foundations does not rest.
+*elseif (scene6_embargo_result = 2)
+  The deal is struck, and it may prove the most valuable bargain you have made since taking office. If Chen delivers the intelligence files, you will have a thread to pull -- a thread leading back through the rogue spy, through whoever funded him, through whatever network placed him in Westmarch with documents designed to provoke exactly this crisis.
+*elseif (scene6_embargo_result = 3)
+  The compromise will hold. It is not a victory -- it is a truce, bought with concessions that will cost the treasury in the short term. But the trade routes will reopen. The caravans will move. The merchants will breathe. And the grandmother in the provinces will eat.
+*else
+  The embargo will continue, at least for now. The cost is real -- you can feel it in the tension of the city, in the shuttered stalls and the quiet bazaar and the worried faces of the merchants you passed on the way back. But you did not yield. The empire's sovereignty is intact, and sovereignty, like a mountain, does not bow to wind.
+
+*page_break
+
+In your chambers, you review the day's events by lamplight. The seal ring sits heavy on your finger. Through the window, you hear the distant splash of fountains and the murmur of the night watch making their rounds -- the steady, rhythmic footsteps of soldiers who do not know that the empire's economy hangs by a thread.
+
+*if (spy_connection_found)
+  And then there is the matter of the rogue spy.
+
+  Someone within the empire -- someone with access to intelligence resources, with Khazaran gold, with knowledge of Confederation naval deployments -- sent an operative to Westmarch. Not to gather intelligence for the empire's benefit. Not to advance any strategic goal that serves the throne. But to trigger exactly this crisis. To provoke the embargo. To bleed the treasury.
+
+  You pull a sheet of parchment toward you and begin to write. Your hand is steady. Your mind is clear.
+
+  The conspiracy symbol beneath the council table. The poison that killed your predecessor. The coordinated Khanate raids that Zara suspects are fed by an internal source. And now a rogue spy operation designed to provoke a trade war with the empire's most important trading partner.
+
+  The threads are converging. Someone is systematically weakening the empire from within -- attacking its borders, its economy, its stability. And they are positioned close enough to the centers of power to use the empire's own resources as weapons.
+
+  You add a new line to the parchment, pressing the pen hard enough that the ink bleeds through to the other side: "Who benefits from an empire in crisis?"
+
+  The ink dries. The question does not.
+
+  *set evidence_count + 1
+*else
+  Something nags at you as you undress for bed. The rogue spy. The embargo's convenient timing. The way the crisis consumed the Council's attention for an entire evening, pulling every faction leader into the same room to argue about trade and tariffs while... what? While someone else moved freely through an unguarded Citadel?
+
+  You pull a sheet of parchment toward you and add a note to your growing file on the conspiracy: "The embargo may not be a cause. It may be a distraction. Investigate further."
+
+  The thought is not comforting.
+
+*page_break
+
+You are still writing when exhaustion takes you. The lamp burns low, its flame shrinking until it is barely more than a blue whisper above the wick. The parchment curls at its edges. The seal ring catches the last of the light and holds it, a small green star in the gathering dark.
+
+Somewhere in the city, a night bird sings a melody that sounds, in your drowsy state, like a fragment of one of Leila's poems -- something about the price of silk, and the price of silence, and how one was always more expensive than the other.
+
+Sleep comes, eventually. It is not peaceful.
+
+You dream of ledgers that bleed ink the color of blood. Of mountain passes choked with snow and the sound of caravans turning back, their bells fading into silence. Of Ambassador Chen's pleasant smile stretching wider and wider until it is no longer pleasant at all, until it is a gate swinging open on a darkness that has been waiting, patiently, for exactly this moment.
+
+*page_break
+
+You do not know how long you sleep. An hour. Perhaps two.
+
+Then Farid's hand is on your shoulder, shaking you awake. His face is the color of parchment in the lamplight, and his eyes are wide with a terror you have never seen in them before. This is not Farid's usual anxiety -- the nervous flutter that accompanies his daily briefings. This is something older and deeper. This is dread.
+
+"My ${title_honorific} Vizier." His voice cracks. He tries again. "My ${title_honorific} Vizier, you must come. Now. Right now."
+
+You are on your feet before you are fully awake, your body responding to the urgency before your mind catches up. The seal ring is cold against your skin. The night air from the window carries the scent of jasmine and something else -- something acrid. Smoke. Not incense smoke, not cooking smoke. The sharp chemical smell of something that should not be burning.
+
+"What has happened?"
+
+Farid swallows. You can see his throat work, the muscles clenching around words too terrible to speak easily. When he speaks, each word is a stone dropped into the dark.
+
+"The Emperor. Someone -- someone tried to kill the Emperor."
+
+The world tilts. You reach for the doorframe. Farid is still talking -- something about guards, about the royal chambers, about blood on marble -- but the words are distant, muffled, as if spoken through water. Through glass. Through the kind of silence that follows a detonation, when the world is still ringing from the force of what has happened.
+
+Someone tried to kill the Emperor.
+
+You are already moving. The corridor stretches before you, lit by guttering torches that throw wild shadows against the walls. Somewhere in the Citadel, voices are shouting. Somewhere, steel is ringing against steel. Somewhere, a young man who was born to wear a crown is learning what that crown truly costs.
+
+The longest night of the Khazaran Empire has begun.
+
+*finish The Long Night
