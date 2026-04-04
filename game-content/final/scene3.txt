@@ -18,7 +18,13 @@
 
 *comment === OPENING: DAWN AND THE COUNCIL CHAMBER ===
 
-Dawn comes to Khazara in layers: first the call to prayer, rising from a hundred minarets in a wave of sound that breaks across the rooftops like surf. Then the light, seeping through the latticed shutters in thin blades of gold. Then the smell of the city waking -- bread baking, fires being lit, the river giving up its cool morning mist.
+Dawn comes to Khazara in layers.
+
+First, the call to prayer. It rises from a hundred minarets in a wave of sound that breaks across the rooftops like surf, each voice joining the next in a cascade that builds from a single thread to a wall of sacred music. The sound fills the Citadel, pouring through every window and doorway and latticed screen, until even the stones seem to vibrate with it. You lie in bed and listen, and for a moment, the politics and the danger and the anonymous note hidden in the tax law volume seem very far away.
+
+Then the light. It seeps through the latticed shutters in thin blades of gold, cutting the dark into geometric patterns that shift and slide across the floor as the sun climbs. The patterns are beautiful -- small gardens of light, growing and transforming on the silk carpets.
+
+Then the smell of the city waking: bread baking in the palace kitchens, a warm, yeasty scent that drifts up from the courtyard below. Cook-fires being lit in the servants' quarters. The Tavan River giving up its cool morning mist, carrying with it the mineral cleanness of mountain water. And underneath everything, the faint, ever-present perfume of incense -- sandalwood and frankincense, the Citadel's constant companion, as much a part of the air here as oxygen.
 
 You are dressed and waiting when Farid arrives. He has dark circles under his eyes and a stack of briefing papers so thick it requires both hands to carry.
 
@@ -472,6 +478,10 @@ As the council members rise and begin to file toward the door, you take a moment
 *comment === PRIVATE CONVERSATION: REAL CHOICE ===
 
 As the others file out, you realize you have a brief window -- a few minutes before the next obligation, the next crisis, the next demand. Enough time to speak privately with one council member. To begin building the relationship that may, in time, determine your survival.
+
+The council members are filing out. Kadir walks like a man going to war -- shoulders squared, stride purposeful, iron hand swinging at his side. Priya glides out with her wine case, already murmuring to a subordinate who has materialized at her elbow. Ashoka rises slowly, adjusting his robes with the deliberate care of a man who considers the act of dressing a spiritual practice. Zara is, characteristically, already gone.
+
+You have a few minutes. No more. The day will fill itself quickly -- this palace does not permit idle hands -- but in this brief window between the end of the meeting and the beginning of everything else, you can speak privately with one of them. One conversation. One chance to begin building the relationship that may, when the crisis deepens, determine whether you have an ally or an obstacle.
 
 Who do you approach?
 

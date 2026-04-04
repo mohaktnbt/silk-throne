@@ -113,6 +113,8 @@ You answer each question with facts, dates, authorization numbers. The road repa
 
 The investigators write. They do not react. Their faces are the carefully neutral faces of people who have been instructed to record, not to judge. The judgment, when it comes, will come from above.
 
+When they leave, you sit at your desk for a long time. The seal ring catches the light. The questions echo in the empty room, and you wonder how many times the truth must be told before it is believed -- or whether repetition, in this world of whispers and fabrications, is simply the slow erosion of credibility, each retelling wearing down the listener's patience until "the truth" sounds indistinguishable from "the story."
+
 *page_break
 
 *comment === ALLIES QUESTIONING ===
@@ -486,7 +488,9 @@ At least, that is what you tell yourself. Whether you believe it is a question f
 
 The second week of the investigation draws to a close. Autumn has settled over Khazara like a guest who intends to stay -- the mornings sharp, the afternoons brief, the gardens surrendering their green to gold and copper and the deep, valedictory red of leaves that know their time is ending. The initial shock has faded. The court has settled into its new configuration -- accusers and defenders, watchers and waited-upon. And you, at the center of it all, must decide who to turn to for the push that will determine whether you sink or swim.
 
-One conversation. One alliance. One act of trust in a world where trust has become the most expensive currency.
+One conversation. One alliance. One act of trust extended toward someone who might use it as a weapon or a lifeline, and you will not know which until the moment has passed.
+
+The choice weighs on you like the seal ring on your finger -- heavy, inescapable, defining.
 
 *choice
   *if (rel_spy > 30)
