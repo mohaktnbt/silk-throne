@@ -24,18 +24,15 @@ export function PlayClient({ game }: PlayClientProps) {
             <span className="text-gold">The Silk Throne</span>
           </h1>
           <p className="mt-4 text-muted-foreground">
-            The game player is loading in demo mode. Connect Supabase to play
-            the full game with saves, purchases, and cloud scenes.
+            The game is temporarily unavailable. Please try again in a few moments.
           </p>
-          <p className="mt-2 text-sm text-muted-foreground/60">
-            Set <code className="rounded bg-muted px-1.5 py-0.5 text-xs">NEXT_PUBLIC_SUPABASE_URL</code>{" "}
-            and related environment variables to enable the full experience.
-          </p>
-          <Link href="/" className="mt-8 inline-block">
-            <Button variant="outline" className="border-gold/30 hover:bg-gold/10">
-              Back to Home
-            </Button>
-          </Link>
+          <Button
+            render={<Link href="/" />}
+            variant="outline"
+            className="mt-8 border-gold/30 hover:bg-gold/10"
+          >
+            Back to Home
+          </Button>
         </div>
       </div>
     );

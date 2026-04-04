@@ -20,23 +20,21 @@ export default function Home() {
             shape the fate of the Khazaran Empire.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/play">
-              <Button
-                size="lg"
-                className="bg-gold text-background hover:bg-gold/90 px-8 py-6 text-lg font-semibold"
-              >
-                Play Free Preview
-              </Button>
-            </Link>
-            <a href="#about">
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-gold/30 px-8 py-6 text-lg hover:bg-gold/10"
-              >
-                Learn More
-              </Button>
-            </a>
+            <Button
+              render={<Link href="/play" />}
+              size="lg"
+              className="bg-gold text-background hover:bg-gold/90 px-8 py-6 text-lg font-semibold"
+            >
+              Play Free Preview
+            </Button>
+            <Button
+              render={<a href="#about" />}
+              variant="outline"
+              size="lg"
+              className="border-gold/30 px-8 py-6 text-lg hover:bg-gold/10"
+            >
+              Learn More
+            </Button>
           </div>
         </div>
       </section>
@@ -119,14 +117,13 @@ export default function Home() {
             Begin your journey as the Grand Vizier. Every choice matters. Every
             alliance has a price. Every betrayal has consequences.
           </p>
-          <Link href="/play" className="mt-8 inline-block">
-            <Button
-              size="lg"
-              className="bg-gold text-background hover:bg-gold/90 px-8 py-6 text-lg font-semibold"
-            >
-              Start Playing Now
-            </Button>
-          </Link>
+          <Button
+            render={<Link href="/play" />}
+            size="lg"
+            className="mt-8 bg-gold text-background hover:bg-gold/90 px-8 py-6 text-lg font-semibold"
+          >
+            Start Playing Now
+          </Button>
         </div>
       </section>
     </div>
