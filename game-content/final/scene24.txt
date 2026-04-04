@@ -16,165 +16,179 @@
 
 The Temple Quarter is quiet in a way that temples should never be quiet.
 
-You have come here at every hour since your arrival in Khazara -- at dawn for the Morning Flame, at noon for the midday reflection, at dusk for the evening prayers. At every hour, the Quarter has been alive: monks chanting, temple guards pacing their posts, pilgrims filing through the seven chambers with offerings of incense and oil and whispered pleas. The Quarter has its own heartbeat, its own breath, its own warmth that radiates from the Eternal Flame at its center.
+You have come here at every hour since your arrival in Khazara -- at dawn for the Morning Flame, at noon when the sun strikes the temple's copper domes and sets them ablaze with reflected light, at dusk when the incense thickens the air and the evening prayers echo through the seven chambers like the murmur of a river finding its course. At every hour, the Quarter has been alive with the particular vitality of sacred space: monks chanting the verses of the Seven Wisdoms in voices that have been trained since childhood to find the resonant frequencies of stone; temple guards pacing their posts in crimson cloaks, their spear points catching the light of oil lamps; pilgrims filing through the seven chambers with offerings of incense and oil and flowers, their faces soft with devotion. The Quarter has its own heartbeat, its own breath, its own warmth that radiates from the Eternal Flame at its center like heat from a living body.
 
 Today the heartbeat falters.
 
-The monks are silent. The pilgrims are gone. The temple guards stand at their posts with the rigid alertness of soldiers expecting an attack, and you realize, as you pass between them, that the attack they expect is not from without. The guards' eyes move not toward the Quarter's gates but inward, toward the temple's own halls.
+The monks are silent. Not absent -- you can see them in the shadows of the colonnades, standing in clusters of two and three, speaking in whispers that die when you approach. Their faces are drawn, their eyes uncertain. The pilgrims are gone -- the Quarter's gates are open, but something in the air, some emanation of spiritual crisis that the faithful sense without being told, has kept them away. The temple guards stand at their posts with the rigid alertness of soldiers expecting an attack, and you realize, as you pass between them, that the attack they expect is not from without. The guards' eyes move not toward the Quarter's gates but inward, toward the temple's own halls.
 
 The schism has come.
 
 *page_break
 
-High Priest Ashoka waits for you in the Chamber of the First Wisdom -- Justice. It is the smallest of the seven chambers, barely large enough for a dozen people, its walls covered in geometric tilework of blue and gold. A single lamp burns before the altar. The incense here is frankincense, sharp and clean, cutting through the dusty air.
+The smell of the temple has changed. On an ordinary day, the air is thick with frankincense and sandalwood, the accumulated perfume of three centuries of worship layered into the very stone. Today, beneath the incense, there is something else -- something acrid and metallic, like the smell of a lamp burning the last of its oil. The smell of ending.
 
-Ashoka sits on a stone bench beside the altar. He is not praying. He is staring at the wall with an expression you have never seen on his face before -- the expression of a man confronting a problem that his faith cannot solve.
+High Priest Ashoka waits for you in the Chamber of the First Wisdom -- Justice. It is the smallest of the seven chambers, barely large enough for a dozen people, its walls covered in geometric tilework of blue and gold that depicts the scales of balance, the symbol of the First Wisdom. A single lamp burns before the altar -- a small flame that seems, in the chamber's dimness, like a distant echo of the Eternal Flame that burns in the courtyard beyond. The incense here is frankincense, sharp and clean, cutting through the dusty air like a blade through silk.
 
-He looks old. You have known Ashoka for months, and he has always seemed ageless -- the kind of man whose spiritual vitality transcends the body. Today, the body has reasserted itself. His shoulders are bowed. The lines in his face are trenches. His hands, folded in his lap, are not still. They tremble.
+Ashoka sits on a stone bench beside the altar. He is not praying. He is not meditating. He is staring at the wall with an expression you have never seen on his face before -- an expression that belongs not to the High Priest of the Eternal Flame, the spiritual authority of two million souls, the man who speaks with the voice of the divine, but to a human being confronting a problem that his faith, his learning, his sixty-two years of devoted service cannot solve.
+
+He looks old. You have known Ashoka for months, and he has always seemed ageless -- a man whose spiritual vitality transcends the body, whose calm radiates outward like heat from the Flame itself. Today, the body has reasserted itself. His shoulders are bowed. The lines in his face have deepened from character marks to trenches. His hands, folded in his lap in the posture of meditation, are not still. They tremble.
+
+*page_break
 
 "Vizier," he says. "Thank you for coming."
 
 *if (rel_priest > 60)
-  He does not say "child." He uses no title, no formal address. He speaks your name like a man calling out to a friend in the dark. It is the most frightened thing you have ever heard him do.
+  He does not say "child." The word that he uses for everyone -- for generals and guild masters, for emperors and servants, for the powerful and the humble -- is absent. Instead, he uses your name. Your actual name, the name your parents gave you, spoken with a familiarity that transcends titles and formalities. It is, perhaps, the most frightened thing you have ever heard him do.
   *set rel_priest %+ 5
 *elseif (rel_priest > 40)
-  His voice is controlled, but the control is a dam holding back something enormous.
+  His voice is controlled -- the lifelong habit of measured speech holding firm even as the foundation beneath it cracks.
 *else
-  His voice is flat, professional. Whatever his personal feelings toward you, the crisis demands communication.
+  His voice is flat. Professional. Whatever his personal feelings toward you, the crisis has stripped away the luxury of personal feelings.
 
-*page_break
+"The Council of Discernment has convened," he says. "Seven of the twelve temple elders have signed the petition calling for a formal evaluation of the Emperor's divine mandate. The required threshold for convening is six. They have surpassed it."
 
-"The Council of Discernment has convened," he says. "Seven of the twelve elders have signed the petition calling for a formal evaluation of the Emperor's divine mandate. The required threshold is six. They have surpassed it."
+He rises from the bench and walks to the altar lamp. Its flame is steady -- a small, reliable point of light in the chamber's dimness. He extends his hand toward it, not touching, just close enough to feel the warmth. It is an unconscious gesture, the habit of a lifetime spent in the company of fire.
 
-He rises and walks to the altar lamp. Its flame is steady, a small point of light in the chamber's dimness.
-
-"You must understand what this means, Vizier. A Council of Discernment has not been convened in one hundred and sixty years. The last time it occurred, the Emperor was found to have lost divine favor. He was deposed within a month. The temple's judgment is not a recommendation. In the eyes of the faithful, it is the word of the Flame itself."
+"You must understand what this means, Vizier. A Council of Discernment has not been convened in one hundred and sixty years. The last time it occurred, Emperor Bahram the Unsteady was found to have lost divine favor -- his addiction to lotus wine, his neglect of the temples, his cruelty to the common people had accumulated into a spiritual debt the Flame could not forgive. He was deposed within a month of the Council's ruling. The temple's judgment is not a recommendation. In the eyes of the faithful -- in the eyes of every person in this empire who prays at sunrise and lights a lamp at dusk and teaches their children the Seven Wisdoms -- it is the word of the Flame itself."
 
 "And if the Council rules against Emperor Roshan?"
 
-Ashoka is silent for a moment. When he speaks, each word is placed with the care of a man walking across thin ice.
+*page_break
 
-"If the Council rules against the Emperor, the temple will formally withdraw its blessing from the throne. The coronation that anointed Roshan IV will be declared void. The Eternal Flame will be symbolically extinguished and relit only when a new emperor -- one who holds divine favor -- sits upon the Silk Throne."
+Ashoka is silent for a moment. When he speaks, each word is placed with the care of a man stepping across a frozen lake, testing each footfall before committing his weight.
 
-"Kaveh," you say.
+"If the Council rules against the Emperor, the temple will formally withdraw its blessing from the throne. The coronation that anointed Roshan IV -- the ceremony that placed the crown on his head and declared him the Flame's chosen instrument on earth -- will be declared void. The Eternal Flame will be symbolically extinguished and relit only when a new emperor, one who holds divine favor in the judgment of the Council, sits upon the Silk Throne."
 
-"Kaveh," Ashoka confirms. "The conservative elders believe his claim is legitimate. They believe the Prophecy of the Seventh Age names him. And they believe --" He pauses. "They believe the guttering of the Flame is a sign."
+"And the new emperor would be Kaveh."
+
+"Kaveh has petitioned the Council directly. He has cited the Prophecy of the Seventh Age. He has made generous endowments to the temple -- to the conservative elders specifically, which I learned only yesterday and which explains a great deal about their sudden enthusiasm for prophecy." Ashoka's voice tightens, a crack in the facade of serenity. "He has presented himself as the champion of traditional values, of the old order, of a time when the temple's authority was unquestioned and the hierarchy of the empire was fixed and comfortable. The conservative elders hear this and they hear what they want to hear: a promise that change will stop. That the world they knew will be restored."
+
+He turns from the altar lamp and meets your eyes.
+
+"They believe the guttering of the Flame is a sign."
 
 *page_break
 
 *comment === THE GUTTERING FLAME ===
 
-You walk with Ashoka to the central courtyard of the Temple of Seven Wisdoms -- the heart of the Quarter, the heart of the faith, the heart of three centuries of empire.
+You walk with Ashoka through the connecting passage that leads from the Chamber of the First Wisdom to the central courtyard of the Temple of Seven Wisdoms -- the heart of the Quarter, the heart of the faith, the spiritual heart of three centuries of empire.
 
-The Eternal Flame burns in a great bronze brazier at the courtyard's center, sheltered by a canopy of hammered copper supported on pillars of carved stone. For three hundred years, since Roshan the Conqueror lit it with a torch taken from the ruins of Old Parvana, the Flame has burned without interruption. Storms have not quenched it. Floods have not reached it. Armies have fought and died within sight of it, and it has burned on, serene and unchanging.
+The Eternal Flame burns in a great bronze brazier at the courtyard's center, sheltered by a canopy of hammered copper supported on eight pillars of carved stone. Each pillar represents one of the Seven Wisdoms -- seven pillars for the seven virtues, and the eighth for the Flame itself, which encompasses and transcends them all. The brazier is vast -- six feet across, its surface etched with prayers in Classical Parvani, its rim worn smooth by the hands of monks who have tended it since the empire's founding. For three hundred years, since Roshan the Conqueror lit it with a torch taken from the ruins of Old Parvana, the Flame has burned without interruption. Storms have not quenched it. Floods have not reached it. Earthquakes have shaken the ground beneath it and the Flame has burned on, serene and unchanging, a constant in a world of variables.
 
 It is guttering.
 
 *page_break
 
-The word does not do justice to what you see. The Flame, normally a steady column of gold and amber rising two feet from the brazier's oil, is dancing. Not the natural dance of a fire in wind -- there is no wind in the sheltered courtyard. This is something else. The Flame shrinks, rises, shrinks again. Its color shifts from gold to orange to a deep, unsettling red, then back. Shadows leap across the courtyard walls in patterns that seem, if you watch them long enough, almost deliberate.
+The word does not do justice to what you see.
 
-The monks who tend the Flame -- three at all times, in eight-hour rotations, a tradition unbroken for three centuries -- stand at the brazier's edge with expressions of naked terror. One of them, a young woman barely out of her novitiate, is weeping silently, her hands clasped in prayer.
+The Flame, normally a steady column of gold and amber rising two feet from the brazier's oil, is dancing. Not the natural dance of a fire in wind -- there is no wind in the sheltered courtyard, no draft, no breath of air through the columns. The copper canopy is a windbreak, and the courtyard's walls deflect every current. The conditions are, and have been for three centuries, precisely controlled for the maintenance of a constant flame.
+
+This is something else. The Flame shrinks -- contracting to half its normal height, the oil surface darkening as the fire draws inward -- then rises, surging up with a sudden flare that casts sharp shadows across the courtyard walls. It shrinks again. The color shifts from gold to orange to a deep, unsettling red that looks less like fire and more like the last light of a dying ember. Then back to gold. Then orange again. The rhythm is irregular, unpredictable, as though the Flame is breathing -- labored, uncertain breaths, the respiration of something alive and struggling.
+
+The monks who tend the Flame -- three at all times, in eight-hour rotations, a tradition unbroken for three centuries -- stand at the brazier's edge with expressions of naked terror. Two of them are elderly, their faces etched with decades of devotion, their hands clasped in prayers that they have been reciting without pause for three days. The third is young -- a woman barely out of her novitiate, with dark eyes made huge by fear and the firelight -- and she is weeping silently, tears running down her cheeks unchecked.
 
 "When did it begin?" you ask.
 
-"Three days ago," Ashoka says. "The morning after the Khanate invasion was reported. Some believe it is a natural phenomenon -- the oil supply disrupted by the crisis, the wick degraded. Others believe --"
+"Three days ago," Ashoka says. "The morning after the Khanate invasion was reported. The morning the broadsheets appeared. The morning the world changed." He pauses. "Some say it is a natural phenomenon -- the oil supply disrupted by the crisis, the wick degraded by the fluctuating temperatures of recent weeks. The temple's engineers have examined the brazier and found nothing wrong with its physical components."
 
-He does not finish. He does not need to.
+"And the others?"
 
-Others believe the Flame is dying because the empire has lost the favor of the divine.
+"The others say the Flame is dying because the empire has lost the favor of the divine. Because the throne is occupied by a usurper's descendant. Because the reforms -- your reforms, Vizier -- have angered the old gods by disturbing the natural order." He says this without accusation, without agreement. He says it as a fact, the way he says everything -- with the measured care of a man for whom truth is a sacred obligation.
 
 *page_break
 
 You stand before the Eternal Flame, and you feel -- something.
 
-Not faith, exactly. Not the certainty that Ashoka carries, the deep knowing that the Flame is more than fire, that it is the manifest presence of something vast and ancient and intentional. But something. The warmth on your face is more than heat. The light in your eyes is more than photons. There is a weight to this place, a gravity that pulls at something inside your chest, and whether that pull is divine or merely the accumulated belief of three centuries of worshippers, it is real.
+Not faith, exactly. Not the certainty that Ashoka carries, the deep knowing that has sustained him through four decades of spiritual service. Not the devotion of the weeping monk, whose world is built on the foundation of this fire and who watches that foundation shake. But something. The warmth on your face is more than heat. The light in your eyes is more than the physics of combustion. There is a weight to this place, a gravity that pulls at something inside your chest -- something primal, something older than reason, older than theology, older than the empire itself. Whether that gravity is divine or merely the accumulated belief of three centuries of worshippers, condensed into stone and flame and air until the very atoms vibrate with meaning, you cannot say.
 
-The Flame gutters. Shadows dance. The young monk weeps.
+But it is real. Whatever it is, it is real.
+
+The Flame gutters. The shadows dance. The young monk weeps.
 
 *fake_choice
   #You feel the awe of it -- the sheer impossibility of what you are witnessing. Three hundred years of unbroken flame, and now it falters.
     *set idealist %+ 10
     *set honest %+ 5
-    *temp flame_interpretation "awe"
-    Three hundred years. The thought is dizzying. This fire has burned since before the empire was an empire, since Roshan the Conqueror was a warlord with a dream and a torch. It has witnessed coronations and funerals, festivals and famines, the rise and fall of dynasties. And now it falters. Whatever you believe about its divine nature, the symbol is powerful enough to be indistinguishable from the thing itself.
+    *set flame_interpretation "awe"
+    Three hundred years. The thought is dizzying, vertiginous, a span of time that reduces human lifetimes to footnotes. This fire has burned since before the empire was an empire, since Roshan the Conqueror was a warlord with a vision and a torch. It has witnessed coronations and assassinations, festivals and famines, the rise of printing and the fall of dynasties. Generations have been born, lived, and died in its light. And now it falters. Whatever you believe about its nature -- divine or physical, sacred or secular -- the symbol is powerful enough to be indistinguishable from the thing it symbolizes.
   #Your mind searches for rational explanation. Oil supply. Wick condition. Air circulation. There must be a physical cause.
     *set scholarship + 3
     *set boldness %- 5
-    *temp flame_interpretation "rational"
-    The analytical part of your mind refuses to accept the mystical explanation. Fire is fire. It requires fuel, heat, and air. If the Flame is guttering, something has changed in the physical conditions -- the oil supply, the wick, the airflow in the courtyard. The crisis may have disrupted the supply of the specific temple oil used to feed the brazier. The wick may have degraded. There is an explanation, and it is not divine displeasure.
-  #You feel nothing. Or rather: you feel the emptiness where faith should be, and it frightens you more than the guttering Flame.
+    *set flame_interpretation "rational"
+    The analytical part of your mind -- the part trained by scholarship and sharpened by months of investigation -- refuses to accept the mystical explanation. Fire is fire. It requires fuel, heat, and oxygen. If the Flame is guttering, something has changed in the physical conditions. The specific temple oil used to feed the brazier is imported from the southern provinces through a supply chain that has been disrupted by the crisis. The wick is replaced on a monthly schedule that has been interrupted. The brazier itself has not been serviced in six months. There is an explanation. You simply need to find it.
+  #You feel nothing. Or rather -- you feel the emptiness where faith should be, and it frightens you more than the guttering Flame.
     *set honest %+ 10
     *set idealist %- 5
-    *temp flame_interpretation "emptiness"
-    You search yourself for the awe that the monks feel, the reverence that Ashoka carries like a second skin. You find only silence. The Flame is beautiful and it is old and it is important, but when you look into its wavering light, you do not see the divine. You see fire. And the absence of what you should feel -- the emptiness where faith should live -- frightens you more than any guttering flame.
+    *set flame_interpretation "emptiness"
+    You search yourself for the awe that the monks feel, for the reverence that Ashoka carries like a second skin. You find only silence. The Flame is beautiful and it is ancient and it is important -- culturally, politically, symbolically important. But when you look into its wavering light, you do not see the divine. You see fire. And the absence of what you should feel, the empty space where faith should live, frightens you more than any guttering flame. Because if the Flame is sacred, then its guttering is a message, and messages can be interpreted. But if the Flame is merely fire, then its guttering means nothing, and meaninglessness, in a time of crisis, is the most dangerous thing of all.
 
 *page_break
 
 *comment === ASHOKA'S AGONY ===
 
-Ashoka leads you away from the Flame, into the private chambers behind the Temple of the Seventh Wisdom -- Harmony. These rooms are his personal quarters, austere to the point of severity: a narrow bed, a prayer mat, a shelf of scrolls, and a single window that overlooks the Flame's courtyard.
+Ashoka leads you away from the Flame, through the connecting passage to the private chambers behind the Temple of the Seventh Wisdom -- Harmony. These rooms are his personal quarters, austere to the point of severity: a narrow bed with a single wool blanket, a prayer mat worn thin by decades of daily use, a shelf of scrolls in Classical Parvani, and a single window that overlooks the Flame's courtyard. The only luxury is a small ceramic teapot and two cups -- the instruments of hospitality that Ashoka considers as essential as the instruments of worship.
 
-He sits. He does not offer you tea, which is how you know the situation is desperate. In all your meetings with Ashoka, in all the months of council sessions and private conversations and the careful dance of religion and politics, he has never failed to offer tea. The ritual of hospitality is as fundamental to him as breathing.
+Today, the teapot sits unused on the shelf. This is how you know the situation is desperate. In all your meetings with Ashoka, in all the months of council sessions and private conversations and the careful dance of religion and politics, he has never failed to offer tea. The ritual of hospitality is as fundamental to him as prayer. Tea is how he begins every conversation, how he sets the tone, how he creates the space in which difficult truths can be spoken without breaking the fragile architecture of civility.
 
-Today, there is no tea.
+Today, there is no tea. Today, the architecture is already broken.
 
-"I am going to be honest with you," he says. "More honest than a High Priest should be with a politician. I do this because the time for games is over."
+"I am going to be honest with you," Ashoka says, sitting on the edge of his narrow bed with his hands clasped between his knees. "More honest than a High Priest should be with a politician. More honest than I have been with anyone in many years. I do this because the time for careful words and measured parables is over, and because if I do not speak plainly now, I fear I will lose the ability to speak at all."
 
 *page_break
 
-"The conservative elders are not wrong," he says. "Not entirely. The prophecy Kaveh cites is real. The astronomical correlations are -- debatable, but not absurd. And the Flame's guttering is -- I do not know what it is. I have tended the Flame for forty years. I have never seen it behave this way. If I am honest -- if I am truly honest -- I am frightened."
+"The conservative elders are not wrong," he says. The words come slowly, each one extracted from somewhere deep, somewhere painful. "Not entirely. The prophecy Kaveh cites is genuine -- it exists in the original Parvani texts, in scrolls that predate the empire itself. The astronomical correlations his scholars cite are debatable, but they are not absurd. Serious people have studied this prophecy and reached conclusions that are not identical to Kaveh's but are not categorically different either."
 
-He looks at his hands. The trembling has not stopped.
+He looks at his hands. The trembling has not stopped. It has become, in the last few minutes, more pronounced.
 
-"I am the High Priest of the Eternal Flame. My life has been devoted to the Seven Wisdoms. I believe -- I have always believed -- that the Flame is divine. That it speaks to those who listen. And now it is speaking, and I do not know what it is saying."
+"And the Flame's guttering is -- I do not know what it is. I have tended this Flame for forty years. I have stood before it in storms and earthquakes and the chaos of three succession crises. I have never -- never, Vizier -- seen it behave this way. If I am honest with you, as I have promised to be, I must tell you that I am frightened. Not of the political consequences. Not of the schism. I am frightened of the Flame. I am frightened that it is trying to tell me something, and I am too old or too rigid or too proud to hear it."
 
-He meets your eyes.
+He meets your eyes. His gaze is naked -- stripped of the serene authority, the careful masks, the spiritual composure that he has worn for so long it has become indistinguishable from his actual face. What you see beneath is simply a man. An old man, frightened and uncertain, who has devoted his entire life to a faith that is now being tested in ways he never imagined.
 
-"The conservative elders say the Flame is rejecting Emperor Roshan. They say Prince Kaveh is the prophesied ruler. They say the empire must change hands or the Flame will die. I do not believe this. But I cannot prove them wrong."
+"The conservative elders say the Flame is rejecting Emperor Roshan. They say Prince Kaveh is the prophesied ruler. They say the empire must change hands or the Flame will die. I do not believe this. But I cannot prove them wrong. And the difference between belief and proof, Vizier, is the difference between faith and certainty. I have always had faith. What I need now is certainty, and the Flame does not deal in certainty."
 
 *page_break
 
 *if (route = 1)
-  "The Emperor is not perfect," Ashoka continues. "He is young. He is uncertain. He has made mistakes. But the Flame does not demand perfection. The First Wisdom is Justice, not Infallibility. Roshan has tried to be just. Is that not enough?"
+  "The Emperor is not perfect," Ashoka continues. "He is young. He is uncertain. He has made mistakes that a more experienced ruler would not have made. But the Flame does not demand perfection. The First Wisdom is Justice, not Infallibility. Roshan has tried to be just. He has tried to learn. He has tried to grow into the crown rather than simply wearing it. Is that not enough? Is the attempt at virtue not itself a form of virtue?"
 *elseif (route = 2)
-  "The question of who sits on the throne is -- forgive me, Vizier -- a secular matter. The Flame cares about the empire's soul, not its politics. But the conservative elders have confused the two, and in doing so, they have made the Flame a weapon."
+  "The question of who sits on the throne is, forgive me, a secular matter. The Flame cares about the empire's soul, not its politics. The soul is measured in justice and mercy and the treatment of the powerless, not in genealogy or succession law. But the conservative elders have confused the two. They have made the Flame a political weapon, and in doing so, they have committed the very sin they accuse the Emperor of: they have subordinated the sacred to the expedient."
 *else
-  "The reforms you have championed -- the protections for the common people, the challenges to noble privilege -- the conservative elders see these as an attack on tradition. They see Kaveh as a return to the old order, where the temple's authority was unquestioned and the hierarchy was fixed. The schism is not about theology. It is about power."
+  "The reforms you have championed -- the protections for the common people, the challenges to noble privilege, the redistribution of resources -- the conservative elders see these as an attack on the natural order. They see Kaveh as a return to the world they knew, a world where the temple's authority was unquestioned, the nobility's privilege was unassailable, and the hierarchy of the empire was fixed and eternal." He pauses. "The schism is not about theology, Vizier. It is about power. It has always been about power. The prophecy is a fig leaf for ambition."
 
-A long silence. The light from the window shifts as a cloud crosses the sun. The Flame's glow, visible through the glass, wavers.
+A long silence fills the chamber. The light from the window shifts as a cloud crosses the sun. The Flame's glow, visible through the glass, wavers and shifts. The shadows in the room dance.
 
-"I must choose," Ashoka says. "I can support the Council of Discernment, maintain the temple's unity, and accept whatever judgment the elders reach -- even if that judgment deposes the Emperor. Or I can oppose the Council, break with the conservative elders, and risk splitting the temple in two."
+"I must choose," Ashoka says. "I can support the Council of Discernment -- maintain the temple's unity, accept whatever judgment the elders reach, even if that judgment deposes the Emperor and installs a pretender. Unity at the cost of justice. Or I can oppose the Council -- break with the conservative elders, split the temple in two, and risk everything I have built as High Priest to defend a principle that may not survive the fracture."
 
-He is not asking for your advice. He is thinking aloud, the words coming from a place deeper than strategy.
+His voice drops to barely a whisper.
 
-"If I split the temple, I may save the Emperor. But the Eternal Flame is tended by monks who believe in the temple's unity above all else. If the temple fractures, the monks may refuse to tend the Flame. And if the Flame goes out --"
+"If I split the temple, I may save the Emperor. But the Eternal Flame is tended by monks who serve the temple as an institution, not me as an individual. If the temple fractures, the monks may refuse to tend the Flame. And if the Flame goes out -- if it goes out --"
 
-His voice breaks. Just for a moment. Then: "If the Flame goes out, it does not matter who sits on the throne. The empire's soul dies."
+He cannot finish the sentence. He does not need to.
 
 *page_break
 
 *comment === FIRST REAL CHOICE: TEMPLE POLITICS ===
 
-The weight of Ashoka's confession hangs in the air between you. You are not a priest. You are not a theologian. You are a politician who has been handed a spiritual crisis, and the tools of politics -- leverage, negotiation, calculation -- feel inadequate to the task.
+The weight of Ashoka's confession hangs in the air like incense smoke -- visible, tangible, impossible to ignore. You are not a priest. You are not a theologian. You are a politician who has been handed a spiritual crisis, and the tools of politics -- leverage, negotiation, calculation -- feel inadequate to the task. Like trying to repair a broken prayer with a hammer.
 
-But inadequate is all you have.
+But inadequate is all you have. And the crisis will not wait for better tools.
 
 *choice
-  #Urge Ashoka to oppose the Council of Discernment openly. Break with the conservative elders. The Emperor's legitimacy must be preserved.
+  #Urge Ashoka to oppose the Council of Discernment openly. Break with the conservative elders. The Emperor's legitimacy must be preserved at any cost.
     *set temple_strategy "oppose"
     *set boldness %+ 10
     *set rep_temple %- 10
     *set rel_priest %+ 8
     *set rel_emperor %+ 5
     *goto oppose_council
-  #Urge Ashoka to work within the Council of Discernment. Attend, argue, and try to sway the elders from inside.
+  #Urge Ashoka to work within the Council of Discernment. Attend, argue, and sway the uncertain elders from inside.
     *set temple_strategy "work_within"
     *set diplomacy + 5
     *set idealist %+ 5
     *set rep_temple %+ 5
     *goto work_within
-  *selectable_if (scholarship > 50) #Propose an alternative: challenge Kaveh's prophecy interpretation with scholarship. If the astronomical evidence is wrong, the religious argument collapses. [Requires Scholarship 50+]
+  *selectable_if (scholarship > 50) #Propose a scholarly challenge: disprove Kaveh's prophecy interpretation with astronomy and textual analysis. [Requires Scholarship 50+]
     *set temple_strategy "scholarship"
     *set scholarship + 5
     *set rep_temple %+ 8
@@ -182,25 +196,25 @@ But inadequate is all you have.
     *goto scholarship_challenge
 
 *label oppose_council
-Ashoka closes his eyes. When he opens them, the trembling has stopped.
+Ashoka closes his eyes. When he opens them, something has shifted. The trembling has not stopped, but it has been joined by something harder -- a resolve that settles over his features like stone forming over water.
 
-"You are asking me to break the temple," he says. "You understand that?"
+"You are asking me to break the temple," he says. "You understand that. Not damage it. Not bend it. Break it. A three-century institution, the spiritual foundation of every person in this empire who looks to the Flame for guidance."
 
-"I am asking you to save the emperor. And, perhaps, to save the Flame from being used as a political weapon."
+"I am asking you to save the Emperor. And perhaps to save the Flame from being used as a political weapon by men whose piety is indistinguishable from their ambition."
 
 *page_break
 
-A long silence. The light shifts again. The Flame's glow steadies -- or perhaps that is wishful thinking.
+A silence. Long enough for the Flame's glow to shift twice through the window. Long enough for the young monk's weeping, faintly audible from the courtyard, to rise and fall like a tide.
 
-"The Second Wisdom is Mercy," Ashoka says, almost to himself. "The Third is Courage. The Sixth is Beauty. But the First -- the First Wisdom, the foundation upon which all others rest -- is Justice."
+"The Second Wisdom is Mercy," Ashoka says, almost to himself, as though reciting a prayer that has lost its meaning and must be rebuilt word by word. "The Third is Courage. The Sixth is Beauty. But the First -- the First Wisdom, the foundation upon which all others rest, the cornerstone without which the temple is merely a building and the Flame merely a fire -- is Justice."
 
-He stands.
+He stands. The movement is slow, deliberate, the movement of a man who has made a decision and is taking the first step on a path from which there is no return.
 
-"It is not just to depose an emperor because a pretender has found a convenient prophecy. It is not just to let the Flame be wielded as a sword by elders whose true grievance is that the world is changing and they are afraid."
+"It is not just to depose an emperor because a pretender has found a convenient prophecy and purchased the support of elders whose conservatism masks their fear of change. It is not just to let the Flame be wielded as a sword by men who have confused the temple's interests with the divine will. It is not just, and I will not support it."
 
-He meets your eyes, and in his gaze you see something new: not serenity, not the cultivated calm of a lifetime's spiritual practice, but a fierce, burning clarity.
+He meets your eyes, and in his gaze you see something new: not serenity, not the cultivated calm of a lifetime's spiritual practice, but a fierce, burning clarity that looks, in the chamber's firelight, remarkably like the Flame itself.
 
-"I will oppose the Council. I will speak against the petition. I will break with the conservative elders if I must." A breath. "The Flame will not be used as a weapon. Not while I am its keeper."
+"I will oppose the Council. I will speak against the petition publicly, from the steps of the Temple of the First Wisdom, in front of the faithful and the doubtful alike. I will break with the conservative elders if that is what justice requires." A breath, deep and shaking. "The Flame will not be used as a weapon. Not while I am its keeper."
 
 *set rel_priest %+ 10
 *set ashoka_decision "oppose"
@@ -208,23 +222,25 @@ He meets your eyes, and in his gaze you see something new: not serenity, not the
 *goto omen_choice
 
 *label work_within
-Ashoka nods slowly.
+Ashoka nods slowly. The movement is measured, considered, the nod of a man who has been weighing options for three days and has found the one that balances most carefully on the knife's edge.
 
-"You counsel patience. The Flame teaches patience." He stands, and his bearing shifts -- the politician emerging from the priest, the man who has navigated temple politics for four decades taking control from the man who has spent three days in spiritual agony.
+"You counsel patience and persuasion. The Fourth Wisdom -- Temperance. The mastery of impulse." He stands, and his bearing shifts. The spiritual agonist retreats, and the politician emerges -- the man who has navigated temple politics for four decades, who has survived three High Priesthood challenges and two attempts to reform the temple's constitution. A man who knows how to count votes and read faces and turn an argument by degrees.
 
 *page_break
 
-"I will attend the Council of Discernment. I will hear the elders' arguments. And I will respond with arguments of my own." His voice firms. "The Prophecy of the Seventh Age has been interpreted a dozen ways by a dozen scholars. Kaveh's interpretation is one reading. Not the only reading. Not even the most persuasive reading."
+"I will attend the Council of Discernment. I will sit in my chair -- the High Priest's chair, the oldest chair in the temple, carved from the wood of the tree that grew beside the Flame's first brazier -- and I will hear the elders' arguments. All of them. I will give them the respect of attention. And then I will respond."
+
+His voice firms, losing the tremor, gaining the resonant authority of the man who speaks from the steps of the Temple on holy days.
+
+"The Prophecy of the Seventh Age has been interpreted a dozen ways by a dozen scholars across three centuries. Kaveh's interpretation is one reading among many. Not the only reading. Not even the most persuasive reading. And the Flame's guttering -- the Flame guttered before, Vizier. Once, eighty years ago, during the Great Drought. The records show it. The previous High Priest wrote about it. The Flame guttered for three weeks, and then it steadied, and the drought broke, and no one deposed anyone."
 
 "Can you sway them?"
 
-"Some. Not all. The hardliners are committed -- they have already made promises to Kaveh's faction, and breaking those promises would cost them politically. But there are four or five elders who are genuinely uncertain. If I can reach them with argument rather than authority, the vote may go our way."
+"Some. Not all. The hardliners are committed -- they have made promises to Kaveh's faction, and breaking those promises would cost them politically and financially. But there are four, perhaps five elders who are genuinely uncertain. Who signed the petition out of genuine spiritual anxiety rather than political calculation. If I can reach them with argument rather than authority, with reason rather than rank, the vote may go our way."
 
 *if (rel_priest > 60)
-  He pauses, then adds: "Your support has meant more than you know, Vizier. In a court of politicians, it is... rare... to find someone who cares about the right answer, not merely the useful one."
+  He pauses, then adds, more quietly: "Your support has meant more than you know, Vizier. In a court of politicians and cynics, it is rare to find someone who cares about the right answer, not merely the useful one. I do not say that lightly."
   *set final_alliance_temple true
-*else
-  He folds his hands. "I will do what I can. The outcome is not certain."
 
 *set ashoka_decision "within"
 
@@ -232,23 +248,23 @@ Ashoka nods slowly.
 
 *label scholarship_challenge
 
-Ashoka's eyes sharpen.
+Ashoka's eyes sharpen. The trembling stops. The scholar in him -- the part that has spent four decades studying the ancient texts, arguing with the Masters, debating the fine points of Parvani grammar and astronomical correlation -- emerges like a blade from a sheath.
 
-"You propose to fight prophecy with astronomy?"
+"You propose to fight prophecy with astronomy," he says. Not a question. An assessment.
 
-"I propose to fight a false interpretation with a true one. The prophecy references the conjunction of the Warrior's Star and the Merchant's Star. Scholar Miriam at the Tower of Stars can calculate the exact dates of that conjunction. If Kaveh's birth does not align --"
+"I propose to fight a false interpretation with a true one. The prophecy references the conjunction of the Warrior's Star and the Merchant's Star -- a specific astronomical event that can be calculated to the day, the hour, the minute. Scholar Miriam at the Tower of Stars has the instruments and the expertise. If Kaveh's birth does not align with the conjunction -- if the dates are wrong, if the calculations in his broadsheet are based on a calendar conversion error --"
+
+"Then the prophecy does not name him," Ashoka finishes. "And the entire religious argument for his claim collapses." A pause. Then, slowly, a smile -- the first you have seen from him in days, perhaps weeks. It is not a large smile, but it is genuine, and it transforms his face from that of a frightened old man to that of a scholar who has been reminded that truth is not merely a virtue but a weapon. "The Fifth Wisdom is Knowledge. You wield it well, Vizier."
 
 *page_break
 
-"Then the prophecy does not name him," Ashoka finishes. A pause. Then, slowly, a smile -- the first you have seen from him in days. "The Fifth Wisdom is Knowledge. You wield it well, Vizier."
-
 *if (romance_asha)
-  "Asha has been studying the prophecy independently," you add. "She believes the astronomical references in Kaveh's broadsheet are miscalculated by at least three years."
+  "Asha has been studying the prophecy independently," you add. "She believes the astronomical references in Kaveh's broadsheet are miscalculated by at least three years -- a calendar conversion error between the Classical Parvani dating system and the modern imperial calendar."
 
-  Ashoka's expression shifts -- a complex mixture of pride and exasperation. "Asha. Of course Asha has been studying it. That girl questions everything, including the furniture. But she is --" He stops. "She is rarely wrong about the scholarship."
+  Ashoka's expression shifts -- a complex mixture of pride and exasperation and something that might be love, the complicated love of a mentor for a student who is brilliant and troublesome in equal measure. "Asha. Of course Asha has been studying it. That girl questions everything -- the furniture, the architecture, the fundamental nature of reality. She once submitted a treatise questioning whether the Seven Wisdoms should be eight." He stops. "But she is rarely wrong about the scholarship. Almost never wrong. It is extraordinarily annoying."
   *set rel_asha %+ 8
 
-"I will send to the Tower of Stars immediately," Ashoka says. "If Scholar Miriam can provide definitive calculations, I can present them to the Council of Discernment. The elders may dismiss political arguments, but they cannot dismiss mathematics."
+"I will send to the Tower of Stars immediately," Ashoka says. "If Scholar Miriam can provide definitive calculations -- dates, star positions, conjunction timing, all verified through independent observation -- I can present them to the Council of Discernment. The conservative elders may dismiss political arguments. They may dismiss my authority. But they cannot dismiss mathematics. Not even the most devout elder can argue that two plus two is five because the Flame wills it."
 
 *set ashoka_decision "scholarship"
 *set final_alliance_temple true
@@ -263,17 +279,15 @@ Ashoka's eyes sharpen.
 
 The political strategy for the Council of Discernment is set. But the Flame remains.
 
-You return to the central courtyard. The Flame still gutters. The shadows still dance. The young monk still weeps. And the question that Ashoka could not answer still hangs in the air like the smell of frankincense: what does it mean?
+You return to the central courtyard. The Flame still gutters. The shadows still dance their unsettling dance across the courtyard walls. The young monk still weeps, though more quietly now, her tears finding a rhythm of their own. And the question that Ashoka could not answer still hangs in the air like the incense: what does it mean?
 
-The answer you give -- the answer you choose to give -- will shape not only the temple's response but the empire's understanding of what is happening to them. Two million people look to the Flame for reassurance, for continuity, for the promise that the divine has not abandoned them. What you say next will either strengthen or shatter that promise.
+The answer you give -- the answer you choose to give -- will shape not only the temple's response but the empire's understanding of what is happening. Two million people look to the Flame for reassurance, for continuity, for the promise that the divine has not abandoned them. What you say next will either strengthen that promise or shatter it.
+
+A crowd has gathered at the courtyard entrance. Temple monks in their saffron robes, city officials in court dress, a handful of merchants and common people who have heard the rumors and come to see for themselves. They watch the guttering Flame with expressions that map the entire spectrum of human response to the sacred: fear, fury, wonder, skepticism, numb disbelief. Among them, faces you recognize. An elder in conservative robes, his expression triumphant. A young monk, white-faced with terror. A merchant from the Grand Bazaar, arms folded, expression skeptical.
+
+They are all watching you. The Vizier, standing before the Flame. Waiting.
 
 *page_break
-
-A crowd has gathered at the courtyard entrance. Temple monks, city officials, a handful of merchants and common people who have heard the rumors. They watch the guttering Flame with expressions that range from fear to fury to numb disbelief.
-
-Among them, you see faces you recognize. An elder in conservative robes, his expression triumphant -- the Flame proves his case. A young monk, her face white with terror -- the Flame is dying, and her world is dying with it. A merchant from the Grand Bazaar, his arms folded, his expression skeptical -- fire is fire, and the empire has bigger problems.
-
-They are all watching you.
 
 *choice
   #Address the crowd. The Flame is a test of faith, not a sign of abandonment. The empire has weathered storms before. This one will pass.
@@ -283,13 +297,13 @@ They are all watching you.
     *set diplomacy + 3
     *set rel_priest %+ 8
     *goto faith_response
-  #Address the crowd. The Flame's guttering has a physical cause, and the temple's scholars are investigating. There is no cause for spiritual panic.
+  #Address the crowd. The Flame's guttering has a physical cause. Reason, not panic, is what the moment requires.
     *set omen_response "rational"
     *set scholarship + 3
     *set honest %+ 10
     *set rep_temple %- 5
     *goto rational_response
-  *selectable_if (boldness > 55) #Seize the moment. Stand before the Flame and publicly challenge Kaveh's interpretation. If the Flame responds to conviction, let it respond now. [Requires Boldness 55+]
+  *selectable_if (boldness > 55) #Stand before the Flame and publicly challenge Kaveh's interpretation. If the Flame responds to conviction, let it respond now. [Requires Boldness 55+]
     *set omen_response "challenge"
     *set boldness %+ 15
     *set rep_temple %+ 5
@@ -297,52 +311,46 @@ They are all watching you.
     *goto challenge_response
 
 *label faith_response
-You step forward. The crowd parts.
+You step forward. The crowd parts before you -- not from deference to your rank, but from the instinctive human response to someone who is walking toward something they are afraid of.
 
-You stand before the Eternal Flame, your back to its wavering warmth, and you face the assembled crowd. The Vizier's seal ring catches the Flame's light. Your shadow stretches behind you, long and dark, flickering with the Flame's unsteady rhythm.
+You stand before the Eternal Flame, your back to its wavering warmth. The seal ring catches the Flame's shifting light. Your shadow stretches behind you, long and dark and unsteady, dancing with the Flame's uncertain rhythm.
 
 *page_break
 
-"Three hundred years ago," you say, "Roshan the Conqueror lit this Flame from a torch taken from the ruins of Old Parvana. The empire was a dream then -- a warlord's ambition, held together with steel and willpower. The Flame was a promise. A promise that the dream would endure."
+"Three hundred years ago," you say, and your voice carries across the courtyard with a clarity that surprises you, "Roshan the Conqueror lit this Flame from a torch taken from the ruins of Old Parvana. The empire was a dream then. A warlord's ambition, held together with steel and willpower and the hope that something better was possible. The Flame was a promise. Not to the powerful or the privileged. To everyone. A promise that the dream would endure."
 
-Your voice carries across the courtyard. The crowd is silent.
+The crowd is silent. Even the wind has stilled.
 
-"In three centuries, this Flame has witnessed famine and flood, war and peace, emperors who were wise and emperors who were foolish. It has watched the empire stumble and recover, fall and rise, doubt and believe. The Flame has seen all of this, and it has burned on."
+"In three centuries, this Flame has witnessed everything an empire can endure. Famine. Flood. War. Plague. Succession crises that tore the court apart and civil wars that split the army in two. It has watched the empire stumble and recover, fall and rise, doubt and believe. The Flame has seen all of this. And it has burned on."
 
 You turn to look at the Flame. It gutters. The shadows leap. You face the crowd again.
 
-"The Flame does not gutter because the divine has abandoned us. The Flame gutters because we are being tested. The Seven Wisdoms do not promise that the path will be easy. They promise that the path exists, and that those who walk it with courage and justice and mercy will find their way."
+"The Flame does not gutter because the divine has abandoned us. The Flame gutters because we are being tested. The Seven Wisdoms do not promise that the path will be easy or the way will be clear. They promise that the path exists, and that those who walk it with courage and justice and mercy will find their way through the darkness."
 
 *if (rel_priest > 50)
-  Ashoka, standing at the edge of the crowd, bows his head. It is not submission. It is recognition.
+  Behind you, at the edge of the crowd, Ashoka bows his head. Not submission. Recognition.
 
-The conservative elder's expression sours. The young monk's tears slow. The merchant from the bazaar uncrosses his arms. You cannot tell if you have convinced them. But you have given them something to hold onto, and in a time of crisis, that may be enough.
+The conservative elder's expression sours. The young monk's tears slow. The merchant from the bazaar uncrosses his arms.
 
 *set elder_count_loyal + 2
 
 *goto temple_aftermath
 
 *label rational_response
-You step forward. The crowd watches.
+You step forward into the space between the crowd and the Flame. Your voice is level, precise, the voice of an administrator who has learned that truth is the most powerful tool in any crisis.
 
 *page_break
 
-"The Eternal Flame is tended by monks using oil supplied through a specific trade route -- the northern route, which has been disrupted by the Khanate invasion. The wick is replaced on a monthly schedule that has been interrupted by the current crisis. The brazier itself has not been serviced in six months."
+"The Eternal Flame is tended by monks using a specific temple oil imported from the southern provinces through a trade route that has been disrupted by the Khanate invasion. The wick is replaced on a monthly schedule that has been interrupted by the current crisis. The brazier itself has not been serviced in six months due to the redirection of temple maintenance funds."
 
-Your voice is level, precise, the voice of an administrator addressing a logistics problem.
+A murmur passes through the crowd. The conservative elder's expression shifts from triumph to anger, his lined face flushing with the particular fury of a man whose sacred mystery is being reduced to logistics.
 
-"I have ordered an immediate investigation into the Flame's physical condition. Scholar Miriam from the Tower of Stars will conduct a scientific examination. The oil supply will be restored through alternative routes. The wick will be replaced."
+"The Flame is sacred!" he says loudly, stepping forward. "It is not a lamp to be maintained by engineers and bean counters!"
 
-A murmur passes through the crowd. The conservative elder's expression shifts from triumph to anger.
-
-"The Flame is sacred," the elder says loudly. "It is not a lamp to be maintained by engineers!"
-
-"The Flame is both sacred and physical," you reply. "It burns because oil feeds it and a wick carries the fire. If the oil runs dry, the most devout prayer in the world will not relight it. Tending the sacred requires tending the practical."
+"The Flame is both sacred and physical," you reply, turning to face him directly. "It burns because oil feeds it and a wick carries the fire. If the oil runs dry, the most devout prayer in the world will not relight it. Tending the sacred requires tending the practical. The founders of this temple understood this. They built aqueducts and supply chains and maintenance schedules alongside the prayer halls and the meditation chambers. Faith without logistics is a bonfire waiting to go out."
 
 *if (rel_priest > 40)
-  Ashoka says nothing, but his expression is thoughtful. He neither endorses nor contradicts you. The High Priest knows better than to take sides publicly in a theological dispute. But his silence, in this case, speaks approval.
-*else
-  Ashoka's expression is unreadable. You may have overstepped. The temple does not welcome secular authorities pronouncing on spiritual matters.
+  Ashoka says nothing. His expression is thoughtful -- the look of a man who is hearing an argument he has considered himself but never spoken aloud. His silence is not disapproval. It is the silence of someone choosing not to take sides publicly, which, from a High Priest, is itself a statement.
 
 *set elder_count_loyal + 1
 *set rep_trade %+ 5
@@ -356,34 +364,32 @@ Not to the edge of the crowd. Not to the courtyard's center. To the Flame itself
 
 *page_break
 
-The heat hits you first -- a wave of warmth that presses against your face like a hand. Then the light, shifting and uncertain, turning the world into a dance of gold and shadow. You stand an arm's length from the great bronze brazier, close enough to feel the Flame's breath on your skin.
+The heat hits you first -- a wave of warmth that presses against your face like a hand, like the touch of something alive. Then the light, shifting and uncertain, turning the world into a dance of gold and shadow. You stand an arm's length from the great bronze brazier, close enough to feel the Flame's breath on your skin, close enough to see the oil ripple on the brazier's surface.
 
-The crowd goes silent. Even the conservative elder holds his tongue. No one stands this close to the Eternal Flame. It is not forbidden -- there is no rule against it -- but it is not done. The Flame is revered from a distance, as one reveres the divine.
+The crowd goes silent. Even the conservative elder holds his tongue. No one stands this close to the Eternal Flame. It is not forbidden -- there is no prohibition, no rule, no scripture that bars the faithful from approaching. But it is not done. The Flame is revered from a distance, as one reveres the sun.
 
 You do not revere from a distance. Not today.
 
-"Prince Kaveh claims this Flame as his sign," you say. Your voice carries because the courtyard's acoustics were designed for this -- for the human voice to reach every ear. "He claims the Prophecy of the Seventh Age. He claims divine mandate."
+"Prince Kaveh claims this Flame as his sign," you say. Your voice carries, amplified by the courtyard's acoustics -- the temple builders knew what they were doing, knew that the human voice, in the right space, could fill a crowd the way fire fills a brazier. "He claims the Prophecy of the Seventh Age. He claims divine mandate."
 
-You turn in a slow circle, looking at every face in the crowd.
+You turn in a slow circle, looking at every face.
 
-"I am not a priest. I am not a theologian. I cannot tell you what the Flame means or what the prophecy says. But I can tell you this: the Flame burns. It gutters, yes. It wavers. But it burns. And if you look at it -- if you truly look at it, as I am looking at it now -- you will see that it has not gone out."
+"I am not a priest. I am not a prophet. I cannot tell you what the Flame means or what the prophecy says. But I can tell you this." You raise the seal ring. The jade catches the Flame's light and holds it -- a green spark in the shifting gold. "The Flame burns. It gutters, yes. It wavers. But it burns. And if you look at it -- truly look, as I am looking now -- you will see that it has not gone out."
 
 *page_break
 
-You raise the seal ring. The jade catches the Flame's light and holds it -- a green spark in the shifting gold.
-
 "The empire gutters. The empire wavers. But the empire has not gone out. And it will not go out. Not while there are people willing to stand this close to the fire and refuse to look away."
 
-The Flame leaps. Just for a moment -- a sudden surge of gold that rises three feet from the brazier, casting sharp shadows across the courtyard walls. Then it subsides, still guttering, still uncertain. But the leap was real. You felt the heat of it on your face.
+The Flame leaps. Just for a moment -- a sudden surge of gold that rises three feet from the brazier, casting sharp shadows across the courtyard walls. Then it subsides, still guttering, still uncertain. But the leap was real. You felt the heat of it on your face, the blast of warmth that pushed your hair back and made your eyes water.
 
 *if (flame_interpretation = "awe")
-  Something in your chest responds to the Flame's surge -- a recognition, or a resonance, or the echo of three centuries of prayer soaked into these stones.
+  Something in your chest responds -- a recognition, or a resonance, or the echo of three centuries of prayer soaked into these stones, vibrating at a frequency that your body understands even if your mind does not.
 *elseif (flame_interpretation = "rational")
-  A gust of air from the courtyard entrance, you tell yourself. A shift in the oil flow. A physical explanation. But the timing was extraordinary.
+  A gust of air from the courtyard entrance, you tell yourself. A shift in the oil flow. A physical explanation. But the timing -- the extraordinary, impossible timing --
 *else
-  You feel nothing. And then, for one breath, you feel everything. And then nothing again. And you do not know which was real.
+  You feel nothing. And then, for one breath, you feel everything. And then nothing again.
 
-The crowd erupts. The young monk falls to her knees. The conservative elder's face drains of color. The merchant from the bazaar uncrosses his arms and, slowly, bows his head.
+The crowd erupts. The young monk falls to her knees, hands raised. The conservative elder's face drains of color. The merchant from the bazaar uncrosses his arms and, slowly, bows his head.
 
 *set elder_count_loyal + 3
 *set rel_priest %+ 10
@@ -396,41 +402,41 @@ The crowd erupts. The young monk falls to her knees. The conservative elder's fa
 
 *label temple_aftermath
 
-The hours that follow are a blur of temple politics.
+The hours that follow blur with the intensity of temple politics at its most concentrated.
 
 *if (ashoka_decision = "oppose")
-  Ashoka addresses the assembled elders in the Chamber of the First Wisdom. His voice carries the authority of forty years of service and the conviction of a man who has found his ground.
+  Ashoka addresses the assembled elders in the Chamber of the First Wisdom. His voice carries the authority of forty years of service and the conviction of a man who has passed through doubt and emerged transformed.
 
-  "I will not sanction a Council of Discernment convened in haste, motivated by politics, and grounded in a disputed prophecy. The Flame does not ask us to choose between emperor and pretender. The Flame asks us to choose between justice and expediency. I choose justice."
+  "I will not sanction a Council of Discernment convened in haste, motivated by political ambition, and grounded in a disputed prophecy wielded as a weapon. The Flame does not ask us to choose between emperor and pretender. The Flame asks us to choose between justice and expediency. I choose justice."
 
-  The chamber splits. Seven elders stand with Kaveh. Five stand with Ashoka. The temple fractures along a line that runs through its spiritual heart.
+  The chamber splits. Seven elders stand with Kaveh's faction. Five stand with Ashoka.
 
   *set elder_count_kaveh + 7
   *set elder_count_loyal + 5
 *elseif (ashoka_decision = "within")
-  Ashoka takes his seat at the Council of Discernment -- a circular chamber at the temple's heart where the elders gather for the most solemn deliberations. He argues with the quiet persistence of water wearing stone.
+  Ashoka takes his seat at the Council of Discernment -- the circular chamber at the temple's heart, lit by seven lamps for the seven Wisdoms, furnished with stone chairs as old as the empire. He argues with the quiet persistence of water wearing stone, citing scripture, invoking precedent, dismantling the conservative interpretation with the careful reasoning of a lifelong scholar.
 
-  The debate lasts six hours. Ashoka quotes scripture, invokes precedent, and dismantles the conservative interpretation with the careful reasoning of a lifelong scholar. The conservative elders counter with the Flame's guttering, with the prophecy, with the failures of Roshan's reign.
+  The debate lasts six hours. By its end, the chamber smells of exhaustion and spent incense.
 
   *if (rel_priest > 55)
-    When the vote comes, Ashoka has swayed two of the uncertain elders. The count is seven to five -- still in Kaveh's favor, but the margin is narrower than the conservatives expected.
+    Ashoka has swayed two of the uncertain elders. The vote falls seven to five -- still in Kaveh's favor, but the margin is narrower than the conservatives expected or wanted.
     *set elder_count_kaveh + 7
     *set elder_count_loyal + 5
   *else
-    When the vote comes, Ashoka has swayed one elder. The count is eight to four.
+    Ashoka has swayed one elder. The vote falls eight to four.
     *set elder_count_kaveh + 8
     *set elder_count_loyal + 4
 *else
   *comment Scholarship challenge
-  The calculations arrive from the Tower of Stars by evening -- delivered by Scholar Miriam herself, who climbs the temple steps with a stack of charts and the barely contained excitement of a scientist about to overturn a false assumption.
+  The calculations arrive from the Tower of Stars by evening, delivered by Scholar Miriam herself, who climbs the temple steps with a stack of astronomical charts and the barely contained excitement of a scientist about to overturn a false assumption with mathematics.
 
-  "The conjunction of the Warrior's Star and the Merchant's Star," she says, spreading her charts on the altar of the Fifth Wisdom -- Knowledge. "Kaveh's broadsheet claims it occurred on the night of his birth. It did not. The conjunction occurred three years and forty-seven days earlier. The mathematics are unambiguous."
+  "The conjunction of the Warrior's Star and the Merchant's Star," she says, spreading her charts on the altar of the Fifth Wisdom. "Kaveh's broadsheet claims it occurred on the night of his birth. It did not. The conjunction occurred three years and forty-seven days earlier. The mathematics are unambiguous. The calculation error is a calendar conversion mistake -- the Classical Parvani dating system uses a lunar intercalary month that was abolished two centuries ago."
 
   *if (romance_asha)
-    Asha stands beside Miriam, her own research spread alongside the astronomer's calculations. "The original Parvani text uses a calendar system that was abandoned two centuries ago," she says. "Whoever calculated Kaveh's birth alignment used the modern calendar without converting the dates. A basic scholarly error."
+    Asha stands beside Miriam. "I have independently verified the calculations using three separate source texts. The error is consistent and systematic. Whoever prepared Kaveh's astronomical argument either did not understand Parvani dating conventions or did not care."
     *set rel_asha %+ 5
 
-  The evidence is presented to the Council of Discernment. The conservative elders attempt to rebut, but numbers are not opinions. Mathematics does not negotiate.
+  The evidence is presented to the Council. The conservative elders attempt to rebut, but numbers are not opinions. Mathematics does not negotiate.
 
   *set elder_count_kaveh + 5
   *set elder_count_loyal + 7
@@ -439,7 +445,7 @@ The hours that follow are a blur of temple politics.
 
 *comment Determine temple outcome
 *if (elder_count_loyal >= elder_count_kaveh)
-  The Council of Discernment does not rule against the Emperor. The vote fails to reach the required two-thirds majority. Ashoka emerges from the chamber with the bearing of a man who has fought a battle and, if not won, has at least survived.
+  The Council of Discernment does not rule against the Emperor. The vote fails to reach the two-thirds majority required for a formal judgment of lost divine favor. Ashoka emerges from the chamber with the bearing of a man who has fought a battle and survived, if not unscathed.
 
   "The Flame endures," he says. "And so does the Emperor's mandate. For now."
 
@@ -447,29 +453,31 @@ The hours that follow are a blur of temple politics.
   *set final_alliance_temple true
   *set rel_emperor %+ 5
 
-  But the schism remains. Seven elders -- or five, depending on the count -- have declared their allegiance to Kaveh. They have not recanted. They have merely been outvoted. The temple is fractured, and fractured institutions are dangerous things.
+  The schism remains. The dissenting elders have not recanted. The temple is fractured along a line that runs through its spiritual heart. But the fracture did not break. The Flame still burns.
 *else
-  The Council of Discernment rules against the Emperor. The vote carries -- narrowly, bitterly, but it carries. The conservative elders rise from their seats with the grave satisfaction of men who believe they have served the divine.
+  The Council rules against the Emperor. The vote carries. The conservative elders rise from their seats with the grave satisfaction of men who believe they have served the divine.
 
-  Ashoka stands alone in the chamber as the elders file out. His face is stone.
+  Ashoka stands alone as the chamber empties. His face is stone.
 
-  "The temple has spoken," he says. His voice is barely a whisper. "The Emperor's mandate is withdrawn."
+  "The temple has spoken," he whispers. "The Emperor's mandate is withdrawn."
 
   *set rep_temple %- 10
   *set rel_emperor %- 10
   *set rel_kaveh %+ 10
 
   *if (rel_priest > 60)
-    He turns to you. "I will not enforce this ruling. I will not extinguish the Flame. The conservative elders may speak for the Council, but they do not speak for the Flame. They do not speak for me."
+    He turns to you. The stone cracks. Beneath it is iron.
 
-    He draws himself up. The trembling is gone. In its place is the iron certainty of a man who has passed through doubt and emerged on the other side.
+    "I will not enforce this ruling. I will not extinguish the Flame. The conservative elders may speak for the Council, but they do not speak for the Flame. They do not speak for me."
+
+    He draws himself to his full height.
 
     "I am the High Priest. The Flame is my charge. And I say it burns."
 
     *set final_alliance_temple true
     *set rel_priest %+ 10
   *else
-    He says nothing more. The silence fills the chamber like smoke.
+    He says nothing more. The silence fills the chamber like smoke, and the Flame's unsteady light flickers through the window.
 
 *page_break
 
@@ -477,24 +485,20 @@ The hours that follow are a blur of temple politics.
 
 You leave the temple as the sun sets over Khazara.
 
-The Eternal Flame is behind you, still guttering, still burning. The temple is divided, its elders split between tradition and reform, between a young emperor and a charming pretender. The spiritual crisis mirrors the political one, and the military one, and the economic one -- each reinforcing the others in a cascade of collapse that was designed, engineered, orchestrated by hands that understood exactly how to break an empire.
-
-But the Flame burns.
+The Eternal Flame is behind you, still guttering, still burning -- both things at once, uncertainty and endurance married in a single dancing point of light. The temple is divided, its elders split between tradition and change, between the familiar comfort of the old order and the frightening possibility that the world must be remade.
 
 *if (omen_response = "faith")
-  You spoke of faith today. You spoke of testing and endurance and the promise that the path exists. You are not certain you believe what you said. But you are certain that the people who heard it needed to hear it, and that is, perhaps, a form of faith in itself.
+  You spoke of faith today. Of testing and endurance and the promise that the path exists. You are not certain you believe every word you said. But you are certain that the people who heard them needed to hear them, and that certitude -- the willingness to speak hope into a room full of fear -- may itself be a form of faith.
 *elseif (omen_response = "rational")
-  You spoke of oil and wicks and physical causes. The rational explanation may be true. It may also be insufficient. The Flame is physical, yes. It is also three hundred years of accumulated meaning, of births and deaths and prayers and hopes, and that weight of meaning cannot be explained by the temperature of the brazier.
+  You spoke of oil and wicks and supply chains. The rational explanation may be true. It may also be insufficient. The Flame is physical, yes. But it is also three hundred years of accumulated meaning -- births and deaths and prayers and hopes soaked into the stone -- and that weight of meaning cannot be captured by the temperature of a brazier or the quality of a wick.
 *else
-  You stood before the Flame and the Flame leaped. You do not know what it means. You may never know. But you stood there, and the people saw you stand, and that act -- the standing, the refusal to look away -- meant something. Whether it meant something to the divine, you cannot say. But it meant something to the people, and in a time of crisis, the people are what matter.
+  You stood before the Flame and the Flame leaped. You do not know what it means. You may never know. But you stood there, close enough to feel the heat on your face, and the people saw you stand, and that act -- the standing, the refusal to look away -- meant something. Whether it meant something to the divine, you cannot say. But it meant something to the people, and in a time when the empire's foundations are shaking, the people are the only foundation that matters.
 
 *page_break
 
-The streets of the Temple Quarter are dark now, lit only by the oil lamps that the faithful have placed in their windows -- small echoes of the Eternal Flame, a tradition as old as the empire itself. Tonight, there are fewer lamps than usual. The darkness has grown.
+The streets of the Temple Quarter are dark now, lit only by the oil lamps that the faithful have placed in their windows -- small echoes of the Eternal Flame, a tradition as old as the empire itself. A chain of light stretching from house to house, from street to street, from the Temple Quarter to the Grand Bazaar to the Old City and beyond. Tonight, there are fewer lamps than usual. The darkness has encroached. But the lamps that burn, burn steadily.
 
-But the lamps that burn, burn steadily.
-
-Farid meets you at the Citadel gate. He has dispatches -- always dispatches. The northern front. The treasury. The intelligence reports from Zara's network. The cascade of crisis continues.
+Farid meets you at the Citadel gate with dispatches, because there are always dispatches, because the empire generates paper the way the sky generates weather -- endlessly, inevitably, regardless of human intent.
 
 "Ashoka," he says, as you walk through the Citadel corridors. "What did he decide?"
 
@@ -505,18 +509,14 @@ Farid meets you at the Citadel gate. He has dispatches -- always dispatches. The
 *else
   "He chose the truth."
 
-Farid nods. He does not ask if it was enough. He is learning, your secretary. Learning that in times like these, "enough" is not a meaningful category. There is only what you did, and what comes next.
+Farid nods. He does not ask if it was enough. He is learning, your anxious, loyal, unexpectedly competent secretary. Learning that in times like these, "enough" is not a meaningful category. There is only what you did, and what comes next, and the narrow space between them where courage lives.
 
-*page_break
+You reach your chambers. The desk is covered with maps and dispatches. The seal ring is heavy on your finger. Outside the window, the Eternal Flame is a point of gold in the gathering darkness -- wavering, uncertain, but burning. Still burning.
 
-You reach your chambers. The desk is still covered with maps and dispatches. The seal ring is heavy on your finger. Outside the window, the Eternal Flame is a point of gold in the darkness -- wavering, uncertain, but burning.
+The temple is divided. The economy is battered. The northern front holds by a thread. And Prince Kaveh's smile graces every wall in the city.
 
-The temple is divided. The economy is battered. The northern front holds by a thread. And Prince Kaveh's smile, on broadsheets pinned to every wall in the city, promises a different future.
-
-But you are still standing. The Emperor is still on the throne. The Flame is still burning.
+But you are still standing. The Emperor is still on the throne. The Flame still burns.
 
 And in the shadows of the Old City, Spymaster Zara is hunting.
-
-The shadow war begins tomorrow.
 
 *finish The Shadow War
