@@ -1,0 +1,215 @@
+*comment ============================================================
+*comment  CHAPTER 2: THE DINNER (Last free scene — ends on cliffhanger)
+*comment ============================================================
+
+*temp dinner_secret ""
+
+The sun has set behind the western hills, and Khazara transforms. The marble corridors fill with lamplight — thousands of oil lamps in brass holders, casting the palace in a warm amber glow that softens every edge and deepens every shadow. Servants move through the halls in near-silence, bearing trays of sweetmeats and pitchers of sherbet. The fountains catch the lamplight and scatter it across the ceilings in rippling constellations.
+
+You dress carefully. In the Khazaran court, clothing is a language, and tonight you are making a first argument.
+
+*page_break
+
+*if (route = 1)
+  *comment ============================
+  *comment  DOWAGER EMPRESS DINNER
+  *comment ============================
+
+  The Dowager Empress Nur receives you in her private apartments in the Harem Wing — a suite of rooms that makes the Grand Vizier's chambers look like a provincial inn.
+
+  The walls are hung with silk tapestries depicting the great queens of the empire's past: warrior-queens in armor, scholar-queens debating philosophers, queen-mothers holding infants who would become emperors. The message is not subtle. This is a woman who considers herself part of a dynasty within the dynasty.
+
+  She rises to greet you, and you see her clearly for the first time without the screen.
+
+  *page_break
+
+  Nur is perhaps forty-five, with the kind of beauty that has been refined by years into something more dangerous than it was in youth. Her eyes are dark and sharp as obsidian blades. Her hands, heavy with emerald rings, move with the deliberate grace of someone who has never made an unconsidered gesture. She wears deep green silk — always green, Farid told you. The color of the Prophet, and the color of ambition.
+
+  "Grand Vizier ${player_name}," she says, and her voice is warm as honey poured over a blade. "How kind of you to accept. Please — sit. We have much to discuss, and the food is best when it is warm."
+
+  *set has_met_dowager true
+
+  The dinner is extraordinary. Saffron-braised lamb with dried cherries and pistachios. Rice perfumed with rosewater. A salad of pomegranate seeds and fresh herbs. Flatbread stuffed with spiced cheese. And wine — Shiraz, from the southern provinces, dark as garnets in crystal goblets.
+
+  *page_break
+
+  She eats sparingly. She watches you eat. And she talks.
+
+  "Let me be direct, Grand Vizier. I did not choose you. Your appointment was pushed through by the provincial faction in the Senate before I could intervene. I would have preferred someone I knew." She sets down her wine glass with precision. "But I am not unreasonable. I prefer to work with the pieces on the board rather than sweep them off."
+
+  "My son is a good boy," she continues, and for a moment something almost human flickers behind those obsidian eyes. "He will be a good Emperor — if he is guided correctly. His father understood that an empire is not governed by ideals but by arrangements. I am asking you, Grand Vizier, whether you understand that as well."
+
+  *fake_choice
+    #"I understand perfectly. The empire needs stability, and stability requires cooperation."
+      *set diplomacy %+ 10
+      *set rel_dowager %+ 10
+      *set honest %- 5
+      Nur smiles — a real smile, or a very good imitation. "Then we understand each other. I think we shall work well together, Grand Vizier."
+    #"I serve the Emperor, Your Grace. My arrangements are with the throne."
+      *set honest %+ 10
+      *set boldness %+ 5
+      *set rel_dowager %- 5
+      Nur's smile does not waver, but it cools by several degrees. "Of course. We all serve the Emperor. But the Emperor is sixteen. Someone must interpret his will into policy. I have been doing so for two years. I hope you do not intend to make that more difficult."
+    #"I am new here. I intend to listen before I make any arrangements."
+      *set cunning %+ 10
+      *set rel_dowager %+ 5
+      Nur studies you for a long moment — appraising, recalculating. "A cautious answer. Your predecessor was cautious too, in the beginning." She takes a sip of wine. "He became less so."
+
+  *page_break
+
+  It is near midnight when Nur leans forward, and her voice drops to a register you have not heard before. Intimate. Dangerous.
+
+  "There is one more thing, Grand Vizier. About your predecessor." She turns her wine glass slowly in her fingers. "Osman was not always careful about his alliances. In the months before his death, he had begun communicating with someone outside the palace — someone in the provinces. I do not know who, and I do not know why. But I know that those letters frightened people. Powerful people."
+
+  She looks at you directly. "Find those letters, Grand Vizier. Before someone else does."
+
+  *set dinner_secret "letters"
+
+*if (route = 2)
+  *comment ============================
+  *comment  GENERAL KADIR DINNER
+  *comment ============================
+
+  The Officers' Terrace sits atop the military wing of the palace, open to the sky. Torches flicker in iron brackets, and the smell of roasting meat hits you before you reach the top of the stairs — lamb on spits, whole chickens rubbed with cumin and chili, skewers of marinated goat. This is not the delicate cuisine of the inner court. This is soldiers' food, and a great deal of it.
+
+  General Kadir waits at the head of a long trestle table, a cup of ayran in his fist rather than wine. He is enormous — not fat, but built like a siege tower, with shoulders that strain the seams of his military tunic and a beard so thick and black it looks like it could stop a blade. A scar runs from his left temple to his jaw, and his eyes are the pale grey of northern stone.
+
+  *page_break
+
+  "Vizier," he says. Not "Grand Vizier." Already a statement. "Sit down. Eat. I don't trust a man who won't eat."
+
+  He does not ask about your journey. He does not compliment your robes. He tears a piece of bread in half, dips it in a dish of yogurt and herbs, and gets to the point.
+
+  "The Turani are raiding again. Three villages burned last month. Sixty dead. I have forty thousand men sitting on the border playing dice because the treasury says we can't afford a campaign." He chews. "I don't need the treasury's permission to defend the empire. I need a Grand Vizier who understands that walls are maintained with steel, not with ledgers."
+
+  *page_break
+
+  He pours you a cup of ayran and pushes it across the table. "Your predecessor — Osman — he understood the military. At first. He made sure the soldiers were paid, the forts maintained, the supply lines open. Then something changed. In the last year of his life, he began diverting military funds. Quietly. Small amounts at first, then larger. I confronted him about it. He said the treasury demanded it."
+
+  Kadir sets down his cup. "The treasury never made that demand. I checked. Osman was moving gold somewhere, and no one knows where."
+
+  *fake_choice
+    #"How much gold are we talking about?"
+      *set scholarship %+ 5
+      *set cunning %+ 5
+      Kadir's jaw tightens. "Over the last year? Nearly eight thousand gold dinars. Enough to fund a frontier campaign. Enough to hire a private army." He lets that sink in. "Or enough to pay someone a very large bribe."
+    #"Do you suspect someone of pressuring him?"
+      *set cunning %+ 10
+      *set rel_general %+ 5
+      Kadir leans back. "I suspect everyone, Vizier. That's how I've stayed alive this long. But if you're asking who had the leverage to make Osman redirect military funds against his own instincts — " He glances toward the inner palace. "There are not many candidates."
+    #"I'll look into it. You have my word."
+      *set honest %+ 10
+      *set rel_general %+ 10
+      *set boldness %+ 5
+      Kadir studies you for a long moment, then nods — a single, heavy nod, like a portcullis dropping into place. "Good. I've heard enough promises from the court to pave a road to hell. But you have an honest face, Vizier. Don't make me regret trusting it."
+
+  *page_break
+
+  The night deepens. The soldiers below the terrace are singing — a marching song, bawdy and off-key, that echoes off the palace walls. Kadir has relaxed somewhat. He tells you about the northern frontier, about the Turani horsemen and their strange tactics, about the fortress at Irongate Pass that is the empire's first line of defense.
+
+  Then he leans forward, and his voice drops.
+
+  "One more thing. The night Osman died, one of my men was on guard duty in the eastern wing. He saw someone leaving Osman's chambers at the third watch — hours after the physicians said Osman had already died."
+
+  He holds your gaze. "My soldier reported it. The report disappeared. Someone in the palace does not want questions asked about that night."
+
+  *set dinner_secret "intruder"
+
+*if (route = 3)
+  *comment ============================
+  *comment  GUILDMASTER ZARA DINNER
+  *comment ============================
+
+  The Merchant Quarter lies beyond the palace walls, and stepping into it is like crossing into another country. Where the palace is silence and marble, the Quarter is noise and color — even at night, lanterns sway over the narrow streets, and the coffeehouses are packed with merchants arguing over contracts in six languages.
+
+  Guildmaster Zara's residence is an exception to the Quarter's chaos. It is a compound of elegant restraint — whitewashed walls, a courtyard garden of jasmine and night-blooming cereus, and a silence enforced not by emptiness but by very discreet guards. You count eight before you reach the dining room. There are certainly more.
+
+  *page_break
+
+  Zara herself is not what you expected. She is small — barely five feet — with silver-streaked hair worn in a simple braid and the calloused hands of someone who once loaded cargo herself. Her clothes are fine but not ostentatious: cream linen, a single gold bracelet. She does not need to display her wealth. Everyone already knows.
+
+  "Grand Vizier. Welcome to my home." Her voice is crisp, her accent carrying the lilting cadence of the coastal provinces. "I apologize for the simplicity of the setting. I find the palace overwhelming. All that marble. One begins to feel like a fly in a temple."
+
+  *page_break
+
+  The food is deceptively simple and exquisite — grilled fish with preserved lemons and green olives, a salad of grilled aubergine and tahini, fresh bread with three kinds of honey, and mint tea served in glasses rimmed with gold.
+
+  "Let us be honest with each other, Grand Vizier," Zara says, pouring the tea herself. "The Trade Guild controls thirty percent of the empire's revenue through customs and tariffs on the overland silk routes. The Dowager wants to tax us more heavily. The General wants our profits to fund his war. The priests want us to tithe to the temples. Everyone has a hand out."
+
+  She sets down the teapot. "I am not asking for favors. I am asking for fairness. The Guild has been loyal to the empire for three hundred years. We built the roads that the army marches on. We funded the libraries that the scholars study in. We deserve a seat at the table — the real table, not the one where we are told what to pay."
+
+  *fake_choice
+    #"What specifically are you proposing?"
+      *set scholarship %+ 5
+      *set cunning %+ 5
+      Zara smiles — the smile of a woman who has been waiting to be asked this question. "A permanent Guild representative on the Imperial Council. Formal trade agreements with fixed tariff rates, not rates that change every time the Dowager needs to fund a new pavilion. And the right to negotiate directly with foreign merchants, without palace intermediaries taking their cut."
+    #"Fairness sounds reasonable. But the court won't see it that way."
+      *set diplomacy %+ 10
+      *set rel_guild %+ 5
+      Zara nods. "I know. That is why I need a Grand Vizier who understands that the empire's strength is not in its armies or its court but in its trade. Silk, spice, jewels, paper — these are the blood of Khazara. Cut off the trade, and the empire dies within a generation. I am offering you an alliance, Grand Vizier. A profitable one."
+    #"The Guild's loyalty is noted. But loyalty is tested in crisis, not in comfort."
+      *set boldness %+ 10
+      *set honest %+ 5
+      *set rel_guild %- 5
+      Zara's eyes narrow slightly, then she laughs — a short, sharp bark of genuine amusement. "Ha! You are not a courtier, Grand Vizier. Good. I have enough courtiers. What I need is someone who will speak plainly and act decisively."
+
+  *page_break
+
+  The evening stretches on. Zara tells you about the trade routes — the caravans that take six months to cross the desert, the pirates who prey on the southern sea lanes, the foreign merchants from beyond the mountains who bring goods no one in the empire has ever seen. She speaks of commerce the way a poet speaks of love: with passion, precision, and an undercurrent of grief for what has been lost.
+
+  Then, as the candles burn low, she reaches beneath the table and produces a small leather pouch. Inside are three gold coins — not Khazaran currency, but something foreign. The stamps are in a script you do not recognize.
+
+  "These were found in your predecessor's study after his death," she says quietly. "My agents retrieved them before the Dowager's people could. They are Turani coins. Gold. Freshly minted."
+
+  She meets your eyes. "Why would the Grand Vizier of the Khazaran Empire have freshly minted Turani gold in his study? The Turani are our enemies. This is not a trade currency — it is a payment."
+
+  *set dinner_secret "coins"
+
+*page_break
+
+*comment ============================================================
+*comment  CONVERGING CLIFFHANGER
+*comment ============================================================
+
+You return to your chambers late, your mind churning with what you have learned. The palace is quiet now — the deepest quiet, the one that comes in the hours between midnight and dawn when even the fountains seem to hold their breath.
+
+Farid is waiting in your anteroom, a single candle burning on the desk beside him. He stands when you enter.
+
+"How was the dinner, Grand Vizier?"
+
+You tell him what you learned. His face pales.
+
+*if (route = 1)
+  "Secret letters to the provinces," he whispers. "That would explain why someone emptied his study so quickly after he died."
+*if (route = 2)
+  "Someone in his chambers after he was already dead," he whispers. "Looking for something. Or making sure something was not found."
+*if (route = 3)
+  "Turani gold," he whispers. "If Osman was taking payments from the enemy — or if someone wanted it to look like he was — "
+
+He breaks off. He is looking past you, toward the doorway.
+
+A figure stands in the shadows of the corridor. You did not hear them approach. They are wrapped in a dark cloak, the face hidden beneath a hood, and they are utterly still — the stillness of someone who is accustomed to not being seen.
+
+*page_break
+
+"Grand Vizier." The voice is a woman's — low, measured, with the flatness of someone who has learned to keep all emotion locked behind the teeth. "Forgive the intrusion. I would not come at this hour without cause."
+
+"Who are you?" Farid demands, his hand reaching for the bell that would summon the guards.
+
+"Leave the bell," the woman says. There is no threat in her voice, but Farid's hand stops.
+
+She steps forward, just enough for the candlelight to catch the edge of her face. Dark skin, high cheekbones, eyes that miss nothing. You have never seen her before.
+
+"My name does not matter tonight. What matters is this." She looks directly at you, and her next words fall into the silence like a stone dropped into still water.
+
+"Your predecessor didn't just die. He was murdered. And the killer is still in the palace."
+
+Before you can respond, she turns and vanishes into the dark corridor, silent as smoke.
+
+Farid is staring at the empty doorway. The candle gutters in a draft that was not there a moment ago.
+
+The fountains murmur below.
+
+The game has changed.
+
+*finish Chapter 3: The Investigation

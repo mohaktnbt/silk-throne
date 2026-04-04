@@ -1,0 +1,152 @@
+*comment ============================================================
+*comment  CHAPTER 1: THE MORNING AUDIENCE
+*comment ============================================================
+
+You wake to the call to prayer.
+
+It comes from a minaret somewhere close — a voice like poured honey and broken glass, rising and falling through the grey-blue dawn. For a moment you do not know where you are. Then the silk sheets register against your skin, the scent of cold incense and marble finds your nose, and the weight of it settles back across your shoulders like a cloak.
+
+You are the Grand Vizier. This is Khazara. And today you must survive the court.
+
+*page_break
+
+Farid arrives before the sun has fully cleared the eastern wall, bearing a tray of black tea, dates, and a stack of documents that would have made your provincial steward weep.
+
+"Good morning, Grand Vizier." He sets the tray down and begins laying papers across the desk in neat rows, like a general arranging troops. "I have taken the liberty of preparing a briefing. The situation is — " He searches for the word. "Delicate."
+
+He pours your tea with hands that tremble slightly and begins.
+
+*page_break
+
+"The Emperor Roshan is sixteen years old. He ascended the Silk Throne two years ago when his father, the great Emperor Bahram, died of a fever. He is intelligent, idealistic, and — " Farid pauses. "Surrounded."
+
+He lays down the first document. "The Dowager Empress Nur. The Emperor's mother. She controlled the regency and has not relinquished her grip on the court. Half the ministers answer to her before they answer to the throne. She is brilliant, ruthless, and she did not approve your appointment."
+
+A second paper. "General Kadir commands the Army of the North — forty thousand men camped along the Turani border. The Turani have been raiding frontier villages for six months. Kadir wants war. The treasury says we cannot afford it. Kadir does not care what the treasury says."
+
+A third. "The Trade Guild of Khazara controls the overland silk routes that fund a quarter of the imperial revenue. Their Guildmaster, a woman named Zara, has submitted a petition for new tax concessions. If we refuse, they threaten to redirect trade through the southern ports — which would halve customs revenue. If we accept, the military will lose funding."
+
+Farid sets down his pen. "And the High Priest Kamran has requested a private audience with you. He says it concerns a matter of spiritual urgency." He allows himself a thin smile. "When the High Priest says 'spiritual urgency,' he usually means politics."
+
+*page_break
+
+"Your predecessor managed to keep all of these forces balanced," Farid says. "Barely. Now that he is gone, each faction believes this is their moment. They will test you today, Grand Vizier. All of them."
+
+He gathers the papers into a leather folio and hands it to you. His eyes are steady now, the nervousness of last night replaced by something harder.
+
+"The morning audience with the Emperor begins in one hour. What would you like to know?"
+
+*fake_choice
+  #"What is the Emperor really like? Beyond the official portrait."
+    *set diplomacy %+ 5
+    *set rel_farid %+ 5
+    Farid glances at the door — checking, you realize, that no one is listening. "He is kind. Genuinely kind. He wants to be a good ruler. But he is sixteen, and kindness is not what the court respects. The Dowager has taught him to defer. The General has taught him to posture. No one has taught him to think."
+  #"Who killed Osman? I want your honest opinion."
+    *set cunning %+ 5
+    *set boldness %+ 10
+    Farid goes still. When he speaks, his voice is barely a murmur. "I do not know, Grand Vizier. But I know that three days before he died, he burned a stack of letters in his fireplace. And I know that the Dowager's personal physician was the one who signed the death certificate — even though Osman had his own physician."
+  #"Tell me about the treasury. How bad are the finances?"
+    *set scholarship %+ 5
+    *set honest %+ 5
+    Farid produces a separate ledger — thinner, and bound in plain cloth rather than leather. "Your predecessor kept two sets of books. This is the real one. The treasury has enough to fund the government for eight months. After that, without new revenue, we begin defaulting on military pay." He lets that sink in. "Soldiers who are not paid do not remain loyal."
+
+*page_break
+
+The Audience Hall of the Silk Throne is a room designed to make mortals feel the proximity of heaven.
+
+The ceiling is a dome of deep blue tile, set with golden stars in the precise arrangement of the night sky on the date of the empire's founding. The walls are carved marble screens through which the morning light filters in geometric patterns, so that the floor shifts and shimmers like the surface of a lake. At the far end, elevated on a dais of seven steps — one for each province of the empire — sits the Silk Throne itself: a chair of dark wood and ivory, its back woven with panels of shimmering silk in the imperial crimson.
+
+And upon it sits a boy.
+
+*page_break
+
+Emperor Roshan is not what you expected. He is slight, dark-eyed, with the soft jawline of someone who has not yet finished growing into his face. He wears the imperial robes well enough — cloth-of-gold over white linen, a turban set with a single ruby the size of a quail's egg — but he wears them the way a child wears a parent's coat. The authority is borrowed.
+
+And yet. When he sees you approaching across the hall, something flickers in those dark eyes. Not fear. Not arrogance. Something rarer in this palace.
+
+Hope.
+
+*set has_met_emperor true
+
+"Grand Vizier ${player_name}," he says, and his voice carries across the hall with a clarity that surprises you. Someone has trained him in projection, at least. "We welcome you to our court. The empire has need of your counsel."
+
+The court is watching. You feel their eyes — dozens of ministers, courtiers, petitioners, and guards — all studying the new Grand Vizier's first move. To the Emperor's left, a woman in deep emerald silk sits behind a carved screen. The Dowager Empress Nur. You cannot see her face, but you can feel the weight of her attention like a hand on the back of your neck.
+
+*fake_choice
+  #Bow deeply and speak with bold confidence. Let the court see that the new Vizier is not afraid.
+    *set boldness %+ 10
+    *set rel_emperor %+ 5
+    *set rel_dowager %- 5
+    You bow — not the scraping bow of a supplicant, but the measured bow of an equal addressing a sovereign. "Your Imperial Majesty. I am honored by your trust and I intend to earn it. The empire faces challenges, but with clear counsel and decisive action, there is no storm we cannot navigate."
+
+    A murmur ripples through the court. Behind her screen, the Dowager's silk rustles — the sound of a woman recalculating.
+  #Bow with careful deference. Show respect to the throne and whoever might be behind it.
+    *set boldness %- 5
+    *set diplomacy %+ 5
+    *set rel_dowager %+ 5
+    You bow low, holding the position for precisely the correct duration — long enough to show respect, short enough to preserve dignity. "Your Imperial Majesty. I come to serve the throne and the empire, as my predecessors have done, with humility and diligence."
+
+    Behind the screen, you sense the Dowager relax, just slightly. A promising first impression — on the right person.
+  #Bow and offer a carefully crafted compliment about the Emperor's wisdom beyond his years.
+    *set diplomacy %+ 10
+    *set honest %- 5
+    *set rel_emperor %+ 10
+    You bow gracefully. "Your Imperial Majesty. Even in the provinces, we hear tales of your wisdom and your vision for the empire's future. I am honored to place my experience at the service of so promising a reign."
+
+    The Emperor's eyes brighten. It is, you suspect, the first compliment he has received in some time that was not also a leash.
+
+*page_break
+
+The audience continues with the usual business — trade disputes, provincial appointments, a border incident that requires delicate language. You observe. You learn. The Emperor defers to his ministers on details but occasionally interjects with a question that reveals a sharper mind than the court gives him credit for. The Dowager remains behind her screen, silent as a stone, but couriers come and go from her position with the regularity of a heartbeat.
+
+After the audience, Farid appears at your elbow with three folded notes on a silver tray.
+
+"You are popular, Grand Vizier," he says, without inflection. "Three dinner invitations for this evening."
+
+He reads them aloud:
+
+"The Dowager Empress Nur invites you to dine in her private apartments. She writes that she wishes to discuss 'the smooth continuation of governance.'"
+
+"General Kadir invites you to the Officers' Terrace. He writes that he wishes to discuss 'the security of the realm and the honor of its defenders.'"
+
+"Guildmaster Zara invites you to the Merchant Quarter. She writes that she wishes to discuss 'the prosperity of the empire and mutually beneficial arrangements.'"
+
+Farid folds the notes. "You can only accept one tonight. The others will take your refusal as a signal. Choose carefully."
+
+*choice
+  #Accept the Dowager's invitation. She is the real power here — I need to understand her.
+    *set route 1
+    *set rel_dowager %+ 10
+    *set rel_general %- 5
+    *set rel_guild %- 5
+    *set cunning %+ 5
+    Farid nods slowly. "The Dowager is not someone who invites lightly. She will have prepared for this conversation the way a general prepares for battle." He pauses. "But she respects intelligence. Show her yours."
+    *goto chapter1_end
+  #Accept the General's invitation. Military power is the real power. The rest is theater.
+    *set route 2
+    *set rel_general %+ 10
+    *set rel_dowager %- 5
+    *set rel_guild %- 5
+    *set strength %+ 5
+    Farid raises an eyebrow. "The General is a blunt instrument, but a loyal one — loyal to the empire, if not always to the throne. He will respect directness. Do not try to flatter him. He can smell insincerity like a wolf smells blood."
+    *goto chapter1_end
+  #Accept the Guildmaster's invitation. Gold moves the world. Armies and courts both run on coin.
+    *set route 3
+    *set rel_guild %+ 10
+    *set rel_dowager %- 5
+    *set rel_general %- 5
+    *set scholarship %+ 5
+    Farid allows himself a small smile. "Guildmaster Zara is the richest woman in the empire, and possibly the most dangerous. She has never held a sword, but she has destroyed more rivals than the General has. She will try to buy you tonight. The question is your price."
+    *goto chapter1_end
+
+*label chapter1_end
+
+The day passes in a blur of meetings, introductions, and the slow, suffocating weight of information. By the time the sun begins to set, painting the domes of Khazara in shades of copper and blood, you have begun to understand something your predecessor must have known.
+
+This palace is not a seat of government. It is an arena. And every person in it is both gladiator and spectator, watching to see who will fall next.
+
+The fountains murmur. The incense burns. And somewhere in the palace, someone is already planning your future — whether you will be a tool, an ally, or an obstacle to be removed.
+
+Tonight, you dine with the first of them.
+
+*finish Chapter 2: The Dinner

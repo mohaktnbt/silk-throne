@@ -1,0 +1,92 @@
+*comment ============================================================
+*comment  CHAPTER 3: THE INVESTIGATION (PAID)
+*comment ============================================================
+
+*set chapter 3
+
+Sleep does not come. You lie in the dead man's bed and stare at the painted ceiling — heroes and gods locked in eternal, meaningless combat — and you turn the pieces in your mind.
+
+Your predecessor, Grand Vizier Osman, is dead. Murdered, if the hooded woman is to be believed. And someone in this palace — someone who dines with the Emperor, who walks these marble corridors, who smiles at you across council tables — is responsible.
+
+By dawn, you have made a decision. You will not wait for the truth to find you. You will hunt it.
+
+*page_break
+
+Farid arrives with tea and finds you already dressed.
+
+"You did not sleep," he says. It is not a question.
+
+"I need access to Osman's study," you tell him. "The real study — not the official one. A man like Osman would have had a private workspace."
+
+Farid hesitates. Then, slowly, he nods. "There is a room. Behind the library, through a passage that is not on any palace map. Osman showed it to me once, when he needed a letter delivered without the usual channels." He pauses. "I have not been back since his death. I was afraid of what I might find."
+
+"Show me."
+
+*page_break
+
+The passage is narrow and unlit — a servant's corridor from an older era of the palace, before the current dynasty expanded the eastern wing. Farid leads you through it with a small oil lamp, and the walls press close enough that your shoulders brush the stone. The air smells of dust and old plaster and something faintly chemical — ink, you realize. Old ink.
+
+The hidden study is small. A desk. A chair. A shelf of books. No windows. A single lamp bracket on the wall.
+
+And it has been searched.
+
+The desk drawers hang open, emptied. The books have been pulled from the shelf and restacked carelessly. Someone was here before you, looking for the same thing you are looking for. But they were in a hurry, and people in a hurry make mistakes.
+
+*page_break
+
+You search methodically. Farid watches the door.
+
+*choice
+  #Search the desk carefully. Look for hidden compartments, false bottoms, anything Osman might have concealed.
+    *set cunning %+ 10
+    *set scholarship %+ 5
+    You run your hands along the underside of the desk, feeling for irregularities. The wood is smooth — too smooth. Your fingers find a seam that should not be there, and you press.
+
+    A panel springs open beneath the writing surface. Inside, pressed flat against the wood, is a single sheet of paper. It is a list of names — six names, written in Osman's precise hand. You recognize two: a provincial governor and a merchant you have never heard of. The other four are unknown to you.
+
+    At the bottom, in different ink, Osman wrote a single word: "Witnesses."
+
+    *set rel_spy %+ 10
+    *goto investigation_continues
+  #Search the bookshelves. A scholar hides things among books — coded messages, loose pages, anything out of place.
+    *set scholarship %+ 10
+    *set cunning %+ 5
+    You examine each book. Most are administrative records — tax rolls, census data, trade agreements. But one book is different. It is a volume of poetry — Rumi, in a beautiful calligraphic hand — and it does not belong among ledgers.
+
+    Inside the front cover, someone has written a series of numbers in faint pencil. Not page numbers. Not dates. A code, perhaps, or coordinates. And tucked between the pages, a pressed flower — night-blooming jasmine, the kind that grows in only one garden in the palace.
+
+    The Dowager's garden.
+
+    *set rel_dowager %+ 5
+    *goto investigation_continues
+  #Check the lamp bracket. It is the only fixture on the wall — and it is slightly crooked, as though it has been moved recently.
+    *set strength %+ 5
+    *set boldness %+ 10
+    You grip the bracket and twist. It turns with a grinding sound, and a section of the wall behind the bookshelf swings inward on hidden hinges.
+
+    Beyond it is a space barely larger than a closet — and inside, on a stone ledge, sits a small iron lockbox. It is locked, but the lock is old, and you force it with the letter opener from Osman's desk.
+
+    Inside: a map. Not a map of the empire, but a map of the palace itself — with certain rooms marked in red ink. Your chambers. The Dowager's apartments. The Emperor's private study. And one room you do not recognize, deep in the palace's oldest wing, marked with a single word: "Proof."
+
+    *set rel_spy %+ 15
+    *goto investigation_continues
+
+*label investigation_continues
+
+*page_break
+
+Farid examines what you have found. His face is grey in the lamplight.
+
+"Grand Vizier, whatever Osman discovered, it was dangerous enough to get him killed. And whoever killed him is still looking for the evidence he gathered." He meets your eyes. "They will come looking for you next, once they learn you have been here."
+
+From somewhere above, a bell begins to toll — the morning audience bell. The court will be assembling. Your absence will be noted.
+
+You pocket the evidence and follow Farid back through the hidden passage, the weight of Osman's secrets pressing against your chest like a second heartbeat.
+
+The investigation has only just begun. But already, one thing is clear: the murder of Grand Vizier Osman was not the act of a lone assassin. It was a conspiracy. And the threads of that conspiracy lead to the highest levels of the Khazaran court.
+
+The question is no longer who killed Osman.
+
+The question is who you can trust.
+
+*finish Chapter 4: The Confrontation

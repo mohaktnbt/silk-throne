@@ -1,0 +1,77 @@
+*comment ============================================================
+*comment  CHAPTER 4: THE CONFRONTATION (PAID — Demo ending)
+*comment ============================================================
+
+*set chapter 4
+
+The morning audience passes like a fever dream. You smile. You nod. You speak when spoken to. And behind your eyes, the evidence burns.
+
+Afterwards, in the corridor outside the Audience Hall, you see her — the hooded woman from last night. She is not hooded now. She stands among a group of palace servants, dressed in the plain grey linen of the household staff, utterly unremarkable. She meets your eyes for a fraction of a second and then looks away.
+
+But in that fraction, she tips her chin — the smallest gesture — toward the corridor that leads to the old wing of the palace.
+
+*page_break
+
+You find her in an abandoned gallery, where portraits of forgotten ministers gaze down from cracked frames. She is leaning against a pillar, arms folded, watching the entrance with the professional calm of someone who always knows where the exits are.
+
+"You found something in Osman's study," she says. Not a question.
+
+"Who are you?"
+
+"My name is Leyla. I was Osman's intelligence contact — his eyes and ears outside the palace. He paid me to watch certain people and report what I found." Her expression does not change. "He stopped paying six weeks before he died. Not because he chose to, but because someone intercepted the funds."
+
+*set rel_spy %+ 15
+
+*page_break
+
+"Osman was building a case," Leyla continues. "Evidence of a conspiracy — someone inside the palace working with the Turani against the empire. Selling military positions, trade routes, troop movements. He was close to naming them when he died."
+
+She reaches into her sleeve and produces a folded paper — old, creased, handled many times.
+
+"This is the last message Osman sent me. Read it."
+
+The handwriting is cramped and hurried, nothing like the precise script in the hidden study. A man writing in fear.
+
+*They know I know. I have hidden the proof where only my successor can find it. If I am killed, tell the next Grand Vizier: trust the boy. He is better than they think. And trust the woman in grey. She is the only one in this city who cannot be bought.*
+
+*I am sorry I could not finish this. Finish it for me.*
+
+The letter is signed with a single character — Osman's personal seal.
+
+*page_break
+
+You look up from the letter. Leyla is watching you with those unreadable eyes.
+
+"Will you finish it?" she asks.
+
+The palace hums around you — the murmur of fountains, the distant chime of the audience bell, the whisper of silk on marble. Somewhere in these corridors, a killer walks free. Somewhere in these walls, the proof of a conspiracy lies hidden. And somewhere on the Silk Throne, a sixteen-year-old Emperor waits for someone — anyone — to tell him the truth.
+
+You fold the letter and place it inside your robe, next to the evidence from the hidden study.
+
+"Yes," you say. "I will finish it."
+
+Leyla nods once. Then she is gone, dissolving into the shadows of the gallery like ink into water.
+
+You stand alone among the dead ministers and their faded portraits. The weight of the empire settles across your shoulders. Not the ceremonial weight of title and robes, but the real weight — the weight of lives that depend on what you do next.
+
+The conspiracy runs deeper than you imagined. The proof is hidden somewhere in this palace. And the game is only beginning.
+
+*page_break
+
+[b]End of Demo[/b]
+
+You have reached the end of the free preview of [b]The Silk Throne[/b].
+
+The full game contains over 300,000 words of intrigue, betrayal, romance, and empire — with dozens of branching paths, multiple romance options, and over fifteen unique endings.
+
+[b]What awaits in the full game:[/b]
+[b]-[/b] Uncover the conspiracy that killed your predecessor
+[b]-[/b] Navigate the deadly politics of the Khazaran court
+[b]-[/b] Build alliances — or destroy your rivals
+[b]-[/b] Shape the fate of Emperor Roshan and the empire
+[b]-[/b] Find love among allies and enemies alike
+[b]-[/b] Determine the future of the Silk Throne
+
+Thank you for playing.
+
+*ending

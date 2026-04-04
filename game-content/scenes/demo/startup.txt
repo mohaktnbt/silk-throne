@@ -1,0 +1,152 @@
+*title The Silk Throne
+*author Silk Throne Interactive
+*scene_list
+  startup
+  chapter1
+  chapter2
+  chapter3
+  chapter4
+
+*create player_name "Unknown"
+*create gender "unknown"
+*create they "they"
+*create them "them"
+*create their "their"
+*create theirs "theirs"
+*create themself "themself"
+
+*create strength 50
+*create cunning 50
+*create diplomacy 50
+*create scholarship 50
+
+*create boldness 50
+*create ruthless 50
+*create honest 50
+
+*create rel_emperor 40
+*create rel_dowager 30
+*create rel_general 25
+*create rel_guild 30
+*create rel_priest 35
+*create rel_spy 20
+*create rel_farid 50
+
+*create gold 100
+*create route 0
+
+*create has_met_emperor false
+*create has_met_dowager false
+
+*create chapter 1
+
+*comment ============================================================
+*comment  ARRIVAL AT THE IMPERIAL PALACE OF KHAZARA
+*comment ============================================================
+
+The road to Khazara ends not with a gate but with a silence.
+
+For three weeks you have traveled through the empire's arterial roads — past caravansaries choked with silk merchants, through mountain passes where the air thinned to a knife's edge, across plains where the wheat fields rolled like a golden sea beneath the wind. But here, where the capital's outer walls swallow the last of the evening light, the noise of the world simply stops.
+
+The Imperial Palace rises before you like a dream rendered in sandstone and marble. Its domes catch the dying sun and hold it — copper and rose and molten amber — as though the architects had found a way to make the sky pay tribute. Minarets pierce the heavens at each corner, their tips leafed in gold that winks against the deepening blue.
+
+*page_break
+
+Your carriage passes through the Lion Gate. The guards do not ask your name. They already know.
+
+You are the new Grand Vizier of the Khazaran Empire — the second most powerful person in a realm that stretches from the salt deserts of the south to the frozen passes of the north. Twelve days ago, a rider arrived at your provincial estate bearing the imperial seal and a single sentence: "Your predecessor is dead. You are summoned."
+
+No explanation. No condolences. The Khazaran court does not waste words.
+
+The carriage stops in the Court of Fountains, and the evening air hits you like a blessing — cool water, jasmine, the distant sweetness of rosewater being prepared somewhere in the palace kitchens. A hundred fountains murmur in the courtyard, their basins inlaid with lapis lazuli and carnelian. The marble underfoot is so finely polished you can see the first stars reflected in it.
+
+*page_break
+
+A young man hurries down the steps to greet you. He is perhaps twenty, thin-shouldered, with ink-stained fingers and the anxious eyes of someone who has not slept well in some time. He bows deeply — too deeply, the bow of a man who has been practicing.
+
+"Grand Vizier," he says, his voice cracking slightly on the title. "I am Farid. I was — I am — secretary to the office of the Grand Vizier. I served your predecessor, and I am assigned to serve you." He hesitates, then adds more quietly: "Welcome to Khazara. I am glad you have come."
+
+There is something in the way he says it — not flattery but relief, as though your arrival has lifted a weight he has been carrying alone.
+
+*page_break
+
+But first — a name. The court will need to know how to address you.
+
+*if (choice_randomtest)
+  *set player_name "TestPlayer"
+*else
+  What is your name?
+  *input_text player_name
+
+And how does the court address you?
+
+*choice
+  #As a man — "he," "him," "his."
+    *set gender "male"
+    *set they "he"
+    *set them "him"
+    *set their "his"
+    *set theirs "his"
+    *set themself "himself"
+    *goto after_gender
+  #As a woman — "she," "her," "hers."
+    *set gender "female"
+    *set they "she"
+    *set them "her"
+    *set their "her"
+    *set theirs "hers"
+    *set themself "herself"
+    *goto after_gender
+  #In the manner of the old scholars — "they," "them," "theirs."
+    *set gender "nonbinary"
+    *goto after_gender
+
+*label after_gender
+
+"${player_name}," Farid repeats, committing it to memory. He produces a leather-bound ledger from under his arm and makes a notation with the quick, nervous efficiency of a born bureaucrat. "Very good. The household has been informed of your arrival. Your chambers are in the eastern wing — the same rooms your predecessor occupied."
+
+He pauses. The pen hovers.
+
+"They have been cleaned, of course. Thoroughly."
+
+The way he says "thoroughly" makes you wonder what needed to be cleaned.
+
+*page_break
+
+Farid leads you through corridors that seem designed to humble. The ceilings soar thirty feet overhead, painted with scenes from the empire's founding — armies crossing rivers of fire, scholars debating beneath a tree made of stars, the first Emperor receiving the Silk Throne from the hand of God. The floors are cool marble veined with grey and gold. Brass lamps hang from chains, their light catching the thousands of tiny mirrors embedded in the walls so that you walk through a corridor of soft, shifting stars.
+
+The air carries layers of scent — sandalwood incense from the prayer halls, cardamom from the kitchens, the clean mineral smell of the fountains, and beneath it all, something older: the scent of power held for centuries in the same stone.
+
+"Your predecessor, the Grand Vizier Osman," Farid says as you walk, keeping his voice carefully neutral, "served for eleven years. He was found in his study thirteen days ago. The physicians say his heart gave out." He glances at you sideways. "That is the official account."
+
+*fake_choice
+  #"And the unofficial account?"
+    *set cunning %+ 5
+    *set boldness %+ 5
+    Farid's step falters, just barely. "There are always rumors in the palace, Grand Vizier. I would not presume to repeat them on your first night. But — " He lowers his voice. "Perhaps not everything is as the physicians reported."
+  #"I'm sure the physicians were thorough." Best not to show my hand yet.
+    *set cunning %+ 5
+    *set boldness %- 5
+    Farid nods, but something in his expression suggests he expected you to press further. "Of course, Grand Vizier. The palace physicians are the finest in the empire."
+  #"Tell me about Osman. What kind of man was he?"
+    *set diplomacy %+ 5
+    *set scholarship %+ 5
+    Farid considers the question with more care than it seems to warrant. "He was brilliant. Tireless. He could read a budget like a poem and a poem like a weapon. But in his last months — " He hesitates. "He grew fearful. He dismissed his guards and replaced them twice. He took his meals alone."
+
+*page_break
+
+Your chambers are vast and beautiful and slightly terrible. The bed is canopied in indigo silk embroidered with silver thread. The writing desk is ebony inlaid with mother-of-pearl. A balcony overlooks the Court of Fountains, and beyond it, the rooftops of Khazara tumble toward the river like a cascade of terracotta and white plaster, dotted with the green domes of mosques and the dark spires of merchant towers.
+
+But the room has been stripped. The bookshelves are empty. The drawers contain nothing. Whatever Osman left behind — his notes, his correspondence, his secrets — has been removed.
+
+Farid sets down a tray of food — lamb with saffron rice, yogurt with mint, flatbread still warm from the oven, and a small glass of sherbet the color of rubies.
+
+"Rest tonight, Grand Vizier," he says. "Tomorrow the work begins. The Emperor expects you at the morning audience." He pauses at the door. "And — if I may be frank — so does everyone else. They have been waiting."
+
+The door closes. The fountains murmur below. Somewhere in the palace, someone is playing a stringed instrument — a slow, melancholy tune that winds through the corridors like smoke.
+
+You are the Grand Vizier of the Khazaran Empire. You are alone in a dead man's rooms, eating a dead man's dinner, in a palace that has been waiting for you with the patience of a spider.
+
+Tomorrow, the game begins.
+
+*finish Chapter 1: The Morning Audience

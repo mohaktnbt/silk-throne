@@ -1,0 +1,33 @@
+*stat_chart
+  text player_name Name
+  percent strength Strength
+  percent cunning Cunning
+  percent diplomacy Diplomacy
+  percent scholarship Scholarship
+
+*stat_chart
+  opposed_pair boldness
+    Bold
+    Cautious
+  opposed_pair ruthless
+    Ruthless
+    Compassionate
+  opposed_pair honest
+    Honest
+    Deceptive
+
+[b]Relationships[/b]
+
+*stat_chart
+  percent rel_emperor Emperor Roshan
+  percent rel_dowager Dowager Empress Nur
+  percent rel_general General Kadir
+  percent rel_guild Guildmaster Zara
+  percent rel_priest High Priest Kamran
+  percent rel_spy Leyla (Spy)
+  percent rel_farid Farid (Secretary)
+
+[b]Resources[/b]
+
+*stat_chart
+  text gold Gold Dinars
