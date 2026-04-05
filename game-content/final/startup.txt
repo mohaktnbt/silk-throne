@@ -358,7 +358,7 @@ He trails off, gesturing helplessly.
   *set player_name "TestPlayer"
   *goto after_name
 *else
-  What name do you give the flustered secretary?
+  The flustered secretary looks up from behind a mountain of parchment. "Your name, if you please?"
   *input_text player_name
   *goto after_name
 
