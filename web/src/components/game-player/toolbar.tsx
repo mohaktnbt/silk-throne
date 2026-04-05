@@ -50,6 +50,7 @@ export function Toolbar({
             disabled={fontSize <= MIN_FONT_SIZE}
             className="size-10 md:size-8"
             aria-label="Decrease font size"
+            title="Decrease font size"
           >
             <MinusIcon className="size-4" />
           </Button>
@@ -63,6 +64,7 @@ export function Toolbar({
             disabled={fontSize >= MAX_FONT_SIZE}
             className="size-10 md:size-8"
             aria-label="Increase font size"
+            title="Increase font size"
           >
             <PlusIcon className="size-4" />
           </Button>
@@ -75,7 +77,8 @@ export function Toolbar({
             size="icon"
             onClick={onStats}
             className="size-10 md:size-8"
-            aria-label="Character stats"
+            aria-label="Character Stats"
+            title="Character Stats"
           >
             <BarChart3Icon className="size-4" />
           </Button>
@@ -85,7 +88,8 @@ export function Toolbar({
               size="icon"
               onClick={onSave}
               className={`size-10 md:size-8 transition-colors ${saveStatus === "saved" ? "text-green-500" : saveStatus === "error" ? "text-destructive" : ""}`}
-              aria-label="Save game"
+              aria-label="Save Game"
+              title="Save Game"
             >
               {saveStatus === "saved" ? (
                 <CheckIcon className="size-4" />
@@ -106,7 +110,8 @@ export function Toolbar({
             size="icon"
             onClick={onLoad}
             className="size-10 md:size-8"
-            aria-label="Load game"
+            aria-label="Load Game"
+            title="Load Game"
           >
             <FolderOpenIcon className="size-4" />
           </Button>
@@ -127,7 +132,8 @@ export function Toolbar({
             size="icon"
             onClick={toggleTheme}
             className="size-10 md:size-8"
-            aria-label="Toggle play theme"
+            aria-label="Toggle Theme"
+            title="Toggle Theme"
           >
             {theme === "dark" ? (
               <SunIcon className="size-4" />
