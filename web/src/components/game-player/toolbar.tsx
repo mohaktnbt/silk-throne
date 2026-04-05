@@ -10,7 +10,7 @@ import {
   SunIcon,
   MoonIcon,
 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useTheme } from "@/components/layout/theme-provider";
 
 interface ToolbarProps {
   fontSize: number;
@@ -18,7 +18,6 @@ interface ToolbarProps {
   onSave: () => void;
   onLoad: () => void;
   onStats: () => void;
-  onThemeToggle: () => void;
 }
 
 const MIN_FONT_SIZE = 16;
@@ -30,18 +29,8 @@ export function Toolbar({
   onSave,
   onLoad,
   onStats,
-  onThemeToggle,
 }: ToolbarProps) {
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    setIsDark(document.documentElement.classList.contains("dark"));
-  }, []);
-
-  const handleThemeToggle = () => {
-    setIsDark((prev) => !prev);
-    onThemeToggle();
-  };
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <div className="sticky top-0 z-30 bg-background/80 backdrop-blur-md border-b border-border/50">
@@ -108,11 +97,11 @@ export function Toolbar({
           <Button
             variant="ghost"
             size="icon"
-            onClick={handleThemeToggle}
+            onClick={toggleTheme}
             className="size-10 md:size-8"
-            aria-label="Toggle theme"
+            aria-label="Toggle play theme"
           >
-            {isDark ? (
+            {theme === "dark" ? (
               <SunIcon className="size-4" />
             ) : (
               <MoonIcon className="size-4" />
