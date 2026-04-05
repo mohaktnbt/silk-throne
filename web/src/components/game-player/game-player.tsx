@@ -378,16 +378,32 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
     // Open the panel immediately so the user sees it right away
     setStatsOpen(true);
 
-    // If the stats scene isn't loaded yet, fetch it and then populate
+    // Fetch stats scene directly — don't use fetchScene/loadSceneIntoEngine
+    // because those trigger paywall side effects on 403 responses.
+    // choicescript_stats is metadata, not premium content.
     if (!loadedScenesRef.current.has("choicescript_stats")) {
       setStatsLoading(true);
-      await loadSceneIntoEngine("choicescript_stats");
+      try {
+        const response = await fetch(
+          `/api/games/${gameSlug}/scenes/choicescript_stats`
+        );
+        if (response.ok) {
+          const text = await response.text();
+          if (text.trim()) {
+            const ast = parseScene(text);
+            engine.loadScene("choicescript_stats", ast);
+            loadedScenesRef.current.add("choicescript_stats");
+          }
+        }
+      } catch {
+        // Stats scene unavailable — panel will show fallback
+      }
       setStatsLoading(false);
     }
 
     const display = engine.getStatsDisplay();
     setStats(display);
-  }, [loadSceneIntoEngine]);
+  }, [gameSlug]);
 
   // -----------------------------------------------------------------------
   // Font size persistence
