@@ -345,17 +345,6 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
   }, [loadSceneIntoEngine]);
 
   // -----------------------------------------------------------------------
-  // Theme toggle
-  // -----------------------------------------------------------------------
-
-  const handleThemeToggle = useCallback(() => {
-    const html = document.documentElement;
-    const isDark = html.classList.contains("dark");
-    html.classList.toggle("dark", !isDark);
-    localStorage.setItem("theme", isDark ? "light" : "dark");
-  }, []);
-
-  // -----------------------------------------------------------------------
   // Font size persistence
   // -----------------------------------------------------------------------
 
@@ -450,7 +439,6 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
         onSave={handleSave}
         onLoad={handleLoad}
         onStats={handleStats}
-        onThemeToggle={handleThemeToggle}
       />
 
       <main className="w-full max-w-[700px] mx-auto px-4 py-6 pb-24">
