@@ -636,7 +636,7 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
         </div>
       )}
 
-      <main className="w-full max-w-[700px] mx-auto px-4 py-6 pb-24">
+      <main className="w-full max-w-[700px] mx-auto px-4 py-6 pb-8">
         {/* Loading state */}
         {loading && (
           <div className="flex items-center justify-center py-20">
