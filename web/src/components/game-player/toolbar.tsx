@@ -10,6 +10,7 @@ import {
   BarChart3Icon,
   SunIcon,
   MoonIcon,
+  RotateCcwIcon,
 } from "lucide-react";
 import { useTheme } from "@/components/layout/theme-provider";
 
@@ -19,6 +20,7 @@ interface ToolbarProps {
   onSave: () => void;
   onLoad: () => void;
   onStats: () => void;
+  onRestart: () => void;
   saveStatus?: "idle" | "saved" | "error";
 }
 
@@ -31,6 +33,7 @@ export function Toolbar({
   onSave,
   onLoad,
   onStats,
+  onRestart,
   saveStatus = "idle",
 }: ToolbarProps) {
   const { theme, toggleTheme } = useTheme();
@@ -106,6 +109,15 @@ export function Toolbar({
             aria-label="Load game"
           >
             <FolderOpenIcon className="size-4" />
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={onRestart}
+            className="size-10 md:size-8"
+            aria-label="Restart game"
+          >
+            <RotateCcwIcon className="size-4" />
           </Button>
 
           <div className="w-px h-5 bg-border/50 mx-1" />
