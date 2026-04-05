@@ -292,7 +292,31 @@ Two rivers converge in the valley below -- the broad, slow Ashar, brown with sil
 
 You shade your eyes. The minarets of the Temple Quarter spike the sky to the south, a cluster of pale needles from which, even at this distance, you can see the smoke of the Eternal Flame climbing in a thin, unwavering line. The Grand Bazaar sprawls to the north, a dark labyrinth of vaulted roofs. Beyond it, the Garrison stretches along the river's eastern bank, its parade ground a tawny square in the green patchwork of fields.
 
-*page_break
+From the hilltop, the whole city lies open before you like a map drawn in stone and water and light. What draws your eye?
+
+*choice
+  #The Citadel — that fist of white fire at the city's heart, where the throne waits.
+    *set boldness %+ 5
+    *set rep_nobility %+ 5
+    Power has always spoken to you — not the crude power of the sword, but the quiet power of the hand that signs the decree. The Citadel is where every thread of empire converges. That is where you are going. That is where everything begins.
+    *goto after_hilltop
+  #The Grand Bazaar — that dark labyrinth of commerce, the engine that drives the empire's wealth.
+    *set cunning %+ 5
+    *set rep_trade %+ 5
+    Wealth is the blood of empire. Every war is funded, every alliance cemented, every loyalty purchased with the gold that flows through those vaulted corridors. Understand the bazaar, and you understand the empire's beating heart.
+    *goto after_hilltop
+  #The Temple Quarter — the Eternal Flame's thin line of smoke, ancient and unwavering against the sky.
+    *set idealist %+ 5
+    *set rep_temple %+ 5
+    Faith endures when empires crumble. The Eternal Flame has burned for three centuries — longer than any dynasty, longer than any throne. Whatever power holds this city together, it is rooted in something older than politics.
+    *goto after_hilltop
+  #The Garrison — the soldiers drilling on the eastern bank, steel flashing in the afternoon sun.
+    *set strength %+ 5
+    *set rep_military %+ 5
+    Order requires enforcement. The finest laws mean nothing without the strength to uphold them. Those soldiers are the empire's spine — and from here, you can see that the spine is tense. Ready. Expecting trouble.
+    *goto after_hilltop
+
+*label after_hilltop
 
 You have been summoned to this city to serve as Grand Vizier of the Khazaran Empire. Chief administrator. Voice of the Throne. The person who stands beside the Silk Throne and speaks when the Emperor cannot, decides when the Emperor will not, and bears the weight when the Emperor is too young to carry it himself.
 
@@ -305,8 +329,6 @@ You are fairly certain there has been a mistake.
 A sound interrupts your thoughts -- the slap of sandals on packed earth, the fluttering of loose papers, and a voice that arrives slightly ahead of the person producing it.
 
 "My -- my lord! My lady! My -- oh dear --"
-
-*page_break
 
 A young man scrambles up the hillside path, clutching a leather satchel that is shedding documents like a bird in molt. He is perhaps twenty-five, thin as a reed, with ink-stained fingers and the wide, slightly desperate eyes of a person who has been given an important task and insufficient time. His court robes are a size too large. His turban lists to port. He bows so deeply he nearly overbalances, catches himself on one knee, and rises with a paper stuck to his forehead.
 
@@ -445,26 +467,30 @@ You catch glimpses of the city's many faces as Farid guides you through the crow
 
 Through it all, you observe. You have not survived a career in the provinces without learning to read a place quickly -- its wealth, its fractures, its unspoken rules. And what you observe now tells you something about the empire you are about to serve.
 
-*fake_choice
+*choice
   #You notice the soldiers -- their numbers, their readiness, the way the crowd parts around them like water around stones.
     *set boldness %+ 5
     *set arrival_mood "martial"
     The patrols move in pairs, hands resting on sword hilts. Their equipment is well-maintained -- oiled leather, polished steel -- but their eyes are tired. These are men who have been on alert for weeks. You count four patrols in two streets. Either the city is always this heavily guarded, or something has the military on edge.
+    *goto after_observation
   #You notice the commerce -- the staggering volume of goods flowing through every street, the weight of purses, the language of negotiation.
     *set boldness %- 5
     *set arrival_mood "mercantile"
     Even in this side street, five transactions are happening simultaneously. A spice merchant weighing cardamom pods on a brass scale. A silk trader unfurling a bolt of fabric so fine it seems to float in the air. A boy selling cups of tea from a battered copper samovar. Wealth flows through this city like blood through a beating heart. Where there is wealth, there are levers. And levers can be pulled.
+    *goto after_observation
   #You notice the people -- the beggar at the gate, the child without shoes, the tired faces of laborers pressed against the walls to let your horse pass.
     *set idealist %+ 5
     *set arrival_mood "compassionate"
     For every silk-robed merchant, there are ten laborers in threadbare cotton. A woman fills a clay jug at a public fountain, balancing a baby on her hip. An old man sits outside a tea house with the patient expression of someone who has been waiting for something better for a very long time. The empire's wealth is real. So is its poverty. And you suspect the distance between the two is growing.
+    *goto after_observation
   #You notice the architecture -- the tilework, the domes, the way light falls through carved marble screens to pattern the streets with lace.
     *set idealist %+ 5
     *set boldness %- 5
     *set arrival_mood "aesthetic"
     Even in the common quarters, the walls are decorated with geometric tilework in turquoise and cobalt, patterns that repeat and tessellate with mathematical precision. Carved wooden screens cover the upper windows, casting filigrees of shadow on the paving stones. Arched doorways frame courtyard glimpses -- a fountain here, a vine-covered wall there, a flash of crimson bougainvillea. This is a civilization that takes beauty seriously. You wonder if it takes justice as seriously.
+    *goto after_observation
 
-*page_break
+*label after_observation
 
 *comment === THE PREDECESSOR ===
 
@@ -513,8 +539,6 @@ Peacocks move among the flower beds, their folded tails sweeping the gravel path
 He pauses, then adds: "Many of the Citadel's most important private conversations happen in the garden. The sound of the fountains masks whispered words. It is both the most public and the most private place in the palace."
 
 You file this away. A place where conversations cannot be overheard. That will be useful.
-
-*page_break
 
 *comment === THE SEAL RING ===
 
@@ -629,8 +653,6 @@ Through the window, the Garden of Eternal Spring stretches below -- water channe
 The Citadel, you are beginning to understand, is a metaphor for itself. Order imposed on nature. Beauty constrained by design. Control made visible in every trimmed hedge and every channeled stream. The question is what happens when the order breaks. When the channels overflow. When the hedges grow wild.
 
 You suspect you are about to find out.
-
-*page_break
 
 *comment === THE VIZIER'S APARTMENTS ===
 
