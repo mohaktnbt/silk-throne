@@ -15,8 +15,6 @@ function isSupabaseConfigured(): boolean {
 // Demo scenes live in game-content/scenes/demo/ at the repo root
 const DEMO_SCENES_DIR = join(process.cwd(), "..", "game-content", "scenes", "demo");
 
-// The demo game's free scene list
-const DEMO_FREE_SCENES = ["startup", "chapter1", "chapter2", "choicescript_stats"];
 
 async function serveDemoScene(sceneName: string): Promise<NextResponse> {
   try {
