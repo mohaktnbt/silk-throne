@@ -60,6 +60,7 @@ export type ASTNode =
   | { type: 'ending' }
   | { type: 'page_break' }
   | { type: 'line_break' }
+  | { type: 'paragraph_break' }
   | { type: 'choice'; options: ChoiceOption[] }
   | { type: 'fake_choice'; options: ChoiceOption[] }
   | { type: 'create'; variable: string; value: Expression }
@@ -405,9 +406,14 @@ class SceneParser {
     while (this.cursor < this.lines.length) {
       const line = this.currentLine();
 
-      // Blank lines — skip (they are paragraph-level whitespace in ChoiceScript).
+      // Blank lines represent paragraph breaks in ChoiceScript.
       if (line.content === '') {
         this.cursor++;
+        // Emit a paragraph break so the engine inserts a double newline
+        // between consecutive text blocks.
+        if (nodes.length > 0 && nodes[nodes.length - 1].type === 'text') {
+          nodes.push({ type: 'paragraph_break' });
+        }
         continue;
       }
 
