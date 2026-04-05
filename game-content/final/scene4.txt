@@ -47,7 +47,7 @@ The teacup. You stare at it for a long moment.
 
 Farid hovers at the threshold, one foot in the corridor, one in the room, as though his body cannot decide whether loyalty or self-preservation should win.
 
-"He was a good man," Farid says quietly. "Vizier Massoud. He was -- he knew every regulation. Every protocol. He could quote the tax code from memory, all four hundred and twelve articles." A pause. "He was kind to me. He never raised his voice. Even when I spilled coffee on the trade reports."
+"He was a good man," Farid says quietly. "Vizier Cyrus. He was -- he knew every regulation. Every protocol. He could quote the tax code from memory, all four hundred and twelve articles." A pause. "He was kind to me. He never raised his voice. Even when I spilled coffee on the trade reports."
 
 You watch the way Farid's eyes move across the room -- cataloguing, remembering, grieving. He touches the doorframe the way a man might touch a gravestone. A shaft of dusty light catches his hand, and you notice for the first time that he wears a simple copper band on his smallest finger. A gift, perhaps. From a master who noticed small kindnesses the way he noticed small numbers.
 
@@ -65,7 +65,7 @@ He nods. Wipes his eyes with the heel of his hand. Adjusts his spectacles. Strai
 
 *comment === FAKE CHOICE 1: Investigation approach ===
 
-You survey the room. The desk and its papers. The bookshelves and their secrets. The teacup and its dregs. The shuttered window and the light it refuses to admit. Somewhere in this room is the truth about how Vizier Massoud died. Somewhere in this dust and silence, a murder left its fingerprints.
+You survey the room. The desk and its papers. The bookshelves and their secrets. The teacup and its dregs. The shuttered window and the light it refuses to admit. Somewhere in this room is the truth about how Vizier Cyrus died. Somewhere in this dust and silence, a murder left its fingerprints.
 
 *fake_choice
   #You approach the investigation methodically, cataloguing each section of the room before touching anything.
@@ -84,11 +84,11 @@ You survey the room. The desk and its papers. The bookshelves and their secrets.
     You do not move slowly. You let your gaze sweep the room, trusting the part of your mind that notices what the conscious eye misses -- the detail that does not belong, the absence that speaks louder than presence. Your eyes catch on the teacup, on the angle of the chair, on a gap in the bookshelf where a volume has been removed and not replaced.
 
     Something is wrong here. You can feel it the way you feel a storm coming -- a pressure in the air, a change in the light.
-  #You focus on the human element. The papers on the desk, the personal effects. What was Massoud thinking in his final days?
+  #You focus on the human element. The papers on the desk, the personal effects. What was Cyrus thinking in his final days?
     *set investigation_approach "personal"
     *set idealist %+ 5
     *set honest %+ 5
-    You move to the desk and stand where Massoud stood. You look at what he looked at: the papers arranged in careful stacks, the pen laid at a precise angle, the seal wax and the brass stamp. You try to see through his eyes. A man who knew he was in danger -- or a man who did not?
+    You move to the desk and stand where Cyrus stood. You look at what he looked at: the papers arranged in careful stacks, the pen laid at a precise angle, the seal wax and the brass stamp. You try to see through his eyes. A man who knew he was in danger -- or a man who did not?
 
     The papers are organized with a clerk's precision. Tax reports. Trade manifests. Diplomatic correspondence. The ordered mind of a man who believed in systems.
 
@@ -100,7 +100,7 @@ You take a breath. The air is stale and heavy, thick with the presence of a dead
 
 *comment === REAL CHOICE 1: What to investigate first ===
 
-There are three areas that demand your attention. The desk with its papers and that ominous teacup. The massive bookshelves that line the walls, one of which seems oddly placed against a load-bearing wall. And the personal effects -- Massoud's correspondence, the things he kept close.
+There are three areas that demand your attention. The desk with its papers and that ominous teacup. The massive bookshelves that line the walls, one of which seems oddly placed against a load-bearing wall. And the personal effects -- Cyrus's correspondence, the things he kept close.
 
 You cannot investigate everything at once. Where you begin will shape what you find.
 
@@ -119,7 +119,7 @@ You cannot investigate everything at once. Where you begin will shape what you f
 
 *label desk_investigation
 
-You approach the desk as though it were an altar, and in a sense it is -- the altar at which Vizier Massoud served his faith in order, in protocol, in the belief that systems and regulations could hold back the chaos that always presses at the borders of civilized life. His pen lies beside the inkwell at a precise angle. His seal stamp rests in its brass cradle. Even the papers are stacked with a clerk's devotion to geometry.
+You approach the desk as though it were an altar, and in a sense it is -- the altar at which Vizier Cyrus served his faith in order, in protocol, in the belief that systems and regulations could hold back the chaos that always presses at the borders of civilized life. His pen lies beside the inkwell at a precise angle. His seal stamp rests in its brass cradle. Even the papers are stacked with a clerk's devotion to geometry.
 
 The teacup first. You lift it carefully, tilting it toward the light from the shuttered window. It is a simple cup -- court-quality porcelain, white with a blue geometric border, the kind served in every official office in the Citadel. The dregs at the bottom are dark -- too dark for ordinary tea, even the strong black tea that court officials favor. There is a faint residue along the inner rim, a discoloration that does not match the glaze. It forms a ring, thin and iridescent, like the trace of something that did not quite dissolve.
 
@@ -137,7 +137,7 @@ You bring the cup to your nose. Beneath the staleness, beneath the dust, there i
 
   It is wedged beneath the desk's blotter, its edge barely visible -- a corner of old vellum, yellowed with age, inscribed in a script that is not Khazari. You ease it out. The text is in Classical Parvani, the ancient scholarly language, written in a cramped and urgent hand.
 
-  You can read it. Not easily -- the Parvani is archaic, the phrasing dense -- but the years of study were not wasted. The letter speaks of a "gathering of shadows" within the Citadel. It names no names, but it references "the one who tends the Flame" and "the one who counts the gold" in terms that suggest suspicion. It is addressed to Massoud. It is dated three days before his death.
+  You can read it. Not easily -- the Parvani is archaic, the phrasing dense -- but the years of study were not wasted. The letter speaks of a "gathering of shadows" within the Citadel. It names no names, but it references "the one who tends the Flame" and "the one who counts the gold" in terms that suggest suspicion. It is addressed to Cyrus. It is dated three days before his death.
 
   Someone warned him. He did not listen, or he did not listen quickly enough.
 *else
@@ -172,7 +172,7 @@ You hold it up to the light. The residue catches the thin beams from the shutter
 
 *label bookshelf_investigation
 
-The bookshelves are magnificent -- walnut frames darkened by decades of lamp oil and scholarly devotion, holding hundreds of volumes bound in leather, silk, and plain cloth. The collection ranges from imperial tax records to philosophical treatises to astronomical tables to what appears to be a well-thumbed copy of the epic poem "The Lover's War," its spine cracked with use. Massoud was, it seems, a man of wider interests than his administrative precision suggested.
+The bookshelves are magnificent -- walnut frames darkened by decades of lamp oil and scholarly devotion, holding hundreds of volumes bound in leather, silk, and plain cloth. The collection ranges from imperial tax records to philosophical treatises to astronomical tables to what appears to be a well-thumbed copy of the epic poem "The Lover's War," its spine cracked with use. Cyrus was, it seems, a man of wider interests than his administrative precision suggested.
 
 But one bookshelf commands your attention. It stands against the western wall, floor to ceiling, its shelves sagging under the weight of heavy legal codices -- the complete Imperial Legal Archive, if you are reading the spines correctly, which weighs more than you do. It is the largest piece of furniture in the room, taller than you by a head and wider than your armspan, a monument of walnut and knowledge.
 
@@ -220,13 +220,13 @@ You study it. The other bookshelves stand a handspan from the wall, allowing air
 
 *label correspondence_investigation
 
-You turn to the personal effects. The cabinet beside the window is of good quality -- ironwood with brass fittings, the kind of practical luxury that a senior official might acquire over decades of service. Inside, separated from the official correspondence on the desk, you find Massoud's private papers. Letters from family -- a sister in the provinces who writes with warmth about her children and the autumn harvest. Notes in his own hand, observations about court politics and administrative procedures rendered in a script that is both precise and elegant: the handwriting of a man who considered penmanship a form of discipline.
+You turn to the personal effects. The cabinet beside the window is of good quality -- ironwood with brass fittings, the kind of practical luxury that a senior official might acquire over decades of service. Inside, separated from the official correspondence on the desk, you find Cyrus's private papers. Letters from family -- a sister in the provinces who writes with warmth about her children and the autumn harvest. Notes in his own hand, observations about court politics and administrative procedures rendered in a script that is both precise and elegant: the handwriting of a man who considered penmanship a form of discipline.
 
-There are small personal items as well. A compass with the initials M.R. engraved on its case. A pressed flower, dry and fragile as old silk, tucked between the pages of a book of poetry. A child's drawing of a man behind a desk, labeled in unsteady letters: "Uncle Massoud." The uncle who never came home.
+There are small personal items as well. A compass with the initials C.R. engraved on its case. A pressed flower, dry and fragile as old silk, tucked between the pages of a book of poetry. A child's drawing of a man behind a desk, labeled in unsteady letters: "Uncle Cyrus." The uncle who never came home.
 
 And a journal.
 
-It is bound in plain brown leather, unmarked, the kind of notebook sold in every stationer's stall in the Scholars' Quarter. The pages are filled with Massoud's small, precise handwriting. You open it to the final entries.
+It is bound in plain brown leather, unmarked, the kind of notebook sold in every stationer's stall in the Scholars' Quarter. The pages are filled with Cyrus's small, precise handwriting. You open it to the final entries.
 
 The entries from his last weeks are different from the earlier ones. The handwriting is less controlled, the letters losing their careful symmetry, as though the hand that formed them had begun to tremble or the mind that directed them had begun to race. The observations are no longer administrative -- they are personal. Fearful.
 
@@ -277,7 +277,7 @@ You close the journal. You place your hand on Farid's shoulder, and you feel the
 
 The room feels smaller now. The dust and silence press against you. Whatever you have found -- evidence, secrets, the last words of a dead man -- it carries a weight that has nothing to do with paper or glass.
 
-Vizier Massoud was murdered. You have known it in your bones since the anonymous note, since the symbol under the council table. But knowing it as instinct and knowing it as fact are different things. Instinct is a whisper. Fact is a scream.
+Vizier Cyrus was murdered. You have known it in your bones since the anonymous note, since the symbol under the council table. But knowing it as instinct and knowing it as fact are different things. Instinct is a whisper. Fact is a scream.
 
 *fake_choice
   #The weight of it settles on you like a physical thing. Grief for a man you never met, who sat in your chair and died for the truth.
@@ -286,14 +286,14 @@ Vizier Massoud was murdered. You have known it in your bones since the anonymous
     *set ruthless %- 5
     You stand in the dead man's office and you grieve for him. Not performatively, not loudly -- a quiet grief, the kind that comes when you understand that the chair you sit in, the seal ring you wear, the title you carry, all came to you because a good man was poisoned in his own office. You inherited his position. You inherited his murder.
 
-    The seal ring is heavy on your finger. You touch it and think of Massoud touching his, and wonder if it felt this heavy to him.
+    The seal ring is heavy on your finger. You touch it and think of Cyrus touching his, and wonder if it felt this heavy to him.
   #Cold focus sharpens your mind. Grief is a luxury. Justice is a task. You have work to do.
     *set emotional_reaction "focused"
     *set boldness %+ 5
     *set ruthless %+ 5
     You push the grief aside. There will be time for it later, in the privacy of your chambers, where no one can see the cracks. Here, now, in this room that smells of dust and death, you need clarity. You need the sharp, cold focus that turns evidence into understanding and understanding into action.
 
-    Massoud is dead. You cannot save him. But you can find the person who killed him. And you can make certain they answer for it.
+    Cyrus is dead. You cannot save him. But you can find the person who killed him. And you can make certain they answer for it.
   #Anger builds in you, slow and hot. Someone did this in the heart of the Citadel, in the seat of imperial power, and they have not been punished.
     *set emotional_reaction "anger"
     *set boldness %+ 10
@@ -337,7 +337,7 @@ You approach the western bookshelf. Something about its placement has nagged at 
 *else
   You push against the shelf with all your weight. It does not move. Whatever is behind it will have to wait for stronger hands or better tools.
 
-You also find the personal correspondence in the side cabinet -- Massoud's journal, his letters, the record of a careful man who became a frightened one.
+You also find the personal correspondence in the side cabinet -- Cyrus's journal, his letters, the record of a careful man who became a frightened one.
 
 *goto after_all_investigations
 
@@ -353,12 +353,12 @@ At the desk, you examine the teacup with its dark, too-sweet residue. A small gl
   *set found_letter true
   *set evidence_count + 1
   *set scholarship + 3
-  You recognize the residue. Blue lotus compound -- you read about it years ago in a treatise on toxicology. And beneath the desk's blotter, a letter in Classical Parvani warns Massoud of a "gathering of shadows" within the Citadel. You can read the archaic script well enough to understand: someone warned him. He did not listen in time.
+  You recognize the residue. Blue lotus compound -- you read about it years ago in a treatise on toxicology. And beneath the desk's blotter, a letter in Classical Parvani warns Cyrus of a "gathering of shadows" within the Citadel. You can read the archaic script well enough to understand: someone warned him. He did not listen in time.
 *else
   The sweetness in the residue troubles you, but you cannot identify it. You tuck the vial and an old letter you find beneath the blotter -- written in a script you cannot read -- into your robe for later examination.
 
 *if (investigation_first != "correspondence")
-  In the cabinet by the window, you find Massoud's journal. The final entries are chilling -- a man who knew he was watched, who found discrepancies in the treasury accounts, who noticed his tea tasted wrong on the last night of his life.
+  In the cabinet by the window, you find Cyrus's journal. The final entries are chilling -- a man who knew he was watched, who found discrepancies in the treasury accounts, who noticed his tea tasted wrong on the last night of his life.
   *set evidence_count + 1
   *set rel_farid %+ 5
   Farid reads over your shoulder. His silence is worse than weeping.
@@ -393,7 +393,7 @@ Farid looks at you. You nod. He stays, though he retreats to the corner by the w
 
 Zara moves through the room with the efficiency of someone who has been here before -- and has been here quietly, without permission, in the hours when the corridor was empty and the guards were looking elsewhere. She touches nothing, but her eyes miss nothing either. She pauses at the desk, at the bookshelf, at the cabinet where the journal rests. You notice the way she reads the room: not the objects themselves but the spaces between them, the patterns of absence and presence, the grammar of a scene that speaks a language only she has been trained to hear.
 
-"Massoud was poisoned," she says.
+"Cyrus was poisoned," she says.
 
 The words fall into the room like stones into a well. No preamble. No softening. Just the fact, delivered with the precision of a knife.
 
@@ -409,11 +409,11 @@ She lets the silence hold for a moment. The dust motes drift between you in the 
 
 *set predecessor_murder_known true
 
-The image forms unbidden in your mind: Massoud slumped at the desk, the teacup cradled in fingers that had gone still. The papers scattered. The lamp burning low. A man who spent his life in service to the empire, dying alone in his office because someone put poison in his tea and no one was watching.
+The image forms unbidden in your mind: Cyrus slumped at the desk, the teacup cradled in fingers that had gone still. The papers scattered. The lamp burning low. A man who spent his life in service to the empire, dying alone in his office because someone put poison in his tea and no one was watching.
 
 "You have been investigating this."
 
-"Since the day he died." She pauses. The deliberate pause. "I liked Massoud. He was honest, which is unusual for a Vizier, and competent, which is unusual for an honest person. When the physicians said fever, I said nothing. I watched. I gathered evidence. Quietly. The kind of quiet that keeps you alive in this Citadel."
+"Since the day he died." She pauses. The deliberate pause. "I liked Cyrus. He was honest, which is unusual for a Vizier, and competent, which is unusual for an honest person. When the physicians said fever, I said nothing. I watched. I gathered evidence. Quietly. The kind of quiet that keeps you alive in this Citadel."
 
 *page_break
 
@@ -425,7 +425,7 @@ Zara does not sit. She stands in the center of the room, arms folded, and speaks
 
 "A dead end."
 
-"A cold trail. There is a difference." She looks at you directly, and the weight of her attention is considerable. "I have three suspects. All have access to the Citadel. All had motive to remove Massoud. None have proof against them. Yet."
+"A cold trail. There is a difference." She looks at you directly, and the weight of her attention is considerable. "I have three suspects. All have access to the Citadel. All had motive to remove Cyrus. None have proof against them. Yet."
 
 She does not name the suspects. That, you understand, is deliberate. Information is Zara's currency -- the only currency she trusts, more reliable than gold ashrafs and more dangerous than any blade. She does not spend it freely. She invests it, carefully, in people who may or may not provide returns. You are an investment she has not yet decided to make.
 
@@ -470,7 +470,7 @@ The implications settle over you like ice water. Someone with the resources to c
 
 Zara watches you with the patience of a cat at a mouse hole. She has shared information -- the poison, the apothecary, the existence of suspects. She has shown you more of her hand than she shows most people. Now she is waiting to see if you will do the same.
 
-The vial is in your hand. The journal is in the cabinet. Whatever you found -- the letter, the passage, Massoud's final desperate words -- it is yours to share or to keep.
+The vial is in your hand. The journal is in the cabinet. Whatever you found -- the letter, the passage, Cyrus's final desperate words -- it is yours to share or to keep.
 
 Zara is the Spymaster. The Director of the Eyes. She is the most informed person in the empire, and the most dangerous. Sharing your evidence with her means giving her power over the investigation. It means trusting that her interests align with yours -- that she wants the killer found for justice, and not for leverage.
 
@@ -502,7 +502,7 @@ But keeping it from her means investigating alone. And alone, in this Citadel, i
     *set rep_intelligence %+ 5
     *set boldness %+ 5
     *set ruthless %+ 5
-    You show her the vial. You describe the journal -- Massoud's growing fear, his discovery of treasury discrepancies, his final entry about the tea. But you keep the specifics vague. You do not hand her the journal itself. And the letter, if you found one, stays in the fold of your robe.
+    You show her the vial. You describe the journal -- Cyrus's growing fear, his discovery of treasury discrepancies, his final entry about the tea. But you keep the specifics vague. You do not hand her the journal itself. And the letter, if you found one, stays in the fold of your robe.
 
     Zara notices. Of course she notices.
 
@@ -609,7 +609,7 @@ He does not turn immediately. When he does, his face has the look of a man who h
 *set farid_confession true
 *set rel_farid %+ 8
 
-He takes a breath. "The day before Vizier Massoud fell ill. The day before I was home sick. He called me into this office. He was -- he was not himself. He was agitated. He said he had found something. He said he was going to 'shake the tree and see what falls.' Those were his exact words."
+He takes a breath. "The day before Vizier Cyrus fell ill. The day before I was home sick. He called me into this office. He was -- he was not himself. He was agitated. He said he had found something. He said he was going to 'shake the tree and see what falls.' Those were his exact words."
 
 Farid's eyes are bright. "He asked me to make a copy of a document. A financial record from the treasury. I made the copy. He took the original and the copy, and he told me to go home and rest -- he could see I was unwell. I thought he was being kind."
 
@@ -664,7 +664,7 @@ The dead man's secrets are in your hands now -- some of them, at least. Enough t
 
 You wait.
 
-"Be careful who you share this with. The killer is close." She pauses. The words that follow are quieter, stripped of their usual dry precision, and for that reason they land harder. "Massoud was careful too. Careful and competent and honest. He died anyway. I do not say this to frighten you. I say it because you should understand what you are facing."
+"Be careful who you share this with. The killer is close." She pauses. The words that follow are quieter, stripped of their usual dry precision, and for that reason they land harder. "Cyrus was careful too. Careful and competent and honest. He died anyway. I do not say this to frighten you. I say it because you should understand what you are facing."
 
 She turns to go, then stops.
 
@@ -678,7 +678,7 @@ Farid gathers the documents you have collected -- the journal, the vial, what pa
 
 "What now, my ${title_honorific} Vizier?" he asks.
 
-What now. You stand in the dead man's office, the seal ring heavy on your finger, the weight of murder and conspiracy pressing against your mind. You know things now that you did not know this morning. You know that Massoud was poisoned. You know that he was close to discovering a financial conspiracy within the empire. You know that someone has been spying on the Emperor from a hidden room. You know a name -- Saravan -- that may be the key to everything or nothing.
+What now. You stand in the dead man's office, the seal ring heavy on your finger, the weight of murder and conspiracy pressing against your mind. You know things now that you did not know this morning. You know that Cyrus was poisoned. You know that he was close to discovering a financial conspiracy within the empire. You know that someone has been spying on the Emperor from a hidden room. You know a name -- Saravan -- that may be the key to everything or nothing.
 
 And you know that the person who did this is still walking the halls of the Citadel, still sitting at the council table, still pouring tea for colleagues and smiling.
 
@@ -705,7 +705,7 @@ Despite everything -- the poison, the passage, the dead man's final words, the n
 
 Tomorrow, then. Tomorrow you will walk the streets of Khazara and see this empire through different eyes. You will visit the bazaar where its wealth is made and the garrison where its strength is forged and the temple where its soul is kept. You will look at this city not as an administrator reading reports but as a person standing in the current of two million lives, feeling their weight and their warmth and their need.
 
-But tonight, as the call to prayer echoes across the city and the Eternal Flame burns in the Temple of Seven Wisdoms and the last light dies over the Ashghar Mountains in the west, you will sit in your chambers with a dead man's journal open on your desk and the seal ring heavy on your finger. You will read Massoud's final entries by lamplight, tracing the path of a careful mind as it discovered the shape of its own destruction. You will memorize the name Saravan. You will hold the poison vial up to the flame and watch the iridescent residue catch the light, and you will think about teacups, and trust, and the terrible intimacy of murder.
+But tonight, as the call to prayer echoes across the city and the Eternal Flame burns in the Temple of Seven Wisdoms and the last light dies over the Ashghar Mountains in the west, you will sit in your chambers with a dead man's journal open on your desk and the seal ring heavy on your finger. You will read Cyrus's final entries by lamplight, tracing the path of a careful mind as it discovered the shape of its own destruction. You will memorize the name Saravan. You will hold the poison vial up to the flame and watch the iridescent residue catch the light, and you will think about teacups, and trust, and the terrible intimacy of murder.
 
 The killer is close. Zara said so. The killer walks these halls and sits at the council table and smiles across cups of tea that are not poisoned -- this time.
 
