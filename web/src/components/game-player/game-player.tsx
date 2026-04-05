@@ -565,12 +565,16 @@ interface InputPromptProps {
 
 function InputPrompt({ variable, onSubmit }: InputPromptProps) {
   const [value, setValue] = useState("");
+  const [showError, setShowError] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (value.trim()) {
+      setShowError(false);
       onSubmit(value.trim());
       setValue("");
+    } else {
+      setShowError(true);
     }
   };
 
@@ -582,15 +586,29 @@ function InputPrompt({ variable, onSubmit }: InputPromptProps) {
       <input
         id={`input-${variable}`}
         type="text"
+        required
         value={value}
-        onChange={(e) => setValue(e.target.value)}
-        className="w-full h-11 rounded-lg border border-border bg-card px-4 text-foreground font-serif text-base placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold transition-colors"
+        onChange={(e) => {
+          setValue(e.target.value);
+          if (e.target.value.trim()) {
+            setShowError(false);
+          }
+        }}
+        className={`w-full h-11 rounded-lg border bg-card px-4 text-foreground font-serif text-base placeholder:text-muted-foreground focus:outline-none focus:ring-2 transition-colors ${
+          showError
+            ? "border-red-500 focus:ring-red-500/50 focus:border-red-500 animate-[shake_0.3s_ease-in-out]"
+            : "border-border focus:ring-gold/50 focus:border-gold"
+        }`}
         placeholder="Type here..."
         autoFocus
       />
+      {showError && (
+        <p className="text-sm text-red-500 font-sans">
+          Please enter a name to continue.
+        </p>
+      )}
       <Button
         type="submit"
-        disabled={!value.trim()}
         className="bg-gold text-background hover:bg-gold/90"
       >
         Submit
