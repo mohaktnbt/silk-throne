@@ -403,16 +403,45 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
       }
 
       try {
+        setLoading(true);
         await loadSceneIntoEngine(saveData.state.currentScene);
         engine.loadState(saveData.state);
         setTextHistory(saveData.textHistory);
+        setLoading(false);
         await continueExecution();
       } catch {
+        setLoading(false);
         setError("Failed to load save data.");
       }
     },
     [gameSlug, loadSceneIntoEngine, continueExecution]
   );
+
+  const loadFromAutoSave = useCallback(async () => {
+    const engine = engineRef.current;
+    if (!engine) return;
+
+    setLoadDialogOpen(false);
+    setError(null);
+
+    const saveData = readSlot(autoSaveKey(gameSlug));
+    if (!saveData) {
+      setInfo("No auto-save found.");
+      return;
+    }
+
+    try {
+      setLoading(true);
+      await loadSceneIntoEngine(saveData.state.currentScene);
+      engine.loadState(saveData.state);
+      setTextHistory(saveData.textHistory);
+      setLoading(false);
+      await continueExecution();
+    } catch {
+      setLoading(false);
+      setError("Failed to load auto-save.");
+    }
+  }, [gameSlug, loadSceneIntoEngine, continueExecution]);
 
   const handleLoad = useCallback(() => {
     setLoadDialogOpen(true);
@@ -764,6 +793,25 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
             <DialogTitle>Load Game</DialogTitle>
           </DialogHeader>
           <div className="flex flex-col gap-2 py-2">
+            {/* Auto-save slot */}
+            {(() => {
+              const autoSlot = readSlot(autoSaveKey(gameSlug));
+              return (
+                <button
+                  onClick={() => { if (autoSlot) void loadFromAutoSave(); }}
+                  disabled={!autoSlot}
+                  className="flex items-center justify-between rounded-lg border border-gold/30 bg-card px-4 py-3 text-left transition-colors hover:border-gold/50 hover:bg-card/80 disabled:cursor-not-allowed disabled:opacity-40"
+                >
+                  <span className="text-sm font-sans text-foreground">
+                    Auto-save
+                  </span>
+                  <span className="text-xs font-sans text-muted-foreground">
+                    {autoSlot ? formatTimestamp(autoSlot.timestamp) : "Empty"}
+                  </span>
+                </button>
+              );
+            })()}
+            {/* Manual save slots */}
             {Array.from({ length: MANUAL_SLOT_COUNT }, (_, i) => {
               const slot = readSlot(manualSlotKey(gameSlug, i));
               return (
