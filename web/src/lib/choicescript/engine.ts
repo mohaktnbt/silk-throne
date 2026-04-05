@@ -690,11 +690,13 @@ export class GameEngine {
     }
 
     const nextScene = this.sceneList[currentIdx + 1];
+    const text = this.consumeText();
+
     if (!this.state.sceneCache[nextScene]) {
-      throw new EngineError(`Next scene not loaded: ${nextScene}`);
+      // Scene not loaded yet — signal UI to fetch and load it on demand
+      return { type: 'scene_change', text: text || undefined, nextScene };
     }
 
-    const text = this.consumeText();
     this.state.currentScene = nextScene;
     this.state.currentNodeIndex = 0;
     this.state.tempVariables = {};
