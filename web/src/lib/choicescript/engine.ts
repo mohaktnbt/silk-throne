@@ -1081,7 +1081,7 @@ export class GameEngine {
     try {
       return this.resolveVariable(name.toLowerCase());
     } catch {
-      return 0;
+      return '';
     }
   }
 }
