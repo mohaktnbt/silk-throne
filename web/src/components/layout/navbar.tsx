@@ -39,6 +39,7 @@ export function Navbar() {
           {user && (
             <Link
               href="/account"
+              prefetch={false}
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               Account
@@ -93,7 +94,7 @@ export function Navbar() {
                   Play
                 </Link>
                 {user && (
-                  <Link href="/account" onClick={() => setMobileOpen(false)} className="text-lg font-medium">
+                  <Link href="/account" prefetch={false} onClick={() => setMobileOpen(false)} className="text-lg font-medium">
                     Account
                   </Link>
                 )}
