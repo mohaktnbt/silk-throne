@@ -71,6 +71,8 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
   const [error, setError] = useState<string | null>(null);
   const [info, setInfo] = useState<string | null>(null);
   const [processing, setProcessing] = useState(false);
+  const [saveStatus, setSaveStatus] = useState<"idle" | "saved" | "error">("idle");
+  const saveStatusTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Preferences
   const [fontSize, setFontSize] = useState<number>(() => {
@@ -311,10 +313,21 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
   }, [user, game.id]);
 
   const handleSave = useCallback(() => {
-    saveToLocalStorage();
-    if (user) {
-      void saveToSupabase();
+    if (saveStatusTimerRef.current) {
+      clearTimeout(saveStatusTimerRef.current);
     }
+    try {
+      saveToLocalStorage();
+      if (user) {
+        void saveToSupabase();
+      }
+      setSaveStatus("saved");
+    } catch {
+      setSaveStatus("error");
+    }
+    saveStatusTimerRef.current = setTimeout(() => {
+      setSaveStatus("idle");
+    }, 2000);
   }, [saveToLocalStorage, saveToSupabase, user]);
 
   const handleLoad = useCallback(async () => {
@@ -495,6 +508,7 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
         onSave={handleSave}
         onLoad={handleLoad}
         onStats={handleStats}
+        saveStatus={saveStatus}
       />
 
       <main className="w-full max-w-[700px] mx-auto px-4 py-6 pb-24">
