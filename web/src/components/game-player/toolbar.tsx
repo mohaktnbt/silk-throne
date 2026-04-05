@@ -5,6 +5,7 @@ import {
   MinusIcon,
   PlusIcon,
   SaveIcon,
+  CheckIcon,
   FolderOpenIcon,
   BarChart3Icon,
   SunIcon,
@@ -18,6 +19,7 @@ interface ToolbarProps {
   onSave: () => void;
   onLoad: () => void;
   onStats: () => void;
+  saveStatus?: "idle" | "saved" | "error";
 }
 
 const MIN_FONT_SIZE = 16;
@@ -29,6 +31,7 @@ export function Toolbar({
   onSave,
   onLoad,
   onStats,
+  saveStatus = "idle",
 }: ToolbarProps) {
   const { theme, toggleTheme } = useTheme();
 
@@ -73,15 +76,28 @@ export function Toolbar({
           >
             <BarChart3Icon className="size-4" />
           </Button>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={onSave}
-            className="size-10 md:size-8"
-            aria-label="Save game"
-          >
-            <SaveIcon className="size-4" />
-          </Button>
+          <div className="relative">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={onSave}
+              className={`size-10 md:size-8 transition-colors ${saveStatus === "saved" ? "text-green-500" : saveStatus === "error" ? "text-destructive" : ""}`}
+              aria-label="Save game"
+            >
+              {saveStatus === "saved" ? (
+                <CheckIcon className="size-4" />
+              ) : (
+                <SaveIcon className="size-4" />
+              )}
+            </Button>
+            {saveStatus !== "idle" && (
+              <span
+                className={`absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] font-sans leading-none ${saveStatus === "saved" ? "text-green-500" : "text-destructive"}`}
+              >
+                {saveStatus === "saved" ? "Saved!" : "Failed"}
+              </span>
+            )}
+          </div>
           <Button
             variant="ghost"
             size="icon"
