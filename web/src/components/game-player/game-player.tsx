@@ -396,8 +396,8 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
   );
 
   const handleSave = useCallback(() => {
-    saveToSlot(0);
-  }, [saveToSlot]);
+    setSaveDialogOpen(true);
+  }, []);
 
   const loadFromSlot = useCallback(
     async (slot: number) => {
