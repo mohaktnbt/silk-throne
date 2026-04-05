@@ -12,6 +12,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { AuthModal } from "@/components/auth/auth-modal";
 import type { Purchase, SaveData } from "@/types/database";
 
 // ---------------------------------------------------------------------------
@@ -26,6 +27,7 @@ export default function AccountPage() {
   const [saves, setSaves] = useState<SaveData[]>([]);
   const [loadingData, setLoadingData] = useState(true);
   const [deletingSave, setDeletingSave] = useState<string | null>(null);
+  const [authModalOpen, setAuthModalOpen] = useState(false);
 
   // ---- fetch user data -----------------------------------------------------
   const fetchUserData = useCallback(async () => {
@@ -58,11 +60,11 @@ export default function AccountPage() {
 
   useEffect(() => {
     if (!authLoading && !user) {
-      router.push("/");
+      setAuthModalOpen(true);
       return;
     }
     fetchUserData();
-  }, [authLoading, user, fetchUserData, router]);
+  }, [authLoading, user, fetchUserData]);
 
   // ---- delete save ---------------------------------------------------------
   const handleDeleteSave = async (saveId: string) => {
@@ -103,8 +105,21 @@ export default function AccountPage() {
 
   if (!user) {
     return (
-      <div className="flex min-h-[60vh] items-center justify-center">
-        <p className="text-muted-foreground">Redirecting...</p>
+      <div className="flex min-h-[60vh] flex-col items-center justify-center gap-6 px-4">
+        <h1 className="font-display text-2xl font-bold sm:text-3xl">
+          Sign in to view your <span className="text-gold">Account</span>
+        </h1>
+        <p className="text-muted-foreground text-center max-w-md">
+          Please sign in or create an account to access your profile, purchases,
+          and saved games.
+        </p>
+        <Button
+          className="bg-gold text-background hover:bg-gold/90"
+          onClick={() => setAuthModalOpen(true)}
+        >
+          Sign In / Sign Up
+        </Button>
+        <AuthModal open={authModalOpen} onOpenChange={setAuthModalOpen} />
       </div>
     );
   }
