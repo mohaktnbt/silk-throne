@@ -10,7 +10,7 @@ interface ChoiceButtonsProps {
 
 export function ChoiceButtons({ choices, onSelect, disabled }: ChoiceButtonsProps) {
   return (
-    <div className="space-y-3 py-4">
+    <div className="space-y-3 py-4" role="group" aria-label="Story choices">
       {choices.map((choice, i) => {
         const isEnabled = choice.enabled && !disabled;
 

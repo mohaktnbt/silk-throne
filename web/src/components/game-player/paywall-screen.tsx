@@ -55,7 +55,7 @@ export function PaywallScreen({ game, onPurchaseComplete }: PaywallScreenProps) 
 
   return (
     <>
-      <div className="fixed inset-0 z-50 flex items-center justify-center animate-in fade-in-0 duration-500">
+      <div className="fixed inset-0 z-[60] flex items-center justify-center animate-in fade-in-0 duration-500">
         {/* Backdrop */}
         <div className="absolute inset-0 bg-background/90 backdrop-blur-sm" />
 
@@ -98,7 +98,12 @@ export function PaywallScreen({ game, onPurchaseComplete }: PaywallScreenProps) 
             disabled={purchasing}
             className="w-full max-w-xs h-12 text-base font-semibold bg-gold text-background hover:bg-gold/90 transition-all duration-200 shadow-lg shadow-gold/20"
           >
-            {purchasing ? "Processing..." : "Unlock Full Game"}
+            {purchasing ? (
+              <span className="flex items-center gap-2">
+                <span className="h-4 w-4 animate-spin rounded-full border-2 border-background border-t-transparent" />
+                Processing...
+              </span>
+            ) : "Unlock Full Game"}
           </Button>
 
           {/* Sign in prompt */}
