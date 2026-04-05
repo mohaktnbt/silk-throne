@@ -120,7 +120,8 @@ export function Toolbar({
             size="icon"
             onClick={onRestart}
             className="size-10 md:size-8"
-            aria-label="Restart game"
+            aria-label="Restart"
+            title="Restart"
           >
             <RotateCcwIcon className="size-4" />
           </Button>
