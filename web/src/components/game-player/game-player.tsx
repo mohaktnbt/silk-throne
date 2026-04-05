@@ -14,6 +14,13 @@ import { StatsPanel } from "./stats-panel";
 import { PaywallScreen } from "./paywall-screen";
 import { Toolbar } from "./toolbar";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogFooter,
+} from "@/components/ui/dialog";
 
 // ---------------------------------------------------------------------------
 // Types
@@ -42,9 +49,33 @@ interface SaveSlot {
 const SAVE_KEY_PREFIX = "silk-throne-save-";
 const FONT_SIZE_KEY = "silk-throne-font-size";
 const AUTO_SAVE_INTERVAL = 30_000; // 30 seconds
+const MANUAL_SLOT_COUNT = 3;
 
-function localStorageKey(gameSlug: string): string {
-  return `${SAVE_KEY_PREFIX}${gameSlug}`;
+function autoSaveKey(gameSlug: string): string {
+  return `${SAVE_KEY_PREFIX}${gameSlug}-auto`;
+}
+
+function manualSlotKey(gameSlug: string, slot: number): string {
+  return `${SAVE_KEY_PREFIX}${gameSlug}-slot-${slot}`;
+}
+
+function readSlot(key: string): SaveSlot | null {
+  try {
+    const raw = localStorage.getItem(key);
+    if (!raw) return null;
+    return JSON.parse(raw) as SaveSlot;
+  } catch {
+    return null;
+  }
+}
+
+function formatTimestamp(ts: number): string {
+  return new Date(ts).toLocaleString(undefined, {
+    month: "short",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
 }
 
 function generateBlockId(): string {
@@ -75,6 +106,8 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
   const [currentScene, setCurrentScene] = useState<string>("");
   const [saveStatus, setSaveStatus] = useState<"idle" | "saved" | "error">("idle");
   const saveStatusTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [saveDialogOpen, setSaveDialogOpen] = useState(false);
+  const [loadDialogOpen, setLoadDialogOpen] = useState(false);
 
   // Preferences
   const [fontSize, setFontSize] = useState<number>(() => {
@@ -290,7 +323,7 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
     };
 
     try {
-      localStorage.setItem(localStorageKey(gameSlug), JSON.stringify(saveData));
+      localStorage.setItem(autoSaveKey(gameSlug), JSON.stringify(saveData));
     } catch {
       // localStorage might be full
     }
@@ -320,52 +353,70 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
     );
   }, [user, game.id]);
 
-  const handleSave = useCallback(() => {
-    if (saveStatusTimerRef.current) {
-      clearTimeout(saveStatusTimerRef.current);
-    }
-    try {
-      saveToLocalStorage();
-      if (user) {
-        void saveToSupabase();
+  const saveToSlot = useCallback(
+    (slot: number) => {
+      const engine = engineRef.current;
+      if (!engine) return;
+
+      const saveData: SaveSlot = {
+        state: engine.getState(),
+        textHistory,
+        timestamp: Date.now(),
+      };
+
+      if (saveStatusTimerRef.current) {
+        clearTimeout(saveStatusTimerRef.current);
       }
-      setSaveStatus("saved");
-    } catch {
-      setSaveStatus("error");
-    }
-    saveStatusTimerRef.current = setTimeout(() => {
-      setSaveStatus("idle");
-    }, 2000);
-  }, [saveToLocalStorage, saveToSupabase, user]);
 
-  const handleLoad = useCallback(async () => {
-    const engine = engineRef.current;
-    if (!engine) return;
+      try {
+        localStorage.setItem(manualSlotKey(gameSlug, slot), JSON.stringify(saveData));
+        if (user) {
+          void saveToSupabase();
+        }
+        setSaveStatus("saved");
+      } catch {
+        setSaveStatus("error");
+      }
 
-    setError(null);
-    setInfo(null);
+      setSaveDialogOpen(false);
+      saveStatusTimerRef.current = setTimeout(() => setSaveStatus("idle"), 2000);
+    },
+    [gameSlug, textHistory, user, saveToSupabase]
+  );
 
-    const raw = localStorage.getItem(localStorageKey(gameSlug));
-    if (!raw) {
-      setInfo("No saved games found.");
-      return;
-    }
+  const handleSave = useCallback(() => {
+    setSaveDialogOpen(true);
+  }, []);
 
-    try {
-      const saveData = JSON.parse(raw) as SaveSlot;
+  const loadFromSlot = useCallback(
+    async (slot: number) => {
+      const engine = engineRef.current;
+      if (!engine) return;
 
-      // Ensure the current scene is loaded
-      await loadSceneIntoEngine(saveData.state.currentScene);
+      setLoadDialogOpen(false);
+      setError(null);
 
-      engine.loadState(saveData.state);
-      setTextHistory(saveData.textHistory);
+      const saveData = readSlot(manualSlotKey(gameSlug, slot));
+      if (!saveData) {
+        setInfo("That save slot is empty.");
+        return;
+      }
 
-      // Continue from where we left off
-      await continueExecution();
-    } catch {
-      setError("Failed to load save data.");
-    }
-  }, [gameSlug, loadSceneIntoEngine, continueExecution]);
+      try {
+        await loadSceneIntoEngine(saveData.state.currentScene);
+        engine.loadState(saveData.state);
+        setTextHistory(saveData.textHistory);
+        await continueExecution();
+      } catch {
+        setError("Failed to load save data.");
+      }
+    },
+    [gameSlug, loadSceneIntoEngine, continueExecution]
+  );
+
+  const handleLoad = useCallback(() => {
+    setLoadDialogOpen(true);
+  }, []);
 
   // -----------------------------------------------------------------------
   // Stats
@@ -425,10 +476,10 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
       const engine = new GameEngine();
       engineRef.current = engine;
 
-      // Check for saved game in localStorage
+      // Check for saved game in localStorage (auto-save slot)
       let savedSlot: SaveSlot | null = null;
       try {
-        const raw = localStorage.getItem(localStorageKey(gameSlug));
+        const raw = localStorage.getItem(autoSaveKey(gameSlug));
         if (raw) {
           savedSlot = JSON.parse(raw) as SaveSlot;
         }
@@ -676,6 +727,65 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
         loading={statsLoading}
         onClose={() => setStatsOpen(false)}
       />
+
+      {/* Save dialog */}
+      <Dialog open={saveDialogOpen} onOpenChange={setSaveDialogOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Save Game</DialogTitle>
+          </DialogHeader>
+          <div className="flex flex-col gap-2 py-2">
+            {Array.from({ length: MANUAL_SLOT_COUNT }, (_, i) => {
+              const slot = readSlot(manualSlotKey(gameSlug, i));
+              return (
+                <button
+                  key={i}
+                  onClick={() => saveToSlot(i)}
+                  className="flex items-center justify-between rounded-lg border border-border bg-card px-4 py-3 text-left transition-colors hover:border-gold/50 hover:bg-card/80"
+                >
+                  <span className="text-sm font-sans text-foreground">
+                    Slot {i + 1}
+                  </span>
+                  <span className="text-xs font-sans text-muted-foreground">
+                    {slot ? formatTimestamp(slot.timestamp) : "Empty"}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+          <DialogFooter showCloseButton />
+        </DialogContent>
+      </Dialog>
+
+      {/* Load dialog */}
+      <Dialog open={loadDialogOpen} onOpenChange={setLoadDialogOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Load Game</DialogTitle>
+          </DialogHeader>
+          <div className="flex flex-col gap-2 py-2">
+            {Array.from({ length: MANUAL_SLOT_COUNT }, (_, i) => {
+              const slot = readSlot(manualSlotKey(gameSlug, i));
+              return (
+                <button
+                  key={i}
+                  onClick={() => { if (slot) void loadFromSlot(i); }}
+                  disabled={!slot}
+                  className="flex items-center justify-between rounded-lg border border-border bg-card px-4 py-3 text-left transition-colors hover:border-gold/50 hover:bg-card/80 disabled:cursor-not-allowed disabled:opacity-40"
+                >
+                  <span className="text-sm font-sans text-foreground">
+                    Slot {i + 1}
+                  </span>
+                  <span className="text-xs font-sans text-muted-foreground">
+                    {slot ? formatTimestamp(slot.timestamp) : "Empty"}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+          <DialogFooter showCloseButton />
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
