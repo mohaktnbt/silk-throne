@@ -11,7 +11,7 @@ export default function Home() {
           <p className="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-gold">
             Interactive Fiction
           </p>
-          <h1 className="font-display text-5xl font-bold leading-tight sm:text-6xl md:text-7xl">
+          <h1 className="font-display text-5xl font-bold leading-tight text-foreground sm:text-6xl md:text-7xl">
             The Silk{" "}
             <span className="text-gold">Throne</span>
           </h1>
@@ -42,7 +42,7 @@ export default function Home() {
       {/* About Section */}
       <section id="about" className="py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <h2 className="font-display text-3xl font-bold text-center sm:text-4xl">
+          <h2 className="font-display text-3xl font-bold text-center text-foreground sm:text-4xl">
             About the <span className="text-gold">Game</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-muted-foreground">
@@ -85,7 +85,7 @@ export default function Home() {
       {/* How It Works */}
       <section className="border-t border-border/50 py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <h2 className="font-display text-3xl font-bold text-center sm:text-4xl">
+          <h2 className="font-display text-3xl font-bold text-center text-foreground sm:text-4xl">
             How It <span className="text-gold">Works</span>
           </h2>
           <div className="mt-16 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
@@ -99,7 +99,7 @@ export default function Home() {
                 <div className="mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-gold text-background font-bold">
                   {item.step}
                 </div>
-                <h3 className="font-display text-lg font-semibold">{item.title}</h3>
+                <h3 className="font-display text-lg font-semibold text-foreground">{item.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{item.desc}</p>
               </div>
             ))}
@@ -110,7 +110,7 @@ export default function Home() {
       {/* CTA */}
       <section className="py-24">
         <div className="mx-auto max-w-4xl px-4 text-center">
-          <h2 className="font-display text-3xl font-bold sm:text-4xl">
+          <h2 className="font-display text-3xl font-bold text-foreground sm:text-4xl">
             Ready to Shape an <span className="text-gold">Empire</span>?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
