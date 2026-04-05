@@ -78,9 +78,5 @@ async function fetchGame(): Promise<Game> {
 export default async function PlayPage() {
   const game = await fetchGame();
 
-  return (
-    <div className="flex flex-1 flex-col">
-      <PlayClient game={game} />
-    </div>
-  );
+  return <PlayClient game={game} />;
 }

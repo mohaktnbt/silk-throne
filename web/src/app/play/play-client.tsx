@@ -8,9 +8,5 @@ interface PlayClientProps {
 }
 
 export function PlayClient({ game }: PlayClientProps) {
-  return (
-    <div className="flex flex-1 flex-col">
-      <GamePlayer gameSlug={game.slug} game={game} />
-    </div>
-  );
+  return <GamePlayer gameSlug={game.slug} game={game} />;
 }
