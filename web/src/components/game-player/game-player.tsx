@@ -13,6 +13,7 @@ import { ChoiceButtons } from "./choice-buttons";
 import { StatsPanel } from "./stats-panel";
 import { PaywallScreen } from "./paywall-screen";
 import { Toolbar } from "./toolbar";
+import { SaveToast } from "./save-toast";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -105,7 +106,9 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
   const [processing, setProcessing] = useState(false);
   const [currentScene, setCurrentScene] = useState<string>("");
   const [saveStatus, setSaveStatus] = useState<"idle" | "saved" | "error">("idle");
+  const [saveToast, setSaveToast] = useState<"idle" | "saved" | "error">("idle");
   const saveStatusTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const saveToastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [saveDialogOpen, setSaveDialogOpen] = useState(false);
   const [loadDialogOpen, setLoadDialogOpen] = useState(false);
   const [restartDialogOpen, setRestartDialogOpen] = useState(false);
@@ -375,12 +378,18 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
           void saveToSupabase();
         }
         setSaveStatus("saved");
+        setSaveToast("saved");
       } catch {
         setSaveStatus("error");
+        setSaveToast("error");
       }
 
       setSaveDialogOpen(false);
       saveStatusTimerRef.current = setTimeout(() => setSaveStatus("idle"), 2000);
+      if (saveToastTimerRef.current) {
+        clearTimeout(saveToastTimerRef.current);
+      }
+      saveToastTimerRef.current = setTimeout(() => setSaveToast("idle"), 3000);
     },
     [gameSlug, textHistory, user, saveToSupabase]
   );
@@ -676,6 +685,8 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
         onRestart={handleRestart}
         saveStatus={saveStatus}
       />
+
+      <SaveToast status={saveToast} onDismiss={() => setSaveToast("idle")} />
 
       {/* Chapter indicator */}
       {currentScene && currentScene !== "startup" && (
