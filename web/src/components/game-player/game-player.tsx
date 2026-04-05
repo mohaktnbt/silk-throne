@@ -72,6 +72,7 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
   const [error, setError] = useState<string | null>(null);
   const [info, setInfo] = useState<string | null>(null);
   const [processing, setProcessing] = useState(false);
+  const [currentScene, setCurrentScene] = useState<string>("");
   const [saveStatus, setSaveStatus] = useState<"idle" | "saved" | "error">("idle");
   const saveStatusTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -168,6 +169,12 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
     }
 
     setOutput(engineOutput);
+
+    // Update current scene indicator
+    const engine = engineRef.current;
+    if (engine) {
+      setCurrentScene(engine.getState().currentScene);
+    }
 
     // Scroll to top of new content after a brief delay for render
     setTimeout(() => {
@@ -523,6 +530,15 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
         onStats={handleStats}
         saveStatus={saveStatus}
       />
+
+      {/* Chapter indicator */}
+      {currentScene && currentScene !== "startup" && (
+        <div className="w-full max-w-[700px] mx-auto px-4 pt-4">
+          <p className="text-xs font-sans text-gold/60 tracking-widest uppercase">
+            {currentScene.replace(/_/g, " ")}
+          </p>
+        </div>
+      )}
 
       <main className="w-full max-w-[700px] mx-auto px-4 py-6 pb-24">
         {/* Loading state */}
