@@ -117,7 +117,8 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
   const [fontSize, setFontSize] = useState<number>(() => {
     if (typeof window === "undefined") return 18;
     const stored = localStorage.getItem(FONT_SIZE_KEY);
-    return stored ? Math.max(16, Math.min(24, Number(stored))) : 18;
+    if (stored) return Math.max(12, Math.min(24, Number(stored)));
+    return window.innerWidth < 768 ? 14 : 18;
   });
 
   // Refs for auto-scroll
