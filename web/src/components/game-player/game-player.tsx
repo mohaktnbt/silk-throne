@@ -712,7 +712,7 @@ function InputPrompt({ variable, onSubmit }: InputPromptProps) {
       <input
         id={`input-${variable}`}
         type="text"
-        required
+        maxLength={40}
         value={value}
         onChange={(e) => {
           setValue(e.target.value);
@@ -730,7 +730,7 @@ function InputPrompt({ variable, onSubmit }: InputPromptProps) {
       />
       {showError && (
         <p className="text-sm text-red-500 font-sans">
-          Please enter a name to continue.
+          Please enter a name.
         </p>
       )}
       <Button
