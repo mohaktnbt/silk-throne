@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export default function Home() {
   return (
@@ -27,14 +28,15 @@ export default function Home() {
             >
               Play Free Preview
             </Button>
-            <Button
-              render={<a href="#about" />}
-              variant="outline"
-              size="lg"
-              className="border-gold/30 px-8 py-6 text-lg hover:bg-gold/10"
+            <a
+              href="#about"
+              className={cn(
+                buttonVariants({ variant: "outline", size: "lg" }),
+                "border-gold/30 px-8 py-6 text-lg hover:bg-gold/10"
+              )}
             >
               Learn More
-            </Button>
+            </a>
           </div>
         </div>
       </section>
