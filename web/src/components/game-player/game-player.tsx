@@ -165,9 +165,9 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
 
     setOutput(engineOutput);
 
-    // Scroll to bottom after a brief delay for render
+    // Scroll to top of new content after a brief delay for render
     setTimeout(() => {
-      contentEndRef.current?.scrollIntoView({ behavior: "smooth" });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }, 100);
   }, []);
 
@@ -445,7 +445,7 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="bg-background">
       <Toolbar
         fontSize={fontSize}
         onFontSizeChange={handleFontSizeChange}
