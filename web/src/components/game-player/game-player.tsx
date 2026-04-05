@@ -420,7 +420,15 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
         if (cancelled) return;
 
         if (sceneLoaded) {
-          engine.loadState(savedSlot.state);
+          try {
+            engine.loadState(savedSlot.state);
+          } catch {
+            // Corrupted save state — fall through to fresh start
+            savedSlot = null;
+          }
+        }
+
+        if (savedSlot && sceneLoaded) {
           setTextHistory(savedSlot.textHistory);
           setLoading(false);
 
@@ -435,7 +443,7 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
           }
           return;
         }
-        // If saved scene failed to load, fall through to fresh start
+        // If saved scene failed to load or state was corrupted, fall through to fresh start
       }
 
       // Fresh start: load startup scene

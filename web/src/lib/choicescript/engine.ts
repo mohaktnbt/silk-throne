@@ -199,14 +199,16 @@ export class GameEngine {
   getState(): GameState {
     return structuredClone({
       ...this.state,
-      achievements: this.state.achievements,
-    }) as GameState;
+      achievements: Array.from(this.state.achievements),
+    }) as unknown as GameState;
   }
 
   loadState(saved: GameState): void {
     this.state = {
       ...saved,
-      achievements: saved.achievements instanceof Set ? saved.achievements : new Set(saved.achievements),
+      achievements: saved.achievements instanceof Set
+        ? saved.achievements
+        : new Set(Array.isArray(saved.achievements as unknown) ? (saved.achievements as unknown as string[]) : []),
       sceneCache: { ...this.state.sceneCache, ...saved.sceneCache },
     };
     this.textBuffer = '';
