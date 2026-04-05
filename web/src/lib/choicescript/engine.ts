@@ -869,6 +869,9 @@ export class GameEngine {
       return this.evaluateInlineExpression(inner.trim());
     });
 
+    // 3) Typographic em-dashes: convert -- to —
+    result = result.replace(/--/g, '\u2014');
+
     return result;
   }
 
