@@ -12,6 +12,7 @@ import {
 interface StatsPanelProps {
   stats: StatDisplay[];
   open: boolean;
+  loading?: boolean;
   onClose: () => void;
 }
 
@@ -74,7 +75,7 @@ function TextStat({ label, value }: { label: string; value: string }) {
   );
 }
 
-export function StatsPanel({ stats, open, onClose }: StatsPanelProps) {
+export function StatsPanel({ stats, open, loading = false, onClose }: StatsPanelProps) {
   return (
     <Sheet open={open} onOpenChange={(isOpen) => !isOpen && onClose()}>
       <SheetContent side="right" className="overflow-y-auto">
@@ -88,12 +89,25 @@ export function StatsPanel({ stats, open, onClose }: StatsPanelProps) {
         </SheetHeader>
 
         <div className="space-y-5 px-4 pb-4">
-          {stats.length === 0 && (
+          {loading && (
+            <div className="space-y-5">
+              {[1, 2, 3, 4].map((i) => (
+                <div key={i} className="space-y-1.5">
+                  <div className="flex justify-between">
+                    <div className="h-4 w-24 rounded bg-muted animate-pulse" />
+                    <div className="h-4 w-10 rounded bg-muted animate-pulse" />
+                  </div>
+                  <div className="h-2 w-full rounded-full bg-muted animate-pulse" />
+                </div>
+              ))}
+            </div>
+          )}
+          {!loading && stats.length === 0 && (
             <p className="text-sm text-muted-foreground italic">
               No stats available yet.
             </p>
           )}
-          {stats.map((stat, index) => {
+          {!loading && stats.map((stat, index) => {
             switch (stat.type) {
               case "percent":
                 return (

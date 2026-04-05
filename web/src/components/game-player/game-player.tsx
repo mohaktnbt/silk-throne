@@ -68,6 +68,7 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
   const [paywallActive, setPaywallActive] = useState(false);
   const [statsOpen, setStatsOpen] = useState(false);
   const [stats, setStats] = useState<StatDisplay[]>([]);
+  const [statsLoading, setStatsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [processing, setProcessing] = useState(false);
 
@@ -347,14 +348,18 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
     const engine = engineRef.current;
     if (!engine) return;
 
-    // Ensure choicescript_stats scene is loaded
+    // Open the panel immediately so the user sees it right away
+    setStatsOpen(true);
+
+    // If the stats scene isn't loaded yet, fetch it and then populate
     if (!loadedScenesRef.current.has("choicescript_stats")) {
+      setStatsLoading(true);
       await loadSceneIntoEngine("choicescript_stats");
+      setStatsLoading(false);
     }
 
     const display = engine.getStatsDisplay();
     setStats(display);
-    setStatsOpen(true);
   }, [loadSceneIntoEngine]);
 
   // -----------------------------------------------------------------------
@@ -548,6 +553,7 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
       <StatsPanel
         stats={stats}
         open={statsOpen}
+        loading={statsLoading}
         onClose={() => setStatsOpen(false)}
       />
     </div>
