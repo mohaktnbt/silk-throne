@@ -2,15 +2,36 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useTheme } from "./theme-provider";
 import { useAuth } from "@/context/auth-context";
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 export function Navbar() {
   const { theme, toggleTheme } = useTheme();
   const { user, signOut } = useAuth();
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const closeMobile = useCallback(() => setMobileOpen(false), []);
+
+  // Close mobile menu on route change (resize) and prevent body scroll
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = "";
+      };
+    }
+  }, [mobileOpen]);
+
+  // Close on Escape key
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeMobile();
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [mobileOpen, closeMobile]);
 
   return (
     <nav className="sticky top-0 z-50 border-b border-border/50 bg-background/95 backdrop-blur-md">
@@ -74,52 +95,79 @@ export function Navbar() {
           )}
         </div>
 
-        {/* Mobile Nav */}
-        <div className="md:hidden">
-          <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
-            <SheetTrigger
-              render={<button className="rounded-md p-2 text-foreground" aria-label="Menu" />}
+        {/* Mobile Hamburger Button */}
+        <button
+          className="flex h-11 w-11 items-center justify-center rounded-md text-foreground md:hidden"
+          onClick={() => setMobileOpen((prev) => !prev)}
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileOpen}
+        >
+          {mobileOpen ? (
+            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          ) : (
+            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          )}
+        </button>
+      </div>
+
+      {/* Mobile Menu Overlay + Drawer */}
+      {mobileOpen && (
+        <>
+          {/* Backdrop */}
+          <div
+            className="fixed inset-0 z-40 bg-black/50"
+            onClick={closeMobile}
+            aria-hidden="true"
+          />
+          {/* Drawer */}
+          <div className="fixed inset-y-0 right-0 z-50 w-72 border-l border-border bg-background p-6 shadow-lg">
+            <button
+              className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-md text-foreground"
+              onClick={closeMobile}
+              aria-label="Close menu"
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-72 bg-background">
-              <div className="mt-8 flex flex-col gap-4">
-                <Link href="/" onClick={() => setMobileOpen(false)} className="text-lg font-medium">
-                  Home
+            </button>
+            <div className="mt-12 flex flex-col gap-4">
+              <Link href="/" onClick={closeMobile} className="rounded-md px-2 py-2 text-lg font-medium transition-colors hover:text-gold">
+                Home
+              </Link>
+              <Link href="/play" onClick={closeMobile} className="rounded-md px-2 py-2 text-lg font-medium transition-colors hover:text-gold">
+                Play
+              </Link>
+              {user && (
+                <Link href="/account" onClick={closeMobile} className="rounded-md px-2 py-2 text-lg font-medium transition-colors hover:text-gold">
+                  Account
                 </Link>
-                <Link href="/play" onClick={() => setMobileOpen(false)} className="text-lg font-medium">
-                  Play
-                </Link>
-                {user && (
-                  <Link href="/account" onClick={() => setMobileOpen(false)} className="text-lg font-medium">
-                    Account
-                  </Link>
-                )}
-                <button
-                  onClick={toggleTheme}
-                  className="flex items-center gap-2 text-lg font-medium"
+              )}
+              <button
+                onClick={toggleTheme}
+                className="rounded-md px-2 py-2 text-left text-lg font-medium transition-colors hover:text-gold"
+              >
+                {theme === "dark" ? "Light Mode" : "Dark Mode"}
+              </button>
+              {user ? (
+                <Button variant="outline" onClick={() => { signOut(); closeMobile(); }}>
+                  Sign Out
+                </Button>
+              ) : (
+                <Button
+                  render={<Link href="/play" onClick={closeMobile} />}
+                  className="w-full bg-gold text-background hover:bg-gold/90 font-semibold"
                 >
-                  {theme === "dark" ? "Light Mode" : "Dark Mode"}
-                </button>
-                {user ? (
-                  <Button variant="outline" onClick={() => { signOut(); setMobileOpen(false); }}>
-                    Sign Out
-                  </Button>
-                ) : (
-                  <Button
-                    render={<Link href="/play" onClick={() => setMobileOpen(false)} />}
-                    className="w-full bg-gold text-background hover:bg-gold/90 font-semibold"
-                  >
-                    Play Now
-                  </Button>
-                )}
-              </div>
-            </SheetContent>
-          </Sheet>
-        </div>
-      </div>
+                  Play Now
+                </Button>
+              )}
+            </div>
+          </div>
+        </>
+      )}
     </nav>
   );
 }
