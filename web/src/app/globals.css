@@ -98,11 +98,6 @@
   font-family: 'Playfair Display', serif;
 }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
 /* Custom scrollbar for dark theme */
 .dark ::-webkit-scrollbar {
   width: 8px;
@@ -116,4 +111,10 @@ html {
 }
 .dark ::-webkit-scrollbar-thumb:hover {
   background: hsl(43 76% 59%);
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
 }

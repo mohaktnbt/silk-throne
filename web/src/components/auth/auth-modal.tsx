@@ -61,7 +61,7 @@ export function AuthModal({ open, onOpenChange, defaultTab = "signin" }: AuthMod
             Welcome to <span className="text-gold">The Silk Throne</span>
           </DialogTitle>
         </DialogHeader>
-        <Tabs defaultValue={defaultTab} className="mt-4">
+        <Tabs defaultValue={defaultTab} className="mt-4 flex-col">
           <TabsList className="grid w-full grid-cols-2">
             <TabsTrigger value="signin">Sign In</TabsTrigger>
             <TabsTrigger value="signup">Sign Up</TabsTrigger>

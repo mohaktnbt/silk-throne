@@ -278,6 +278,11 @@ export class GameEngine {
         this.state.currentNodeIndex++;
         return null;
 
+      case 'paragraph_break':
+        this.textBuffer += '\n\n';
+        this.state.currentNodeIndex++;
+        return null;
+
       case 'comment':
         this.state.currentNodeIndex++;
         return null;
@@ -1076,7 +1081,7 @@ export class GameEngine {
     try {
       return this.resolveVariable(name.toLowerCase());
     } catch {
-      return 0;
+      return '';
     }
   }
 }

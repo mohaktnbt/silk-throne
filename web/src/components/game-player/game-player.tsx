@@ -68,9 +68,13 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
   const [paywallActive, setPaywallActive] = useState(false);
   const [statsOpen, setStatsOpen] = useState(false);
   const [stats, setStats] = useState<StatDisplay[]>([]);
+  const [statsLoading, setStatsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [info, setInfo] = useState<string | null>(null);
   const [processing, setProcessing] = useState(false);
   const [currentScene, setCurrentScene] = useState<string>("");
+  const [saveStatus, setSaveStatus] = useState<"idle" | "saved" | "error">("idle");
+  const saveStatusTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Preferences
   const [fontSize, setFontSize] = useState<number>(() => {
@@ -172,9 +176,9 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
       setCurrentScene(engine.getState().currentScene);
     }
 
-    // Scroll to bottom after a brief delay for render
+    // Scroll to top of new content after a brief delay for render
     setTimeout(() => {
-      contentEndRef.current?.scrollIntoView({ behavior: "smooth" });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }, 100);
   }, []);
 
@@ -317,20 +321,37 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
   }, [user, game.id]);
 
   const handleSave = useCallback(() => {
-    saveToLocalStorage();
-    if (user) {
-      void saveToSupabase();
+    if (saveStatusTimerRef.current) {
+      clearTimeout(saveStatusTimerRef.current);
     }
+    try {
+      saveToLocalStorage();
+      if (user) {
+        void saveToSupabase();
+      }
+      setSaveStatus("saved");
+    } catch {
+      setSaveStatus("error");
+    }
+    saveStatusTimerRef.current = setTimeout(() => {
+      setSaveStatus("idle");
+    }, 2000);
   }, [saveToLocalStorage, saveToSupabase, user]);
 
   const handleLoad = useCallback(async () => {
     const engine = engineRef.current;
     if (!engine) return;
 
-    try {
-      const raw = localStorage.getItem(localStorageKey(gameSlug));
-      if (!raw) return;
+    setError(null);
+    setInfo(null);
 
+    const raw = localStorage.getItem(localStorageKey(gameSlug));
+    if (!raw) {
+      setInfo("No saved games found.");
+      return;
+    }
+
+    try {
       const saveData = JSON.parse(raw) as SaveSlot;
 
       // Ensure the current scene is loaded
@@ -354,14 +375,18 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
     const engine = engineRef.current;
     if (!engine) return;
 
-    // Ensure choicescript_stats scene is loaded
+    // Open the panel immediately so the user sees it right away
+    setStatsOpen(true);
+
+    // If the stats scene isn't loaded yet, fetch it and then populate
     if (!loadedScenesRef.current.has("choicescript_stats")) {
+      setStatsLoading(true);
       await loadSceneIntoEngine("choicescript_stats");
+      setStatsLoading(false);
     }
 
     const display = engine.getStatsDisplay();
     setStats(display);
-    setStatsOpen(true);
   }, [loadSceneIntoEngine]);
 
   // -----------------------------------------------------------------------
@@ -384,7 +409,43 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
       const engine = new GameEngine();
       engineRef.current = engine;
 
-      // Load startup scene
+      // Check for saved game in localStorage
+      let savedSlot: SaveSlot | null = null;
+      try {
+        const raw = localStorage.getItem(localStorageKey(gameSlug));
+        if (raw) {
+          savedSlot = JSON.parse(raw) as SaveSlot;
+        }
+      } catch {
+        // Corrupted save data — start fresh
+      }
+
+      if (savedSlot) {
+        // Restore from save: load the saved scene
+        const savedScene = savedSlot.state.currentScene;
+        const sceneLoaded = await loadSceneIntoEngine(savedScene);
+        if (cancelled) return;
+
+        if (sceneLoaded) {
+          engine.loadState(savedSlot.state);
+          setTextHistory(savedSlot.textHistory);
+          setLoading(false);
+
+          // Continue execution from the saved position
+          const result = engine.continueExecution();
+          if (cancelled) return;
+
+          if (result.type === "scene_change" && result.nextScene) {
+            await handleSceneChange(result.nextScene);
+          } else {
+            processOutput(result);
+          }
+          return;
+        }
+        // If saved scene failed to load, fall through to fresh start
+      }
+
+      // Fresh start: load startup scene
       const startupLoaded = await loadSceneIntoEngine("startup");
       if (cancelled || !startupLoaded) {
         if (!cancelled) setLoading(false);
@@ -452,13 +513,14 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="bg-background">
       <Toolbar
         fontSize={fontSize}
         onFontSizeChange={handleFontSizeChange}
         onSave={handleSave}
         onLoad={handleLoad}
         onStats={handleStats}
+        saveStatus={saveStatus}
       />
 
       {/* Chapter indicator */}
@@ -485,9 +547,32 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
 
         {/* Error state */}
         {error && !loading && (
-          <div className="rounded-lg border border-destructive/50 bg-destructive/5 p-4 text-sm text-destructive">
-            <p className="font-semibold mb-1">Error</p>
-            <p>{error}</p>
+          <div className="rounded-lg border border-destructive/50 bg-destructive/5 p-4 text-sm text-destructive flex items-start justify-between gap-3">
+            <div>
+              <p className="font-semibold mb-1">Error</p>
+              <p>{error}</p>
+            </div>
+            <button
+              onClick={() => setError(null)}
+              aria-label="Dismiss error"
+              className="shrink-0 text-destructive/70 hover:text-destructive transition-colors"
+            >
+              ✕
+            </button>
+          </div>
+        )}
+
+        {/* Info state */}
+        {info && !loading && (
+          <div className="rounded-lg border border-border bg-card p-4 text-sm text-muted-foreground flex items-start justify-between gap-3">
+            <p>{info}</p>
+            <button
+              onClick={() => setInfo(null)}
+              aria-label="Dismiss message"
+              className="shrink-0 text-muted-foreground/70 hover:text-muted-foreground transition-colors"
+            >
+              ✕
+            </button>
           </div>
         )}
 
@@ -564,6 +649,7 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
       <StatsPanel
         stats={stats}
         open={statsOpen}
+        loading={statsLoading}
         onClose={() => setStatsOpen(false)}
       />
     </div>
@@ -581,12 +667,16 @@ interface InputPromptProps {
 
 function InputPrompt({ variable, onSubmit }: InputPromptProps) {
   const [value, setValue] = useState("");
+  const [showError, setShowError] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (value.trim()) {
+      setShowError(false);
       onSubmit(value.trim());
       setValue("");
+    } else {
+      setShowError(true);
     }
   };
 
@@ -598,15 +688,29 @@ function InputPrompt({ variable, onSubmit }: InputPromptProps) {
       <input
         id={`input-${variable}`}
         type="text"
+        required
         value={value}
-        onChange={(e) => setValue(e.target.value)}
-        className="w-full h-11 rounded-lg border border-border bg-card px-4 text-foreground font-serif text-base placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold transition-colors"
+        onChange={(e) => {
+          setValue(e.target.value);
+          if (e.target.value.trim()) {
+            setShowError(false);
+          }
+        }}
+        className={`w-full h-11 rounded-lg border bg-card px-4 text-foreground font-serif text-base placeholder:text-muted-foreground focus:outline-none focus:ring-2 transition-colors ${
+          showError
+            ? "border-red-500 focus:ring-red-500/50 focus:border-red-500 animate-[shake_0.3s_ease-in-out]"
+            : "border-border focus:ring-gold/50 focus:border-gold"
+        }`}
         placeholder="Type here..."
         autoFocus
       />
+      {showError && (
+        <p className="text-sm text-red-500 font-sans">
+          Please enter a name to continue.
+        </p>
+      )}
       <Button
         type="submit"
-        disabled={!value.trim()}
         className="bg-gold text-background hover:bg-gold/90"
       >
         Submit
