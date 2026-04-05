@@ -10,7 +10,7 @@ interface ChoiceButtonsProps {
 
 export function ChoiceButtons({ choices, onSelect, disabled }: ChoiceButtonsProps) {
   return (
-    <div className="space-y-3 py-4">
+    <div className="space-y-3 py-4" role="group" aria-label="Story choices">
       {choices.map((choice, i) => {
         const isEnabled = choice.enabled && !disabled;
 
@@ -23,7 +23,7 @@ export function ChoiceButtons({ choices, onSelect, disabled }: ChoiceButtonsProp
               group w-full text-left rounded-lg border px-5 py-3 min-h-[48px]
               font-serif text-base leading-relaxed
               transition-all duration-200 ease-out
-              animate-in fade-in-0 slide-in-from-bottom-2 fill-mode-both
+              animate-in fade-in-0 slide-in-from-bottom-2 fill-mode-forwards
               ${
                 isEnabled
                   ? "border-border bg-card hover:bg-card/80 hover:border-gold/50 hover:shadow-md hover:shadow-gold/5 cursor-pointer active:scale-[0.99]"

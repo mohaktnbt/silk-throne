@@ -69,6 +69,7 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
   const [statsOpen, setStatsOpen] = useState(false);
   const [stats, setStats] = useState<StatDisplay[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [processing, setProcessing] = useState(false);
 
   // Preferences
   const [fontSize, setFontSize] = useState<number>(() => {
@@ -221,35 +222,47 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
 
   const handleChoice = useCallback(
     async (choiceIndex: number) => {
+      if (processing) return;
       const engine = engineRef.current;
       if (!engine) return;
 
-      const result = engine.submitChoice(choiceIndex);
+      setProcessing(true);
+      try {
+        const result = engine.submitChoice(choiceIndex);
+
+        if (result.type === "scene_change" && result.nextScene) {
+          await handleSceneChange(result.nextScene);
+        } else {
+          processOutput(result);
+        }
+      } finally {
+        setProcessing(false);
+      }
+    },
+    [handleSceneChange, processOutput, processing]
+  );
+
+  const handlePageBreak = useCallback(async () => {
+    if (processing) return;
+    const engine = engineRef.current;
+    if (!engine) return;
+
+    setProcessing(true);
+    try {
+      // Clear previous text on page break
+      setTextHistory([]);
+
+      const result = engine.submitPageBreak();
 
       if (result.type === "scene_change" && result.nextScene) {
         await handleSceneChange(result.nextScene);
       } else {
         processOutput(result);
       }
-    },
-    [handleSceneChange, processOutput]
-  );
-
-  const handlePageBreak = useCallback(async () => {
-    const engine = engineRef.current;
-    if (!engine) return;
-
-    // Clear previous text on page break
-    setTextHistory([]);
-
-    const result = engine.submitPageBreak();
-
-    if (result.type === "scene_change" && result.nextScene) {
-      await handleSceneChange(result.nextScene);
-    } else {
-      processOutput(result);
+    } finally {
+      setProcessing(false);
     }
-  }, [handleSceneChange, processOutput]);
+  }, [handleSceneChange, processOutput, processing]);
 
   // -----------------------------------------------------------------------
   // Save / Load
@@ -474,7 +487,7 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
           <>
             {/* Choice buttons */}
             {output.type === "choice" && output.choices && (
-              <ChoiceButtons choices={output.choices} onSelect={handleChoice} />
+              <ChoiceButtons choices={output.choices} onSelect={handleChoice} disabled={processing} />
             )}
 
             {/* Page break */}
@@ -482,6 +495,7 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
               <div className="flex justify-center py-8">
                 <Button
                   onClick={handlePageBreak}
+                  disabled={processing}
                   className="px-8 h-11 bg-gold text-background hover:bg-gold/90 font-serif text-base transition-all duration-200 shadow-md shadow-gold/10"
                 >
                   Continue

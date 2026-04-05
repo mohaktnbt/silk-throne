@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import React from "react";
 
 interface TextDisplayProps {
   text: string;
@@ -8,25 +8,12 @@ interface TextDisplayProps {
 }
 
 export function TextDisplay({ text, fontSize }: TextDisplayProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (containerRef.current) {
-      const paragraphs = containerRef.current.querySelectorAll(".game-paragraph");
-      paragraphs.forEach((p, i) => {
-        const el = p as HTMLElement;
-        el.style.animationDelay = `${i * 60}ms`;
-      });
-    }
-  }, [text]);
-
   if (!text) return null;
 
   const paragraphs = text.split(/\n\n+/);
 
   return (
     <div
-      ref={containerRef}
       className="game-text space-y-4"
       style={{ fontSize: `${fontSize}px` }}
     >
@@ -40,7 +27,7 @@ export function TextDisplay({ text, fontSize }: TextDisplayProps) {
         return (
           <p
             key={`${index}-${trimmed.slice(0, 32)}`}
-            className="game-paragraph animate-in fade-in-0 duration-500 fill-mode-both text-foreground leading-[1.75]"
+            className="game-paragraph animate-in fade-in-0 duration-500 fill-mode-forwards text-foreground leading-[1.75]"
             style={{ animationDelay: `${index * 60}ms` }}
           >
             {parts.map((part, partIndex) => (

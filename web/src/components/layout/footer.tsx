@@ -20,17 +20,17 @@ export function Footer() {
             </h3>
             <ul className="mt-3 space-y-2">
               <li>
-                <Link href="/" className="text-sm text-muted-foreground hover:text-gold transition-colors">
+                <Link href="/" className="inline-flex items-center min-h-[44px] text-sm text-muted-foreground hover:text-gold transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/play" className="text-sm text-muted-foreground hover:text-gold transition-colors">
+                <Link href="/play" className="inline-flex items-center min-h-[44px] text-sm text-muted-foreground hover:text-gold transition-colors">
                   Play
                 </Link>
               </li>
               <li>
-                <Link href="/account" className="text-sm text-muted-foreground hover:text-gold transition-colors">
+                <Link href="/account" prefetch={false} className="inline-flex items-center min-h-[44px] text-sm text-muted-foreground hover:text-gold transition-colors">
                   Account
                 </Link>
               </li>
@@ -42,12 +42,12 @@ export function Footer() {
             </h3>
             <ul className="mt-3 space-y-2">
               <li>
-                <Link href="/terms" className="text-sm text-muted-foreground hover:text-gold transition-colors">
+                <Link href="/terms" prefetch={false} className="inline-flex items-center min-h-[44px] text-sm text-muted-foreground hover:text-gold transition-colors">
                   Terms of Service
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className="text-sm text-muted-foreground hover:text-gold transition-colors">
+                <Link href="/privacy" prefetch={false} className="inline-flex items-center min-h-[44px] text-sm text-muted-foreground hover:text-gold transition-colors">
                   Privacy Policy
                 </Link>
               </li>
