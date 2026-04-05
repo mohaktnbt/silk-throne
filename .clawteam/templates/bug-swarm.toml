@@ -1,0 +1,48 @@
+[team]
+name = "silk-throne-bugs"
+description = "Parallel bug-fixing swarm for The Silk Throne"
+
+[leader]
+agent = "claude"
+task = """
+You are the bug-fix team leader for The Silk Throne webapp.
+
+Your job:
+1. Run: gh issue list --repo mohaktnbt/silk-throne --label cowork-bug --state open --json number,title,body --limit 5
+2. For each bug, spawn a worker agent with the bug details
+3. Each worker gets its own git worktree — no conflicts
+4. After all workers finish, review their changes
+5. For each successful fix, push the branch and create a PR
+6. Relabel the issue: remove 'cowork-bug', add 'fix-submitted'
+7. Comment on each issue with the PR link
+
+Use clawteam spawn for each bug. Give each worker a clear, focused task.
+After spawning, monitor with clawteam board show.
+"""
+
+[[workers]]
+name = "fixer-{n}"
+agent = "claude"
+task_template = """
+Fix this bug in The Silk Throne (Next.js + TypeScript + Tailwind + Supabase app).
+
+Read CLAUDE.md first for conventions.
+
+{bug_details}
+
+Steps:
+1. Find the relevant files in web/src/
+2. Make the minimal fix
+3. Run: cd web && npm run build
+4. Run: cd web && npm run lint
+5. If both pass: git add -A && git commit -m "fix: resolve #{issue_number}"
+6. If either fails: fix the errors and retry
+
+Rules:
+- TypeScript strict, no any
+- Mobile-first responsive design
+- Dark mode colors: #0f0f1a bg, #e2b04a gold
+- Merriweather for game text, Inter for UI
+- Keep changes minimal
+"""
+max_workers = 5
