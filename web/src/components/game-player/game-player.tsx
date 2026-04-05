@@ -69,6 +69,7 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
   const [statsOpen, setStatsOpen] = useState(false);
   const [stats, setStats] = useState<StatDisplay[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [info, setInfo] = useState<string | null>(null);
   const [processing, setProcessing] = useState(false);
 
   // Preferences
@@ -320,10 +321,16 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
     const engine = engineRef.current;
     if (!engine) return;
 
-    try {
-      const raw = localStorage.getItem(localStorageKey(gameSlug));
-      if (!raw) return;
+    setError(null);
+    setInfo(null);
 
+    const raw = localStorage.getItem(localStorageKey(gameSlug));
+    if (!raw) {
+      setInfo("No saved games found.");
+      return;
+    }
+
+    try {
       const saveData = JSON.parse(raw) as SaveSlot;
 
       // Ensure the current scene is loaded
@@ -469,9 +476,32 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
 
         {/* Error state */}
         {error && !loading && (
-          <div className="rounded-lg border border-destructive/50 bg-destructive/5 p-4 text-sm text-destructive">
-            <p className="font-semibold mb-1">Error</p>
-            <p>{error}</p>
+          <div className="rounded-lg border border-destructive/50 bg-destructive/5 p-4 text-sm text-destructive flex items-start justify-between gap-3">
+            <div>
+              <p className="font-semibold mb-1">Error</p>
+              <p>{error}</p>
+            </div>
+            <button
+              onClick={() => setError(null)}
+              aria-label="Dismiss error"
+              className="shrink-0 text-destructive/70 hover:text-destructive transition-colors"
+            >
+              ✕
+            </button>
+          </div>
+        )}
+
+        {/* Info state */}
+        {info && !loading && (
+          <div className="rounded-lg border border-border bg-card p-4 text-sm text-muted-foreground flex items-start justify-between gap-3">
+            <p>{info}</p>
+            <button
+              onClick={() => setInfo(null)}
+              aria-label="Dismiss message"
+              className="shrink-0 text-muted-foreground/70 hover:text-muted-foreground transition-colors"
+            >
+              ✕
+            </button>
           </div>
         )}
 
