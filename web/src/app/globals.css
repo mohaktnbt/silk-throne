@@ -98,11 +98,6 @@
   font-family: 'Playfair Display', serif;
 }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
 /* Custom scrollbar for dark theme */
 .dark ::-webkit-scrollbar {
   width: 8px;
