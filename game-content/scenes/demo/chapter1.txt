@@ -16,7 +16,17 @@ Farid arrives before the sun has fully cleared the eastern wall, bearing a tray 
 
 He pours your tea with hands that tremble slightly and begins.
 
-*page_break
+*fake_choice
+  #You pick up the tea first, scanning the documents while you sip. Preparation is everything.
+    *set scholarship %+ 5
+    The tea is strong and sweet — cardamom, a hint of saffron. You let its warmth settle your thoughts as your eyes move across the papers. Numbers, names, dates. The shape of a crisis, rendered in ink.
+  #"Give me the worst of it first, Farid." You push the tea aside.
+    *set boldness %+ 5
+    Farid blinks, then nods with something that might be respect. He reshuffles the papers, pulling three to the front. "As you wish, Grand Vizier."
+  #You study Farid as much as the papers. The measure of a secretary reveals the measure of an office.
+    *set cunning %+ 5
+    *set rel_farid %+ 5
+    He is meticulous. The papers are sorted by urgency, cross-referenced, annotated in a hand so small it must require a magnifying lens. Whatever else is true of Osman's legacy, his secretary is exceptional.
 
 "The Emperor Roshan is sixteen years old. He ascended the Silk Throne two years ago when his father, the great Emperor Bahram, died of a fever. He is intelligent, idealistic, and — " Farid pauses. "Surrounded."
 
