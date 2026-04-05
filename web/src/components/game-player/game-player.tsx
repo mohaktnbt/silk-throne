@@ -108,6 +108,7 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
   const saveStatusTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [saveDialogOpen, setSaveDialogOpen] = useState(false);
   const [loadDialogOpen, setLoadDialogOpen] = useState(false);
+  const [restartDialogOpen, setRestartDialogOpen] = useState(false);
 
   // Preferences
   const [fontSize, setFontSize] = useState<number>(() => {
@@ -448,6 +449,54 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
   }, []);
 
   // -----------------------------------------------------------------------
+  // Restart
+  // -----------------------------------------------------------------------
+
+  const handleRestart = useCallback(() => {
+    setRestartDialogOpen(true);
+  }, []);
+
+  const confirmRestart = useCallback(async () => {
+    setRestartDialogOpen(false);
+    setError(null);
+    setInfo(null);
+
+    // Clear all save data for this game
+    localStorage.removeItem(autoSaveKey(gameSlug));
+    for (let i = 0; i < MANUAL_SLOT_COUNT; i++) {
+      localStorage.removeItem(manualSlotKey(gameSlug, i));
+    }
+
+    // Reset UI state
+    setTextHistory([]);
+    setOutput(null);
+    setPaywallActive(false);
+    setCurrentScene("");
+    setSaveStatus("idle");
+
+    // Create a fresh engine and reload the startup scene
+    const engine = new GameEngine();
+    engineRef.current = engine;
+    loadedScenesRef.current = new Set();
+
+    setLoading(true);
+    const loaded = await loadSceneIntoEngine("startup");
+    if (!loaded) {
+      setLoading(false);
+      return;
+    }
+
+    const result = engine.startGame("startup");
+    setLoading(false);
+
+    if (result.type === "scene_change" && result.nextScene) {
+      await handleSceneChange(result.nextScene);
+    } else {
+      processOutput(result);
+    }
+  }, [gameSlug, loadSceneIntoEngine, handleSceneChange, processOutput]);
+
+  // -----------------------------------------------------------------------
   // Stats
   // -----------------------------------------------------------------------
 
@@ -624,6 +673,7 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
         onSave={handleSave}
         onLoad={handleLoad}
         onStats={handleStats}
+        onRestart={handleRestart}
         saveStatus={saveStatus}
       />
 
@@ -832,6 +882,33 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
             })}
           </div>
           <DialogFooter showCloseButton />
+        </DialogContent>
+      </Dialog>
+
+      {/* Restart confirmation dialog */}
+      <Dialog open={restartDialogOpen} onOpenChange={setRestartDialogOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Restart Game</DialogTitle>
+          </DialogHeader>
+          <p className="text-sm text-muted-foreground font-sans py-2">
+            Are you sure you want to restart? All save data for this game will be
+            deleted and you will begin from the first passage.
+          </p>
+          <DialogFooter>
+            <Button
+              variant="outline"
+              onClick={() => setRestartDialogOpen(false)}
+            >
+              Cancel
+            </Button>
+            <Button
+              variant="destructive"
+              onClick={() => void confirmRestart()}
+            >
+              Restart
+            </Button>
+          </DialogFooter>
         </DialogContent>
       </Dialog>
     </div>
