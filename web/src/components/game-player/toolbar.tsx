@@ -39,7 +39,7 @@ export function Toolbar({
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className="sticky top-16 z-30 bg-background/80 backdrop-blur-md border-b border-border/50">
+    <div className="fixed top-16 left-0 right-0 z-30 w-full bg-background/80 backdrop-blur-md border-b border-border/50">
       <div className="max-w-[700px] mx-auto flex items-center justify-between px-4 py-2">
         {/* Font size controls */}
         <div className="flex items-center gap-1">
