@@ -63,7 +63,10 @@ export async function GET(
     const game = gameData as unknown as Game;
 
     // 2. Check whether this scene is in the free list
-    const isFreeScene = game.free_scene_list.includes(sceneName);
+    // choicescript_stats is always free — it's game metadata, not premium content
+    const isFreeScene =
+      game.free_scene_list.includes(sceneName) ||
+      sceneName === "choicescript_stats";
 
     if (!isFreeScene) {
       // 3. Authenticate the user

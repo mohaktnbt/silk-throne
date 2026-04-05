@@ -966,12 +966,16 @@ class SceneParser {
       if (child.indent <= parentIndent) break;
 
       if (child.content.startsWith('text ')) {
-        const parts = child.content.slice(5).trim().split(/\s+/, 2);
-        items.push({ type: 'text', variable: parts[0], label: parts[1] ?? parts[0] });
+        const match = child.content.slice(5).trim().match(/^(\S+)(?:\s+(.+))?/);
+        const variable = match?.[1] ?? child.content.slice(5).trim();
+        const label = match?.[2] ?? variable;
+        items.push({ type: 'text', variable, label });
         this.cursor++;
       } else if (child.content.startsWith('percent ')) {
-        const parts = child.content.slice(8).trim().split(/\s+/, 2);
-        items.push({ type: 'percent', variable: parts[0], label: parts[1] ?? parts[0] });
+        const match = child.content.slice(8).trim().match(/^(\S+)(?:\s+(.+))?/);
+        const variable = match?.[1] ?? child.content.slice(8).trim();
+        const label = match?.[2] ?? variable;
+        items.push({ type: 'percent', variable, label });
         this.cursor++;
       } else if (child.content.startsWith('opposed_pair ')) {
         const variable = child.content.slice(13).trim();
