@@ -16,7 +16,7 @@ export function Navbar() {
     <nav className="sticky top-0 z-50 border-b border-border/50 bg-background/95 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2 min-h-[44px]">
           <span className="font-display text-xl font-bold text-gold">
             The Silk Throne
           </span>
@@ -26,27 +26,27 @@ export function Navbar() {
         <div className="hidden items-center gap-6 md:flex">
           <Link
             href="/"
-            className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            className="inline-flex items-center min-h-[44px] text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             Home
           </Link>
           <Link
             href="/play"
-            className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            className="inline-flex items-center min-h-[44px] text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             Play
           </Link>
           {user && (
             <Link
               href="/account"
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="inline-flex items-center min-h-[44px] text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               Account
             </Link>
           )}
           <button
             onClick={toggleTheme}
-            className="rounded-md p-2 text-muted-foreground transition-colors hover:text-foreground"
+            className="inline-flex items-center justify-center rounded-md p-3 min-h-[44px] min-w-[44px] text-muted-foreground transition-colors hover:text-foreground"
             aria-label="Toggle theme"
           >
             {theme === "dark" ? (
@@ -78,7 +78,7 @@ export function Navbar() {
         <div className="md:hidden">
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
             <SheetTrigger
-              render={<button className="rounded-md p-2 text-foreground" aria-label="Menu" />}
+              render={<button className="inline-flex items-center justify-center rounded-md p-3 min-h-[44px] min-w-[44px] text-foreground" aria-label="Menu" />}
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -86,20 +86,20 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent side="right" className="w-72 bg-background">
               <div className="mt-8 flex flex-col gap-4">
-                <Link href="/" onClick={() => setMobileOpen(false)} className="text-lg font-medium">
+                <Link href="/" onClick={() => setMobileOpen(false)} className="inline-flex items-center min-h-[44px] text-lg font-medium">
                   Home
                 </Link>
-                <Link href="/play" onClick={() => setMobileOpen(false)} className="text-lg font-medium">
+                <Link href="/play" onClick={() => setMobileOpen(false)} className="inline-flex items-center min-h-[44px] text-lg font-medium">
                   Play
                 </Link>
                 {user && (
-                  <Link href="/account" onClick={() => setMobileOpen(false)} className="text-lg font-medium">
+                  <Link href="/account" onClick={() => setMobileOpen(false)} className="inline-flex items-center min-h-[44px] text-lg font-medium">
                     Account
                   </Link>
                 )}
                 <button
                   onClick={toggleTheme}
-                  className="flex items-center gap-2 text-lg font-medium"
+                  className="flex items-center gap-2 min-h-[44px] text-lg font-medium"
                 >
                   {theme === "dark" ? "Light Mode" : "Dark Mode"}
                 </button>
