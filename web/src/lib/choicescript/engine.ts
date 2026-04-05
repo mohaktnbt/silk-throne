@@ -18,7 +18,7 @@ export interface GameState {
   currentNodeIndex: number;
   callStack: Array<{ scene: string; nodeIndex: number }>;
   choiceHistory: Array<{ scene: string; choice: string }>;
-  achievements: Set<string>;
+  achievements: string[];
   sceneCache: Record<string, ASTNode[]>;
 }
 
@@ -86,7 +86,7 @@ export class GameEngine {
       currentNodeIndex: 0,
       callStack: [],
       choiceHistory: [],
-      achievements: new Set(),
+      achievements: [],
       sceneCache: {},
     };
     this.sceneList = [];
@@ -197,18 +197,13 @@ export class GameEngine {
   }
 
   getState(): GameState {
-    return structuredClone({
-      ...this.state,
-      achievements: Array.from(this.state.achievements),
-    }) as unknown as GameState;
+    return structuredClone(this.state);
   }
 
   loadState(saved: GameState): void {
     this.state = {
       ...saved,
-      achievements: saved.achievements instanceof Set
-        ? saved.achievements
-        : new Set(Array.isArray(saved.achievements as unknown) ? (saved.achievements as unknown as string[]) : []),
+      achievements: Array.isArray(saved.achievements) ? saved.achievements : [],
       sceneCache: { ...this.state.sceneCache, ...saved.sceneCache },
     };
     this.textBuffer = '';
@@ -391,7 +386,9 @@ export class GameEngine {
         return null;
 
       case 'achieve':
-        this.state.achievements.add(node.achievement);
+        if (!this.state.achievements.includes(node.achievement)) {
+          this.state.achievements.push(node.achievement);
+        }
         this.state.currentNodeIndex++;
         return null;
 
