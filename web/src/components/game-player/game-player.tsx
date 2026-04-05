@@ -377,7 +377,43 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
       const engine = new GameEngine();
       engineRef.current = engine;
 
-      // Load startup scene
+      // Check for saved game in localStorage
+      let savedSlot: SaveSlot | null = null;
+      try {
+        const raw = localStorage.getItem(localStorageKey(gameSlug));
+        if (raw) {
+          savedSlot = JSON.parse(raw) as SaveSlot;
+        }
+      } catch {
+        // Corrupted save data — start fresh
+      }
+
+      if (savedSlot) {
+        // Restore from save: load the saved scene
+        const savedScene = savedSlot.state.currentScene;
+        const sceneLoaded = await loadSceneIntoEngine(savedScene);
+        if (cancelled) return;
+
+        if (sceneLoaded) {
+          engine.loadState(savedSlot.state);
+          setTextHistory(savedSlot.textHistory);
+          setLoading(false);
+
+          // Continue execution from the saved position
+          const result = engine.continueExecution();
+          if (cancelled) return;
+
+          if (result.type === "scene_change" && result.nextScene) {
+            await handleSceneChange(result.nextScene);
+          } else {
+            processOutput(result);
+          }
+          return;
+        }
+        // If saved scene failed to load, fall through to fresh start
+      }
+
+      // Fresh start: load startup scene
       const startupLoaded = await loadSceneIntoEngine("startup");
       if (cancelled || !startupLoaded) {
         if (!cancelled) setLoading(false);
