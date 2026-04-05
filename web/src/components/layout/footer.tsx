@@ -1,6 +1,21 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export function Footer() {
+  const pathname = usePathname();
+
+  if (pathname === "/play") {
+    return (
+      <footer className="relative z-10 border-t border-border/50 bg-background py-3 text-center">
+        <p className="text-xs text-muted-foreground">
+          &copy; {new Date().getFullYear()} The Silk Throne. All rights reserved.
+        </p>
+      </footer>
+    );
+  }
+
   return (
     <footer className="relative z-10 border-t border-border/50 bg-background">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
