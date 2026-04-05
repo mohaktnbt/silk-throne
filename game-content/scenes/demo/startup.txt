@@ -50,7 +50,16 @@ For three weeks you have traveled through the empire's arterial roads — past c
 
 The Imperial Palace rises before you like a dream rendered in sandstone and marble. Its domes catch the dying sun and hold it — copper and rose and molten amber — as though the architects had found a way to make the sky pay tribute. Minarets pierce the heavens at each corner, their tips leafed in gold that winks against the deepening blue.
 
-*page_break
+*fake_choice
+  #You steel yourself. Whatever awaits inside, you will face it on your own terms.
+    *set boldness %+ 5
+    The silk-and-sandstone colossus before you is meant to humble. You refuse to let it.
+  #You take a steadying breath. The weight of the office settles over you like a mantle.
+    *set diplomacy %+ 5
+    You have served the empire in smaller arenas. Now the arena has simply grown larger.
+  #You study the architecture with a scholar's eye. Every detail reveals something about the power it serves.
+    *set scholarship %+ 5
+    The proportions are deliberate — designed to make visitors feel the proximity of heaven and the smallness of their own ambitions.
 
 Your carriage passes through the Lion Gate. The guards do not ask your name. They already know.
 

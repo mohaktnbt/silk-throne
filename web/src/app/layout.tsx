@@ -67,8 +67,8 @@ export default function RootLayout({
         </a>
         <ThemeProvider>
           <AuthProvider>
-            <div className="flex min-h-screen flex-col">
-              <Navbar />
+            <Navbar />
+            <div className="flex min-h-[calc(100vh-4rem)] flex-col">
               <main id="main-content" className="flex-1">{children}</main>
               <Footer />
             </div>
