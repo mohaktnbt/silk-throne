@@ -82,7 +82,7 @@ export function Toolbar({
           >
             <BarChart3Icon className="size-4" />
           </Button>
-          <div className="relative">
+          <div className="relative size-10 md:size-8">
             <Button
               variant="ghost"
               size="icon"
@@ -99,7 +99,7 @@ export function Toolbar({
             </Button>
             {saveStatus !== "idle" && (
               <span
-                className={`absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] font-sans leading-none ${saveStatus === "saved" ? "text-green-500" : "text-destructive"}`}
+                className={`pointer-events-none absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] font-sans leading-none ${saveStatus === "saved" ? "text-green-500" : "text-destructive"}`}
               >
                 {saveStatus === "saved" ? "Saved!" : "Failed"}
               </span>
