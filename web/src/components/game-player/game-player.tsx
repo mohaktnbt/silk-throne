@@ -676,7 +676,7 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
   }
 
   return (
-    <div className="bg-background">
+    <div className="bg-background pt-14">
       <Toolbar
         fontSize={fontSize}
         onFontSizeChange={handleFontSizeChange}
