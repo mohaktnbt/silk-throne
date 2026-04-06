@@ -584,11 +584,11 @@ The air smells of old paper, binding glue, lamp oil, and the particular dusty sw
 
 *set scholarship + 5
 
-You came here with purpose. The grandeur of the place is secondary to the hunt. The evidence from Massoud's office -- the journal, the name "Saravan," the traces of a financial conspiracy running through the empire's accounts like a crack through marble -- demands research. Answers live in libraries. You have always believed that.
+You came here with purpose. The grandeur of the place is secondary to the hunt. The evidence from Cyrus's office -- the journal, the name "Saravan," the traces of a financial conspiracy running through the empire's accounts like a crack through marble -- demands research. Answers live in libraries. You have always believed that.
 
 You begin in the financial records section: a long hall of identical shelves holding identical leather-bound ledgers, each one a year's worth of imperial treasury disbursements, account registries, taxation records. The dense bureaucratic literature of an empire that records everything. You pull ledger after ledger, running your finger down columns of names and figures until the numbers blur. The name Saravan appears nowhere.
 
-You widen the search. Historical records. Property registries. Trade licenses. Correspondence archives. Nothing. Saravan is a ghost -- a name that exists in Massoud's journal but nowhere in the vast documentary apparatus of the Khazaran state.
+You widen the search. Historical records. Property registries. Trade licenses. Correspondence archives. Nothing. Saravan is a ghost -- a name that exists in Cyrus's journal but nowhere in the vast documentary apparatus of the Khazaran state.
 
 The frustration sharpens your focus rather than dulling it. You move to the genealogical section, where the histories of provinces and villages are recorded in census documents that stretch back to the empire's founding.
 
@@ -605,7 +605,7 @@ Someone is using the name of a dead village as a code name for a secret treasury
 You copy the reference carefully. Your hand is steady, but your mind is racing.
 
 *if (found_letter)
-  The letter from Massoud's office mentioned a "gathering of shadows." The treasury discrepancies point to the Kuhsar mines. The threads are beginning to converge, and the pattern they suggest is larger and more dangerous than a single murder.
+  The letter from Cyrus's office mentioned a "gathering of shadows." The treasury discrepancies point to the Kuhsar mines. The threads are beginning to converge, and the pattern they suggest is larger and more dangerous than a single murder.
 *else
   You do not yet have enough to see the full picture. But the frame is becoming visible, and it is larger than you expected.
 
