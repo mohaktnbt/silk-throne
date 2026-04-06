@@ -936,20 +936,45 @@ interface InputPromptProps {
   onSubmit: (text: string) => void;
 }
 
+const NAME_MAX_LENGTH = 30;
+const VALID_NAME_RE = /^[A-Za-zÀ-ÖØ-öø-ÿ\u0100-\u024F\u1E00-\u1EFF' -]+$/;
+
+function stripHtmlTags(input: string): string {
+  return input.replace(/<[^>]*>/g, "");
+}
+
+function validateName(input: string): string | null {
+  if (!input.trim()) return "Please enter a name.";
+  if (input.length > NAME_MAX_LENGTH) return `Name must be ${NAME_MAX_LENGTH} characters or fewer.`;
+  if (!VALID_NAME_RE.test(input)) return "Name may only contain letters, spaces, hyphens, and apostrophes.";
+  return null;
+}
+
 function InputPrompt({ variable, onSubmit }: InputPromptProps) {
   const [value, setValue] = useState("");
-  const [showError, setShowError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const sanitized = stripHtmlTags(e.target.value).slice(0, NAME_MAX_LENGTH);
+    setValue(sanitized);
+    if (errorMessage) {
+      setErrorMessage(validateName(sanitized));
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (value.trim()) {
-      setShowError(false);
-      onSubmit(value.trim());
-      setValue("");
-    } else {
-      setShowError(true);
+    const error = validateName(value);
+    if (error) {
+      setErrorMessage(error);
+      return;
     }
+    setErrorMessage(null);
+    onSubmit(value.trim());
+    setValue("");
   };
+
+  const hasError = errorMessage !== null;
 
   return (
     <form onSubmit={handleSubmit} className="py-4 space-y-3">
@@ -959,27 +984,27 @@ function InputPrompt({ variable, onSubmit }: InputPromptProps) {
       <input
         id={`input-${variable}`}
         type="text"
-        maxLength={40}
+        maxLength={NAME_MAX_LENGTH}
         value={value}
-        onChange={(e) => {
-          setValue(e.target.value);
-          if (e.target.value.trim()) {
-            setShowError(false);
-          }
-        }}
+        onChange={handleChange}
         className={`w-full h-11 rounded-lg border bg-card px-4 text-foreground font-serif text-base placeholder:text-muted-foreground focus:outline-none focus:ring-2 transition-colors ${
-          showError
+          hasError
             ? "border-red-500 focus:ring-red-500/50 focus:border-red-500 animate-[shake_0.3s_ease-in-out]"
             : "border-border focus:ring-gold/50 focus:border-gold"
         }`}
         placeholder="Type here..."
         autoFocus
       />
-      {showError && (
-        <p className="text-sm text-red-500 font-sans">
-          Please enter a name.
+      <div className="flex items-center justify-between font-sans">
+        {hasError ? (
+          <p className="text-sm text-red-500">{errorMessage}</p>
+        ) : (
+          <span />
+        )}
+        <p className={`text-xs ${value.length >= NAME_MAX_LENGTH ? "text-red-500" : "text-muted-foreground"}`}>
+          {value.length}/{NAME_MAX_LENGTH}
         </p>
-      )}
+      </div>
       <Button
         type="submit"
         className="bg-gold text-background hover:bg-gold/90"
