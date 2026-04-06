@@ -26,29 +26,55 @@ export function AuthModal({ open, onOpenChange, defaultTab = "signin" }: AuthMod
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState<string | null>(null);
 
+  const [fieldErrors, setFieldErrors] = useState<{ email?: string; password?: string }>({});
+
+  const validateFields = (): boolean => {
+    const errors: { email?: string; password?: string } = {};
+    if (!email.trim()) {
+      errors.email = "Email is required";
+    }
+    if (!password) {
+      errors.password = "Password is required";
+    } else if (password.length < 6) {
+      errors.password = "Password must be at least 6 characters";
+    }
+    setFieldErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
     setError(null);
-    const { error } = await signIn(email, password);
-    if (error) {
-      setError(error);
-    } else {
-      onOpenChange(false);
+    if (!validateFields()) return;
+    setLoading(true);
+    try {
+      const { error } = await signIn(email, password);
+      if (error) {
+        setError(error);
+      } else {
+        onOpenChange(false);
+      }
+    } catch {
+      setError("An unexpected error occurred. Please try again.");
     }
     setLoading(false);
   };
 
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
     setError(null);
     setSuccess(null);
-    const { error } = await signUp(email, password);
-    if (error) {
-      setError(error);
-    } else {
-      setSuccess("Check your email for a confirmation link!");
+    if (!validateFields()) return;
+    setLoading(true);
+    try {
+      const { error } = await signUp(email, password);
+      if (error) {
+        setError(error);
+      } else {
+        setSuccess("Check your email for a confirmation link!");
+      }
+    } catch {
+      setError("An unexpected error occurred. Please try again.");
     }
     setLoading(false);
   };
@@ -67,22 +93,29 @@ export function AuthModal({ open, onOpenChange, defaultTab = "signin" }: AuthMod
             <TabsTrigger value="signup">Sign Up</TabsTrigger>
           </TabsList>
           <TabsContent value="signin">
-            <form onSubmit={handleSignIn} className="space-y-4 mt-4">
-              <Input
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-              <Input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-                minLength={6}
-              />
+            <form onSubmit={handleSignIn} className="space-y-4 mt-4" noValidate>
+              <div>
+                <Input
+                  type="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => { setEmail(e.target.value); setFieldErrors((prev) => ({ ...prev, email: undefined })); }}
+                  aria-invalid={!!fieldErrors.email}
+                  className={fieldErrors.email ? "border-destructive" : ""}
+                />
+                {fieldErrors.email && <p className="text-sm text-destructive mt-1">{fieldErrors.email}</p>}
+              </div>
+              <div>
+                <Input
+                  type="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => { setPassword(e.target.value); setFieldErrors((prev) => ({ ...prev, password: undefined })); }}
+                  aria-invalid={!!fieldErrors.password}
+                  className={fieldErrors.password ? "border-destructive" : ""}
+                />
+                {fieldErrors.password && <p className="text-sm text-destructive mt-1">{fieldErrors.password}</p>}
+              </div>
               {error && <p className="text-sm text-destructive">{error}</p>}
               <Button
                 type="submit"
@@ -94,22 +127,29 @@ export function AuthModal({ open, onOpenChange, defaultTab = "signin" }: AuthMod
             </form>
           </TabsContent>
           <TabsContent value="signup">
-            <form onSubmit={handleSignUp} className="space-y-4 mt-4">
-              <Input
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-              <Input
-                type="password"
-                placeholder="Password (min 6 characters)"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-                minLength={6}
-              />
+            <form onSubmit={handleSignUp} className="space-y-4 mt-4" noValidate>
+              <div>
+                <Input
+                  type="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => { setEmail(e.target.value); setFieldErrors((prev) => ({ ...prev, email: undefined })); }}
+                  aria-invalid={!!fieldErrors.email}
+                  className={fieldErrors.email ? "border-destructive" : ""}
+                />
+                {fieldErrors.email && <p className="text-sm text-destructive mt-1">{fieldErrors.email}</p>}
+              </div>
+              <div>
+                <Input
+                  type="password"
+                  placeholder="Password (min 6 characters)"
+                  value={password}
+                  onChange={(e) => { setPassword(e.target.value); setFieldErrors((prev) => ({ ...prev, password: undefined })); }}
+                  aria-invalid={!!fieldErrors.password}
+                  className={fieldErrors.password ? "border-destructive" : ""}
+                />
+                {fieldErrors.password && <p className="text-sm text-destructive mt-1">{fieldErrors.password}</p>}
+              </div>
               {error && <p className="text-sm text-destructive">{error}</p>}
               {success && <p className="text-sm text-green-500">{success}</p>}
               <Button
