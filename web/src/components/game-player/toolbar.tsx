@@ -40,21 +40,21 @@ export function Toolbar({
 
   return (
     <div className="fixed top-16 left-0 right-0 z-30 w-full bg-background/80 backdrop-blur-md border-b border-border/50">
-      <div className="max-w-[700px] mx-auto flex items-center justify-between px-4 py-2">
+      <div className="max-w-[700px] mx-auto flex items-center justify-between px-3 sm:px-4 py-2">
         {/* Font size controls */}
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-0.5 sm:gap-1">
           <Button
             variant="ghost"
             size="icon"
             onClick={() => onFontSizeChange(Math.max(MIN_FONT_SIZE, fontSize - 1))}
             disabled={fontSize <= MIN_FONT_SIZE}
-            className="size-10 md:size-8"
+            className="size-8"
             aria-label="Decrease font size"
             title="Decrease font size"
           >
             <MinusIcon className="size-4" />
           </Button>
-          <span className="text-xs text-muted-foreground tabular-nums w-8 text-center font-sans">
+          <span className="text-xs text-muted-foreground tabular-nums w-7 text-center font-sans">
             {fontSize}
           </span>
           <Button
@@ -62,7 +62,7 @@ export function Toolbar({
             size="icon"
             onClick={() => onFontSizeChange(Math.min(MAX_FONT_SIZE, fontSize + 1))}
             disabled={fontSize >= MAX_FONT_SIZE}
-            className="size-10 md:size-8"
+            className="size-8"
             aria-label="Increase font size"
             title="Increase font size"
           >
@@ -71,23 +71,23 @@ export function Toolbar({
         </div>
 
         {/* Action buttons */}
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-0.5 sm:gap-1">
           <Button
             variant="ghost"
             size="icon"
             onClick={onStats}
-            className="size-10 md:size-8"
+            className="size-8"
             aria-label="Character Stats"
             title="Character Stats"
           >
             <BarChart3Icon className="size-4" />
           </Button>
-          <div className="relative size-10 md:size-8">
+          <div className="relative size-8">
             <Button
               variant="ghost"
               size="icon"
               onClick={onSave}
-              className={`size-10 md:size-8 transition-colors ${saveStatus === "saved" ? "text-green-500" : saveStatus === "error" ? "text-destructive" : ""}`}
+              className={`size-8 transition-colors ${saveStatus === "saved" ? "text-green-500" : saveStatus === "error" ? "text-destructive" : ""}`}
               aria-label="Save Game"
               title="Save Game"
             >
@@ -109,7 +109,7 @@ export function Toolbar({
             variant="ghost"
             size="icon"
             onClick={onLoad}
-            className="size-10 md:size-8"
+            className="size-8"
             aria-label="Load Game"
             title="Load Game"
           >
@@ -119,20 +119,20 @@ export function Toolbar({
             variant="ghost"
             size="icon"
             onClick={onRestart}
-            className="size-10 md:size-8"
+            className="size-8"
             aria-label="Restart"
             title="Restart"
           >
             <RotateCcwIcon className="size-4" />
           </Button>
 
-          <div className="w-px h-5 bg-border/50 mx-1" />
+          <div className="w-px h-5 bg-border/50 mx-0.5 sm:mx-1" />
 
           <Button
             variant="ghost"
             size="icon"
             onClick={toggleTheme}
-            className="size-10 md:size-8"
+            className="size-8"
             aria-label="Toggle Theme"
             title="Toggle Theme"
           >
