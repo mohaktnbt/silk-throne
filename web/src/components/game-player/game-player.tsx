@@ -334,7 +334,7 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
     }
   }, [gameSlug, textHistory]);
 
-  const saveToSupabase = useCallback(async () => {
+  const saveToSupabase = useCallback(async (slotName: string) => {
     const engine = engineRef.current;
     if (!engine || !user || !isSupabaseConfigured()) return;
 
@@ -346,7 +346,7 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
     const payload: Record<string, unknown> = {
       user_id: user.id,
       game_id: game.id,
-      slot_name: "auto",
+      slot_name: slotName,
       current_scene: state.currentScene,
       variables: state.variables,
       choice_history: state.choiceHistory,
@@ -376,7 +376,7 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
       try {
         localStorage.setItem(manualSlotKey(gameSlug, slot), JSON.stringify(saveData));
         if (user) {
-          void saveToSupabase();
+          void saveToSupabase(String(slot));
         }
         setSaveStatus("saved");
         setSaveToast("saved");
@@ -645,7 +645,7 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
       if (engineRef.current && output) {
         saveToLocalStorage();
         if (user) {
-          void saveToSupabase();
+          void saveToSupabase("auto");
         }
       }
     }, AUTO_SAVE_INTERVAL);
