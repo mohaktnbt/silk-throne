@@ -4,12 +4,14 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "./theme-provider";
 import { useAuth } from "@/context/auth-context";
+import { AuthModal } from "@/components/auth/auth-modal";
 import { useState, useEffect, useCallback } from "react";
 
 export function Navbar() {
   const { theme, toggleTheme } = useTheme();
   const { user, signOut } = useAuth();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [authModalOpen, setAuthModalOpen] = useState(false);
 
   const closeMobile = useCallback(() => setMobileOpen(false), []);
 
@@ -58,14 +60,12 @@ export function Navbar() {
             >
               Play
             </Link>
-            {user && (
-              <Link
-                href="/account"
-                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-              >
-                Account
-              </Link>
-            )}
+            <Link
+              href="/account"
+              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Account
+            </Link>
             <button
               onClick={toggleTheme}
               className="rounded-md p-2 text-muted-foreground transition-colors hover:text-foreground"
@@ -86,13 +86,21 @@ export function Navbar() {
                 Sign Out
               </Button>
             ) : (
-              <Button
-                render={<Link href="/play" />}
-                size="sm"
-                className="bg-gold text-background hover:bg-gold/90 font-semibold"
-              >
-                Play Now
-              </Button>
+              <>
+                <button
+                  onClick={() => setAuthModalOpen(true)}
+                  className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  Sign In
+                </button>
+                <Button
+                  render={<Link href="/play" />}
+                  size="sm"
+                  className="bg-gold text-background hover:bg-gold/90 font-semibold"
+                >
+                  Play Now
+                </Button>
+              </>
             )}
           </div>
 
@@ -143,11 +151,9 @@ export function Navbar() {
               <Link href="/play" onClick={closeMobile} className="rounded-md px-2 py-2 text-lg font-medium transition-colors hover:text-gold">
                 Play
               </Link>
-              {user && (
-                <Link href="/account" onClick={closeMobile} className="rounded-md px-2 py-2 text-lg font-medium transition-colors hover:text-gold">
-                  Account
-                </Link>
-              )}
+              <Link href="/account" onClick={closeMobile} className="rounded-md px-2 py-2 text-lg font-medium transition-colors hover:text-gold">
+                Account
+              </Link>
               <button
                 onClick={toggleTheme}
                 className="rounded-md px-2 py-2 text-left text-lg font-medium transition-colors hover:text-gold"
@@ -159,17 +165,30 @@ export function Navbar() {
                   Sign Out
                 </Button>
               ) : (
-                <Button
-                  render={<Link href="/play" onClick={closeMobile} />}
-                  className="w-full bg-gold text-background hover:bg-gold/90 font-semibold"
-                >
-                  Play Now
-                </Button>
+                <>
+                  <button
+                    onClick={() => { setAuthModalOpen(true); closeMobile(); }}
+                    className="rounded-md px-2 py-2 text-left text-lg font-medium transition-colors hover:text-gold"
+                  >
+                    Sign In
+                  </button>
+                  <Button
+                    render={<Link href="/play" onClick={closeMobile} />}
+                    className="w-full bg-gold text-background hover:bg-gold/90 font-semibold"
+                  >
+                    Play Now
+                  </Button>
+                </>
               )}
             </div>
           </div>
         </>
       )}
+      <AuthModal
+        open={authModalOpen}
+        onOpenChange={setAuthModalOpen}
+        defaultTab="signin"
+      />
     </>
   );
 }
