@@ -936,7 +936,7 @@ interface InputPromptProps {
   onSubmit: (text: string) => void;
 }
 
-const NAME_MAX_LENGTH = 30;
+const NAME_MAX_LENGTH = 60;
 const VALID_NAME_RE = /^[A-Za-zÀ-ÖØ-öø-ÿ\u0100-\u024F\u1E00-\u1EFF' -]+$/;
 
 function stripHtmlTags(input: string): string {
