@@ -35,23 +35,86 @@ export function PaywallScreen({ game, onPurchaseComplete }: PaywallScreenProps) 
     }
 
     setPurchasing(true);
+    setError(null);
     try {
-      // Payment integration will be added in Phase 5
-      // For now, this signals that the purchase flow should begin
-      const response = await fetch(`/api/games/${game.slug}/purchase`, {
+      // 1. Create a Razorpay order
+      const orderRes = await fetch("/api/payment/create-order", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ gameId: game.id }),
       });
 
-      if (response.ok) {
-        onPurchaseComplete();
+      if (!orderRes.ok) {
+        const data = await orderRes.json().catch(() => ({ error: "Failed to create order" }));
+        setError((data as { error?: string }).error ?? "Payment failed. Please try again.");
+        setPurchasing(false);
+        return;
       }
+
+      const order = (await orderRes.json()) as { id: string; amount: number; currency: string };
+      const razorpayKey = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID;
+
+      if (!razorpayKey) {
+        setError("Payment is not configured yet. Please try again later.");
+        setPurchasing(false);
+        return;
+      }
+
+      // 2. Open Razorpay checkout
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const RazorpayConstructor = (window as any).Razorpay as
+        | (new (opts: Record<string, unknown>) => { open: () => void })
+        | undefined;
+
+      if (!RazorpayConstructor) {
+        setError("Payment gateway failed to load. Please refresh and try again.");
+        setPurchasing(false);
+        return;
+      }
+
+      const rzp = new RazorpayConstructor({
+        key: razorpayKey,
+        amount: order.amount,
+        currency: order.currency,
+        name: "The Silk Throne",
+        description: `Unlock ${game.title}`,
+        order_id: order.id,
+        handler: async (response: { razorpay_order_id: string; razorpay_payment_id: string; razorpay_signature: string }) => {
+          // 3. Verify payment server-side
+          const verifyRes = await fetch("/api/payment/verify", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              razorpay_order_id: response.razorpay_order_id,
+              razorpay_payment_id: response.razorpay_payment_id,
+              razorpay_signature: response.razorpay_signature,
+              gameId: game.id,
+            }),
+          });
+
+          if (verifyRes.ok) {
+            onPurchaseComplete();
+          } else {
+            setError("Payment verification failed. Contact support if you were charged.");
+          }
+          setPurchasing(false);
+        },
+        modal: {
+          ondismiss: () => {
+            setPurchasing(false);
+          },
+        },
+        theme: { color: "#e2b04a" },
+      });
+
+      rzp.open();
     } catch {
-      // Payment error handling will be refined later
-    } finally {
+      setError("Something went wrong. Please try again.");
       setPurchasing(false);
     }
   };
+
+  const [error, setError] = useState<string | null>(null);
 
   return (
     <>
@@ -105,6 +168,11 @@ export function PaywallScreen({ game, onPurchaseComplete }: PaywallScreenProps) 
               </span>
             ) : "Unlock Full Game"}
           </Button>
+
+          {/* Error message */}
+          {error && (
+            <p className="mt-3 text-sm text-destructive max-w-xs text-center">{error}</p>
+          )}
 
           {/* Sign in prompt */}
           {!user && (
