@@ -112,6 +112,7 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
   const [saveDialogOpen, setSaveDialogOpen] = useState(false);
   const [loadDialogOpen, setLoadDialogOpen] = useState(false);
   const [restartDialogOpen, setRestartDialogOpen] = useState(false);
+  const undoStackRef = useRef<Array<{ state: GameState; textHistory: TextBlock[]; output: GameOutput | null }>>([]);
 
   // Preferences
   const [fontSize, setFontSize] = useState<number>(() => {
@@ -275,6 +276,17 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
       const engine = engineRef.current;
       if (!engine) return;
 
+      // Snapshot state before making the choice (for undo)
+      undoStackRef.current.push({
+        state: engine.getState(),
+        textHistory: [...textHistory],
+        output,
+      });
+      // Keep stack bounded
+      if (undoStackRef.current.length > 20) {
+        undoStackRef.current.shift();
+      }
+
       setProcessing(true);
       // Clear previous text so the next passage starts fresh
       setTextHistory([]);
@@ -290,8 +302,33 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
         setProcessing(false);
       }
     },
-    [handleSceneChange, processOutput, processing]
+    [handleSceneChange, processOutput, processing, textHistory, output]
   );
+
+  const handleUndo = useCallback(async () => {
+    const engine = engineRef.current;
+    if (!engine) return;
+
+    const snapshot = undoStackRef.current.pop();
+    if (!snapshot) {
+      setInfo("Nothing to undo.");
+      return;
+    }
+
+    try {
+      setLoading(true);
+      // Ensure the scene is loaded
+      await loadSceneIntoEngine(snapshot.state.currentScene);
+      engine.loadState(snapshot.state);
+      setTextHistory(snapshot.textHistory);
+      setOutput(snapshot.output);
+      setCurrentScene(snapshot.state.currentScene);
+      setLoading(false);
+    } catch {
+      setLoading(false);
+      setError("Failed to undo.");
+    }
+  }, [loadSceneIntoEngine]);
 
   const handlePageBreak = useCallback(async () => {
     if (processing) return;
@@ -686,6 +723,8 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
         onLoad={handleLoad}
         onStats={handleStats}
         onRestart={handleRestart}
+        onUndo={handleUndo}
+        canUndo={undoStackRef.current.length > 0}
         saveStatus={saveStatus}
       />
 

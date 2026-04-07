@@ -9,6 +9,7 @@ import {
   FolderOpenIcon,
   BarChart3Icon,
   RotateCcwIcon,
+  Undo2Icon,
 } from "lucide-react";
 
 interface ToolbarProps {
@@ -18,6 +19,8 @@ interface ToolbarProps {
   onLoad: () => void;
   onStats: () => void;
   onRestart: () => void;
+  onUndo?: () => void;
+  canUndo?: boolean;
   saveStatus?: "idle" | "saved" | "error";
 }
 
@@ -31,6 +34,8 @@ export function Toolbar({
   onLoad,
   onStats,
   onRestart,
+  onUndo,
+  canUndo = false,
   saveStatus = "idle",
 }: ToolbarProps) {
   return (
@@ -67,6 +72,19 @@ export function Toolbar({
 
         {/* Action buttons */}
         <div className="flex items-center gap-0.5 sm:gap-1">
+          {onUndo && (
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={onUndo}
+              disabled={!canUndo}
+              className="size-10"
+              aria-label="Undo last choice"
+              title="Undo last choice"
+            >
+              <Undo2Icon className="size-4" />
+            </Button>
+          )}
           <Button
             variant="ghost"
             size="icon"

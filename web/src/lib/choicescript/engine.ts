@@ -217,17 +217,33 @@ export class GameEngine {
   }
 
   getStatsDisplay(): StatDisplay[] {
-    const startup = this.state.sceneCache['choicescript_stats'];
-    if (!startup) return [];
+    const statsScene = this.state.sceneCache['choicescript_stats'];
+    if (!statsScene) return [];
     const displays: StatDisplay[] = [];
-    for (const node of startup) {
+    this.collectStatDisplays(statsScene, displays);
+    return displays;
+  }
+
+  private collectStatDisplays(nodes: ASTNode[], displays: StatDisplay[]): void {
+    for (const node of nodes) {
       if (node.type === 'stat_chart') {
         for (const item of node.items) {
           displays.push(this.buildStatDisplay(item));
         }
+      } else if (node.type === 'if') {
+        // Evaluate the condition to decide which branch to show
+        try {
+          const conditionMet = toBool(this.evaluateExpression(node.condition));
+          if (conditionMet) {
+            this.collectStatDisplays(node.body, displays);
+          } else if (node.else) {
+            this.collectStatDisplays(node.else, displays);
+          }
+        } catch {
+          // Variable not found — skip this conditional block
+        }
       }
     }
-    return displays;
   }
 
   // -------------------------------------------------------------------

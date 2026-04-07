@@ -114,7 +114,13 @@ He turns back to his map, and the dismissal is so complete that you almost feel 
 
 *set met_general true
 
-*page_break
+*fake_choice
+  #A warrior's respect must be earned. Fair enough.
+    You will not beg for what can only be won. Time will tell.
+  #Note his contempt. Remember it.
+    In politics, every slight is information, and every dismissal is a calculation.
+  #Respect his directness. At least he's honest.
+    In a court full of smiles that hide daggers, bluntness is almost refreshing.
 
 *comment === MEETING GUILDMASTER PRIYA ===
 

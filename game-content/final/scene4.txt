@@ -619,7 +619,13 @@ The silence stretches. Farid's hands tremble at his sides.
 
 His voice breaks again. "I said nothing. I said nothing because I was afraid. Because if it was not fever, then it was murder, and if it was murder, then the murderer was still in the Citadel, and I was just a secretary, and I was afraid."
 
-*page_break
+*fake_choice
+  #"You did the right thing telling me now."
+    He needs to hear it. The guilt has been eating him alive.
+  #"Fear is not a sin, Farid. Silence can be survival."
+    You have learned this lesson yourself, in the short and brutal weeks since your arrival.
+  #Keep your expression neutral. Show nothing.
+    Sympathy can come later. Right now, you need information.
 
 You let the words settle. The room is quiet except for the muffled sound of fountains from the garden below.
 

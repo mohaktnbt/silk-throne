@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { HeroCTA } from "@/components/layout/hero-cta";
 
 export default function Home() {
   return (
@@ -19,23 +20,7 @@ export default function Home() {
             A 300,000-word epic of power, betrayal, and empire. Your choices
             shape the fate of the Khazaran Empire.
           </p>
-          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Button
-              render={<Link href="/play" />}
-              size="lg"
-              className="bg-gold text-background hover:bg-gold/90 px-8 py-6 text-lg font-semibold"
-            >
-              Play Free Preview
-            </Button>
-            <Button
-              render={<a href="#about" />}
-              variant="outline"
-              size="lg"
-              className="border-gold/30 px-8 py-6 text-lg hover:bg-gold/10"
-            >
-              Learn More
-            </Button>
-          </div>
+          <HeroCTA />
         </div>
       </section>
 

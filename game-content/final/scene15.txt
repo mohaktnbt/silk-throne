@@ -136,7 +136,13 @@ Between the food and the music, politics flows like the water in the garden's ch
 
 You note who speaks to whom, who avoids whom, who stands alone. The Festival is a map of the empire's power structure, drawn in silk and lamplight, and you are learning to read it the way Zara reads coded messages -- not the surface, but the pattern beneath.
 
-*page_break
+*fake_choice
+  #Circulate and gather intelligence.
+    Knowledge is the only currency that never devalues. You file away every observation.
+  #Find a quiet corner and observe from a distance.
+    The best vantage point is often the one no one notices. You watch, and you learn.
+  #Enjoy the evening while it lasts.
+    The wine is good. The music is beautiful. Tomorrow will demand everything from you. Tonight, you allow yourself this.
 
 *comment === THE EMPEROR'S ENTRANCE ===
 
