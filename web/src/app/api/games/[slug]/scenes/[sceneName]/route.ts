@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { createServiceRoleClient, createServerSupabaseClient } from "@/lib/supabase/server";
 import type { Game } from "@/types/database";
 import { readFile } from "fs/promises";
-import { join } from "path";
+import { resolve } from "path";
 
 function isSupabaseConfigured(): boolean {
   return !!(
@@ -12,13 +12,24 @@ function isSupabaseConfigured(): boolean {
   );
 }
 
+// Allowlist: only alphanumeric + underscore scene names allowed
+const VALID_SCENE_NAME = /^[a-zA-Z0-9_]+$/;
+
 // Demo scenes live in game-content/scenes/demo/ at the repo root
-const DEMO_SCENES_DIR = join(process.cwd(), "..", "game-content", "scenes", "demo");
+const DEMO_SCENES_DIR = resolve(process.cwd(), "..", "game-content", "scenes", "demo");
 
 
 async function serveDemoScene(sceneName: string): Promise<NextResponse> {
+  // Prevent path traversal: validate scene name and verify resolved path
+  if (!VALID_SCENE_NAME.test(sceneName)) {
+    return NextResponse.json({ error: "Invalid scene name" }, { status: 400 });
+  }
   try {
-    const filePath = join(DEMO_SCENES_DIR, `${sceneName}.txt`);
+    const filePath = resolve(DEMO_SCENES_DIR, `${sceneName}.txt`);
+    // Ensure resolved path is within the demo directory
+    if (!filePath.startsWith(DEMO_SCENES_DIR)) {
+      return NextResponse.json({ error: "Invalid scene name" }, { status: 400 });
+    }
     const text = await readFile(filePath, "utf-8");
     return new NextResponse(text, {
       status: 200,
@@ -34,6 +45,11 @@ export async function GET(
   { params }: { params: { slug: string; sceneName: string } }
 ) {
   const { slug, sceneName } = params;
+
+  // Validate scene name to prevent injection/traversal
+  if (!VALID_SCENE_NAME.test(sceneName)) {
+    return NextResponse.json({ error: "Invalid scene name" }, { status: 400 });
+  }
 
   // ------------------------------------------------------------------
   // LOCAL DEMO MODE: serve scenes from filesystem, no paywall
@@ -63,10 +79,7 @@ export async function GET(
     const game = gameData as unknown as Game;
 
     // 2. Check whether this scene is in the free list
-    // choicescript_stats is always free — it's game metadata, not premium content
-    const isFreeScene =
-      game.free_scene_list.includes(sceneName) ||
-      sceneName === "choicescript_stats";
+    const isFreeScene = game.free_scene_list.includes(sceneName);
 
     if (!isFreeScene) {
       // 3. Authenticate the user

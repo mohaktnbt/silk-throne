@@ -74,6 +74,7 @@ export async function POST(request: Request) {
             amount: number;
             currency: string;
             receipt: string;
+            notes?: Record<string, string>;
           }) => Promise<RazorpayOrder>;
         };
       };
@@ -88,6 +89,10 @@ export async function POST(request: Request) {
       amount: game.price_inr, // amount in paise
       currency: "INR",
       receipt: `game_${gameId}_${user.id}`,
+      notes: {
+        game_id: gameId,
+        user_id: user.id,
+      },
     });
 
     return NextResponse.json({

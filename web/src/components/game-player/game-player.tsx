@@ -671,6 +671,9 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
 
     return () => {
       cancelled = true;
+      // Clean up any pending timers
+      if (saveStatusTimerRef.current) clearTimeout(saveStatusTimerRef.current);
+      if (saveToastTimerRef.current) clearTimeout(saveToastTimerRef.current);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [gameSlug]);
