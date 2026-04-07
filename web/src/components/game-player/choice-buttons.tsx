@@ -35,10 +35,12 @@ export function ChoiceButtons({ choices, onSelect, disabled }: ChoiceButtonsProp
             <div className="flex items-start gap-3">
               <span
                 className={`
-                  inline-block w-0.5 self-stretch rounded-full shrink-0 transition-colors duration-200
-                  ${isEnabled ? "bg-border group-hover:bg-gold" : "bg-border/50"}
+                  inline-flex items-center justify-center w-6 h-6 shrink-0 rounded-full text-xs font-sans font-medium mt-0.5 transition-colors duration-200
+                  ${isEnabled ? "bg-gold/10 text-gold group-hover:bg-gold/20" : "bg-muted/50 text-muted-foreground"}
                 `}
-              />
+              >
+                {String.fromCharCode(65 + i)}
+              </span>
               <span className="flex-1">
                 {choice.text}
                 {!choice.enabled && choice.disabledReason && (

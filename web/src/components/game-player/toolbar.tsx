@@ -8,11 +8,8 @@ import {
   CheckIcon,
   FolderOpenIcon,
   BarChart3Icon,
-  SunIcon,
-  MoonIcon,
   RotateCcwIcon,
 } from "lucide-react";
-import { useTheme } from "@/components/layout/theme-provider";
 
 interface ToolbarProps {
   fontSize: number;
@@ -36,8 +33,6 @@ export function Toolbar({
   onRestart,
   saveStatus = "idle",
 }: ToolbarProps) {
-  const { theme, toggleTheme } = useTheme();
-
   return (
     <div className="fixed top-16 left-0 right-0 z-30 w-full bg-background/80 backdrop-blur-md border-b border-border/50">
       <div className="max-w-[700px] mx-auto flex items-center justify-between px-3 sm:px-4 py-2">
@@ -48,21 +43,21 @@ export function Toolbar({
             size="icon"
             onClick={() => onFontSizeChange(Math.max(MIN_FONT_SIZE, fontSize - 1))}
             disabled={fontSize <= MIN_FONT_SIZE}
-            className="size-8"
+            className="size-10"
             aria-label="Decrease font size"
             title="Decrease font size"
           >
             <MinusIcon className="size-4" />
           </Button>
-          <span className="text-xs text-muted-foreground tabular-nums w-7 text-center font-sans">
-            {fontSize}
+          <span className="text-xs text-muted-foreground tabular-nums w-7 text-center font-sans" title="Font size">
+            A<span className="text-[10px]">{fontSize}</span>
           </span>
           <Button
             variant="ghost"
             size="icon"
             onClick={() => onFontSizeChange(Math.min(MAX_FONT_SIZE, fontSize + 1))}
             disabled={fontSize >= MAX_FONT_SIZE}
-            className="size-8"
+            className="size-10"
             aria-label="Increase font size"
             title="Increase font size"
           >
@@ -76,13 +71,13 @@ export function Toolbar({
             variant="ghost"
             size="icon"
             onClick={onStats}
-            className="size-8"
+            className="size-10"
             aria-label="Character Stats"
             title="Character Stats"
           >
             <BarChart3Icon className="size-4" />
           </Button>
-          <div className="relative size-8">
+          <div className="relative size-10">
             <Button
               variant="ghost"
               size="icon"
@@ -109,7 +104,7 @@ export function Toolbar({
             variant="ghost"
             size="icon"
             onClick={onLoad}
-            className="size-8"
+            className="size-10"
             aria-label="Load Game"
             title="Load Game"
           >
@@ -119,29 +114,13 @@ export function Toolbar({
             variant="ghost"
             size="icon"
             onClick={onRestart}
-            className="size-8"
+            className="size-10"
             aria-label="Restart"
             title="Restart"
           >
             <RotateCcwIcon className="size-4" />
           </Button>
 
-          <div className="w-px h-5 bg-border/50 mx-0.5 sm:mx-1" />
-
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={toggleTheme}
-            className="size-8"
-            aria-label="Toggle Theme"
-            title="Toggle Theme"
-          >
-            {theme === "dark" ? (
-              <SunIcon className="size-4" />
-            ) : (
-              <MoonIcon className="size-4" />
-            )}
-          </Button>
         </div>
       </div>
     </div>

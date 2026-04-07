@@ -276,6 +276,8 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
       if (!engine) return;
 
       setProcessing(true);
+      // Clear previous text so the next passage starts fresh
+      setTextHistory([]);
       try {
         const result = engine.submitChoice(choiceIndex);
 
@@ -689,12 +691,35 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
 
       <SaveToast status={saveToast} onDismiss={() => setSaveToast("idle")} />
 
-      {/* Chapter indicator */}
-      {currentScene && currentScene !== "startup" && (
-        <div className="w-full max-w-[700px] mx-auto px-4 pt-4">
-          <p className="text-xs font-sans text-gold/60 tracking-widest uppercase">
-            {currentScene.replace(/_/g, " ")}
-          </p>
+      {/* Chapter indicator + progress */}
+      {currentScene && currentScene !== "startup" && currentScene !== "choicescript_stats" && (
+        <div className="w-full max-w-[700px] mx-auto px-4 pt-4 space-y-2">
+          <div className="flex items-center justify-between">
+            <p className="text-xs font-sans text-gold/60 tracking-widest uppercase">
+              {currentScene.replace(/^scene(\d+)$/, "Chapter $1").replace(/_/g, " ")}
+            </p>
+            <span className="text-[10px] font-sans text-muted-foreground/50 tabular-nums">
+              {(() => {
+                const sceneIndex = game.scene_list.indexOf(currentScene);
+                const total = game.scene_list.filter(s => s !== "choicescript_stats").length;
+                return sceneIndex >= 0 ? `${sceneIndex + 1}/${total}` : "";
+              })()}
+            </span>
+          </div>
+          {(() => {
+            const sceneIndex = game.scene_list.indexOf(currentScene);
+            const total = game.scene_list.filter(s => s !== "choicescript_stats").length;
+            if (sceneIndex < 0 || total <= 0) return null;
+            const pct = ((sceneIndex + 1) / total) * 100;
+            return (
+              <div className="h-0.5 w-full rounded-full bg-border/30 overflow-hidden">
+                <div
+                  className="h-full rounded-full bg-gold/30 transition-all duration-700"
+                  style={{ width: `${pct}%` }}
+                />
+              </div>
+            );
+          })()}
         </div>
       )}
 
@@ -978,8 +1003,8 @@ function InputPrompt({ variable, onSubmit }: InputPromptProps) {
 
   return (
     <form onSubmit={handleSubmit} className="py-4 space-y-3">
-      <label htmlFor={`input-${variable}`} className="block text-sm text-muted-foreground font-sans">
-        Enter your response:
+      <label htmlFor={`input-${variable}`} className="block text-sm text-foreground font-serif leading-relaxed">
+        What is your name?
       </label>
       <input
         id={`input-${variable}`}
@@ -1007,9 +1032,9 @@ function InputPrompt({ variable, onSubmit }: InputPromptProps) {
       </div>
       <Button
         type="submit"
-        className="bg-gold text-background hover:bg-gold/90"
+        className="px-8 h-11 bg-gold text-background hover:bg-gold/90 font-serif text-base transition-all duration-200 shadow-md shadow-gold/10"
       >
-        Submit
+        Continue
       </Button>
     </form>
   );
