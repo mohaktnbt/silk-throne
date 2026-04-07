@@ -114,7 +114,7 @@ export default function AccountPage() {
           and saved games.
         </p>
         <Button
-          className="bg-gold text-background hover:bg-gold/90"
+          className="bg-gold text-background hover:bg-gold/90 min-h-[44px] px-8"
           onClick={() => setAuthModalOpen(true)}
         >
           Sign In / Sign Up
