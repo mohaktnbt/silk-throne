@@ -71,7 +71,13 @@ The investigators come daily. They are polite, professional, and relentless. The
 
     Farid watches you with the careful, worried attention of a man who does not understand your calm but is grateful for it.
 
-*page_break
+*fake_choice
+  #"We will survive this, Farid."
+    The words are for him as much as for yourself. He straightens, almost imperceptibly.
+  #Say nothing. Let the silence speak.
+    Sometimes the strongest thing you can offer is the absence of panic.
+  #Begin planning. There is no time for despair.
+    You pull a blank sheet of paper toward you. A list. You need a list.
 
 *comment === FARID'S LOYALTY: THE ANCHOR ===
 

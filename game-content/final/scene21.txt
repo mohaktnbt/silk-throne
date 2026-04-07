@@ -94,7 +94,13 @@ An invasion from the north, designed to break the empire's military power. An ec
 
 Each crisis alone would strain the empire to its limits. Together, they are a killing stroke.
 
-*page_break
+*fake_choice
+  #Focus. One crisis at a time.
+    You force yourself to breathe. Panic is the enemy's weapon. Clarity is yours.
+  #This was planned. Someone orchestrated all three.
+    The realization settles into your bones like ice. This is not misfortune. This is an execution.
+  #The empire has survived worse. It will survive this.
+    Or so you tell yourself. The words taste hollow, but they are all you have.
 
 *if (route = 1)
   You think of Emperor Roshan -- the boy you have spent these long months strengthening, teaching, protecting. The frightened teenager who asked you "What should I do?" on the night of the assassination attempt, and the young ruler who has slowly, painfully, begun to find the steel beneath his uncertainty. Everything you have built for him -- the confidence, the competence, the fragile authority that was beginning to feel earned rather than inherited -- is under assault from three directions at once. If the invasion succeeds, his empire contracts. If the treasury fails, his government collapses. If Kaveh's claim takes hold, his throne disappears.
@@ -119,7 +125,13 @@ Every seat is filled. General Kadir stands rather than sits -- he is already in 
 
 And Emperor Roshan sits at the head of the table.
 
-*page_break
+*fake_choice
+  #Meet his gaze with steady confidence.
+    You owe him that much. Whatever comes, he will not face it alone.
+  #Survey the room, reading every face.
+    Allies. Rivals. The frightened and the furious. You need to know who will hold and who will break.
+  #Take a breath and prepare for the storm.
+    The next words spoken in this room will determine whether the empire lives or dies.
 
 He is not the boy you met on your first day. The months have changed him in ways that are visible to anyone who bothers to look past the crown and the crimson robes. The jaw has sharpened. The eyes have steadied. There is a weight to his bearing that was not there before -- the gravity of a young man who has been forced to grow up in public, making his mistakes under the eyes of people who would exploit every one of them. But this morning, with three crises bearing down on his empire like wolves on a wounded deer, you can see the fear beneath the composure. It lives in the tightness around his mouth, the way his hands grip the jade arms of his chair, and the occasional tremor in his jaw that he suppresses by clenching his teeth.
 
