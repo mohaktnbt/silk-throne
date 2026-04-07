@@ -276,6 +276,8 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
       if (!engine) return;
 
       setProcessing(true);
+      // Clear previous text so the next passage starts fresh
+      setTextHistory([]);
       try {
         const result = engine.submitChoice(choiceIndex);
 
@@ -284,13 +286,11 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
         } else {
           processOutput(result);
         }
-        // Auto-save after every choice
-        saveToLocalStorage();
       } finally {
         setProcessing(false);
       }
     },
-    [handleSceneChange, processOutput, processing, saveToLocalStorage]
+    [handleSceneChange, processOutput, processing]
   );
 
   const handlePageBreak = useCallback(async () => {
