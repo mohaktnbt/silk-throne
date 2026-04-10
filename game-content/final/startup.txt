@@ -182,6 +182,28 @@
 *create player_alive true
 *create love_fulfilled false
 
+*comment === EXPANDED ENDING VARIABLES ===
+*create ending_sub_type 0
+*create sacrifice_made false
+*create dynasty_secured false
+*create legacy_type "none"
+*create faction_path "none"
+*create moral_alignment 50
+*create empire_stability 50
+*create people_loyalty 50
+*create military_readiness 50
+*create treasury_health 50
+*create knowledge_forbidden false
+*create secret_society_member false
+*create conspiracy_destroyed false
+*create conspiracy_joined false
+*create exile_chosen false
+
+*comment === EXPANDED ROMANCE ===
+*create romance_soraya false
+*create romance_kaveh false
+*create romance_zara false
+
 *comment === HIDDEN QUEST FLAGS ===
 *create found_last_poem false
 *create eternal_flame_quest_complete false

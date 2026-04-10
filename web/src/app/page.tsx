@@ -17,7 +17,7 @@ export default function Home() {
             <span className="text-gold">Throne</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground sm:text-xl">
-            A 300,000-word epic of power, betrayal, and empire. Your choices
+            A 3-million-word epic of power, betrayal, and empire. Your choices
             shape the fate of the Khazaran Empire.
           </p>
           <HeroCTA />
@@ -42,7 +42,7 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
               </div>
-              <h3 className="font-display text-2xl font-bold text-gold">300,000</h3>
+              <h3 className="font-display text-2xl font-bold text-gold">3,000,000</h3>
               <p className="mt-1 text-sm text-muted-foreground">Words of Epic Story</p>
             </div>
             <div className="rounded-lg border border-border/50 bg-card p-8 text-center">
@@ -51,7 +51,7 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="font-display text-2xl font-bold text-gold">20+</h3>
+              <h3 className="font-display text-2xl font-bold text-gold">200+</h3>
               <p className="mt-1 text-sm text-muted-foreground">Hours of Gameplay</p>
             </div>
             <div className="rounded-lg border border-border/50 bg-card p-8 text-center">
@@ -60,7 +60,7 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                 </svg>
               </div>
-              <h3 className="font-display text-2xl font-bold text-gold">15</h3>
+              <h3 className="font-display text-2xl font-bold text-gold">50</h3>
               <p className="mt-1 text-sm text-muted-foreground">Unique Endings</p>
             </div>
           </div>
@@ -80,7 +80,7 @@ export default function Home() {
             {[
               {
                 title: "Branching Narrative",
-                desc: "Every choice opens new paths. Alliances, betrayals, and romances weave through hundreds of branching storylines with 15 distinct endings.",
+                desc: "Every choice opens new paths. Alliances, betrayals, and romances weave through hundreds of branching storylines with 50 unique endings.",
                 icon: (
                   <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />

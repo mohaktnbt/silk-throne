@@ -5,7 +5,10 @@ import { useAuth } from "@/context/auth-context";
 import { AuthModal } from "@/components/auth/auth-modal";
 import { Button } from "@/components/ui/button";
 import type { Game } from "@/types/database";
-import { LockKeyholeIcon } from "lucide-react";
+import { LockKeyholeIcon, BellIcon } from "lucide-react";
+import Link from "next/link";
+
+const isPaymentConfigured = !!process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID;
 
 interface PaywallScreenProps {
   game: Game;
@@ -25,6 +28,7 @@ export function PaywallScreen({ game, onPurchaseComplete }: PaywallScreenProps) 
   const { user } = useAuth();
   const [authOpen, setAuthOpen] = useState(false);
   const [purchasing, setPurchasing] = useState(false);
+  const [notified, setNotified] = useState(false);
 
   const price = formatPrice(game.price_inr, game.price_usd);
 
@@ -145,33 +149,70 @@ export function PaywallScreen({ game, onPurchaseComplete }: PaywallScreenProps) 
             to continue your story and discover every path.
           </p>
 
-          {/* Price */}
-          <div className="mb-6">
-            <span className="text-3xl font-display font-bold text-foreground">
-              {price.primary}
-            </span>
-            <span className="text-muted-foreground text-sm ml-2">
-              ({price.secondary} USD)
-            </span>
-          </div>
+          {isPaymentConfigured ? (
+            <>
+              {/* Price */}
+              <div className="mb-6">
+                <span className="text-3xl font-display font-bold text-foreground">
+                  {price.primary}
+                </span>
+                <span className="text-muted-foreground text-sm ml-2">
+                  ({price.secondary} USD)
+                </span>
+              </div>
 
-          {/* Purchase button */}
-          <Button
-            onClick={handlePurchase}
-            disabled={purchasing}
-            className="w-full max-w-xs h-12 text-base font-semibold bg-gold text-background hover:bg-gold/90 transition-all duration-200 shadow-lg shadow-gold/20"
-          >
-            {purchasing ? (
-              <span className="flex items-center gap-2">
-                <span className="h-4 w-4 animate-spin rounded-full border-2 border-background border-t-transparent" />
-                Processing...
-              </span>
-            ) : "Unlock Full Game"}
-          </Button>
+              {/* Purchase button */}
+              <Button
+                onClick={handlePurchase}
+                disabled={purchasing}
+                className="w-full max-w-xs h-12 text-base font-semibold bg-gold text-background hover:bg-gold/90 transition-all duration-200 shadow-lg shadow-gold/20"
+              >
+                {purchasing ? (
+                  <span className="flex items-center gap-2">
+                    <span className="h-4 w-4 animate-spin rounded-full border-2 border-background border-t-transparent" />
+                    Processing...
+                  </span>
+                ) : "Unlock Full Game"}
+              </Button>
 
-          {/* Error message */}
-          {error && (
-            <p className="mt-3 text-sm text-destructive max-w-xs text-center">{error}</p>
+              {/* Error message */}
+              {error && (
+                <p className="mt-3 text-sm text-destructive max-w-xs text-center">{error}</p>
+              )}
+            </>
+          ) : (
+            <>
+              {/* Coming Soon placeholder */}
+              <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-sm font-serif italic">
+                &ldquo;The conspiracy runs deeper than anyone imagined...&rdquo;
+              </p>
+              <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-sm">
+                The full game with 50 unique endings and over 3 million words is coming soon.
+              </p>
+
+              {notified ? (
+                <div className="flex items-center gap-2 text-gold text-sm font-sans">
+                  <BellIcon className="w-4 h-4" />
+                  <span>We&apos;ll notify you when the full game launches!</span>
+                </div>
+              ) : (
+                <Button
+                  onClick={() => { if (!user) setAuthOpen(true); else setNotified(true); }}
+                  className="w-full max-w-xs h-12 text-base font-semibold bg-gold text-background hover:bg-gold/90 shadow-lg shadow-gold/20"
+                >
+                  <BellIcon className="w-4 h-4 mr-2" />
+                  {user ? "Notify Me When Available" : "Sign Up to Get Notified"}
+                </Button>
+              )}
+
+              <Button
+                render={<Link href="/" />}
+                variant="outline"
+                className="mt-4 border-gold/30 hover:bg-gold/10"
+              >
+                Return to Home
+              </Button>
+            </>
           )}
 
           {/* Sign in prompt */}

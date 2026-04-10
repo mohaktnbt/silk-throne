@@ -5,7 +5,7 @@ import { PlayClient } from "./play-client";
 export const metadata: Metadata = {
   title: "Play",
   description:
-    "Play The Silk Throne, a 300,000-word interactive fiction epic. Shape the fate of the Khazaran Empire.",
+    "Play The Silk Throne, a 3-million-word interactive fiction epic. Shape the fate of the Khazaran Empire.",
 };
 
 function isSupabaseConfigured(): boolean {
@@ -21,14 +21,14 @@ const DEMO_GAME: Game = {
   id: "demo",
   slug: "the-silk-throne",
   title: "The Silk Throne",
-  tagline: "A 300,000-word epic of power, betrayal, and empire",
+  tagline: "A 3-million-word epic of power, betrayal, and empire",
   description: "You are the Grand Vizier of the Khazaran Empire...",
   long_description: null,
   cover_image_url: null,
   price_inr: 29900,
   price_usd: 499,
   genre: "Historical Fantasy",
-  word_count: 300000,
+  word_count: 3000000,
   scene_list: [
     "startup", "scene2", "scene3", "scene4", "scene5",
     "scene6", "scene7", "scene8", "scene9", "scene10",

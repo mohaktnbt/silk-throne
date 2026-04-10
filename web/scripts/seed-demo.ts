@@ -83,13 +83,13 @@ async function main() {
   const gameRecord = {
     slug: GAME_SLUG,
     title: "The Silk Throne",
-    tagline: "A 300,000-word epic of power, betrayal, and empire",
+    tagline: "A 3-million-word epic of power, betrayal, and empire",
     description:
       "You are the Grand Vizier of the Khazaran Empire — the second most powerful person in a realm inspired by Mughal India, the Ottoman Empire, and the Silk Road. Your predecessor died under mysterious circumstances. The young Emperor is being manipulated by rival factions. And a conspiracy threatens to tear the empire apart. Navigate deadly court politics, forge alliances, uncover the truth, and determine the fate of the Silk Throne.",
     price_inr: 29900,
     price_usd: 499,
     genre: "Historical Fantasy",
-    word_count: 300000,
+    word_count: 3000000,
     scene_list: [
       "startup", "scene2", "scene3", "scene4", "scene5",
       "scene6", "scene7", "scene8", "scene9", "scene10",
