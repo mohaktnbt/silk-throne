@@ -588,4 +588,59 @@ You think of the Emperor. Of the empire. Of the path you have chosen and the pri
 
 Then you straighten. You adjust the ring. And you step forward into whatever comes next.
 
+*page_break
+
+A sound. Behind you. Metal on stone.
+
+You turn.
+
+*if (route = 1)
+  Farid is standing in the doorway. He is pale. In his hand is a sealed document bearing the Dowager's personal seal. His lip is split. Someone hit him.
+
+  "They are moving faster than Zara thought," he whispers. "The first noble house has already pledged. The military commanders are being summoned to the Dowager's private chambers. Tonight." He swallows. "And there is something else. Something worse."
+
+  He holds up a second document. This one is older, the paper yellowed, the seal cracked. Your predecessor's handwriting. Vizier Cyrus.
+
+  "He knew," Farid says. "He knew everything. And they killed him for it."
+
+  The corridor goes dark. Every lamp extinguishes at once, as if cut by an invisible hand. In the sudden blackness, you hear footsteps. Many footsteps. Coming closer.
+
+  Farid's voice, barely a breath: "They're here."
+*elseif (route = 2)
+  The window shatters inward. An arrow embeds itself in the wall beside your head, still quivering. Glass scatters across the stone floor like frozen rain. The fletching is black -- military issue, but not imperial. Kaveh's private guard.
+
+  Attached to the shaft: a note in Kaveh's handwriting. Two words.
+
+  *"Last chance."*
+
+  Before you can move, another arrow. This one passes so close to your ear that you feel the wind of it. It strikes the portrait of Emperor Roshan that hangs above the door, splitting the painted face cleanly in two.
+
+  From the courtyard below, the sound of boots. Dozens of them. And torches -- you can see the orange glow climbing the walls like a rising tide.
+
+  Farid bursts through the door, bleeding from a cut on his forehead. "The southern gate is sealed. Kaveh's men. They've surrounded the Vizier's wing."
+
+  You are trapped. The empire's second most powerful person, caged like a bird in their own palace.
+*else
+  Farid bursts through the door. Papers scatter from his arms like startled birds. He is bleeding from a cut above his eye, and his tunic is torn at the shoulder where someone grabbed him.
+
+  "They came to the archives," he gasps. "Armed men. They took everything. Every document. Every record of reform. Every letter, every petition, every name." He braces himself against the doorframe, chest heaving. "And they left a message. For you."
+
+  He holds out a single sheet of paper. On it, in elegant calligraphy that you recognize -- you have seen it on official documents a hundred times -- is a single sentence:
+
+  *"The next Vizier will know their place."*
+
+  Below the words, a symbol. The same symbol from the anonymous warning note. The same symbol that was carved into Vizier Cyrus's desk.
+
+  The symbol of the conspiracy.
+
+  And beneath the symbol, a date. Tomorrow's date.
+
+  Something is going to happen tomorrow. Something that has been planned for months. Something that will change everything.
+
+  And you are the only person who can stop it.
+
+The seal ring burns on your finger. The shadows press close. Somewhere in the Citadel, a bell begins to toll -- the emergency bell, the one that has not rung in living memory.
+
+The game has changed.
+
 *finish Act 2: The Long Game

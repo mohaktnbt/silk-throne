@@ -444,6 +444,52 @@ You are who you have become.
 *comment === TRANSITION TO EPILOGUE ===
 *comment We use *goto_scene with specific labels.
 
+*comment === EXPANDED ENDING ROUTING (50 endings) ===
+*comment Endings 1-15: Original endings (route-based)
+*comment Endings 16-25: Loyalist route variants
+*comment Endings 26-35: Kingmaker route variants
+*comment Endings 36-45: Revolutionary route variants
+*comment Endings 46-50: Hidden/secret endings
+
+*comment === CHECK FOR EXPANDED ENDINGS FIRST ===
+*if (secret_society_member) and (eternal_flame_quest_complete)
+  *set ending_type 50
+*elseif (conspiracy_joined) and (route = 2)
+  *set ending_type 46
+*elseif (exile_chosen)
+  *set ending_type 47
+*elseif (sacrifice_made) and (route = 1) and (rel_emperor > 70)
+  *set ending_type 16
+*elseif (sacrifice_made) and (route = 1) and (rel_dowager > 60)
+  *set ending_type 17
+*elseif (route = 1) and (romance_zara) and (love_fulfilled)
+  *set ending_type 18
+*elseif (route = 1) and (dynasty_secured) and (empire_stability > 70)
+  *set ending_type 19
+*elseif (route = 1) and (conspiracy_destroyed) and (boldness > 70)
+  *set ending_type 20
+*elseif (route = 2) and (sacrifice_made) and (rel_general > 60)
+  *set ending_type 26
+*elseif (route = 2) and (romance_kaveh)
+  *set ending_type 27
+*elseif (route = 2) and (military_readiness > 70) and (empire_stability < 30)
+  *set ending_type 28
+*elseif (route = 2) and (treasury_health > 70) and (faction_path = "guild")
+  *set ending_type 29
+*elseif (route = 2) and (knowledge_forbidden) and (scholarship > 60)
+  *set ending_type 30
+*elseif (route = 3) and (sacrifice_made) and (people_loyalty > 70)
+  *set ending_type 36
+*elseif (route = 3) and (romance_soraya)
+  *set ending_type 37
+*elseif (route = 3) and (conspiracy_destroyed) and (idealist > 70)
+  *set ending_type 38
+*elseif (route = 3) and (faction_path = "temple") and (rel_priest > 60)
+  *set ending_type 39
+*elseif (route = 3) and (empire_stability < 20) and (people_loyalty > 80)
+  *set ending_type 40
+
+*comment === ROUTE TO ENDING ===
 *if (ending_type = 1)
   *goto_scene epilogue ending_1
 *elseif (ending_type = 2)
@@ -472,5 +518,15 @@ You are who you have become.
   *goto_scene epilogue ending_13
 *elseif (ending_type = 14)
   *goto_scene epilogue ending_14
+*elseif (ending_type = 15)
+  *goto_scene epilogue ending_15
+*elseif (ending_type >= 16) and (ending_type <= 25)
+  *goto_scene epilogue ending_${ending_type}
+*elseif (ending_type >= 26) and (ending_type <= 35)
+  *goto_scene epilogue ending_${ending_type}
+*elseif (ending_type >= 36) and (ending_type <= 45)
+  *goto_scene epilogue ending_${ending_type}
+*elseif (ending_type >= 46)
+  *goto_scene epilogue ending_${ending_type}
 *else
   *goto_scene epilogue ending_15

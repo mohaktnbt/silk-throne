@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: "%s | The Silk Throne",
   },
   description:
-    "A 300,000-word epic of power, betrayal, and empire. Shape the fate of the Khazaran Empire through your choices. Play the free preview now.",
+    "A 3-million-word epic of power, betrayal, and empire. Shape the fate of the Khazaran Empire through your choices. Play the free preview now.",
   keywords: [
     "interactive fiction",
     "choice game",
@@ -25,14 +25,14 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "The Silk Throne",
-    description: "A 300,000-word epic of power, betrayal, and empire. Your choices shape history.",
+    description: "A 3-million-word epic of power, betrayal, and empire. Your choices shape history.",
     type: "website",
     siteName: "The Silk Throne",
   },
   twitter: {
     card: "summary_large_image",
     title: "The Silk Throne",
-    description: "A 300,000-word epic of power, betrayal, and empire.",
+    description: "A 3-million-word epic of power, betrayal, and empire.",
   },
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
 };

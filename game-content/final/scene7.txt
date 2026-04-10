@@ -46,7 +46,20 @@ Corporal Behzad, Farid whispers. Twenty-three years old. He was stationed at the
 
 You make yourself look at the hand. Make yourself see it. This is what the conspiracy looks like, stripped of symbols and secrets and shadow games. This is a young man dead on a beautiful floor, and a young woman in the River District who does not yet know she is a widow before she was ever a wife.
 
-*page_break
+*comment === FAKE CHOICE 3: Standing over Corporal Behzad's body ===
+
+*fake_choice
+  #You commit his face to memory -- the young guard's hand, the sword hilt, the cloak. You will not let this become an abstraction.
+    *set idealist %+ 5
+    *set honest %+ 5
+    The conspiracy lives in symbols and whispers and coded notes. You will fight it with names. Corporal Behzad. Twenty-three. His fiance is Shahla. A weaver's daughter. You repeat the names to yourself three times, the way a scholar memorizes a text. As long as you remember, the conspiracy has not entirely won.
+  #You feel the anger rise and deliberately bank it. Rage is a fire -- useful in a forge, catastrophic in a house.
+    *set boldness %+ 5
+    *set ruthless %+ 5
+    The anger is clean and hot and tells you exactly where you stand. You let it exist for ten seconds -- long enough to acknowledge it, short enough to control it. Then you step past Behzad and walk toward the Emperor's door. The anger goes with you as fuel, not as master.
+  #You look at Farid. He is holding himself very still, the way a man holds himself when he is afraid that if he moves, he will fall apart.
+    *set rel_farid %+ 5
+    He knew Behzad's name. He knew Shahla's name. He carries entire lives in that remarkable, careful mind, and right now one of those lives has ended violently ten feet away from him. "Farid," you say quietly. "Stay close." It is the only comfort you can offer. He nods and follows.
 
 Beyond the body, the doors to the Emperor's private chambers stand open. One has been wrenched half off its hinges, the wood splintered at shoulder height as if something -- someone -- was thrown through it with tremendous force. The other hangs at an angle, its iron latch twisted. The violence that produced this damage was not elegant. It was desperate, explosive, the violence of a moment when life and death were separated by inches and seconds.
 
@@ -136,7 +149,21 @@ His hands clench in the blanket.
 
 "It came toward me and I threw the water vase. I threw the book. I threw the night table. I threw everything I could reach." A flash of something crosses his face -- shame, perhaps, or anger at himself for the indignity of it. An emperor, throwing furniture. "I screamed."
 
-*page_break
+*comment === FAKE CHOICE 4: Listening to the Emperor recount the assassin ===
+
+*fake_choice
+  #You want to tell him that throwing furniture at an assassin is not a shame. It is the only sane response.
+    *set rel_emperor %+ 5
+    *set idealist %+ 5
+    He survived. He did everything right -- he made noise, he disrupted the attack, he bought the seconds that Behzad needed to reach him. The shame on his face is the shame of a boy taught that emperors are supposed to be invulnerable. You file the expression away. You will find the right moment to address it.
+  #You catalogue the details he is giving you: the figure wore black, moved like water, crossed distance without appearing to cross it. Trained. Professional.
+    *set cunning + 1
+    *set rep_intelligence %+ 5
+    The description matches the temple guard's fighting style that Navid once described to you -- speed over strength, angles over force, the ability to close distance so fast the eye cannot follow. This was not a hired knife. This was years of specialized training, deployed with surgical intent. Someone paid a great deal to build this weapon.
+  #You listen without interrupting, even though questions press against your teeth like stones. Let him finish. The telling matters as much as the information.
+    *set honest %+ 5
+    *set rel_emperor %+ 5
+    He is giving you a gift by speaking at all. He could withdraw -- behind protocol, behind the mask of the emperor who does not tremble. Instead he is trusting you with his terror, his confusion, his undignified survival. Do not squander it with impatience.
 
 "Corporal Behzad came through the door," the Emperor continues. "He had his sword drawn. He was -- he was brave. He did not hesitate. He put himself between me and the figure and he--"
 
@@ -330,7 +357,19 @@ The window through which the assassin entered was latched from the inside. It sh
 
 "The wax is still soft," Zara says, holding the fragment in her palm like a tiny, damning jewel. Her voice is quiet, controlled, but her eyes burn with a fury you have never seen in her before. Zara, who shows nothing, who guards her expressions the way a miser guards gold -- Zara is furious. "Applied today. This afternoon, probably, during the window cleaning rotation."
 
-*page_break
+*comment === FAKE CHOICE 5: The tampered window latch ===
+
+*fake_choice
+  #The wax. A piece of wax no larger than a thumbnail, and it nearly unmade the empire. You study it in Zara's palm as if it might confess.
+    *set cunning + 1
+    This is the conspiracy's style: not the grand gesture, not the cavalry charge, but the small, invisible thing placed precisely in the mechanism. A wax pin in a window latch. A rogue spy with just the right documents. Someone who thinks in terms of levers, not hammers. That tells you something about who you are looking for.
+  #You feel Zara's fury like heat off a fire. She has never been outmaneuvered in the Citadel before. You file that away -- her anger makes her more dangerous and less predictable.
+    *set rep_intelligence %+ 5
+    The Spymaster's composure is her weapon, the same way Kadir's iron hand is his. Right now that weapon is running hot, which means it may also be running less careful. You will need to trust her. You also need to watch her.
+  #Weeks. The conspiracy had an operative inside the Citadel's staff for three weeks. You think about what else may be in place that you have not yet found.
+    *set boldness %- 5
+    *set evidence_count + 1
+    Three weeks is not an operation. It is a siege. They did not rush this -- they settled in, built cover, waited. The patience of it is the most frightening thing. A desperate enemy panics and leaves traces. A patient enemy does not.
 
 "The window cleaners?" you ask.
 
@@ -663,7 +702,20 @@ She sweeps past you toward her son's chambers, and the temperature in the corrid
 
 *set rel_dowager %+ 5
 
-*page_break
+*comment === FAKE CHOICE 6: After the Dowager passes ===
+
+*fake_choice
+  #You watch her go and think: she is afraid. The iron composure, the perfect robes at this hour -- all of it is a wall against the fear she will not admit.
+    *set idealist %+ 5
+    *set honest %+ 5
+    The Dowager Empress has spent twenty years holding this empire together through a grief no one talks about, a regency no one acknowledges, and a power no one formally grants. Whatever she is to you politically, she loves her son. Tonight she walked past a dead body to reach him and showed nothing. That is its own kind of courage.
+  #You think about what the Dowager knows and does not know. She said "we will speak later." That sentence has edges.
+    *set cunning + 1
+    *set rep_intelligence %+ 5
+    "We will speak later" from the Dowager Empress is a threat, a summons, and an information request all folded into four words. She wants to know what you know. She wants to know what you will do with it. And she wants, you suspect, to ensure that whatever happens next, it does not diminish her son or her standing. You begin composing your answers before the conversation even begins.
+  #You feel the exhaustion of the night land on your shoulders like a physical weight. The long dark is ending. The harder work is only beginning.
+    *set boldness %+ 5
+    The night swallowed a guard, an assassination attempt, an investigation, and an emperor's fear. Now it is releasing them back into the daylight, where politics and factions and the Dowager's perfect robes wait to consume what remains. You roll your shoulders once, quietly, and walk toward your chambers. There is no rest coming. But there is coffee.
 
 General Kadir arrives at the Citadel at a dead run, still buckling his sword belt. His iron hand clenches and unclenches as you brief him.
 

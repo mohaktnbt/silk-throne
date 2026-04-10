@@ -25,7 +25,7 @@ export function Footer() {
               The Silk Throne
             </span>
             <p className="mt-2 text-sm text-muted-foreground">
-              A 300,000-word epic of power, betrayal, and empire.
+              A 3-million-word epic of power, betrayal, and empire.
               Your choices shape the fate of the Khazaran Empire.
             </p>
           </div>

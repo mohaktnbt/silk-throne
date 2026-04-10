@@ -47,7 +47,18 @@ You rise and reach for your formal robes. Farid is already holding them out, his
 
 The corridors of the Citadel are never fully dark. Oil lamps burn in iron sconces every twenty paces, casting pools of warm amber light between stretches of shadow. You pass a pair of guards who snap to attention as you approach, their armor catching the lamplight in brief, sharp flashes. The air smells of sandalwood incense and the faint, ever-present musk of old stone. The Citadel is three centuries old, and no amount of perfume entirely masks its age.
 
-*page_break
+*comment === FAKE CHOICE 2: Walking to the emergency session ===
+
+*fake_choice
+  #You walk quickly, assembling what you know. A trade embargo. Commercial Crisis Protocol. The Western Confederation.
+    *set boldness %+ 5
+    The facts arrange themselves into columns the way figures arrange themselves in a ledger. The Confederation controls the western end of the Silk Road. The timing is deliberate -- someone chose this night, this moment. By the time you reach the Council Chamber door, you have three questions and no answers. That, at least, is a place to start.
+  #You feel the weight of every eye as you walk: guards, servants, pages. They are all watching to see if you are afraid.
+    *set honest %+ 5
+    The Citadel's staff measures its leaders the way a sailor measures the sky -- for signs of weather. You keep your pace measured and your expression neutral. Whatever the crisis, the Grand Vizier does not run. The Grand Vizier walks, and the world falls into step.
+  #You think of the merchants in the Grand Bazaar who rose before dawn today, not knowing the world has already changed against them.
+    *set idealist %+ 5
+    They arranged their stalls and lit their oil lamps and called out prices to passersby, and none of them knew that somewhere across the Ashghar Mountains a council of merchants voted to end their livelihood. The empire's crises always land hardest on the people furthest from the room where they are made.
 
 The Council Chamber is lit by a hundred oil lamps, their flames reflected in the polished surface of the round table. The air smells of frankincense and anxiety -- the latter you identify by the particular quality of the silence when you enter. It is the silence of people who have been arguing and have paused to watch the door.
 
@@ -71,7 +82,19 @@ She stops when you enter. Her dark eyes fix on you with an intensity that cuts t
 
 You take your seat at the round table. The seal ring on your finger catches the lamplight -- jade and silver, a small cold weight that carries the authority of three centuries. Every person at this table is watching you. You can feel it the way you feel the heat of a fire: a pressure on the skin, invisible but unmistakable.
 
-*page_break
+*comment === FAKE CHOICE 3: Seated at the Council table ===
+
+*fake_choice
+  #You meet each person's gaze in turn -- Kadir, Ashoka, Zara, Priya. You are the one they are waiting for.
+    *set boldness %+ 5
+    The seal ring is not a decoration. It is a declaration. You let them look. You let the silence settle. Then you nod, once, and Priya opens her mouth, and the Council begins. They needed someone to take the chair. You have taken it.
+  #You note what the room is telling you before a word is spoken: Kadir at the window, away from the table. Zara in shadow. Priya pacing. Ashoka still.
+    *set cunning + 1
+    Each position is a posture. Each posture is an argument. Kadir wants action. Zara wants information. Priya wants control. Ashoka wants patience. They have already decided what they want; they are waiting to see if you will give it to them. You will not give all of it to any of them.
+  #You think: this is what the seal ring means. Not power. Responsibility. The obligation to hold when everyone else is pulling in different directions.
+    *set idealist %+ 5
+    *set honest %+ 5
+    Every faction at this table is right about something and wrong about something else. Your job is to find the sliver of ground where the empire's actual interest lives, and stand on it without flinching. It will not make you popular. It will, if you do it correctly, keep the empire alive.
 
 Priya does not sit. She stands at the head of the table and speaks as if presenting testimony before a court.
 
@@ -91,7 +114,19 @@ General Kadir breaks the silence with a fist on the windowsill. The sound is sta
 
 "And start a war that will destroy the very trade routes we are trying to protect. Brilliant. That is like burning down the bazaar to kill a rat."
 
-*page_break
+*comment === FAKE CHOICE 6: Watching the Council fragment ===
+
+*fake_choice
+  #You study the room. Kadir wants war; Priya wants balance; Ashoka wants patience. They are all wrong and all partially right.
+    *set cunning + 1
+    Every faction leader is arguing from their own strength, which means they are also arguing from their own blindness. Kadir sees only the sword. Priya sees only the ledger. Ashoka sees only the principle. None of them see the room. That is, for now, your advantage.
+  #The argument is becoming theater. You let it run. Sometimes the most useful thing a leader does is listen before speaking.
+    *set boldness %- 5
+    *set honest %+ 5
+    Every word they speak is information -- about what they fear, what they want, what they are willing to sacrifice. You sit with the seal ring cool against your finger and let them perform. You will know what to say when they exhaust themselves.
+  #You feel the empire's weight settle in this room. Four brilliant people tearing at each other, and every second costs gold the treasury cannot spare.
+    *set idealist %+ 5
+    The tragedy of this table is that they are not enemies. They are people who love the empire in different ways and cannot stop fighting long enough to save it together. You make a note, somewhere in the back of your mind: this must change.
 
 High Priest Ashoka opens his eyes. When he speaks, his voice is the calm at the center of the storm -- low, measured, each word placed with the precision of a master calligrapher's brushstroke.
 
@@ -270,7 +305,19 @@ The meeting is arranged in a neutral space: a private room in the House of the B
 
 The fountain is not decorative. It is strategic. In Khazara, every beautiful thing serves at least two purposes.
 
-*page_break
+*comment === FAKE CHOICE 4: Waiting in the diplomatic guesthouse ===
+
+*fake_choice
+  #You arrive first -- deliberately. The waiting party sets the tone. You want Chen to find you composed and unhurried.
+    *set boldness %+ 5
+    *set cunning + 1
+    You pour yourself tea before he arrives and let the cup sit untouched. When Chen enters, you are a man at leisure, not a man in crisis. The empire's economy may be hemorrhaging, but this room knows only the sound of a fountain and the smell of cardamom, and that is entirely by design.
+  #You examine the room for listening points -- joints in the tile, gaps around the door frame. The fountain is not the only sound-mask in here.
+    *set rep_intelligence %+ 5
+    Two places where the wall grout has been recently reapplied. The corner behind the cushioned seat, angled toward the door. Whoever built this room understood that diplomacy has an audience. The fountain handles the obvious listeners. You will be careful about the rest.
+  #You think about what Chen wants out of tonight. Not what the Confederation wants -- what the man himself wants.
+    *set cunning + 2
+    Every ambassador is two people: the instrument of their nation and the person using the instrument. The first is predictable. The second is the one you need to find. Chen arranged this meeting quickly. He came prepared. He is either very confident or very afraid, and you will not know which until you watch him pour his first cup of tea.
 
 Ambassador Chen arrives precisely on time. He is a lean man of middle years, clean-shaven, with the sharp, watchful eyes of a merchant assessing goods. He is impeccably dressed in Confederation fashion -- tailored jacket, embroidered vest, high polished boots -- but with a Khazaran silk sash draped over one shoulder. A deliberate blend of cultures, a visual argument for the interconnectedness he is currently working to sever.
 
@@ -282,7 +329,18 @@ He gestures to the table, where a servant has laid out cardamom tea and almond p
 
 "I took the liberty," he adds, with a smile that reveals nothing and suggests everything.
 
-*page_break
+*comment === FAKE CHOICE 7: First moment seated across from Chen ===
+
+*fake_choice
+  #You note the Khazaran silk sash on his shoulder. He dressed for this meeting with the care of a man sending a message.
+    *set cunning + 1
+    The sash says: I respect your culture and your products. The embargo says: I am currently weaponizing them. Both things are true at once. Chen is a man who lives comfortably in contradiction, which makes him very good at his job and very difficult to trust.
+  #You let the silence of the room settle around you before speaking. The fountain does the work of filling it.
+    *set boldness %+ 5
+    The first seconds of a negotiation are a kind of weighing -- each side measuring the other's patience, looking for the flicker of urgency that signals who needs the deal more. You breathe slowly. You let the cardamom steam rise between you. You are not in a hurry. That is the first lie you will tell him, and possibly the most useful.
+  #You feel the embassy's careful neutrality like a physical thing. This room was built to make both sides feel at home, which means it belongs to neither of you.
+    *set honest %+ 5
+    The turquoise tiles, the low table, the Khazaran tea in Confederation-style service. Everything balanced, everything deliberate. A room designed to have no home ground. You prefer it to the Citadel's formal chambers, actually. Neutral ground means no throne, no symbol, no architecture of dominance. Just two people with competing needs and the fountain to mediate.
 
 You study him as you take your seat. His face is composed, pleasant, as smooth and unreadable as the porcelain on the table. He might be greeting a friend for afternoon tea. He might be negotiating the fate of empires.
 
@@ -505,7 +563,20 @@ Farid is waiting at the gate with a lantern and a stack of papers. His face is d
 *else
   The embargo will continue, at least for now. The cost is real -- you can feel it in the tension of the city, in the shuttered stalls and the quiet bazaar and the worried faces of the merchants you passed on the way back. But you did not yield. The empire's sovereignty is intact, and sovereignty, like a mountain, does not bow to wind.
 
-*page_break
+*comment === FAKE CHOICE 5: Returning through the night city ===
+
+*fake_choice
+  #You walk past the shuttered stalls and make yourself look. Remember. These faces are what the seal ring is for.
+    *set idealist %+ 5
+    A spice seller sitting outside his locked stall, staring at nothing. Two young merchants arguing in low, urgent voices beside an extinguished lamp. A woman counting coins on a step, recounting them, as if the total might change. You carry them with you into the Citadel. They do not know your name. You will remember theirs tomorrow.
+  #You think about what you set in motion today. Whatever happens next, tonight changed something.
+    *set boldness %+ 5
+    *set honest %+ 5
+    Decisions made in lamplight look different under open sky. You review yours. You do not find them perfect. You find them yours -- made with the information you had, for the reasons you had them. That will have to be enough until morning shows you what they cost.
+  #You are already thinking about the rogue spy. The embargo is a door. Behind it is a room you have not yet entered.
+    *set cunning + 1
+    *set rep_intelligence %+ 5
+    Someone sent an operative to Westmarch carrying exactly the documents that would force the Confederation's hand. The embargo was not a response -- it was a mechanism. You turned the mechanism off today. But the hand that built it is still out there, still working, and it does not rest because a single crisis was resolved.
 
 In your chambers, you review the day's events by lamplight. The seal ring sits heavy on your finger. Through the window, you hear the distant splash of fountains and the murmur of the night watch making their rounds -- the steady, rhythmic footsteps of soldiers who do not know that the empire's economy hangs by a thread.
 
@@ -532,7 +603,20 @@ In your chambers, you review the day's events by lamplight. The seal ring sits h
 
   The thought is not comforting.
 
-*page_break
+*comment === FAKE CHOICE 8: Sitting with the night's weight before sleep ===
+
+*fake_choice
+  #You set down your pen and sit with the silence. The conspiracy is real. You have always known. Tonight it has a shape.
+    *set boldness %+ 5
+    The parchment before you is not a record of a single crisis resolved -- it is the map of something larger, something patient. A trade embargo. A rogue spy. A symbol scratched under a council table. The shape is becoming visible, the way a painting emerges from fog when you step back far enough to see it whole.
+  #You think of everyone who helped tonight -- Priya, Farid, even Kadir in his furious way. The empire runs on people, not just policy.
+    *set idealist %+ 5
+    *set rel_farid %+ 5
+    Farid ran at your heels through corridors and never once flinched. Priya handed you the numbers you needed before the meeting even began. They did not have to do those things. They did them because they believe the empire is worth the effort. You write their names at the bottom of the page. Not as witnesses. As reminders.
+  #You wonder what you have not yet seen. The conspiracy planned weeks ahead. What else is already in motion?
+    *set cunning + 1
+    *set rep_intelligence %+ 5
+    The embargo was a mechanism. The rogue spy was a trigger. A mechanism this elaborate does not exist in isolation -- it is part of a larger device, and you have found one gear without yet seeing the clock. You add three question marks to the bottom of the parchment and underline them twice.
 
 You are still writing when exhaustion takes you. The lamp burns low, its flame shrinking until it is barely more than a blue whisper above the wick. The parchment curls at its edges. The seal ring catches the last of the light and holds it, a small green star in the gathering dark.
 

@@ -981,3 +981,253 @@ Neither do you.
 The sun sets. The sea darkens. The fishing boat comes home. And somewhere on the Silk Road, in a village at the edge of the world, two people sit together in the golden light, and the poem goes on.
 
 *ending
+
+*comment =====================================================
+*comment === ENDINGS 16-50: EXPANDED ENDINGS ===
+*comment =====================================================
+
+*comment === LOYALIST ROUTE VARIANTS (16-25) ===
+
+*label ending_16
+*comment Loyalist + Sacrifice ending. The Vizier sacrifices their position for the Emperor.
+Ten years later, they still tell the story.
+
+The story of the Vizier who walked away. Not in defeat -- in triumph. You gave Emperor Roshan everything: your loyalty, your cunning, your years, and finally, when the conspiracy threatened to consume the throne itself, your position. You took the fall. You accepted exile so that the Emperor could emerge untarnished, his authority absolute, his enemies scattered.
+
+*if (rel_emperor > 80)
+  He writes to you. Every month, without fail. The letters arrive in a diplomat's pouch, sealed with the imperial jade -- a breach of protocol that no one dares question. He tells you about the new trade agreements, the university he built in your honour (though it bears another name), the daughter who asks why the portrait in his study shows someone she has never met.
+
+  "She has your stubbornness," he writes. "I consider this the empire's greatest inheritance."
+
+You live quietly. A small estate in the southern provinces, where the jasmine blooms year-round and the sunsets paint the sky in shades of amber and gold. You tend a garden. You read. You write letters that you sometimes send and sometimes burn.
+
+But you sleep well. For the first time in a decade, you sleep well. Because the empire endures. Because the boy you believed in became the ruler you knew he could be. Because some sacrifices are not losses at all -- they are the truest victories, the ones that no one sees and everyone benefits from.
+
+The seal ring sits in a drawer. You do not wear it. You do not need to. Its weight is written in the peace of an empire that does not know your name but owes you everything.
+
+*ending
+
+*label ending_17
+*comment Loyalist + Dowager Alliance. Unexpected partnership.
+The court calls it the Grand Compromise. Historians will call it the most unlikely alliance in Khazaran history.
+
+You and the Dowager Empress Nur, once bitter rivals, now govern together. Not as adversaries forced into proximity, but as partners who discovered -- slowly, painfully, through crisis after crisis -- that the empire needed both of you. Her experience and your vision. Her connections and your courage. Her ruthlessness and your idealism.
+
+*if (rel_dowager > 70)
+  She invited you to tea, three years after the conspiracy fell. Just tea. No agenda, no demands, no poisoned words. You sat in her garden and talked about roses. About the varieties that bloom in winter. About the ones that survive frost not because they are strong, but because they are patient.
+
+  "I underestimated you," she said. It was the closest thing to an apology you would ever receive, and it was enough.
+
+Emperor Roshan watches from the Jade Throne with the quiet satisfaction of a young man who has learned that true strength is not choosing sides -- it is making sides unnecessary.
+
+The empire prospers. Not perfectly, not without friction, but with a stability that surprises everyone except the two people who built it, one compromise at a time, over cups of cardamom tea in a garden where the roses bloom even in winter.
+
+*ending
+
+*label ending_18
+*comment Loyalist + Zara Romance. The Spymaster's Heart.
+No one knows.
+
+That is the first rule, the fundamental rule, the rule that governs everything between you and Zara: no one knows. The Spymaster of the Khazaran Empire and the Grand Vizier, tangled in something that neither of them has a word for -- something too dangerous for "love" and too tender for "alliance" -- and no one in the empire's vast intelligence network has the faintest idea.
+
+This is, you both agree, the finest achievement of either of your careers.
+
+She comes to you at night, through passages that only she knows exist. She brings intelligence reports and kisses, state secrets and whispered confessions. She tells you things she has never told anyone -- about the village she came from, the parents she lost, the first person she killed and the way his face follows her into sleep.
+
+You tell her things too. About the fear. About the loneliness of power. About the night you almost walked away from everything.
+
+"I'm glad you didn't," she says. It is the most sentimental thing she has ever said, and she immediately follows it with a detailed briefing on troop movements along the northern frontier, as if embarrassed by her own vulnerability.
+
+The empire does not know about the two of you. The empire will never know. But the empire is safer for it -- because the Vizier and the Spymaster trust each other absolutely, and in a world of daggers and shadows, absolute trust is the rarest and most powerful weapon of all.
+
+*ending
+
+*label ending_19
+*comment Loyalist + Dynasty Secured + High Stability.
+They call it the Roshan Renaissance.
+
+Twenty years of peace. Twenty years of growth. The longest unbroken era of prosperity in the empire's history, built on foundations that you laid and Emperor Roshan perfected. The trade routes hum with commerce. The universities overflow with scholars. The military stands ready but unused, a sword kept sharp but sheathed. The treasury -- rebuilt from the ashes of the conspiracy's theft -- is the envy of every nation on the continent.
+
+Your legacy is written in infrastructure and institutions, in the schools that teach children to read and the courts that hear the complaints of the poorest citizen. It is not glamorous. It is not the stuff of epic poems. But it is real, and it endures, and when you are gone, it will continue without you -- which is, you have come to understand, the only legacy worth leaving.
+
+*ending
+
+*label ending_20
+*comment Loyalist + Conspiracy Destroyed + Bold approach.
+The Vizier Who Burned the Shadows.
+
+They tried to kill you seven times. You survived them all -- not through luck, not through caution, but through the particular form of reckless courage that the court poets call "boldness" and that Spymaster Zara calls "a persistent death wish."
+
+You hunted the conspiracy to its roots. Not content to cut the branches, you dug into the soil, uprooting networks that had flourished for decades beneath the empire's foundations. You named names in open court. You produced evidence that made seasoned politicians weep. You challenged the conspirators to face you, and when they sent assassins instead, you survived those too.
+
+The empire calls you the Dragonslayer. Zara calls you a fool who happened to be right. General Kadir -- who saved your life during the third assassination attempt by throwing himself between you and a crossbow bolt -- calls you "the most annoyingly difficult person to keep alive in the history of the empire."
+
+*ending
+
+*label ending_21
+*label ending_22
+*label ending_23
+*label ending_24
+*label ending_25
+*comment Placeholder endings for additional Loyalist variants.
+*comment These will be expanded with full narratives in future content updates.
+
+The story of a Loyalist Vizier takes many forms. Yours is one that history will remember.
+
+Every choice you made, every alliance you forged, every sacrifice you endured -- they led you here, to this moment, this ending that is also a beginning. The Khazaran Empire endures because you chose loyalty. Not the blind loyalty of a servant, but the fierce, questioning loyalty of a partner who demanded better and fought to make it real.
+
+The Jade Throne stands. The seal ring passes to your successor. And somewhere in the Citadel, a young secretary organizes the morning dispatches and wonders if they, too, might one day change the world.
+
+*ending
+
+*comment === KINGMAKER ROUTE VARIANTS (26-35) ===
+
+*label ending_26
+*comment Kingmaker + Sacrifice + Military Alliance.
+The General's Gambit.
+
+In the end, it was Kadir who saved you. Not with a sword -- though the old soldier's iron hand had done that more than once -- but with a single word, spoken in the Throne Room at the moment when everything hung in the balance: "Stay."
+
+You had planned to disappear. To take the knowledge you had gathered, the leverage you had built, and vanish into the provinces, leaving the empire to sort itself out. It was the rational choice. The safe choice.
+
+Kadir looked at you with those granite eyes and said, "Stay. The empire needs someone who isn't afraid of it." Coming from a man who was afraid of nothing, it was the highest compliment imaginable.
+
+You stayed. And together -- the strategist and the soldier, the shadow and the iron -- you rebuilt the empire's military from a tool of oppression into a shield for its people.
+
+*ending
+
+*label ending_27
+*comment Kingmaker + Kaveh Romance. The Prince's Shadow.
+The most dangerous romance in the history of the Khazaran Empire.
+
+You and Prince Kaveh -- rivals, antagonists, two wolves circling the same throne -- found something between you that neither politics nor ambition could explain. It started as mutual respect. It became fascination. It ended as something that the court poets would spend generations trying to describe and never quite capturing.
+
+He is infuriating. Brilliant, charming, manipulative, and possessed of a smile that makes you want to simultaneously kiss him and throw him from the nearest balcony. He plays the political game better than anyone you have ever met -- except you.
+
+Together, you are unstoppable. Apart, you are dangerous. The empire watches you the way it watches a thunderstorm: with awe, with fear, and with the certain knowledge that the landscape will never be the same.
+
+*ending
+
+*label ending_28
+*label ending_29
+*label ending_30
+*label ending_31
+*label ending_32
+*label ending_33
+*label ending_34
+*label ending_35
+*comment Placeholder endings for additional Kingmaker variants.
+
+Power is a river. You learned this in the years since you first walked through the gates of Khazara -- that power does not sit still, does not wait to be claimed, does not respect titles or bloodlines or the wishes of those who hold it. It flows. It finds the lowest ground. It carves new channels when the old ones are blocked.
+
+You made yourself the riverbed. You shaped the flow. You decided where the power would go and who would wield it, and in doing so, you became something that no title could capture: the person who chose the future.
+
+The Jade Throne stands, and the one who sits upon it sits there because you allowed it. The seal ring is heavy on your finger. The shadows are deep. And the river flows on.
+
+*ending
+
+*comment === REVOLUTIONARY ROUTE VARIANTS (36-45) ===
+
+*label ending_36
+*comment Revolutionary + Sacrifice + People's Victory.
+The People's Vizier.
+
+They erected a statue in the Grand Bazaar. Not of an emperor, not of a general, not of a priest -- of a Vizier. Of you. Standing with one hand extended, palm up, the gesture of offering that the common people use when they share bread.
+
+It was the merchants' idea. Then the scholars adopted it. Then the guild workers, the dock hands, the farmers who traveled from the provinces to add their coins to the fund. By the time the imperial court learned about it, the statue was already half-built and the petition to place it in the Bazaar bore ten thousand signatures.
+
+The Emperor, to his credit, laughed. "I suppose it is fitting," he said. "You always did belong to the people more than to the court."
+
+*ending
+
+*label ending_37
+*comment Revolutionary + Soraya Romance. The Reformer's Fire.
+Lady Soraya kisses like she argues: with absolute conviction, total commitment, and a slight tendency to draw blood.
+
+You found each other in the chaos of reform -- two idealists in a court of pragmatists, two voices calling for change in a room that preferred silence. She challenged you. She infuriated you. She made you better. And when the conservative backlash came, when the old guard tried to crush everything you had built, she stood beside you with a spine made of steel and a vocabulary that made even General Kadir flinch.
+
+Together, you did not just reform the Khazaran Empire. You remade it.
+
+*ending
+
+*label ending_38
+*label ending_39
+*label ending_40
+*label ending_41
+*label ending_42
+*label ending_43
+*label ending_44
+*label ending_45
+*comment Placeholder endings for additional Revolutionary and Kingmaker variants.
+
+Revolution is not a moment. It is a lifetime.
+
+You learned this in the years of struggle and setback, of victories that felt like defeats and defeats that planted the seeds of future victories. You learned it in the faces of the people who believed in you when no one else did, in the quiet courage of farmers and merchants and scholars who risked everything for the idea that the empire could be better.
+
+The old order did not fall. It transformed. Slowly, painfully, one reform at a time, one law at a time, one generation at a time. And you -- the unlikely revolutionary, the Grand Vizier who chose the people over the palace -- you were there for every step.
+
+The empire remembers. The people remember. And the changes you made will outlast the throne itself.
+
+*ending
+
+*comment === HIDDEN / SECRET ENDINGS (46-50) ===
+
+*label ending_46
+*comment Conspiracy Joined + Kingmaker. The Shadow Throne.
+You did what no one expected. You joined them.
+
+Not out of weakness. Not out of fear. Out of the cold, clear understanding that the conspiracy was not the disease -- it was the immune system. An empire this vast, this ancient, this complex could not function without a hidden hand guiding it from the shadows. The visible rulers changed. The policies shifted. But beneath it all, the network endured, because someone had to ensure that the machine kept running.
+
+You became that someone. The new head of a conspiracy that no one knows exists, wearing the seal ring of the Vizier in public and the invisible crown of the Shadow Throne in private.
+
+The empire prospers. The Emperor rules. And in the spaces between the light, you make the decisions that history will never record and the people will never know about.
+
+You tell yourself it is necessary. Most nights, you even believe it.
+
+*ending
+
+*label ending_47
+*comment Exile Chosen. The Road Goes Ever On.
+You chose the road.
+
+Not the throne, not the seal ring, not the endless chess game of power and politics and betrayal. The road. The open road that stretches from Khazara to the edges of the known world, through mountain passes and desert crossings and cities you have never seen.
+
+You left at dawn, with nothing but a traveling cloak and a letter of farewell that Farid delivered to the Emperor's chambers. You did not look back. Not because you did not love the empire -- but because you loved it enough to leave it to the people who needed it more than you did.
+
+The road is long. The road is hard. The road is everything you never knew you wanted.
+
+*ending
+
+*label ending_48
+*label ending_49
+*comment Additional secret endings to be expanded in future updates.
+
+Some endings are not endings at all. Some are doors.
+
+You found one -- a door that no one else could see, hidden in the spaces between duty and desire, between what the empire demanded and what your heart required. You walked through it, and on the other side you found something that the court poets never wrote about, something that the histories never recorded, something that existed only for you.
+
+A life. A real life, unwritten and unscripted, belonging to no one but yourself.
+
+*ending
+
+*label ending_50
+*comment The Eternal Flame. Ultimate secret ending.
+The Eternal Flame is not a flame.
+
+You discovered this in the depths beneath the Temple of the Jade Foundation, in a chamber that High Priest Ashoka showed you on a night when the stars aligned in a pattern that had not been seen in a thousand years. The flame that burns atop the Temple, the flame that has burned without fuel or tending since the empire's founding -- it is not fire. It is memory. It is the accumulated wisdom of every ruler, every vizier, every person who ever gave themselves wholly to the service of the Khazaran Empire.
+
+And now it is calling to you.
+
+Ashoka watched as you placed your hands above the flame and felt not heat but understanding -- a vast, crystalline awareness of every choice, every consequence, every branching path of every life that had ever been lived within the empire's borders. Past. Present. Future. All of it, burning in eternal radiance.
+
+"The flame chose you," Ashoka said. "As it chose the First Emperor. As it will choose someone again, when the time comes."
+
+You are no longer the Grand Vizier. You are something older, something stranger, something that has no name in any language the empire speaks. You are the keeper of the flame. The guardian of memory. The eternal witness.
+
+The empire changes. Emperors rise and fall. Wars begin and end. But the flame endures, and you endure with it -- watching, remembering, waiting for the next soul brave enough and foolish enough to step through the fire and become something more than mortal.
+
+The flame burns. The story continues. There is no ending.
+
+There is only the next beginning.
+
+*ending
