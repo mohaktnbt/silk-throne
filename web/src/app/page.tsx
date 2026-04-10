@@ -107,7 +107,7 @@ export default function Home() {
               },
               {
                 title: "Free Preview",
-                desc: "Play the first three chapters completely free. No account required to start — just dive in and explore.",
+                desc: "Play the first eight chapters completely free. No account required to start — just dive in and explore.",
                 icon: (
                   <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
@@ -211,7 +211,7 @@ export default function Home() {
           <div className="mt-16 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { step: "1", title: "Browse", desc: "Discover the world of the Khazaran Empire" },
-              { step: "2", title: "Play Free", desc: "Experience the first 3 chapters completely free" },
+              { step: "2", title: "Play Free", desc: "Experience the first eight chapters completely free" },
               { step: "3", title: "Unlock", desc: "Purchase to continue your epic journey" },
               { step: "4", title: "Continue", desc: "Your saves sync across devices — never lose progress" },
             ].map((item) => (

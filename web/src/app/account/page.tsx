@@ -28,6 +28,7 @@ export default function AccountPage() {
   const [loadingData, setLoadingData] = useState(true);
   const [deletingSave, setDeletingSave] = useState<string | null>(null);
   const [authModalOpen, setAuthModalOpen] = useState(false);
+  const [fetchError, setFetchError] = useState<string | null>(null);
 
   // ---- fetch user data -----------------------------------------------------
   const fetchUserData = useCallback(async () => {
@@ -52,6 +53,11 @@ export default function AccountPage() {
         .order("saved_at", { ascending: false }),
     ]);
 
+    if (purchaseResult.error || saveResult.error) {
+      setFetchError("Failed to load your account data. Please try again.");
+    } else {
+      setFetchError(null);
+    }
     if (purchaseResult.data) setPurchases(purchaseResult.data);
     if (saveResult.data) setSaves(saveResult.data);
 
@@ -130,6 +136,16 @@ export default function AccountPage() {
       <h1 className="font-display text-3xl font-bold">
         Your <span className="text-gold">Account</span>
       </h1>
+
+      {/* Fetch error */}
+      {fetchError && (
+        <div className="mt-6 rounded-lg border border-destructive/50 bg-destructive/5 p-4 text-sm text-destructive flex items-center justify-between">
+          <p>{fetchError}</p>
+          <Button variant="outline" size="sm" onClick={() => void fetchUserData()}>
+            Retry
+          </Button>
+        </div>
+      )}
 
       {/* Profile Card */}
       <Card className="mt-8">

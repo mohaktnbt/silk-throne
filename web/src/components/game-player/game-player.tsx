@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { GameEngine } from "@/lib/choicescript/engine";
 import type { GameOutput, GameState, StatDisplay } from "@/lib/choicescript/engine";
 import { parseScene } from "@/lib/choicescript/parser";
@@ -157,7 +158,8 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
         }
 
         if (!response.ok) {
-          throw new Error(`Failed to load scene: ${sceneName} (${response.status})`);
+          console.error(`[scene] Failed to load ${sceneName}: HTTP ${response.status}`);
+          throw new Error("Failed to load the next part of the story. Please check your connection and try again.");
         }
 
         // The API returns plain text (text/plain), not JSON
@@ -298,6 +300,9 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
         } else {
           processOutput(result);
         }
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : "An unexpected error occurred.";
+        setError(`Something went wrong: ${msg}. Try using Undo or Restart.`);
       } finally {
         setProcessing(false);
       }
@@ -347,6 +352,9 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
       } else {
         processOutput(result);
       }
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : "An unexpected error occurred.";
+      setError(`Something went wrong: ${msg}. Try using Undo or Restart.`);
     } finally {
       setProcessing(false);
     }
@@ -849,13 +857,20 @@ export function GamePlayer({ gameSlug, game }: GamePlayerProps) {
                   Thank you for playing{" "}
                   <span className="text-foreground">{game.title}</span>.
                 </p>
-                <Button
-                  variant="outline"
-                  onClick={() => window.location.reload()}
-                  className="mt-4"
-                >
-                  Play Again
-                </Button>
+                <div className="flex flex-col items-center gap-3 mt-6">
+                  <Button
+                    onClick={() => setRestartDialogOpen(true)}
+                    className="bg-gold text-background hover:bg-gold/90"
+                  >
+                    Start New Game
+                  </Button>
+                  <Button
+                    render={<Link href="/" />}
+                    variant="outline"
+                  >
+                    Return to Home
+                  </Button>
+                </div>
               </div>
             )}
 

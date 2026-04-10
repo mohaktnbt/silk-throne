@@ -11,7 +11,7 @@ export default function TermsPage() {
         Terms of <span className="text-gold">Service</span>
       </h1>
       <p className="mt-2 text-sm text-muted-foreground">
-        Last updated: January 1, 2025
+        Last updated: April 10, 2026
       </p>
 
       <div className="mt-10 space-y-8 text-sm leading-relaxed text-muted-foreground">
