@@ -44,7 +44,19 @@ You take the tea. It is perfect -- strong, sweet, fragrant with cardamom. You lo
 
 Three choices. Three windows into the heart of an empire.
 
-*page_break
+*fake_choice
+  #The bazaar first. Commerce is the empire's pulse, and you want to feel it before anything else.
+    Gold flows through the Grand Bazaar like blood through a body, and the health of the whole can be read in the movement of its parts. You want to understand this empire from its foundations upward, not its summit downward.
+    *line_break
+    You reach for the lighter robes.
+  #The garrison first. The northern border is bleeding. You want to understand the army before you are asked to direct it.
+    Soldiers are honest in a way courtiers are not — their failures show in blood and exhaustion, their strengths in discipline and scars. Whatever is coming, understanding the empire's fist seems more urgent than understanding its purse.
+    *line_break
+    You reach for the lighter robes.
+  #You pause on the balcony a moment longer, looking at the city. There is no hurry. The morning is yours.
+    It is the first morning in days that has not begun with a crisis or a summons. You are going to let it be that for one more breath.
+    *line_break
+    Below, the peacocks strut. The fountains speak. You breathe.
 
 You dress in lighter robes -- the formal court silks are ill-suited for the streets -- and descend to the Citadel's main courtyard, where two members of the imperial guard wait to escort you. The seal ring on your finger marks you as the Voice of the Throne. In the streets of Khazara, that ring is both shield and target.
 
@@ -152,7 +164,19 @@ You sit. The coffee is, in fact, both terrible and wonderful.
 
 She leans forward. Her dark eyes are warm, but behind the warmth, the calculating mind is always working.
 
-*page_break
+*fake_choice
+  #You listen, and watch her hands — the merchant's hands, always moving, always calculating even at rest.
+    She speaks with the easy confidence of a woman who has sat at a thousand tables and always known which side the profit was on. The warmth is real. The calculation never stops. You decide that is not a contradiction but a skill.
+    *line_break
+    You pick up the coffee. It is stronger than anything you drank in the provinces.
+  #You think about the embargo. This woman, you are realizing, is the person who will feel it most acutely.
+    Every day the mountain passes are closed is a day Priya's blood-empire bleeds. She is not asking you here to be charming. She is asking you here because she needs you. That need is itself a kind of power.
+    *line_break
+    You file it away carefully. Useful later.
+  #You look around the courtyard she has claimed as her own, and understand something: she built this.
+    Not inherited, not granted — built. From a man with a pepper cart to a seat on the Council of Five. The empire flows through her hands not because she was born to it but because she made herself indispensable to it.
+    *line_break
+    You find, unexpectedly, that you respect her.
 
 "My father sold pepper from a wooden cart. Did I tell you that? He stood right there -- " She points to a spot near the courtyard entrance. "Thirty years ago. A man with calloused hands and a good nose for quality. He taught me that the price of everything is determined by one thing: what someone is willing to pay when they need it badly enough."
 
@@ -320,7 +344,19 @@ You turn. The speaker is a young woman in the saffron robes of a temple scholar,
 
 "Most Viziers treat the temple as a formality. Bow to the Flame, nod at the High Priest, leave as quickly as possible. The fact that you came voluntarily, without a religious holiday forcing you, suggests you are either curious or troubled." She bites the fig. "Both would be interesting."
 
-*page_break
+*fake_choice
+  #Curious, you decide. You came here because this empire runs on belief as much as gold, and you do not fully understand the belief yet.
+    The Eternal Flame has burned for three hundred years. Two million people look toward it as something true in a world full of things that are convenient. That is a force the Council table treats as symbolic. You are not so certain that is wise.
+    *line_break
+    You follow Asha into the temple.
+  #Troubled, if you are being honest. The dead Vizier. The anonymous note. The spider in the Council. You came here to breathe.
+    There is something steadying about a place that exists outside the palace's architecture of ambition — a room that was built for the burning of questions rather than the advancing of agendas.
+    *line_break
+    You follow Asha into the temple.
+  #Both, you decide. Curiosity and trouble are, in your experience, the same animal with different names.
+    The fig-eating scholar with the irreverent bow is already more interesting than anything you encountered in the Throne Room this morning. You are going to follow wherever this leads.
+    *line_break
+    You follow Asha into the temple.
 
 Asha leads you through the temple as though it were her personal library -- which, in a sense, it is. She shows you the Chamber of Courage, where the walls are painted with scenes of ordinary people performing extraordinary acts. She points out the hidden details that most visitors miss: a farmer facing a flood, a mother standing before soldiers, a child reaching into a fire to save a scroll.
 
@@ -596,7 +632,19 @@ Then, in a dusty corner of the stacks, wedged between two volumes of noble house
 
 A village. Not a person. A village destroyed by a mining disaster, its entire population scattered or dead, its name surviving only in a census footnote that no one has read in decades.
 
-*page_break
+*fake_choice
+  #You feel the shape of the conspiracy shift. It is larger than a murder. It reaches back forty years.
+    Cyrus did not stumble onto a recent crime. He pulled on a thread that had been woven into the empire's fabric for decades — long enough to become invisible, long enough that whoever is protecting it has had forty years to build their defenses.
+    *line_break
+    Your hand tightens on the ledger. You have your first real piece of the picture.
+  #You think about the people of Saravan. A village. A mine collapse. A community wiped from every record but one.
+    A census clerk wrote their name down, and that clerk is long dead, and the village is long gone, and yet here you are, reading that name in a dusty corner of the Great Library. Someone buried this deliberately. Someone decided a dead village was useful precisely because it was dead.
+    *line_break
+    You copy the reference. Your hand is steady.
+  #You sit back in your chair and let the silence of the library settle around you. This is what research feels like — not triumph, but the first real foothold on a cliff face.
+    The answer is somewhere above you, out of sight. But the rock is solid under your fingers now, and you can begin to climb.
+    *line_break
+    You copy the reference. Your hand is steady.
 
 *set evidence_count + 1
 
@@ -703,7 +751,19 @@ The city is vast, and you have seen only fragments of it today -- a courtyard he
 
 It is worth protecting. Whatever else you are uncertain about -- the conspiracy, the factions, the path that lies ahead -- you are certain of that.
 
-*page_break
+*fake_choice
+  #You think of Lila, in the Old City. A girl carrying firewood on her back. A dry well. A building that killed a mother and three children and was never cleared.
+    The empire is worth protecting. But "the empire" and "the people inside it" are not always the same thing in the minds of the people who run it. You are going to try to close that distance.
+    *line_break
+    The river reflects the lamps. The evening air is warm.
+  #You think of the Eternal Flame, burning steady in the dark. Three hundred years without going out.
+    Asha said: read what the people believe when they are alone and afraid. That is where the truth lives. You stood in front of that flame today and felt, briefly, what it means to two million people who are not Viziers or generals or guildmasters.
+    *line_break
+    It matters. You are going to make it matter in the decisions you make.
+  #You think of the Emperor, alone in the garden, reading about his ancestor and trying not to show how frightened he is.
+    Sixteen years old. Carrying three centuries of empire. Dreaming of growing too small for the throne. You told him today that you wanted to know how he was, not how the Emperor was. He looked at you as though no one had asked him that before.
+    *line_break
+    You will ask again. As often as you can.
 
 The moment breaks.
 

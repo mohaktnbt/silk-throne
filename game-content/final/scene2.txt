@@ -108,7 +108,19 @@ You touch the ring on your finger. The jade is warm.
 
 He nods, steps back, and gestures toward the doors of the Jade Throne Room with the gravity of a man opening the gates to eternity.
 
-*page_break
+*fake_choice
+  #You breathe slowly and clear your mind. Whatever waits beyond those doors, you have faced hard moments before.
+    The fear does not disappear, but it settles — compressed into something small and dense, like a coal at the center of your chest. You have walked into difficult rooms before. You have met difficult people before. This is simply the largest room and the most powerful people.
+    *line_break
+    You are ready. Or near enough to it that the difference does not matter.
+  #You run through the protocols one last time: the approach, the bow, the three heartbeats.
+    Three steps. Waist bow. Three heartbeats. Not two, not four. You count them silently, feeling the rhythm settle into muscle memory. A ritual within a ritual.
+    *line_break
+    When the doors open, your body will know what to do. You have given it the instructions. Now you only have to trust them.
+  #You look at the seal ring. Whatever Farid believes, you will not let him down.
+    The jade is cool. The gold is warm. You press your thumb against the carved surface and feel the weight of it — not as a burden, but as a fact. You are here. This is real. You will not stumble.
+    *line_break
+    You step forward. The guards open the doors.
 
 *comment === THE JADE THRONE ROOM ===
 
@@ -146,7 +158,19 @@ You notice other details. A cup of water on a small table beside the throne -- u
 
 Beside the throne, seated in a chair of carved ebony that is exactly two inches lower than the throne itself -- a difference that someone, at some point, measured with obsessive precision -- is the Dowager Empress Nur.
 
-*page_break
+*fake_choice
+  #The boy worries you more than the Dowager. He is the true unknown in this room.
+    A frightened ruler is a dangerous ruler — not because of cruelty, but because fear breeds bad decisions. You file that away. Whatever else happens in this hall, you must make the Emperor feel capable, not managed.
+    *line_break
+    That is the task no one wrote into the protocols. And it may be the most important one.
+  #The Dowager worries you more than the Emperor. Those eyes have already finished reading you.
+    You have met administrators who led with analysis and spoke last. The Dowager is of that kind, but refined over decades into something sharper and less legible. Whatever she has concluded, she will not share it until it serves her to do so.
+    *line_break
+    You resolve to give her nothing she did not already know, and to pretend, convincingly, that there is nothing more to give.
+  #What worries you is the court itself — two hundred pairs of eyes deciding, right now, what you are worth.
+    They are measuring your walk, your posture, the angle of your chin. Every courtier in this room is already composing their first report on the new Vizier. By tonight, the assessment will be circulating in a dozen private conversations.
+    *line_break
+    You cannot control what they conclude. You can only give them a performance worth discussing.
 
 The Dowager does not look like a woman who measures things in inches. She looks like a woman who measures things in years.
 
@@ -299,7 +323,19 @@ Through the window, the Garden of Eternal Spring spreads below. The water channe
 
 You suspect the Dowager sees it the same way. Not as a garden. As a diagram. A model of the kind of order she has spent her life imposing on a world that would prefer to be wild.
 
-*page_break
+*fake_choice
+  #You study the room, committing every detail to memory. In this palace, rooms are weapons — and knowing them is armor.
+    The geometric carvings, the window angle, the placement of the chairs. Nothing here is accidental. This room was designed for a purpose, and the purpose is to put visitors at a disadvantage they cannot name.
+    *line_break
+    You name it. That is enough.
+  #You turn your attention inward, steadying yourself before she speaks first.
+    The Dowager will measure every flicker of your expression, every fraction of a hesitation. You breathe out once, slowly. Let the anxiety compress into stillness. You have sat across from difficult people before. The difficulty has always been a function of their power over you.
+    *line_break
+    You remind yourself: she chose you. Whatever she is about to do, she did not choose you to fail.
+  #You pour yourself a cup of water from the ewer. A small action, but yours. A quiet assertion that you belong in this chair.
+    She watches you pour. You hold the cup and meet her gaze with the calm of someone who has decided the room is as much yours as hers.
+    *line_break
+    Let the silence be mutual. She is not the only one who can wait.
 
 *set has_met_dowager true
 
@@ -325,7 +361,19 @@ The silence stretches. Through the window, a peacock calls -- a harsh, wild soun
 
 The water is cool and tastes faintly of minerals -- drawn from the Tavan, the clean river, the one that feeds the Citadel's aqueducts. You drink and feel the coolness spread through you, a counterpoint to the warmth of the incense and the heat of the Dowager's attention.
 
-*page_break
+*fake_choice
+  #You feel the truth of what she said — isolated, yes. But isolation means no one owns you. Yet.
+    No debts. No obligations. No old promises that could be used as levers. The Dowager describes it as a weapon and she is right, but it cuts in every direction. The factions will spend months trying to recruit you. That window, while it lasts, is yours.
+    *line_break
+    You set the cup down. You will be careful who you owe favors to first.
+  #You feel the trap beneath her words. She chose you because she believes she can fill the isolation herself.
+    She is telling you that you have no allies — and that she is offering to be the first. A mentor. A patron. The hand that guides without appearing to hold the reins. It is a generous offer and a precise one, and the precision is exactly what makes it dangerous.
+    *line_break
+    You are not yet sure whether to accept the trellis or grow around it.
+  #You feel something unexpected: relief. The isolation she describes is simply freedom by another name.
+    You came to this capital with no debts, no loyalties, no history in these marble halls. The Dowager sees that as a tool she can shape. You see it as room to maneuver.
+    *line_break
+    Let her think she chose the right kind of clay. The wheel has not finished turning yet.
 
 "A gardener," the Dowager says, "does not blame the vine for growing toward the sun. She simply ensures the trellis guides it where it ought to go." She turns her water cup slowly on the table. "You are new to this garden, Vizier. Let us see which direction you grow."
 
@@ -429,7 +477,19 @@ The door closes behind her. The incense smoke eddies in her wake, then settles.
 
 You sit for a moment in the silence. The fountains murmur. The morning light plays on the geometric patterns of the wall. The Dowager's words hang in the air like the sandalwood smoke -- beautiful, heavy, and impossible to ignore.
 
-*page_break
+*fake_choice
+  #The threat lands cleanly. You feel it, acknowledge it, and file it under things that will sharpen your caution rather than blunt your will.
+    She wants you to be afraid. Fear is a leash. You can carry the fear without wearing the leash — but the difference is one you will have to prove through action, not intention.
+    *line_break
+    You rise. The incense still clings to your robes. You walk toward the door.
+  #You think about Vizier Cyrus. Not the death — the man. Whatever he knew, he found it sitting in meetings like this one.
+    He died screaming, Farid said. But he died knowing something. That is not nothing. That is the only advantage you hold over whatever killed him: you know the danger exists.
+    *line_break
+    You rise. The incense still clings to your robes. You walk toward the door.
+  #A strange calm settles over you. The Dowager thinks she has the measure of you. She does not.
+    She sees a provincial administrator, isolated and moldable, grateful for patronage and willing to perform loyalty in exchange for guidance. She has prepared for that person.
+    *line_break
+    You are not entirely sure who you are. But you are increasingly certain it is not that.
 
 *comment === RETURN TO CHAMBERS: THE NOTE ===
 
@@ -486,7 +546,19 @@ You do not recognize the symbol. But something about it -- the deliberateness of
 
 The paper trembles in your fingers. Not from fear -- from something more complex than fear. From the sudden, crystalline understanding that the world you have entered is not the world you were told about. The fever was not a fever. The death was not natural. And someone in this palace -- someone who knows the truth -- has decided, for reasons you cannot yet fathom, to warn you.
 
-*page_break
+*fake_choice
+  #Your first instinct is to go to the Dowager. She chose you. She should know about this.
+    You check yourself almost immediately. The note says to watch the Council. The Dowager is not on the Council -- but she controls it. If there is a spider at the center of the web, the web extends everywhere.
+    *line_break
+    Not yet. Not until you understand the shape of what you are holding.
+  #Your first instinct is to destroy the note. No evidence means no danger.
+    A clean fire. No trace. You would be no worse off than you were an hour ago, except you would know what you know.
+    *line_break
+    But destroying it feels like agreeing to be ignorant. Someone took a risk to put this in your hands. Burning it feels like a betrayal of that risk. You fold the note instead and hold it, thinking.
+  #Your first instinct is to find who wrote it. A warning has a sender. A sender has a reason.
+    Someone in this palace knows the truth about Vizier Cyrus's death. Someone who is not the killer — or who is, and is playing a longer game you cannot yet see. Either way, they chose you as the recipient, and that choice is itself a fact worth examining.
+    *line_break
+    You will not act until you understand more. But you will not stop looking.
 
 You read the note again. And again. The words do not change. [i]Died screaming.[/i] Three days. The physicians lied.
 
@@ -504,7 +576,19 @@ Tomorrow, you will. And you will watch with different eyes than the Dowager inst
 
 You intend to disappoint at least one of them.
 
-*page_break
+*fake_choice
+  #You think of Vizier Cyrus. Whatever he discovered, it was enough to get him killed. You are already on the same road.
+    Three days, the note said. Not a quick death, not a clean one. A death designed to send a message. The message was: do not find what he found.
+    *line_break
+    You fold the note again. You found it anyway. Whatever comes next, you will not pretend you did not.
+  #You think of the seal ring. A dead man's ring, on a living person's finger. The question is whether you are its bearer or its next victim.
+    The jade is warm from your skin now. It started cold this morning, foreign, someone else's history pressed against yours. It is beginning to feel like yours. That should frighten you.
+    *line_break
+    It does. And you are going to the Council anyway.
+  #You think about tomorrow — five people in a room, one of them a murderer, all of them watching you.
+    The murderer will be watching most carefully. They will be measuring whether you know what Cyrus knew. Whether you are a threat or a tool. Whether you need to be managed or removed.
+    *line_break
+    You will need to appear useful before you can afford to appear dangerous.
 
 *comment === CLOSING: EVE OF THE COUNCIL ===
 
